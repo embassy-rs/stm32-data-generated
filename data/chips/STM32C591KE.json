@@ -783,16 +783,24 @@
         {
           "name": "ETH1",
           "address": 1073905664,
+          "registers": {
+            "kind": "eth",
+            "version": "v2b",
+            "block": "ETH"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
-            "kernel_clock": "HCLK1",
+            "kernel_clock": {
+              "register": "CCIPR3",
+              "field": "ETH1CLKSEL"
+            },
             "enable": {
               "register": "AHB1ENR",
-              "field": "ETHEN"
+              "field": "ETH1EN"
             },
             "reset": {
               "register": "AHB1RSTR",
-              "field": "ETHRST"
+              "field": "ETH1RST"
             }
           }
         },
@@ -2389,6 +2397,18 @@
             "kind": "syscfg",
             "version": "c5",
             "block": "SYSCFG"
+          },
+          "rcc": {
+            "bus_clock": "PCLK3",
+            "kernel_clock": "PCLK3",
+            "enable": {
+              "register": "APB3ENR",
+              "field": "SBSEN"
+            },
+            "reset": {
+              "register": "APB3RSTR",
+              "field": "SBSRST"
+            }
           }
         },
         {

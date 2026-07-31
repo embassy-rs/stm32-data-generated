@@ -271,49 +271,49 @@ pub mod regs {
         #[doc = "ETH internal clock enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn ethcken(&self) -> bool {
+        pub const fn eth1cken(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
             val != 0
         }
         #[doc = "ETH internal clock enable"]
         #[inline(always)]
-        pub const fn set_ethcken(&mut self, val: bool) {
+        pub const fn set_eth1cken(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "ETH clock enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn ethen(&self) -> bool {
+        pub const fn eth1en(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
             val != 0
         }
         #[doc = "ETH clock enable"]
         #[inline(always)]
-        pub const fn set_ethen(&mut self, val: bool) {
+        pub const fn set_eth1en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "ETHTX clock enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn ethtxen(&self) -> bool {
+        pub const fn eth1txen(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
         #[doc = "ETHTX clock enable"]
         #[inline(always)]
-        pub const fn set_ethtxen(&mut self, val: bool) {
+        pub const fn set_eth1txen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "ETHRX clock enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn ethrxen(&self) -> bool {
+        pub const fn eth1rxen(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
             val != 0
         }
         #[doc = "ETHRX clock enable"]
         #[inline(always)]
-        pub const fn set_ethrxen(&mut self, val: bool) {
+        pub const fn set_eth1rxen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "SRAM2 clock enable"]
@@ -356,10 +356,10 @@ pub mod regs {
                 .field("crcen", &self.crcen())
                 .field("cordicen", &self.cordicen())
                 .field("ramcfgen", &self.ramcfgen())
-                .field("ethcken", &self.ethcken())
-                .field("ethen", &self.ethen())
-                .field("ethtxen", &self.ethtxen())
-                .field("ethrxen", &self.ethrxen())
+                .field("eth1cken", &self.eth1cken())
+                .field("eth1en", &self.eth1en())
+                .field("eth1txen", &self.eth1txen())
+                .field("eth1rxen", &self.eth1rxen())
                 .field("sram2en", &self.sram2en())
                 .field("sram1en", &self.sram1en())
                 .finish()
@@ -370,17 +370,17 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb1enr {{ lpdma1en: {=bool:?}, lpdma2en: {=bool:?}, flitfen: {=bool:?}, crcen: {=bool:?}, cordicen: {=bool:?}, ramcfgen: {=bool:?}, ethcken: {=bool:?}, ethen: {=bool:?}, ethtxen: {=bool:?}, ethrxen: {=bool:?}, sram2en: {=bool:?}, sram1en: {=bool:?} }}",
+                "Ahb1enr {{ lpdma1en: {=bool:?}, lpdma2en: {=bool:?}, flitfen: {=bool:?}, crcen: {=bool:?}, cordicen: {=bool:?}, ramcfgen: {=bool:?}, eth1cken: {=bool:?}, eth1en: {=bool:?}, eth1txen: {=bool:?}, eth1rxen: {=bool:?}, sram2en: {=bool:?}, sram1en: {=bool:?} }}",
                 self.lpdma1en(),
                 self.lpdma2en(),
                 self.flitfen(),
                 self.crcen(),
                 self.cordicen(),
                 self.ramcfgen(),
-                self.ethcken(),
-                self.ethen(),
-                self.ethtxen(),
-                self.ethrxen(),
+                self.eth1cken(),
+                self.eth1en(),
+                self.eth1txen(),
+                self.eth1rxen(),
                 self.sram2en(),
                 self.sram1en()
             )
@@ -466,49 +466,49 @@ pub mod regs {
         #[doc = "ETH internal clock enable during Sleep mode"]
         #[must_use]
         #[inline(always)]
-        pub const fn ethcklpen(&self) -> bool {
+        pub const fn eth1cklpen(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
             val != 0
         }
         #[doc = "ETH internal clock enable during Sleep mode"]
         #[inline(always)]
-        pub const fn set_ethcklpen(&mut self, val: bool) {
+        pub const fn set_eth1cklpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "ETH clock enable during Sleep mode"]
         #[must_use]
         #[inline(always)]
-        pub const fn ethlpen(&self) -> bool {
+        pub const fn eth1lpen(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
             val != 0
         }
         #[doc = "ETH clock enable during Sleep mode"]
         #[inline(always)]
-        pub const fn set_ethlpen(&mut self, val: bool) {
+        pub const fn set_eth1lpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "ETHTX clock enable during Sleep mode"]
         #[must_use]
         #[inline(always)]
-        pub const fn ethtxlpen(&self) -> bool {
+        pub const fn eth1txlpen(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
         #[doc = "ETHTX clock enable during Sleep mode"]
         #[inline(always)]
-        pub const fn set_ethtxlpen(&mut self, val: bool) {
+        pub const fn set_eth1txlpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "ETHRX clock enable during Sleep mode"]
         #[must_use]
         #[inline(always)]
-        pub const fn ethrxlpen(&self) -> bool {
+        pub const fn eth1rxlpen(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
             val != 0
         }
         #[doc = "ETHRX clock enable during Sleep mode"]
         #[inline(always)]
-        pub const fn set_ethrxlpen(&mut self, val: bool) {
+        pub const fn set_eth1rxlpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "ICACHE clock enable during Sleep mode"]
@@ -563,10 +563,10 @@ pub mod regs {
                 .field("crclpen", &self.crclpen())
                 .field("cordiclpen", &self.cordiclpen())
                 .field("ramcfglpen", &self.ramcfglpen())
-                .field("ethcklpen", &self.ethcklpen())
-                .field("ethlpen", &self.ethlpen())
-                .field("ethtxlpen", &self.ethtxlpen())
-                .field("ethrxlpen", &self.ethrxlpen())
+                .field("eth1cklpen", &self.eth1cklpen())
+                .field("eth1lpen", &self.eth1lpen())
+                .field("eth1txlpen", &self.eth1txlpen())
+                .field("eth1rxlpen", &self.eth1rxlpen())
                 .field("icachelpen", &self.icachelpen())
                 .field("sram2lpen", &self.sram2lpen())
                 .field("sram1lpen", &self.sram1lpen())
@@ -578,17 +578,17 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb1lpenr {{ lpdma1lpen: {=bool:?}, lpdma2lpen: {=bool:?}, flitflpen: {=bool:?}, crclpen: {=bool:?}, cordiclpen: {=bool:?}, ramcfglpen: {=bool:?}, ethcklpen: {=bool:?}, ethlpen: {=bool:?}, ethtxlpen: {=bool:?}, ethrxlpen: {=bool:?}, icachelpen: {=bool:?}, sram2lpen: {=bool:?}, sram1lpen: {=bool:?} }}",
+                "Ahb1lpenr {{ lpdma1lpen: {=bool:?}, lpdma2lpen: {=bool:?}, flitflpen: {=bool:?}, crclpen: {=bool:?}, cordiclpen: {=bool:?}, ramcfglpen: {=bool:?}, eth1cklpen: {=bool:?}, eth1lpen: {=bool:?}, eth1txlpen: {=bool:?}, eth1rxlpen: {=bool:?}, icachelpen: {=bool:?}, sram2lpen: {=bool:?}, sram1lpen: {=bool:?} }}",
                 self.lpdma1lpen(),
                 self.lpdma2lpen(),
                 self.flitflpen(),
                 self.crclpen(),
                 self.cordiclpen(),
                 self.ramcfglpen(),
-                self.ethcklpen(),
-                self.ethlpen(),
-                self.ethtxlpen(),
-                self.ethrxlpen(),
+                self.eth1cklpen(),
+                self.eth1lpen(),
+                self.eth1txlpen(),
+                self.eth1rxlpen(),
                 self.icachelpen(),
                 self.sram2lpen(),
                 self.sram1lpen()
@@ -663,13 +663,13 @@ pub mod regs {
         #[doc = "ETHERNET reset"]
         #[must_use]
         #[inline(always)]
-        pub const fn ethrst(&self) -> bool {
+        pub const fn eth1rst(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
             val != 0
         }
         #[doc = "ETHERNET reset"]
         #[inline(always)]
-        pub const fn set_ethrst(&mut self, val: bool) {
+        pub const fn set_eth1rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
     }
@@ -687,7 +687,7 @@ pub mod regs {
                 .field("crcrst", &self.crcrst())
                 .field("cordicrst", &self.cordicrst())
                 .field("ramcfgrst", &self.ramcfgrst())
-                .field("ethrst", &self.ethrst())
+                .field("eth1rst", &self.eth1rst())
                 .finish()
         }
     }
@@ -696,13 +696,13 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb1rstr {{ lpdma1rst: {=bool:?}, lpdma2rst: {=bool:?}, crcrst: {=bool:?}, cordicrst: {=bool:?}, ramcfgrst: {=bool:?}, ethrst: {=bool:?} }}",
+                "Ahb1rstr {{ lpdma1rst: {=bool:?}, lpdma2rst: {=bool:?}, crcrst: {=bool:?}, cordicrst: {=bool:?}, ramcfgrst: {=bool:?}, eth1rst: {=bool:?} }}",
                 self.lpdma1rst(),
                 self.lpdma2rst(),
                 self.crcrst(),
                 self.cordicrst(),
                 self.ramcfgrst(),
-                self.ethrst()
+                self.eth1rst()
             )
         }
     }
@@ -3742,61 +3742,61 @@ pub mod regs {
         #[doc = "ETH RMII reference clock source selection"]
         #[must_use]
         #[inline(always)]
-        pub const fn ethrefclksel(&self) -> super::vals::Ethrefclksel {
+        pub const fn eth1refclksel(&self) -> super::vals::Eth1refclksel {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Ethrefclksel::from_bits(val as u8)
+            super::vals::Eth1refclksel::from_bits(val as u8)
         }
         #[doc = "ETH RMII reference clock source selection"]
         #[inline(always)]
-        pub const fn set_ethrefclksel(&mut self, val: super::vals::Ethrefclksel) {
+        pub const fn set_eth1refclksel(&mut self, val: super::vals::Eth1refclksel) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
         }
         #[doc = "ETH PTP clock source selection"]
         #[must_use]
         #[inline(always)]
-        pub const fn ethptpclksel(&self) -> super::vals::Ethptpclksel {
+        pub const fn eth1ptpclksel(&self) -> super::vals::Eth1ptpclksel {
             let val = (self.0 >> 10usize) & 0x03;
-            super::vals::Ethptpclksel::from_bits(val as u8)
+            super::vals::Eth1ptpclksel::from_bits(val as u8)
         }
         #[doc = "ETH PTP clock source selection"]
         #[inline(always)]
-        pub const fn set_ethptpclksel(&mut self, val: super::vals::Ethptpclksel) {
+        pub const fn set_eth1ptpclksel(&mut self, val: super::vals::Eth1ptpclksel) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
         }
         #[doc = "ETH clock source selection"]
         #[must_use]
         #[inline(always)]
-        pub const fn ethclksel(&self) -> super::vals::Ethclksel {
+        pub const fn eth1clksel(&self) -> super::vals::Eth1clksel {
             let val = (self.0 >> 13usize) & 0x03;
-            super::vals::Ethclksel::from_bits(val as u8)
+            super::vals::Eth1clksel::from_bits(val as u8)
         }
         #[doc = "ETH clock source selection"]
         #[inline(always)]
-        pub const fn set_ethclksel(&mut self, val: super::vals::Ethclksel) {
+        pub const fn set_eth1clksel(&mut self, val: super::vals::Eth1clksel) {
             self.0 = (self.0 & !(0x03 << 13usize)) | (((val.to_bits() as u32) & 0x03) << 13usize);
         }
         #[doc = "Ethernet clock division"]
         #[must_use]
         #[inline(always)]
-        pub const fn ethclkdiv(&self) -> super::vals::Ethclkdiv {
+        pub const fn eth1clkdiv(&self) -> super::vals::Eth1clkdiv {
             let val = (self.0 >> 26usize) & 0x03;
-            super::vals::Ethclkdiv::from_bits(val as u8)
+            super::vals::Eth1clkdiv::from_bits(val as u8)
         }
         #[doc = "Ethernet clock division"]
         #[inline(always)]
-        pub const fn set_ethclkdiv(&mut self, val: super::vals::Ethclkdiv) {
+        pub const fn set_eth1clkdiv(&mut self, val: super::vals::Eth1clkdiv) {
             self.0 = (self.0 & !(0x03 << 26usize)) | (((val.to_bits() as u32) & 0x03) << 26usize);
         }
         #[doc = "Ethernet PTP clock division"]
         #[must_use]
         #[inline(always)]
-        pub const fn ethptpdiv(&self) -> super::vals::Ethptpdiv {
+        pub const fn eth1ptpdiv(&self) -> super::vals::Eth1ptpdiv {
             let val = (self.0 >> 28usize) & 0x0f;
-            super::vals::Ethptpdiv::from_bits(val as u8)
+            super::vals::Eth1ptpdiv::from_bits(val as u8)
         }
         #[doc = "Ethernet PTP clock division"]
         #[inline(always)]
-        pub const fn set_ethptpdiv(&mut self, val: super::vals::Ethptpdiv) {
+        pub const fn set_eth1ptpdiv(&mut self, val: super::vals::Eth1ptpdiv) {
             self.0 = (self.0 & !(0x0f << 28usize)) | (((val.to_bits() as u32) & 0x0f) << 28usize);
         }
     }
@@ -3810,11 +3810,11 @@ pub mod regs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccipr3")
                 .field("xspi1sel", &self.xspi1sel())
-                .field("ethrefclksel", &self.ethrefclksel())
-                .field("ethptpclksel", &self.ethptpclksel())
-                .field("ethclksel", &self.ethclksel())
-                .field("ethclkdiv", &self.ethclkdiv())
-                .field("ethptpdiv", &self.ethptpdiv())
+                .field("eth1refclksel", &self.eth1refclksel())
+                .field("eth1ptpclksel", &self.eth1ptpclksel())
+                .field("eth1clksel", &self.eth1clksel())
+                .field("eth1clkdiv", &self.eth1clkdiv())
+                .field("eth1ptpdiv", &self.eth1ptpdiv())
                 .finish()
         }
     }
@@ -3823,13 +3823,13 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ccipr3 {{ xspi1sel: {:?}, ethrefclksel: {:?}, ethptpclksel: {:?}, ethclksel: {:?}, ethclkdiv: {:?}, ethptpdiv: {:?} }}",
+                "Ccipr3 {{ xspi1sel: {:?}, eth1refclksel: {:?}, eth1ptpclksel: {:?}, eth1clksel: {:?}, eth1clkdiv: {:?}, eth1ptpdiv: {:?} }}",
                 self.xspi1sel(),
-                self.ethrefclksel(),
-                self.ethptpclksel(),
-                self.ethclksel(),
-                self.ethclkdiv(),
-                self.ethptpdiv()
+                self.eth1refclksel(),
+                self.eth1ptpclksel(),
+                self.eth1clksel(),
+                self.eth1clkdiv(),
+                self.eth1ptpdiv()
             )
         }
     }
@@ -5561,7 +5561,7 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ethclkdiv {
+    pub enum Eth1clkdiv {
         #[doc = "divided by 1(default after reset)"]
         Div1 = 0x0,
         #[doc = "divided by 2"]
@@ -5570,9 +5570,9 @@ pub mod vals {
         Div4 = 0x02,
         _RESERVED_3 = 0x03,
     }
-    impl Ethclkdiv {
+    impl Eth1clkdiv {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ethclkdiv {
+        pub const fn from_bits(val: u8) -> Eth1clkdiv {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -5580,22 +5580,22 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Ethclkdiv {
+    impl From<u8> for Eth1clkdiv {
         #[inline(always)]
-        fn from(val: u8) -> Ethclkdiv {
-            Ethclkdiv::from_bits(val)
+        fn from(val: u8) -> Eth1clkdiv {
+            Eth1clkdiv::from_bits(val)
         }
     }
-    impl From<Ethclkdiv> for u8 {
+    impl From<Eth1clkdiv> for u8 {
         #[inline(always)]
-        fn from(val: Ethclkdiv) -> u8 {
-            Ethclkdiv::to_bits(val)
+        fn from(val: Eth1clkdiv) -> u8 {
+            Eth1clkdiv::to_bits(val)
         }
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ethclksel {
+    pub enum Eth1clksel {
         _RESERVED_0 = 0x0,
         #[doc = "psi_ck selected as kernel clock"]
         Psi = 0x01,
@@ -5604,9 +5604,9 @@ pub mod vals {
         #[doc = "hse_ck selected as kernel clock"]
         Hse = 0x03,
     }
-    impl Ethclksel {
+    impl Eth1clksel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ethclksel {
+        pub const fn from_bits(val: u8) -> Eth1clksel {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -5614,22 +5614,22 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Ethclksel {
+    impl From<u8> for Eth1clksel {
         #[inline(always)]
-        fn from(val: u8) -> Ethclksel {
-            Ethclksel::from_bits(val)
+        fn from(val: u8) -> Eth1clksel {
+            Eth1clksel::from_bits(val)
         }
     }
-    impl From<Ethclksel> for u8 {
+    impl From<Eth1clksel> for u8 {
         #[inline(always)]
-        fn from(val: Ethclksel) -> u8 {
-            Ethclksel::to_bits(val)
+        fn from(val: Eth1clksel) -> u8 {
+            Eth1clksel::to_bits(val)
         }
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ethptpclksel {
+    pub enum Eth1ptpclksel {
         _RESERVED_0 = 0x0,
         #[doc = "rcc_hclk1 selected as kernel clock"]
         Hclk1 = 0x01,
@@ -5638,9 +5638,9 @@ pub mod vals {
         #[doc = "psik_ck selected as kernel clock"]
         Psik = 0x03,
     }
-    impl Ethptpclksel {
+    impl Eth1ptpclksel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ethptpclksel {
+        pub const fn from_bits(val: u8) -> Eth1ptpclksel {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -5648,22 +5648,22 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Ethptpclksel {
+    impl From<u8> for Eth1ptpclksel {
         #[inline(always)]
-        fn from(val: u8) -> Ethptpclksel {
-            Ethptpclksel::from_bits(val)
+        fn from(val: u8) -> Eth1ptpclksel {
+            Eth1ptpclksel::from_bits(val)
         }
     }
-    impl From<Ethptpclksel> for u8 {
+    impl From<Eth1ptpclksel> for u8 {
         #[inline(always)]
-        fn from(val: Ethptpclksel) -> u8 {
-            Ethptpclksel::to_bits(val)
+        fn from(val: Eth1ptpclksel) -> u8 {
+            Eth1ptpclksel::to_bits(val)
         }
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ethptpdiv {
+    pub enum Eth1ptpdiv {
         #[doc = "divided by 1(default after reset)"]
         Div1 = 0x0,
         #[doc = "divided by 2"]
@@ -5697,9 +5697,9 @@ pub mod vals {
         #[doc = "divided by 16"]
         Div16 = 0x0f,
     }
-    impl Ethptpdiv {
+    impl Eth1ptpdiv {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ethptpdiv {
+        pub const fn from_bits(val: u8) -> Eth1ptpdiv {
             unsafe { core::mem::transmute(val & 0x0f) }
         }
         #[inline(always)]
@@ -5707,30 +5707,30 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Ethptpdiv {
+    impl From<u8> for Eth1ptpdiv {
         #[inline(always)]
-        fn from(val: u8) -> Ethptpdiv {
-            Ethptpdiv::from_bits(val)
+        fn from(val: u8) -> Eth1ptpdiv {
+            Eth1ptpdiv::from_bits(val)
         }
     }
-    impl From<Ethptpdiv> for u8 {
+    impl From<Eth1ptpdiv> for u8 {
         #[inline(always)]
-        fn from(val: Ethptpdiv) -> u8 {
-            Ethptpdiv::to_bits(val)
+        fn from(val: Eth1ptpdiv) -> u8 {
+            Eth1ptpdiv::to_bits(val)
         }
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ethrefclksel {
+    pub enum Eth1refclksel {
         #[doc = "ETH_RMII_REF (default after reset)"]
         EthRmiiRef = 0x0,
         #[doc = "eth_clk_fb"]
         EthClkFb = 0x01,
     }
-    impl Ethrefclksel {
+    impl Eth1refclksel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ethrefclksel {
+        pub const fn from_bits(val: u8) -> Eth1refclksel {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -5738,16 +5738,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Ethrefclksel {
+    impl From<u8> for Eth1refclksel {
         #[inline(always)]
-        fn from(val: u8) -> Ethrefclksel {
-            Ethrefclksel::from_bits(val)
+        fn from(val: u8) -> Eth1refclksel {
+            Eth1refclksel::from_bits(val)
         }
     }
-    impl From<Ethrefclksel> for u8 {
+    impl From<Eth1refclksel> for u8 {
         #[inline(always)]
-        fn from(val: Ethrefclksel) -> u8 {
-            Ethrefclksel::to_bits(val)
+        fn from(val: Eth1refclksel) -> u8 {
+            Eth1refclksel::to_bits(val)
         }
     }
     #[repr(u8)]

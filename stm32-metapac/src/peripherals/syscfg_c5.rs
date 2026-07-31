@@ -21,67 +21,67 @@ impl Syscfg {
     }
     #[doc = "SBS temporal isolation control register."]
     #[inline(always)]
-    pub const fn sbs_hdplcr(self) -> crate::common::Reg<regs::SbsHdplcr, crate::common::RW> {
+    pub const fn hdplcr(self) -> crate::common::Reg<regs::Hdplcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "SBS temporal isolation status register."]
     #[inline(always)]
-    pub const fn sbs_hdplsr(self) -> crate::common::Reg<regs::SbsHdplsr, crate::common::R> {
+    pub const fn hdplsr(self) -> crate::common::Reg<regs::Hdplsr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "SBS next TIL control register."]
     #[inline(always)]
-    pub const fn sbs_nexttilcr(self) -> crate::common::Reg<regs::SbsNexttilcr, crate::common::RW> {
+    pub const fn nexttilcr(self) -> crate::common::Reg<regs::Nexttilcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "SBS product mode and configuration register."]
     #[inline(always)]
-    pub const fn sbs_pmcr(self) -> crate::common::Reg<regs::SbsPmcr, crate::common::RW> {
+    pub const fn pmcr(self) -> crate::common::Reg<regs::Pmcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0100usize) as _) }
     }
     #[doc = "SBS FPU interrupt mask register."]
     #[inline(always)]
-    pub const fn sbs_fpuimr(self) -> crate::common::Reg<regs::SbsFpuimr, crate::common::RW> {
+    pub const fn fpuimr(self) -> crate::common::Reg<regs::Fpuimr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0104usize) as _) }
     }
     #[doc = "SBS memory erase status register."]
     #[inline(always)]
-    pub const fn sbs_mesr(self) -> crate::common::Reg<regs::SbsMesr, crate::common::RW> {
+    pub const fn mesr(self) -> crate::common::Reg<regs::Mesr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0108usize) as _) }
     }
     #[doc = "SBS compensation cell for I/Os control and status register."]
     #[inline(always)]
-    pub const fn sbs_cccsr(self) -> crate::common::Reg<regs::SbsCccsr, crate::common::RW> {
+    pub const fn cccsr(self) -> crate::common::Reg<regs::Cccsr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0110usize) as _) }
     }
     #[doc = "SBS compensation cell for I/Os value register."]
     #[inline(always)]
-    pub const fn sbs_ccvalr(self) -> crate::common::Reg<regs::SbsCcvalr, crate::common::R> {
+    pub const fn ccvalr(self) -> crate::common::Reg<regs::Ccvalr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0114usize) as _) }
     }
     #[doc = "SBS compensation cell for I/Os software code register."]
     #[inline(always)]
-    pub const fn sbs_ccswcr(self) -> crate::common::Reg<regs::SbsCcswcr, crate::common::RW> {
+    pub const fn ccswcr(self) -> crate::common::Reg<regs::Ccswcr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0118usize) as _) }
     }
     #[doc = "SBS Class B register."]
     #[inline(always)]
-    pub const fn sbs_cfgr2(self) -> crate::common::Reg<regs::SbsCfgr2, crate::common::RW> {
+    pub const fn cfgr2(self) -> crate::common::Reg<regs::Cfgr2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0120usize) as _) }
     }
     #[doc = "SBS CPU lock register."]
     #[inline(always)]
-    pub const fn sbs_clckr(self) -> crate::common::Reg<regs::SbsClckr, crate::common::RW> {
+    pub const fn clckr(self) -> crate::common::Reg<regs::Clckr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0144usize) as _) }
     }
     #[doc = "SBS CPU lock register."]
     #[inline(always)]
-    pub const fn sbs_cnslckr(self) -> crate::common::Reg<regs::SbsCnslckr, crate::common::RW> {
+    pub const fn cnslckr(self) -> crate::common::Reg<regs::Cnslckr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0144usize) as _) }
     }
     #[doc = "SBS ECC NMI mask register."]
     #[inline(always)]
-    pub const fn sbs_eccnmir(self) -> crate::common::Reg<regs::SbsEccnmir, crate::common::RW> {
+    pub const fn eccnmir(self) -> crate::common::Reg<regs::Eccnmir, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x014cusize) as _) }
     }
 }
@@ -89,8 +89,8 @@ pub mod regs {
     #[doc = "SBS compensation cell for I/Os control and status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SbsCccsr(pub u32);
-    impl SbsCccsr {
+    pub struct Cccsr(pub u32);
+    impl Cccsr {
         #[doc = "Enable compensation cell for VDDIO power rail."]
         #[must_use]
         #[inline(always)]
@@ -128,15 +128,15 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }
-    impl Default for SbsCccsr {
+    impl Default for Cccsr {
         #[inline(always)]
-        fn default() -> SbsCccsr {
-            SbsCccsr(0)
+        fn default() -> Cccsr {
+            Cccsr(0)
         }
     }
-    impl core::fmt::Debug for SbsCccsr {
+    impl core::fmt::Debug for Cccsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("SbsCccsr")
+            f.debug_struct("Cccsr")
                 .field("en1", &self.en1())
                 .field("cs1", &self.cs1())
                 .field("rdy1", &self.rdy1())
@@ -144,11 +144,11 @@ pub mod regs {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for SbsCccsr {
+    impl defmt::Format for Cccsr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "SbsCccsr {{ en1: {=bool:?}, cs1: {:?}, rdy1: {=bool:?} }}",
+                "Cccsr {{ en1: {=bool:?}, cs1: {:?}, rdy1: {=bool:?} }}",
                 self.en1(),
                 self.cs1(),
                 self.rdy1()
@@ -158,8 +158,8 @@ pub mod regs {
     #[doc = "SBS compensation cell for I/Os software code register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SbsCcswcr(pub u32);
-    impl SbsCcswcr {
+    pub struct Ccswcr(pub u32);
+    impl Ccswcr {
         #[doc = "NMOS compensation code for VDD power rails."]
         #[must_use]
         #[inline(always)]
@@ -185,26 +185,26 @@ pub mod regs {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
     }
-    impl Default for SbsCcswcr {
+    impl Default for Ccswcr {
         #[inline(always)]
-        fn default() -> SbsCcswcr {
-            SbsCcswcr(0)
+        fn default() -> Ccswcr {
+            Ccswcr(0)
         }
     }
-    impl core::fmt::Debug for SbsCcswcr {
+    impl core::fmt::Debug for Ccswcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("SbsCcswcr")
+            f.debug_struct("Ccswcr")
                 .field("sw_ansrc1", &self.sw_ansrc1())
                 .field("sw_apsrc1", &self.sw_apsrc1())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for SbsCcswcr {
+    impl defmt::Format for Ccswcr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "SbsCcswcr {{ sw_ansrc1: {=u8:?}, sw_apsrc1: {=u8:?} }}",
+                "Ccswcr {{ sw_ansrc1: {=u8:?}, sw_apsrc1: {=u8:?} }}",
                 self.sw_ansrc1(),
                 self.sw_apsrc1()
             )
@@ -213,8 +213,8 @@ pub mod regs {
     #[doc = "SBS compensation cell for I/Os value register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SbsCcvalr(pub u32);
-    impl SbsCcvalr {
+    pub struct Ccvalr(pub u32);
+    impl Ccvalr {
         #[doc = "Compensation value for the NMOS transistor."]
         #[must_use]
         #[inline(always)]
@@ -240,26 +240,26 @@ pub mod regs {
             self.0 = (self.0 & !(0x0f << 4usize)) | (((val as u32) & 0x0f) << 4usize);
         }
     }
-    impl Default for SbsCcvalr {
+    impl Default for Ccvalr {
         #[inline(always)]
-        fn default() -> SbsCcvalr {
-            SbsCcvalr(0)
+        fn default() -> Ccvalr {
+            Ccvalr(0)
         }
     }
-    impl core::fmt::Debug for SbsCcvalr {
+    impl core::fmt::Debug for Ccvalr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("SbsCcvalr")
+            f.debug_struct("Ccvalr")
                 .field("ansrc1", &self.ansrc1())
                 .field("apsrc1", &self.apsrc1())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for SbsCcvalr {
+    impl defmt::Format for Ccvalr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "SbsCcvalr {{ ansrc1: {=u8:?}, apsrc1: {=u8:?} }}",
+                "Ccvalr {{ ansrc1: {=u8:?}, apsrc1: {=u8:?} }}",
                 self.ansrc1(),
                 self.apsrc1()
             )
@@ -268,8 +268,8 @@ pub mod regs {
     #[doc = "SBS Class B register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SbsCfgr2(pub u32);
-    impl SbsCfgr2 {
+    pub struct Cfgr2(pub u32);
+    impl Cfgr2 {
         #[doc = "Core lockup lock."]
         #[must_use]
         #[inline(always)]
@@ -319,15 +319,15 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
         }
     }
-    impl Default for SbsCfgr2 {
+    impl Default for Cfgr2 {
         #[inline(always)]
-        fn default() -> SbsCfgr2 {
-            SbsCfgr2(0)
+        fn default() -> Cfgr2 {
+            Cfgr2(0)
         }
     }
-    impl core::fmt::Debug for SbsCfgr2 {
+    impl core::fmt::Debug for Cfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("SbsCfgr2")
+            f.debug_struct("Cfgr2")
                 .field("cll", &self.cll())
                 .field("sel", &self.sel())
                 .field("pvdl", &self.pvdl())
@@ -336,11 +336,11 @@ pub mod regs {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for SbsCfgr2 {
+    impl defmt::Format for Cfgr2 {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "SbsCfgr2 {{ cll: {=bool:?}, sel: {:?}, pvdl: {:?}, eccl: {:?} }}",
+                "Cfgr2 {{ cll: {=bool:?}, sel: {:?}, pvdl: {:?}, eccl: {:?} }}",
                 self.cll(),
                 self.sel(),
                 self.pvdl(),
@@ -351,8 +351,8 @@ pub mod regs {
     #[doc = "SBS CPU lock register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SbsClckr(pub u32);
-    impl SbsClckr {
+    pub struct Clckr(pub u32);
+    impl Clckr {
         #[doc = "VTOR register lock."]
         #[must_use]
         #[inline(always)]
@@ -378,26 +378,26 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
-    impl Default for SbsClckr {
+    impl Default for Clckr {
         #[inline(always)]
-        fn default() -> SbsClckr {
-            SbsClckr(0)
+        fn default() -> Clckr {
+            Clckr(0)
         }
     }
-    impl core::fmt::Debug for SbsClckr {
+    impl core::fmt::Debug for Clckr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("SbsClckr")
+            f.debug_struct("Clckr")
                 .field("lockvtor", &self.lockvtor())
                 .field("lockmpu", &self.lockmpu())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for SbsClckr {
+    impl defmt::Format for Clckr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "SbsClckr {{ lockvtor: {=bool:?}, lockmpu: {=bool:?} }}",
+                "Clckr {{ lockvtor: {=bool:?}, lockmpu: {=bool:?} }}",
                 self.lockvtor(),
                 self.lockmpu()
             )
@@ -406,8 +406,8 @@ pub mod regs {
     #[doc = "SBS CPU lock register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SbsCnslckr(pub u32);
-    impl SbsCnslckr {
+    pub struct Cnslckr(pub u32);
+    impl Cnslckr {
         #[doc = "VTOR_NS register lock."]
         #[must_use]
         #[inline(always)]
@@ -433,26 +433,26 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
-    impl Default for SbsCnslckr {
+    impl Default for Cnslckr {
         #[inline(always)]
-        fn default() -> SbsCnslckr {
-            SbsCnslckr(0)
+        fn default() -> Cnslckr {
+            Cnslckr(0)
         }
     }
-    impl core::fmt::Debug for SbsCnslckr {
+    impl core::fmt::Debug for Cnslckr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("SbsCnslckr")
+            f.debug_struct("Cnslckr")
                 .field("locknsvtor", &self.locknsvtor())
                 .field("locknsmpu", &self.locknsmpu())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for SbsCnslckr {
+    impl defmt::Format for Cnslckr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "SbsCnslckr {{ locknsvtor: {=bool:?}, locknsmpu: {=bool:?} }}",
+                "Cnslckr {{ locknsvtor: {=bool:?}, locknsmpu: {=bool:?} }}",
                 self.locknsvtor(),
                 self.locknsmpu()
             )
@@ -461,8 +461,8 @@ pub mod regs {
     #[doc = "SBS ECC NMI mask register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SbsEccnmir(pub u32);
-    impl SbsEccnmir {
+    pub struct Eccnmir(pub u32);
+    impl Eccnmir {
         #[doc = "NMI behavior setup when a double ECC error occurs on FLITF data part."]
         #[must_use]
         #[inline(always)]
@@ -476,30 +476,30 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
         }
     }
-    impl Default for SbsEccnmir {
+    impl Default for Eccnmir {
         #[inline(always)]
-        fn default() -> SbsEccnmir {
-            SbsEccnmir(0)
+        fn default() -> Eccnmir {
+            Eccnmir(0)
         }
     }
-    impl core::fmt::Debug for SbsEccnmir {
+    impl core::fmt::Debug for Eccnmir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("SbsEccnmir")
+            f.debug_struct("Eccnmir")
                 .field("eccnmi_mask_en", &self.eccnmi_mask_en())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for SbsEccnmir {
+    impl defmt::Format for Eccnmir {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "SbsEccnmir {{ eccnmi_mask_en: {:?} }}", self.eccnmi_mask_en())
+            defmt::write!(f, "Eccnmir {{ eccnmi_mask_en: {:?} }}", self.eccnmi_mask_en())
         }
     }
     #[doc = "SBS FPU interrupt mask register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SbsFpuimr(pub u32);
-    impl SbsFpuimr {
+    pub struct Fpuimr(pub u32);
+    impl Fpuimr {
         #[doc = "FPU interrupt enable."]
         #[must_use]
         #[inline(always)]
@@ -513,28 +513,28 @@ pub mod regs {
             self.0 = (self.0 & !(0x3f << 0usize)) | (((val as u32) & 0x3f) << 0usize);
         }
     }
-    impl Default for SbsFpuimr {
+    impl Default for Fpuimr {
         #[inline(always)]
-        fn default() -> SbsFpuimr {
-            SbsFpuimr(0)
+        fn default() -> Fpuimr {
+            Fpuimr(0)
         }
     }
-    impl core::fmt::Debug for SbsFpuimr {
+    impl core::fmt::Debug for Fpuimr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("SbsFpuimr").field("fpu_ie", &self.fpu_ie()).finish()
+            f.debug_struct("Fpuimr").field("fpu_ie", &self.fpu_ie()).finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for SbsFpuimr {
+    impl defmt::Format for Fpuimr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "SbsFpuimr {{ fpu_ie: {=u8:?} }}", self.fpu_ie())
+            defmt::write!(f, "Fpuimr {{ fpu_ie: {=u8:?} }}", self.fpu_ie())
         }
     }
     #[doc = "SBS temporal isolation control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SbsHdplcr(pub u32);
-    impl SbsHdplcr {
+    pub struct Hdplcr(pub u32);
+    impl Hdplcr {
         #[doc = "HDPL value increment."]
         #[must_use]
         #[inline(always)]
@@ -548,30 +548,28 @@ pub mod regs {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val.to_bits() as u32) & 0xff) << 0usize);
         }
     }
-    impl Default for SbsHdplcr {
+    impl Default for Hdplcr {
         #[inline(always)]
-        fn default() -> SbsHdplcr {
-            SbsHdplcr(0)
+        fn default() -> Hdplcr {
+            Hdplcr(0)
         }
     }
-    impl core::fmt::Debug for SbsHdplcr {
+    impl core::fmt::Debug for Hdplcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("SbsHdplcr")
-                .field("incr_hdpl", &self.incr_hdpl())
-                .finish()
+            f.debug_struct("Hdplcr").field("incr_hdpl", &self.incr_hdpl()).finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for SbsHdplcr {
+    impl defmt::Format for Hdplcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "SbsHdplcr {{ incr_hdpl: {:?} }}", self.incr_hdpl())
+            defmt::write!(f, "Hdplcr {{ incr_hdpl: {:?} }}", self.incr_hdpl())
         }
     }
     #[doc = "SBS temporal isolation status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SbsHdplsr(pub u32);
-    impl SbsHdplsr {
+    pub struct Hdplsr(pub u32);
+    impl Hdplsr {
         #[doc = "Temporal isolation level."]
         #[must_use]
         #[inline(always)]
@@ -585,28 +583,28 @@ pub mod regs {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val.to_bits() as u32) & 0xff) << 0usize);
         }
     }
-    impl Default for SbsHdplsr {
+    impl Default for Hdplsr {
         #[inline(always)]
-        fn default() -> SbsHdplsr {
-            SbsHdplsr(0)
+        fn default() -> Hdplsr {
+            Hdplsr(0)
         }
     }
-    impl core::fmt::Debug for SbsHdplsr {
+    impl core::fmt::Debug for Hdplsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("SbsHdplsr").field("hdpl", &self.hdpl()).finish()
+            f.debug_struct("Hdplsr").field("hdpl", &self.hdpl()).finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for SbsHdplsr {
+    impl defmt::Format for Hdplsr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "SbsHdplsr {{ hdpl: {:?} }}", self.hdpl())
+            defmt::write!(f, "Hdplsr {{ hdpl: {:?} }}", self.hdpl())
         }
     }
     #[doc = "SBS memory erase status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SbsMesr(pub u32);
-    impl SbsMesr {
+    pub struct Mesr(pub u32);
+    impl Mesr {
         #[doc = "Device memories erase status."]
         #[must_use]
         #[inline(always)]
@@ -632,31 +630,31 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
     }
-    impl Default for SbsMesr {
+    impl Default for Mesr {
         #[inline(always)]
-        fn default() -> SbsMesr {
-            SbsMesr(0)
+        fn default() -> Mesr {
+            Mesr(0)
         }
     }
-    impl core::fmt::Debug for SbsMesr {
+    impl core::fmt::Debug for Mesr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("SbsMesr")
+            f.debug_struct("Mesr")
                 .field("mclr", &self.mclr())
                 .field("ipmee", &self.ipmee())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for SbsMesr {
+    impl defmt::Format for Mesr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "SbsMesr {{ mclr: {:?}, ipmee: {:?} }}", self.mclr(), self.ipmee())
+            defmt::write!(f, "Mesr {{ mclr: {:?}, ipmee: {:?} }}", self.mclr(), self.ipmee())
         }
     }
     #[doc = "SBS next TIL control register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SbsNexttilcr(pub u32);
-    impl SbsNexttilcr {
+    pub struct Nexttilcr(pub u32);
+    impl Nexttilcr {
         #[doc = "Next TIL control register."]
         #[must_use]
         #[inline(always)]
@@ -670,30 +668,28 @@ pub mod regs {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
     }
-    impl Default for SbsNexttilcr {
+    impl Default for Nexttilcr {
         #[inline(always)]
-        fn default() -> SbsNexttilcr {
-            SbsNexttilcr(0)
+        fn default() -> Nexttilcr {
+            Nexttilcr(0)
         }
     }
-    impl core::fmt::Debug for SbsNexttilcr {
+    impl core::fmt::Debug for Nexttilcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("SbsNexttilcr")
-                .field("nexttil", &self.nexttil())
-                .finish()
+            f.debug_struct("Nexttilcr").field("nexttil", &self.nexttil()).finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for SbsNexttilcr {
+    impl defmt::Format for Nexttilcr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "SbsNexttilcr {{ nexttil: {:?} }}", self.nexttil())
+            defmt::write!(f, "Nexttilcr {{ nexttil: {:?} }}", self.nexttil())
         }
     }
     #[doc = "SBS product mode and configuration register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct SbsPmcr(pub u32);
-    impl SbsPmcr {
+    pub struct Pmcr(pub u32);
+    impl Pmcr {
         #[doc = "Fast-mode Plus command on PB(6)."]
         #[must_use]
         #[inline(always)]
@@ -839,15 +835,15 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
     }
-    impl Default for SbsPmcr {
+    impl Default for Pmcr {
         #[inline(always)]
-        fn default() -> SbsPmcr {
-            SbsPmcr(0)
+        fn default() -> Pmcr {
+            Pmcr(0)
         }
     }
-    impl core::fmt::Debug for SbsPmcr {
+    impl core::fmt::Debug for Pmcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("SbsPmcr")
+            f.debug_struct("Pmcr")
                 .field("pb6_fmplus", &self.pb6_fmplus())
                 .field("pb7_fmplus", &self.pb7_fmplus())
                 .field("pb8_fmplus", &self.pb8_fmplus())
@@ -864,11 +860,11 @@ pub mod regs {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for SbsPmcr {
+    impl defmt::Format for Pmcr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "SbsPmcr {{ pb6_fmplus: {=bool:?}, pb7_fmplus: {=bool:?}, pb8_fmplus: {=bool:?}, pb9_fmplus: {=bool:?}, pa11_fmplus: {=bool:?}, pa12_fmplus: {=bool:?}, pb3_fmplus: {=bool:?}, pb4_fmplus: {=bool:?}, eth_sel_phy: {:?}, ethintpol: {:?}, ethpdack: {:?}, ethtxlpi: {=bool:?} }}",
+                "Pmcr {{ pb6_fmplus: {=bool:?}, pb7_fmplus: {=bool:?}, pb8_fmplus: {=bool:?}, pb9_fmplus: {=bool:?}, pa11_fmplus: {=bool:?}, pa12_fmplus: {=bool:?}, pb3_fmplus: {=bool:?}, pb4_fmplus: {=bool:?}, eth_sel_phy: {:?}, ethintpol: {:?}, ethpdack: {:?}, ethtxlpi: {=bool:?} }}",
                 self.pb6_fmplus(),
                 self.pb7_fmplus(),
                 self.pb8_fmplus(),
@@ -890,9 +886,9 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cs1 {
-        #[doc = "Code from the cell (available in the SBS_CCVR)."]
+        #[doc = "Code from the cell (available in the CCVR)."]
         B0x0 = 0x0,
-        #[doc = "Code from SBS_CCCR."]
+        #[doc = "Code from CCCR."]
         B0x1 = 0x01,
     }
     impl Cs1 {
@@ -984,17 +980,16 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum EthSelPhy {
         #[doc = "GMII or MII."]
-        B0x0 = 0x0,
+        MiiGmii = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         #[doc = "RMII."]
-        B0x4 = 0x04,
+        Rmii = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
-        #[doc = "10BT1S."]
-        B0x8 = 0x08,
+        _RESERVED_8 = 0x08,
         _RESERVED_9 = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,

@@ -636,17 +636,25 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "ETH1",
         address: 0x40028000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "eth",
+            version: "v2b",
+            block: "ETH",
+            ir: &eth::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK1",
-            kernel_clock: Clock("HCLK1"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "CCIPR3",
+                field: "ETH1CLKSEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "AHB1ENR",
-                field: "ETHEN",
+                field: "ETH1EN",
             }),
             reset: Some(PeripheralRccRegister {
                 register: "AHB1RSTR",
-                field: "ETHRST",
+                field: "ETH1RST",
             }),
             stop_mode: StopMode::Stop1,
         }),
@@ -3467,7 +3475,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             block: "SYSCFG",
             ir: &syscfg::REGISTERS,
         }),
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            bus_clock: "PCLK3",
+            kernel_clock: Clock("PCLK3"),
+            enable: Some(PeripheralRccRegister {
+                register: "APB3ENR",
+                field: "SBSEN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "APB3RSTR",
+                field: "SBSRST",
+            }),
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[],
         dma_channels: &[],
         triggers: &[],
@@ -7742,6 +7762,8 @@ pub mod can;
 pub mod cordic;
 #[path = "../registers/dbgmcu_c5.rs"]
 pub mod dbgmcu;
+#[path = "../registers/eth_v2b.rs"]
+pub mod eth;
 #[path = "../registers/exti_u5.rs"]
 pub mod exti;
 #[path = "../registers/fdcanram_v1.rs"]

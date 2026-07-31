@@ -2691,6 +2691,18 @@
             "kind": "syscfg",
             "version": "c5",
             "block": "SYSCFG"
+          },
+          "rcc": {
+            "bus_clock": "PCLK3",
+            "kernel_clock": "PCLK3",
+            "enable": {
+              "register": "APB3ENR",
+              "field": "SBSEN"
+            },
+            "reset": {
+              "register": "APB3RSTR",
+              "field": "SBSRST"
+            }
           }
         },
         {

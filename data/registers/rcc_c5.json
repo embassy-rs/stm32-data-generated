@@ -249,25 +249,25 @@
         "bit_size": 1
       },
       {
-        "name": "ETHCKEN",
+        "name": "ETH1CKEN",
         "description": "ETH internal clock enable",
         "bit_offset": 18,
         "bit_size": 1
       },
       {
-        "name": "ETHEN",
+        "name": "ETH1EN",
         "description": "ETH clock enable",
         "bit_offset": 19,
         "bit_size": 1
       },
       {
-        "name": "ETHTXEN",
+        "name": "ETH1TXEN",
         "description": "ETHTX clock enable",
         "bit_offset": 20,
         "bit_size": 1
       },
       {
-        "name": "ETHRXEN",
+        "name": "ETH1RXEN",
         "description": "ETHRX clock enable",
         "bit_offset": 21,
         "bit_size": 1
@@ -326,25 +326,25 @@
         "bit_size": 1
       },
       {
-        "name": "ETHCKLPEN",
+        "name": "ETH1CKLPEN",
         "description": "ETH internal clock enable during Sleep mode",
         "bit_offset": 18,
         "bit_size": 1
       },
       {
-        "name": "ETHLPEN",
+        "name": "ETH1LPEN",
         "description": "ETH clock enable during Sleep mode",
         "bit_offset": 19,
         "bit_size": 1
       },
       {
-        "name": "ETHTXLPEN",
+        "name": "ETH1TXLPEN",
         "description": "ETHTX clock enable during Sleep mode",
         "bit_offset": 20,
         "bit_size": 1
       },
       {
-        "name": "ETHRXLPEN",
+        "name": "ETH1RXLPEN",
         "description": "ETHRX clock enable during Sleep mode",
         "bit_offset": 21,
         "bit_size": 1
@@ -403,7 +403,7 @@
         "bit_size": 1
       },
       {
-        "name": "ETHRST",
+        "name": "ETH1RST",
         "description": "ETHERNET reset",
         "bit_offset": 19,
         "bit_size": 1
@@ -1610,39 +1610,39 @@
         "enum": "XSPISEL"
       },
       {
-        "name": "ETHREFCLKSEL",
+        "name": "ETH1REFCLKSEL",
         "description": "ETH RMII reference clock source selection",
         "bit_offset": 8,
         "bit_size": 1,
-        "enum": "ETHREFCLKSEL"
+        "enum": "ETH1REFCLKSEL"
       },
       {
-        "name": "ETHPTPCLKSEL",
+        "name": "ETH1PTPCLKSEL",
         "description": "ETH PTP clock source selection",
         "bit_offset": 10,
         "bit_size": 2,
-        "enum": "ETHPTPCLKSEL"
+        "enum": "ETH1PTPCLKSEL"
       },
       {
-        "name": "ETHCLKSEL",
+        "name": "ETH1CLKSEL",
         "description": "ETH clock source selection",
         "bit_offset": 13,
         "bit_size": 2,
-        "enum": "ETHCLKSEL"
+        "enum": "ETH1CLKSEL"
       },
       {
-        "name": "ETHCLKDIV",
+        "name": "ETH1CLKDIV",
         "description": "Ethernet clock division",
         "bit_offset": 26,
         "bit_size": 2,
-        "enum": "ETHCLKDIV"
+        "enum": "ETH1CLKDIV"
       },
       {
-        "name": "ETHPTPDIV",
+        "name": "ETH1PTPDIV",
         "description": "Ethernet PTP clock division",
         "bit_offset": 28,
         "bit_size": 4,
-        "enum": "ETHPTPDIV"
+        "enum": "ETH1PTPDIV"
       }
     ]
   },
@@ -2386,7 +2386,7 @@
       }
     ]
   },
-  "enum/ETHCLKDIV": {
+  "enum/ETH1CLKDIV": {
     "bit_size": 2,
     "variants": [
       {
@@ -2406,7 +2406,7 @@
       }
     ]
   },
-  "enum/ETHCLKSEL": {
+  "enum/ETH1CLKSEL": {
     "bit_size": 2,
     "variants": [
       {
@@ -2426,7 +2426,7 @@
       }
     ]
   },
-  "enum/ETHPTPCLKSEL": {
+  "enum/ETH1PTPCLKSEL": {
     "bit_size": 2,
     "variants": [
       {
@@ -2446,7 +2446,7 @@
       }
     ]
   },
-  "enum/ETHPTPDIV": {
+  "enum/ETH1PTPDIV": {
     "bit_size": 4,
     "variants": [
       {
@@ -2531,7 +2531,7 @@
       }
     ]
   },
-  "enum/ETHREFCLKSEL": {
+  "enum/ETH1REFCLKSEL": {
     "bit_size": 1,
     "variants": [
       {

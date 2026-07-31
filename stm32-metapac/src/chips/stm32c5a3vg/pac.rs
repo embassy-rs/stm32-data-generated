@@ -459,7 +459,7 @@ pub const CORDIC: cordic::Cordic = unsafe { cordic::Cordic::from_ptr(0x4002_3800
 pub const RAMCFG: *mut () = 0x4002_6000usize as _;
 pub const RAMCFG_SRAM1: *mut () = 0x4002_6000usize as _;
 pub const RAMCFG_SRAM2: *mut () = 0x4002_6040usize as _;
-pub const ETH1: *mut () = 0x4002_8000usize as _;
+pub const ETH1: eth::Eth = unsafe { eth::Eth::from_ptr(0x4002_8000usize as _) };
 pub const ICACHE: *mut () = 0x4003_0400usize as _;
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0000usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0400usize as _) };
@@ -510,6 +510,8 @@ pub mod can;
 pub mod cordic;
 #[path = "../../peripherals/dbgmcu_c5.rs"]
 pub mod dbgmcu;
+#[path = "../../peripherals/eth_v2b.rs"]
+pub mod eth;
 #[path = "../../peripherals/exti_u5.rs"]
 pub mod exti;
 #[path = "../../peripherals/fdcanram_v1.rs"]

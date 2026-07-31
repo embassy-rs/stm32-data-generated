@@ -438,7 +438,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ethcken",
+                    name: "eth1cken",
                     description: Some("ETH internal clock enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
@@ -446,7 +446,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ethen",
+                    name: "eth1en",
                     description: Some("ETH clock enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
@@ -454,7 +454,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ethtxen",
+                    name: "eth1txen",
                     description: Some("ETHTX clock enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
@@ -462,7 +462,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ethrxen",
+                    name: "eth1rxen",
                     description: Some("ETHRX clock enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
@@ -542,7 +542,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ethcklpen",
+                    name: "eth1cklpen",
                     description: Some("ETH internal clock enable during Sleep mode"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
@@ -550,7 +550,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ethlpen",
+                    name: "eth1lpen",
                     description: Some("ETH clock enable during Sleep mode"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
@@ -558,7 +558,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ethtxlpen",
+                    name: "eth1txlpen",
                     description: Some("ETHTX clock enable during Sleep mode"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
@@ -566,7 +566,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ethrxlpen",
+                    name: "eth1rxlpen",
                     description: Some("ETHRX clock enable during Sleep mode"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
@@ -646,7 +646,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ethrst",
+                    name: "eth1rst",
                     description: Some("ETHERNET reset"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
@@ -2248,44 +2248,44 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some("Xspisel"),
                 },
                 Field {
-                    name: "ethrefclksel",
+                    name: "eth1refclksel",
                     description: Some("ETH RMII reference clock source selection"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ethrefclksel"),
+                    enumm: Some("Eth1refclksel"),
                 },
                 Field {
-                    name: "ethptpclksel",
+                    name: "eth1ptpclksel",
                     description: Some("ETH PTP clock source selection"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Ethptpclksel"),
+                    enumm: Some("Eth1ptpclksel"),
                 },
                 Field {
-                    name: "ethclksel",
+                    name: "eth1clksel",
                     description: Some("ETH clock source selection"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Ethclksel"),
+                    enumm: Some("Eth1clksel"),
                 },
                 Field {
-                    name: "ethclkdiv",
+                    name: "eth1clkdiv",
                     description: Some("Ethernet clock division"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Ethclkdiv"),
+                    enumm: Some("Eth1clkdiv"),
                 },
                 Field {
-                    name: "ethptpdiv",
+                    name: "eth1ptpdiv",
                     description: Some("Ethernet PTP clock division"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 4,
                     array: None,
-                    enumm: Some("Ethptpdiv"),
+                    enumm: Some("Eth1ptpdiv"),
                 },
             ],
         },
@@ -3235,7 +3235,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ethclkdiv",
+            name: "Eth1clkdiv",
             description: None,
             bit_size: 2,
             variants: &[
@@ -3257,7 +3257,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ethclksel",
+            name: "Eth1clksel",
             description: None,
             bit_size: 2,
             variants: &[
@@ -3279,7 +3279,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ethptpclksel",
+            name: "Eth1ptpclksel",
             description: None,
             bit_size: 2,
             variants: &[
@@ -3301,7 +3301,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ethptpdiv",
+            name: "Eth1ptpdiv",
             description: None,
             bit_size: 4,
             variants: &[
@@ -3388,7 +3388,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Ethrefclksel",
+            name: "Eth1refclksel",
             description: None,
             bit_size: 1,
             variants: &[

@@ -481,6 +481,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
+                    name: "slven",
+                    description: Some("Synchronous slave mode enable"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "addm",
                     description: Some("7-bit Address Detection/4-bit Address Detection"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),

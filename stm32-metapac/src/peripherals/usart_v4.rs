@@ -551,6 +551,18 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr2(pub u32);
     impl Cr2 {
+        #[doc = "Synchronous slave mode enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn slven(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Synchronous slave mode enable"]
+        #[inline(always)]
+        pub const fn set_slven(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
         #[doc = "7-bit Address Detection/4-bit Address Detection"]
         #[must_use]
         #[inline(always)]
@@ -777,6 +789,7 @@ pub mod regs {
     impl core::fmt::Debug for Cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr2")
+                .field("slven", &self.slven())
                 .field("addm", &self.addm())
                 .field("lbdl", &self.lbdl())
                 .field("lbdie", &self.lbdie())
@@ -803,7 +816,8 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Cr2 {{ addm: {:?}, lbdl: {:?}, lbdie: {=bool:?}, lbcl: {=bool:?}, cpha: {:?}, cpol: {:?}, clken: {=bool:?}, stop: {:?}, linen: {=bool:?}, swap: {=bool:?}, rxinv: {=bool:?}, txinv: {=bool:?}, datainv: {=bool:?}, msbfirst: {:?}, abren: {=bool:?}, abrmod: {:?}, rtoen: {=bool:?}, add: {=u8:?} }}",
+                "Cr2 {{ slven: {=bool:?}, addm: {:?}, lbdl: {:?}, lbdie: {=bool:?}, lbcl: {=bool:?}, cpha: {:?}, cpol: {:?}, clken: {=bool:?}, stop: {:?}, linen: {=bool:?}, swap: {=bool:?}, rxinv: {=bool:?}, txinv: {=bool:?}, datainv: {=bool:?}, msbfirst: {:?}, abren: {=bool:?}, abrmod: {:?}, rtoen: {=bool:?}, add: {=u8:?} }}",
+                self.slven(),
                 self.addm(),
                 self.lbdl(),
                 self.lbdie(),

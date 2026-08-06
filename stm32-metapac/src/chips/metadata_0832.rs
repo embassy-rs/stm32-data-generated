@@ -896,7 +896,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APBRSTR1",
                 field: "LPTIM1RST",
             }),
-            stop_mode: StopMode::Stop2,
+            stop_mode: StopMode::Standby,
         }),
         pins: &[
             PeripheralPin {
@@ -997,7 +997,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APBRSTR1",
                 field: "LPTIM2RST",
             }),
-            stop_mode: StopMode::Stop2,
+            stop_mode: StopMode::Standby,
         }),
         pins: &[
             PeripheralPin {

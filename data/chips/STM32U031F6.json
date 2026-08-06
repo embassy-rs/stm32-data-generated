@@ -965,7 +965,7 @@
               "register": "APBRSTR1",
               "field": "LPTIM1RST"
             },
-            "stop_mode": "Stop2"
+            "stop_mode": "Standby"
           },
           "pins": [
             {
@@ -1065,7 +1065,7 @@
               "register": "APBRSTR1",
               "field": "LPTIM2RST"
             },
-            "stop_mode": "Stop2"
+            "stop_mode": "Standby"
           },
           "pins": [
             {

@@ -2645,6 +2645,24 @@
           ]
         },
         {
+          "name": "TS_CAL1",
+          "address": 536835496,
+          "registers": {
+            "kind": "tscal",
+            "version": "v1",
+            "block": "TSCAL"
+          }
+        },
+        {
+          "name": "TS_CAL2",
+          "address": 536835528,
+          "registers": {
+            "kind": "tscal",
+            "version": "v1",
+            "block": "TSCAL"
+          }
+        },
+        {
           "name": "UID",
           "address": 536835472,
           "registers": {
@@ -5459,6 +5477,24 @@
               "source": "COMP1_OUT_OR_COMP2_OUT"
             }
           ]
+        },
+        {
+          "name": "TS_CAL1",
+          "address": 536835496,
+          "registers": {
+            "kind": "tscal",
+            "version": "v1",
+            "block": "TSCAL"
+          }
+        },
+        {
+          "name": "TS_CAL2",
+          "address": 536835528,
+          "registers": {
+            "kind": "tscal",
+            "version": "v1",
+            "block": "TSCAL"
+          }
         },
         {
           "name": "UID",

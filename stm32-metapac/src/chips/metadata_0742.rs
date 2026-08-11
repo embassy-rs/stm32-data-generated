@@ -4848,6 +4848,38 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "TS_CAL1",
+        address: 0x1fff75a8,
+        registers: Some(PeripheralRegisters {
+            kind: "tscal",
+            version: "v1",
+            block: "TSCAL",
+            ir: &tscal::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
+        name: "TS_CAL2",
+        address: 0x1fff75ca,
+        registers: Some(PeripheralRegisters {
+            kind: "tscal",
+            version: "v1",
+            block: "TSCAL",
+            ir: &tscal::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
         name: "UART4",
         address: 0x40004c00,
         registers: Some(PeripheralRegisters {
@@ -6077,6 +6109,8 @@ pub mod syscfg;
 pub mod timer;
 #[path = "../registers/tsc_v3.rs"]
 pub mod tsc;
+#[path = "../registers/tscal_v1.rs"]
+pub mod tscal;
 #[path = "../registers/uid_v1.rs"]
 pub mod uid;
 #[path = "../registers/usart_v3.rs"]

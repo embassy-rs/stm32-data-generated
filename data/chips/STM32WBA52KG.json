@@ -2338,6 +2338,24 @@
           ]
         },
         {
+          "name": "TS_CAL1",
+          "address": 200869648,
+          "registers": {
+            "kind": "tscal",
+            "version": "v1",
+            "block": "TSCAL"
+          }
+        },
+        {
+          "name": "TS_CAL2",
+          "address": 200869698,
+          "registers": {
+            "kind": "tscal",
+            "version": "v1",
+            "block": "TSCAL"
+          }
+        },
+        {
           "name": "UID",
           "address": 200869632,
           "registers": {

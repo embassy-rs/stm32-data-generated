@@ -8454,6 +8454,24 @@
           ]
         },
         {
+          "name": "TS_CAL1",
+          "address": 536836652,
+          "registers": {
+            "kind": "tscal",
+            "version": "v1",
+            "block": "TSCAL"
+          }
+        },
+        {
+          "name": "TS_CAL2",
+          "address": 536836654,
+          "registers": {
+            "kind": "tscal",
+            "version": "v1",
+            "block": "TSCAL"
+          }
+        },
+        {
           "name": "UART4",
           "address": 1073761280,
           "registers": {

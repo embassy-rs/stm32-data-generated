@@ -153,6 +153,8 @@ mod _vectors {
 }
 pub const UID: uid::Uid = unsafe { uid::Uid::from_ptr(0x1ff8_0050usize as _) };
 pub const VREFINTCAL: vrefintcal::Vrefintcal = unsafe { vrefintcal::Vrefintcal::from_ptr(0x1ff8_0078usize as _) };
+pub const TS_CAL1: tscal::Tscal = unsafe { tscal::Tscal::from_ptr(0x1ff8_007ausize as _) };
+pub const TS_CAL2: tscal::Tscal = unsafe { tscal::Tscal::from_ptr(0x1ff8_007eusize as _) };
 pub const TIM2: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_0000usize as _) };
 pub const TIM3: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_0400usize as _) };
 pub const TIM6: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1000usize as _) };
@@ -247,6 +249,8 @@ pub mod syscfg;
 pub mod timer;
 #[path = "../../peripherals/tsc_v3.rs"]
 pub mod tsc;
+#[path = "../../peripherals/tscal_v1.rs"]
+pub mod tscal;
 #[path = "../../peripherals/uid_v1.rs"]
 pub mod uid;
 #[path = "../../peripherals/usart_v3.rs"]

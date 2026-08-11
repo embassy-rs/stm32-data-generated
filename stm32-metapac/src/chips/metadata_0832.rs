@@ -117,11 +117,25 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             block: "COMP",
             ir: &comp::REGISTERS,
         }),
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            bus_clock: "PCLK1",
+            kernel_clock: Clock("PCLK1"),
+            enable: Some(PeripheralRccRegister {
+                register: "APBENR2",
+                field: "SYSCFGEN",
+            }),
+            reset: None,
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[
             PeripheralPin {
                 pin: "PA0",
                 signal: "INM",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PA0",
+                signal: "INM2",
                 af: None,
             },
             PeripheralPin {
@@ -135,6 +149,11 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
+                pin: "PA1",
+                signal: "INP2",
+                af: None,
+            },
+            PeripheralPin {
                 pin: "PA11",
                 signal: "OUT",
                 af: Some(12),
@@ -145,8 +164,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
+                pin: "PA4",
+                signal: "INM3",
+                af: None,
+            },
+            PeripheralPin {
                 pin: "PA5",
                 signal: "INM",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PA5",
+                signal: "INM3",
                 af: None,
             },
             PeripheralPin {
@@ -160,6 +189,11 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
+                pin: "PA9",
+                signal: "INP3",
+                af: None,
+            },
+            PeripheralPin {
                 pin: "PB0",
                 signal: "OUT",
                 af: Some(12),
@@ -167,6 +201,11 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PB1",
                 signal: "INM",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PB1",
+                signal: "INM1",
                 af: None,
             },
         ],
@@ -2556,6 +2595,22 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "TSCAL",
+        address: 0x1fff6e68,
+        registers: Some(PeripheralRegisters {
+            kind: "tscal",
+            version: "v1",
+            block: "TSCAL",
+            ir: &tscal::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
         name: "UID",
         address: 0x1fff3e50,
         registers: Some(PeripheralRegisters {
@@ -2894,6 +2949,22 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "VREFINTCAL",
+        address: 0x1fff6ea4,
+        registers: Some(PeripheralRegisters {
+            kind: "vrefintcal",
+            version: "v1",
+            block: "VREFINTCAL",
+            ir: &vrefintcal::REGISTERS,
+        }),
+        rcc: None,
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[],
+        afio: None,
+    },
+    Peripheral {
         name: "WWDG",
         address: 0x40002c00,
         registers: Some(PeripheralRegisters {
@@ -3174,9 +3245,13 @@ pub mod syscfg;
 pub mod timer;
 #[path = "../registers/tsc_v2.rs"]
 pub mod tsc;
+#[path = "../registers/tscal_v1.rs"]
+pub mod tscal;
 #[path = "../registers/uid_v1.rs"]
 pub mod uid;
 #[path = "../registers/usart_v4.rs"]
 pub mod usart;
+#[path = "../registers/vrefintcal_v1.rs"]
+pub mod vrefintcal;
 #[path = "../registers/wwdg_v2.rs"]
 pub mod wwdg;

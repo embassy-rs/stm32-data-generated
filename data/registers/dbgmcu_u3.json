@@ -134,76 +134,14 @@
     "description": "DBGMCU AHB1 peripheral freeze register.",
     "fields": [
       {
-        "name": "DBG_GPDMA0_STOP",
-        "description": "None 0: normal operation. GPDMA channel 0 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 0 is frozen while CPU is in debug mode.",
+        "name": "DBG_GPDMA_STOP",
+        "description": "None 0: normal operation. GPDMA channel y continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel y is frozen while CPU is in debug mode.",
         "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "DBG_GPDMA1_STOP",
-        "description": "None 0: normal operation. GPDMA channel 1 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 1 is frozen while CPU is in debug mode.",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "DBG_GPDMA2_STOP",
-        "description": "None 0: normal operation. GPDMA channel 2 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 2 is frozen while CPU is in debug mode.",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "DBG_GPDMA3_STOP",
-        "description": "None 0: normal operation. GPDMA channel 3 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 3 is frozen while CPU is in debug mode.",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "DBG_GPDMA4_STOP",
-        "description": "None 0: normal operation. GPDMA channel 4 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 4 is frozen while CPU is in debug mode.",
-        "bit_offset": 4,
-        "bit_size": 1
-      },
-      {
-        "name": "DBG_GPDMA5_STOP",
-        "description": "None 0: normal operation. GPDMA channel 5 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 5 is frozen while CPU is in debug mode.",
-        "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "DBG_GPDMA6_STOP",
-        "description": "None 0: normal operation. GPDMA channel 6 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 6 is frozen while CPU is in debug mode.",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
-        "name": "DBG_GPDMA7_STOP",
-        "description": "None 0: normal operation. GPDMA channel 7 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 7 is frozen while CPU is in debug mode.",
-        "bit_offset": 7,
-        "bit_size": 1
-      },
-      {
-        "name": "DBG_GPDMA8_STOP",
-        "description": "None 0: normal operation. GPDMA channel 8 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 8 is frozen while CPU is in debug mode.",
-        "bit_offset": 8,
-        "bit_size": 1
-      },
-      {
-        "name": "DBG_GPDMA9_STOP",
-        "description": "None 0: normal operation. GPDMA channel 9 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 9 is frozen while CPU is in debug mode.",
-        "bit_offset": 9,
-        "bit_size": 1
-      },
-      {
-        "name": "DBG_GPDMA10_STOP",
-        "description": "None 0: normal operation. GPDMA channel 10 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 10 is frozen while CPU is in debug mode.",
-        "bit_offset": 10,
-        "bit_size": 1
-      },
-      {
-        "name": "DBG_GPDMA11_STOP",
-        "description": "None 0: normal operation. GPDMA channel 11 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 11 is frozen while CPU is in debug mode.",
-        "bit_offset": 11,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 12,
+          "stride": 1
+        }
       }
     ]
   },

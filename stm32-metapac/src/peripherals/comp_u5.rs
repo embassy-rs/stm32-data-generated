@@ -457,9 +457,9 @@ bitfield of the other register (required for window mode)."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WindowOut {
         #[doc = "Comparator 1 value."]
-        Comp1Value = 0x0,
+        Comp1value = 0x0,
         #[doc = "Comparator 1 value XOR comparator 2 value (required for window mode)."]
-        Comp1ValueXorComp2Value = 0x01,
+        Comp1xorComp2value = 0x01,
     }
     impl WindowOut {
         #[inline(always)]

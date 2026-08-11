@@ -120,149 +120,21 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Ahb1fzr(pub u32);
     impl Ahb1fzr {
-        #[doc = "None 0: normal operation. GPDMA channel 0 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 0 is frozen while CPU is in debug mode."]
+        #[doc = "None 0: normal operation. GPDMA channel y continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel y is frozen while CPU is in debug mode."]
         #[must_use]
         #[inline(always)]
-        pub const fn dbg_gpdma0_stop(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
+        pub const fn dbg_gpdma_stop(&self, n: usize) -> bool {
+            assert!(n < 12usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "None 0: normal operation. GPDMA channel 0 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 0 is frozen while CPU is in debug mode."]
+        #[doc = "None 0: normal operation. GPDMA channel y continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel y is frozen while CPU is in debug mode."]
         #[inline(always)]
-        pub const fn set_dbg_gpdma0_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 1 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 1 is frozen while CPU is in debug mode."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_stop(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 1 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 1 is frozen while CPU is in debug mode."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 2 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 2 is frozen while CPU is in debug mode."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma2_stop(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 2 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 2 is frozen while CPU is in debug mode."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma2_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 3 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 3 is frozen while CPU is in debug mode."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma3_stop(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 3 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 3 is frozen while CPU is in debug mode."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma3_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 4 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 4 is frozen while CPU is in debug mode."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma4_stop(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 4 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 4 is frozen while CPU is in debug mode."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma4_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 5 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 5 is frozen while CPU is in debug mode."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma5_stop(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 5 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 5 is frozen while CPU is in debug mode."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma5_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 6 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 6 is frozen while CPU is in debug mode."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma6_stop(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 6 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 6 is frozen while CPU is in debug mode."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma6_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 7 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 7 is frozen while CPU is in debug mode."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma7_stop(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 7 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 7 is frozen while CPU is in debug mode."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma7_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 8 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 8 is frozen while CPU is in debug mode."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma8_stop(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 8 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 8 is frozen while CPU is in debug mode."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma8_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 9 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 9 is frozen while CPU is in debug mode."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma9_stop(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 9 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 9 is frozen while CPU is in debug mode."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma9_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 10 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 10 is frozen while CPU is in debug mode."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma10_stop(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 10 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 10 is frozen while CPU is in debug mode."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma10_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 11 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 11 is frozen while CPU is in debug mode."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma11_stop(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[doc = "None 0: normal operation. GPDMA channel 11 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 11 is frozen while CPU is in debug mode."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma11_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        pub const fn set_dbg_gpdma_stop(&mut self, n: usize, val: bool) {
+            assert!(n < 12usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Ahb1fzr {
@@ -274,18 +146,18 @@ pub mod regs {
     impl core::fmt::Debug for Ahb1fzr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb1fzr")
-                .field("dbg_gpdma0_stop", &self.dbg_gpdma0_stop())
-                .field("dbg_gpdma1_stop", &self.dbg_gpdma1_stop())
-                .field("dbg_gpdma2_stop", &self.dbg_gpdma2_stop())
-                .field("dbg_gpdma3_stop", &self.dbg_gpdma3_stop())
-                .field("dbg_gpdma4_stop", &self.dbg_gpdma4_stop())
-                .field("dbg_gpdma5_stop", &self.dbg_gpdma5_stop())
-                .field("dbg_gpdma6_stop", &self.dbg_gpdma6_stop())
-                .field("dbg_gpdma7_stop", &self.dbg_gpdma7_stop())
-                .field("dbg_gpdma8_stop", &self.dbg_gpdma8_stop())
-                .field("dbg_gpdma9_stop", &self.dbg_gpdma9_stop())
-                .field("dbg_gpdma10_stop", &self.dbg_gpdma10_stop())
-                .field("dbg_gpdma11_stop", &self.dbg_gpdma11_stop())
+                .field("dbg_gpdma_stop[0]", &self.dbg_gpdma_stop(0usize))
+                .field("dbg_gpdma_stop[1]", &self.dbg_gpdma_stop(1usize))
+                .field("dbg_gpdma_stop[2]", &self.dbg_gpdma_stop(2usize))
+                .field("dbg_gpdma_stop[3]", &self.dbg_gpdma_stop(3usize))
+                .field("dbg_gpdma_stop[4]", &self.dbg_gpdma_stop(4usize))
+                .field("dbg_gpdma_stop[5]", &self.dbg_gpdma_stop(5usize))
+                .field("dbg_gpdma_stop[6]", &self.dbg_gpdma_stop(6usize))
+                .field("dbg_gpdma_stop[7]", &self.dbg_gpdma_stop(7usize))
+                .field("dbg_gpdma_stop[8]", &self.dbg_gpdma_stop(8usize))
+                .field("dbg_gpdma_stop[9]", &self.dbg_gpdma_stop(9usize))
+                .field("dbg_gpdma_stop[10]", &self.dbg_gpdma_stop(10usize))
+                .field("dbg_gpdma_stop[11]", &self.dbg_gpdma_stop(11usize))
                 .finish()
         }
     }
@@ -294,19 +166,19 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb1fzr {{ dbg_gpdma0_stop: {=bool:?}, dbg_gpdma1_stop: {=bool:?}, dbg_gpdma2_stop: {=bool:?}, dbg_gpdma3_stop: {=bool:?}, dbg_gpdma4_stop: {=bool:?}, dbg_gpdma5_stop: {=bool:?}, dbg_gpdma6_stop: {=bool:?}, dbg_gpdma7_stop: {=bool:?}, dbg_gpdma8_stop: {=bool:?}, dbg_gpdma9_stop: {=bool:?}, dbg_gpdma10_stop: {=bool:?}, dbg_gpdma11_stop: {=bool:?} }}",
-                self.dbg_gpdma0_stop(),
-                self.dbg_gpdma1_stop(),
-                self.dbg_gpdma2_stop(),
-                self.dbg_gpdma3_stop(),
-                self.dbg_gpdma4_stop(),
-                self.dbg_gpdma5_stop(),
-                self.dbg_gpdma6_stop(),
-                self.dbg_gpdma7_stop(),
-                self.dbg_gpdma8_stop(),
-                self.dbg_gpdma9_stop(),
-                self.dbg_gpdma10_stop(),
-                self.dbg_gpdma11_stop()
+                "Ahb1fzr {{ dbg_gpdma_stop[0]: {=bool:?}, dbg_gpdma_stop[1]: {=bool:?}, dbg_gpdma_stop[2]: {=bool:?}, dbg_gpdma_stop[3]: {=bool:?}, dbg_gpdma_stop[4]: {=bool:?}, dbg_gpdma_stop[5]: {=bool:?}, dbg_gpdma_stop[6]: {=bool:?}, dbg_gpdma_stop[7]: {=bool:?}, dbg_gpdma_stop[8]: {=bool:?}, dbg_gpdma_stop[9]: {=bool:?}, dbg_gpdma_stop[10]: {=bool:?}, dbg_gpdma_stop[11]: {=bool:?} }}",
+                self.dbg_gpdma_stop(0usize),
+                self.dbg_gpdma_stop(1usize),
+                self.dbg_gpdma_stop(2usize),
+                self.dbg_gpdma_stop(3usize),
+                self.dbg_gpdma_stop(4usize),
+                self.dbg_gpdma_stop(5usize),
+                self.dbg_gpdma_stop(6usize),
+                self.dbg_gpdma_stop(7usize),
+                self.dbg_gpdma_stop(8usize),
+                self.dbg_gpdma_stop(9usize),
+                self.dbg_gpdma_stop(10usize),
+                self.dbg_gpdma_stop(11usize)
             )
         }
     }

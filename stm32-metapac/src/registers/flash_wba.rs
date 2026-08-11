@@ -1777,19 +1777,19 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B0x55",
+                    name: "Level0",
+                    description: Some("Level 0 (readout protection not active)"),
+                    value: 170,
+                },
+                EnumVariant {
+                    name: "Level05",
                     description: Some(
                         "Level 0.5 (readout protection not active, only non-secure debug access is possible). Only available when TrustZone is active (TZEN=1)",
                     ),
                     value: 85,
                 },
                 EnumVariant {
-                    name: "B0xAa",
-                    description: Some("Level 0 (readout protection not active)"),
-                    value: 170,
-                },
-                EnumVariant {
-                    name: "B0xCc",
+                    name: "Level2",
                     description: Some("Level 2 (chip readout protection active)"),
                     value: 204,
                 },

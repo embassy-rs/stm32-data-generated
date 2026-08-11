@@ -327,7 +327,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Vbe"),
+                    enumm: None,
                 },
                 Field {
                     name: "vbrs",
@@ -1449,7 +1449,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Wusel"),
+                    enumm: Some("Wusel1"),
                 },
                 Field {
                     name: "wusel2",
@@ -1457,7 +1457,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Wusel"),
+                    enumm: Some("Wusel2"),
                 },
                 Field {
                     name: "wusel3",
@@ -1465,7 +1465,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Wusel"),
+                    enumm: Some("Wusel3"),
                 },
                 Field {
                     name: "wusel4",
@@ -1473,7 +1473,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Wusel"),
+                    enumm: Some("Wusel4"),
                 },
                 Field {
                     name: "wusel5",
@@ -1481,7 +1481,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Wusel"),
+                    enumm: Some("Wusel5"),
                 },
                 Field {
                     name: "wusel6",
@@ -1489,7 +1489,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Wusel"),
+                    enumm: Some("Wusel6"),
                 },
                 Field {
                     name: "wusel7",
@@ -1497,7 +1497,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Wusel"),
+                    enumm: Some("Wusel7"),
                 },
                 Field {
                     name: "wusel8",
@@ -1505,7 +1505,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Wusel"),
+                    enumm: Some("Wusel8"),
                 },
             ],
         },
@@ -1867,14 +1867,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "LowPower",
                     description: Some(
                         "SRAM4 enters low-power mode in Stop 0, 1 and 2 modes (source biasing for lower-power consumption).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Normal",
                     description: Some(
                         "SRAM4 remains in normal mode in Stop 0, 1 and 2 modes (higher consumption but no SRAM4 wakeup time).",
                     ),
@@ -1905,14 +1905,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("Temperature < high threshold"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "AboveOrEqual",
                     description: Some("Temperature ≥ high threshold"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Below",
+                    description: Some("Temperature < high threshold"),
+                    value: 0,
                 },
             ],
         },
@@ -1922,12 +1922,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Above",
                     description: Some("Temperature > low threshold"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "BelowOrEqual",
                     description: Some("Temperature ≤ low threshold"),
                     value: 1,
                 },
@@ -1939,31 +1939,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("Backup domain voltage level < high threshold"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "AboveOrEqual",
                     description: Some("Backup domain voltage level ≥ high threshold"),
                     value: 1,
                 },
-            ],
-        },
-        Enum {
-            name: "Vbe",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("VBAT battery charging disabled"),
+                    name: "Below",
+                    description: Some("Backup domain voltage level < high threshold"),
                     value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("VBAT battery charging enabled"),
-                    value: 1,
                 },
             ],
         },
@@ -1973,14 +1956,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("Charge VBAT through a 5 kΩ resistor"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "R15kOhm",
                     description: Some("Charge VBAT through a 1.5 kΩ resistor"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "R5kOhm",
+                    description: Some("Charge VBAT through a 5 kΩ resistor"),
+                    value: 0,
                 },
             ],
         },
@@ -2031,28 +2014,217 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Wusel",
+            name: "Wusel1",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("WKUP7_0"),
+                    name: "Pa0",
+                    description: Some("WKUP1 sourced from PA0"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
-                    description: Some("WKUP7_1"),
+                    name: "Pb2",
+                    description: Some("WKUP1 sourced from PB2"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
-                    description: Some("WKUP7_2"),
+                    name: "Pe4",
+                    description: Some("WKUP1 sourced from PE4"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
-                    description: Some("WKUP7_3"),
+                    name: "Reserved",
+                    description: Some("Reserved"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Wusel2",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Pa4",
+                    description: Some("WKUP2 sourced from PA4"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Pc13",
+                    description: Some("WKUP2 sourced from PC13"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Pe5",
+                    description: Some("WKUP2 sourced from PE5"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Reserved",
+                    description: Some("Reserved"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Wusel3",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Pa1",
+                    description: Some("WKUP3 sourced from PA1"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Pb6",
+                    description: Some("WKUP3 sourced from PB6"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Pe6",
+                    description: Some("WKUP3 sourced from PE6"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Reserved",
+                    description: Some("Reserved"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Wusel4",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Pa2",
+                    description: Some("WKUP4 sourced from PA2"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Pb1",
+                    description: Some("WKUP4 sourced from PB1"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Pb7",
+                    description: Some("WKUP4 sourced from PB7"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Reserved",
+                    description: Some("Reserved"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Wusel5",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "EarlyIwdg",
+                    description: Some("WKUP5 sourced from the early IWDG interrupt"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "Pa3",
+                    description: Some("WKUP5 sourced from PA3"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Pb8",
+                    description: Some("WKUP5 sourced from PB8"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Pc5",
+                    description: Some("WKUP5 sourced from PC5"),
+                    value: 0,
+                },
+            ],
+        },
+        Enum {
+            name: "Wusel6",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Pa5",
+                    description: Some("WKUP6 sourced from PA5"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Pb5",
+                    description: Some("WKUP6 sourced from PB5"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Pe7",
+                    description: Some("WKUP6 sourced from PE7"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Rtc",
+                    description: Some("WKUP6 sourced from RTC_ALRA_S, RTC_ALRB_S, RTC_WUT_S, or RTC_TS_S"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Wusel7",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Pa6",
+                    description: Some("WKUP7 sourced from PA6"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Pb15",
+                    description: Some("WKUP7 sourced from PB15"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Pe8",
+                    description: Some("WKUP7 sourced from PE8"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Rtc",
+                    description: Some("WKUP7 sourced from RTC_ALRA, RTC_ALRB, RTC_WUT, or RTC_TS"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Wusel8",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Pa7",
+                    description: Some("WKUP8 sourced from PA7"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Pb10",
+                    description: Some("WKUP8 sourced from PB10"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Pf2",
+                    description: Some("WKUP8 sourced from PF2"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Tamp",
+                    description: Some("WKUP8 sourced from TAMP"),
                     value: 3,
                 },
             ],

@@ -334,7 +334,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Prampds"),
+                    enumm: Some("Srampds"),
                 },
                 Field {
                     name: "pkarampds",
@@ -342,7 +342,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Pkarampds"),
+                    enumm: Some("Srampds"),
                 },
                 Field {
                     name: "flashfwu",
@@ -376,15 +376,17 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Fsten"),
+                    enumm: None,
                 },
                 Field {
                     name: "divclp",
-                    description: Some("Low power mode regulator clock division."),
+                    description: Some(
+                        "Low power mode regulator clock division.\r 000: Low power regulator clock not divided\r Others: Low power regulator clock divided by 2^DIVCLP",
+                    ),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Divclp"),
+                    enumm: None,
                 },
                 Field {
                     name: "selrep",
@@ -400,7 +402,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("V11fbsw"),
+                    enumm: None,
                 },
             ],
         },
@@ -508,7 +510,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Encmode"),
+                    enumm: None,
                 },
                 Field {
                     name: "rfvddhpa",
@@ -572,7 +574,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ptasren"),
+                    enumm: None,
                 },
                 Field {
                     name: "ptasr",
@@ -582,7 +584,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ptasr"),
+                    enumm: None,
                 },
             ],
         },
@@ -606,7 +608,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lpmsec"),
+                    enumm: None,
                 },
                 Field {
                     name: "vdmsec",
@@ -614,7 +616,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Vdmsec"),
+                    enumm: None,
                 },
                 Field {
                     name: "vbsec",
@@ -622,7 +624,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Vbsec"),
+                    enumm: None,
                 },
             ],
         },
@@ -660,7 +662,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Sbf"),
+                    enumm: None,
                 },
                 Field {
                     name: "stop2f",
@@ -702,7 +704,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Usv"),
+                    enumm: None,
                 },
                 Field {
                     name: "io2sv",
@@ -710,7 +712,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Io2sv"),
+                    enumm: None,
                 },
             ],
         },
@@ -726,7 +728,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Regs"),
+                    enumm: Some("Regsel"),
                 },
                 Field {
                     name: "pvdo",
@@ -742,7 +744,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Actvosrdy"),
+                    enumm: None,
                 },
                 Field {
                     name: "actvos",
@@ -869,16 +871,88 @@ pub(crate) static REGISTERS: IR = IR {
             extends: None,
             description: Some("wake-up control register 3."),
             bit_size: 32,
-            fields: &[Field {
-                name: "wusel",
-                description: Some(
-                    "Wakeup and interrupt pin WKUPX selection\r This field must be configured when WUPENX = 0.\r Access can be secured by WUPXSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.",
-                ),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                bit_size: 2,
-                array: Some(Array::Regular(RegularArray { len: 8, stride: 2 })),
-                enumm: Some("Wusel"),
-            }],
+            fields: &[
+                Field {
+                    name: "wusel1",
+                    description: Some(
+                        "Wakeup and interrupt pin WKUP1 selection\r This field must be configured when WUPEN1 = 0.\r Access can be secured by WUP1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some("Wusel1"),
+                },
+                Field {
+                    name: "wusel2",
+                    description: Some(
+                        "Wakeup and interrupt pin WKUP2 selection\r This field must be configured when WUPEN2 = 0.\r Access can be secured by WUP2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some("Wusel2"),
+                },
+                Field {
+                    name: "wusel3",
+                    description: Some(
+                        "Wakeup and interrupt pin WKUP3 selection\r This field must be configured when WUPEN3 = 0.\r Access can be secured by WUP3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some("Wusel3"),
+                },
+                Field {
+                    name: "wusel4",
+                    description: Some(
+                        "Wakeup and interrupt pin WKUP4 selection\r This field must be configured when WUPEN4 = 0.\r Access can be secured by WUP4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some("Wusel4"),
+                },
+                Field {
+                    name: "wusel5",
+                    description: Some(
+                        "Wakeup and interrupt pin WKUP5 selection\r This field must be configured when WUPEN5 = 0.\r Access can be secured by WUP5SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some("Wusel5"),
+                },
+                Field {
+                    name: "wusel6",
+                    description: Some(
+                        "Wakeup and interrupt pin WKUP6 selection\r This field must be configured when WUPEN6 = 0.\r Access can be secured by WUP6SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some("Wusel6"),
+                },
+                Field {
+                    name: "wusel7",
+                    description: Some(
+                        "Wakeup and interrupt pin WKUP7 selection\r This field must be configured when WUPEN7 = 0.\r Access can be secured by WUP7SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some("Wusel7"),
+                },
+                Field {
+                    name: "wusel8",
+                    description: Some(
+                        "Wakeup and interrupt pin WKUP8 selection\r This field must be configured when WUPEN8 = 0.\r Access can be secured by WUP8SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV.",
+                    ),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some("Wusel8"),
+                },
+            ],
         },
         FieldSet {
             name: "Wuscr",
@@ -932,50 +1006,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Actvosrdy",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("VsubCORE/sub is above or below the current voltage scaling provided by ACTVOS."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("VsubCORE /subis equal to the current voltage scaling provided by ACTVOS."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Divclp",
-            description: None,
-            bit_size: 3,
-            variants: &[EnumVariant {
-                name: "B0x0",
-                description: Some("Low power regulator clock not divided."),
-                value: 0,
-            }],
-        },
-        Enum {
-            name: "Encmode",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("2.4 GHz RADIO encryption function disabled."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("2.4 GHz RADIO encryption function enabled."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Flashfwu",
             description: None,
             bit_size: 1,
@@ -992,23 +1022,6 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some(
                         "Flash memory remains in normal mode in Stop 0 and Stop 1 modes (faster wakeup time).",
                     ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Fsten",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("LDO fast startup disabled (limited inrush current)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("LDO fast startup enabled."),
                     value: 1,
                 },
             ],
@@ -1031,27 +1044,20 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Io2sv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("VDDIO2 not supplied, electrical and logical isolation enabled."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("VDDIO2 supply present, electrical and logical isolation disabled."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Lpms",
             description: None,
             bit_size: 3,
             variants: &[
+                EnumVariant {
+                    name: "Standby0",
+                    description: Some("Standby mode"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "Standby1",
+                    description: Some("Standby mode"),
+                    value: 5,
+                },
                 EnumVariant {
                     name: "Stop0",
                     description: Some("Stop 0 mode"),
@@ -1062,24 +1068,10 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Stop 1 mode"),
                     value: 1,
                 },
-            ],
-        },
-        Enum {
-            name: "Lpmsec",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some(
-                        "CR1, CR2 and CSSF in the SR can be read and written with secure or non-secure access.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("CR1, CR2, and CSSF in the SR can be read and written only with secure access."),
-                    value: 1,
+                    name: "Stop2",
+                    description: Some("Stop 2 mode"),
+                    value: 2,
                 },
             ],
         },
@@ -1088,6 +1080,16 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 2,
             variants: &[
+                EnumVariant {
+                    name: "Active0",
+                    description: Some("2.4 GHz RADIO active mode"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Active1",
+                    description: Some("2.4 GHz RADIO active mode"),
+                    value: 3,
+                },
                 EnumVariant {
                     name: "DeepSleep",
                     description: Some("2.4 GHz RADIO deep sleep mode"),
@@ -1106,83 +1108,13 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Sleep",
                     description: Some("2.4 GHz RADIO Sleep mode."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Standby",
                     description: Some("2.4 GHz RADIO Standby mode."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pkarampds",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("PKA SRAM content retained in Stop modes."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("PKA SRAM content lost in Stop modes."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Prampds",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("OTG SRAM content retained in Stop modes."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("OTG SRAM content lost in Stop modes."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ptasr",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("Cleared by software, writing 0."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some(
-                        "Set by hardware when Stop 2 mode PTA retention is enabled in PTASREN and Stop 2 mode is entered.",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ptasren",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("PTA output signals Stop 2 retention feature disabled."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("PTA output signals Stop 2 retention feature enabled."),
                     value: 1,
                 },
             ],
@@ -1257,33 +1189,16 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("VDDRFPA pin selected as regulator REG_VDDHPA input supply."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Auto",
                     description: Some(
                         "regulator REG_VDDHPA input supply selection between VDDRFPA and VDD11, dependent on requested regulated output voltage.",
                     ),
                     value: 1,
                 },
-            ],
-        },
-        Enum {
-            name: "Regs",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("LDO selected."),
+                    name: "Fixed",
+                    description: Some("VDDRFPA pin selected as regulator REG_VDDHPA input supply."),
                     value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("SMPS selected."),
-                    value: 1,
                 },
             ],
         },
@@ -1293,30 +1208,13 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Ldo",
                     description: Some("LDO selected."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Smps",
                     description: Some("SMPS selected."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Sbf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("The device did not enter Standby mode."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("The device entered Standby mode."),
                     value: 1,
                 },
             ],
@@ -1356,74 +1254,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Usv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("VDDUSB not supplied, electrical and logical isolation enabled."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("VDDUSB supply present, electrical and logical isolation disabled."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "V11fbsw",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("V11 feedback fixed before Epod."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("V11 feedback switch enabled:."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Vbsec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("DBPCR can be read and written with secure or non-secure access."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("DBPCR can be read and written only with secure access."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Vdmsec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("SVMCR and CR3 can be read and written with secure or non-secure access."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("SVMCR and CR3 can be read and written only with secure access."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Vos",
             description: None,
             bit_size: 1,
@@ -1458,28 +1288,152 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Wusel",
+            name: "Wusel1",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("reserved"),
+                    name: "Wkup10",
+                    description: Some("WKUP1_0"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Wkup11",
+                    description: Some("WKUP1_1"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Wusel2",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Wkup20",
+                    description: Some("WKUP2_0"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Wkup21",
+                    description: Some("WKUP2_1"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Wusel3",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Wkup31",
                     description: Some("WKUP3_1"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "Wkup32",
                     description: Some("WKUP3_2"),
                     value: 2,
                 },
+            ],
+        },
+        Enum {
+            name: "Wusel4",
+            description: None,
+            bit_size: 2,
+            variants: &[
                 EnumVariant {
-                    name: "B0x3",
-                    description: Some("reserved"),
+                    name: "Wkup40",
+                    description: Some("WKUP4_0"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Wkup41",
+                    description: Some("WKUP4_1"),
+                    value: 1,
+                },
+            ],
+        },
+        Enum {
+            name: "Wusel5",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Wkup51",
+                    description: Some("WKUP5_1"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Wkup52",
+                    description: Some("WKUP5_2"),
+                    value: 2,
+                },
+            ],
+        },
+        Enum {
+            name: "Wusel6",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Wkup60",
+                    description: Some("WKUP6_0"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Wkup61",
+                    description: Some("WKUP6_1"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Wkup63",
+                    description: Some("WKUP6_3 (internal source, does not generate a WKUP interrupt)"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Wusel7",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Wkup70",
+                    description: Some("WKUP7_0"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Wkup71",
+                    description: Some("WKUP7_1"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Wkup73",
+                    description: Some("WKUP7_3 (internal source, does not generate a WKUP interrupt)"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Wusel8",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Wkup81",
+                    description: Some("WKUP8_1"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Wkup82",
+                    description: Some("WKUP8_2"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Wkup83",
+                    description: Some("WKUP8_3 (internal source, does not generate a WKUP interrupt)"),
                     value: 3,
                 },
             ],

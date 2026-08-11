@@ -223,128 +223,16 @@ pub(crate) static REGISTERS: IR = IR {
             extends: None,
             description: Some("DBGMCU AHB1 peripheral freeze register."),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dbg_gpdma0_stop",
-                    description: Some(
-                        "None 0: normal operation. GPDMA channel 0 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 0 is frozen while CPU is in debug mode.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma1_stop",
-                    description: Some(
-                        "None 0: normal operation. GPDMA channel 1 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 1 is frozen while CPU is in debug mode.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma2_stop",
-                    description: Some(
-                        "None 0: normal operation. GPDMA channel 2 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 2 is frozen while CPU is in debug mode.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma3_stop",
-                    description: Some(
-                        "None 0: normal operation. GPDMA channel 3 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 3 is frozen while CPU is in debug mode.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma4_stop",
-                    description: Some(
-                        "None 0: normal operation. GPDMA channel 4 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 4 is frozen while CPU is in debug mode.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma5_stop",
-                    description: Some(
-                        "None 0: normal operation. GPDMA channel 5 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 5 is frozen while CPU is in debug mode.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma6_stop",
-                    description: Some(
-                        "None 0: normal operation. GPDMA channel 6 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 6 is frozen while CPU is in debug mode.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma7_stop",
-                    description: Some(
-                        "None 0: normal operation. GPDMA channel 7 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 7 is frozen while CPU is in debug mode.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma8_stop",
-                    description: Some(
-                        "None 0: normal operation. GPDMA channel 8 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 8 is frozen while CPU is in debug mode.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma9_stop",
-                    description: Some(
-                        "None 0: normal operation. GPDMA channel 9 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 9 is frozen while CPU is in debug mode.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma10_stop",
-                    description: Some(
-                        "None 0: normal operation. GPDMA channel 10 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 10 is frozen while CPU is in debug mode.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma11_stop",
-                    description: Some(
-                        "None 0: normal operation. GPDMA channel 11 continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel 11 is frozen while CPU is in debug mode.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "dbg_gpdma_stop",
+                description: Some(
+                    "None 0: normal operation. GPDMA channel y continues to operate while CPU is in debug mode. 1: stop in debug. GPDMA channel y is frozen while CPU is in debug mode.",
+                ),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 1,
+                array: Some(Array::Regular(RegularArray { len: 12, stride: 1 })),
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Apb1hfzr",

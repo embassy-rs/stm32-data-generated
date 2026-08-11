@@ -279,12 +279,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "Comp1Value",
+                    name: "Comp1value",
                     description: Some("Comparator 1 value."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Comp1ValueXorComp2Value",
+                    name: "Comp1xorComp2value",
                     description: Some("Comparator 1 value XOR comparator 2 value (required for window mode)."),
                     value: 1,
                 },

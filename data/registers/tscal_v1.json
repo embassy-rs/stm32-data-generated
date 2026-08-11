@@ -1,0 +1,21 @@
+{
+  "block/TSCAL": {
+    "description": "Temperature Sensor Factory Calibration",
+    "items": [
+      {
+        "name": "TSCAL1",
+        "description": "Factory calibration point 1",
+        "byte_offset": 0,
+        "access": "Read",
+        "bit_size": 16
+      },
+      {
+        "name": "TSCAL2",
+        "description": "Factory calibration point 2",
+        "byte_offset": 34,
+        "access": "Read",
+        "bit_size": 16
+      }
+    ]
+  }
+}

@@ -158,6 +158,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("timer", &["l0", "v1", "v2", "v3"]),
     ("trng", &["v1"]),
     ("tsc", &["v1", "v2", "v3"]),
+    ("tscal", &["v1"]),
     ("ucpd", &["h5", "v1"]),
     ("uid", &["v1"]),
     ("usart", &["v1", "v2", "v3", "v4"]),

@@ -94,194 +94,18 @@ pub mod regs {
         #[doc = "GPDMA1_CHn suspend in debug."]
         #[must_use]
         #[inline(always)]
-        pub const fn dbg_gpdma1_ch0_stop(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
+        pub const fn dbg_gpdma1_stop(&self, n: usize) -> bool {
+            assert!(n < 16usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "GPDMA1_CHn suspend in debug."]
         #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch0_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch1_stop(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch1_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch2_stop(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch2_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch3_stop(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch3_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch4_stop(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch4_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch5_stop(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch5_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch6_stop(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch6_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch7_stop(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch7_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch8_stop(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch8_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch9_stop(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch9_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch10_stop(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch10_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch11_stop(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch11_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch12_stop(&self) -> bool {
-            let val = (self.0 >> 12usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch12_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch13_stop(&self) -> bool {
-            let val = (self.0 >> 13usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch13_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch14_stop(&self) -> bool {
-            let val = (self.0 >> 14usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch14_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch15_stop(&self) -> bool {
-            let val = (self.0 >> 15usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA1_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch15_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        pub const fn set_dbg_gpdma1_stop(&mut self, n: usize, val: bool) {
+            assert!(n < 16usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Ahb1fz1 {
@@ -293,22 +117,22 @@ pub mod regs {
     impl core::fmt::Debug for Ahb1fz1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb1fz1")
-                .field("dbg_gpdma1_ch0_stop", &self.dbg_gpdma1_ch0_stop())
-                .field("dbg_gpdma1_ch1_stop", &self.dbg_gpdma1_ch1_stop())
-                .field("dbg_gpdma1_ch2_stop", &self.dbg_gpdma1_ch2_stop())
-                .field("dbg_gpdma1_ch3_stop", &self.dbg_gpdma1_ch3_stop())
-                .field("dbg_gpdma1_ch4_stop", &self.dbg_gpdma1_ch4_stop())
-                .field("dbg_gpdma1_ch5_stop", &self.dbg_gpdma1_ch5_stop())
-                .field("dbg_gpdma1_ch6_stop", &self.dbg_gpdma1_ch6_stop())
-                .field("dbg_gpdma1_ch7_stop", &self.dbg_gpdma1_ch7_stop())
-                .field("dbg_gpdma1_ch8_stop", &self.dbg_gpdma1_ch8_stop())
-                .field("dbg_gpdma1_ch9_stop", &self.dbg_gpdma1_ch9_stop())
-                .field("dbg_gpdma1_ch10_stop", &self.dbg_gpdma1_ch10_stop())
-                .field("dbg_gpdma1_ch11_stop", &self.dbg_gpdma1_ch11_stop())
-                .field("dbg_gpdma1_ch12_stop", &self.dbg_gpdma1_ch12_stop())
-                .field("dbg_gpdma1_ch13_stop", &self.dbg_gpdma1_ch13_stop())
-                .field("dbg_gpdma1_ch14_stop", &self.dbg_gpdma1_ch14_stop())
-                .field("dbg_gpdma1_ch15_stop", &self.dbg_gpdma1_ch15_stop())
+                .field("dbg_gpdma1_stop[0]", &self.dbg_gpdma1_stop(0usize))
+                .field("dbg_gpdma1_stop[1]", &self.dbg_gpdma1_stop(1usize))
+                .field("dbg_gpdma1_stop[2]", &self.dbg_gpdma1_stop(2usize))
+                .field("dbg_gpdma1_stop[3]", &self.dbg_gpdma1_stop(3usize))
+                .field("dbg_gpdma1_stop[4]", &self.dbg_gpdma1_stop(4usize))
+                .field("dbg_gpdma1_stop[5]", &self.dbg_gpdma1_stop(5usize))
+                .field("dbg_gpdma1_stop[6]", &self.dbg_gpdma1_stop(6usize))
+                .field("dbg_gpdma1_stop[7]", &self.dbg_gpdma1_stop(7usize))
+                .field("dbg_gpdma1_stop[8]", &self.dbg_gpdma1_stop(8usize))
+                .field("dbg_gpdma1_stop[9]", &self.dbg_gpdma1_stop(9usize))
+                .field("dbg_gpdma1_stop[10]", &self.dbg_gpdma1_stop(10usize))
+                .field("dbg_gpdma1_stop[11]", &self.dbg_gpdma1_stop(11usize))
+                .field("dbg_gpdma1_stop[12]", &self.dbg_gpdma1_stop(12usize))
+                .field("dbg_gpdma1_stop[13]", &self.dbg_gpdma1_stop(13usize))
+                .field("dbg_gpdma1_stop[14]", &self.dbg_gpdma1_stop(14usize))
+                .field("dbg_gpdma1_stop[15]", &self.dbg_gpdma1_stop(15usize))
                 .finish()
         }
     }
@@ -317,23 +141,23 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb1fz1 {{ dbg_gpdma1_ch0_stop: {=bool:?}, dbg_gpdma1_ch1_stop: {=bool:?}, dbg_gpdma1_ch2_stop: {=bool:?}, dbg_gpdma1_ch3_stop: {=bool:?}, dbg_gpdma1_ch4_stop: {=bool:?}, dbg_gpdma1_ch5_stop: {=bool:?}, dbg_gpdma1_ch6_stop: {=bool:?}, dbg_gpdma1_ch7_stop: {=bool:?}, dbg_gpdma1_ch8_stop: {=bool:?}, dbg_gpdma1_ch9_stop: {=bool:?}, dbg_gpdma1_ch10_stop: {=bool:?}, dbg_gpdma1_ch11_stop: {=bool:?}, dbg_gpdma1_ch12_stop: {=bool:?}, dbg_gpdma1_ch13_stop: {=bool:?}, dbg_gpdma1_ch14_stop: {=bool:?}, dbg_gpdma1_ch15_stop: {=bool:?} }}",
-                self.dbg_gpdma1_ch0_stop(),
-                self.dbg_gpdma1_ch1_stop(),
-                self.dbg_gpdma1_ch2_stop(),
-                self.dbg_gpdma1_ch3_stop(),
-                self.dbg_gpdma1_ch4_stop(),
-                self.dbg_gpdma1_ch5_stop(),
-                self.dbg_gpdma1_ch6_stop(),
-                self.dbg_gpdma1_ch7_stop(),
-                self.dbg_gpdma1_ch8_stop(),
-                self.dbg_gpdma1_ch9_stop(),
-                self.dbg_gpdma1_ch10_stop(),
-                self.dbg_gpdma1_ch11_stop(),
-                self.dbg_gpdma1_ch12_stop(),
-                self.dbg_gpdma1_ch13_stop(),
-                self.dbg_gpdma1_ch14_stop(),
-                self.dbg_gpdma1_ch15_stop()
+                "Ahb1fz1 {{ dbg_gpdma1_stop[0]: {=bool:?}, dbg_gpdma1_stop[1]: {=bool:?}, dbg_gpdma1_stop[2]: {=bool:?}, dbg_gpdma1_stop[3]: {=bool:?}, dbg_gpdma1_stop[4]: {=bool:?}, dbg_gpdma1_stop[5]: {=bool:?}, dbg_gpdma1_stop[6]: {=bool:?}, dbg_gpdma1_stop[7]: {=bool:?}, dbg_gpdma1_stop[8]: {=bool:?}, dbg_gpdma1_stop[9]: {=bool:?}, dbg_gpdma1_stop[10]: {=bool:?}, dbg_gpdma1_stop[11]: {=bool:?}, dbg_gpdma1_stop[12]: {=bool:?}, dbg_gpdma1_stop[13]: {=bool:?}, dbg_gpdma1_stop[14]: {=bool:?}, dbg_gpdma1_stop[15]: {=bool:?} }}",
+                self.dbg_gpdma1_stop(0usize),
+                self.dbg_gpdma1_stop(1usize),
+                self.dbg_gpdma1_stop(2usize),
+                self.dbg_gpdma1_stop(3usize),
+                self.dbg_gpdma1_stop(4usize),
+                self.dbg_gpdma1_stop(5usize),
+                self.dbg_gpdma1_stop(6usize),
+                self.dbg_gpdma1_stop(7usize),
+                self.dbg_gpdma1_stop(8usize),
+                self.dbg_gpdma1_stop(9usize),
+                self.dbg_gpdma1_stop(10usize),
+                self.dbg_gpdma1_stop(11usize),
+                self.dbg_gpdma1_stop(12usize),
+                self.dbg_gpdma1_stop(13usize),
+                self.dbg_gpdma1_stop(14usize),
+                self.dbg_gpdma1_stop(15usize)
             )
         }
     }
@@ -345,194 +169,18 @@ pub mod regs {
         #[doc = "HPDMA3_CHn suspend in debug."]
         #[must_use]
         #[inline(always)]
-        pub const fn dbg_hpdma1_ch0_stop(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
+        pub const fn dbg_hpdma1_stop(&self, n: usize) -> bool {
+            assert!(n < 16usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "HPDMA3_CHn suspend in debug."]
         #[inline(always)]
-        pub const fn set_dbg_hpdma1_ch0_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_hpdma1_ch1_stop(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_hpdma1_ch1_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_hpdma1_ch2_stop(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_hpdma1_ch2_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_hpdma1_ch3_stop(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_hpdma1_ch3_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_hpdma1_ch4_stop(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_hpdma1_ch4_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_hpdma1_ch5_stop(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_hpdma1_ch5_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_hpdma1_ch6_stop(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_hpdma1_ch6_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_hpdma1_ch7_stop(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_hpdma1_ch7_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_hpdma1_ch8_stop(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_hpdma1_ch8_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_hpdma1_ch9_stop(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_hpdma1_ch9_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_hpdma1_ch10_stop(&self) -> bool {
-            let val = (self.0 >> 10usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_hpdma1_ch10_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_hpdma1_ch11_stop(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_hpdma1_ch11_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_hpdma1_ch12_stop(&self) -> bool {
-            let val = (self.0 >> 12usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_hpdma1_ch12_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_hpdma1_ch13_stop(&self) -> bool {
-            let val = (self.0 >> 13usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_hpdma1_ch13_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_hpdma1_ch14_stop(&self) -> bool {
-            let val = (self.0 >> 14usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_hpdma1_ch14_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_hpdma1_ch15_stop(&self) -> bool {
-            let val = (self.0 >> 15usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HPDMA3_CHn suspend in debug."]
-        #[inline(always)]
-        pub const fn set_dbg_hpdma1_ch15_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        pub const fn set_dbg_hpdma1_stop(&mut self, n: usize, val: bool) {
+            assert!(n < 16usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "NPU stop in debug mode."]
         #[must_use]
@@ -556,22 +204,22 @@ pub mod regs {
     impl core::fmt::Debug for Ahb5fz1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb5fz1")
-                .field("dbg_hpdma1_ch0_stop", &self.dbg_hpdma1_ch0_stop())
-                .field("dbg_hpdma1_ch1_stop", &self.dbg_hpdma1_ch1_stop())
-                .field("dbg_hpdma1_ch2_stop", &self.dbg_hpdma1_ch2_stop())
-                .field("dbg_hpdma1_ch3_stop", &self.dbg_hpdma1_ch3_stop())
-                .field("dbg_hpdma1_ch4_stop", &self.dbg_hpdma1_ch4_stop())
-                .field("dbg_hpdma1_ch5_stop", &self.dbg_hpdma1_ch5_stop())
-                .field("dbg_hpdma1_ch6_stop", &self.dbg_hpdma1_ch6_stop())
-                .field("dbg_hpdma1_ch7_stop", &self.dbg_hpdma1_ch7_stop())
-                .field("dbg_hpdma1_ch8_stop", &self.dbg_hpdma1_ch8_stop())
-                .field("dbg_hpdma1_ch9_stop", &self.dbg_hpdma1_ch9_stop())
-                .field("dbg_hpdma1_ch10_stop", &self.dbg_hpdma1_ch10_stop())
-                .field("dbg_hpdma1_ch11_stop", &self.dbg_hpdma1_ch11_stop())
-                .field("dbg_hpdma1_ch12_stop", &self.dbg_hpdma1_ch12_stop())
-                .field("dbg_hpdma1_ch13_stop", &self.dbg_hpdma1_ch13_stop())
-                .field("dbg_hpdma1_ch14_stop", &self.dbg_hpdma1_ch14_stop())
-                .field("dbg_hpdma1_ch15_stop", &self.dbg_hpdma1_ch15_stop())
+                .field("dbg_hpdma1_stop[0]", &self.dbg_hpdma1_stop(0usize))
+                .field("dbg_hpdma1_stop[1]", &self.dbg_hpdma1_stop(1usize))
+                .field("dbg_hpdma1_stop[2]", &self.dbg_hpdma1_stop(2usize))
+                .field("dbg_hpdma1_stop[3]", &self.dbg_hpdma1_stop(3usize))
+                .field("dbg_hpdma1_stop[4]", &self.dbg_hpdma1_stop(4usize))
+                .field("dbg_hpdma1_stop[5]", &self.dbg_hpdma1_stop(5usize))
+                .field("dbg_hpdma1_stop[6]", &self.dbg_hpdma1_stop(6usize))
+                .field("dbg_hpdma1_stop[7]", &self.dbg_hpdma1_stop(7usize))
+                .field("dbg_hpdma1_stop[8]", &self.dbg_hpdma1_stop(8usize))
+                .field("dbg_hpdma1_stop[9]", &self.dbg_hpdma1_stop(9usize))
+                .field("dbg_hpdma1_stop[10]", &self.dbg_hpdma1_stop(10usize))
+                .field("dbg_hpdma1_stop[11]", &self.dbg_hpdma1_stop(11usize))
+                .field("dbg_hpdma1_stop[12]", &self.dbg_hpdma1_stop(12usize))
+                .field("dbg_hpdma1_stop[13]", &self.dbg_hpdma1_stop(13usize))
+                .field("dbg_hpdma1_stop[14]", &self.dbg_hpdma1_stop(14usize))
+                .field("dbg_hpdma1_stop[15]", &self.dbg_hpdma1_stop(15usize))
                 .field("npu_dbg_freeze", &self.npu_dbg_freeze())
                 .finish()
         }
@@ -581,23 +229,23 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb5fz1 {{ dbg_hpdma1_ch0_stop: {=bool:?}, dbg_hpdma1_ch1_stop: {=bool:?}, dbg_hpdma1_ch2_stop: {=bool:?}, dbg_hpdma1_ch3_stop: {=bool:?}, dbg_hpdma1_ch4_stop: {=bool:?}, dbg_hpdma1_ch5_stop: {=bool:?}, dbg_hpdma1_ch6_stop: {=bool:?}, dbg_hpdma1_ch7_stop: {=bool:?}, dbg_hpdma1_ch8_stop: {=bool:?}, dbg_hpdma1_ch9_stop: {=bool:?}, dbg_hpdma1_ch10_stop: {=bool:?}, dbg_hpdma1_ch11_stop: {=bool:?}, dbg_hpdma1_ch12_stop: {=bool:?}, dbg_hpdma1_ch13_stop: {=bool:?}, dbg_hpdma1_ch14_stop: {=bool:?}, dbg_hpdma1_ch15_stop: {=bool:?}, npu_dbg_freeze: {:?} }}",
-                self.dbg_hpdma1_ch0_stop(),
-                self.dbg_hpdma1_ch1_stop(),
-                self.dbg_hpdma1_ch2_stop(),
-                self.dbg_hpdma1_ch3_stop(),
-                self.dbg_hpdma1_ch4_stop(),
-                self.dbg_hpdma1_ch5_stop(),
-                self.dbg_hpdma1_ch6_stop(),
-                self.dbg_hpdma1_ch7_stop(),
-                self.dbg_hpdma1_ch8_stop(),
-                self.dbg_hpdma1_ch9_stop(),
-                self.dbg_hpdma1_ch10_stop(),
-                self.dbg_hpdma1_ch11_stop(),
-                self.dbg_hpdma1_ch12_stop(),
-                self.dbg_hpdma1_ch13_stop(),
-                self.dbg_hpdma1_ch14_stop(),
-                self.dbg_hpdma1_ch15_stop(),
+                "Ahb5fz1 {{ dbg_hpdma1_stop[0]: {=bool:?}, dbg_hpdma1_stop[1]: {=bool:?}, dbg_hpdma1_stop[2]: {=bool:?}, dbg_hpdma1_stop[3]: {=bool:?}, dbg_hpdma1_stop[4]: {=bool:?}, dbg_hpdma1_stop[5]: {=bool:?}, dbg_hpdma1_stop[6]: {=bool:?}, dbg_hpdma1_stop[7]: {=bool:?}, dbg_hpdma1_stop[8]: {=bool:?}, dbg_hpdma1_stop[9]: {=bool:?}, dbg_hpdma1_stop[10]: {=bool:?}, dbg_hpdma1_stop[11]: {=bool:?}, dbg_hpdma1_stop[12]: {=bool:?}, dbg_hpdma1_stop[13]: {=bool:?}, dbg_hpdma1_stop[14]: {=bool:?}, dbg_hpdma1_stop[15]: {=bool:?}, npu_dbg_freeze: {:?} }}",
+                self.dbg_hpdma1_stop(0usize),
+                self.dbg_hpdma1_stop(1usize),
+                self.dbg_hpdma1_stop(2usize),
+                self.dbg_hpdma1_stop(3usize),
+                self.dbg_hpdma1_stop(4usize),
+                self.dbg_hpdma1_stop(5usize),
+                self.dbg_hpdma1_stop(6usize),
+                self.dbg_hpdma1_stop(7usize),
+                self.dbg_hpdma1_stop(8usize),
+                self.dbg_hpdma1_stop(9usize),
+                self.dbg_hpdma1_stop(10usize),
+                self.dbg_hpdma1_stop(11usize),
+                self.dbg_hpdma1_stop(12usize),
+                self.dbg_hpdma1_stop(13usize),
+                self.dbg_hpdma1_stop(14usize),
+                self.dbg_hpdma1_stop(15usize),
                 self.npu_dbg_freeze()
             )
         }

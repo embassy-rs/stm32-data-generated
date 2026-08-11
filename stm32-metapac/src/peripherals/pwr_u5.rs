@@ -240,14 +240,14 @@ pub mod regs {
         #[doc = "VBAT charging enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn vbe(&self) -> super::vals::Vbe {
+        pub const fn vbe(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Vbe::from_bits(val as u8)
+            val != 0
         }
         #[doc = "VBAT charging enable"]
         #[inline(always)]
-        pub const fn set_vbe(&mut self, val: super::vals::Vbe) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub const fn set_vbe(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "VBAT charging resistor selection"]
         #[must_use]
@@ -279,7 +279,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Bdcr2 {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Bdcr2 {{ vbe: {:?}, vbrs: {:?} }}", self.vbe(), self.vbrs())
+            defmt::write!(f, "Bdcr2 {{ vbe: {=bool:?}, vbrs: {:?} }}", self.vbe(), self.vbrs())
         }
     }
     #[doc = "Backup domain status register"]
@@ -2426,97 +2426,97 @@ pub mod regs {
         #[doc = "Wakeup pin WKUP1 selection This field must be configured when WUPEN1 = 0."]
         #[must_use]
         #[inline(always)]
-        pub const fn wusel1(&self) -> super::vals::Wusel {
+        pub const fn wusel1(&self) -> super::vals::Wusel1 {
             let val = (self.0 >> 0usize) & 0x03;
-            super::vals::Wusel::from_bits(val as u8)
+            super::vals::Wusel1::from_bits(val as u8)
         }
         #[doc = "Wakeup pin WKUP1 selection This field must be configured when WUPEN1 = 0."]
         #[inline(always)]
-        pub const fn set_wusel1(&mut self, val: super::vals::Wusel) {
+        pub const fn set_wusel1(&mut self, val: super::vals::Wusel1) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "Wakeup pin WKUP2 selection This field must be configured when WUPEN2 = 0."]
         #[must_use]
         #[inline(always)]
-        pub const fn wusel2(&self) -> super::vals::Wusel {
+        pub const fn wusel2(&self) -> super::vals::Wusel2 {
             let val = (self.0 >> 2usize) & 0x03;
-            super::vals::Wusel::from_bits(val as u8)
+            super::vals::Wusel2::from_bits(val as u8)
         }
         #[doc = "Wakeup pin WKUP2 selection This field must be configured when WUPEN2 = 0."]
         #[inline(always)]
-        pub const fn set_wusel2(&mut self, val: super::vals::Wusel) {
+        pub const fn set_wusel2(&mut self, val: super::vals::Wusel2) {
             self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
         #[doc = "Wakeup pin WKUP3 selection This field must be configured when WUPEN3 = 0."]
         #[must_use]
         #[inline(always)]
-        pub const fn wusel3(&self) -> super::vals::Wusel {
+        pub const fn wusel3(&self) -> super::vals::Wusel3 {
             let val = (self.0 >> 4usize) & 0x03;
-            super::vals::Wusel::from_bits(val as u8)
+            super::vals::Wusel3::from_bits(val as u8)
         }
         #[doc = "Wakeup pin WKUP3 selection This field must be configured when WUPEN3 = 0."]
         #[inline(always)]
-        pub const fn set_wusel3(&mut self, val: super::vals::Wusel) {
+        pub const fn set_wusel3(&mut self, val: super::vals::Wusel3) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "Wakeup pin WKUP4 selection This field must be configured when WUPEN4 = 0."]
         #[must_use]
         #[inline(always)]
-        pub const fn wusel4(&self) -> super::vals::Wusel {
+        pub const fn wusel4(&self) -> super::vals::Wusel4 {
             let val = (self.0 >> 6usize) & 0x03;
-            super::vals::Wusel::from_bits(val as u8)
+            super::vals::Wusel4::from_bits(val as u8)
         }
         #[doc = "Wakeup pin WKUP4 selection This field must be configured when WUPEN4 = 0."]
         #[inline(always)]
-        pub const fn set_wusel4(&mut self, val: super::vals::Wusel) {
+        pub const fn set_wusel4(&mut self, val: super::vals::Wusel4) {
             self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
         }
         #[doc = "Wakeup pin WKUP5 selection This field must be configured when WUPEN5 = 0."]
         #[must_use]
         #[inline(always)]
-        pub const fn wusel5(&self) -> super::vals::Wusel {
+        pub const fn wusel5(&self) -> super::vals::Wusel5 {
             let val = (self.0 >> 8usize) & 0x03;
-            super::vals::Wusel::from_bits(val as u8)
+            super::vals::Wusel5::from_bits(val as u8)
         }
         #[doc = "Wakeup pin WKUP5 selection This field must be configured when WUPEN5 = 0."]
         #[inline(always)]
-        pub const fn set_wusel5(&mut self, val: super::vals::Wusel) {
+        pub const fn set_wusel5(&mut self, val: super::vals::Wusel5) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
         #[doc = "Wakeup pin WKUP6 selection This field must be configured when WUPEN6 = 0."]
         #[must_use]
         #[inline(always)]
-        pub const fn wusel6(&self) -> super::vals::Wusel {
+        pub const fn wusel6(&self) -> super::vals::Wusel6 {
             let val = (self.0 >> 10usize) & 0x03;
-            super::vals::Wusel::from_bits(val as u8)
+            super::vals::Wusel6::from_bits(val as u8)
         }
         #[doc = "Wakeup pin WKUP6 selection This field must be configured when WUPEN6 = 0."]
         #[inline(always)]
-        pub const fn set_wusel6(&mut self, val: super::vals::Wusel) {
+        pub const fn set_wusel6(&mut self, val: super::vals::Wusel6) {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
         }
         #[doc = "Wakeup pin WKUP7 selection This field must be configured when WUPEN7 = 0."]
         #[must_use]
         #[inline(always)]
-        pub const fn wusel7(&self) -> super::vals::Wusel {
+        pub const fn wusel7(&self) -> super::vals::Wusel7 {
             let val = (self.0 >> 12usize) & 0x03;
-            super::vals::Wusel::from_bits(val as u8)
+            super::vals::Wusel7::from_bits(val as u8)
         }
         #[doc = "Wakeup pin WKUP7 selection This field must be configured when WUPEN7 = 0."]
         #[inline(always)]
-        pub const fn set_wusel7(&mut self, val: super::vals::Wusel) {
+        pub const fn set_wusel7(&mut self, val: super::vals::Wusel7) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
         #[doc = "Wakeup pin WKUP8 selection This field must be configured when WUPEN8 = 0."]
         #[must_use]
         #[inline(always)]
-        pub const fn wusel8(&self) -> super::vals::Wusel {
+        pub const fn wusel8(&self) -> super::vals::Wusel8 {
             let val = (self.0 >> 14usize) & 0x03;
-            super::vals::Wusel::from_bits(val as u8)
+            super::vals::Wusel8::from_bits(val as u8)
         }
         #[doc = "Wakeup pin WKUP8 selection This field must be configured when WUPEN8 = 0."]
         #[inline(always)]
-        pub const fn set_wusel8(&mut self, val: super::vals::Wusel) {
+        pub const fn set_wusel8(&mut self, val: super::vals::Wusel8) {
             self.0 = (self.0 & !(0x03 << 14usize)) | (((val.to_bits() as u32) & 0x03) << 14usize);
         }
     }
@@ -3114,9 +3114,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sramfwu {
         #[doc = "SRAM4 enters low-power mode in Stop 0, 1 and 2 modes (source biasing for lower-power consumption)."]
-        B0x0 = 0x0,
+        LowPower = 0x0,
         #[doc = "SRAM4 remains in normal mode in Stop 0, 1 and 2 modes (higher consumption but no SRAM4 wakeup time)."]
-        B0x1 = 0x01,
+        Normal = 0x01,
     }
     impl Sramfwu {
         #[inline(always)]
@@ -3176,9 +3176,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Temph {
         #[doc = "Temperature < high threshold"]
-        B0x0 = 0x0,
+        Below = 0x0,
         #[doc = "Temperature ≥ high threshold"]
-        B0x1 = 0x01,
+        AboveOrEqual = 0x01,
     }
     impl Temph {
         #[inline(always)]
@@ -3207,9 +3207,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Templ {
         #[doc = "Temperature > low threshold"]
-        B0x0 = 0x0,
+        Above = 0x0,
         #[doc = "Temperature ≤ low threshold"]
-        B0x1 = 0x01,
+        BelowOrEqual = 0x01,
     }
     impl Templ {
         #[inline(always)]
@@ -3238,9 +3238,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vbath {
         #[doc = "Backup domain voltage level < high threshold"]
-        B0x0 = 0x0,
+        Below = 0x0,
         #[doc = "Backup domain voltage level ≥ high threshold"]
-        B0x1 = 0x01,
+        AboveOrEqual = 0x01,
     }
     impl Vbath {
         #[inline(always)]
@@ -3267,42 +3267,11 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Vbe {
-        #[doc = "VBAT battery charging disabled"]
-        B0x0 = 0x0,
-        #[doc = "VBAT battery charging enabled"]
-        B0x1 = 0x01,
-    }
-    impl Vbe {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vbe {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vbe {
-        #[inline(always)]
-        fn from(val: u8) -> Vbe {
-            Vbe::from_bits(val)
-        }
-    }
-    impl From<Vbe> for u8 {
-        #[inline(always)]
-        fn from(val: Vbe) -> u8 {
-            Vbe::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vbrs {
         #[doc = "Charge VBAT through a 5 kΩ resistor"]
-        B0x0 = 0x0,
+        R5kOhm = 0x0,
         #[doc = "Charge VBAT through a 1.5 kΩ resistor"]
-        B0x1 = 0x01,
+        R15kOhm = 0x01,
     }
     impl Vbrs {
         #[inline(always)]
@@ -3395,19 +3364,19 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Wusel {
-        #[doc = "WKUP7_0"]
-        B0x0 = 0x0,
-        #[doc = "WKUP7_1"]
-        B0x1 = 0x01,
-        #[doc = "WKUP7_2"]
-        B0x2 = 0x02,
-        #[doc = "WKUP7_3"]
-        B0x3 = 0x03,
+    pub enum Wusel1 {
+        #[doc = "WKUP1 sourced from PA0"]
+        Pa0 = 0x0,
+        #[doc = "WKUP1 sourced from PB2"]
+        Pb2 = 0x01,
+        #[doc = "WKUP1 sourced from PE4"]
+        Pe4 = 0x02,
+        #[doc = "Reserved"]
+        Reserved = 0x03,
     }
-    impl Wusel {
+    impl Wusel1 {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wusel {
+        pub const fn from_bits(val: u8) -> Wusel1 {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -3415,16 +3384,261 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Wusel {
+    impl From<u8> for Wusel1 {
         #[inline(always)]
-        fn from(val: u8) -> Wusel {
-            Wusel::from_bits(val)
+        fn from(val: u8) -> Wusel1 {
+            Wusel1::from_bits(val)
         }
     }
-    impl From<Wusel> for u8 {
+    impl From<Wusel1> for u8 {
         #[inline(always)]
-        fn from(val: Wusel) -> u8 {
-            Wusel::to_bits(val)
+        fn from(val: Wusel1) -> u8 {
+            Wusel1::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Wusel2 {
+        #[doc = "WKUP2 sourced from PA4"]
+        Pa4 = 0x0,
+        #[doc = "WKUP2 sourced from PC13"]
+        Pc13 = 0x01,
+        #[doc = "WKUP2 sourced from PE5"]
+        Pe5 = 0x02,
+        #[doc = "Reserved"]
+        Reserved = 0x03,
+    }
+    impl Wusel2 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Wusel2 {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Wusel2 {
+        #[inline(always)]
+        fn from(val: u8) -> Wusel2 {
+            Wusel2::from_bits(val)
+        }
+    }
+    impl From<Wusel2> for u8 {
+        #[inline(always)]
+        fn from(val: Wusel2) -> u8 {
+            Wusel2::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Wusel3 {
+        #[doc = "WKUP3 sourced from PE6"]
+        Pe6 = 0x0,
+        #[doc = "WKUP3 sourced from PA1"]
+        Pa1 = 0x01,
+        #[doc = "WKUP3 sourced from PB6"]
+        Pb6 = 0x02,
+        #[doc = "Reserved"]
+        Reserved = 0x03,
+    }
+    impl Wusel3 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Wusel3 {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Wusel3 {
+        #[inline(always)]
+        fn from(val: u8) -> Wusel3 {
+            Wusel3::from_bits(val)
+        }
+    }
+    impl From<Wusel3> for u8 {
+        #[inline(always)]
+        fn from(val: Wusel3) -> u8 {
+            Wusel3::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Wusel4 {
+        #[doc = "WKUP4 sourced from PA2"]
+        Pa2 = 0x0,
+        #[doc = "WKUP4 sourced from PB1"]
+        Pb1 = 0x01,
+        #[doc = "WKUP4 sourced from PB7"]
+        Pb7 = 0x02,
+        #[doc = "Reserved"]
+        Reserved = 0x03,
+    }
+    impl Wusel4 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Wusel4 {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Wusel4 {
+        #[inline(always)]
+        fn from(val: u8) -> Wusel4 {
+            Wusel4::from_bits(val)
+        }
+    }
+    impl From<Wusel4> for u8 {
+        #[inline(always)]
+        fn from(val: Wusel4) -> u8 {
+            Wusel4::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Wusel5 {
+        #[doc = "WKUP5 sourced from PC5"]
+        Pc5 = 0x0,
+        #[doc = "WKUP5 sourced from PA3"]
+        Pa3 = 0x01,
+        #[doc = "WKUP5 sourced from PB8"]
+        Pb8 = 0x02,
+        #[doc = "WKUP5 sourced from the early IWDG interrupt"]
+        EarlyIwdg = 0x03,
+    }
+    impl Wusel5 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Wusel5 {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Wusel5 {
+        #[inline(always)]
+        fn from(val: u8) -> Wusel5 {
+            Wusel5::from_bits(val)
+        }
+    }
+    impl From<Wusel5> for u8 {
+        #[inline(always)]
+        fn from(val: Wusel5) -> u8 {
+            Wusel5::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Wusel6 {
+        #[doc = "WKUP6 sourced from PB5"]
+        Pb5 = 0x0,
+        #[doc = "WKUP6 sourced from PA5"]
+        Pa5 = 0x01,
+        #[doc = "WKUP6 sourced from PE7"]
+        Pe7 = 0x02,
+        #[doc = "WKUP6 sourced from RTC_ALRA_S, RTC_ALRB_S, RTC_WUT_S, or RTC_TS_S"]
+        Rtc = 0x03,
+    }
+    impl Wusel6 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Wusel6 {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Wusel6 {
+        #[inline(always)]
+        fn from(val: u8) -> Wusel6 {
+            Wusel6::from_bits(val)
+        }
+    }
+    impl From<Wusel6> for u8 {
+        #[inline(always)]
+        fn from(val: Wusel6) -> u8 {
+            Wusel6::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Wusel7 {
+        #[doc = "WKUP7 sourced from PB15"]
+        Pb15 = 0x0,
+        #[doc = "WKUP7 sourced from PA6"]
+        Pa6 = 0x01,
+        #[doc = "WKUP7 sourced from PE8"]
+        Pe8 = 0x02,
+        #[doc = "WKUP7 sourced from RTC_ALRA, RTC_ALRB, RTC_WUT, or RTC_TS"]
+        Rtc = 0x03,
+    }
+    impl Wusel7 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Wusel7 {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Wusel7 {
+        #[inline(always)]
+        fn from(val: u8) -> Wusel7 {
+            Wusel7::from_bits(val)
+        }
+    }
+    impl From<Wusel7> for u8 {
+        #[inline(always)]
+        fn from(val: Wusel7) -> u8 {
+            Wusel7::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Wusel8 {
+        #[doc = "WKUP8 sourced from PF2"]
+        Pf2 = 0x0,
+        #[doc = "WKUP8 sourced from PA7"]
+        Pa7 = 0x01,
+        #[doc = "WKUP8 sourced from PB10"]
+        Pb10 = 0x02,
+        #[doc = "WKUP8 sourced from TAMP"]
+        Tamp = 0x03,
+    }
+    impl Wusel8 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Wusel8 {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Wusel8 {
+        #[inline(always)]
+        fn from(val: u8) -> Wusel8 {
+            Wusel8::from_bits(val)
+        }
+    }
+    impl From<Wusel8> for u8 {
+        #[inline(always)]
+        fn from(val: Wusel8) -> u8 {
+            Wusel8::to_bits(val)
         }
     }
 }

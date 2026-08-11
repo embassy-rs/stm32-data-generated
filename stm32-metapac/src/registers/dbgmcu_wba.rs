@@ -234,88 +234,16 @@ pub(crate) static REGISTERS: IR = IR {
             extends: None,
             description: Some("AHB1 peripheral freeze register"),
             bit_size: 32,
-            fields: &[
-                Field {
-                    name: "dbg_gpdma1_ch0_stop",
-                    description: Some(
-                        "GPDMA 1 channel 0 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC0.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma1_ch1_stop",
-                    description: Some(
-                        "GPDMA 1 channel 1 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC1.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma1_ch2_stop",
-                    description: Some(
-                        "GPDMA 1 channel 2 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC2.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma1_ch3_stop",
-                    description: Some(
-                        "GPDMA 1 channel 3 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC3.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma1_ch4_stop",
-                    description: Some(
-                        "GPDMA 1 channel 4 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC4.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma1_ch5_stop",
-                    description: Some(
-                        "GPDMA 1 channel 5 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC5.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma1_ch6_stop",
-                    description: Some(
-                        "GPDMA 1 channel 6 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC6.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "dbg_gpdma1_ch7_stop",
-                    description: Some(
-                        "GPDMA 1 channel 7 stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SEC7.",
-                    ),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-            ],
+            fields: &[Field {
+                name: "dbg_gpdma1_ch_stop",
+                description: Some(
+                    "GPDMA 1 channel y stop in CPU debug\r Write access can be protected by GPDMA_SECCFGR.SECy.",
+                ),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_size: 1,
+                array: Some(Array::Regular(RegularArray { len: 8, stride: 1 })),
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Apb1hfzr",

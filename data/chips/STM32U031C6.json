@@ -727,10 +727,22 @@
             "version": "u0",
             "block": "COMP"
           },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": "PCLK1",
+            "enable": {
+              "register": "APBENR2",
+              "field": "SYSCFGEN"
+            }
+          },
           "pins": [
             {
               "pin": "PA0",
               "signal": "INM"
+            },
+            {
+              "pin": "PA0",
+              "signal": "INM2"
             },
             {
               "pin": "PA0",
@@ -742,6 +754,10 @@
               "signal": "INP"
             },
             {
+              "pin": "PA1",
+              "signal": "INP2"
+            },
+            {
               "pin": "PA11",
               "signal": "OUT",
               "af": 12
@@ -751,8 +767,16 @@
               "signal": "INM"
             },
             {
+              "pin": "PA4",
+              "signal": "INM3"
+            },
+            {
               "pin": "PA5",
               "signal": "INM"
+            },
+            {
+              "pin": "PA5",
+              "signal": "INM3"
             },
             {
               "pin": "PA6",
@@ -764,6 +788,10 @@
               "signal": "INP"
             },
             {
+              "pin": "PA9",
+              "signal": "INP3"
+            },
+            {
               "pin": "PB0",
               "signal": "OUT",
               "af": 12
@@ -773,6 +801,10 @@
               "signal": "INM"
             },
             {
+              "pin": "PB1",
+              "signal": "INM1"
+            },
+            {
               "pin": "PB10",
               "signal": "OUT",
               "af": 12
@@ -780,6 +812,10 @@
             {
               "pin": "PB2",
               "signal": "INP"
+            },
+            {
+              "pin": "PB2",
+              "signal": "INP1"
             }
           ],
           "interrupts": [
@@ -3175,6 +3211,15 @@
           ]
         },
         {
+          "name": "TSCAL",
+          "address": 536833640,
+          "registers": {
+            "kind": "tscal",
+            "version": "v1",
+            "block": "TSCAL"
+          }
+        },
+        {
           "name": "UID",
           "address": 536821328,
           "registers": {
@@ -3552,6 +3597,15 @@
               "request": 76
             }
           ]
+        },
+        {
+          "name": "VREFINTCAL",
+          "address": 536833700,
+          "registers": {
+            "kind": "vrefintcal",
+            "version": "v1",
+            "block": "VREFINTCAL"
+          }
         },
         {
           "name": "WWDG",

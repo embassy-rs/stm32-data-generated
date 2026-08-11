@@ -299,25 +299,25 @@ pub mod regs {
         #[doc = "OTG SRAM power-down in Stop modes."]
         #[must_use]
         #[inline(always)]
-        pub const fn prampds(&self) -> super::vals::Prampds {
+        pub const fn prampds(&self) -> super::vals::Srampds {
             let val = (self.0 >> 11usize) & 0x01;
-            super::vals::Prampds::from_bits(val as u8)
+            super::vals::Srampds::from_bits(val as u8)
         }
         #[doc = "OTG SRAM power-down in Stop modes."]
         #[inline(always)]
-        pub const fn set_prampds(&mut self, val: super::vals::Prampds) {
+        pub const fn set_prampds(&mut self, val: super::vals::Srampds) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
         }
         #[doc = "PKA SRAM power-down in Stop modes."]
         #[must_use]
         #[inline(always)]
-        pub const fn pkarampds(&self) -> super::vals::Pkarampds {
+        pub const fn pkarampds(&self) -> super::vals::Srampds {
             let val = (self.0 >> 12usize) & 0x01;
-            super::vals::Pkarampds::from_bits(val as u8)
+            super::vals::Srampds::from_bits(val as u8)
         }
         #[doc = "PKA SRAM power-down in Stop modes."]
         #[inline(always)]
-        pub const fn set_pkarampds(&mut self, val: super::vals::Pkarampds) {
+        pub const fn set_pkarampds(&mut self, val: super::vals::Srampds) {
             self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
         }
         #[doc = "Flash memory fast wakeup from Stop modes (Stop 0, 1) This bit is used to obtain the best trade-off between low-power consumption and wakeup time when exiting the Stop 0 or Stop 1 modes. When this bit is set, the Flash memory remains in normal mode in Stop 0 and Stop 1 modes, which offers a faster startup time with higher consumption."]
@@ -394,26 +394,26 @@ pub mod regs {
         #[doc = "Fast soft start"]
         #[must_use]
         #[inline(always)]
-        pub const fn fsten(&self) -> super::vals::Fsten {
+        pub const fn fsten(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Fsten::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Fast soft start"]
         #[inline(always)]
-        pub const fn set_fsten(&mut self, val: super::vals::Fsten) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub const fn set_fsten(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
-        #[doc = "Low power mode regulator clock division."]
+        #[doc = "Low power mode regulator clock division. 000: Low power regulator clock not divided Others: Low power regulator clock divided by 2^DIVCLP"]
         #[must_use]
         #[inline(always)]
-        pub const fn divclp(&self) -> super::vals::Divclp {
+        pub const fn divclp(&self) -> u8 {
             let val = (self.0 >> 4usize) & 0x07;
-            super::vals::Divclp::from_bits(val as u8)
+            val as u8
         }
-        #[doc = "Low power mode regulator clock division."]
+        #[doc = "Low power mode regulator clock division. 000: Low power regulator clock not divided Others: Low power regulator clock divided by 2^DIVCLP"]
         #[inline(always)]
-        pub const fn set_divclp(&mut self, val: super::vals::Divclp) {
-            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
+        pub const fn set_divclp(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val as u32) & 0x07) << 4usize);
         }
         #[doc = "Low power mode regulator replica selection."]
         #[must_use]
@@ -430,14 +430,14 @@ pub mod regs {
         #[doc = "V11 feedback switch enable (non user bit)."]
         #[must_use]
         #[inline(always)]
-        pub const fn v11fbsw(&self) -> super::vals::V11fbsw {
+        pub const fn v11fbsw(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::V11fbsw::from_bits(val as u8)
+            val != 0
         }
         #[doc = "V11 feedback switch enable (non user bit)."]
         #[inline(always)]
-        pub const fn set_v11fbsw(&mut self, val: super::vals::V11fbsw) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub const fn set_v11fbsw(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
     }
     impl Default for Cr3 {
@@ -462,7 +462,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Cr3 {{ regsel: {:?}, fsten: {:?}, divclp: {:?}, selrep: {=u8:?}, v11fbsw: {:?} }}",
+                "Cr3 {{ regsel: {:?}, fsten: {=bool:?}, divclp: {=u8:?}, selrep: {=u8:?}, v11fbsw: {=bool:?} }}",
                 self.regsel(),
                 self.fsten(),
                 self.divclp(),
@@ -743,14 +743,14 @@ pub mod regs {
         #[doc = "2.4 GHz RADIO encryption function operating mode"]
         #[must_use]
         #[inline(always)]
-        pub const fn encmode(&self) -> super::vals::Encmode {
+        pub const fn encmode(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Encmode::from_bits(val as u8)
+            val != 0
         }
         #[doc = "2.4 GHz RADIO encryption function operating mode"]
         #[inline(always)]
-        pub const fn set_encmode(&mut self, val: super::vals::Encmode) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        pub const fn set_encmode(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
         #[doc = "2.4 GHz RADIO VDDHPA control word. Bits \\[3:0\\]
 see Table 81: PA output power table format for definition. Bit \\[4\\]
@@ -842,7 +842,7 @@ rf_event."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Radioscr {{ mode: {:?}, phymode: {:?}, encmode: {:?}, rfvddhpa: {=u8:?}, regpardyv11: {=bool:?}, regpardyvddrfpa: {=bool:?}, regpasel: {:?}, regpabypen: {=bool:?} }}",
+                "Radioscr {{ mode: {:?}, phymode: {:?}, encmode: {=bool:?}, rfvddhpa: {=u8:?}, regpardyv11: {=bool:?}, regpardyvddrfpa: {=bool:?}, regpasel: {:?}, regpabypen: {=bool:?} }}",
                 self.mode(),
                 self.phymode(),
                 self.encmode(),
@@ -862,26 +862,26 @@ rf_event."]
         #[doc = "PTA output signals Stop 2 mode retention enable Access can be secured by GTZC_TZSC PTACONVSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
         #[must_use]
         #[inline(always)]
-        pub const fn ptasren(&self) -> super::vals::Ptasren {
+        pub const fn ptasren(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Ptasren::from_bits(val as u8)
+            val != 0
         }
         #[doc = "PTA output signals Stop 2 mode retention enable Access can be secured by GTZC_TZSC PTACONVSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
         #[inline(always)]
-        pub const fn set_ptasren(&mut self, val: super::vals::Ptasren) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub const fn set_ptasren(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "PTA interface output signals state retention in Stop 2 mode active Access can be secured by GTZC_TZSC PTACONVSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
         #[must_use]
         #[inline(always)]
-        pub const fn ptasr(&self) -> super::vals::Ptasr {
+        pub const fn ptasr(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
-            super::vals::Ptasr::from_bits(val as u8)
+            val != 0
         }
         #[doc = "PTA interface output signals state retention in Stop 2 mode active Access can be secured by GTZC_TZSC PTACONVSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
         #[inline(always)]
-        pub const fn set_ptasr(&mut self, val: super::vals::Ptasr) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+        pub const fn set_ptasr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
     }
     impl Default for S2retr {
@@ -903,7 +903,7 @@ rf_event."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "S2retr {{ ptasren: {:?}, ptasr: {:?} }}",
+                "S2retr {{ ptasren: {=bool:?}, ptasr: {=bool:?} }}",
                 self.ptasren(),
                 self.ptasr()
             )
@@ -933,38 +933,38 @@ rf_event."]
         #[doc = "Low-power modes secure protection"]
         #[must_use]
         #[inline(always)]
-        pub const fn lpmsec(&self) -> super::vals::Lpmsec {
+        pub const fn lpmsec(&self) -> bool {
             let val = (self.0 >> 12usize) & 0x01;
-            super::vals::Lpmsec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Low-power modes secure protection"]
         #[inline(always)]
-        pub const fn set_lpmsec(&mut self, val: super::vals::Lpmsec) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val.to_bits() as u32) & 0x01) << 12usize);
+        pub const fn set_lpmsec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
         }
         #[doc = "Voltage detection secure protection"]
         #[must_use]
         #[inline(always)]
-        pub const fn vdmsec(&self) -> super::vals::Vdmsec {
+        pub const fn vdmsec(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
-            super::vals::Vdmsec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Voltage detection secure protection"]
         #[inline(always)]
-        pub const fn set_vdmsec(&mut self, val: super::vals::Vdmsec) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        pub const fn set_vdmsec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Backup domain secure protection"]
         #[must_use]
         #[inline(always)]
-        pub const fn vbsec(&self) -> super::vals::Vbsec {
+        pub const fn vbsec(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
-            super::vals::Vbsec::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Backup domain secure protection"]
         #[inline(always)]
-        pub const fn set_vbsec(&mut self, val: super::vals::Vbsec) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        pub const fn set_vbsec(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
     }
     impl Default for Seccfgr {
@@ -995,7 +995,7 @@ rf_event."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Seccfgr {{ wup1sec[0]: {=bool:?}, wup1sec[1]: {=bool:?}, wup1sec[2]: {=bool:?}, wup1sec[3]: {=bool:?}, wup1sec[4]: {=bool:?}, wup1sec[5]: {=bool:?}, wup1sec[6]: {=bool:?}, wup1sec[7]: {=bool:?}, lpmsec: {:?}, vdmsec: {:?}, vbsec: {:?} }}",
+                "Seccfgr {{ wup1sec[0]: {=bool:?}, wup1sec[1]: {=bool:?}, wup1sec[2]: {=bool:?}, wup1sec[3]: {=bool:?}, wup1sec[4]: {=bool:?}, wup1sec[5]: {=bool:?}, wup1sec[6]: {=bool:?}, wup1sec[7]: {=bool:?}, lpmsec: {=bool:?}, vdmsec: {=bool:?}, vbsec: {=bool:?} }}",
                 self.wup1sec(0usize),
                 self.wup1sec(1usize),
                 self.wup1sec(2usize),
@@ -1042,14 +1042,14 @@ rf_event."]
         #[doc = "Standby flag This bit is set by hardware when the device enters the Standby mode and the CPU restart from its reset vector. It’s cleared by writing 1 to the CSSF bit, or by a power-on reset. It is not cleared by the system reset."]
         #[must_use]
         #[inline(always)]
-        pub const fn sbf(&self) -> super::vals::Sbf {
+        pub const fn sbf(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Sbf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Standby flag This bit is set by hardware when the device enters the Standby mode and the CPU restart from its reset vector. It’s cleared by writing 1 to the CSSF bit, or by a power-on reset. It is not cleared by the system reset."]
         #[inline(always)]
-        pub const fn set_sbf(&mut self, val: super::vals::Sbf) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub const fn set_sbf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "Stop 2 mode peripherals power down flag."]
         #[must_use]
@@ -1085,7 +1085,7 @@ rf_event."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Sr {{ cssf: {=bool:?}, stopf: {=bool:?}, sbf: {:?}, stop2f: {=bool:?} }}",
+                "Sr {{ cssf: {=bool:?}, stopf: {=bool:?}, sbf: {=bool:?}, stop2f: {=bool:?} }}",
                 self.cssf(),
                 self.stopf(),
                 self.sbf(),
@@ -1125,26 +1125,26 @@ rf_event."]
         #[doc = "VDDUSB supply valid."]
         #[must_use]
         #[inline(always)]
-        pub const fn usv(&self) -> super::vals::Usv {
+        pub const fn usv(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
-            super::vals::Usv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "VDDUSB supply valid."]
         #[inline(always)]
-        pub const fn set_usv(&mut self, val: super::vals::Usv) {
-            self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+        pub const fn set_usv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "VDDIO2 supply valid."]
         #[must_use]
         #[inline(always)]
-        pub const fn io2sv(&self) -> super::vals::Io2sv {
+        pub const fn io2sv(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
-            super::vals::Io2sv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "VDDIO2 supply valid."]
         #[inline(always)]
-        pub const fn set_io2sv(&mut self, val: super::vals::Io2sv) {
-            self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+        pub const fn set_io2sv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
     }
     impl Default for Svmcr {
@@ -1168,7 +1168,7 @@ rf_event."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Svmcr {{ pvde: {=bool:?}, pvdls: {:?}, usv: {:?}, io2sv: {:?} }}",
+                "Svmcr {{ pvde: {=bool:?}, pvdls: {:?}, usv: {=bool:?}, io2sv: {=bool:?} }}",
                 self.pvde(),
                 self.pvdls(),
                 self.usv(),
@@ -1184,13 +1184,13 @@ rf_event."]
         #[doc = "Regulator selection."]
         #[must_use]
         #[inline(always)]
-        pub const fn regs(&self) -> super::vals::Regs {
+        pub const fn regs(&self) -> super::vals::Regsel {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Regs::from_bits(val as u8)
+            super::vals::Regsel::from_bits(val as u8)
         }
         #[doc = "Regulator selection."]
         #[inline(always)]
-        pub const fn set_regs(&mut self, val: super::vals::Regs) {
+        pub const fn set_regs(&mut self, val: super::vals::Regsel) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "Programmable voltage detector output"]
@@ -1208,14 +1208,14 @@ rf_event."]
         #[doc = "Voltage level ready for currently used VOS"]
         #[must_use]
         #[inline(always)]
-        pub const fn actvosrdy(&self) -> super::vals::Actvosrdy {
+        pub const fn actvosrdy(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Actvosrdy::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Voltage level ready for currently used VOS"]
         #[inline(always)]
-        pub const fn set_actvosrdy(&mut self, val: super::vals::Actvosrdy) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub const fn set_actvosrdy(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "VOS currently applied to V<sub>CORE</sub> This field provides the last VOS value."]
         #[must_use]
@@ -1251,7 +1251,7 @@ rf_event."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Svmsr {{ regs: {:?}, pvdo: {:?}, actvosrdy: {:?}, actvos: {:?} }}",
+                "Svmsr {{ regs: {:?}, pvdo: {:?}, actvosrdy: {=bool:?}, actvos: {:?} }}",
                 self.regs(),
                 self.pvdo(),
                 self.actvosrdy(),
@@ -1521,21 +1521,101 @@ rf_event."]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Wucr3(pub u32);
     impl Wucr3 {
-        #[doc = "Wakeup and interrupt pin WKUPX selection This field must be configured when WUPENX = 0. Access can be secured by WUPXSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[doc = "Wakeup and interrupt pin WKUP1 selection This field must be configured when WUPEN1 = 0. Access can be secured by WUP1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
         #[must_use]
         #[inline(always)]
-        pub const fn wusel(&self, n: usize) -> super::vals::Wusel {
-            assert!(n < 8usize);
-            let offs = 0usize + n * 2usize;
-            let val = (self.0 >> offs) & 0x03;
-            super::vals::Wusel::from_bits(val as u8)
+        pub const fn wusel1(&self) -> super::vals::Wusel1 {
+            let val = (self.0 >> 0usize) & 0x03;
+            super::vals::Wusel1::from_bits(val as u8)
         }
-        #[doc = "Wakeup and interrupt pin WKUPX selection This field must be configured when WUPENX = 0. Access can be secured by WUPXSEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[doc = "Wakeup and interrupt pin WKUP1 selection This field must be configured when WUPEN1 = 0. Access can be secured by WUP1SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
         #[inline(always)]
-        pub const fn set_wusel(&mut self, n: usize, val: super::vals::Wusel) {
-            assert!(n < 8usize);
-            let offs = 0usize + n * 2usize;
-            self.0 = (self.0 & !(0x03 << offs)) | (((val.to_bits() as u32) & 0x03) << offs);
+        pub const fn set_wusel1(&mut self, val: super::vals::Wusel1) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
+        }
+        #[doc = "Wakeup and interrupt pin WKUP2 selection This field must be configured when WUPEN2 = 0. Access can be secured by WUP2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wusel2(&self) -> super::vals::Wusel2 {
+            let val = (self.0 >> 2usize) & 0x03;
+            super::vals::Wusel2::from_bits(val as u8)
+        }
+        #[doc = "Wakeup and interrupt pin WKUP2 selection This field must be configured when WUPEN2 = 0. Access can be secured by WUP2SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[inline(always)]
+        pub const fn set_wusel2(&mut self, val: super::vals::Wusel2) {
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
+        }
+        #[doc = "Wakeup and interrupt pin WKUP3 selection This field must be configured when WUPEN3 = 0. Access can be secured by WUP3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wusel3(&self) -> super::vals::Wusel3 {
+            let val = (self.0 >> 4usize) & 0x03;
+            super::vals::Wusel3::from_bits(val as u8)
+        }
+        #[doc = "Wakeup and interrupt pin WKUP3 selection This field must be configured when WUPEN3 = 0. Access can be secured by WUP3SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[inline(always)]
+        pub const fn set_wusel3(&mut self, val: super::vals::Wusel3) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
+        }
+        #[doc = "Wakeup and interrupt pin WKUP4 selection This field must be configured when WUPEN4 = 0. Access can be secured by WUP4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wusel4(&self) -> super::vals::Wusel4 {
+            let val = (self.0 >> 6usize) & 0x03;
+            super::vals::Wusel4::from_bits(val as u8)
+        }
+        #[doc = "Wakeup and interrupt pin WKUP4 selection This field must be configured when WUPEN4 = 0. Access can be secured by WUP4SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[inline(always)]
+        pub const fn set_wusel4(&mut self, val: super::vals::Wusel4) {
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
+        }
+        #[doc = "Wakeup and interrupt pin WKUP5 selection This field must be configured when WUPEN5 = 0. Access can be secured by WUP5SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wusel5(&self) -> super::vals::Wusel5 {
+            let val = (self.0 >> 8usize) & 0x03;
+            super::vals::Wusel5::from_bits(val as u8)
+        }
+        #[doc = "Wakeup and interrupt pin WKUP5 selection This field must be configured when WUPEN5 = 0. Access can be secured by WUP5SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[inline(always)]
+        pub const fn set_wusel5(&mut self, val: super::vals::Wusel5) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
+        }
+        #[doc = "Wakeup and interrupt pin WKUP6 selection This field must be configured when WUPEN6 = 0. Access can be secured by WUP6SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wusel6(&self) -> super::vals::Wusel6 {
+            let val = (self.0 >> 10usize) & 0x03;
+            super::vals::Wusel6::from_bits(val as u8)
+        }
+        #[doc = "Wakeup and interrupt pin WKUP6 selection This field must be configured when WUPEN6 = 0. Access can be secured by WUP6SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[inline(always)]
+        pub const fn set_wusel6(&mut self, val: super::vals::Wusel6) {
+            self.0 = (self.0 & !(0x03 << 10usize)) | (((val.to_bits() as u32) & 0x03) << 10usize);
+        }
+        #[doc = "Wakeup and interrupt pin WKUP7 selection This field must be configured when WUPEN7 = 0. Access can be secured by WUP7SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wusel7(&self) -> super::vals::Wusel7 {
+            let val = (self.0 >> 12usize) & 0x03;
+            super::vals::Wusel7::from_bits(val as u8)
+        }
+        #[doc = "Wakeup and interrupt pin WKUP7 selection This field must be configured when WUPEN7 = 0. Access can be secured by WUP7SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[inline(always)]
+        pub const fn set_wusel7(&mut self, val: super::vals::Wusel7) {
+            self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
+        }
+        #[doc = "Wakeup and interrupt pin WKUP8 selection This field must be configured when WUPEN8 = 0. Access can be secured by WUP8SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wusel8(&self) -> super::vals::Wusel8 {
+            let val = (self.0 >> 14usize) & 0x03;
+            super::vals::Wusel8::from_bits(val as u8)
+        }
+        #[doc = "Wakeup and interrupt pin WKUP8 selection This field must be configured when WUPEN8 = 0. Access can be secured by WUP8SEC. When secure, a non-secure read/write access is RAZ/WI. It does not generate an illegal access interrupt. This bit can be protected against unprivileged access when secure with SPRIV or when non-secure with NSPRIV."]
+        #[inline(always)]
+        pub const fn set_wusel8(&mut self, val: super::vals::Wusel8) {
+            self.0 = (self.0 & !(0x03 << 14usize)) | (((val.to_bits() as u32) & 0x03) << 14usize);
         }
     }
     impl Default for Wucr3 {
@@ -1547,14 +1627,14 @@ rf_event."]
     impl core::fmt::Debug for Wucr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wucr3")
-                .field("wusel[0]", &self.wusel(0usize))
-                .field("wusel[1]", &self.wusel(1usize))
-                .field("wusel[2]", &self.wusel(2usize))
-                .field("wusel[3]", &self.wusel(3usize))
-                .field("wusel[4]", &self.wusel(4usize))
-                .field("wusel[5]", &self.wusel(5usize))
-                .field("wusel[6]", &self.wusel(6usize))
-                .field("wusel[7]", &self.wusel(7usize))
+                .field("wusel1", &self.wusel1())
+                .field("wusel2", &self.wusel2())
+                .field("wusel3", &self.wusel3())
+                .field("wusel4", &self.wusel4())
+                .field("wusel5", &self.wusel5())
+                .field("wusel6", &self.wusel6())
+                .field("wusel7", &self.wusel7())
+                .field("wusel8", &self.wusel8())
                 .finish()
         }
     }
@@ -1563,15 +1643,15 @@ rf_event."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Wucr3 {{ wusel[0]: {:?}, wusel[1]: {:?}, wusel[2]: {:?}, wusel[3]: {:?}, wusel[4]: {:?}, wusel[5]: {:?}, wusel[6]: {:?}, wusel[7]: {:?} }}",
-                self.wusel(0usize),
-                self.wusel(1usize),
-                self.wusel(2usize),
-                self.wusel(3usize),
-                self.wusel(4usize),
-                self.wusel(5usize),
-                self.wusel(6usize),
-                self.wusel(7usize)
+                "Wucr3 {{ wusel1: {:?}, wusel2: {:?}, wusel3: {:?}, wusel4: {:?}, wusel5: {:?}, wusel6: {:?}, wusel7: {:?}, wusel8: {:?} }}",
+                self.wusel1(),
+                self.wusel2(),
+                self.wusel3(),
+                self.wusel4(),
+                self.wusel5(),
+                self.wusel6(),
+                self.wusel7(),
+                self.wusel8()
             )
         }
     }
@@ -1729,104 +1809,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Actvosrdy {
-        #[doc = "VsubCORE/sub is above or below the current voltage scaling provided by ACTVOS."]
-        B0x0 = 0x0,
-        #[doc = "VsubCORE /subis equal to the current voltage scaling provided by ACTVOS."]
-        B0x1 = 0x01,
-    }
-    impl Actvosrdy {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Actvosrdy {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Actvosrdy {
-        #[inline(always)]
-        fn from(val: u8) -> Actvosrdy {
-            Actvosrdy::from_bits(val)
-        }
-    }
-    impl From<Actvosrdy> for u8 {
-        #[inline(always)]
-        fn from(val: Actvosrdy) -> u8 {
-            Actvosrdy::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Divclp {
-        #[doc = "Low power regulator clock not divided."]
-        B0x0 = 0x0,
-        _RESERVED_1 = 0x01,
-        _RESERVED_2 = 0x02,
-        _RESERVED_3 = 0x03,
-        _RESERVED_4 = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl Divclp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Divclp {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Divclp {
-        #[inline(always)]
-        fn from(val: u8) -> Divclp {
-            Divclp::from_bits(val)
-        }
-    }
-    impl From<Divclp> for u8 {
-        #[inline(always)]
-        fn from(val: Divclp) -> u8 {
-            Divclp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Encmode {
-        #[doc = "2.4 GHz RADIO encryption function disabled."]
-        B0x0 = 0x0,
-        #[doc = "2.4 GHz RADIO encryption function enabled."]
-        B0x1 = 0x01,
-    }
-    impl Encmode {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Encmode {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Encmode {
-        #[inline(always)]
-        fn from(val: u8) -> Encmode {
-            Encmode::from_bits(val)
-        }
-    }
-    impl From<Encmode> for u8 {
-        #[inline(always)]
-        fn from(val: Encmode) -> u8 {
-            Encmode::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Flashfwu {
         #[doc = "Flash memory enters low-power mode in Stop 0 and Stop 1 modes (lower-power consumption)."]
         LowPower = 0x0,
@@ -1853,37 +1835,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Flashfwu) -> u8 {
             Flashfwu::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Fsten {
-        #[doc = "LDO fast startup disabled (limited inrush current)."]
-        B0x0 = 0x0,
-        #[doc = "LDO fast startup enabled."]
-        B0x1 = 0x01,
-    }
-    impl Fsten {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Fsten {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Fsten {
-        #[inline(always)]
-        fn from(val: u8) -> Fsten {
-            Fsten::from_bits(val)
-        }
-    }
-    impl From<Fsten> for u8 {
-        #[inline(always)]
-        fn from(val: Fsten) -> u8 {
-            Fsten::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1920,46 +1871,18 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Io2sv {
-        #[doc = "VDDIO2 not supplied, electrical and logical isolation enabled."]
-        B0x0 = 0x0,
-        #[doc = "VDDIO2 supply present, electrical and logical isolation disabled."]
-        B0x1 = 0x01,
-    }
-    impl Io2sv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Io2sv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Io2sv {
-        #[inline(always)]
-        fn from(val: u8) -> Io2sv {
-            Io2sv::from_bits(val)
-        }
-    }
-    impl From<Io2sv> for u8 {
-        #[inline(always)]
-        fn from(val: Io2sv) -> u8 {
-            Io2sv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpms {
         #[doc = "Stop 0 mode"]
         Stop0 = 0x0,
         #[doc = "Stop 1 mode"]
         Stop1 = 0x01,
-        _RESERVED_2 = 0x02,
+        #[doc = "Stop 2 mode"]
+        Stop2 = 0x02,
         _RESERVED_3 = 0x03,
-        _RESERVED_4 = 0x04,
-        _RESERVED_5 = 0x05,
+        #[doc = "Standby mode"]
+        Standby0 = 0x04,
+        #[doc = "Standby mode"]
+        Standby1 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -1988,44 +1911,15 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Lpmsec {
-        #[doc = "CR1, CR2 and CSSF in the SR can be read and written with secure or non-secure access."]
-        B0x0 = 0x0,
-        #[doc = "CR1, CR2, and CSSF in the SR can be read and written only with secure access."]
-        B0x1 = 0x01,
-    }
-    impl Lpmsec {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lpmsec {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lpmsec {
-        #[inline(always)]
-        fn from(val: u8) -> Lpmsec {
-            Lpmsec::from_bits(val)
-        }
-    }
-    impl From<Lpmsec> for u8 {
-        #[inline(always)]
-        fn from(val: Lpmsec) -> u8 {
-            Lpmsec::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "2.4 GHz RADIO deep sleep mode"]
         DeepSleep = 0x0,
         #[doc = "2.4 GHz RADIO sleep mode"]
         Sleep = 0x01,
-        _RESERVED_2 = 0x02,
-        _RESERVED_3 = 0x03,
+        #[doc = "2.4 GHz RADIO active mode"]
+        Active0 = 0x02,
+        #[doc = "2.4 GHz RADIO active mode"]
+        Active1 = 0x03,
     }
     impl Mode {
         #[inline(always)]
@@ -2054,9 +1948,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Phymode {
         #[doc = "2.4 GHz RADIO Sleep mode."]
-        B0x0 = 0x0,
+        Sleep = 0x0,
         #[doc = "2.4 GHz RADIO Standby mode."]
-        B0x1 = 0x01,
+        Standby = 0x01,
     }
     impl Phymode {
         #[inline(always)]
@@ -2078,130 +1972,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Phymode) -> u8 {
             Phymode::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Pkarampds {
-        #[doc = "PKA SRAM content retained in Stop modes."]
-        B0x0 = 0x0,
-        #[doc = "PKA SRAM content lost in Stop modes."]
-        B0x1 = 0x01,
-    }
-    impl Pkarampds {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pkarampds {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Pkarampds {
-        #[inline(always)]
-        fn from(val: u8) -> Pkarampds {
-            Pkarampds::from_bits(val)
-        }
-    }
-    impl From<Pkarampds> for u8 {
-        #[inline(always)]
-        fn from(val: Pkarampds) -> u8 {
-            Pkarampds::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Prampds {
-        #[doc = "OTG SRAM content retained in Stop modes."]
-        B0x0 = 0x0,
-        #[doc = "OTG SRAM content lost in Stop modes."]
-        B0x1 = 0x01,
-    }
-    impl Prampds {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Prampds {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Prampds {
-        #[inline(always)]
-        fn from(val: u8) -> Prampds {
-            Prampds::from_bits(val)
-        }
-    }
-    impl From<Prampds> for u8 {
-        #[inline(always)]
-        fn from(val: Prampds) -> u8 {
-            Prampds::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ptasr {
-        #[doc = "Cleared by software, writing 0."]
-        B0x0 = 0x0,
-        #[doc = "Set by hardware when Stop 2 mode PTA retention is enabled in PTASREN and Stop 2 mode is entered."]
-        B0x1 = 0x01,
-    }
-    impl Ptasr {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ptasr {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ptasr {
-        #[inline(always)]
-        fn from(val: u8) -> Ptasr {
-            Ptasr::from_bits(val)
-        }
-    }
-    impl From<Ptasr> for u8 {
-        #[inline(always)]
-        fn from(val: Ptasr) -> u8 {
-            Ptasr::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ptasren {
-        #[doc = "PTA output signals Stop 2 retention feature disabled."]
-        B0x0 = 0x0,
-        #[doc = "PTA output signals Stop 2 retention feature enabled."]
-        B0x1 = 0x01,
-    }
-    impl Ptasren {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ptasren {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ptasren {
-        #[inline(always)]
-        fn from(val: u8) -> Ptasren {
-            Ptasren::from_bits(val)
-        }
-    }
-    impl From<Ptasren> for u8 {
-        #[inline(always)]
-        fn from(val: Ptasren) -> u8 {
-            Ptasren::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -2283,9 +2053,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Regpasel {
         #[doc = "VDDRFPA pin selected as regulator REG_VDDHPA input supply."]
-        B0x0 = 0x0,
+        Fixed = 0x0,
         #[doc = "regulator REG_VDDHPA input supply selection between VDDRFPA and VDD11, dependent on requested regulated output voltage."]
-        B0x1 = 0x01,
+        Auto = 0x01,
     }
     impl Regpasel {
         #[inline(always)]
@@ -2312,42 +2082,11 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Regs {
-        #[doc = "LDO selected."]
-        B0x0 = 0x0,
-        #[doc = "SMPS selected."]
-        B0x1 = 0x01,
-    }
-    impl Regs {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Regs {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Regs {
-        #[inline(always)]
-        fn from(val: u8) -> Regs {
-            Regs::from_bits(val)
-        }
-    }
-    impl From<Regs> for u8 {
-        #[inline(always)]
-        fn from(val: Regs) -> u8 {
-            Regs::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Regsel {
         #[doc = "LDO selected."]
-        B0x0 = 0x0,
+        Ldo = 0x0,
         #[doc = "SMPS selected."]
-        B0x1 = 0x01,
+        Smps = 0x01,
     }
     impl Regsel {
         #[inline(always)]
@@ -2369,37 +2108,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Regsel) -> u8 {
             Regsel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Sbf {
-        #[doc = "The device did not enter Standby mode."]
-        B0x0 = 0x0,
-        #[doc = "The device entered Standby mode."]
-        B0x1 = 0x01,
-    }
-    impl Sbf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Sbf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Sbf {
-        #[inline(always)]
-        fn from(val: u8) -> Sbf {
-            Sbf::from_bits(val)
-        }
-    }
-    impl From<Sbf> for u8 {
-        #[inline(always)]
-        fn from(val: Sbf) -> u8 {
-            Sbf::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -2467,130 +2175,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Usv {
-        #[doc = "VDDUSB not supplied, electrical and logical isolation enabled."]
-        B0x0 = 0x0,
-        #[doc = "VDDUSB supply present, electrical and logical isolation disabled."]
-        B0x1 = 0x01,
-    }
-    impl Usv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Usv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Usv {
-        #[inline(always)]
-        fn from(val: u8) -> Usv {
-            Usv::from_bits(val)
-        }
-    }
-    impl From<Usv> for u8 {
-        #[inline(always)]
-        fn from(val: Usv) -> u8 {
-            Usv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum V11fbsw {
-        #[doc = "V11 feedback fixed before Epod."]
-        B0x0 = 0x0,
-        #[doc = "V11 feedback switch enabled:."]
-        B0x1 = 0x01,
-    }
-    impl V11fbsw {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> V11fbsw {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for V11fbsw {
-        #[inline(always)]
-        fn from(val: u8) -> V11fbsw {
-            V11fbsw::from_bits(val)
-        }
-    }
-    impl From<V11fbsw> for u8 {
-        #[inline(always)]
-        fn from(val: V11fbsw) -> u8 {
-            V11fbsw::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Vbsec {
-        #[doc = "DBPCR can be read and written with secure or non-secure access."]
-        B0x0 = 0x0,
-        #[doc = "DBPCR can be read and written only with secure access."]
-        B0x1 = 0x01,
-    }
-    impl Vbsec {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vbsec {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vbsec {
-        #[inline(always)]
-        fn from(val: u8) -> Vbsec {
-            Vbsec::from_bits(val)
-        }
-    }
-    impl From<Vbsec> for u8 {
-        #[inline(always)]
-        fn from(val: Vbsec) -> u8 {
-            Vbsec::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Vdmsec {
-        #[doc = "SVMCR and CR3 can be read and written with secure or non-secure access."]
-        B0x0 = 0x0,
-        #[doc = "SVMCR and CR3 can be read and written only with secure access."]
-        B0x1 = 0x01,
-    }
-    impl Vdmsec {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vdmsec {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vdmsec {
-        #[inline(always)]
-        fn from(val: u8) -> Vdmsec {
-            Vdmsec::from_bits(val)
-        }
-    }
-    impl From<Vdmsec> for u8 {
-        #[inline(always)]
-        fn from(val: Vdmsec) -> u8 {
-            Vdmsec::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vos {
         #[doc = "Range 2 (lowest power)"]
         Range2 = 0x0,
@@ -2653,19 +2237,17 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Wusel {
-        #[doc = "reserved"]
-        B0x0 = 0x0,
-        #[doc = "WKUP3_1"]
-        B0x1 = 0x01,
-        #[doc = "WKUP3_2"]
-        B0x2 = 0x02,
-        #[doc = "reserved"]
-        B0x3 = 0x03,
+    pub enum Wusel1 {
+        #[doc = "WKUP1_0"]
+        Wkup10 = 0x0,
+        #[doc = "WKUP1_1"]
+        Wkup11 = 0x01,
+        _RESERVED_2 = 0x02,
+        _RESERVED_3 = 0x03,
     }
-    impl Wusel {
+    impl Wusel1 {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wusel {
+        pub const fn from_bits(val: u8) -> Wusel1 {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -2673,16 +2255,250 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Wusel {
+    impl From<u8> for Wusel1 {
         #[inline(always)]
-        fn from(val: u8) -> Wusel {
-            Wusel::from_bits(val)
+        fn from(val: u8) -> Wusel1 {
+            Wusel1::from_bits(val)
         }
     }
-    impl From<Wusel> for u8 {
+    impl From<Wusel1> for u8 {
         #[inline(always)]
-        fn from(val: Wusel) -> u8 {
-            Wusel::to_bits(val)
+        fn from(val: Wusel1) -> u8 {
+            Wusel1::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Wusel2 {
+        #[doc = "WKUP2_0"]
+        Wkup20 = 0x0,
+        #[doc = "WKUP2_1"]
+        Wkup21 = 0x01,
+        _RESERVED_2 = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Wusel2 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Wusel2 {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Wusel2 {
+        #[inline(always)]
+        fn from(val: u8) -> Wusel2 {
+            Wusel2::from_bits(val)
+        }
+    }
+    impl From<Wusel2> for u8 {
+        #[inline(always)]
+        fn from(val: Wusel2) -> u8 {
+            Wusel2::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Wusel3 {
+        _RESERVED_0 = 0x0,
+        #[doc = "WKUP3_1"]
+        Wkup31 = 0x01,
+        #[doc = "WKUP3_2"]
+        Wkup32 = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Wusel3 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Wusel3 {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Wusel3 {
+        #[inline(always)]
+        fn from(val: u8) -> Wusel3 {
+            Wusel3::from_bits(val)
+        }
+    }
+    impl From<Wusel3> for u8 {
+        #[inline(always)]
+        fn from(val: Wusel3) -> u8 {
+            Wusel3::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Wusel4 {
+        #[doc = "WKUP4_0"]
+        Wkup40 = 0x0,
+        #[doc = "WKUP4_1"]
+        Wkup41 = 0x01,
+        _RESERVED_2 = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Wusel4 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Wusel4 {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Wusel4 {
+        #[inline(always)]
+        fn from(val: u8) -> Wusel4 {
+            Wusel4::from_bits(val)
+        }
+    }
+    impl From<Wusel4> for u8 {
+        #[inline(always)]
+        fn from(val: Wusel4) -> u8 {
+            Wusel4::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Wusel5 {
+        _RESERVED_0 = 0x0,
+        #[doc = "WKUP5_1"]
+        Wkup51 = 0x01,
+        #[doc = "WKUP5_2"]
+        Wkup52 = 0x02,
+        _RESERVED_3 = 0x03,
+    }
+    impl Wusel5 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Wusel5 {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Wusel5 {
+        #[inline(always)]
+        fn from(val: u8) -> Wusel5 {
+            Wusel5::from_bits(val)
+        }
+    }
+    impl From<Wusel5> for u8 {
+        #[inline(always)]
+        fn from(val: Wusel5) -> u8 {
+            Wusel5::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Wusel6 {
+        #[doc = "WKUP6_0"]
+        Wkup60 = 0x0,
+        #[doc = "WKUP6_1"]
+        Wkup61 = 0x01,
+        _RESERVED_2 = 0x02,
+        #[doc = "WKUP6_3 (internal source, does not generate a WKUP interrupt)"]
+        Wkup63 = 0x03,
+    }
+    impl Wusel6 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Wusel6 {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Wusel6 {
+        #[inline(always)]
+        fn from(val: u8) -> Wusel6 {
+            Wusel6::from_bits(val)
+        }
+    }
+    impl From<Wusel6> for u8 {
+        #[inline(always)]
+        fn from(val: Wusel6) -> u8 {
+            Wusel6::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Wusel7 {
+        #[doc = "WKUP7_0"]
+        Wkup70 = 0x0,
+        #[doc = "WKUP7_1"]
+        Wkup71 = 0x01,
+        _RESERVED_2 = 0x02,
+        #[doc = "WKUP7_3 (internal source, does not generate a WKUP interrupt)"]
+        Wkup73 = 0x03,
+    }
+    impl Wusel7 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Wusel7 {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Wusel7 {
+        #[inline(always)]
+        fn from(val: u8) -> Wusel7 {
+            Wusel7::from_bits(val)
+        }
+    }
+    impl From<Wusel7> for u8 {
+        #[inline(always)]
+        fn from(val: Wusel7) -> u8 {
+            Wusel7::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Wusel8 {
+        _RESERVED_0 = 0x0,
+        #[doc = "WKUP8_1"]
+        Wkup81 = 0x01,
+        #[doc = "WKUP8_2"]
+        Wkup82 = 0x02,
+        #[doc = "WKUP8_3 (internal source, does not generate a WKUP interrupt)"]
+        Wkup83 = 0x03,
+    }
+    impl Wusel8 {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Wusel8 {
+            unsafe { core::mem::transmute(val & 0x03) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Wusel8 {
+        #[inline(always)]
+        fn from(val: u8) -> Wusel8 {
+            Wusel8::from_bits(val)
+        }
+    }
+    impl From<Wusel8> for u8 {
+        #[inline(always)]
+        fn from(val: Wusel8) -> u8 {
+            Wusel8::to_bits(val)
         }
     }
 }

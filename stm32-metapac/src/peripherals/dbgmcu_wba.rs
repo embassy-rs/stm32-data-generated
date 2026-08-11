@@ -126,101 +126,21 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Ahb1fzr(pub u32);
     impl Ahb1fzr {
-        #[doc = "GPDMA 1 channel 0 stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SEC0."]
+        #[doc = "GPDMA 1 channel y stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SECy."]
         #[must_use]
         #[inline(always)]
-        pub const fn dbg_gpdma1_ch0_stop(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
+        pub const fn dbg_gpdma1_ch_stop(&self, n: usize) -> bool {
+            assert!(n < 8usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "GPDMA 1 channel 0 stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SEC0."]
+        #[doc = "GPDMA 1 channel y stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SECy."]
         #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch0_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "GPDMA 1 channel 1 stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SEC1."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch1_stop(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA 1 channel 1 stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SEC1."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch1_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "GPDMA 1 channel 2 stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SEC2."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch2_stop(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA 1 channel 2 stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SEC2."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch2_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "GPDMA 1 channel 3 stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SEC3."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch3_stop(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA 1 channel 3 stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SEC3."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch3_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "GPDMA 1 channel 4 stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SEC4."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch4_stop(&self) -> bool {
-            let val = (self.0 >> 4usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA 1 channel 4 stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SEC4."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch4_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
-        }
-        #[doc = "GPDMA 1 channel 5 stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SEC5."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch5_stop(&self) -> bool {
-            let val = (self.0 >> 5usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA 1 channel 5 stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SEC5."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch5_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
-        }
-        #[doc = "GPDMA 1 channel 6 stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SEC6."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch6_stop(&self) -> bool {
-            let val = (self.0 >> 6usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA 1 channel 6 stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SEC6."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch6_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
-        }
-        #[doc = "GPDMA 1 channel 7 stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SEC7."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dbg_gpdma1_ch7_stop(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "GPDMA 1 channel 7 stop in CPU debug Write access can be protected by GPDMA_SECCFGR.SEC7."]
-        #[inline(always)]
-        pub const fn set_dbg_gpdma1_ch7_stop(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        pub const fn set_dbg_gpdma1_ch_stop(&mut self, n: usize, val: bool) {
+            assert!(n < 8usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Ahb1fzr {
@@ -232,14 +152,14 @@ pub mod regs {
     impl core::fmt::Debug for Ahb1fzr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb1fzr")
-                .field("dbg_gpdma1_ch0_stop", &self.dbg_gpdma1_ch0_stop())
-                .field("dbg_gpdma1_ch1_stop", &self.dbg_gpdma1_ch1_stop())
-                .field("dbg_gpdma1_ch2_stop", &self.dbg_gpdma1_ch2_stop())
-                .field("dbg_gpdma1_ch3_stop", &self.dbg_gpdma1_ch3_stop())
-                .field("dbg_gpdma1_ch4_stop", &self.dbg_gpdma1_ch4_stop())
-                .field("dbg_gpdma1_ch5_stop", &self.dbg_gpdma1_ch5_stop())
-                .field("dbg_gpdma1_ch6_stop", &self.dbg_gpdma1_ch6_stop())
-                .field("dbg_gpdma1_ch7_stop", &self.dbg_gpdma1_ch7_stop())
+                .field("dbg_gpdma1_ch_stop[0]", &self.dbg_gpdma1_ch_stop(0usize))
+                .field("dbg_gpdma1_ch_stop[1]", &self.dbg_gpdma1_ch_stop(1usize))
+                .field("dbg_gpdma1_ch_stop[2]", &self.dbg_gpdma1_ch_stop(2usize))
+                .field("dbg_gpdma1_ch_stop[3]", &self.dbg_gpdma1_ch_stop(3usize))
+                .field("dbg_gpdma1_ch_stop[4]", &self.dbg_gpdma1_ch_stop(4usize))
+                .field("dbg_gpdma1_ch_stop[5]", &self.dbg_gpdma1_ch_stop(5usize))
+                .field("dbg_gpdma1_ch_stop[6]", &self.dbg_gpdma1_ch_stop(6usize))
+                .field("dbg_gpdma1_ch_stop[7]", &self.dbg_gpdma1_ch_stop(7usize))
                 .finish()
         }
     }
@@ -248,15 +168,15 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb1fzr {{ dbg_gpdma1_ch0_stop: {=bool:?}, dbg_gpdma1_ch1_stop: {=bool:?}, dbg_gpdma1_ch2_stop: {=bool:?}, dbg_gpdma1_ch3_stop: {=bool:?}, dbg_gpdma1_ch4_stop: {=bool:?}, dbg_gpdma1_ch5_stop: {=bool:?}, dbg_gpdma1_ch6_stop: {=bool:?}, dbg_gpdma1_ch7_stop: {=bool:?} }}",
-                self.dbg_gpdma1_ch0_stop(),
-                self.dbg_gpdma1_ch1_stop(),
-                self.dbg_gpdma1_ch2_stop(),
-                self.dbg_gpdma1_ch3_stop(),
-                self.dbg_gpdma1_ch4_stop(),
-                self.dbg_gpdma1_ch5_stop(),
-                self.dbg_gpdma1_ch6_stop(),
-                self.dbg_gpdma1_ch7_stop()
+                "Ahb1fzr {{ dbg_gpdma1_ch_stop[0]: {=bool:?}, dbg_gpdma1_ch_stop[1]: {=bool:?}, dbg_gpdma1_ch_stop[2]: {=bool:?}, dbg_gpdma1_ch_stop[3]: {=bool:?}, dbg_gpdma1_ch_stop[4]: {=bool:?}, dbg_gpdma1_ch_stop[5]: {=bool:?}, dbg_gpdma1_ch_stop[6]: {=bool:?}, dbg_gpdma1_ch_stop[7]: {=bool:?} }}",
+                self.dbg_gpdma1_ch_stop(0usize),
+                self.dbg_gpdma1_ch_stop(1usize),
+                self.dbg_gpdma1_ch_stop(2usize),
+                self.dbg_gpdma1_ch_stop(3usize),
+                self.dbg_gpdma1_ch_stop(4usize),
+                self.dbg_gpdma1_ch_stop(5usize),
+                self.dbg_gpdma1_ch_stop(6usize),
+                self.dbg_gpdma1_ch_stop(7usize)
             )
         }
     }

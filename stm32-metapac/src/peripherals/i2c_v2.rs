@@ -249,6 +249,18 @@ pub mod regs {
         pub const fn set_nostretch(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
+        #[doc = "Wakeup from STOP enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wupen(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Wakeup from STOP enable"]
+        #[inline(always)]
+        pub const fn set_wupen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
         #[doc = "General call enable"]
         #[must_use]
         #[inline(always)]
@@ -333,6 +345,7 @@ pub mod regs {
                 .field("rxdmaen", &self.rxdmaen())
                 .field("sbc", &self.sbc())
                 .field("nostretch", &self.nostretch())
+                .field("wupen", &self.wupen())
                 .field("gcen", &self.gcen())
                 .field("smbhen", &self.smbhen())
                 .field("smbden", &self.smbden())
@@ -346,7 +359,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Cr1 {{ pe: {=bool:?}, txie: {=bool:?}, rxie: {=bool:?}, addrie: {=bool:?}, nackie: {=bool:?}, stopie: {=bool:?}, tcie: {=bool:?}, errie: {=bool:?}, dnf: {:?}, anfoff: {=bool:?}, txdmaen: {=bool:?}, rxdmaen: {=bool:?}, sbc: {=bool:?}, nostretch: {=bool:?}, gcen: {=bool:?}, smbhen: {=bool:?}, smbden: {=bool:?}, alerten: {=bool:?}, pecen: {=bool:?} }}",
+                "Cr1 {{ pe: {=bool:?}, txie: {=bool:?}, rxie: {=bool:?}, addrie: {=bool:?}, nackie: {=bool:?}, stopie: {=bool:?}, tcie: {=bool:?}, errie: {=bool:?}, dnf: {:?}, anfoff: {=bool:?}, txdmaen: {=bool:?}, rxdmaen: {=bool:?}, sbc: {=bool:?}, nostretch: {=bool:?}, wupen: {=bool:?}, gcen: {=bool:?}, smbhen: {=bool:?}, smbden: {=bool:?}, alerten: {=bool:?}, pecen: {=bool:?} }}",
                 self.pe(),
                 self.txie(),
                 self.rxie(),
@@ -361,6 +374,7 @@ pub mod regs {
                 self.rxdmaen(),
                 self.sbc(),
                 self.nostretch(),
+                self.wupen(),
                 self.gcen(),
                 self.smbhen(),
                 self.smbden(),

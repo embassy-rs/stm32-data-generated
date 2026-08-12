@@ -249,6 +249,14 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
+                    name: "wupen",
+                    description: Some("Wakeup from STOP enable"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "gcen",
                     description: Some("General call enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),

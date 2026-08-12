@@ -159,6 +159,12 @@
         "bit_size": 1
       },
       {
+        "name": "WUPEN",
+        "description": "Wakeup from STOP enable",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
         "name": "GCEN",
         "description": "General call enable",
         "bit_offset": 19,

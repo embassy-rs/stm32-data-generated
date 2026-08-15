@@ -2521,7 +2521,7 @@
           "address": 536346704,
           "registers": {
             "kind": "uid",
-            "version": "v1",
+            "version": "l0",
             "block": "UID"
           }
         },

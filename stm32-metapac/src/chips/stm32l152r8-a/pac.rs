@@ -302,7 +302,7 @@ pub mod syscfg;
 pub mod timer;
 #[path = "../../peripherals/tscal_v1.rs"]
 pub mod tscal;
-#[path = "../../peripherals/uid_v1.rs"]
+#[path = "../../peripherals/uid_l0.rs"]
 pub mod uid;
 #[path = "../../peripherals/usart_v2.rs"]
 pub mod usart;

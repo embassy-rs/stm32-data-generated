@@ -176,7 +176,7 @@ pub mod spi;
 pub mod syscfg;
 #[path = "../../peripherals/timer_l0.rs"]
 pub mod timer;
-#[path = "../../peripherals/uid_v1.rs"]
+#[path = "../../peripherals/uid_l0.rs"]
 pub mod uid;
 #[path = "../../peripherals/usart_v3.rs"]
 pub mod usart;

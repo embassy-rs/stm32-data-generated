@@ -1472,7 +1472,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x1ff80050,
         registers: Some(PeripheralRegisters {
             kind: "uid",
-            version: "v1",
+            version: "l0",
             block: "UID",
             ir: &uid::REGISTERS,
         }),
@@ -1844,7 +1844,7 @@ pub mod syscfg;
 pub mod timer;
 #[path = "../registers/tscal_v1.rs"]
 pub mod tscal;
-#[path = "../registers/uid_v1.rs"]
+#[path = "../registers/uid_l0.rs"]
 pub mod uid;
 #[path = "../registers/usart_v3.rs"]
 pub mod usart;

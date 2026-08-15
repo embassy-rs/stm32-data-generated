@@ -233,7 +233,7 @@ pub mod timer;
 pub mod tsc;
 #[path = "../../peripherals/tscal_v1.rs"]
 pub mod tscal;
-#[path = "../../peripherals/uid_v1.rs"]
+#[path = "../../peripherals/uid_l0.rs"]
 pub mod uid;
 #[path = "../../peripherals/usart_v3.rs"]
 pub mod usart;

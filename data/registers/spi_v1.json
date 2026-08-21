@@ -27,24 +27,24 @@
         "fieldset": "DR"
       },
       {
-        "name": "CRCPR",
+        "name": "CRCPOLY",
         "description": "CRC polynomial register",
         "byte_offset": 16,
-        "fieldset": "CRCPR"
+        "fieldset": "CRCPOLY"
       },
       {
-        "name": "RXCRCR",
+        "name": "RXCRC",
         "description": "RX CRC register",
         "byte_offset": 20,
         "access": "Read",
-        "fieldset": "RXCRCR"
+        "fieldset": "RXCRC"
       },
       {
-        "name": "TXCRCR",
+        "name": "TXCRC",
         "description": "TX CRC register",
         "byte_offset": 24,
         "access": "Read",
-        "fieldset": "TXCRCR"
+        "fieldset": "TXCRC"
       },
       {
         "name": "I2SCFGR",
@@ -206,7 +206,7 @@
       }
     ]
   },
-  "fieldset/CRCPR": {
+  "fieldset/CRCPOLY": {
     "description": "CRC polynomial register",
     "fields": [
       {
@@ -308,11 +308,11 @@
       }
     ]
   },
-  "fieldset/RXCRCR": {
+  "fieldset/RXCRC": {
     "description": "RX CRC register",
     "fields": [
       {
-        "name": "RxCRC",
+        "name": "RXCRC",
         "description": "Rx CRC register",
         "bit_offset": 0,
         "bit_size": 16
@@ -379,11 +379,11 @@
       }
     ]
   },
-  "fieldset/TXCRCR": {
+  "fieldset/TXCRC": {
     "description": "TX CRC register",
     "fields": [
       {
-        "name": "TxCRC",
+        "name": "TXCRC",
         "description": "Tx CRC register",
         "bit_offset": 0,
         "bit_size": 16

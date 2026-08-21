@@ -41,17 +41,17 @@ impl Spi {
     }
     #[doc = "CRC polynomial register"]
     #[inline(always)]
-    pub const fn crcpr(self) -> crate::common::Reg<regs::Crcpr, crate::common::RW> {
+    pub const fn crcpoly(self) -> crate::common::Reg<regs::Crcpoly, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
     #[doc = "RX CRC register"]
     #[inline(always)]
-    pub const fn rxcrcr(self) -> crate::common::Reg<regs::Rxcrcr, crate::common::R> {
+    pub const fn rxcrc(self) -> crate::common::Reg<regs::Rxcrc, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
     }
     #[doc = "TX CRC register"]
     #[inline(always)]
-    pub const fn txcrcr(self) -> crate::common::Reg<regs::Txcrcr, crate::common::R> {
+    pub const fn txcrc(self) -> crate::common::Reg<regs::Txcrc, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
     }
     #[doc = "I2S configuration register"]
@@ -501,8 +501,8 @@ pub mod regs {
     #[doc = "CRC polynomial register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Crcpr(pub u32);
-    impl Crcpr {
+    pub struct Crcpoly(pub u32);
+    impl Crcpoly {
         #[doc = "CRC polynomial register"]
         #[must_use]
         #[inline(always)]
@@ -516,21 +516,21 @@ pub mod regs {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
-    impl Default for Crcpr {
+    impl Default for Crcpoly {
         #[inline(always)]
-        fn default() -> Crcpr {
-            Crcpr(0)
+        fn default() -> Crcpoly {
+            Crcpoly(0)
         }
     }
-    impl core::fmt::Debug for Crcpr {
+    impl core::fmt::Debug for Crcpoly {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Crcpr").field("crcpoly", &self.crcpoly()).finish()
+            f.debug_struct("Crcpoly").field("crcpoly", &self.crcpoly()).finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Crcpr {
+    impl defmt::Format for Crcpoly {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Crcpr {{ crcpoly: {=u16:?} }}", self.crcpoly())
+            defmt::write!(f, "Crcpoly {{ crcpoly: {=u16:?} }}", self.crcpoly())
         }
     }
     #[doc = "data register"]
@@ -779,36 +779,36 @@ pub mod regs {
     #[doc = "RX CRC register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Rxcrcr(pub u32);
-    impl Rxcrcr {
+    pub struct Rxcrc(pub u32);
+    impl Rxcrc {
         #[doc = "Rx CRC register"]
         #[must_use]
         #[inline(always)]
-        pub const fn rx_crc(&self) -> u16 {
+        pub const fn rxcrc(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
             val as u16
         }
         #[doc = "Rx CRC register"]
         #[inline(always)]
-        pub const fn set_rx_crc(&mut self, val: u16) {
+        pub const fn set_rxcrc(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
-    impl Default for Rxcrcr {
+    impl Default for Rxcrc {
         #[inline(always)]
-        fn default() -> Rxcrcr {
-            Rxcrcr(0)
+        fn default() -> Rxcrc {
+            Rxcrc(0)
         }
     }
-    impl core::fmt::Debug for Rxcrcr {
+    impl core::fmt::Debug for Rxcrc {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Rxcrcr").field("rx_crc", &self.rx_crc()).finish()
+            f.debug_struct("Rxcrc").field("rxcrc", &self.rxcrc()).finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Rxcrcr {
+    impl defmt::Format for Rxcrc {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Rxcrcr {{ rx_crc: {=u16:?} }}", self.rx_crc())
+            defmt::write!(f, "Rxcrc {{ rxcrc: {=u16:?} }}", self.rxcrc())
         }
     }
     #[doc = "status register"]
@@ -995,36 +995,36 @@ pub mod regs {
     #[doc = "TX CRC register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Txcrcr(pub u32);
-    impl Txcrcr {
+    pub struct Txcrc(pub u32);
+    impl Txcrc {
         #[doc = "Tx CRC register"]
         #[must_use]
         #[inline(always)]
-        pub const fn tx_crc(&self) -> u16 {
+        pub const fn txcrc(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
             val as u16
         }
         #[doc = "Tx CRC register"]
         #[inline(always)]
-        pub const fn set_tx_crc(&mut self, val: u16) {
+        pub const fn set_txcrc(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
-    impl Default for Txcrcr {
+    impl Default for Txcrc {
         #[inline(always)]
-        fn default() -> Txcrcr {
-            Txcrcr(0)
+        fn default() -> Txcrc {
+            Txcrc(0)
         }
     }
-    impl core::fmt::Debug for Txcrcr {
+    impl core::fmt::Debug for Txcrc {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Txcrcr").field("tx_crc", &self.tx_crc()).finish()
+            f.debug_struct("Txcrc").field("txcrc", &self.txcrc()).finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Txcrcr {
+    impl defmt::Format for Txcrc {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Txcrcr {{ tx_crc: {=u16:?} }}", self.tx_crc())
+            defmt::write!(f, "Txcrc {{ txcrc: {=u16:?} }}", self.txcrc())
         }
     }
 }

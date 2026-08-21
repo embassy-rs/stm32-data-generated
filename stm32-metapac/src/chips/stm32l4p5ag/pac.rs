@@ -531,7 +531,7 @@ pub mod hash;
 pub mod i2c;
 #[path = "../../peripherals/iwdg_v2.rs"]
 pub mod iwdg;
-#[path = "../../peripherals/lptim_v1b.rs"]
+#[path = "../../peripherals/lptim_v1c.rs"]
 pub mod lptim;
 #[path = "../../peripherals/octospi_v1.rs"]
 pub mod octospi;

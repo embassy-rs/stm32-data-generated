@@ -2424,7 +2424,7 @@
           "address": 1073773568,
           "registers": {
             "kind": "lptim",
-            "version": "v1a",
+            "version": "v1c",
             "block": "LPTIM"
           },
           "rcc": {
@@ -2482,7 +2482,7 @@
           "address": 1073779712,
           "registers": {
             "kind": "lptim",
-            "version": "v1a",
+            "version": "v1c",
             "block": "LPTIM"
           },
           "rcc": {

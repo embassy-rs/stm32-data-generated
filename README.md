@@ -72,7 +72,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [LCD](#lcd) | | | | | | | | | | | | | v2 | v1 | v2 | | | | | v2 | | | v2 | | | |
 | [LPDMA](#lpdma) | | v1 | | | | | | | | | | | | | | | | | | | | v1 | | | | |
 | [LPGPIO](#lpgpio) | | | | | | | | | | | | | | | | | | | | | | v1 | | | | |
-| [LPTIM](#lptim) | | ❌ | | | | | v1a | v1a | v1b | v1b_g4 | v2a | v1b_h7 | v1 | | v1a | v1b | v1c | ❌ | n6 | v2b | v2a | v2a | v1b | | v2a | v1c |
+| [LPTIM](#lptim) | | ❌ | | | | | v1a | v1a | v1b | v1b_g4 | v2a | v1b_h7 | v1 | | v1a, v1c | v1b, v1c | v1c | ❌ | n6 | v2b | v2a | v2a | v1b | | v2a | v1c |
 | [LTDC](#ltdc) | | | | | | | v1 | v1 | | | | v1 | | | | v1, ❌ | | ❌ | v1_3 | | | v1 | | | | |
 | [MCE](#mce) | | | | | | | | | | | | ❌ | | | | | | | n6 | | | | | | | |
 | [MDF](#mdf) | | | | | | | | | | | | | | | | | | | n6 | | | u5 | | | | |
@@ -687,7 +687,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v1b**: STM32G0, STM32L4+, STM32WB
 - **v1b_g4**: STM32G4
 - **v1b_h7**: STM32H7
-- **v1c**: STM32L5, STM32WL
+- **v1c**: STM32L4, STM32L4+, STM32L5, STM32WL
 - **v2a**: STM32H5, STM32U3, STM32U5, STM32WBA
 - **v2b**: STM32U0
 - **❌ Unsupported**: STM32C5, STM32MP1

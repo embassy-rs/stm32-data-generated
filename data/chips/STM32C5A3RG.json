@@ -809,6 +809,11 @@
         {
           "name": "CRC",
           "address": 1073885184,
+          "registers": {
+            "kind": "crc",
+            "version": "v3",
+            "block": "CRC"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": "HCLK1",
@@ -825,6 +830,11 @@
         {
           "name": "CRS",
           "address": 1073766400,
+          "registers": {
+            "kind": "crs",
+            "version": "v1",
+            "block": "CRS"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": "PCLK1",

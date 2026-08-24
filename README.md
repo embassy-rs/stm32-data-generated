@@ -24,8 +24,8 @@ The following table shows which STM32 peripheral versions are supported across d
 | [CEC](#cec) | | | v2 | v1 | | v2 | v2 | v2 | v2 | | v2 | v2 | | | | | | v2 | | | | | | | | |
 | [COMP](#comp) | | ❌ | ❌ | | | f3_v1, ❌ | | | v1 | v2 | h5 | h7_a, h7_b | ❌ | ❌ | v3 | v3 | v3 | | | u0 | u3 | u5 | v3, ❌ | | u5 | v3 |
 | [CORDIC](#cordic) | | v1 | | | | | | | | v1 | v1 | v1 | | | | | | | | | | v1 | | | | |
-| [CRC](#crc) | v3 | ❌ | v2, v3 | v1 | v1 | v3 | v1 | v3 | v3 | v3 | v3 | v3 | v3 | v1 | v3 | v3 | v3 | ❌ | v3 | v3 | v3 | v3 | v3 | v3 | v3 | v3 |
-| [CRS](#crs) | v1 | ❌ | v1 | | | | | | v1 | v1 | v1 | v1 | v1 | | v1 | v1 | v1 | | | v1 | v1 | v1 | v1 | | | |
+| [CRC](#crc) | v3 | v3 | v2, v3 | v1 | v1 | v3 | v1 | v3 | v3 | v3 | v3 | v3 | v3 | v1 | v3 | v3 | v3 | ❌ | v3 | v3 | v3 | v3 | v3 | v3 | v3 | v3 |
+| [CRS](#crs) | v1 | v1 | v1 | | | | | | v1 | v1 | v1 | v1 | v1 | | v1 | v1 | v1 | | | v1 | v1 | v1 | v1 | | | |
 | [CRYP](#cryp) | | | | | v1 | | v1, v2 | v2 | | | | v3, v4 | | | | | | v2 | v2 | | | | | | | |
 | [CSI](#csi) | | | | | | | | | | | | | | | | | | | v1 | | | | | | | |
 | [DAC](#dac) | | ❌ | v2 | v1, v2 | v2 | v2 | v2 | v2 | v4 | v7 | v6 | v4 | v2 | v2 | v3 | v5 | v5 | ❌ | | v4 | v6 | v6 | | | | v4 |
@@ -268,15 +268,14 @@ The following table shows which STM32 peripheral versions are supported across d
 
 - **v1**: STM32F1, STM32F2, STM32F4, STM32L1
 - **v2**: STM32F0
-- **v3**: STM32C0, STM32F0, STM32F3, STM32F7, STM32G0, STM32G4, STM32H5, STM32H7, STM32L0, STM32L4, STM32L4+, STM32L5, STM32N6, STM32U0, STM32U3, STM32U5, STM32WB, STM32WB0, STM32WBA, STM32WL
-- **❌ Unsupported**: STM32C5, STM32MP1
+- **v3**: STM32C0, STM32C5, STM32F0, STM32F3, STM32F7, STM32G0, STM32G4, STM32H5, STM32H7, STM32L0, STM32L4, STM32L4+, STM32L5, STM32N6, STM32U0, STM32U3, STM32U5, STM32WB, STM32WB0, STM32WBA, STM32WL
+- **❌ Unsupported**: STM32MP1
 
 ### CRS
 
 **Versions by family:**
 
-- **v1**: STM32C0, STM32F0, STM32G0, STM32G4, STM32H5, STM32H7, STM32L0, STM32L4, STM32L4+, STM32L5, STM32U0, STM32U3, STM32U5, STM32WB
-- **❌ Unsupported**: STM32C5
+- **v1**: STM32C0, STM32C5, STM32F0, STM32G0, STM32G4, STM32H5, STM32H7, STM32L0, STM32L4, STM32L4+, STM32L5, STM32U0, STM32U3, STM32U5, STM32WB
 
 ### CRYP
 

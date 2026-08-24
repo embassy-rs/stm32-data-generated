@@ -434,7 +434,7 @@ pub const UART5: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_5000usize
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400usize as _) };
 pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800usize as _) };
 pub const I3C1: i3c::I3c = unsafe { i3c::I3c::from_ptr(0x4000_5c00usize as _) };
-pub const CRS: *mut () = 0x4000_6000usize as _;
+pub const CRS: crs::Crs = unsafe { crs::Crs::from_ptr(0x4000_6000usize as _) };
 pub const USART6: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_6400usize as _) };
 pub const UART7: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_7800usize as _) };
 pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4000_a400usize as _) };
@@ -454,7 +454,7 @@ pub const USBRAM: usbram::Usbram = unsafe { usbram::Usbram::from_ptr(0x4001_6400
 pub const LPDMA1: lpdma::Lpdma = unsafe { lpdma::Lpdma::from_ptr(0x4002_0000usize as _) };
 pub const LPDMA2: lpdma::Lpdma = unsafe { lpdma::Lpdma::from_ptr(0x4002_1000usize as _) };
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000usize as _) };
-pub const CRC: *mut () = 0x4002_3000usize as _;
+pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000usize as _) };
 pub const CORDIC: cordic::Cordic = unsafe { cordic::Cordic::from_ptr(0x4002_3800usize as _) };
 pub const RAMCFG: *mut () = 0x4002_6000usize as _;
 pub const RAMCFG_SRAM1: *mut () = 0x4002_6000usize as _;
@@ -508,6 +508,10 @@ pub mod aes;
 pub mod can;
 #[path = "../../peripherals/cordic_v1.rs"]
 pub mod cordic;
+#[path = "../../peripherals/crc_v3.rs"]
+pub mod crc;
+#[path = "../../peripherals/crs_v1.rs"]
+pub mod crs;
 #[path = "../../peripherals/dbgmcu_c5.rs"]
 pub mod dbgmcu;
 #[path = "../../peripherals/eth_v2b.rs"]

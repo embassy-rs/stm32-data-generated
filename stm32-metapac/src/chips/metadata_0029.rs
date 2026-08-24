@@ -387,7 +387,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "CRC",
         address: 0x40023000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "crc",
+            version: "v3",
+            block: "CRC",
+            ir: &crc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK1",
             kernel_clock: Clock("HCLK1"),
@@ -410,7 +415,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "CRS",
         address: 0x40006000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "crs",
+            version: "v1",
+            block: "CRS",
+            ir: &crs::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Clock("PCLK1"),
@@ -4858,6 +4868,10 @@ pub mod adc;
 pub mod adccommon;
 #[path = "../registers/cordic_v1.rs"]
 pub mod cordic;
+#[path = "../registers/crc_v3.rs"]
+pub mod crc;
+#[path = "../registers/crs_v1.rs"]
+pub mod crs;
 #[path = "../registers/dbgmcu_c5.rs"]
 pub mod dbgmcu;
 #[path = "../registers/exti_u5.rs"]

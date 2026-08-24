@@ -450,12 +450,12 @@
           ],
           "dma_channels": [
             {
-              "signal": "GLOBAL",
+              "signal": "ADC1",
               "dma": "LPDMA1",
               "request": 0
             },
             {
-              "signal": "GLOBAL",
+              "signal": "ADC1",
               "dma": "LPDMA2",
               "request": 0
             }
@@ -527,12 +527,12 @@
           ],
           "dma_channels": [
             {
-              "signal": "GLOBAL",
+              "signal": "ADC2",
               "dma": "LPDMA1",
               "request": 1
             },
             {
-              "signal": "GLOBAL",
+              "signal": "ADC2",
               "dma": "LPDMA2",
               "request": 1
             }

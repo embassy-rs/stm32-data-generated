@@ -366,7 +366,7 @@ pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000usize as _) };
 pub const CORDIC: cordic::Cordic = unsafe { cordic::Cordic::from_ptr(0x4002_3800usize as _) };
 pub const RAMCFG_SRAM1: *mut () = 0x4002_6000usize as _;
 pub const RAMCFG_SRAM2: *mut () = 0x4002_6040usize as _;
-pub const ICACHE: *mut () = 0x4003_0400usize as _;
+pub const ICACHE: icache::Icache = unsafe { icache::Icache::from_ptr(0x4003_0400usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0000usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0400usize as _) };
 pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0800usize as _) };
@@ -375,9 +375,9 @@ pub const GPIOE: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1000usize as 
 pub const GPIOH: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1c00usize as _) };
 pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_8000usize as _) };
 pub const ADC12_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4202_8300usize as _) };
-pub const DAC1: *mut () = 0x4202_8400usize as _;
+pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4202_8400usize as _) };
 pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000usize as _) };
-pub const HASH: *mut () = 0x420c_0400usize as _;
+pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4400_2400usize as _) };
@@ -409,6 +409,8 @@ pub mod cordic;
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]
 pub mod crs;
+#[path = "../../peripherals/dac_v8.rs"]
+pub mod dac;
 #[path = "../../peripherals/dbgmcu_c5.rs"]
 pub mod dbgmcu;
 #[path = "../../peripherals/exti_u5.rs"]
@@ -419,10 +421,14 @@ pub mod fdcanram;
 pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/hash_c5.rs"]
+pub mod hash;
 #[path = "../../peripherals/i2c_v3.rs"]
 pub mod i2c;
 #[path = "../../peripherals/i3c_v1.rs"]
 pub mod i3c;
+#[path = "../../peripherals/icache_v1_4crr_nomstsel.rs"]
+pub mod icache;
 #[path = "../../peripherals/lpdma_v1.rs"]
 pub mod lpdma;
 #[path = "../../peripherals/pwr_c5.rs"]

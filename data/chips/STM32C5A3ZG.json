@@ -1125,6 +1125,11 @@
         {
           "name": "CCB",
           "address": 1108114432,
+          "registers": {
+            "kind": "ccb",
+            "version": "v2",
+            "block": "CCB"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": "HCLK2",
@@ -1310,6 +1315,11 @@
         {
           "name": "DAC1",
           "address": 1107461120,
+          "registers": {
+            "kind": "dac",
+            "version": "v9",
+            "block": "DAC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -2087,6 +2097,11 @@
         {
           "name": "HASH",
           "address": 1108083712,
+          "registers": {
+            "kind": "hash",
+            "version": "c5",
+            "block": "HASH"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": "HCLK2",
@@ -2498,6 +2513,11 @@
         {
           "name": "ICACHE",
           "address": 1073939456,
+          "registers": {
+            "kind": "icache",
+            "version": "v1_4crr",
+            "block": "ICACHE"
+          },
           "interrupts": [
             {
               "signal": "GLOBAL",

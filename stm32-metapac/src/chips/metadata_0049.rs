@@ -459,7 +459,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "DAC1",
         address: 0x42028400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "dac",
+            version: "v9",
+            block: "DAC",
+            ir: &dac::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -934,7 +939,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "HASH",
         address: 0x420c0400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "hash",
+            version: "c5",
+            block: "HASH",
+            ir: &hash::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Clock("HCLK2"),
@@ -1386,7 +1396,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "ICACHE",
         address: 0x40030400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "icache",
+            version: "v1_4crr_nomstsel",
+            block: "ICACHE",
+            ir: &icache::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -6201,6 +6216,8 @@ pub mod cordic;
 pub mod crc;
 #[path = "../registers/crs_v1.rs"]
 pub mod crs;
+#[path = "../registers/dac_v9.rs"]
+pub mod dac;
 #[path = "../registers/dbgmcu_c5.rs"]
 pub mod dbgmcu;
 #[path = "../registers/exti_u5.rs"]
@@ -6211,10 +6228,14 @@ pub mod fdcanram;
 pub mod flash;
 #[path = "../registers/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../registers/hash_c5.rs"]
+pub mod hash;
 #[path = "../registers/i2c_v3.rs"]
 pub mod i2c;
 #[path = "../registers/i3c_v1.rs"]
 pub mod i3c;
+#[path = "../registers/icache_v1_4crr_nomstsel.rs"]
+pub mod icache;
 #[path = "../registers/lpdma_v1.rs"]
 pub mod lpdma;
 #[path = "../registers/pwr_c5.rs"]

@@ -460,7 +460,7 @@ pub const RAMCFG: *mut () = 0x4002_6000usize as _;
 pub const RAMCFG_SRAM1: *mut () = 0x4002_6000usize as _;
 pub const RAMCFG_SRAM2: *mut () = 0x4002_6040usize as _;
 pub const ETH1: eth::Eth = unsafe { eth::Eth::from_ptr(0x4002_8000usize as _) };
-pub const ICACHE: *mut () = 0x4003_0400usize as _;
+pub const ICACHE: icache::Icache = unsafe { icache::Icache::from_ptr(0x4003_0400usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0000usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0400usize as _) };
 pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_0800usize as _) };
@@ -472,15 +472,15 @@ pub const GPIOH: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1c00usize as 
 pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_8000usize as _) };
 pub const ADC2: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_8100usize as _) };
 pub const ADC12_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4202_8300usize as _) };
-pub const DAC1: *mut () = 0x4202_8400usize as _;
+pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4202_8400usize as _) };
 pub const ADC3: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_d800usize as _) };
 pub const ADC3_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4202_db00usize as _) };
 pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x420c_0000usize as _) };
-pub const HASH: *mut () = 0x420c_0400usize as _;
+pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
 pub const SAES: saes::Saes = unsafe { saes::Saes::from_ptr(0x420c_0c00usize as _) };
 pub const PKA: *mut () = 0x420c_2000usize as _;
-pub const CCB: *mut () = 0x420c_7c00usize as _;
+pub const CCB: ccb::Ccb = unsafe { ccb::Ccb::from_ptr(0x420c_7c00usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4400_2400usize as _) };
 pub const LPTIM1: *mut () = 0x4400_4400usize as _;
@@ -506,12 +506,16 @@ pub mod adccommon;
 pub mod aes;
 #[path = "../../peripherals/can_fdcan_v1.rs"]
 pub mod can;
+#[path = "../../peripherals/ccb_v2.rs"]
+pub mod ccb;
 #[path = "../../peripherals/cordic_v1.rs"]
 pub mod cordic;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]
 pub mod crs;
+#[path = "../../peripherals/dac_v9.rs"]
+pub mod dac;
 #[path = "../../peripherals/dbgmcu_c5.rs"]
 pub mod dbgmcu;
 #[path = "../../peripherals/eth_v2b.rs"]
@@ -524,10 +528,14 @@ pub mod fdcanram;
 pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/hash_c5.rs"]
+pub mod hash;
 #[path = "../../peripherals/i2c_v3.rs"]
 pub mod i2c;
 #[path = "../../peripherals/i3c_v1.rs"]
 pub mod i3c;
+#[path = "../../peripherals/icache_v1_4crr.rs"]
+pub mod icache;
 #[path = "../../peripherals/lpdma_v1.rs"]
 pub mod lpdma;
 #[path = "../../peripherals/pwr_c5.rs"]

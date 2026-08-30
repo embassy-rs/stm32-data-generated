@@ -94,7 +94,7 @@ pub(crate) static REGISTERS: IR = IR {
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
                         bit_size: 32,
-                        fieldset: Some("Mcmpx"),
+                        fieldset: Some("Mcmp"),
                     }),
                 },
                 BlockItem {
@@ -102,7 +102,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("High Resolution Timer: Timing Unit"),
                     array: Some(Array::Regular(RegularArray { len: 6, stride: 128 })),
                     byte_offset: 0x80,
-                    inner: BlockItemInner::Block(BlockItemBlock { block: "HrtimTimx" }),
+                    inner: BlockItemInner::Block(BlockItemBlock { block: "HrtimTim" }),
                 },
                 BlockItem {
                     name: "cr1",
@@ -404,7 +404,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Block {
-            name: "HrtimTimx",
+            name: "HrtimTim",
             extends: None,
             description: Some("High Resolution Timer: Timing Unit"),
             items: &[
@@ -1855,7 +1855,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Mcmpx",
+            name: "Mcmp",
             extends: None,
             description: Some("Master Timer Compare X Register"),
             bit_size: 32,
@@ -3407,7 +3407,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "mstcmpx",
+                    name: "mstcmp",
                     description: Some("Master Compare X"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,

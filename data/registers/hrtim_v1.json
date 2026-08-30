@@ -58,7 +58,7 @@
           ]
         },
         "byte_offset": 28,
-        "fieldset": "MCMPX"
+        "fieldset": "MCMP"
       },
       {
         "name": "TIM",
@@ -68,7 +68,7 @@
           "stride": 128
         },
         "byte_offset": 128,
-        "block": "HRTIM_TIMX"
+        "block": "HRTIM_TIM"
       },
       {
         "name": "CR1",
@@ -229,7 +229,7 @@
       }
     ]
   },
-  "block/HRTIM_TIMX": {
+  "block/HRTIM_TIM": {
     "description": "High Resolution Timer: Timing Unit",
     "items": [
       {
@@ -1459,7 +1459,7 @@
       }
     ]
   },
-  "fieldset/MCMPX": {
+  "fieldset/MCMP": {
     "description": "Master Timer Compare X Register",
     "fields": [
       {
@@ -2782,7 +2782,7 @@
         "bit_size": 1
       },
       {
-        "name": "MSTCMPX",
+        "name": "MSTCMP",
         "description": "Master Compare X",
         "bit_offset": 8,
         "bit_size": 1,

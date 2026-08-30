@@ -56,7 +56,7 @@ impl Hrtim {
     }
     #[doc = "Master Timer Compare X Register"]
     #[inline(always)]
-    pub const fn mcmp(self, n: usize) -> crate::common::Reg<regs::Mcmpx, crate::common::RW> {
+    pub const fn mcmp(self, n: usize) -> crate::common::Reg<regs::Mcmp, crate::common::RW> {
         assert!(n < 4usize);
         unsafe {
             crate::common::Reg::from_ptr(
@@ -67,9 +67,9 @@ impl Hrtim {
     }
     #[doc = "High Resolution Timer: Timing Unit"]
     #[inline(always)]
-    pub const fn tim(self, n: usize) -> HrtimTimx {
+    pub const fn tim(self, n: usize) -> HrtimTim {
         assert!(n < 5usize);
-        unsafe { HrtimTimx::from_ptr(self.ptr.wrapping_add(0x80usize + n * 128usize) as _) }
+        unsafe { HrtimTim::from_ptr(self.ptr.wrapping_add(0x80usize + n * 128usize) as _) }
     }
     #[doc = "High Resolution Timer: Control Register 1"]
     #[inline(always)]
@@ -198,12 +198,12 @@ Register"]
 }
 #[doc = "High Resolution Timer: Timing Unit"]
 #[derive(Copy, Clone, Eq, PartialEq)]
-pub struct HrtimTimx {
+pub struct HrtimTim {
     ptr: *mut u8,
 }
-unsafe impl Send for HrtimTimx {}
-unsafe impl Sync for HrtimTimx {}
-impl HrtimTimx {
+unsafe impl Send for HrtimTim {}
+unsafe impl Sync for HrtimTim {}
+impl HrtimTim {
     #[inline(always)]
     pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
         Self { ptr: ptr as _ }
@@ -2845,8 +2845,8 @@ pub mod regs {
     #[doc = "Master Timer Compare X Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Mcmpx(pub u32);
-    impl Mcmpx {
+    pub struct Mcmp(pub u32);
+    impl Mcmp {
         #[doc = "Master Timer Compare X value"]
         #[must_use]
         #[inline(always)]
@@ -2860,21 +2860,21 @@ pub mod regs {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
-    impl Default for Mcmpx {
+    impl Default for Mcmp {
         #[inline(always)]
-        fn default() -> Mcmpx {
-            Mcmpx(0)
+        fn default() -> Mcmp {
+            Mcmp(0)
         }
     }
-    impl core::fmt::Debug for Mcmpx {
+    impl core::fmt::Debug for Mcmp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Mcmpx").field("mcmp", &self.mcmp()).finish()
+            f.debug_struct("Mcmp").field("mcmp", &self.mcmp()).finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Mcmpx {
+    impl defmt::Format for Mcmp {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Mcmpx {{ mcmp: {=u16:?} }}", self.mcmp())
+            defmt::write!(f, "Mcmp {{ mcmp: {=u16:?} }}", self.mcmp())
         }
     }
     #[doc = "Master Timer Counter Register"]
@@ -6107,7 +6107,7 @@ pub mod regs {
         #[doc = "Master Compare X"]
         #[must_use]
         #[inline(always)]
-        pub const fn mstcmpx(&self, n: usize) -> bool {
+        pub const fn mstcmp(&self, n: usize) -> bool {
             assert!(n < 4usize);
             let offs = 8usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
@@ -6115,7 +6115,7 @@ pub mod regs {
         }
         #[doc = "Master Compare X"]
         #[inline(always)]
-        pub const fn set_mstcmpx(&mut self, n: usize, val: bool) {
+        pub const fn set_mstcmp(&mut self, n: usize, val: bool) {
             assert!(n < 4usize);
             let offs = 8usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
@@ -6182,10 +6182,10 @@ pub mod regs {
                 .field("cmp[2]", &self.cmp(2usize))
                 .field("cmp[3]", &self.cmp(3usize))
                 .field("mstper", &self.mstper())
-                .field("mstcmpx[0]", &self.mstcmpx(0usize))
-                .field("mstcmpx[1]", &self.mstcmpx(1usize))
-                .field("mstcmpx[2]", &self.mstcmpx(2usize))
-                .field("mstcmpx[3]", &self.mstcmpx(3usize))
+                .field("mstcmp[0]", &self.mstcmp(0usize))
+                .field("mstcmp[1]", &self.mstcmp(1usize))
+                .field("mstcmp[2]", &self.mstcmp(2usize))
+                .field("mstcmp[3]", &self.mstcmp(3usize))
                 .field("timevnt[0]", &self.timevnt(0usize))
                 .field("timevnt[1]", &self.timevnt(1usize))
                 .field("timevnt[2]", &self.timevnt(2usize))
@@ -6214,7 +6214,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Timxsetr {{ sst: {=bool:?}, resync: {=bool:?}, per: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?}, mstper: {=bool:?}, mstcmpx[0]: {=bool:?}, mstcmpx[1]: {=bool:?}, mstcmpx[2]: {=bool:?}, mstcmpx[3]: {=bool:?}, timevnt[0]: {=bool:?}, timevnt[1]: {=bool:?}, timevnt[2]: {=bool:?}, timevnt[3]: {=bool:?}, timevnt[4]: {=bool:?}, timevnt[5]: {=bool:?}, timevnt[6]: {=bool:?}, timevnt[7]: {=bool:?}, timevnt[8]: {=bool:?}, extevnt[0]: {=bool:?}, extevnt[1]: {=bool:?}, extevnt[2]: {=bool:?}, extevnt[3]: {=bool:?}, extevnt[4]: {=bool:?}, extevnt[5]: {=bool:?}, extevnt[6]: {=bool:?}, extevnt[7]: {=bool:?}, extevnt[8]: {=bool:?}, extevnt[9]: {=bool:?}, update: {=bool:?} }}",
+                "Timxsetr {{ sst: {=bool:?}, resync: {=bool:?}, per: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?}, mstper: {=bool:?}, mstcmp[0]: {=bool:?}, mstcmp[1]: {=bool:?}, mstcmp[2]: {=bool:?}, mstcmp[3]: {=bool:?}, timevnt[0]: {=bool:?}, timevnt[1]: {=bool:?}, timevnt[2]: {=bool:?}, timevnt[3]: {=bool:?}, timevnt[4]: {=bool:?}, timevnt[5]: {=bool:?}, timevnt[6]: {=bool:?}, timevnt[7]: {=bool:?}, timevnt[8]: {=bool:?}, extevnt[0]: {=bool:?}, extevnt[1]: {=bool:?}, extevnt[2]: {=bool:?}, extevnt[3]: {=bool:?}, extevnt[4]: {=bool:?}, extevnt[5]: {=bool:?}, extevnt[6]: {=bool:?}, extevnt[7]: {=bool:?}, extevnt[8]: {=bool:?}, extevnt[9]: {=bool:?}, update: {=bool:?} }}",
                 self.sst(),
                 self.resync(),
                 self.per(),
@@ -6223,10 +6223,10 @@ pub mod regs {
                 self.cmp(2usize),
                 self.cmp(3usize),
                 self.mstper(),
-                self.mstcmpx(0usize),
-                self.mstcmpx(1usize),
-                self.mstcmpx(2usize),
-                self.mstcmpx(3usize),
+                self.mstcmp(0usize),
+                self.mstcmp(1usize),
+                self.mstcmp(2usize),
+                self.mstcmp(3usize),
                 self.timevnt(0usize),
                 self.timevnt(1usize),
                 self.timevnt(2usize),

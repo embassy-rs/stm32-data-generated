@@ -2056,6 +2056,11 @@
         {
           "name": "RTC",
           "address": 1140881408,
+          "registers": {
+            "kind": "rtc",
+            "version": "v3_c5",
+            "block": "RTC"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3",

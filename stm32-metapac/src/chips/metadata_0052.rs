@@ -2068,7 +2068,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "RTC",
         address: 0x44007800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "rtc",
+            version: "v3_c5",
+            block: "RTC",
+            ir: &rtc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK3",
             kernel_clock: Clock("PCLK3"),
@@ -6039,6 +6044,8 @@ pub mod pwr;
 pub mod rcc;
 #[path = "../registers/rng_v4.rs"]
 pub mod rng;
+#[path = "../registers/rtc_v3_c5.rs"]
+pub mod rtc;
 #[path = "../registers/spi_v5_i2s.rs"]
 pub mod spi;
 #[path = "../registers/syscfg_c5.rs"]

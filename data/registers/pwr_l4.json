@@ -66,6 +66,12 @@
         },
         "byte_offset": 36,
         "fieldset": "PCR"
+      },
+      {
+        "name": "CR5",
+        "description": "Power control register 5",
+        "byte_offset": 128,
+        "fieldset": "CR5"
       }
     ]
   },
@@ -232,6 +238,17 @@
         "name": "VBRS",
         "description": "VBAT battery charging resistor selection",
         "bit_offset": 9,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/CR5": {
+    "description": "Power control register 5",
+    "fields": [
+      {
+        "name": "R1MODE",
+        "description": "Main regulator range 1 mode",
+        "bit_offset": 8,
         "bit_size": 1
       }
     ]

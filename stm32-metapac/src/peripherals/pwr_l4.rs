@@ -66,6 +66,11 @@ impl Pwr {
         assert!(n < 8usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x24usize + n * 8usize) as _) }
     }
+    #[doc = "Power control register 5"]
+    #[inline(always)]
+    pub const fn cr5(self) -> crate::common::Reg<regs::Cr5, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x80usize) as _) }
+    }
 }
 pub mod regs {
     #[doc = "Power control register 1"]
@@ -508,6 +513,41 @@ pub mod regs {
                 self.vbe(),
                 self.vbrs()
             )
+        }
+    }
+    #[doc = "Power control register 5"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr5(pub u32);
+    impl Cr5 {
+        #[doc = "Main regulator range 1 mode"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn r1mode(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Main regulator range 1 mode"]
+        #[inline(always)]
+        pub const fn set_r1mode(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+    }
+    impl Default for Cr5 {
+        #[inline(always)]
+        fn default() -> Cr5 {
+            Cr5(0)
+        }
+    }
+    impl core::fmt::Debug for Cr5 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr5").field("r1mode", &self.r1mode()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr5 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cr5 {{ r1mode: {=bool:?} }}", self.r1mode())
         }
     }
     #[doc = "Power Port pull control register"]

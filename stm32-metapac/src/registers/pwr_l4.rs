@@ -105,6 +105,17 @@ pub(crate) static REGISTERS: IR = IR {
                     fieldset: Some("Pcr"),
                 }),
             },
+            BlockItem {
+                name: "cr5",
+                description: Some("Power control register 5"),
+                array: None,
+                byte_offset: 0x80,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Cr5"),
+                }),
+            },
         ],
     }],
     fieldsets: &[
@@ -323,6 +334,20 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
             ],
+        },
+        FieldSet {
+            name: "Cr5",
+            extends: None,
+            description: Some("Power control register 5"),
+            bit_size: 32,
+            fields: &[Field {
+                name: "r1mode",
+                description: Some("Main regulator range 1 mode"),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                bit_size: 1,
+                array: None,
+                enumm: None,
+            }],
         },
         FieldSet {
             name: "Pcr",

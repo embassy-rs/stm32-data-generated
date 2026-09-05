@@ -1,0 +1,506 @@
+#![allow(clippy::missing_safety_doc)]
+#![allow(clippy::identity_op)]
+#![allow(clippy::unnecessary_cast)]
+#![allow(clippy::erasing_op)]
+
+#[doc = "Independent watchdog"]
+#[derive(Copy, Clone, Eq, PartialEq)]
+pub struct Iwdg {
+    ptr: *mut u8,
+}
+unsafe impl Send for Iwdg {}
+unsafe impl Sync for Iwdg {}
+impl Iwdg {
+    #[inline(always)]
+    pub const unsafe fn from_ptr(ptr: *mut ()) -> Self {
+        Self { ptr: ptr as _ }
+    }
+    #[inline(always)]
+    pub const fn as_ptr(&self) -> *mut () {
+        self.ptr as _
+    }
+    #[doc = "Key register"]
+    #[inline(always)]
+    pub const fn kr(self) -> crate::common::Reg<regs::Kr, crate::common::W> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
+    }
+    #[doc = "Prescaler register"]
+    #[inline(always)]
+    pub const fn pr(self) -> crate::common::Reg<regs::Pr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
+    }
+    #[doc = "Reload register"]
+    #[inline(always)]
+    pub const fn rlr(self) -> crate::common::Reg<regs::Rlr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    }
+    #[doc = "Status register"]
+    #[inline(always)]
+    pub const fn sr(self) -> crate::common::Reg<regs::Sr, crate::common::R> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
+    }
+    #[doc = "Window register"]
+    #[inline(always)]
+    pub const fn winr(self) -> crate::common::Reg<regs::Winr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    }
+    #[doc = "Early wakeup interrupt register"]
+    #[inline(always)]
+    pub const fn ewcr(self) -> crate::common::Reg<regs::Ewcr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x14usize) as _) }
+    }
+    #[doc = "Interrupt clear register"]
+    #[inline(always)]
+    pub const fn icr(self) -> crate::common::Reg<regs::Icr, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x18usize) as _) }
+    }
+}
+pub mod regs {
+    #[doc = "Early wakeup interrupt register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ewcr(pub u32);
+    impl Ewcr {
+        #[doc = "Watchdog counter early wakeup interrupt value"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ewit(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "Watchdog counter early wakeup interrupt value"]
+        #[inline(always)]
+        pub const fn set_ewit(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+        #[doc = "Watchdog early interrupt enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ewie(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Watchdog early interrupt enable"]
+        #[inline(always)]
+        pub const fn set_ewie(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+    }
+    impl Default for Ewcr {
+        #[inline(always)]
+        fn default() -> Ewcr {
+            Ewcr(0)
+        }
+    }
+    impl core::fmt::Debug for Ewcr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ewcr")
+                .field("ewit", &self.ewit())
+                .field("ewie", &self.ewie())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ewcr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ewcr {{ ewit: {=u16:?}, ewie: {=bool:?} }}",
+                self.ewit(),
+                self.ewie()
+            )
+        }
+    }
+    #[doc = "Interrupt clear register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Icr(pub u32);
+    impl Icr {
+        #[doc = "Watchdog early interrupt acknowledge"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ewic(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Watchdog early interrupt acknowledge"]
+        #[inline(always)]
+        pub const fn set_ewic(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+    }
+    impl Default for Icr {
+        #[inline(always)]
+        fn default() -> Icr {
+            Icr(0)
+        }
+    }
+    impl core::fmt::Debug for Icr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Icr").field("ewic", &self.ewic()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Icr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Icr {{ ewic: {=bool:?} }}", self.ewic())
+        }
+    }
+    #[doc = "Key register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Kr(pub u32);
+    impl Kr {
+        #[doc = "Key value (write only, read 0000h)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn key(&self) -> super::vals::Key {
+            let val = (self.0 >> 0usize) & 0xffff;
+            super::vals::Key::from_bits(val as u16)
+        }
+        #[doc = "Key value (write only, read 0000h)"]
+        #[inline(always)]
+        pub const fn set_key(&mut self, val: super::vals::Key) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val.to_bits() as u32) & 0xffff) << 0usize);
+        }
+    }
+    impl Default for Kr {
+        #[inline(always)]
+        fn default() -> Kr {
+            Kr(0)
+        }
+    }
+    impl core::fmt::Debug for Kr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Kr").field("key", &self.key()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Kr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Kr {{ key: {:?} }}", self.key())
+        }
+    }
+    #[doc = "Prescaler register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Pr(pub u32);
+    impl Pr {
+        #[doc = "Prescaler divider"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pr(&self) -> super::vals::Pr {
+            let val = (self.0 >> 0usize) & 0x0f;
+            super::vals::Pr::from_bits(val as u8)
+        }
+        #[doc = "Prescaler divider"]
+        #[inline(always)]
+        pub const fn set_pr(&mut self, val: super::vals::Pr) {
+            self.0 = (self.0 & !(0x0f << 0usize)) | (((val.to_bits() as u32) & 0x0f) << 0usize);
+        }
+    }
+    impl Default for Pr {
+        #[inline(always)]
+        fn default() -> Pr {
+            Pr(0)
+        }
+    }
+    impl core::fmt::Debug for Pr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Pr").field("pr", &self.pr()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Pr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Pr {{ pr: {:?} }}", self.pr())
+        }
+    }
+    #[doc = "Reload register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Rlr(pub u32);
+    impl Rlr {
+        #[doc = "Watchdog counter reload value"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rl(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "Watchdog counter reload value"]
+        #[inline(always)]
+        pub const fn set_rl(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+    }
+    impl Default for Rlr {
+        #[inline(always)]
+        fn default() -> Rlr {
+            Rlr(0)
+        }
+    }
+    impl core::fmt::Debug for Rlr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Rlr").field("rl", &self.rl()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Rlr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Rlr {{ rl: {=u16:?} }}", self.rl())
+        }
+    }
+    #[doc = "Status register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Sr(pub u32);
+    impl Sr {
+        #[doc = "Watchdog prescaler value update"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pvu(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Watchdog prescaler value update"]
+        #[inline(always)]
+        pub const fn set_pvu(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Watchdog counter reload value update"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn rvu(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Watchdog counter reload value update"]
+        #[inline(always)]
+        pub const fn set_rvu(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Watchdog counter window value update"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn wvu(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Watchdog counter window value update"]
+        #[inline(always)]
+        pub const fn set_wvu(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Watchdog interrupt comparator value update"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ewu(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Watchdog interrupt comparator value update"]
+        #[inline(always)]
+        pub const fn set_ewu(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "Watchdog enable status bit"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn onf(&self) -> bool {
+            let val = (self.0 >> 8usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Watchdog enable status bit"]
+        #[inline(always)]
+        pub const fn set_onf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        }
+        #[doc = "Watchdog early interrupt flag"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ewif(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Watchdog early interrupt flag"]
+        #[inline(always)]
+        pub const fn set_ewif(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+    }
+    impl Default for Sr {
+        #[inline(always)]
+        fn default() -> Sr {
+            Sr(0)
+        }
+    }
+    impl core::fmt::Debug for Sr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Sr")
+                .field("pvu", &self.pvu())
+                .field("rvu", &self.rvu())
+                .field("wvu", &self.wvu())
+                .field("ewu", &self.ewu())
+                .field("onf", &self.onf())
+                .field("ewif", &self.ewif())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Sr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Sr {{ pvu: {=bool:?}, rvu: {=bool:?}, wvu: {=bool:?}, ewu: {=bool:?}, onf: {=bool:?}, ewif: {=bool:?} }}",
+                self.pvu(),
+                self.rvu(),
+                self.wvu(),
+                self.ewu(),
+                self.onf(),
+                self.ewif()
+            )
+        }
+    }
+    #[doc = "Window register"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Winr(pub u32);
+    impl Winr {
+        #[doc = "Watchdog counter window value"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn win(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0x0fff;
+            val as u16
+        }
+        #[doc = "Watchdog counter window value"]
+        #[inline(always)]
+        pub const fn set_win(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x0fff << 0usize)) | (((val as u32) & 0x0fff) << 0usize);
+        }
+    }
+    impl Default for Winr {
+        #[inline(always)]
+        fn default() -> Winr {
+            Winr(0)
+        }
+    }
+    impl core::fmt::Debug for Winr {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Winr").field("win", &self.win()).finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Winr {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Winr {{ win: {=u16:?} }}", self.win())
+        }
+    }
+}
+pub mod vals {
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    pub struct Key(u16);
+    impl Key {
+        #[doc = "Enable access to PR, RLR and WINR registers (0x5555)"]
+        pub const Enable: Self = Self(0x5555);
+        #[doc = "Reset the watchdog value (0xAAAA)"]
+        pub const Reset: Self = Self(0xaaaa);
+        #[doc = "Start the watchdog (0xCCCC)"]
+        pub const Start: Self = Self(0xcccc);
+    }
+    impl Key {
+        pub const fn from_bits(val: u16) -> Key {
+            Self(val & 0xffff)
+        }
+        pub const fn to_bits(self) -> u16 {
+            self.0
+        }
+    }
+    impl core::fmt::Debug for Key {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            match self.0 {
+                0x5555 => f.write_str("Enable"),
+                0xaaaa => f.write_str("Reset"),
+                0xcccc => f.write_str("Start"),
+                other => core::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Key {
+        fn format(&self, f: defmt::Formatter) {
+            match self.0 {
+                0x5555 => defmt::write!(f, "Enable"),
+                0xaaaa => defmt::write!(f, "Reset"),
+                0xcccc => defmt::write!(f, "Start"),
+                other => defmt::write!(f, "0x{:02X}", other),
+            }
+        }
+    }
+    impl From<u16> for Key {
+        #[inline(always)]
+        fn from(val: u16) -> Key {
+            Key::from_bits(val)
+        }
+    }
+    impl From<Key> for u16 {
+        #[inline(always)]
+        fn from(val: Key) -> u16 {
+            Key::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Pr {
+        #[doc = "Divider /4"]
+        DivideBy4 = 0x0,
+        #[doc = "Divider /8"]
+        DivideBy8 = 0x01,
+        #[doc = "Divider /16"]
+        DivideBy16 = 0x02,
+        #[doc = "Divider /32"]
+        DivideBy32 = 0x03,
+        #[doc = "Divider /64"]
+        DivideBy64 = 0x04,
+        #[doc = "Divider /128"]
+        DivideBy128 = 0x05,
+        #[doc = "Divider /256"]
+        DivideBy256 = 0x06,
+        #[doc = "Divider /512"]
+        DivideBy512 = 0x07,
+        #[doc = "Divider /1024"]
+        DivideBy1024 = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+    }
+    impl Pr {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pr {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Pr {
+        #[inline(always)]
+        fn from(val: u8) -> Pr {
+            Pr::from_bits(val)
+        }
+    }
+    impl From<Pr> for u8 {
+        #[inline(always)]
+        fn from(val: Pr) -> u8 {
+            Pr::to_bits(val)
+        }
+    }
+}

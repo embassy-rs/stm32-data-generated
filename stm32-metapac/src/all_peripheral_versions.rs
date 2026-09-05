@@ -82,7 +82,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("i3c", &["v1"]),
     ("icache", &["v1_0crr", "v1_3crr", "v1_4crr", "v1_4crr_nomstsel"]),
     ("ipcc", &["v1"]),
-    ("iwdg", &["v1", "v2", "v3"]),
+    ("iwdg", &["c5", "v1", "v2", "v3"]),
     ("jpeg", &["v1"]),
     ("lcd", &["v1", "v2"]),
     ("lpdma", &["v1"]),

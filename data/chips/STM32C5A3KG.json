@@ -1647,6 +1647,11 @@
         {
           "name": "IWDG",
           "address": 1073754112,
+          "registers": {
+            "kind": "iwdg",
+            "version": "c5",
+            "block": "IWDG"
+          },
           "interrupts": [
             {
               "signal": "GLOBAL",
@@ -1769,6 +1774,11 @@
         {
           "name": "LPTIM1",
           "address": 1140868096,
+          "registers": {
+            "kind": "lptim",
+            "version": "v2a",
+            "block": "LPTIM"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": {
@@ -4929,6 +4939,11 @@
         {
           "name": "WWDG",
           "address": 1073753088,
+          "registers": {
+            "kind": "wwdg",
+            "version": "v2",
+            "block": "WWDG"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": "PCLK1",

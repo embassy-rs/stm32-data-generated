@@ -416,8 +416,8 @@ pub const TIM5: timer::TimGp32 = unsafe { timer::TimGp32::from_ptr(0x4000_0c00us
 pub const TIM6: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1000usize as _) };
 pub const TIM7: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1400usize as _) };
 pub const TIM12: timer::Tim2ch = unsafe { timer::Tim2ch::from_ptr(0x4000_1800usize as _) };
-pub const WWDG: *mut () = 0x4000_2c00usize as _;
-pub const IWDG: *mut () = 0x4000_3000usize as _;
+pub const WWDG: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x4000_2c00usize as _) };
+pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000usize as _) };
 pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3800usize as _) };
 pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3c00usize as _) };
 pub const COMP1: *mut () = 0x4000_4000usize as _;
@@ -474,7 +474,7 @@ pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
 pub const PKA: *mut () = 0x420c_2000usize as _;
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4400_2400usize as _) };
-pub const LPTIM1: *mut () = 0x4400_4400usize as _;
+pub const LPTIM1: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4400_4400usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4400_7800usize as _) };
 pub const TAMP: *mut () = 0x4400_7c00usize as _;
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4402_0800usize as _) };
@@ -523,8 +523,12 @@ pub mod i2c;
 pub mod i3c;
 #[path = "../../peripherals/icache_v1_4crr.rs"]
 pub mod icache;
+#[path = "../../peripherals/iwdg_c5.rs"]
+pub mod iwdg;
 #[path = "../../peripherals/lpdma_v1.rs"]
 pub mod lpdma;
+#[path = "../../peripherals/lptim_v2a.rs"]
+pub mod lptim;
 #[path = "../../peripherals/pwr_c5.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_c5.rs"]
@@ -547,3 +551,5 @@ pub mod usart;
 pub mod usb;
 #[path = "../../peripherals/usbram_32_2048.rs"]
 pub mod usbram;
+#[path = "../../peripherals/wwdg_v2.rs"]
+pub mod wwdg;

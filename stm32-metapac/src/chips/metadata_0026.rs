@@ -1058,7 +1058,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "IWDG",
         address: 0x40003000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "iwdg",
+            version: "c5",
+            block: "IWDG",
+            ir: &iwdg::REGISTERS,
+        }),
         rcc: None,
         pins: &[],
         dma_channels: &[],
@@ -1162,7 +1167,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "LPTIM1",
         address: 0x44004400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "lptim",
+            version: "v2a",
+            block: "LPTIM",
+            ir: &lptim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK3",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -3744,7 +3754,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "WWDG",
         address: 0x40002c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "wwdg",
+            version: "v2",
+            block: "WWDG",
+            ir: &wwdg::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Clock("PCLK1"),
@@ -4160,8 +4175,12 @@ pub mod i2c;
 pub mod i3c;
 #[path = "../registers/icache_v1_4crr_nomstsel.rs"]
 pub mod icache;
+#[path = "../registers/iwdg_c5.rs"]
+pub mod iwdg;
 #[path = "../registers/lpdma_v1.rs"]
 pub mod lpdma;
+#[path = "../registers/lptim_v2a.rs"]
+pub mod lptim;
 #[path = "../registers/pwr_c5.rs"]
 pub mod pwr;
 #[path = "../registers/rcc_c5.rs"]
@@ -4184,3 +4203,5 @@ pub mod usart;
 pub mod usb;
 #[path = "../registers/usbram_32_2048.rs"]
 pub mod usbram;
+#[path = "../registers/wwdg_v2.rs"]
+pub mod wwdg;

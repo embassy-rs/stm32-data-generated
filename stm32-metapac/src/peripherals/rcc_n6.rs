@@ -41812,8 +41812,8 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Otgphysel {
-        #[doc = "hse_ck selected as reference clock."]
-        Hse = 0x0,
+        #[doc = "hse_div2_ck selected as reference clock."]
+        HseDiv2 = 0x0,
         #[doc = "per_ck selected as reference clock."]
         Per = 0x01,
         #[doc = "ic15_ck selected as reference clock."]

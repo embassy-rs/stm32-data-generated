@@ -19428,8 +19428,8 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "HSE",
-        "description": "hse_ck selected as reference clock.",
+        "name": "HSE_DIV_2",
+        "description": "hse_div2_ck selected as reference clock.",
         "value": 0
       },
       {

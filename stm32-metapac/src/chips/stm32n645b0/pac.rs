@@ -931,8 +931,10 @@ pub const GFXMMU: gfxmmu::Gfxmmu = unsafe { gfxmmu::Gfxmmu::from_ptr(0x4803_0000
 pub const GPU2D: gpu2d::Gpu2d = unsafe { gpu2d::Gpu2d::from_ptr(0x4803_4000usize as _) };
 pub const ICACHE: icache::Icache = unsafe { icache::Icache::from_ptr(0x4803_5000usize as _) };
 pub const ETH1: eth::Eth = unsafe { eth::Eth::from_ptr(0x4803_6000usize as _) };
+pub const OTG1PHYCTL: usbphyc::Usbphyc = unsafe { usbphyc::Usbphyc::from_ptr(0x4803_fc00usize as _) };
 pub const USB1_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4804_0000usize as _) };
 pub const USB2_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4808_0000usize as _) };
+pub const OTG2PHYCTL: usbphyc::Usbphyc = unsafe { usbphyc::Usbphyc::from_ptr(0x480c_0000usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 4;
@@ -1040,6 +1042,8 @@ pub mod ucpd;
 pub mod uid;
 #[path = "../../peripherals/usart_v4.rs"]
 pub mod usart;
+#[path = "../../peripherals/usbphyc_n6.rs"]
+pub mod usbphyc;
 #[path = "../../peripherals/venc_v1.rs"]
 pub mod venc;
 #[path = "../../peripherals/vrefbuf_v1.rs"]

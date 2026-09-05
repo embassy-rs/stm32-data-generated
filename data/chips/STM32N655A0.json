@@ -4398,6 +4398,54 @@
           ]
         },
         {
+          "name": "OTG1PHYCTL",
+          "address": 1208220672,
+          "registers": {
+            "kind": "usbphyc",
+            "version": "n6",
+            "block": "USBPHYC"
+          },
+          "rcc": {
+            "bus_clock": "HCLK5",
+            "kernel_clock": {
+              "register": "CCIPR6",
+              "field": "OTGPHY1SEL"
+            },
+            "enable": {
+              "register": "AHB5ENR",
+              "field": "OTGPHY1EN"
+            },
+            "reset": {
+              "register": "AHB5RSTR",
+              "field": "OTGPHY1RST"
+            }
+          }
+        },
+        {
+          "name": "OTG2PHYCTL",
+          "address": 1208745984,
+          "registers": {
+            "kind": "usbphyc",
+            "version": "n6",
+            "block": "USBPHYC"
+          },
+          "rcc": {
+            "bus_clock": "HCLK5",
+            "kernel_clock": {
+              "register": "CCIPR6",
+              "field": "OTGPHY2SEL"
+            },
+            "enable": {
+              "register": "AHB5ENR",
+              "field": "OTGPHY2EN"
+            },
+            "reset": {
+              "register": "AHB5RSTR",
+              "field": "OTGPHY2RST"
+            }
+          }
+        },
+        {
           "name": "PKA",
           "address": 1140989952,
           "registers": {
@@ -4820,6 +4868,14 @@
             "kind": "risaf",
             "version": "n6",
             "block": "RISAF"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RISAFEN"
+            }
           }
         },
         {
@@ -4829,6 +4885,14 @@
             "kind": "risaf",
             "version": "n6",
             "block": "RISAF"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RISAFEN"
+            }
           }
         },
         {
@@ -4838,6 +4902,14 @@
             "kind": "risaf",
             "version": "n6",
             "block": "RISAF"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RISAFEN"
+            }
           }
         },
         {
@@ -4847,6 +4919,14 @@
             "kind": "risaf",
             "version": "n6",
             "block": "RISAF"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RISAFEN"
+            }
           }
         },
         {
@@ -4856,6 +4936,14 @@
             "kind": "risaf",
             "version": "n6",
             "block": "RISAF"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RISAFEN"
+            }
           }
         },
         {
@@ -4865,6 +4953,14 @@
             "kind": "risaf",
             "version": "n6",
             "block": "RISAF"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RISAFEN"
+            }
           }
         },
         {
@@ -4874,6 +4970,14 @@
             "kind": "risaf",
             "version": "n6",
             "block": "RISAF"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RISAFEN"
+            }
           }
         },
         {
@@ -4883,6 +4987,14 @@
             "kind": "risaf",
             "version": "n6",
             "block": "RISAF"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RISAFEN"
+            }
           }
         },
         {
@@ -4892,6 +5004,14 @@
             "kind": "risaf",
             "version": "n6",
             "block": "RISAF"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RISAFEN"
+            }
           }
         },
         {
@@ -4901,6 +5021,14 @@
             "kind": "risaf",
             "version": "n6",
             "block": "RISAF"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RISAFEN"
+            }
           }
         },
         {
@@ -4910,6 +5038,14 @@
             "kind": "risaf",
             "version": "n6",
             "block": "RISAF"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RISAFEN"
+            }
           }
         },
         {
@@ -4919,6 +5055,14 @@
             "kind": "risaf",
             "version": "n6",
             "block": "RISAF"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RISAFEN"
+            }
           }
         },
         {
@@ -4928,6 +5072,14 @@
             "kind": "risaf",
             "version": "n6",
             "block": "RISAF"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RISAFEN"
+            }
           }
         },
         {
@@ -4937,6 +5089,14 @@
             "kind": "risaf",
             "version": "n6",
             "block": "RISAF"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RISAFEN"
+            }
           }
         },
         {
@@ -4946,6 +5106,14 @@
             "kind": "risaf",
             "version": "n6",
             "block": "RISAF"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RISAFEN"
+            }
           }
         },
         {
@@ -4955,6 +5123,14 @@
             "kind": "risaf",
             "version": "n6",
             "block": "RISAF"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RISAFEN"
+            }
           }
         },
         {
@@ -4964,6 +5140,14 @@
             "kind": "risaf",
             "version": "n6",
             "block": "RISAF"
+          },
+          "rcc": {
+            "bus_clock": "HCLK3",
+            "kernel_clock": "HCLK3",
+            "enable": {
+              "register": "AHB3ENR",
+              "field": "RISAFEN"
+            }
           }
         },
         {
@@ -8394,6 +8578,21 @@
             "version": "v1",
             "block": "OTG"
           },
+          "rcc": {
+            "bus_clock": "HCLK5",
+            "kernel_clock": {
+              "register": "CCIPR6",
+              "field": "OTGPHY1SEL"
+            },
+            "enable": {
+              "register": "AHB5ENR",
+              "field": "OTG1EN"
+            },
+            "reset": {
+              "register": "AHB5RSTR",
+              "field": "OTG1RST"
+            }
+          },
           "interrupts": [
             {
               "signal": "EP1_IN",
@@ -8420,6 +8619,21 @@
             "kind": "otg",
             "version": "v1",
             "block": "OTG"
+          },
+          "rcc": {
+            "bus_clock": "HCLK5",
+            "kernel_clock": {
+              "register": "CCIPR6",
+              "field": "OTGPHY2SEL"
+            },
+            "enable": {
+              "register": "AHB5ENR",
+              "field": "OTG2EN"
+            },
+            "reset": {
+              "register": "AHB5RSTR",
+              "field": "OTG2RST"
+            }
           },
           "interrupts": [
             {

@@ -25832,8 +25832,8 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Hse",
-                    description: Some("hse_ck selected as reference clock."),
+                    name: "HseDiv2",
+                    description: Some("hse_div2_ck selected as reference clock."),
                     value: 0,
                 },
                 EnumVariant {

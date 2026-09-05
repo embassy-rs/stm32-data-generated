@@ -114,6 +114,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [UID](#uid) | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | l0 | l0 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | | v1 | v1 |
 | [USART](#usart) | v4 | v4 | v3 | v1, ❌ | v2, ❌ | v3 | v2 | v3 | v4 | v4 | v4 | v4 | v3 | v2, ❌ | v3 | v4 | v4 | ❌ | v4 | v4 | v4 | v4 | v4 | v4 | v4 | v4 |
 | [USB](#usb) | v4 | v4 | v3 | v1 | | v1, v2 | | | v4 | v3 | v4 | | v3 | v1 | v3 | | v3 | ❌ | | v4 | v4 | v4 | v3 | | | |
+| [USBPHYC](#usbphyc) | | | | | | | | | | | | | | | | | | | n6 | | | | | | | |
 | [USBRAM](#usbram) | 32_2048 | 32_2048 | 16x2_1024 | 16x1_512 | | 16x1_512, 16x2_1024, 16x2_512 | | | 32_2048 | 16x2_1024 | 32_2048 | | 16x2_1024 | 16x1_512 | 16x2_1024 | | 16x2_1024 | | | 32_1024 | 32_2048 | 32_2048 | 16x2_1024 | | | |
 | [VENC](#venc) | | | | | | | | | | | | | | | | | | | v1 | | | | | | | |
 | [VREFBUF](#vrefbuf) | | | | | | | | | v1 | v2b | v2a2 | v2a1 | | | v1 | v1 | v1 | ❌ | v1 | ❌ | v2a1 | v2a1 | v1 | | v2a1 | v1 |
@@ -1134,6 +1135,12 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v3**: STM32F0, STM32G4, STM32L0, STM32L4, STM32L5, STM32WB
 - **v4**: STM32C0, STM32C5, STM32G0, STM32H5, STM32U0, STM32U3, STM32U5
 - **❌ Unsupported**: STM32MP1
+
+### USBPHYC
+
+**Versions by family:**
+
+- **n6**: STM32N6
 
 ### USBRAM
 

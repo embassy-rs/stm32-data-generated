@@ -402,7 +402,7 @@ pub const WWDG: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x4000_2c00usize as _
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000usize as _) };
 pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3800usize as _) };
 pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3c00usize as _) };
-pub const COMP1: *mut () = 0x4000_4000usize as _;
+pub const COMP1: comp::Comp = unsafe { comp::Comp::from_ptr(0x4000_4000usize as _) };
 pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4400usize as _) };
 pub const USART3: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4800usize as _) };
 pub const UART4: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4c00usize as _) };
@@ -470,6 +470,8 @@ pub use cortex_m_rt::interrupt;
 pub mod adc;
 #[path = "../../peripherals/adccommon_c5.rs"]
 pub mod adccommon;
+#[path = "../../peripherals/comp_c5.rs"]
+pub mod comp;
 #[path = "../../peripherals/cordic_v1.rs"]
 pub mod cordic;
 #[path = "../../peripherals/crc_v3.rs"]

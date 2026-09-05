@@ -121,7 +121,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "COMP1",
         address: 0x4000400c,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "comp",
+            version: "c5",
+            block: "COMP_CHANNEL",
+            ir: &comp::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Clock("PCLK1"),
@@ -188,7 +193,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "COMP12",
         address: 0x40004000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "comp",
+            version: "c5",
+            block: "COMP_COMMON",
+            ir: &comp::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Clock("PCLK1"),
@@ -211,7 +221,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "COMP2",
         address: 0x40004010,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "comp",
+            version: "c5",
+            block: "COMP_CHANNEL",
+            ir: &comp::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Clock("PCLK1"),
@@ -4171,6 +4186,8 @@ pub mod adc;
 pub mod adccommon;
 #[path = "../registers/can_fdcan_v1.rs"]
 pub mod can;
+#[path = "../registers/comp_c5.rs"]
+pub mod comp;
 #[path = "../registers/cordic_v1.rs"]
 pub mod cordic;
 #[path = "../registers/crc_v3.rs"]

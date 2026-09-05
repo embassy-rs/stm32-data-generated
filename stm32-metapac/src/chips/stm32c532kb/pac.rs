@@ -335,9 +335,9 @@ pub const WWDG: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x4000_2c00usize as _
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000usize as _) };
 pub const OPAMP1: *mut () = 0x4000_3400usize as _;
 pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3800usize as _) };
-pub const COMP12: *mut () = 0x4000_4000usize as _;
-pub const COMP1: *mut () = 0x4000_400cusize as _;
-pub const COMP2: *mut () = 0x4000_4010usize as _;
+pub const COMP12: comp::CompCommon = unsafe { comp::CompCommon::from_ptr(0x4000_4000usize as _) };
+pub const COMP1: comp::CompChannel = unsafe { comp::CompChannel::from_ptr(0x4000_400cusize as _) };
+pub const COMP2: comp::CompChannel = unsafe { comp::CompChannel::from_ptr(0x4000_4010usize as _) };
 pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4400usize as _) };
 pub const UART4: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4c00usize as _) };
 pub const UART5: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_5000usize as _) };
@@ -397,6 +397,8 @@ pub mod adc;
 pub mod adccommon;
 #[path = "../../peripherals/can_fdcan_v1.rs"]
 pub mod can;
+#[path = "../../peripherals/comp_c5.rs"]
+pub mod comp;
 #[path = "../../peripherals/cordic_v1.rs"]
 pub mod cordic;
 #[path = "../../peripherals/crc_v3.rs"]

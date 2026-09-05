@@ -22,7 +22,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("cec", &["v1", "v2"]),
     (
         "comp",
-        &["f3_v1", "h5", "h7_a", "h7_b", "u0", "u3", "u5", "v1", "v2", "v3"],
+        &["c5", "f3_v1", "h5", "h7_a", "h7_b", "u0", "u3", "u5", "v1", "v2", "v3"],
     ),
     ("cordic", &["v1"]),
     ("crc", &["v1", "v2", "v3"]),

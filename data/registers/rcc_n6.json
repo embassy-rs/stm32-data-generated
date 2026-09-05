@@ -10871,11 +10871,11 @@
     "description": "RCC HSE configuration register.",
     "fields": [
       {
-        "name": "HSEDIV2BYP",
-        "description": "HSE div2 oscillator clock in Bypass mode.",
+        "name": "HSEDIV2SEL",
+        "description": "HSE div2 clock source select.",
         "bit_offset": 6,
         "bit_size": 1,
-        "enum": "HSEDIVBYP"
+        "enum": "HSEDIV2SEL"
       },
       {
         "name": "HSECSSON",
@@ -16424,17 +16424,17 @@
       }
     ]
   },
-  "enum/HSEDIVBYP": {
+  "enum/HSEDIV2SEL": {
     "bit_size": 1,
     "variants": [
       {
-        "name": "DIV2",
-        "description": "HSE: hse_div2_osc_ck = hse_osc_ck/2 (default after reset).",
+        "name": "DIV1",
+        "description": "HSE: hse_div2_osc_ck = hse_osc_ck (default after reset).",
         "value": 0
       },
       {
-        "name": "DIV1",
-        "description": "HSE: hse_div2_osc_ck = hse_osc_ck.",
+        "name": "DIV2",
+        "description": "HSE: hse_div2_osc_ck = hse_osc_ck/2.",
         "value": 1
       }
     ]

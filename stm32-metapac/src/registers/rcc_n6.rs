@@ -15156,12 +15156,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "hsediv2byp",
-                    description: Some("HSE div2 oscillator clock in Bypass mode."),
+                    name: "hsediv2sel",
+                    description: Some("HSE div2 clock source select."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hsedivbyp"),
+                    enumm: Some("Hsediv2sel"),
                 },
                 Field {
                     name: "hsecsson",
@@ -22581,19 +22581,19 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Hsedivbyp",
+            name: "Hsediv2sel",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
                     name: "Div1",
-                    description: Some("HSE: hse_div2_osc_ck = hse_osc_ck."),
-                    value: 1,
+                    description: Some("HSE: hse_div2_osc_ck = hse_osc_ck (default after reset)."),
+                    value: 0,
                 },
                 EnumVariant {
                     name: "Div2",
-                    description: Some("HSE: hse_div2_osc_ck = hse_osc_ck/2 (default after reset)."),
-                    value: 0,
+                    description: Some("HSE: hse_div2_osc_ck = hse_osc_ck/2."),
+                    value: 1,
                 },
             ],
         },

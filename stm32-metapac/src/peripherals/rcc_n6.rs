@@ -25254,16 +25254,16 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Hsecfgr(pub u32);
     impl Hsecfgr {
-        #[doc = "HSE div2 oscillator clock in Bypass mode."]
+        #[doc = "HSE div2 clock source select."]
         #[must_use]
         #[inline(always)]
-        pub const fn hsediv2byp(&self) -> super::vals::Hsedivbyp {
+        pub const fn hsediv2sel(&self) -> super::vals::Hsediv2sel {
             let val = (self.0 >> 6usize) & 0x01;
-            super::vals::Hsedivbyp::from_bits(val as u8)
+            super::vals::Hsediv2sel::from_bits(val as u8)
         }
-        #[doc = "HSE div2 oscillator clock in Bypass mode."]
+        #[doc = "HSE div2 clock source select."]
         #[inline(always)]
-        pub const fn set_hsediv2byp(&mut self, val: super::vals::Hsedivbyp) {
+        pub const fn set_hsediv2sel(&mut self, val: super::vals::Hsediv2sel) {
             self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
         }
         #[doc = "HSE clock security system (CSS) enable."]
@@ -25384,7 +25384,7 @@ pub mod regs {
     impl core::fmt::Debug for Hsecfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hsecfgr")
-                .field("hsediv2byp", &self.hsediv2byp())
+                .field("hsediv2sel", &self.hsediv2sel())
                 .field("hsecsson", &self.hsecsson())
                 .field("hsecssra", &self.hsecssra())
                 .field("hsecssd", &self.hsecssd())
@@ -25402,8 +25402,8 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Hsecfgr {{ hsediv2byp: {:?}, hsecsson: {=bool:?}, hsecssra: {:?}, hsecssd: {:?}, hsecssbyp: {:?}, hsecssbpre: {:?}, hsebyp: {=bool:?}, hseext: {:?}, hsegfon: {=bool:?}, hsedrv: {:?} }}",
-                self.hsediv2byp(),
+                "Hsecfgr {{ hsediv2sel: {:?}, hsecsson: {=bool:?}, hsecssra: {:?}, hsecssd: {:?}, hsecssbyp: {:?}, hsecssbpre: {:?}, hsebyp: {=bool:?}, hseext: {:?}, hsegfon: {=bool:?}, hsedrv: {:?} }}",
+                self.hsediv2sel(),
                 self.hsecsson(),
                 self.hsecssra(),
                 self.hsecssd(),
@@ -38364,15 +38364,15 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Hsedivbyp {
-        #[doc = "HSE: hse_div2_osc_ck = hse_osc_ck/2 (default after reset)."]
-        Div2 = 0x0,
-        #[doc = "HSE: hse_div2_osc_ck = hse_osc_ck."]
-        Div1 = 0x01,
+    pub enum Hsediv2sel {
+        #[doc = "HSE: hse_div2_osc_ck = hse_osc_ck (default after reset)."]
+        Div1 = 0x0,
+        #[doc = "HSE: hse_div2_osc_ck = hse_osc_ck/2."]
+        Div2 = 0x01,
     }
-    impl Hsedivbyp {
+    impl Hsediv2sel {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Hsedivbyp {
+        pub const fn from_bits(val: u8) -> Hsediv2sel {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -38380,16 +38380,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Hsedivbyp {
+    impl From<u8> for Hsediv2sel {
         #[inline(always)]
-        fn from(val: u8) -> Hsedivbyp {
-            Hsedivbyp::from_bits(val)
+        fn from(val: u8) -> Hsediv2sel {
+            Hsediv2sel::from_bits(val)
         }
     }
-    impl From<Hsedivbyp> for u8 {
+    impl From<Hsediv2sel> for u8 {
         #[inline(always)]
-        fn from(val: Hsedivbyp) -> u8 {
-            Hsedivbyp::to_bits(val)
+        fn from(val: Hsediv2sel) -> u8 {
+            Hsediv2sel::to_bits(val)
         }
     }
     #[repr(u8)]

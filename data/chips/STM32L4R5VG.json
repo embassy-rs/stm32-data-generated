@@ -4057,6 +4057,11 @@
         {
           "name": "SDMMC1",
           "address": 1342579712,
+          "registers": {
+            "kind": "sdmmc",
+            "version": "v2",
+            "block": "SDMMC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {

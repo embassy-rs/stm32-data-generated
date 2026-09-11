@@ -99,7 +99,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [SAES](#saes) | | v1a | | | | | | | | | v1a | ❌ | | | | | | | n6 | | v1b | v1b | | | v1a | |
 | [SAI](#sai) | | | | | | | v1, v2 | v2 | | v4_4pdm | v4_2pdm | v3_4pdm, v4_4pdm | | | v2 | v1 | v3_2pdm | ❌ | n6 | | v3_2pdm | v4_2pdm | v1_4pdm | | v4_2pdm | |
 | [SDADC](#sdadc) | | | | | | v1, ❌ | | | | | | | | | | | | | | | | | | | | |
-| [SDMMC](#sdmmc) | | | | v1 | v1 | | v1 | v1 | | | v2 | v2 | | v1 | v1 | ❌ | v2 | ❌ | v3 | | v2 | v2 | | | | |
+| [SDMMC](#sdmmc) | | | | v1 | v1 | | v1 | v1 | | | v2 | v2 | | v1 | v1 | v2 | v2 | ❌ | v3 | | v2 | v2 | | | | |
 | [SPDIFRX](#spdifrx) | | | | | | | v1 | v1 | | | | h7 | | | | | | ❌ | n6 | | | | | | | |
 | [SPI](#spi) | v3_i2s | v5_i2s | v3, v3_i2s | v1, v1_i2s | v2_i2s | v3, v3_i2s | v2_i2s | v3_i2s | v3_i2s | v3_i2s | v5_i2s | v4_i2s, v5_i2s | v2, v2_i2s | v2, v2_i2s | v3 | v3 | v3 | ❌ | v5 | v3 | v6 | v6 | v3 | v3 | v6 | v3_i2s |
 | [SWPMI](#swpmi) | | | | | | | | | | | | ❌ | | | ❌ | | | | | | | | | | | |
@@ -986,9 +986,9 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **v1**: STM32F1, STM32F2, STM32F4, STM32F7, STM32L1, STM32L4
-- **v2**: STM32H5, STM32H7, STM32L5, STM32U3, STM32U5
+- **v2**: STM32H5, STM32H7, STM32L4+, STM32L5, STM32U3, STM32U5
 - **v3**: STM32N6
-- **❌ Unsupported**: STM32L4+, STM32MP1
+- **❌ Unsupported**: STM32MP1
 
 ### SPDIFRX
 

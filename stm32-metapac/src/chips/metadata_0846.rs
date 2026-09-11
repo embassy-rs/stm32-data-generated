@@ -2099,6 +2099,37 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "PKA",
+        address: 0x420c2000,
+        registers: Some(PeripheralRegisters {
+            kind: "pka",
+            version: "v1b",
+            block: "PKA",
+            ir: &pka::REGISTERS,
+        }),
+        rcc: Some(PeripheralRcc {
+            bus_clock: "HCLK2",
+            kernel_clock: Clock("HCLK2"),
+            enable: Some(PeripheralRccRegister {
+                register: "AHB2ENR1",
+                field: "PKAEN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "AHB2RSTR1",
+                field: "PKARST",
+            }),
+            stop_mode: StopMode::Stop1,
+        }),
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[PeripheralInterrupt {
+            signal: "GLOBAL",
+            interrupt: "PKA",
+        }],
+        afio: None,
+    },
+    Peripheral {
         name: "PWR",
         address: 0x40030800,
         registers: Some(PeripheralRegisters {
@@ -4671,6 +4702,10 @@ pub(crate) static INTERRUPTS: &[Interrupt] = &[
         number: 96,
     },
     Interrupt {
+        name: "PKA",
+        number: 97,
+    },
+    Interrupt {
         name: "LPTIM3",
         number: 98,
     },
@@ -4884,6 +4919,8 @@ pub mod lptim;
 pub mod octospi;
 #[path = "../registers/opamp_v3.rs"]
 pub mod opamp;
+#[path = "../registers/pka_v1b.rs"]
+pub mod pka;
 #[path = "../registers/pwr_u3.rs"]
 pub mod pwr;
 #[path = "../registers/ramcfg_u5.rs"]

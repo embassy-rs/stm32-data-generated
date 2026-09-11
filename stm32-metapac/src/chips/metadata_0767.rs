@@ -4491,7 +4491,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SDMMC1",
         address: 0x50062400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "sdmmc",
+            version: "v2",
+            block: "SDMMC",
+            ir: &sdmmc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -4596,7 +4601,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "SDMMC2",
         address: 0x50062800,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "sdmmc",
+            version: "v2",
+            block: "SDMMC",
+            ir: &sdmmc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -8414,6 +8424,8 @@ pub mod rng;
 pub mod rtc;
 #[path = "../registers/sai_v1.rs"]
 pub mod sai;
+#[path = "../registers/sdmmc_v2.rs"]
+pub mod sdmmc;
 #[path = "../registers/spi_v3.rs"]
 pub mod spi;
 #[path = "../registers/syscfg_l4.rs"]

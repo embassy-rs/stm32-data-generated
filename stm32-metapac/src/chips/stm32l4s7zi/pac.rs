@@ -491,7 +491,7 @@ pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x5006_0000usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x5006_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x5006_0800usize as _) };
 pub const OCTOSPIM: octospim::Octospim = unsafe { octospim::Octospim::from_ptr(0x5006_1c00usize as _) };
-pub const SDMMC1: *mut () = 0x5006_2400usize as _;
+pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x5006_2400usize as _) };
 pub const FMC: *mut () = 0xa000_0000usize as _;
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0xa000_1000usize as _) };
 pub const OCTOSPI2: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0xa000_1400usize as _) };
@@ -565,6 +565,8 @@ pub mod rng;
 pub mod rtc;
 #[path = "../../peripherals/sai_v1.rs"]
 pub mod sai;
+#[path = "../../peripherals/sdmmc_v2.rs"]
+pub mod sdmmc;
 #[path = "../../peripherals/spi_v3.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_l4.rs"]

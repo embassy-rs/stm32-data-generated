@@ -81,6 +81,7 @@ PROVIDE(TSC = DefaultHandler);
 PROVIDE(RNG = DefaultHandler);
 PROVIDE(FPU = DefaultHandler);
 PROVIDE(HASH = DefaultHandler);
+PROVIDE(PKA = DefaultHandler);
 PROVIDE(LPTIM3 = DefaultHandler);
 PROVIDE(SPI3 = DefaultHandler);
 PROVIDE(I3C2_EV = DefaultHandler);

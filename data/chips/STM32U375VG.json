@@ -4899,6 +4899,33 @@
           ]
         },
         {
+          "name": "PKA",
+          "address": 1108090880,
+          "registers": {
+            "kind": "pka",
+            "version": "v1b",
+            "block": "PKA"
+          },
+          "rcc": {
+            "bus_clock": "HCLK2",
+            "kernel_clock": "HCLK2",
+            "enable": {
+              "register": "AHB2ENR1",
+              "field": "PKAEN"
+            },
+            "reset": {
+              "register": "AHB2RSTR1",
+              "field": "PKARST"
+            }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "PKA"
+            }
+          ]
+        },
+        {
           "name": "PWR",
           "address": 1073940480,
           "registers": {
@@ -8239,6 +8266,10 @@
         {
           "name": "HASH",
           "number": 96
+        },
+        {
+          "name": "PKA",
+          "number": 97
         },
         {
           "name": "LPTIM3",

@@ -167,6 +167,8 @@ pub enum Interrupt {
     FPU = 95,
     #[doc = "96 - HASH"]
     HASH = 96,
+    #[doc = "97 - PKA"]
+    PKA = 97,
     #[doc = "98 - LPTIM3"]
     LPTIM3 = 98,
     #[doc = "99 - SPI3"]
@@ -280,6 +282,7 @@ mod _vectors {
         fn RNG();
         fn FPU();
         fn HASH();
+        fn PKA();
         fn LPTIM3();
         fn SPI3();
         fn I3C2_EV();
@@ -419,7 +422,7 @@ mod _vectors {
         Vector { _handler: RNG },
         Vector { _handler: FPU },
         Vector { _handler: HASH },
-        Vector { _reserved: 0 },
+        Vector { _handler: PKA },
         Vector { _handler: LPTIM3 },
         Vector { _handler: SPI3 },
         Vector { _handler: I3C2_EV },
@@ -519,6 +522,7 @@ pub const ADC12_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::fr
 pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4202_8400usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
+pub const PKA: pka::Pka = unsafe { pka::Pka::from_ptr(0x420c_2000usize as _) };
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8000usize as _) };
 pub const DLYB_SDMMC1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_8400usize as _) };
 pub const DLYB_OCTOSPI1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_f000usize as _) };
@@ -580,6 +584,8 @@ pub mod lptim;
 pub mod octospi;
 #[path = "../../peripherals/opamp_v3.rs"]
 pub mod opamp;
+#[path = "../../peripherals/pka_v1b.rs"]
+pub mod pka;
 #[path = "../../peripherals/pwr_u3.rs"]
 pub mod pwr;
 #[path = "../../peripherals/ramcfg_u5.rs"]

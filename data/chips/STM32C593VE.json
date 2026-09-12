@@ -576,7 +576,7 @@
           "address": 1107460096,
           "registers": {
             "kind": "adc",
-            "version": "c5",
+            "version": "v3_c5",
             "block": "ADC"
           },
           "rcc": {
@@ -668,7 +668,7 @@
           "address": 1107460864,
           "registers": {
             "kind": "adccommon",
-            "version": "c5",
+            "version": "v4",
             "block": "ADC_COMMON"
           }
         },
@@ -677,7 +677,7 @@
           "address": 1107460352,
           "registers": {
             "kind": "adc",
-            "version": "c5",
+            "version": "v3_c5",
             "block": "ADC"
           },
           "rcc": {
@@ -777,7 +777,7 @@
           "address": 1107482624,
           "registers": {
             "kind": "adc",
-            "version": "c5",
+            "version": "v3_c5",
             "block": "ADC"
           },
           "rcc": {
@@ -877,7 +877,7 @@
           "address": 1107483392,
           "registers": {
             "kind": "adccommon",
-            "version": "c5",
+            "version": "v4",
             "block": "ADC_COMMON"
           }
         },

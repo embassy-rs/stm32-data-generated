@@ -4,11 +4,11 @@ pub(crate) static REGISTERS: IR = IR {
     blocks: &[Block {
         name: "AdcCommon",
         extends: None,
-        description: Some("ADC common registers"),
+        description: Some("Common ADC registers"),
         items: &[
             BlockItem {
                 name: "csr",
-                description: Some("ADC Common status register"),
+                description: Some("Common status register"),
                 array: None,
                 byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
@@ -19,7 +19,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             BlockItem {
                 name: "ccr",
-                description: Some("ADC common control register"),
+                description: Some("Common control register"),
                 array: None,
                 byte_offset: 0x4,
                 inner: BlockItemInner::Register(Register {
@@ -30,7 +30,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             BlockItem {
                 name: "cdr",
-                description: Some("ADC common regular data register for dual and triple modes"),
+                description: Some("Common regular data register for dual and triple modes"),
                 array: None,
                 byte_offset: 0x8,
                 inner: BlockItemInner::Register(Register {
@@ -45,7 +45,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Ccr",
             extends: None,
-            description: Some("ADC common control register"),
+            description: Some("Common control register"),
             bit_size: 32,
             fields: &[
                 Field {
@@ -70,7 +70,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Dds"),
+                    enumm: None,
                 },
                 Field {
                     name: "dma",
@@ -89,7 +89,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some("Adcpre"),
                 },
                 Field {
-                    name: "vbate",
+                    name: "vbaten",
                     description: Some("VBAT enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
@@ -109,11 +109,11 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Cdr",
             extends: None,
-            description: Some("ADC common regular data register for dual and triple modes"),
+            description: Some("Common regular data register"),
             bit_size: 32,
             fields: &[Field {
                 name: "data",
-                description: Some("1st data item of a pair of regular conversions"),
+                description: Some("Regular data of ADC x"),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 16,
                 array: Some(Array::Regular(RegularArray { len: 2, stride: 16 })),
@@ -123,12 +123,12 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Csr",
             extends: None,
-            description: Some("ADC common status register"),
+            description: Some("Common status register"),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "awd",
-                    description: Some("Analog watchdog event occurred"),
+                    description: Some("Analog watchdog flag of ADC x"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
@@ -136,7 +136,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "eoc",
-                    description: Some("End of conversion of ADC"),
+                    description: Some("End of conversion of ADC x"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
@@ -144,7 +144,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "jeoc",
-                    description: Some("Injected channel end of conversion of ADC"),
+                    description: Some("Injected channel end of conversion of ADC x"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
@@ -152,7 +152,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "jstrt",
-                    description: Some("Injected channel conversion started"),
+                    description: Some("Injected channel start flag of ADC x"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
@@ -160,7 +160,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "strt",
-                    description: Some("regular channel conversion started"),
+                    description: Some("Regular channel start flag of ADC x"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
@@ -168,7 +168,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "ovr",
-                    description: Some("Overrun occurred"),
+                    description: Some("Overrun flag of ADC x"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 8 })),
@@ -206,23 +206,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Dds",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Continuous",
-                    description: Some("DMA requests are issued as long as data are converted and DMA=01, 10 or 11"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Single",
-                    description: Some("No new DMA request is issued after the last transfer"),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
             name: "Dma",
             description: None,
             bit_size: 2,
@@ -244,7 +227,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "Mode3",
-                    description: Some("DMA mode 3 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)"),
+                    description: Some("DMA mode 3 enabled (2 / 3 bytes by pairs - 2&1 then 1&3 then 3&2)"),
                     value: 3,
                 },
             ],
@@ -286,7 +269,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "Independent",
-                    description: Some("All the ADCs independent: independent mode"),
+                    description: Some("All the ADCs independent"),
                     value: 0,
                 },
                 EnumVariant {

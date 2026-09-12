@@ -572,7 +572,7 @@
           "address": 1073816576,
           "registers": {
             "kind": "adc",
-            "version": "f1",
+            "version": "v1_f1",
             "block": "ADC"
           },
           "rcc": {
@@ -709,7 +709,7 @@
           "address": 1073817600,
           "registers": {
             "kind": "adc",
-            "version": "f1",
+            "version": "v1_f1",
             "block": "ADC"
           },
           "rcc": {

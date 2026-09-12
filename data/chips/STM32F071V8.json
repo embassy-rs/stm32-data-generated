@@ -1494,7 +1494,7 @@
           "address": 1073816576,
           "registers": {
             "kind": "adc",
-            "version": "v1",
+            "version": "v2_f0",
             "block": "ADC"
           },
           "rcc": {

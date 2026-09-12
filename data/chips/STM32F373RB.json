@@ -704,7 +704,7 @@
           "address": 1073816576,
           "registers": {
             "kind": "adc",
-            "version": "f3v3",
+            "version": "v1_f1",
             "block": "ADC"
           },
           "rcc": {
@@ -800,12 +800,7 @@
         },
         {
           "name": "ADC1_COMMON",
-          "address": 1073816576,
-          "registers": {
-            "kind": "adccommon",
-            "version": "f3",
-            "block": "ADC_COMMON"
-          }
+          "address": 1073816576
         },
         {
           "name": "CAN",

@@ -787,7 +787,7 @@
           "address": 1073816576,
           "registers": {
             "kind": "adc",
-            "version": "l0",
+            "version": "v2_l0",
             "block": "ADC"
           },
           "rcc": {

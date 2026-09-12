@@ -1656,7 +1656,7 @@
           "address": 1107460096,
           "registers": {
             "kind": "adc",
-            "version": "u5",
+            "version": "v3_u5",
             "block": "ADC"
           },
           "rcc": {
@@ -1760,10 +1760,10 @@
         },
         {
           "name": "ADC12_COMMON",
-          "address": 1107591936,
+          "address": 1107460864,
           "registers": {
             "kind": "adccommon",
-            "version": "u5",
+            "version": "v4",
             "block": "ADC_COMMON"
           }
         },
@@ -1772,7 +1772,7 @@
           "address": 1174540288,
           "registers": {
             "kind": "adc",
-            "version": "u5",
+            "version": "v3_u5",
             "block": "ADC4"
           },
           "rcc": {
@@ -1873,12 +1873,7 @@
         },
         {
           "name": "ADC4_COMMON",
-          "address": 1174541064,
-          "registers": {
-            "kind": "adccommon",
-            "version": "u5",
-            "block": "ADC_COMMON"
-          }
+          "address": 1174541064
         },
         {
           "name": "ADF1",

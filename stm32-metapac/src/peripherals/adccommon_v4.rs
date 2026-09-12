@@ -3,7 +3,7 @@
 #![allow(clippy::unnecessary_cast)]
 #![allow(clippy::erasing_op)]
 
-#[doc = "Analog-to-Digital Converter"]
+#[doc = "Common ADC registers"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct AdcCommon {
     ptr: *mut u8,
@@ -19,29 +19,29 @@ impl AdcCommon {
     pub const fn as_ptr(&self) -> *mut () {
         self.ptr as _
     }
-    #[doc = "ADC Common status register"]
+    #[doc = "Common status register"]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
-    #[doc = "ADC common control register"]
+    #[doc = "Common control register"]
     #[inline(always)]
     pub const fn ccr(self) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
-    #[doc = "ADC common regular data register for dual and triple modes"]
+    #[doc = "Common regular data register for dual mode"]
     #[inline(always)]
     pub const fn cdr(self) -> crate::common::Reg<regs::Cdr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
     }
-    #[doc = "ADC x common regular data register for 32-bit dual mode"]
+    #[doc = "Common regular data register for 32-bit dual mode"]
     #[inline(always)]
     pub const fn cdr2(self) -> crate::common::Reg<regs::Cdr2, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
     }
 }
 pub mod regs {
-    #[doc = "ADC common control register"]
+    #[doc = "Common control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Ccr(pub u32);
@@ -70,14 +70,14 @@ pub mod regs {
         pub const fn set_delay(&mut self, val: u8) {
             self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
         }
-        #[doc = "Dual ADC Mode Data Format"]
+        #[doc = "Dual ADC mode data format"]
         #[must_use]
         #[inline(always)]
         pub const fn damdf(&self) -> super::vals::Damdf {
             let val = (self.0 >> 14usize) & 0x03;
             super::vals::Damdf::from_bits(val as u8)
         }
-        #[doc = "Dual ADC Mode Data Format"]
+        #[doc = "Dual ADC mode data format"]
         #[inline(always)]
         pub const fn set_damdf(&mut self, val: super::vals::Damdf) {
             self.0 = (self.0 & !(0x03 << 14usize)) | (((val.to_bits() as u32) & 0x03) << 14usize);
@@ -94,14 +94,14 @@ pub mod regs {
         pub const fn set_ckmode(&mut self, val: super::vals::Ckmode) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
         }
-        #[doc = "ADC prescaler"]
+        #[doc = "ADC prescaler (asynchronous clock only)"]
         #[must_use]
         #[inline(always)]
         pub const fn presc(&self) -> super::vals::Presc {
             let val = (self.0 >> 18usize) & 0x0f;
             super::vals::Presc::from_bits(val as u8)
         }
-        #[doc = "ADC prescaler"]
+        #[doc = "ADC prescaler (asynchronous clock only)"]
         #[inline(always)]
         pub const fn set_presc(&mut self, val: super::vals::Presc) {
             self.0 = (self.0 & !(0x0f << 18usize)) | (((val.to_bits() as u32) & 0x0f) << 18usize);
@@ -121,13 +121,13 @@ pub mod regs {
         #[doc = "Temperature sensor enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn vsenseen(&self) -> bool {
+        pub const fn tsen(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
             val != 0
         }
         #[doc = "Temperature sensor enable"]
         #[inline(always)]
-        pub const fn set_vsenseen(&mut self, val: bool) {
+        pub const fn set_tsen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "VBAT enable"]
@@ -158,7 +158,7 @@ pub mod regs {
                 .field("ckmode", &self.ckmode())
                 .field("presc", &self.presc())
                 .field("vrefen", &self.vrefen())
-                .field("vsenseen", &self.vsenseen())
+                .field("tsen", &self.tsen())
                 .field("vbaten", &self.vbaten())
                 .finish()
         }
@@ -168,19 +168,19 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ccr {{ dual: {:?}, delay: {=u8:?}, damdf: {:?}, ckmode: {:?}, presc: {:?}, vrefen: {=bool:?}, vsenseen: {=bool:?}, vbaten: {=bool:?} }}",
+                "Ccr {{ dual: {:?}, delay: {=u8:?}, damdf: {:?}, ckmode: {:?}, presc: {:?}, vrefen: {=bool:?}, tsen: {=bool:?}, vbaten: {=bool:?} }}",
                 self.dual(),
                 self.delay(),
                 self.damdf(),
                 self.ckmode(),
                 self.presc(),
                 self.vrefen(),
-                self.vsenseen(),
+                self.tsen(),
                 self.vbaten()
             )
         }
     }
-    #[doc = "ADC common regular data register for dual and triple modes"]
+    #[doc = "Common regular data register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cdr(pub u32);
@@ -235,7 +235,7 @@ pub mod regs {
             )
         }
     }
-    #[doc = "ADC x common regular data register for 32-bit dual mode"]
+    #[doc = "Common regular data register (32-bit)"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cdr2(pub u32);
@@ -270,43 +270,43 @@ pub mod regs {
             defmt::write!(f, "Cdr2 {{ rdata_alt: {=u32:?} }}", self.rdata_alt())
         }
     }
-    #[doc = "ADC Common status register"]
+    #[doc = "Common status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Csr(pub u32);
     impl Csr {
-        #[doc = "Master ADC ready"]
+        #[doc = "ADC ready flag of the master ADC"]
         #[must_use]
         #[inline(always)]
         pub const fn adrdy_mst(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
-        #[doc = "Master ADC ready"]
+        #[doc = "ADC ready flag of the master ADC"]
         #[inline(always)]
         pub const fn set_adrdy_mst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "End of Sampling phase flag of the master ADC"]
+        #[doc = "End of sampling flag of the master ADC"]
         #[must_use]
         #[inline(always)]
         pub const fn eosmp_mst(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
-        #[doc = "End of Sampling phase flag of the master ADC"]
+        #[doc = "End of sampling flag of the master ADC"]
         #[inline(always)]
         pub const fn set_eosmp_mst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
-        #[doc = "End of regular conversion of the master ADC"]
+        #[doc = "End of regular conversion flag of the master ADC"]
         #[must_use]
         #[inline(always)]
         pub const fn eoc_mst(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
             val != 0
         }
-        #[doc = "End of regular conversion of the master ADC"]
+        #[doc = "End of regular conversion flag of the master ADC"]
         #[inline(always)]
         pub const fn set_eoc_mst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
@@ -375,50 +375,62 @@ pub mod regs {
             let offs = 7usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
-        #[doc = "Injected Context Queue Overflow flag of the master ADC"]
+        #[doc = "Injected context queue overflow flag of the master ADC"]
         #[must_use]
         #[inline(always)]
         pub const fn jqovf_mst(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
             val != 0
         }
-        #[doc = "Injected Context Queue Overflow flag of the master ADC"]
+        #[doc = "Injected context queue overflow flag of the master ADC"]
         #[inline(always)]
         pub const fn set_jqovf_mst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
-        #[doc = "Slave ADC ready"]
+        #[doc = "Voltage regulator ready flag of the master ADC"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ldordy_mst(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Voltage regulator ready flag of the master ADC"]
+        #[inline(always)]
+        pub const fn set_ldordy_mst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "ADC ready flag of the slave ADC"]
         #[must_use]
         #[inline(always)]
         pub const fn adrdy_slv(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
             val != 0
         }
-        #[doc = "Slave ADC ready"]
+        #[doc = "ADC ready flag of the slave ADC"]
         #[inline(always)]
         pub const fn set_adrdy_slv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
-        #[doc = "End of Sampling phase flag of the slave ADC"]
+        #[doc = "End of sampling flag of the slave ADC"]
         #[must_use]
         #[inline(always)]
         pub const fn eosmp_slv(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
             val != 0
         }
-        #[doc = "End of Sampling phase flag of the slave ADC"]
+        #[doc = "End of sampling flag of the slave ADC"]
         #[inline(always)]
         pub const fn set_eosmp_slv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
-        #[doc = "End of regular conversion of the slave ADC"]
+        #[doc = "End of regular conversion flag of the slave ADC"]
         #[must_use]
         #[inline(always)]
         pub const fn eoc_slv(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
             val != 0
         }
-        #[doc = "End of regular conversion of the slave ADC"]
+        #[doc = "End of regular conversion flag of the slave ADC"]
         #[inline(always)]
         pub const fn set_eoc_slv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
@@ -487,17 +499,29 @@ pub mod regs {
             let offs = 23usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
-        #[doc = "Injected Context Queue Overflow flag of the slave ADC"]
+        #[doc = "Injected context queue overflow flag of the slave ADC"]
         #[must_use]
         #[inline(always)]
         pub const fn jqovf_slv(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
             val != 0
         }
-        #[doc = "Injected Context Queue Overflow flag of the slave ADC"]
+        #[doc = "Injected context queue overflow flag of the slave ADC"]
         #[inline(always)]
         pub const fn set_jqovf_slv(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        }
+        #[doc = "Voltage regulator ready flag of the slave ADC"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ldordy_slv(&self) -> bool {
+            let val = (self.0 >> 28usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Voltage regulator ready flag of the slave ADC"]
+        #[inline(always)]
+        pub const fn set_ldordy_slv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
     }
     impl Default for Csr {
@@ -520,6 +544,7 @@ pub mod regs {
                 .field("awd_mst[1]", &self.awd_mst(1usize))
                 .field("awd_mst[2]", &self.awd_mst(2usize))
                 .field("jqovf_mst", &self.jqovf_mst())
+                .field("ldordy_mst", &self.ldordy_mst())
                 .field("adrdy_slv", &self.adrdy_slv())
                 .field("eosmp_slv", &self.eosmp_slv())
                 .field("eoc_slv", &self.eoc_slv())
@@ -531,6 +556,7 @@ pub mod regs {
                 .field("awd_slv[1]", &self.awd_slv(1usize))
                 .field("awd_slv[2]", &self.awd_slv(2usize))
                 .field("jqovf_slv", &self.jqovf_slv())
+                .field("ldordy_slv", &self.ldordy_slv())
                 .finish()
         }
     }
@@ -539,7 +565,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Csr {{ adrdy_mst: {=bool:?}, eosmp_mst: {=bool:?}, eoc_mst: {=bool:?}, eos_mst: {=bool:?}, ovr_mst: {=bool:?}, jeoc_mst: {=bool:?}, jeos_mst: {=bool:?}, awd_mst[0]: {=bool:?}, awd_mst[1]: {=bool:?}, awd_mst[2]: {=bool:?}, jqovf_mst: {=bool:?}, adrdy_slv: {=bool:?}, eosmp_slv: {=bool:?}, eoc_slv: {=bool:?}, eos_slv: {=bool:?}, ovr_slv: {=bool:?}, jeoc_slv: {=bool:?}, jeos_slv: {=bool:?}, awd_slv[0]: {=bool:?}, awd_slv[1]: {=bool:?}, awd_slv[2]: {=bool:?}, jqovf_slv: {=bool:?} }}",
+                "Csr {{ adrdy_mst: {=bool:?}, eosmp_mst: {=bool:?}, eoc_mst: {=bool:?}, eos_mst: {=bool:?}, ovr_mst: {=bool:?}, jeoc_mst: {=bool:?}, jeos_mst: {=bool:?}, awd_mst[0]: {=bool:?}, awd_mst[1]: {=bool:?}, awd_mst[2]: {=bool:?}, jqovf_mst: {=bool:?}, ldordy_mst: {=bool:?}, adrdy_slv: {=bool:?}, eosmp_slv: {=bool:?}, eoc_slv: {=bool:?}, eos_slv: {=bool:?}, ovr_slv: {=bool:?}, jeoc_slv: {=bool:?}, jeos_slv: {=bool:?}, awd_slv[0]: {=bool:?}, awd_slv[1]: {=bool:?}, awd_slv[2]: {=bool:?}, jqovf_slv: {=bool:?}, ldordy_slv: {=bool:?} }}",
                 self.adrdy_mst(),
                 self.eosmp_mst(),
                 self.eoc_mst(),
@@ -551,6 +577,7 @@ pub mod regs {
                 self.awd_mst(1usize),
                 self.awd_mst(2usize),
                 self.jqovf_mst(),
+                self.ldordy_mst(),
                 self.adrdy_slv(),
                 self.eosmp_slv(),
                 self.eoc_slv(),
@@ -561,7 +588,8 @@ pub mod regs {
                 self.awd_slv(0usize),
                 self.awd_slv(1usize),
                 self.awd_slv(2usize),
-                self.jqovf_slv()
+                self.jqovf_slv(),
+                self.ldordy_slv()
             )
         }
     }
@@ -571,13 +599,13 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckmode {
-        #[doc = "Use Kernel Clock adc_ker_ck_input divided by PRESC. Asynchronous to AHB clock"]
+        #[doc = "Asynchronous clock (adc_ker_ck)"]
         Asynchronous = 0x0,
-        #[doc = "Use AHB clock rcc_hclk3. In this case rcc_hclk must equal sys_d1cpre_ck"]
+        #[doc = "Synchronous clock (HCLK/1)"]
         SyncDiv1 = 0x01,
-        #[doc = "Use AHB clock rcc_hclk3 divided by 2"]
+        #[doc = "Synchronous clock (HCLK/2)"]
         SyncDiv2 = 0x02,
-        #[doc = "Use AHB clock rcc_hclk3 divided by 4"]
+        #[doc = "Synchronous clock (HCLK/4)"]
         SyncDiv4 = 0x03,
     }
     impl Ckmode {
@@ -611,7 +639,7 @@ pub mod vals {
         _RESERVED_1 = 0x01,
         #[doc = "CDR formatted for 32-bit down to 10-bit resolution"]
         Format32to10 = 0x02,
-        #[doc = "CDR formatted for 8-bit resolution"]
+        #[doc = "CDR formatted for 8-bit data"]
         Format8 = 0x03,
     }
     impl Damdf {
@@ -707,29 +735,29 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Presc {
-        #[doc = "adc_ker_ck_input not divided"]
+        #[doc = "Input ADC clock not divided"]
         Div1 = 0x0,
-        #[doc = "adc_ker_ck_input divided by 2"]
+        #[doc = "Input ADC clock divided by 2"]
         Div2 = 0x01,
-        #[doc = "adc_ker_ck_input divided by 4"]
+        #[doc = "Input ADC clock divided by 4"]
         Div4 = 0x02,
-        #[doc = "adc_ker_ck_input divided by 6"]
+        #[doc = "Input ADC clock divided by 6"]
         Div6 = 0x03,
-        #[doc = "adc_ker_ck_input divided by 8"]
+        #[doc = "Input ADC clock divided by 8"]
         Div8 = 0x04,
-        #[doc = "adc_ker_ck_input divided by 10"]
+        #[doc = "Input ADC clock divided by 10"]
         Div10 = 0x05,
-        #[doc = "adc_ker_ck_input divided by 12"]
+        #[doc = "Input ADC clock divided by 12"]
         Div12 = 0x06,
-        #[doc = "adc_ker_ck_input divided by 16"]
+        #[doc = "Input ADC clock divided by 16"]
         Div16 = 0x07,
-        #[doc = "adc_ker_ck_input divided by 32"]
+        #[doc = "Input ADC clock divided by 32"]
         Div32 = 0x08,
-        #[doc = "adc_ker_ck_input divided by 64"]
+        #[doc = "Input ADC clock divided by 64"]
         Div64 = 0x09,
-        #[doc = "adc_ker_ck_input divided by 128"]
+        #[doc = "Input ADC clock divided by 128"]
         Div128 = 0x0a,
-        #[doc = "adc_ker_ck_input divided by 256"]
+        #[doc = "Input ADC clock divided by 256"]
         Div256 = 0x0b,
         _RESERVED_c = 0x0c,
         _RESERVED_d = 0x0d,

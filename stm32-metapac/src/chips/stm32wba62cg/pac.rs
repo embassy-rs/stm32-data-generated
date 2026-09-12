@@ -429,8 +429,8 @@ pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4600_7800usize as _) };
 pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4600_7c00usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4602_0800usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4602_0c00usize as _) };
-pub const ADC4: adc::Adc4 = unsafe { adc::Adc4::from_ptr(0x4602_1000usize as _) };
-pub const ADC4_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4602_1308usize as _) };
+pub const ADC4: adc::Adc = unsafe { adc::Adc::from_ptr(0x4602_1000usize as _) };
+pub const ADC4_COMMON: *mut () = 0x4602_1308usize as _;
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4602_2000usize as _) };
 pub const GTZC_TZIC: gtzc::Tzic = unsafe { gtzc::Tzic::from_ptr(0x5003_2800usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_4000usize as _) };
@@ -441,10 +441,8 @@ pub const NVIC_PRIO_BITS: u8 = 4;
 pub use Interrupt as interrupt;
 #[cfg(feature = "rt")]
 pub use cortex_m_rt::interrupt;
-#[path = "../../peripherals/adc_wba.rs"]
+#[path = "../../peripherals/adc_v2_wba.rs"]
 pub mod adc;
-#[path = "../../peripherals/adccommon_v3.rs"]
-pub mod adccommon;
 #[path = "../../peripherals/aes_v3b.rs"]
 pub mod aes;
 #[path = "../../peripherals/comp_u5.rs"]

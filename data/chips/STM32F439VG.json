@@ -1078,7 +1078,7 @@
           "address": 1073815552,
           "registers": {
             "kind": "adc",
-            "version": "v2",
+            "version": "v1_f4",
             "block": "ADC"
           },
           "rcc": {
@@ -1448,7 +1448,7 @@
           "address": 1073815808,
           "registers": {
             "kind": "adc",
-            "version": "v2",
+            "version": "v1_f4",
             "block": "ADC"
           },
           "rcc": {
@@ -1679,7 +1679,7 @@
           "address": 1073816064,
           "registers": {
             "kind": "adc",
-            "version": "v2",
+            "version": "v1_f4",
             "block": "ADC"
           },
           "rcc": {

@@ -1,0 +1,568 @@
+{
+  "block/ADC": {
+    "description": "Analog-to-digital converter",
+    "items": [
+      {
+        "name": "SR",
+        "description": "Status register",
+        "byte_offset": 0,
+        "fieldset": "SR"
+      },
+      {
+        "name": "CR1",
+        "description": "Control register 1",
+        "byte_offset": 4,
+        "fieldset": "CR1"
+      },
+      {
+        "name": "CR2",
+        "description": "Control register 2",
+        "byte_offset": 8,
+        "fieldset": "CR2"
+      },
+      {
+        "name": "SMPR",
+        "description": "Sample time register. SMPR[i] holds the sample times of channels 10*i to 10*i+9 (SMPR[0] is what ST calls SMPR2, SMPR[1] SMPR1, ...).",
+        "array": {
+          "offsets": [
+            4,
+            0
+          ]
+        },
+        "byte_offset": 12,
+        "fieldset": "SMPR"
+      },
+      {
+        "name": "JOFR",
+        "description": "Injected channel data offset register",
+        "array": {
+          "len": 4,
+          "stride": 4
+        },
+        "byte_offset": 20,
+        "fieldset": "JOFR"
+      },
+      {
+        "name": "HTR",
+        "description": "Watchdog higher threshold register",
+        "byte_offset": 36,
+        "fieldset": "HTR"
+      },
+      {
+        "name": "LTR",
+        "description": "Watchdog lower threshold register",
+        "byte_offset": 40,
+        "fieldset": "LTR"
+      },
+      {
+        "name": "SQR1",
+        "description": "Regular sequence register 1 (length and conversions 13 to 16)",
+        "byte_offset": 44,
+        "fieldset": "SQR1"
+      },
+      {
+        "name": "SQR2",
+        "description": "Regular sequence register 2 (conversions 7 to 12)",
+        "byte_offset": 48,
+        "fieldset": "SQR2"
+      },
+      {
+        "name": "SQR3",
+        "description": "Regular sequence register 3 (conversions 1 to 6)",
+        "byte_offset": 52,
+        "fieldset": "SQR3"
+      },
+      {
+        "name": "JSQR",
+        "description": "Injected sequence register",
+        "byte_offset": 56,
+        "fieldset": "JSQR"
+      },
+      {
+        "name": "JDR",
+        "description": "Injected data register",
+        "array": {
+          "len": 4,
+          "stride": 4
+        },
+        "byte_offset": 60,
+        "access": "Read",
+        "fieldset": "JDR"
+      },
+      {
+        "name": "DR",
+        "description": "Regular data register",
+        "byte_offset": 76,
+        "access": "Read",
+        "fieldset": "DR"
+      }
+    ]
+  },
+  "fieldset/CR1": {
+    "description": "Control register 1",
+    "fields": [
+      {
+        "name": "AWDCH",
+        "description": "Analog watchdog channel select bits",
+        "bit_offset": 0,
+        "bit_size": 5
+      },
+      {
+        "name": "EOCIE",
+        "description": "Interrupt enable for EOC",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "AWDIE",
+        "description": "Analog watchdog interrupt enable",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "JEOCIE",
+        "description": "Interrupt enable for injected channels",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "SCAN",
+        "description": "Scan mode",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "AWDSGL",
+        "description": "Enable the watchdog on a single channel in scan mode",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "JAUTO",
+        "description": "Automatic injected group conversion",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "DISCEN",
+        "description": "Discontinuous mode on regular channels",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "JDISCEN",
+        "description": "Discontinuous mode on injected channels",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "DISCNUM",
+        "description": "Discontinuous mode channel count",
+        "bit_offset": 13,
+        "bit_size": 3
+      },
+      {
+        "name": "DUALMOD",
+        "description": "Dual mode selection (ADC1 only)",
+        "bit_offset": 16,
+        "bit_size": 4,
+        "enum": "DUALMOD"
+      },
+      {
+        "name": "JAWDEN",
+        "description": "Analog watchdog enable on injected channels",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "AWDEN",
+        "description": "Analog watchdog enable on regular channels",
+        "bit_offset": 23,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/CR2": {
+    "description": "Control register 2",
+    "fields": [
+      {
+        "name": "ADON",
+        "description": "A/D converter ON / OFF",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "CONT",
+        "description": "Continuous conversion",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "CAL",
+        "description": "A/D calibration",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "RSTCAL",
+        "description": "Reset calibration",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "DMA",
+        "description": "Direct memory access mode",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "ALIGN",
+        "description": "Data alignment",
+        "bit_offset": 11,
+        "bit_size": 1,
+        "enum": "ALIGN"
+      },
+      {
+        "name": "JEXTSEL",
+        "description": "External event select for injected group",
+        "bit_offset": 12,
+        "bit_size": 3
+      },
+      {
+        "name": "JEXTTRIG",
+        "description": "External trigger conversion mode for injected channels",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTSEL",
+        "description": "External event select for regular group",
+        "bit_offset": 17,
+        "bit_size": 3
+      },
+      {
+        "name": "EXTTRIG",
+        "description": "External trigger conversion mode for regular channels",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "JSWSTART",
+        "description": "Start conversion of injected channels",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "SWSTART",
+        "description": "Start conversion of regular channels",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "TSVREFE",
+        "description": "Temperature sensor and VREFINT enable (ADC1 only)",
+        "bit_offset": 23,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/DR": {
+    "description": "Regular data register",
+    "fields": [
+      {
+        "name": "DATA",
+        "description": "Regular data",
+        "bit_offset": 0,
+        "bit_size": 16
+      },
+      {
+        "name": "ADC2DATA",
+        "description": "ADC2 data (ADC1 in dual mode only)",
+        "bit_offset": 16,
+        "bit_size": 16
+      }
+    ]
+  },
+  "fieldset/HTR": {
+    "description": "Watchdog higher threshold register",
+    "fields": [
+      {
+        "name": "HT",
+        "description": "Analog watchdog higher threshold",
+        "bit_offset": 0,
+        "bit_size": 12
+      }
+    ]
+  },
+  "fieldset/JDR": {
+    "description": "Injected data register",
+    "fields": [
+      {
+        "name": "JDATA",
+        "description": "Injected data",
+        "bit_offset": 0,
+        "bit_size": 16
+      }
+    ]
+  },
+  "fieldset/JOFR": {
+    "description": "Injected channel data offset register",
+    "fields": [
+      {
+        "name": "JOFFSET",
+        "description": "Data offset for injected channel x",
+        "bit_offset": 0,
+        "bit_size": 12
+      }
+    ]
+  },
+  "fieldset/JSQR": {
+    "description": "Injected sequence register",
+    "fields": [
+      {
+        "name": "JSQ",
+        "description": "Conversion in injected sequence",
+        "bit_offset": 0,
+        "bit_size": 5,
+        "array": {
+          "len": 4,
+          "stride": 5
+        }
+      },
+      {
+        "name": "JL",
+        "description": "Injected sequence length",
+        "bit_offset": 20,
+        "bit_size": 2
+      }
+    ]
+  },
+  "fieldset/LTR": {
+    "description": "Watchdog lower threshold register",
+    "fields": [
+      {
+        "name": "LT",
+        "description": "Analog watchdog lower threshold",
+        "bit_offset": 0,
+        "bit_size": 12
+      }
+    ]
+  },
+  "fieldset/SMPR": {
+    "description": "Sample time register",
+    "fields": [
+      {
+        "name": "SMP",
+        "description": "Channel x sample time selection",
+        "bit_offset": 0,
+        "bit_size": 3,
+        "array": {
+          "len": 10,
+          "stride": 3
+        },
+        "enum": "SAMPLE_TIME"
+      }
+    ]
+  },
+  "fieldset/SQR1": {
+    "description": "Regular sequence register 1",
+    "fields": [
+      {
+        "name": "SQ",
+        "description": "Conversion in regular sequence",
+        "bit_offset": 0,
+        "bit_size": 5,
+        "array": {
+          "len": 4,
+          "stride": 5
+        }
+      },
+      {
+        "name": "L",
+        "description": "Regular channel sequence length",
+        "bit_offset": 20,
+        "bit_size": 4
+      }
+    ]
+  },
+  "fieldset/SQR2": {
+    "description": "Regular sequence register",
+    "fields": [
+      {
+        "name": "SQ",
+        "description": "Conversion in regular sequence",
+        "bit_offset": 0,
+        "bit_size": 5,
+        "array": {
+          "len": 6,
+          "stride": 5
+        }
+      }
+    ]
+  },
+  "fieldset/SQR3": {
+    "description": "Regular sequence register",
+    "fields": [
+      {
+        "name": "SQ",
+        "description": "Conversion in regular sequence",
+        "bit_offset": 0,
+        "bit_size": 5,
+        "array": {
+          "len": 6,
+          "stride": 5
+        }
+      }
+    ]
+  },
+  "fieldset/SR": {
+    "description": "Status register",
+    "fields": [
+      {
+        "name": "AWD",
+        "description": "Analog watchdog flag",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "EOC",
+        "description": "Regular channel end of conversion",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "JEOC",
+        "description": "Injected channel end of conversion",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "JSTRT",
+        "description": "Injected channel start flag",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "STRT",
+        "description": "Regular channel start flag",
+        "bit_offset": 4,
+        "bit_size": 1
+      }
+    ]
+  },
+  "enum/ALIGN": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "Right",
+        "description": "Right alignment",
+        "value": 0
+      },
+      {
+        "name": "Left",
+        "description": "Left alignment",
+        "value": 1
+      }
+    ]
+  },
+  "enum/DUALMOD": {
+    "bit_size": 4,
+    "variants": [
+      {
+        "name": "Independent",
+        "description": "Independent mode",
+        "value": 0
+      },
+      {
+        "name": "RegularInjected",
+        "description": "Combined regular simultaneous + injected simultaneous mode",
+        "value": 1
+      },
+      {
+        "name": "RegularAlternateTrigger",
+        "description": "Combined regular simultaneous + alternate trigger mode",
+        "value": 2
+      },
+      {
+        "name": "InjectedFastInterleaved",
+        "description": "Combined injected simultaneous + fast interleaved mode",
+        "value": 3
+      },
+      {
+        "name": "InjectedSlowInterleaved",
+        "description": "Combined injected simultaneous + slow interleaved mode",
+        "value": 4
+      },
+      {
+        "name": "Injected",
+        "description": "Injected simultaneous mode only",
+        "value": 5
+      },
+      {
+        "name": "Regular",
+        "description": "Regular simultaneous mode only",
+        "value": 6
+      },
+      {
+        "name": "FastInterleaved",
+        "description": "Fast interleaved mode only",
+        "value": 7
+      },
+      {
+        "name": "SlowInterleaved",
+        "description": "Slow interleaved mode only",
+        "value": 8
+      },
+      {
+        "name": "AlternateTrigger",
+        "description": "Alternate trigger mode only",
+        "value": 9
+      }
+    ]
+  },
+  "enum/SAMPLE_TIME": {
+    "bit_size": 3,
+    "variants": [
+      {
+        "name": "Cycles1_5",
+        "description": "1.5 ADC clock cycles",
+        "value": 0
+      },
+      {
+        "name": "Cycles7_5",
+        "description": "7.5 ADC clock cycles",
+        "value": 1
+      },
+      {
+        "name": "Cycles13_5",
+        "description": "13.5 ADC clock cycles",
+        "value": 2
+      },
+      {
+        "name": "Cycles28_5",
+        "description": "28.5 ADC clock cycles",
+        "value": 3
+      },
+      {
+        "name": "Cycles41_5",
+        "description": "41.5 ADC clock cycles",
+        "value": 4
+      },
+      {
+        "name": "Cycles55_5",
+        "description": "55.5 ADC clock cycles",
+        "value": 5
+      },
+      {
+        "name": "Cycles71_5",
+        "description": "71.5 ADC clock cycles",
+        "value": 6
+      },
+      {
+        "name": "Cycles239_5",
+        "description": "239.5 ADC clock cycles",
+        "value": 7
+      }
+    ]
+  }
+}

@@ -1454,7 +1454,7 @@
           "address": 1073816576,
           "registers": {
             "kind": "adc",
-            "version": "wb1",
+            "version": "v2_wb1",
             "block": "ADC"
           },
           "rcc": {
@@ -1530,12 +1530,7 @@
         },
         {
           "name": "ADC1_COMMON",
-          "address": 1073817344,
-          "registers": {
-            "kind": "adccommon",
-            "version": "v3",
-            "block": "ADC_COMMON"
-          }
+          "address": 1073817344
         },
         {
           "name": "AES2",

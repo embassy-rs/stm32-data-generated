@@ -1213,7 +1213,7 @@
           "address": 1073881088,
           "registers": {
             "kind": "adc",
-            "version": "v4",
+            "version": "v3_h7",
             "block": "ADC"
           },
           "rcc": {
@@ -1353,7 +1353,7 @@
           "address": 1073881344,
           "registers": {
             "kind": "adc",
-            "version": "v4",
+            "version": "v3_h7",
             "block": "ADC"
           },
           "rcc": {
@@ -1472,7 +1472,7 @@
           "address": 1476550656,
           "registers": {
             "kind": "adc",
-            "version": "v4",
+            "version": "v3_h7",
             "block": "ADC"
           },
           "rcc": {

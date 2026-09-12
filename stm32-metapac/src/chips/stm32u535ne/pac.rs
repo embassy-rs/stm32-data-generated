@@ -572,7 +572,7 @@ pub const GPIOE: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1000usize as 
 pub const GPIOG: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1800usize as _) };
 pub const GPIOH: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4202_1c00usize as _) };
 pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_8000usize as _) };
-pub const ADC12_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4204_8300usize as _) };
+pub const ADC12_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4202_8300usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
 pub const DLYB_SDMMC1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_8400usize as _) };
@@ -593,7 +593,7 @@ pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4600_7c00usize as _
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4602_0800usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4602_0c00usize as _) };
 pub const ADC4: adc::Adc4 = unsafe { adc::Adc4::from_ptr(0x4602_1000usize as _) };
-pub const ADC4_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4602_1308usize as _) };
+pub const ADC4_COMMON: *mut () = 0x4602_1308usize as _;
 pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4602_1800usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4602_2000usize as _) };
 pub const GTZC_MPCBB4: gtzc::Mpcbb = unsafe { gtzc::Mpcbb::from_ptr(0x4602_3800usize as _) };
@@ -607,9 +607,9 @@ pub const NVIC_PRIO_BITS: u8 = 4;
 pub use Interrupt as interrupt;
 #[cfg(feature = "rt")]
 pub use cortex_m_rt::interrupt;
-#[path = "../../peripherals/adc_u5.rs"]
+#[path = "../../peripherals/adc_v3_u5.rs"]
 pub mod adc;
-#[path = "../../peripherals/adccommon_u5.rs"]
+#[path = "../../peripherals/adccommon_v4.rs"]
 pub mod adccommon;
 #[path = "../../peripherals/adf_v1.rs"]
 pub mod adf;

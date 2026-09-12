@@ -949,9 +949,9 @@ pub const NVIC_PRIO_BITS: u8 = 4;
 pub use Interrupt as interrupt;
 #[cfg(feature = "rt")]
 pub use cortex_m_rt::interrupt;
-#[path = "../../peripherals/adc_n6.rs"]
+#[path = "../../peripherals/adc_v3_n6.rs"]
 pub mod adc;
-#[path = "../../peripherals/adccommon_n6.rs"]
+#[path = "../../peripherals/adccommon_v4.rs"]
 pub mod adccommon;
 #[path = "../../peripherals/adf_v1.rs"]
 pub mod adf;

@@ -3,7 +3,7 @@
 #![allow(clippy::unnecessary_cast)]
 #![allow(clippy::erasing_op)]
 
-#[doc = "ADC common registers"]
+#[doc = "Common ADC registers"]
 #[derive(Copy, Clone, Eq, PartialEq)]
 pub struct AdcCommon {
     ptr: *mut u8,
@@ -19,24 +19,24 @@ impl AdcCommon {
     pub const fn as_ptr(&self) -> *mut () {
         self.ptr as _
     }
-    #[doc = "ADC Common status register"]
+    #[doc = "Common status register"]
     #[inline(always)]
     pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
-    #[doc = "ADC common control register"]
+    #[doc = "Common control register"]
     #[inline(always)]
     pub const fn ccr(self) -> crate::common::Reg<regs::Ccr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
-    #[doc = "ADC common regular data register for dual and triple modes"]
+    #[doc = "Common regular data register for dual and triple modes"]
     #[inline(always)]
     pub const fn cdr(self) -> crate::common::Reg<regs::Cdr, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
     }
 }
 pub mod regs {
-    #[doc = "ADC common control register"]
+    #[doc = "Common control register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Ccr(pub u32);
@@ -68,14 +68,14 @@ pub mod regs {
         #[doc = "DMA disable selection for multi-ADC mode"]
         #[must_use]
         #[inline(always)]
-        pub const fn dds(&self) -> super::vals::Dds {
+        pub const fn dds(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
-            super::vals::Dds::from_bits(val as u8)
+            val != 0
         }
         #[doc = "DMA disable selection for multi-ADC mode"]
         #[inline(always)]
-        pub const fn set_dds(&mut self, val: super::vals::Dds) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        pub const fn set_dds(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Direct memory access mode for multi ADC mode"]
         #[must_use]
@@ -104,13 +104,13 @@ pub mod regs {
         #[doc = "VBAT enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn vbate(&self) -> bool {
+        pub const fn vbaten(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
             val != 0
         }
         #[doc = "VBAT enable"]
         #[inline(always)]
-        pub const fn set_vbate(&mut self, val: bool) {
+        pub const fn set_vbaten(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "Temperature sensor and VREFINT enable"]
@@ -140,7 +140,7 @@ pub mod regs {
                 .field("dds", &self.dds())
                 .field("dma", &self.dma())
                 .field("adcpre", &self.adcpre())
-                .field("vbate", &self.vbate())
+                .field("vbaten", &self.vbaten())
                 .field("tsvrefe", &self.tsvrefe())
                 .finish()
         }
@@ -150,23 +150,23 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ccr {{ multi: {:?}, delay: {=u8:?}, dds: {:?}, dma: {:?}, adcpre: {:?}, vbate: {=bool:?}, tsvrefe: {=bool:?} }}",
+                "Ccr {{ multi: {:?}, delay: {=u8:?}, dds: {=bool:?}, dma: {:?}, adcpre: {:?}, vbaten: {=bool:?}, tsvrefe: {=bool:?} }}",
                 self.multi(),
                 self.delay(),
                 self.dds(),
                 self.dma(),
                 self.adcpre(),
-                self.vbate(),
+                self.vbaten(),
                 self.tsvrefe()
             )
         }
     }
-    #[doc = "ADC common regular data register for dual and triple modes"]
+    #[doc = "Common regular data register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cdr(pub u32);
     impl Cdr {
-        #[doc = "1st data item of a pair of regular conversions"]
+        #[doc = "Regular data of ADC x"]
         #[must_use]
         #[inline(always)]
         pub const fn data(&self, n: usize) -> u16 {
@@ -175,7 +175,7 @@ pub mod regs {
             let val = (self.0 >> offs) & 0xffff;
             val as u16
         }
-        #[doc = "1st data item of a pair of regular conversions"]
+        #[doc = "Regular data of ADC x"]
         #[inline(always)]
         pub const fn set_data(&mut self, n: usize, val: u16) {
             assert!(n < 2usize);
@@ -208,12 +208,12 @@ pub mod regs {
             )
         }
     }
-    #[doc = "ADC common status register"]
+    #[doc = "Common status register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Csr(pub u32);
     impl Csr {
-        #[doc = "Analog watchdog event occurred"]
+        #[doc = "Analog watchdog flag of ADC x"]
         #[must_use]
         #[inline(always)]
         pub const fn awd(&self, n: usize) -> bool {
@@ -222,14 +222,14 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "Analog watchdog event occurred"]
+        #[doc = "Analog watchdog flag of ADC x"]
         #[inline(always)]
         pub const fn set_awd(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 0usize + n * 8usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
-        #[doc = "End of conversion of ADC"]
+        #[doc = "End of conversion of ADC x"]
         #[must_use]
         #[inline(always)]
         pub const fn eoc(&self, n: usize) -> bool {
@@ -238,14 +238,14 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "End of conversion of ADC"]
+        #[doc = "End of conversion of ADC x"]
         #[inline(always)]
         pub const fn set_eoc(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 1usize + n * 8usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
-        #[doc = "Injected channel end of conversion of ADC"]
+        #[doc = "Injected channel end of conversion of ADC x"]
         #[must_use]
         #[inline(always)]
         pub const fn jeoc(&self, n: usize) -> bool {
@@ -254,14 +254,14 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "Injected channel end of conversion of ADC"]
+        #[doc = "Injected channel end of conversion of ADC x"]
         #[inline(always)]
         pub const fn set_jeoc(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 2usize + n * 8usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
-        #[doc = "Injected channel conversion started"]
+        #[doc = "Injected channel start flag of ADC x"]
         #[must_use]
         #[inline(always)]
         pub const fn jstrt(&self, n: usize) -> bool {
@@ -270,14 +270,14 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "Injected channel conversion started"]
+        #[doc = "Injected channel start flag of ADC x"]
         #[inline(always)]
         pub const fn set_jstrt(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 3usize + n * 8usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
-        #[doc = "regular channel conversion started"]
+        #[doc = "Regular channel start flag of ADC x"]
         #[must_use]
         #[inline(always)]
         pub const fn strt(&self, n: usize) -> bool {
@@ -286,14 +286,14 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "regular channel conversion started"]
+        #[doc = "Regular channel start flag of ADC x"]
         #[inline(always)]
         pub const fn set_strt(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
             let offs = 4usize + n * 8usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
-        #[doc = "Overrun occurred"]
+        #[doc = "Overrun flag of ADC x"]
         #[must_use]
         #[inline(always)]
         pub const fn ovr(&self, n: usize) -> bool {
@@ -302,7 +302,7 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "Overrun occurred"]
+        #[doc = "Overrun flag of ADC x"]
         #[inline(always)]
         pub const fn set_ovr(&mut self, n: usize, val: bool) {
             assert!(n < 3usize);
@@ -407,37 +407,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Dds {
-        #[doc = "No new DMA request is issued after the last transfer"]
-        Single = 0x0,
-        #[doc = "DMA requests are issued as long as data are converted and DMA=01, 10 or 11"]
-        Continuous = 0x01,
-    }
-    impl Dds {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Dds {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Dds {
-        #[inline(always)]
-        fn from(val: u8) -> Dds {
-            Dds::from_bits(val)
-        }
-    }
-    impl From<Dds> for u8 {
-        #[inline(always)]
-        fn from(val: Dds) -> u8 {
-            Dds::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dma {
         #[doc = "DMA mode disabled"]
         Disabled = 0x0,
@@ -445,7 +414,7 @@ pub mod vals {
         Mode1 = 0x01,
         #[doc = "DMA mode 2 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)"]
         Mode2 = 0x02,
-        #[doc = "DMA mode 3 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)"]
+        #[doc = "DMA mode 3 enabled (2 / 3 bytes by pairs - 2&1 then 1&3 then 3&2)"]
         Mode3 = 0x03,
     }
     impl Dma {
@@ -474,7 +443,7 @@ pub mod vals {
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Multi {
-        #[doc = "All the ADCs independent: independent mode"]
+        #[doc = "All the ADCs independent"]
         Independent = 0x0,
         #[doc = "Dual ADC1 and ADC2, combined regular and injected simultaneous mode"]
         DualRj = 0x01,

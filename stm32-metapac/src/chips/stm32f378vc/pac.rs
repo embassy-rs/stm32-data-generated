@@ -340,7 +340,7 @@ pub const COMP1: *mut () = 0x4001_001cusize as _;
 pub const COMP2: *mut () = 0x4001_001eusize as _;
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4001_0400usize as _) };
 pub const ADC1: adc::Adc = unsafe { adc::Adc::from_ptr(0x4001_2400usize as _) };
-pub const ADC1_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4001_2400usize as _) };
+pub const ADC1_COMMON: *mut () = 0x4001_2400usize as _;
 pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3000usize as _) };
 pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_3800usize as _) };
 pub const TIM15: timer::Tim2chCmp = unsafe { timer::Tim2chCmp::from_ptr(0x4001_4000usize as _) };
@@ -370,10 +370,8 @@ pub const NVIC_PRIO_BITS: u8 = 4;
 pub use Interrupt as interrupt;
 #[cfg(feature = "rt")]
 pub use cortex_m_rt::interrupt;
-#[path = "../../peripherals/adc_f3v3.rs"]
+#[path = "../../peripherals/adc_v1_f1.rs"]
 pub mod adc;
-#[path = "../../peripherals/adccommon_f3.rs"]
-pub mod adccommon;
 #[path = "../../peripherals/bdma_v1.rs"]
 pub mod bdma;
 #[path = "../../peripherals/can_bxcan.rs"]

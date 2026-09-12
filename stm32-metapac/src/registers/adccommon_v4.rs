@@ -4,11 +4,11 @@ pub(crate) static REGISTERS: IR = IR {
     blocks: &[Block {
         name: "AdcCommon",
         extends: None,
-        description: Some("Analog-to-Digital Converter"),
+        description: Some("Common ADC registers"),
         items: &[
             BlockItem {
                 name: "csr",
-                description: Some("ADC Common status register"),
+                description: Some("Common status register"),
                 array: None,
                 byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
@@ -19,7 +19,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             BlockItem {
                 name: "ccr",
-                description: Some("ADC common control register"),
+                description: Some("Common control register"),
                 array: None,
                 byte_offset: 0x8,
                 inner: BlockItemInner::Register(Register {
@@ -30,7 +30,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             BlockItem {
                 name: "cdr",
-                description: Some("ADC common regular data register for dual and triple modes"),
+                description: Some("Common regular data register for dual mode"),
                 array: None,
                 byte_offset: 0xc,
                 inner: BlockItemInner::Register(Register {
@@ -41,7 +41,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             BlockItem {
                 name: "cdr2",
-                description: Some("ADC x common regular data register for 32-bit dual mode"),
+                description: Some("Common regular data register for 32-bit dual mode"),
                 array: None,
                 byte_offset: 0x10,
                 inner: BlockItemInner::Register(Register {
@@ -56,7 +56,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Ccr",
             extends: None,
-            description: Some("ADC common control register"),
+            description: Some("Common control register"),
             bit_size: 32,
             fields: &[
                 Field {
@@ -77,7 +77,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "damdf",
-                    description: Some("Dual ADC Mode Data Format"),
+                    description: Some("Dual ADC mode data format"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 2,
                     array: None,
@@ -93,7 +93,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "presc",
-                    description: Some("ADC prescaler"),
+                    description: Some("ADC prescaler (asynchronous clock only)"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 4,
                     array: None,
@@ -108,7 +108,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "vsenseen",
+                    name: "tsen",
                     description: Some("Temperature sensor enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
@@ -128,7 +128,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Cdr",
             extends: None,
-            description: Some("ADC common regular data register for dual and triple modes"),
+            description: Some("Common regular data register"),
             bit_size: 32,
             fields: &[
                 Field {
@@ -152,7 +152,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Cdr2",
             extends: None,
-            description: Some("ADC x common regular data register for 32-bit dual mode"),
+            description: Some("Common regular data register (32-bit)"),
             bit_size: 32,
             fields: &[Field {
                 name: "rdata_alt",
@@ -166,12 +166,12 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Csr",
             extends: None,
-            description: Some("ADC Common status register"),
+            description: Some("Common status register"),
             bit_size: 32,
             fields: &[
                 Field {
                     name: "adrdy_mst",
-                    description: Some("Master ADC ready"),
+                    description: Some("ADC ready flag of the master ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
@@ -179,7 +179,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "eosmp_mst",
-                    description: Some("End of Sampling phase flag of the master ADC"),
+                    description: Some("End of sampling flag of the master ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
@@ -187,7 +187,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "eoc_mst",
-                    description: Some("End of regular conversion of the master ADC"),
+                    description: Some("End of regular conversion flag of the master ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
@@ -235,15 +235,23 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "jqovf_mst",
-                    description: Some("Injected Context Queue Overflow flag of the master ADC"),
+                    description: Some("Injected context queue overflow flag of the master ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
+                    name: "ldordy_mst",
+                    description: Some("Voltage regulator ready flag of the master ADC"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
                     name: "adrdy_slv",
-                    description: Some("Slave ADC ready"),
+                    description: Some("ADC ready flag of the slave ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
@@ -251,7 +259,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "eosmp_slv",
-                    description: Some("End of Sampling phase flag of the slave ADC"),
+                    description: Some("End of sampling flag of the slave ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
@@ -259,7 +267,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "eoc_slv",
-                    description: Some("End of regular conversion of the slave ADC"),
+                    description: Some("End of regular conversion flag of the slave ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
@@ -307,8 +315,16 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "jqovf_slv",
-                    description: Some("Injected Context Queue Overflow flag of the slave ADC"),
+                    description: Some("Injected context queue overflow flag of the slave ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "ldordy_slv",
+                    description: Some("Voltage regulator ready flag of the slave ADC"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
@@ -324,22 +340,22 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Asynchronous",
-                    description: Some("Use Kernel Clock adc_ker_ck_input divided by PRESC. Asynchronous to AHB clock"),
+                    description: Some("Asynchronous clock (adc_ker_ck)"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "SyncDiv1",
-                    description: Some("Use AHB clock rcc_hclk3. In this case rcc_hclk must equal sys_d1cpre_ck"),
+                    description: Some("Synchronous clock (HCLK/1)"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "SyncDiv2",
-                    description: Some("Use AHB clock rcc_hclk3 divided by 2"),
+                    description: Some("Synchronous clock (HCLK/2)"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "SyncDiv4",
-                    description: Some("Use AHB clock rcc_hclk3 divided by 4"),
+                    description: Some("Synchronous clock (HCLK/4)"),
                     value: 3,
                 },
             ],
@@ -356,7 +372,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 EnumVariant {
                     name: "Format8",
-                    description: Some("CDR formatted for 8-bit resolution"),
+                    description: Some("CDR formatted for 8-bit data"),
                     value: 3,
                 },
                 EnumVariant {
@@ -420,62 +436,62 @@ pub(crate) static REGISTERS: IR = IR {
             variants: &[
                 EnumVariant {
                     name: "Div1",
-                    description: Some("adc_ker_ck_input not divided"),
+                    description: Some("Input ADC clock not divided"),
                     value: 0,
                 },
                 EnumVariant {
                     name: "Div10",
-                    description: Some("adc_ker_ck_input divided by 10"),
+                    description: Some("Input ADC clock divided by 10"),
                     value: 5,
                 },
                 EnumVariant {
                     name: "Div12",
-                    description: Some("adc_ker_ck_input divided by 12"),
+                    description: Some("Input ADC clock divided by 12"),
                     value: 6,
                 },
                 EnumVariant {
                     name: "Div128",
-                    description: Some("adc_ker_ck_input divided by 128"),
+                    description: Some("Input ADC clock divided by 128"),
                     value: 10,
                 },
                 EnumVariant {
                     name: "Div16",
-                    description: Some("adc_ker_ck_input divided by 16"),
+                    description: Some("Input ADC clock divided by 16"),
                     value: 7,
                 },
                 EnumVariant {
                     name: "Div2",
-                    description: Some("adc_ker_ck_input divided by 2"),
+                    description: Some("Input ADC clock divided by 2"),
                     value: 1,
                 },
                 EnumVariant {
                     name: "Div256",
-                    description: Some("adc_ker_ck_input divided by 256"),
+                    description: Some("Input ADC clock divided by 256"),
                     value: 11,
                 },
                 EnumVariant {
                     name: "Div32",
-                    description: Some("adc_ker_ck_input divided by 32"),
+                    description: Some("Input ADC clock divided by 32"),
                     value: 8,
                 },
                 EnumVariant {
                     name: "Div4",
-                    description: Some("adc_ker_ck_input divided by 4"),
+                    description: Some("Input ADC clock divided by 4"),
                     value: 2,
                 },
                 EnumVariant {
                     name: "Div6",
-                    description: Some("adc_ker_ck_input divided by 6"),
+                    description: Some("Input ADC clock divided by 6"),
                     value: 3,
                 },
                 EnumVariant {
                     name: "Div64",
-                    description: Some("adc_ker_ck_input divided by 64"),
+                    description: Some("Input ADC clock divided by 64"),
                     value: 9,
                 },
                 EnumVariant {
                     name: "Div8",
-                    description: Some("adc_ker_ck_input divided by 8"),
+                    description: Some("Input ADC clock divided by 8"),
                     value: 4,
                 },
             ],

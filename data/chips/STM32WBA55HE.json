@@ -300,8 +300,8 @@
           "address": 1174540288,
           "registers": {
             "kind": "adc",
-            "version": "wba",
-            "block": "ADC4"
+            "version": "v2_wba",
+            "block": "ADC"
           },
           "rcc": {
             "bus_clock": "HCLK4",
@@ -391,12 +391,7 @@
         },
         {
           "name": "ADC4_COMMON",
-          "address": 1174541064,
-          "registers": {
-            "kind": "adccommon",
-            "version": "v3",
-            "block": "ADC_COMMON"
-          }
+          "address": 1174541064
         },
         {
           "name": "AES",

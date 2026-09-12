@@ -1,23 +1,23 @@
 {
   "block/ADC_COMMON": {
-    "description": "ADC common registers",
+    "description": "Common ADC registers",
     "items": [
       {
         "name": "CSR",
-        "description": "ADC Common status register",
+        "description": "Common status register",
         "byte_offset": 0,
         "access": "Read",
         "fieldset": "CSR"
       },
       {
         "name": "CCR",
-        "description": "ADC common control register",
+        "description": "Common control register",
         "byte_offset": 4,
         "fieldset": "CCR"
       },
       {
         "name": "CDR",
-        "description": "ADC common regular data register for dual and triple modes",
+        "description": "Common regular data register for dual and triple modes",
         "byte_offset": 8,
         "access": "Read",
         "fieldset": "CDR"
@@ -25,7 +25,7 @@
     ]
   },
   "fieldset/CCR": {
-    "description": "ADC common control register",
+    "description": "Common control register",
     "fields": [
       {
         "name": "MULTI",
@@ -44,8 +44,7 @@
         "name": "DDS",
         "description": "DMA disable selection for multi-ADC mode",
         "bit_offset": 13,
-        "bit_size": 1,
-        "enum": "DDS"
+        "bit_size": 1
       },
       {
         "name": "DMA",
@@ -62,7 +61,7 @@
         "enum": "ADCPRE"
       },
       {
-        "name": "VBATE",
+        "name": "VBATEN",
         "description": "VBAT enable",
         "bit_offset": 22,
         "bit_size": 1
@@ -76,11 +75,11 @@
     ]
   },
   "fieldset/CDR": {
-    "description": "ADC common regular data register for dual and triple modes",
+    "description": "Common regular data register",
     "fields": [
       {
         "name": "DATA",
-        "description": "1st data item of a pair of regular conversions",
+        "description": "Regular data of ADC x",
         "bit_offset": 0,
         "bit_size": 16,
         "array": {
@@ -91,11 +90,11 @@
     ]
   },
   "fieldset/CSR": {
-    "description": "ADC common status register",
+    "description": "Common status register",
     "fields": [
       {
         "name": "AWD",
-        "description": "Analog watchdog event occurred",
+        "description": "Analog watchdog flag of ADC x",
         "bit_offset": 0,
         "bit_size": 1,
         "array": {
@@ -105,7 +104,7 @@
       },
       {
         "name": "EOC",
-        "description": "End of conversion of ADC",
+        "description": "End of conversion of ADC x",
         "bit_offset": 1,
         "bit_size": 1,
         "array": {
@@ -115,7 +114,7 @@
       },
       {
         "name": "JEOC",
-        "description": "Injected channel end of conversion of ADC",
+        "description": "Injected channel end of conversion of ADC x",
         "bit_offset": 2,
         "bit_size": 1,
         "array": {
@@ -125,7 +124,7 @@
       },
       {
         "name": "JSTRT",
-        "description": "Injected channel conversion started",
+        "description": "Injected channel start flag of ADC x",
         "bit_offset": 3,
         "bit_size": 1,
         "array": {
@@ -135,7 +134,7 @@
       },
       {
         "name": "STRT",
-        "description": "regular channel conversion started",
+        "description": "Regular channel start flag of ADC x",
         "bit_offset": 4,
         "bit_size": 1,
         "array": {
@@ -145,7 +144,7 @@
       },
       {
         "name": "OVR",
-        "description": "Overrun occurred",
+        "description": "Overrun flag of ADC x",
         "bit_offset": 5,
         "bit_size": 1,
         "array": {
@@ -180,21 +179,6 @@
       }
     ]
   },
-  "enum/DDS": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Single",
-        "description": "No new DMA request is issued after the last transfer",
-        "value": 0
-      },
-      {
-        "name": "Continuous",
-        "description": "DMA requests are issued as long as data are converted and DMA=01, 10 or 11",
-        "value": 1
-      }
-    ]
-  },
   "enum/DMA": {
     "bit_size": 2,
     "variants": [
@@ -215,7 +199,7 @@
       },
       {
         "name": "Mode3",
-        "description": "DMA mode 3 enabled (2 / 3 half-words by pairs - 2&1 then 1&3 then 3&2)",
+        "description": "DMA mode 3 enabled (2 / 3 bytes by pairs - 2&1 then 1&3 then 3&2)",
         "value": 3
       }
     ]
@@ -225,7 +209,7 @@
     "variants": [
       {
         "name": "Independent",
-        "description": "All the ADCs independent: independent mode",
+        "description": "All the ADCs independent",
         "value": 0
       },
       {

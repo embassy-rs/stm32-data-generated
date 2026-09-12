@@ -5,7 +5,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x42028000,
         registers: Some(PeripheralRegisters {
             kind: "adc",
-            version: "v3",
+            version: "v3_l4",
             block: "ADC",
             ir: &adc::REGISTERS,
         }),
@@ -143,7 +143,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x42028100,
         registers: Some(PeripheralRegisters {
             kind: "adc",
-            version: "v3",
+            version: "v3_l4",
             block: "ADC",
             ir: &adc::REGISTERS,
         }),
@@ -7055,7 +7055,7 @@ pub(crate) static PINS: &[Pin] = &[
     Pin { name: "PH1" },
     Pin { name: "PH3" },
 ];
-#[path = "../registers/adc_v3.rs"]
+#[path = "../registers/adc_v3_l4.rs"]
 pub mod adc;
 #[path = "../registers/adccommon_v3.rs"]
 pub mod adccommon;

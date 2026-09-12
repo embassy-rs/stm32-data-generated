@@ -4,11 +4,11 @@ pub(crate) static REGISTERS: IR = IR {
     blocks: &[Block {
         name: "AdcCommon",
         extends: None,
-        description: Some("Analog-to-Digital Converter"),
+        description: Some("Common ADC registers"),
         items: &[
             BlockItem {
                 name: "csr",
-                description: Some("ADC Common status register"),
+                description: Some("Common status register"),
                 array: None,
                 byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
@@ -19,7 +19,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             BlockItem {
                 name: "ccr",
-                description: Some("ADC common control register"),
+                description: Some("Common control register"),
                 array: None,
                 byte_offset: 0x8,
                 inner: BlockItemInner::Register(Register {
@@ -30,7 +30,7 @@ pub(crate) static REGISTERS: IR = IR {
             },
             BlockItem {
                 name: "cdr",
-                description: Some("ADC common regular data register for dual and triple modes"),
+                description: Some("Common regular data register for dual mode"),
                 array: None,
                 byte_offset: 0xc,
                 inner: BlockItemInner::Register(Register {
@@ -45,16 +45,16 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Ccr",
             extends: None,
-            description: Some("ADC common control register"),
+            description: Some("Common control register"),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "mult",
-                    description: Some("Multi ADC mode selection"),
+                    name: "dual",
+                    description: Some("Dual ADC mode selection"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 5,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Dual"),
                 },
                 Field {
                     name: "delay",
@@ -66,7 +66,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "dmacfg",
-                    description: Some("Direct memory access configuration"),
+                    description: Some("Direct memory access configuration for dual ADC mode"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
@@ -74,11 +74,11 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "mdma",
-                    description: Some("Direct memory access mode for multi ADC mode"),
+                    description: Some("Direct memory access mode for dual ADC mode"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Mdma"),
                 },
                 Field {
                     name: "ckmode",
@@ -86,7 +86,15 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Ckmode"),
+                },
+                Field {
+                    name: "presc",
+                    description: Some("ADC prescaler (asynchronous clock only)"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
+                    bit_size: 4,
+                    array: None,
+                    enumm: Some("Presc"),
                 },
                 Field {
                     name: "vrefen",
@@ -97,16 +105,16 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "ch18sel",
-                    description: Some("CH18 selection (Vbat)"),
+                    name: "tsen",
+                    description: Some("Temperature sensor enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
                     enumm: None,
                 },
                 Field {
-                    name: "ch17sel",
-                    description: Some("CH17 selection (temperature)"),
+                    name: "vbaten",
+                    description: Some("VBAT enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
@@ -117,7 +125,7 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Cdr",
             extends: None,
-            description: Some("ADC common regular data register for dual and triple modes"),
+            description: Some("Common regular data register"),
             bit_size: 32,
             fields: &[
                 Field {
@@ -141,12 +149,12 @@ pub(crate) static REGISTERS: IR = IR {
         FieldSet {
             name: "Csr",
             extends: None,
-            description: Some("ADC Common status register"),
+            description: Some("Common status register"),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "addrdy_mst",
-                    description: Some("ADDRDY_MST"),
+                    name: "adrdy_mst",
+                    description: Some("ADC ready flag of the master ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
@@ -154,7 +162,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "eosmp_mst",
-                    description: Some("EOSMP_MST"),
+                    description: Some("End of sampling flag of the master ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
@@ -162,7 +170,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "eoc_mst",
-                    description: Some("EOC_MST"),
+                    description: Some("End of regular conversion flag of the master ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
@@ -170,7 +178,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "eos_mst",
-                    description: Some("EOS_MST"),
+                    description: Some("End of regular sequence flag of the master ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
@@ -178,7 +186,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "ovr_mst",
-                    description: Some("OVR_MST"),
+                    description: Some("Overrun flag of the master ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
@@ -186,7 +194,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "jeoc_mst",
-                    description: Some("JEOC_MST"),
+                    description: Some("End of injected conversion flag of the master ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
@@ -194,7 +202,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "jeos_mst",
-                    description: Some("JEOS_MST"),
+                    description: Some("End of injected sequence flag of the master ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
@@ -210,7 +218,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "jqovf_mst",
-                    description: Some("JQOVF_MST"),
+                    description: Some("Injected context queue overflow flag of the master ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
@@ -218,7 +226,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "adrdy_slv",
-                    description: Some("ADRDY_SLV"),
+                    description: Some("ADC ready flag of the slave ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
@@ -226,7 +234,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "eosmp_slv",
-                    description: Some("EOSMP_SLV"),
+                    description: Some("End of sampling flag of the slave ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
@@ -234,7 +242,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "eoc_slv",
-                    description: Some("End of regular conversion of the slave ADC"),
+                    description: Some("End of regular conversion flag of the slave ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
@@ -274,7 +282,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "awd_slv",
-                    description: Some("Analog watchdog 1 flag of the slave ADC"),
+                    description: Some("Analog watchdog flag of the slave ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 3, stride: 1 })),
@@ -282,7 +290,7 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "jqovf_slv",
-                    description: Some("Injected Context Queue Overflow flag of the slave ADC"),
+                    description: Some("Injected context queue overflow flag of the slave ADC"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
                     array: None,
@@ -291,21 +299,186 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
     ],
-    enums: &[Enum {
-        name: "Dmacfg",
-        description: None,
-        bit_size: 1,
-        variants: &[
-            EnumVariant {
-                name: "Circular",
-                description: Some("DMA Circular mode selected"),
-                value: 1,
-            },
-            EnumVariant {
-                name: "OneShot",
-                description: Some("DMA One Shot mode selected"),
-                value: 0,
-            },
-        ],
-    }],
+    enums: &[
+        Enum {
+            name: "Ckmode",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Asynchronous",
+                    description: Some("Asynchronous clock (adc_ker_ck)"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "SyncDiv1",
+                    description: Some("Synchronous clock (HCLK/1)"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "SyncDiv2",
+                    description: Some("Synchronous clock (HCLK/2)"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "SyncDiv4",
+                    description: Some("Synchronous clock (HCLK/4)"),
+                    value: 3,
+                },
+            ],
+        },
+        Enum {
+            name: "Dmacfg",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "Circular",
+                    description: Some("DMA circular mode selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "OneShot",
+                    description: Some("DMA one shot mode selected"),
+                    value: 0,
+                },
+            ],
+        },
+        Enum {
+            name: "Dual",
+            description: None,
+            bit_size: 5,
+            variants: &[
+                EnumVariant {
+                    name: "DualA",
+                    description: Some("Dual, alternate trigger mode only"),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "DualI",
+                    description: Some("Dual, interleaved mode only"),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "DualIj",
+                    description: Some("Dual, combined interleaved mode + injected simultaneous mode"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "DualJ",
+                    description: Some("Dual, injected simultaneous mode only"),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "DualR",
+                    description: Some("Dual, regular simultaneous mode only"),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "DualRa",
+                    description: Some("Dual, combined regular simultaneous + alternate trigger mode"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "DualRj",
+                    description: Some("Dual, combined regular simultaneous + injected simultaneous mode"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Independent",
+                    description: Some("Independent mode"),
+                    value: 0,
+                },
+            ],
+        },
+        Enum {
+            name: "Mdma",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Bits1210",
+                    description: Some("MDMA mode enabled for 12 and 10-bit resolution"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Bits86",
+                    description: Some("MDMA mode enabled for 8 and 6-bit resolution"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "Disabled",
+                    description: Some("MDMA mode disabled"),
+                    value: 0,
+                },
+            ],
+        },
+        Enum {
+            name: "Presc",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "Div1",
+                    description: Some("Input ADC clock not divided"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Div10",
+                    description: Some("Input ADC clock divided by 10"),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "Div12",
+                    description: Some("Input ADC clock divided by 12"),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "Div128",
+                    description: Some("Input ADC clock divided by 128"),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "Div16",
+                    description: Some("Input ADC clock divided by 16"),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "Div2",
+                    description: Some("Input ADC clock divided by 2"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Div256",
+                    description: Some("Input ADC clock divided by 256"),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "Div32",
+                    description: Some("Input ADC clock divided by 32"),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "Div4",
+                    description: Some("Input ADC clock divided by 4"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Div6",
+                    description: Some("Input ADC clock divided by 6"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "Div64",
+                    description: Some("Input ADC clock divided by 64"),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "Div8",
+                    description: Some("Input ADC clock divided by 8"),
+                    value: 4,
+                },
+            ],
+        },
+    ],
 };

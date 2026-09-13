@@ -1432,7 +1432,24 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
         ],
         triggers: &[],
-        interrupts: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "FLT0",
+                interrupt: "DFSDM1_FLT0",
+            },
+            PeripheralInterrupt {
+                signal: "FLT1",
+                interrupt: "DFSDM1_FLT1",
+            },
+            PeripheralInterrupt {
+                signal: "FLT2",
+                interrupt: "DFSDM1_FLT2",
+            },
+            PeripheralInterrupt {
+                signal: "FLT3",
+                interrupt: "DFSDM1_FLT3",
+            },
+        ],
         afio: None,
     },
     Peripheral {
@@ -9298,6 +9315,22 @@ pub(crate) static INTERRUPTS: &[Interrupt] = &[
     Interrupt {
         name: "SPDIF_RX",
         number: 97,
+    },
+    Interrupt {
+        name: "DFSDM1_FLT0",
+        number: 99,
+    },
+    Interrupt {
+        name: "DFSDM1_FLT1",
+        number: 100,
+    },
+    Interrupt {
+        name: "DFSDM1_FLT2",
+        number: 101,
+    },
+    Interrupt {
+        name: "DFSDM1_FLT3",
+        number: 102,
     },
     Interrupt {
         name: "SDMMC2",

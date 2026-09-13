@@ -199,6 +199,14 @@ pub enum Interrupt {
     SPDIF_RX = 97,
     #[doc = "98 - DSI"]
     DSI = 98,
+    #[doc = "99 - DFSDM1_FLT0"]
+    DFSDM1_FLT0 = 99,
+    #[doc = "100 - DFSDM1_FLT1"]
+    DFSDM1_FLT1 = 100,
+    #[doc = "101 - DFSDM1_FLT2"]
+    DFSDM1_FLT2 = 101,
+    #[doc = "102 - DFSDM1_FLT3"]
+    DFSDM1_FLT3 = 102,
     #[doc = "103 - SDMMC2"]
     SDMMC2 = 103,
     #[doc = "104 - CAN3_TX"]
@@ -322,6 +330,10 @@ mod _vectors {
         fn I2C4_ER();
         fn SPDIF_RX();
         fn DSI();
+        fn DFSDM1_FLT0();
+        fn DFSDM1_FLT1();
+        fn DFSDM1_FLT2();
+        fn DFSDM1_FLT3();
         fn SDMMC2();
         fn CAN3_TX();
         fn CAN3_RX0();
@@ -452,10 +464,10 @@ mod _vectors {
         Vector { _handler: I2C4_ER },
         Vector { _handler: SPDIF_RX },
         Vector { _handler: DSI },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
-        Vector { _reserved: 0 },
+        Vector { _handler: DFSDM1_FLT0 },
+        Vector { _handler: DFSDM1_FLT1 },
+        Vector { _handler: DFSDM1_FLT2 },
+        Vector { _handler: DFSDM1_FLT3 },
         Vector { _handler: SDMMC2 },
         Vector { _handler: CAN3_TX },
         Vector { _handler: CAN3_RX0 },

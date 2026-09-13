@@ -2724,6 +2724,24 @@
               "af": 6
             }
           ],
+          "interrupts": [
+            {
+              "signal": "FLT0",
+              "interrupt": "DFSDM1_FLT0"
+            },
+            {
+              "signal": "FLT1",
+              "interrupt": "DFSDM1_FLT1"
+            },
+            {
+              "signal": "FLT2",
+              "interrupt": "DFSDM1_FLT2"
+            },
+            {
+              "signal": "FLT3",
+              "interrupt": "DFSDM1_FLT3"
+            }
+          ],
           "dma_channels": [
             {
               "signal": "FLT0",
@@ -8807,6 +8825,22 @@
         {
           "name": "SPDIF_RX",
           "number": 97
+        },
+        {
+          "name": "DFSDM1_FLT0",
+          "number": 99
+        },
+        {
+          "name": "DFSDM1_FLT1",
+          "number": 100
+        },
+        {
+          "name": "DFSDM1_FLT2",
+          "number": 101
+        },
+        {
+          "name": "DFSDM1_FLT3",
+          "number": 102
         },
         {
           "name": "SDMMC2",

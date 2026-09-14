@@ -1682,7 +1682,16 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(7),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "DFSDM1_BREAK0",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN2",
+                source: "DFSDM1_BREAK1",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",
@@ -1785,7 +1794,16 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(7),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "DFSDM1_BREAK0",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN2",
+                source: "DFSDM1_BREAK1",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",
@@ -1895,7 +1913,16 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(4),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "DFSDM1_BREAK0",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN2",
+                source: "DFSDM1_BREAK1",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",

@@ -34,7 +34,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [DCMI](#dcmi) | | | | | v1 | | v1 | v1 | | | v1 | v1 | | | v1 | v1 | | v1 | v1 | | | v1 | | | | |
 | [DCMIPP](#dcmipp) | | | | | | | | | | | | ❌ | | | | | | | v2 | | | | | | | |
 | [DESIG](#desig) | | | | | | | | | | | | | | | | | | | | | | | | | wba | |
-| [DFSDM](#dfsdm) | | | | | | | ❌ | ❌ | | | | ❌ | | | ❌ | ❌ | | ❌ | | | | | | | | |
+| [DFSDM](#dfsdm) | | | | | | | v1 | v1 | | | | v1 | | | v1 | v1 | v1 | v1 | | | | | | | | |
 | [DLYB](#dlyb) | | | | | | | | | | | v1 | v1 | | | | | | | | | v1 | v1 | | | | |
 | [DLYBSD](#dlybsd) | | | | | | | | | | | | | | | | | | | v1 | | | | | | | |
 | [DMA](#dma) | | | | | v2 | | v2 | v2 | | | | v1 | | | | | | | | | | | | | | |
@@ -90,7 +90,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [RADIO](#radio) | | | | | | | | | | | | | | | | | | | | | | | | v1 | | |
 | [RAMCFG](#ramcfg) | | ❌ | | | | | | | | | h5 | | | | | | | | h5 | | u5 | u5 | | | wba | |
 | [RAMECC](#ramecc) | | | | | | | | | | | | ❌ | | | | | | | | | | | | | | |
-| [RCC](#rcc) | c0, c0v2 | c5 | f0v1, f0v2, f0v3, f0v4 | f1, f100, f1cl | f2 | f37, f3v1, f3v2, f3v3 | f4, f410 | f7 | g0x0, g0x1 | g4 | h5, h50 | h7, h7ab, h7rm0433, h7rs | l0, l0_v2 | l1 | l4 | l4plus | l5 | mp1 | n6 | u0 | u3 | u5 | wb | wb0 | wba | wl5, wle |
+| [RCC](#rcc) | c0, c0v2 | c5 | f0v1, f0v2, f0v3, f0v4 | f1, f100, f1cl | f2 | f37, f3v1, f3v2, f3v3 | f4, f410 | f7 | g0x0, g0x1 | g4 | h5, h50 | h7, h7ab, h7rm0433, h7rm0468, h7rs | l0, l0_v2 | l1 | l4 | l4plus | l5 | mp1 | n6 | u0 | u3 | u5 | wb | wb0 | wba | wl5, wle |
 | [RIFSC](#rifsc) | | | | | | | | | | | | | | | | | | | n6 | | | | | | | |
 | [RISAF](#risaf) | | | | | | | | | | | | | | | | | | | n6 | | | | | | | |
 | [RNG](#rng) | | v4 | | | v1 | | v1 | v1 | v1 | v1 | v3 | v1, v2, v3 | v1 | | v1 | v1, v2 | v2 | ❌ | v3 | v3 | v3 | v3 | v1 | v1 | v3, wba6 | v2 |
@@ -353,7 +353,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **❌ Unsupported**: STM32F4, STM32F7, STM32H7, STM32L4, STM32L4+, STM32MP1
+- **v1**: STM32F4, STM32F7, STM32H7, STM32L4, STM32L4+, STM32L5, STM32MP1
 
 ### DLYB
 
@@ -865,6 +865,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **h7**: STM32H7
 - **h7ab**: STM32H7
 - **h7rm0433**: STM32H7
+- **h7rm0468**: STM32H7
 - **h7rs**: STM32H7
 - **l0**: STM32L0
 - **l0_v2**: STM32L0

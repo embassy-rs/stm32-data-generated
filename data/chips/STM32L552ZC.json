@@ -1601,6 +1601,204 @@
           }
         },
         {
+          "name": "DFSDM1",
+          "address": 1073831936,
+          "registers": {
+            "kind": "dfsdm",
+            "version": "v1",
+            "block": "DFSDM_4CH_4FLT_DLY_TRG5_ADC"
+          },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": "PCLK2",
+            "enable": {
+              "register": "APB2ENR",
+              "field": "DFSDM1EN"
+            },
+            "reset": {
+              "register": "APB2RSTR",
+              "field": "DFSDM1RST"
+            }
+          },
+          "pins": [
+            {
+              "pin": "PB1",
+              "signal": "DATIN0",
+              "af": 6
+            },
+            {
+              "pin": "PB12",
+              "signal": "DATIN1",
+              "af": 6
+            },
+            {
+              "pin": "PB13",
+              "signal": "CKIN1",
+              "af": 6
+            },
+            {
+              "pin": "PB14",
+              "signal": "DATIN2",
+              "af": 6
+            },
+            {
+              "pin": "PB15",
+              "signal": "CKIN2",
+              "af": 6
+            },
+            {
+              "pin": "PB2",
+              "signal": "CKIN0",
+              "af": 6
+            },
+            {
+              "pin": "PB8",
+              "signal": "CKOUT",
+              "af": 5
+            },
+            {
+              "pin": "PC2",
+              "signal": "CKOUT",
+              "af": 6
+            },
+            {
+              "pin": "PC6",
+              "signal": "CKIN3",
+              "af": 6
+            },
+            {
+              "pin": "PC7",
+              "signal": "DATIN3",
+              "af": 6
+            },
+            {
+              "pin": "PD3",
+              "signal": "DATIN0",
+              "af": 6
+            },
+            {
+              "pin": "PD4",
+              "signal": "CKIN0",
+              "af": 6
+            },
+            {
+              "pin": "PD6",
+              "signal": "DATIN1",
+              "af": 6
+            },
+            {
+              "pin": "PD7",
+              "signal": "CKIN1",
+              "af": 6
+            },
+            {
+              "pin": "PE4",
+              "signal": "DATIN3",
+              "af": 6
+            },
+            {
+              "pin": "PE5",
+              "signal": "CKIN3",
+              "af": 6
+            },
+            {
+              "pin": "PE7",
+              "signal": "DATIN2",
+              "af": 6
+            },
+            {
+              "pin": "PE8",
+              "signal": "CKIN2",
+              "af": 6
+            },
+            {
+              "pin": "PE9",
+              "signal": "CKOUT",
+              "af": 6
+            },
+            {
+              "pin": "PF10",
+              "signal": "CKOUT",
+              "af": 6
+            },
+            {
+              "pin": "PG7",
+              "signal": "CKOUT",
+              "af": 6
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "FLT0",
+              "interrupt": "DFSDM1_FLT0"
+            },
+            {
+              "signal": "FLT1",
+              "interrupt": "DFSDM1_FLT1"
+            },
+            {
+              "signal": "FLT2",
+              "interrupt": "DFSDM1_FLT2"
+            },
+            {
+              "signal": "FLT3",
+              "interrupt": "DFSDM1_FLT3"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "FLT0",
+              "dmamux": "DMAMUX1",
+              "request": 86
+            },
+            {
+              "signal": "FLT1",
+              "dmamux": "DMAMUX1",
+              "request": 87
+            },
+            {
+              "signal": "FLT2",
+              "dmamux": "DMAMUX1",
+              "request": 88
+            },
+            {
+              "signal": "FLT3",
+              "dmamux": "DMAMUX1",
+              "request": 89
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "DFSDM1_JTRG0",
+              "source": "TIM1_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG1",
+              "source": "TIM1_TRGO2"
+            },
+            {
+              "signal": "DFSDM1_JTRG2",
+              "source": "TIM8_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG3",
+              "source": "TIM8_TRGO2"
+            },
+            {
+              "signal": "DFSDM1_JTRG24",
+              "source": "EXTI11"
+            },
+            {
+              "signal": "DFSDM1_JTRG25",
+              "source": "EXTI15"
+            },
+            {
+              "signal": "DFSDM1_JTRG26",
+              "source": "LPTIM1_TRGO"
+            }
+          ]
+        },
+        {
           "name": "DMA1",
           "address": 1073872896,
           "registers": {
@@ -5060,6 +5258,16 @@
               "dmamux": "DMAMUX1",
               "request": 48
             }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
+            }
           ]
         },
         {
@@ -5204,6 +5412,12 @@
               "dmamux": "DMAMUX1",
               "request": 81
             }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            }
           ]
         },
         {
@@ -5297,6 +5511,16 @@
               "signal": "UP",
               "dmamux": "DMAMUX1",
               "request": 83
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
             }
           ]
         },
@@ -5396,6 +5620,16 @@
               "signal": "UP",
               "dmamux": "DMAMUX1",
               "request": 85
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
             }
           ]
         },
@@ -6253,6 +6487,16 @@
               "signal": "COM",
               "dmamux": "DMAMUX1",
               "request": 55
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK2"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK3"
             }
           ]
         },

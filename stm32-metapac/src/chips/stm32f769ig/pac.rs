@@ -533,7 +533,7 @@ pub const SAI1: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_5800usize as _) };
 pub const SAI2: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_5c00usize as _) };
 pub const LTDC: ltdc::Ltdc = unsafe { ltdc::Ltdc::from_ptr(0x4001_6800usize as _) };
 pub const DSIHOST: dsihost::Dsihost = unsafe { dsihost::Dsihost::from_ptr(0x4001_6c00usize as _) };
-pub const DFSDM1: *mut () = 0x4001_7400usize as _;
+pub const DFSDM1: dfsdm::Dfsdm8ch4fltTrg5 = unsafe { dfsdm::Dfsdm8ch4fltTrg5::from_ptr(0x4001_7400usize as _) };
 pub const MDIOS: mdios::Mdios = unsafe { mdios::Mdios::from_ptr(0x4001_7800usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4002_0000usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4002_0400usize as _) };
@@ -584,6 +584,8 @@ pub mod dac;
 pub mod dbgmcu;
 #[path = "../../peripherals/dcmi_v1.rs"]
 pub mod dcmi;
+#[path = "../../peripherals/dfsdm_v1.rs"]
+pub mod dfsdm;
 #[path = "../../peripherals/dma_v2.rs"]
 pub mod dma;
 #[path = "../../peripherals/dma2d_v1.rs"]

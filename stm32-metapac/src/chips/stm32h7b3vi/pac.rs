@@ -663,7 +663,8 @@ pub const TIM16: timer::Tim1chCmp = unsafe { timer::Tim1chCmp::from_ptr(0x4001_4
 pub const TIM17: timer::Tim1chCmp = unsafe { timer::Tim1chCmp::from_ptr(0x4001_4800usize as _) };
 pub const SAI1: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_5800usize as _) };
 pub const SAI2: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_5c00usize as _) };
-pub const DFSDM1: *mut () = 0x4001_7800usize as _;
+pub const DFSDM1: dfsdm::Dfsdm8ch8fltDlyTrg5Adc =
+    unsafe { dfsdm::Dfsdm8ch8fltDlyTrg5Adc::from_ptr(0x4001_7800usize as _) };
 pub const DMA1: dma::Dma = unsafe { dma::Dma::from_ptr(0x4002_0000usize as _) };
 pub const DMA2: dma::Dma = unsafe { dma::Dma::from_ptr(0x4002_0400usize as _) };
 pub const DMAMUX1: dmamux::Dmamux = unsafe { dmamux::Dmamux::from_ptr(0x4002_0800usize as _) };
@@ -712,7 +713,7 @@ pub const VREFBUF: vrefbuf::Vrefbuf = unsafe { vrefbuf::Vrefbuf::from_ptr(0x5800
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x5800_4000usize as _) };
 pub const IWDG1: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x5800_4800usize as _) };
 pub const DTS: dts::Dts = unsafe { dts::Dts::from_ptr(0x5800_6800usize as _) };
-pub const DFSDM2: *mut () = 0x5800_6c00usize as _;
+pub const DFSDM2: dfsdm::Dfsdm2ch1fltTrg5 = unsafe { dfsdm::Dfsdm2ch1fltTrg5::from_ptr(0x5800_6c00usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x5802_0000usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x5802_0400usize as _) };
 pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x5802_0800usize as _) };
@@ -760,6 +761,8 @@ pub mod dac;
 pub mod dbgmcu;
 #[path = "../../peripherals/dcmi_v1.rs"]
 pub mod dcmi;
+#[path = "../../peripherals/dfsdm_v1.rs"]
+pub mod dfsdm;
 #[path = "../../peripherals/dlyb_v1.rs"]
 pub mod dlyb;
 #[path = "../../peripherals/dma_v1.rs"]

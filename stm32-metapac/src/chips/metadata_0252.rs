@@ -739,7 +739,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "DFSDM1",
         address: 0x40016000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "dfsdm",
+            version: "v1",
+            block: "DFSDM_4CH_2FLT_DLY_TRG3",
+            ir: &dfsdm::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
             kernel_clock: Clock("PCLK2"),
@@ -834,7 +839,40 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(3),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "DFSDM1_JTRG0",
+                source: "TIM1_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DFSDM1_JTRG1",
+                source: "TIM3_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DFSDM1_JTRG2",
+                source: "TIM8_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DFSDM1_JTRG3",
+                source: "TIM10_OC1",
+            },
+            PeripheralTrigger {
+                signal: "DFSDM1_JTRG5",
+                source: "TIM4_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DFSDM1_JTRG7",
+                source: "TIM6_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DFSDM1_JTRG9",
+                source: "EXTI11",
+            },
+            PeripheralTrigger {
+                signal: "DFSDM1_JTRG10",
+                source: "EXTI15",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "FLT0",
@@ -850,7 +888,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "DFSDM2",
         address: 0x40016400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "dfsdm",
+            version: "v1",
+            block: "DFSDM_8CH_4FLT_DLY_TRG3",
+            ir: &dfsdm::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
             kernel_clock: Clock("PCLK2"),
@@ -987,7 +1030,52 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(8),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "DFSDM2_JTRG0",
+                source: "TIM1_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DFSDM2_JTRG1",
+                source: "TIM3_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DFSDM2_JTRG2",
+                source: "TIM8_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DFSDM2_JTRG3",
+                source: "TIM10_OC1",
+            },
+            PeripheralTrigger {
+                signal: "DFSDM2_JTRG4",
+                source: "TIM2_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DFSDM2_JTRG5",
+                source: "TIM4_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DFSDM2_JTRG6",
+                source: "TIM11_OC1",
+            },
+            PeripheralTrigger {
+                signal: "DFSDM2_JTRG7",
+                source: "TIM6_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DFSDM2_JTRG8",
+                source: "TIM7_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "DFSDM2_JTRG9",
+                source: "EXTI11",
+            },
+            PeripheralTrigger {
+                signal: "DFSDM2_JTRG10",
+                source: "EXTI15",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "FLT0",
@@ -3253,7 +3341,16 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(6),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "DFSDM1_BREAK0",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "DFSDM2_BREAK0",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",
@@ -3306,7 +3403,16 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             af: Some(3),
         }],
         dma_channels: &[],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "DFSDM1_BREAK0",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "DFSDM2_BREAK0",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",
@@ -3371,7 +3477,16 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             af: Some(3),
         }],
         dma_channels: &[],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "DFSDM1_BREAK0",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "DFSDM2_BREAK0",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",
@@ -3443,7 +3558,16 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
         ],
         dma_channels: &[],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "DFSDM1_BREAK0",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "DFSDM2_BREAK0",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",
@@ -3508,7 +3632,16 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             af: Some(9),
         }],
         dma_channels: &[],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "DFSDM1_BREAK0",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "DFSDM2_BREAK0",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",
@@ -3573,7 +3706,16 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             af: Some(9),
         }],
         dma_channels: &[],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "DFSDM1_BREAK0",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "DFSDM2_BREAK0",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",
@@ -4487,7 +4629,16 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(7),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "DFSDM1_BREAK2",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "DFSDM2_BREAK2",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",
@@ -5778,6 +5929,8 @@ pub mod crc;
 pub mod dac;
 #[path = "../registers/dbgmcu_f4.rs"]
 pub mod dbgmcu;
+#[path = "../registers/dfsdm_v1.rs"]
+pub mod dfsdm;
 #[path = "../registers/dma_v2.rs"]
 pub mod dma;
 #[path = "../registers/exti_v1.rs"]

@@ -630,7 +630,8 @@ pub const SPI5: *mut () = 0x4400_9000usize as _;
 pub const SAI1: *mut () = 0x4400_a000usize as _;
 pub const SAI2: *mut () = 0x4400_b000usize as _;
 pub const SAI3: *mut () = 0x4400_c000usize as _;
-pub const DFSDM1: *mut () = 0x4400_d000usize as _;
+pub const DFSDM1: dfsdm::Dfsdm8ch6fltDlyTrg5AdcHwid =
+    unsafe { dfsdm::Dfsdm8ch6fltDlyTrg5AdcHwid::from_ptr(0x4400_d000usize as _) };
 pub const DMA1: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4800_0000usize as _) };
 pub const DMA2: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4800_1000usize as _) };
 pub const DMAMUX1: dmamux::Dmamux = unsafe { dmamux::Dmamux::from_ptr(0x4800_2000usize as _) };
@@ -704,6 +705,8 @@ pub mod bsec;
 pub mod cec;
 #[path = "../../peripherals/dcmi_v1.rs"]
 pub mod dcmi;
+#[path = "../../peripherals/dfsdm_v1.rs"]
+pub mod dfsdm;
 #[path = "../../peripherals/dmamux_v1.rs"]
 pub mod dmamux;
 #[path = "../../peripherals/dts_v1.rs"]

@@ -6020,6 +6020,11 @@
         {
           "name": "DFSDM1",
           "address": 1073838080,
+          "registers": {
+            "kind": "dfsdm",
+            "version": "v1",
+            "block": "DFSDM_8CH_8FLT_DLY_TRG5_ADC"
+          },
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": {
@@ -6359,11 +6364,97 @@
               "signal": "FLT7",
               "channel": "BDMA1_CH7"
             }
+          ],
+          "triggers": [
+            {
+              "signal": "DFSDM1_JTRG0",
+              "source": "TIM1_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG1",
+              "source": "TIM1_TRGO2"
+            },
+            {
+              "signal": "DFSDM1_JTRG2",
+              "source": "TIM8_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG3",
+              "source": "TIM8_TRGO2"
+            },
+            {
+              "signal": "DFSDM1_JTRG4",
+              "source": "TIM3_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG5",
+              "source": "TIM4_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG6",
+              "source": "TIM16_OC1"
+            },
+            {
+              "signal": "DFSDM1_JTRG7",
+              "source": "TIM6_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG8",
+              "source": "TIM7_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG24",
+              "source": "EXTI11"
+            },
+            {
+              "signal": "DFSDM1_JTRG25",
+              "source": "EXTI15"
+            },
+            {
+              "signal": "DFSDM1_JTRG26",
+              "source": "LPTIM1_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG27",
+              "source": "LPTIM2_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG28",
+              "source": "LPTIM3_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG29",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "DFSDM1_JTRG30",
+              "source": "COMP2_OUT"
+            }
           ]
         },
         {
           "name": "DFSDM2",
           "address": 1476422656,
+          "registers": {
+            "kind": "dfsdm",
+            "version": "v1",
+            "block": "DFSDM_2CH_1FLT_TRG5"
+          },
+          "rcc": {
+            "bus_clock": "PCLK4",
+            "kernel_clock": {
+              "register": "D3CCIPR",
+              "field": "DFSDM2SEL"
+            },
+            "enable": {
+              "register": "APB4ENR",
+              "field": "DFSDM2EN"
+            },
+            "reset": {
+              "register": "APB4RSTR",
+              "field": "DFSDM2RST"
+            }
+          },
           "pins": [
             {
               "pin": "PA2",
@@ -6450,6 +6541,36 @@
               "signal": "FLT0",
               "dmamux": "DMAMUX2",
               "request": 18
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "DFSDM2_JTRG24",
+              "source": "EXTI11"
+            },
+            {
+              "signal": "DFSDM2_JTRG25",
+              "source": "EXTI15"
+            },
+            {
+              "signal": "DFSDM2_JTRG26",
+              "source": "LPTIM1_TRGO"
+            },
+            {
+              "signal": "DFSDM2_JTRG27",
+              "source": "LPTIM2_TRGO"
+            },
+            {
+              "signal": "DFSDM2_JTRG28",
+              "source": "LPTIM3_TRGO"
+            },
+            {
+              "signal": "DFSDM2_JTRG29",
+              "source": "COMP1_OUT"
+            },
+            {
+              "signal": "DFSDM2_JTRG30",
+              "source": "COMP2_OUT"
             }
           ]
         },
@@ -12245,6 +12366,16 @@
               "dmamux": "DMAMUX1",
               "request": 17
             }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
+            }
           ]
         },
         {
@@ -12322,6 +12453,16 @@
               "signal": "UP",
               "interrupt": "TIM8_BRK_TIM12"
             }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
+            }
           ]
         },
         {
@@ -12389,6 +12530,16 @@
               "signal": "UP",
               "interrupt": "TIM8_UP_TIM13"
             }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
+            }
           ]
         },
         {
@@ -12455,6 +12606,16 @@
             {
               "signal": "UP",
               "interrupt": "TIM8_TRG_COM_TIM14"
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
             }
           ]
         },
@@ -12585,6 +12746,12 @@
               "dmamux": "DMAMUX1",
               "request": 108
             }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            }
           ]
         },
         {
@@ -12684,6 +12851,16 @@
               "dmamux": "DMAMUX1",
               "request": 110
             }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
+            }
           ]
         },
         {
@@ -12782,6 +12959,16 @@
               "signal": "UP",
               "dmamux": "DMAMUX1",
               "request": 112
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
             }
           ]
         },

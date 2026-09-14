@@ -1980,21 +1980,9 @@
         "bit_size": 1
       },
       {
-        "name": "SAI3EN",
-        "description": "SAI3 Peripheral Clocks Enable",
-        "bit_offset": 24,
-        "bit_size": 1
-      },
-      {
         "name": "DFSDM1EN",
         "description": "DFSDM1 Peripheral Clocks Enable",
-        "bit_offset": 28,
-        "bit_size": 1
-      },
-      {
-        "name": "HRTIMEN",
-        "description": "HRTIM peripheral clock enable",
-        "bit_offset": 29,
+        "bit_offset": 30,
         "bit_size": 1
       }
     ]
@@ -2075,21 +2063,9 @@
         "bit_size": 1
       },
       {
-        "name": "SAI3LPEN",
-        "description": "SAI3 Peripheral Clocks Enable During CSleep Mode",
-        "bit_offset": 24,
-        "bit_size": 1
-      },
-      {
         "name": "DFSDM1LPEN",
         "description": "DFSDM1 Peripheral Clocks Enable During CSleep Mode",
-        "bit_offset": 28,
-        "bit_size": 1
-      },
-      {
-        "name": "HRTIMLPEN",
-        "description": "HRTIM peripheral clock enable during CSleep mode",
-        "bit_offset": 29,
+        "bit_offset": 30,
         "bit_size": 1
       }
     ]
@@ -2182,21 +2158,15 @@
         "bit_size": 1
       },
       {
-        "name": "SAI3RST",
-        "description": "SAI3 block reset",
-        "bit_offset": 24,
+        "name": "HRTIMRST",
+        "description": "HRTIM block reset",
+        "bit_offset": 29,
         "bit_size": 1
       },
       {
         "name": "DFSDM1RST",
         "description": "DFSDM1 block reset",
-        "bit_offset": 28,
-        "bit_size": 1
-      },
-      {
-        "name": "HRTIMRST",
-        "description": "HRTIM block reset",
-        "bit_offset": 29,
+        "bit_offset": 30,
         "bit_size": 1
       }
     ]
@@ -2350,6 +2320,12 @@
         "description": "Digital temperature sensor block enable",
         "bit_offset": 26,
         "bit_size": 1
+      },
+      {
+        "name": "DFSDM2EN",
+        "description": "DFSDM2 Peripheral Clocks Enable",
+        "bit_offset": 27,
+        "bit_size": 1
       }
     ]
   },
@@ -2439,6 +2415,12 @@
         "description": "Digital temperature sensor block enable during CSleep Mode",
         "bit_offset": 26,
         "bit_size": 1
+      },
+      {
+        "name": "DFSDM2LPEN",
+        "description": "DFSDM2 Peripheral Clocks Enable During CSleep Mode",
+        "bit_offset": 27,
+        "bit_size": 1
       }
     ]
   },
@@ -2521,6 +2503,12 @@
         "name": "DTSRST",
         "description": "Digital temperature sensor block reset",
         "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "DFSDM2RST",
+        "description": "DFSDM2 block reset",
+        "bit_offset": 27,
         "bit_size": 1
       }
     ]
@@ -3378,7 +3366,8 @@
         "name": "DFSDM2SEL",
         "description": "DFSDM2 kernel clock source selection",
         "bit_offset": 27,
-        "bit_size": 1
+        "bit_size": 1,
+        "enum": "DFSDM2SEL"
       },
       {
         "name": "SPI6SEL",
@@ -3671,6 +3660,21 @@
         "name": "CSI",
         "description": "csi_ker selected as peripheral clock",
         "value": 2
+      }
+    ]
+  },
+  "enum/DFSDM2SEL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "PCLK4",
+        "description": "rcc_pclk4 selected as peripheral clock",
+        "value": 0
+      },
+      {
+        "name": "SYS",
+        "description": "System clock selected as peripheral clock",
+        "value": 1
       }
     ]
   },

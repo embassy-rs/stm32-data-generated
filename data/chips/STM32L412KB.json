@@ -2237,6 +2237,16 @@
               "channel": "DMA1_CH7",
               "request": 7
             }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
+            }
           ]
         },
         {
@@ -2336,6 +2346,16 @@
               "channel": "DMA1_CH5",
               "request": 7
             }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
+            }
           ]
         },
         {
@@ -2429,6 +2449,16 @@
               "signal": "UP",
               "channel": "DMA1_CH6",
               "request": 4
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
             }
           ]
         },

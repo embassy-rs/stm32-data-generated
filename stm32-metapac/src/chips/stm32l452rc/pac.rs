@@ -386,7 +386,7 @@ pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_3800usiz
 pub const TIM15: timer::Tim2chCmp = unsafe { timer::Tim2chCmp::from_ptr(0x4001_4000usize as _) };
 pub const TIM16: timer::Tim1chCmp = unsafe { timer::Tim1chCmp::from_ptr(0x4001_4400usize as _) };
 pub const SAI1: sai::Sai = unsafe { sai::Sai::from_ptr(0x4001_5400usize as _) };
-pub const DFSDM1: *mut () = 0x4001_6000usize as _;
+pub const DFSDM1: dfsdm::Dfsdm4ch2fltTrg3 = unsafe { dfsdm::Dfsdm4ch2fltTrg3::from_ptr(0x4001_6000usize as _) };
 pub const DMA1: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4002_0000usize as _) };
 pub const DMA2: bdma::Dma = unsafe { bdma::Dma::from_ptr(0x4002_0400usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4002_1000usize as _) };
@@ -429,6 +429,8 @@ pub mod crs;
 pub mod dac;
 #[path = "../../peripherals/dbgmcu_l4.rs"]
 pub mod dbgmcu;
+#[path = "../../peripherals/dfsdm_v1.rs"]
+pub mod dfsdm;
 #[path = "../../peripherals/exti_v1.rs"]
 pub mod exti;
 #[path = "../../peripherals/flash_l4.rs"]

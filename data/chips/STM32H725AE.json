@@ -2406,6 +2406,11 @@
         {
           "name": "DFSDM1",
           "address": 1073838080,
+          "registers": {
+            "kind": "dfsdm",
+            "version": "v1",
+            "block": "DFSDM_8CH_4FLT_DLY_TRG5_ADC"
+          },
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": {
@@ -2696,6 +2701,72 @@
               "signal": "FLT3",
               "dmamux": "DMAMUX1",
               "request": 104
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "DFSDM1_JTRG0",
+              "source": "TIM1_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG1",
+              "source": "TIM1_TRGO2"
+            },
+            {
+              "signal": "DFSDM1_JTRG2",
+              "source": "TIM8_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG3",
+              "source": "TIM8_TRGO2"
+            },
+            {
+              "signal": "DFSDM1_JTRG4",
+              "source": "TIM3_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG5",
+              "source": "TIM4_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG6",
+              "source": "TIM16_OC1"
+            },
+            {
+              "signal": "DFSDM1_JTRG7",
+              "source": "TIM6_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG8",
+              "source": "TIM7_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG11",
+              "source": "TIM23_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG12",
+              "source": "TIM24_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG24",
+              "source": "EXTI11"
+            },
+            {
+              "signal": "DFSDM1_JTRG25",
+              "source": "EXTI15"
+            },
+            {
+              "signal": "DFSDM1_JTRG26",
+              "source": "LPTIM1_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG27",
+              "source": "LPTIM2_TRGO"
+            },
+            {
+              "signal": "DFSDM1_JTRG28",
+              "source": "LPTIM3_TRGO"
             }
           ]
         },
@@ -6464,7 +6535,7 @@
           "address": 1476543488,
           "registers": {
             "kind": "rcc",
-            "version": "h7",
+            "version": "h7rm0468",
             "block": "RCC"
           },
           "pins": [
@@ -8531,6 +8602,16 @@
               "dmamux": "DMAMUX1",
               "request": 17
             }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
+            }
           ]
         },
         {
@@ -8597,6 +8678,16 @@
             {
               "signal": "UP",
               "interrupt": "TIM8_BRK_TIM12"
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
             }
           ]
         },
@@ -8665,6 +8756,16 @@
               "signal": "UP",
               "interrupt": "TIM8_UP_TIM13"
             }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
+            }
           ]
         },
         {
@@ -8731,6 +8832,16 @@
             {
               "signal": "UP",
               "interrupt": "TIM8_TRG_COM_TIM14"
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
             }
           ]
         },
@@ -8861,6 +8972,12 @@
               "dmamux": "DMAMUX1",
               "request": 108
             }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            }
           ]
         },
         {
@@ -8960,6 +9077,16 @@
               "dmamux": "DMAMUX1",
               "request": 110
             }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
+            }
           ]
         },
         {
@@ -9058,6 +9185,16 @@
               "signal": "UP",
               "dmamux": "DMAMUX1",
               "request": 112
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK0"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK1"
             }
           ]
         },
@@ -10208,6 +10345,16 @@
               "signal": "COM",
               "dmamux": "DMAMUX1",
               "request": 53
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "TIMX_BRK_IN1",
+              "source": "DFSDM1_BREAK2"
+            },
+            {
+              "signal": "TIMX_BRK_IN2",
+              "source": "DFSDM1_BREAK3"
             }
           ]
         },

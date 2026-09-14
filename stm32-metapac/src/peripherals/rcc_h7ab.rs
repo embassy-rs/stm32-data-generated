@@ -4395,41 +4395,17 @@ pub mod regs {
         pub const fn set_sai2en(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
-        #[doc = "SAI3 Peripheral Clocks Enable"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn sai3en(&self) -> bool {
-            let val = (self.0 >> 24usize) & 0x01;
-            val != 0
-        }
-        #[doc = "SAI3 Peripheral Clocks Enable"]
-        #[inline(always)]
-        pub const fn set_sai3en(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
-        }
         #[doc = "DFSDM1 Peripheral Clocks Enable"]
         #[must_use]
         #[inline(always)]
         pub const fn dfsdm1en(&self) -> bool {
-            let val = (self.0 >> 28usize) & 0x01;
+            let val = (self.0 >> 30usize) & 0x01;
             val != 0
         }
         #[doc = "DFSDM1 Peripheral Clocks Enable"]
         #[inline(always)]
         pub const fn set_dfsdm1en(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
-        }
-        #[doc = "HRTIM peripheral clock enable"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn hrtimen(&self) -> bool {
-            let val = (self.0 >> 29usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HRTIM peripheral clock enable"]
-        #[inline(always)]
-        pub const fn set_hrtimen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
     }
     impl Default for Apb2enr {
@@ -4455,9 +4431,7 @@ pub mod regs {
                 .field("spi5en", &self.spi5en())
                 .field("sai1en", &self.sai1en())
                 .field("sai2en", &self.sai2en())
-                .field("sai3en", &self.sai3en())
                 .field("dfsdm1en", &self.dfsdm1en())
-                .field("hrtimen", &self.hrtimen())
                 .finish()
         }
     }
@@ -4466,7 +4440,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Apb2enr {{ tim1en: {=bool:?}, tim8en: {=bool:?}, usart1en: {=bool:?}, usart6en: {=bool:?}, uart9en: {=bool:?}, usart10en: {=bool:?}, spi1en: {=bool:?}, spi4en: {=bool:?}, tim15en: {=bool:?}, tim16en: {=bool:?}, tim17en: {=bool:?}, spi5en: {=bool:?}, sai1en: {=bool:?}, sai2en: {=bool:?}, sai3en: {=bool:?}, dfsdm1en: {=bool:?}, hrtimen: {=bool:?} }}",
+                "Apb2enr {{ tim1en: {=bool:?}, tim8en: {=bool:?}, usart1en: {=bool:?}, usart6en: {=bool:?}, uart9en: {=bool:?}, usart10en: {=bool:?}, spi1en: {=bool:?}, spi4en: {=bool:?}, tim15en: {=bool:?}, tim16en: {=bool:?}, tim17en: {=bool:?}, spi5en: {=bool:?}, sai1en: {=bool:?}, sai2en: {=bool:?}, dfsdm1en: {=bool:?} }}",
                 self.tim1en(),
                 self.tim8en(),
                 self.usart1en(),
@@ -4481,9 +4455,7 @@ pub mod regs {
                 self.spi5en(),
                 self.sai1en(),
                 self.sai2en(),
-                self.sai3en(),
-                self.dfsdm1en(),
-                self.hrtimen()
+                self.dfsdm1en()
             )
         }
     }
@@ -4636,41 +4608,17 @@ pub mod regs {
         pub const fn set_sai2lpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
-        #[doc = "SAI3 Peripheral Clocks Enable During CSleep Mode"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn sai3lpen(&self) -> bool {
-            let val = (self.0 >> 24usize) & 0x01;
-            val != 0
-        }
-        #[doc = "SAI3 Peripheral Clocks Enable During CSleep Mode"]
-        #[inline(always)]
-        pub const fn set_sai3lpen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
-        }
         #[doc = "DFSDM1 Peripheral Clocks Enable During CSleep Mode"]
         #[must_use]
         #[inline(always)]
         pub const fn dfsdm1lpen(&self) -> bool {
-            let val = (self.0 >> 28usize) & 0x01;
+            let val = (self.0 >> 30usize) & 0x01;
             val != 0
         }
         #[doc = "DFSDM1 Peripheral Clocks Enable During CSleep Mode"]
         #[inline(always)]
         pub const fn set_dfsdm1lpen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
-        }
-        #[doc = "HRTIM peripheral clock enable during CSleep mode"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn hrtimlpen(&self) -> bool {
-            let val = (self.0 >> 29usize) & 0x01;
-            val != 0
-        }
-        #[doc = "HRTIM peripheral clock enable during CSleep mode"]
-        #[inline(always)]
-        pub const fn set_hrtimlpen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
     }
     impl Default for Apb2lpenr {
@@ -4694,9 +4642,7 @@ pub mod regs {
                 .field("spi5lpen", &self.spi5lpen())
                 .field("sai1lpen", &self.sai1lpen())
                 .field("sai2lpen", &self.sai2lpen())
-                .field("sai3lpen", &self.sai3lpen())
                 .field("dfsdm1lpen", &self.dfsdm1lpen())
-                .field("hrtimlpen", &self.hrtimlpen())
                 .finish()
         }
     }
@@ -4705,7 +4651,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Apb2lpenr {{ tim1lpen: {=bool:?}, tim8lpen: {=bool:?}, usart1lpen: {=bool:?}, usart6lpen: {=bool:?}, spi1lpen: {=bool:?}, spi4lpen: {=bool:?}, tim15lpen: {=bool:?}, tim16lpen: {=bool:?}, tim17lpen: {=bool:?}, spi5lpen: {=bool:?}, sai1lpen: {=bool:?}, sai2lpen: {=bool:?}, sai3lpen: {=bool:?}, dfsdm1lpen: {=bool:?}, hrtimlpen: {=bool:?} }}",
+                "Apb2lpenr {{ tim1lpen: {=bool:?}, tim8lpen: {=bool:?}, usart1lpen: {=bool:?}, usart6lpen: {=bool:?}, spi1lpen: {=bool:?}, spi4lpen: {=bool:?}, tim15lpen: {=bool:?}, tim16lpen: {=bool:?}, tim17lpen: {=bool:?}, spi5lpen: {=bool:?}, sai1lpen: {=bool:?}, sai2lpen: {=bool:?}, dfsdm1lpen: {=bool:?} }}",
                 self.tim1lpen(),
                 self.tim8lpen(),
                 self.usart1lpen(),
@@ -4718,9 +4664,7 @@ pub mod regs {
                 self.spi5lpen(),
                 self.sai1lpen(),
                 self.sai2lpen(),
-                self.sai3lpen(),
-                self.dfsdm1lpen(),
-                self.hrtimlpen()
+                self.dfsdm1lpen()
             )
         }
     }
@@ -4897,30 +4841,6 @@ pub mod regs {
         pub const fn set_sai2rst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
-        #[doc = "SAI3 block reset"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn sai3rst(&self) -> bool {
-            let val = (self.0 >> 24usize) & 0x01;
-            val != 0
-        }
-        #[doc = "SAI3 block reset"]
-        #[inline(always)]
-        pub const fn set_sai3rst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
-        }
-        #[doc = "DFSDM1 block reset"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn dfsdm1rst(&self) -> bool {
-            let val = (self.0 >> 28usize) & 0x01;
-            val != 0
-        }
-        #[doc = "DFSDM1 block reset"]
-        #[inline(always)]
-        pub const fn set_dfsdm1rst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
-        }
         #[doc = "HRTIM block reset"]
         #[must_use]
         #[inline(always)]
@@ -4932,6 +4852,18 @@ pub mod regs {
         #[inline(always)]
         pub const fn set_hrtimrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
+        }
+        #[doc = "DFSDM1 block reset"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dfsdm1rst(&self) -> bool {
+            let val = (self.0 >> 30usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DFSDM1 block reset"]
+        #[inline(always)]
+        pub const fn set_dfsdm1rst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
     }
     impl Default for Apb2rstr {
@@ -4957,9 +4889,8 @@ pub mod regs {
                 .field("spi5rst", &self.spi5rst())
                 .field("sai1rst", &self.sai1rst())
                 .field("sai2rst", &self.sai2rst())
-                .field("sai3rst", &self.sai3rst())
-                .field("dfsdm1rst", &self.dfsdm1rst())
                 .field("hrtimrst", &self.hrtimrst())
+                .field("dfsdm1rst", &self.dfsdm1rst())
                 .finish()
         }
     }
@@ -4968,7 +4899,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Apb2rstr {{ tim1rst: {=bool:?}, tim8rst: {=bool:?}, usart1rst: {=bool:?}, usart6rst: {=bool:?}, uart9rst: {=bool:?}, usart10rst: {=bool:?}, spi1rst: {=bool:?}, spi4rst: {=bool:?}, tim15rst: {=bool:?}, tim16rst: {=bool:?}, tim17rst: {=bool:?}, spi5rst: {=bool:?}, sai1rst: {=bool:?}, sai2rst: {=bool:?}, sai3rst: {=bool:?}, dfsdm1rst: {=bool:?}, hrtimrst: {=bool:?} }}",
+                "Apb2rstr {{ tim1rst: {=bool:?}, tim8rst: {=bool:?}, usart1rst: {=bool:?}, usart6rst: {=bool:?}, uart9rst: {=bool:?}, usart10rst: {=bool:?}, spi1rst: {=bool:?}, spi4rst: {=bool:?}, tim15rst: {=bool:?}, tim16rst: {=bool:?}, tim17rst: {=bool:?}, spi5rst: {=bool:?}, sai1rst: {=bool:?}, sai2rst: {=bool:?}, hrtimrst: {=bool:?}, dfsdm1rst: {=bool:?} }}",
                 self.tim1rst(),
                 self.tim8rst(),
                 self.usart1rst(),
@@ -4983,9 +4914,8 @@ pub mod regs {
                 self.spi5rst(),
                 self.sai1rst(),
                 self.sai2rst(),
-                self.sai3rst(),
-                self.dfsdm1rst(),
-                self.hrtimrst()
+                self.hrtimrst(),
+                self.dfsdm1rst()
             )
         }
     }
@@ -5355,6 +5285,18 @@ pub mod regs {
         pub const fn set_dtsen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
+        #[doc = "DFSDM2 Peripheral Clocks Enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dfsdm2en(&self) -> bool {
+            let val = (self.0 >> 27usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DFSDM2 Peripheral Clocks Enable"]
+        #[inline(always)]
+        pub const fn set_dfsdm2en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
+        }
     }
     impl Default for Apb4enr {
         #[inline(always)]
@@ -5379,6 +5321,7 @@ pub mod regs {
                 .field("rtcapben", &self.rtcapben())
                 .field("sai4en", &self.sai4en())
                 .field("dtsen", &self.dtsen())
+                .field("dfsdm2en", &self.dfsdm2en())
                 .finish()
         }
     }
@@ -5387,7 +5330,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Apb4enr {{ syscfgen: {=bool:?}, lpuart1en: {=bool:?}, spi6en: {=bool:?}, i2c4en: {=bool:?}, lptim2en: {=bool:?}, lptim3en: {=bool:?}, lptim4en: {=bool:?}, lptim5en: {=bool:?}, dac2en: {=bool:?}, comp12en: {=bool:?}, vrefen: {=bool:?}, rtcapben: {=bool:?}, sai4en: {=bool:?}, dtsen: {=bool:?} }}",
+                "Apb4enr {{ syscfgen: {=bool:?}, lpuart1en: {=bool:?}, spi6en: {=bool:?}, i2c4en: {=bool:?}, lptim2en: {=bool:?}, lptim3en: {=bool:?}, lptim4en: {=bool:?}, lptim5en: {=bool:?}, dac2en: {=bool:?}, comp12en: {=bool:?}, vrefen: {=bool:?}, rtcapben: {=bool:?}, sai4en: {=bool:?}, dtsen: {=bool:?}, dfsdm2en: {=bool:?} }}",
                 self.syscfgen(),
                 self.lpuart1en(),
                 self.spi6en(),
@@ -5401,7 +5344,8 @@ pub mod regs {
                 self.vrefen(),
                 self.rtcapben(),
                 self.sai4en(),
-                self.dtsen()
+                self.dtsen(),
+                self.dfsdm2en()
             )
         }
     }
@@ -5578,6 +5522,18 @@ pub mod regs {
         pub const fn set_dtslpen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
+        #[doc = "DFSDM2 Peripheral Clocks Enable During CSleep Mode"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dfsdm2lpen(&self) -> bool {
+            let val = (self.0 >> 27usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DFSDM2 Peripheral Clocks Enable During CSleep Mode"]
+        #[inline(always)]
+        pub const fn set_dfsdm2lpen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
+        }
     }
     impl Default for Apb4lpenr {
         #[inline(always)]
@@ -5602,6 +5558,7 @@ pub mod regs {
                 .field("rtcapblpen", &self.rtcapblpen())
                 .field("sai4lpen", &self.sai4lpen())
                 .field("dtslpen", &self.dtslpen())
+                .field("dfsdm2lpen", &self.dfsdm2lpen())
                 .finish()
         }
     }
@@ -5610,7 +5567,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Apb4lpenr {{ syscfglpen: {=bool:?}, lpuart1lpen: {=bool:?}, spi6lpen: {=bool:?}, i2c4lpen: {=bool:?}, lptim2lpen: {=bool:?}, lptim3lpen: {=bool:?}, lptim4lpen: {=bool:?}, lptim5lpen: {=bool:?}, dac2lpen: {=bool:?}, comp12lpen: {=bool:?}, vreflpen: {=bool:?}, rtcapblpen: {=bool:?}, sai4lpen: {=bool:?}, dtslpen: {=bool:?} }}",
+                "Apb4lpenr {{ syscfglpen: {=bool:?}, lpuart1lpen: {=bool:?}, spi6lpen: {=bool:?}, i2c4lpen: {=bool:?}, lptim2lpen: {=bool:?}, lptim3lpen: {=bool:?}, lptim4lpen: {=bool:?}, lptim5lpen: {=bool:?}, dac2lpen: {=bool:?}, comp12lpen: {=bool:?}, vreflpen: {=bool:?}, rtcapblpen: {=bool:?}, sai4lpen: {=bool:?}, dtslpen: {=bool:?}, dfsdm2lpen: {=bool:?} }}",
                 self.syscfglpen(),
                 self.lpuart1lpen(),
                 self.spi6lpen(),
@@ -5624,7 +5581,8 @@ pub mod regs {
                 self.vreflpen(),
                 self.rtcapblpen(),
                 self.sai4lpen(),
-                self.dtslpen()
+                self.dtslpen(),
+                self.dfsdm2lpen()
             )
         }
     }
@@ -5789,6 +5747,18 @@ pub mod regs {
         pub const fn set_dtsrst(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
+        #[doc = "DFSDM2 block reset"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn dfsdm2rst(&self) -> bool {
+            let val = (self.0 >> 27usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DFSDM2 block reset"]
+        #[inline(always)]
+        pub const fn set_dfsdm2rst(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
+        }
     }
     impl Default for Apb4rstr {
         #[inline(always)]
@@ -5812,6 +5782,7 @@ pub mod regs {
                 .field("vrefrst", &self.vrefrst())
                 .field("sai4rst", &self.sai4rst())
                 .field("dtsrst", &self.dtsrst())
+                .field("dfsdm2rst", &self.dfsdm2rst())
                 .finish()
         }
     }
@@ -5820,7 +5791,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Apb4rstr {{ syscfgrst: {=bool:?}, lpuart1rst: {=bool:?}, spi6rst: {=bool:?}, i2c4rst: {=bool:?}, lptim2rst: {=bool:?}, lptim3rst: {=bool:?}, lptim4rst: {=bool:?}, lptim5rst: {=bool:?}, dac2rst: {=bool:?}, comp12rst: {=bool:?}, vrefrst: {=bool:?}, sai4rst: {=bool:?}, dtsrst: {=bool:?} }}",
+                "Apb4rstr {{ syscfgrst: {=bool:?}, lpuart1rst: {=bool:?}, spi6rst: {=bool:?}, i2c4rst: {=bool:?}, lptim2rst: {=bool:?}, lptim3rst: {=bool:?}, lptim4rst: {=bool:?}, lptim5rst: {=bool:?}, dac2rst: {=bool:?}, comp12rst: {=bool:?}, vrefrst: {=bool:?}, sai4rst: {=bool:?}, dtsrst: {=bool:?}, dfsdm2rst: {=bool:?} }}",
                 self.syscfgrst(),
                 self.lpuart1rst(),
                 self.spi6rst(),
@@ -5833,7 +5804,8 @@ pub mod regs {
                 self.comp12rst(),
                 self.vrefrst(),
                 self.sai4rst(),
-                self.dtsrst()
+                self.dtsrst(),
+                self.dfsdm2rst()
             )
         }
     }
@@ -7926,14 +7898,14 @@ pub mod regs {
         #[doc = "DFSDM2 kernel clock source selection"]
         #[must_use]
         #[inline(always)]
-        pub const fn dfsdm2sel(&self) -> bool {
+        pub const fn dfsdm2sel(&self) -> super::vals::Dfsdm2sel {
             let val = (self.0 >> 27usize) & 0x01;
-            val != 0
+            super::vals::Dfsdm2sel::from_bits(val as u8)
         }
         #[doc = "DFSDM2 kernel clock source selection"]
         #[inline(always)]
-        pub const fn set_dfsdm2sel(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
+        pub const fn set_dfsdm2sel(&mut self, val: super::vals::Dfsdm2sel) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
         }
         #[doc = "SPI6 kernel clock source selection"]
         #[must_use]
@@ -7972,7 +7944,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "D3ccipr {{ lpuart1sel: {:?}, i2c4sel: {:?}, lptim2sel: {:?}, lptim345sel: {:?}, adcsel: {:?}, dfsdm2sel: {=bool:?}, spi6sel: {:?} }}",
+                "D3ccipr {{ lpuart1sel: {:?}, i2c4sel: {:?}, lptim2sel: {:?}, lptim345sel: {:?}, adcsel: {:?}, dfsdm2sel: {:?}, spi6sel: {:?} }}",
                 self.lpuart1sel(),
                 self.i2c4sel(),
                 self.lptim2sel(),
@@ -8697,6 +8669,37 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Cecsel) -> u8 {
             Cecsel::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Dfsdm2sel {
+        #[doc = "rcc_pclk4 selected as peripheral clock"]
+        Pclk4 = 0x0,
+        #[doc = "System clock selected as peripheral clock"]
+        Sys = 0x01,
+    }
+    impl Dfsdm2sel {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Dfsdm2sel {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Dfsdm2sel {
+        #[inline(always)]
+        fn from(val: u8) -> Dfsdm2sel {
+            Dfsdm2sel::from_bits(val)
+        }
+    }
+    impl From<Dfsdm2sel> for u8 {
+        #[inline(always)]
+        fn from(val: Dfsdm2sel) -> u8 {
+            Dfsdm2sel::to_bits(val)
         }
     }
     #[repr(u8)]

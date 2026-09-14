@@ -645,7 +645,8 @@ pub const SPI5: *mut () = 0x4400_9000usize as _;
 pub const SAI1: *mut () = 0x4400_a000usize as _;
 pub const SAI2: *mut () = 0x4400_b000usize as _;
 pub const SAI3: *mut () = 0x4400_c000usize as _;
-pub const DFSDM1: *mut () = 0x4400_d000usize as _;
+pub const DFSDM1: dfsdm::Dfsdm8ch6fltDlyTrg5AdcHwid =
+    unsafe { dfsdm::Dfsdm8ch6fltDlyTrg5AdcHwid::from_ptr(0x4400_d000usize as _) };
 pub const FDCAN1: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4400_e000usize as _) };
 pub const FDCAN2: can::Fdcan = unsafe { can::Fdcan::from_ptr(0x4400_f000usize as _) };
 pub const FDCANRAM1: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4401_1000usize as _) };
@@ -729,6 +730,8 @@ pub mod cec;
 pub mod cryp;
 #[path = "../../peripherals/dcmi_v1.rs"]
 pub mod dcmi;
+#[path = "../../peripherals/dfsdm_v1.rs"]
+pub mod dfsdm;
 #[path = "../../peripherals/dmamux_v1.rs"]
 pub mod dmamux;
 #[path = "../../peripherals/dts_v1.rs"]

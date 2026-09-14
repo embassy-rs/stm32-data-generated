@@ -407,7 +407,7 @@ pub const TIM9: timer::Tim2ch = unsafe { timer::Tim2ch::from_ptr(0x4001_4000usiz
 pub const TIM10: timer::Tim1ch = unsafe { timer::Tim1ch::from_ptr(0x4001_4400usize as _) };
 pub const TIM11: timer::Tim1ch = unsafe { timer::Tim1ch::from_ptr(0x4001_4800usize as _) };
 pub const SPI5: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_5000usize as _) };
-pub const DFSDM1: *mut () = 0x4001_6000usize as _;
+pub const DFSDM1: dfsdm::Dfsdm4ch2fltTrg3 = unsafe { dfsdm::Dfsdm4ch2fltTrg3::from_ptr(0x4001_6000usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4002_0000usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4002_0400usize as _) };
 pub const GPIOC: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4002_0800usize as _) };
@@ -440,6 +440,8 @@ pub mod can;
 pub mod crc;
 #[path = "../../peripherals/dbgmcu_f4.rs"]
 pub mod dbgmcu;
+#[path = "../../peripherals/dfsdm_v1.rs"]
+pub mod dfsdm;
 #[path = "../../peripherals/dma_v2.rs"]
 pub mod dma;
 #[path = "../../peripherals/exti_v1.rs"]

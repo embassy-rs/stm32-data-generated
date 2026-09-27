@@ -3483,7 +3483,14 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: Some(10),
             },
         ],
-        dma_channels: &[],
+        dma_channels: &[PeripheralDmaChannel {
+            signal: "QUADSPI1",
+            channel: None,
+            dmamux: Some("DMAMUX1"),
+            remap: &[],
+            dma: None,
+            request: Some(40),
+        }],
         triggers: &[],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",

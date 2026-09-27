@@ -3880,6 +3880,13 @@
               "signal": "GLOBAL",
               "interrupt": "QUADSPI"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "QUADSPI1",
+              "dmamux": "DMAMUX1",
+              "request": 40
+            }
           ]
         },
         {

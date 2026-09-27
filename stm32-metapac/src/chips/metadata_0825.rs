@@ -5305,6 +5305,51 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
+        name: "NPU",
+        address: 0x480e0000,
+        registers: Some(PeripheralRegisters {
+            kind: "npu",
+            version: "v1",
+            block: "NPU",
+            ir: &npu::REGISTERS,
+        }),
+        rcc: Some(PeripheralRcc {
+            bus_clock: "HCLK5",
+            kernel_clock: Clock("HCLK5"),
+            enable: Some(PeripheralRccRegister {
+                register: "AHB5ENR",
+                field: "NPUEN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "AHB5RSTR",
+                field: "NPURST",
+            }),
+            stop_mode: StopMode::Stop1,
+        }),
+        pins: &[],
+        dma_channels: &[],
+        triggers: &[],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "NPU0",
+                interrupt: "NPU0",
+            },
+            PeripheralInterrupt {
+                signal: "NPU1",
+                interrupt: "NPU1",
+            },
+            PeripheralInterrupt {
+                signal: "NPU2",
+                interrupt: "NPU2",
+            },
+            PeripheralInterrupt {
+                signal: "NPU3",
+                interrupt: "NPU3",
+            },
+        ],
+        afio: None,
+    },
+    Peripheral {
         name: "OTG1PHYCTL",
         address: 0x4803fc00,
         registers: Some(PeripheralRegisters {
@@ -13304,6 +13349,8 @@ pub mod mce;
 pub mod mdf;
 #[path = "../registers/mdios_v1.rs"]
 pub mod mdios;
+#[path = "../registers/npu_v1.rs"]
+pub mod npu;
 #[path = "../registers/otg_v1.rs"]
 pub mod otg;
 #[path = "../registers/pka_n6.rs"]

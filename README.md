@@ -78,6 +78,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [MDF](#mdf) | | | | | | | | | | | | | | | | | | | n6 | | | u5 | | | | |
 | [MDIOS](#mdios) | | | | | | | | v1 | | | | v1 | | | | | | | v1 | | | | | | | |
 | [MDMA](#mdma) | | | | | | | | | | | | v1 | | | | | | ❌ | | | | | | | | |
+| [NPU](#npu) | | | | | | | | | | | | | | | | | | | v1 | | | | | | | |
 | [OCTOSPI](#octospi) | | | | | | | | | | | v2 | v1 | | | | v1 | v2 | | | | v2 | v1 | | | | |
 | [OCTOSPIM](#octospim) | | | | | | | | | | | | v1 | | | | v1 | | | | | | v1 | | | | |
 | [OPAMP](#opamp) | | ❌ | | | | v2 | | | | v5 | v4 | v4 | | ❌ | v3 | v3 | v3 | | | v3 | v3 | v3 | | | | |
@@ -718,6 +719,12 @@ The following table shows which STM32 peripheral versions are supported across d
 
 - **v1**: STM32H7
 - **❌ Unsupported**: STM32MP1
+
+### NPU
+
+**Versions by family:**
+
+- **v1**: STM32N6
 
 ### OCTOSPI
 

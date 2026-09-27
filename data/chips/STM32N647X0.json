@@ -6689,6 +6689,45 @@
           ]
         },
         {
+          "name": "NPU",
+          "address": 1208877056,
+          "registers": {
+            "kind": "npu",
+            "version": "v1",
+            "block": "NPU"
+          },
+          "rcc": {
+            "bus_clock": "HCLK5",
+            "kernel_clock": "HCLK5",
+            "enable": {
+              "register": "AHB5ENR",
+              "field": "NPUEN"
+            },
+            "reset": {
+              "register": "AHB5RSTR",
+              "field": "NPURST"
+            }
+          },
+          "interrupts": [
+            {
+              "signal": "NPU0",
+              "interrupt": "NPU0"
+            },
+            {
+              "signal": "NPU1",
+              "interrupt": "NPU1"
+            },
+            {
+              "signal": "NPU2",
+              "interrupt": "NPU2"
+            },
+            {
+              "signal": "NPU3",
+              "interrupt": "NPU3"
+            }
+          ]
+        },
+        {
           "name": "OTG1PHYCTL",
           "address": 1208220672,
           "registers": {

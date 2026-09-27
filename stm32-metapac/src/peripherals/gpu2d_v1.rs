@@ -34,10 +34,15 @@ impl Gpu2d {
     pub const fn clid(self) -> crate::common::Reg<regs::Clid, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0148usize) as _) }
     }
-    #[doc = "System interrupt register."]
+    #[doc = "System interrupt status register."]
     #[inline(always)]
     pub const fn sys_interrupt(self) -> crate::common::Reg<regs::SysInterrupt, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0ff8usize) as _) }
+    }
+    #[doc = "System interrupt enable register."]
+    #[inline(always)]
+    pub const fn sys_interrupt_enable(self) -> crate::common::Reg<regs::SysInterruptEnable, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0ffcusize) as _) }
     }
 }
 pub mod regs {
@@ -146,7 +151,7 @@ pub mod regs {
             defmt::write!(f, "Itctrl {{ clc: {=bool:?} }}", self.clc())
         }
     }
-    #[doc = "System interrupt register."]
+    #[doc = "System interrupt status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct SysInterrupt(pub u32);
@@ -163,6 +168,30 @@ pub mod regs {
         pub const fn set_er(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
+        #[doc = "Cache hold request - disable cache."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hold_disable_cache(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Cache hold request - disable cache."]
+        #[inline(always)]
+        pub const fn set_hold_disable_cache(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Cache hold request - invalidate cache."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hold_invalidate_cache(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Cache hold request - invalidate cache."]
+        #[inline(always)]
+        pub const fn set_hold_invalidate_cache(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
     }
     impl Default for SysInterrupt {
         #[inline(always)]
@@ -172,13 +201,106 @@ pub mod regs {
     }
     impl core::fmt::Debug for SysInterrupt {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("SysInterrupt").field("er", &self.er()).finish()
+            f.debug_struct("SysInterrupt")
+                .field("er", &self.er())
+                .field("hold_disable_cache", &self.hold_disable_cache())
+                .field("hold_invalidate_cache", &self.hold_invalidate_cache())
+                .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for SysInterrupt {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "SysInterrupt {{ er: {=bool:?} }}", self.er())
+            defmt::write!(
+                f,
+                "SysInterrupt {{ er: {=bool:?}, hold_disable_cache: {=bool:?}, hold_invalidate_cache: {=bool:?} }}",
+                self.er(),
+                self.hold_disable_cache(),
+                self.hold_invalidate_cache()
+            )
+        }
+    }
+    #[doc = "System interrupt enable register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct SysInterruptEnable(pub u32);
+    impl SysInterruptEnable {
+        #[doc = "Error interrupt enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn er(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Error interrupt enable."]
+        #[inline(always)]
+        pub const fn set_er(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        }
+        #[doc = "Bus error interrupt enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn bus_error(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Bus error interrupt enable."]
+        #[inline(always)]
+        pub const fn set_bus_error(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Cache hold disable interrupt enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hold_disable_cache(&self) -> bool {
+            let val = (self.0 >> 2usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Cache hold disable interrupt enable."]
+        #[inline(always)]
+        pub const fn set_hold_disable_cache(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
+        }
+        #[doc = "Cache hold invalidate interrupt enable."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn hold_invalidate_cache(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Cache hold invalidate interrupt enable."]
+        #[inline(always)]
+        pub const fn set_hold_invalidate_cache(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+    }
+    impl Default for SysInterruptEnable {
+        #[inline(always)]
+        fn default() -> SysInterruptEnable {
+            SysInterruptEnable(0)
+        }
+    }
+    impl core::fmt::Debug for SysInterruptEnable {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("SysInterruptEnable")
+                .field("er", &self.er())
+                .field("bus_error", &self.bus_error())
+                .field("hold_disable_cache", &self.hold_disable_cache())
+                .field("hold_invalidate_cache", &self.hold_invalidate_cache())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for SysInterruptEnable {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "SysInterruptEnable {{ er: {=bool:?}, bus_error: {=bool:?}, hold_disable_cache: {=bool:?}, hold_invalidate_cache: {=bool:?} }}",
+                self.er(),
+                self.bus_error(),
+                self.hold_disable_cache(),
+                self.hold_invalidate_cache()
+            )
         }
     }
 }

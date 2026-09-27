@@ -951,6 +951,7 @@ pub const USB1_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4804_0000usize a
 pub const USB2_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4808_0000usize as _) };
 pub const OTG2PHYCTL: usbphyc::Usbphyc = unsafe { usbphyc::Usbphyc::from_ptr(0x480c_0000usize as _) };
 pub const CACHEAXI: cacheaxi::Cacheaxi = unsafe { cacheaxi::Cacheaxi::from_ptr(0x480d_fc00usize as _) };
+pub const NPU: npu::Npu = unsafe { npu::Npu::from_ptr(0x480e_0000usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 4;
@@ -1024,6 +1025,8 @@ pub mod ltdc;
 pub mod mdf;
 #[path = "../../peripherals/mdios_v1.rs"]
 pub mod mdios;
+#[path = "../../peripherals/npu_v1.rs"]
+pub mod npu;
 #[path = "../../peripherals/otg_v1.rs"]
 pub mod otg;
 #[path = "../../peripherals/pssi_v1.rs"]

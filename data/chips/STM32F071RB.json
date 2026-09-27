@@ -790,6 +790,28 @@
                 }
               ]
             }
+          ],
+          "triggers": [
+            {
+              "signal": "ADC_EXT_TRG0",
+              "source": "TIM1_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG1",
+              "source": "TIM1_CC4"
+            },
+            {
+              "signal": "ADC_EXT_TRG2",
+              "source": "TIM2_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG3",
+              "source": "TIM3_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG4",
+              "source": "TIM15_TRGO"
+            }
           ]
         },
         {

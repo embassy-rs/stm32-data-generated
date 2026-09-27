@@ -3770,10 +3770,6 @@
               "source": "TIM8_TRGO"
             },
             {
-              "signal": "DAC_CHX_TRG15",
-              "source": "HRTIM_DAC_TRG1"
-            },
-            {
               "signal": "DAC_CHX_TRG2",
               "source": "TIM7_TRGO"
             },
@@ -3824,6 +3820,10 @@
             {
               "signal": "DAC_CHX_TRG14",
               "source": "HRTIM_DAC_RESET_TRG6"
+            },
+            {
+              "signal": "DAC_CHX_TRG15",
+              "source": "HRTIM_DAC_TRG1"
             },
             {
               "signal": "DAC_INC_CHX_TRG1",
@@ -3928,10 +3928,6 @@
               "source": "TIM8_TRGO"
             },
             {
-              "signal": "DAC_CHX_TRG15",
-              "source": "HRTIM_DAC_TRG2"
-            },
-            {
               "signal": "DAC_CHX_TRG2",
               "source": "TIM7_TRGO"
             },
@@ -3982,6 +3978,10 @@
             {
               "signal": "DAC_CHX_TRG14",
               "source": "HRTIM_DAC_RESET_TRG6"
+            },
+            {
+              "signal": "DAC_CHX_TRG15",
+              "source": "HRTIM_DAC_TRG2"
             },
             {
               "signal": "DAC_INC_CHX_TRG1",
@@ -4085,10 +4085,6 @@
               "source": "TIM1_TRGO"
             },
             {
-              "signal": "DAC_CHX_TRG15",
-              "source": "HRTIM_DAC_TRG3"
-            },
-            {
               "signal": "DAC_CHX_TRG2",
               "source": "TIM7_TRGO"
             },
@@ -4139,6 +4135,10 @@
             {
               "signal": "DAC_CHX_TRG14",
               "source": "HRTIM_DAC_RESET_TRG6"
+            },
+            {
+              "signal": "DAC_CHX_TRG15",
+              "source": "HRTIM_DAC_TRG3"
             },
             {
               "signal": "DAC_INC_CHX_TRG1",
@@ -4242,10 +4242,6 @@
               "source": "TIM8_TRGO"
             },
             {
-              "signal": "DAC_CHX_TRG15",
-              "source": "HRTIM_DAC_TRG1"
-            },
-            {
               "signal": "DAC_CHX_TRG2",
               "source": "TIM7_TRGO"
             },
@@ -4296,6 +4292,10 @@
             {
               "signal": "DAC_CHX_TRG14",
               "source": "HRTIM_DAC_RESET_TRG6"
+            },
+            {
+              "signal": "DAC_CHX_TRG15",
+              "source": "HRTIM_DAC_TRG1"
             },
             {
               "signal": "DAC_INC_CHX_TRG1",

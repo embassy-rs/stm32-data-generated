@@ -110,7 +110,92 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             dma: Some("GPDMA1"),
             request: Some(0),
         }],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG0",
+                source: "TIM1_CC1",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG1",
+                source: "TIM1_CC2",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG2",
+                source: "TIM1_CC3",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG3",
+                source: "TIM2_CC2",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG4",
+                source: "TIM3_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG5",
+                source: "TIM4_CC4",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG6",
+                source: "EXTI11_TRG",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG7",
+                source: "TIM8_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG8",
+                source: "TIM8_TRGO2",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG9",
+                source: "TIM1_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG10",
+                source: "TIM1_TRGO2",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG11",
+                source: "TIM2_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG12",
+                source: "TIM4_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG13",
+                source: "TIM6_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG14",
+                source: "TIM15_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG15",
+                source: "TIM3_CC4",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG16",
+                source: "EXTI15_TRG",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG18",
+                source: "LPTIM1_CH1",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG19",
+                source: "LPTIM2_CH1",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG20",
+                source: "LPTIM3_CH1",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG21",
+                source: "LPTIM4_TRGO",
+            },
+        ],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
             interrupt: "ADC1_2",
@@ -243,7 +328,92 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             dma: Some("GPDMA1"),
             request: Some(123),
         }],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG0",
+                source: "TIM1_CC1",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG1",
+                source: "TIM1_CC2",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG2",
+                source: "TIM1_CC3",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG3",
+                source: "TIM2_CC2",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG4",
+                source: "TIM3_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG5",
+                source: "TIM4_CC4",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG6",
+                source: "EXTI11_TRG",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG7",
+                source: "TIM8_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG8",
+                source: "TIM8_TRGO2",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG9",
+                source: "TIM1_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG10",
+                source: "TIM1_TRGO2",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG11",
+                source: "TIM2_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG12",
+                source: "TIM4_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG13",
+                source: "TIM6_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG14",
+                source: "TIM15_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG15",
+                source: "TIM3_CC4",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG16",
+                source: "EXTI15_TRG",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG18",
+                source: "LPTIM1_CH1",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG19",
+                source: "LPTIM2_CH1",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG20",
+                source: "LPTIM3_CH1",
+            },
+            PeripheralTrigger {
+                signal: "ADC_EXT_TRG21",
+                source: "LPTIM4_TRGO",
+            },
+        ],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
             interrupt: "ADC1_2",
@@ -789,6 +959,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM4_TRGO",
             },
             PeripheralTrigger {
+                signal: "DAC_CHX_TRG4",
+                source: "TIM5_TRGO",
+            },
+            PeripheralTrigger {
                 signal: "DAC_CHX_TRG5",
                 source: "TIM6_TRGO",
             },
@@ -797,16 +971,20 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM7_TRGO",
             },
             PeripheralTrigger {
+                signal: "DAC_CHX_TRG7",
+                source: "TIM8_TRGO",
+            },
+            PeripheralTrigger {
                 signal: "DAC_CHX_TRG8",
                 source: "TIM15_TRGO",
             },
             PeripheralTrigger {
                 signal: "DAC_CHX_TRG11",
-                source: "LPTIM1_TRGO",
+                source: "LPTIM1_CH1",
             },
             PeripheralTrigger {
                 signal: "DAC_CHX_TRG12",
-                source: "LPTIM3_TRGO",
+                source: "LPTIM3_CH1",
             },
             PeripheralTrigger {
                 signal: "DAC_CHX_TRG13",

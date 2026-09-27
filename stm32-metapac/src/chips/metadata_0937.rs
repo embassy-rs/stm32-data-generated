@@ -2455,7 +2455,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralTrigger {
                 signal: "TIMX_SYS_BRK_IN4",
-                source: "HSE2_HSECSS",
+                source: "HSE32_HSECSS",
             },
             PeripheralTrigger {
                 signal: "TIMX_OCREF_CLR_IN0",

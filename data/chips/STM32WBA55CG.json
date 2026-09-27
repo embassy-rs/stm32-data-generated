@@ -2677,7 +2677,7 @@
             },
             {
               "signal": "TIMX_SYS_BRK_IN4",
-              "source": "HSE2_HSECSS"
+              "source": "HSE32_HSECSS"
             },
             {
               "signal": "TIMX_OCREF_CLR_IN0",

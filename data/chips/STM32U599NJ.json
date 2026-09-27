@@ -1479,6 +1479,92 @@
               "dma": "GPDMA1",
               "request": 0
             }
+          ],
+          "triggers": [
+            {
+              "signal": "ADC_EXT_TRG0",
+              "source": "TIM1_CC1"
+            },
+            {
+              "signal": "ADC_EXT_TRG1",
+              "source": "TIM1_CC2"
+            },
+            {
+              "signal": "ADC_EXT_TRG2",
+              "source": "TIM1_CC3"
+            },
+            {
+              "signal": "ADC_EXT_TRG3",
+              "source": "TIM2_CC2"
+            },
+            {
+              "signal": "ADC_EXT_TRG4",
+              "source": "TIM3_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG5",
+              "source": "TIM4_CC4"
+            },
+            {
+              "signal": "ADC_EXT_TRG6",
+              "source": "EXTI11_TRG"
+            },
+            {
+              "signal": "ADC_EXT_TRG7",
+              "source": "TIM8_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG8",
+              "source": "TIM8_TRGO2"
+            },
+            {
+              "signal": "ADC_EXT_TRG9",
+              "source": "TIM1_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG10",
+              "source": "TIM1_TRGO2"
+            },
+            {
+              "signal": "ADC_EXT_TRG11",
+              "source": "TIM2_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG12",
+              "source": "TIM4_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG13",
+              "source": "TIM6_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG14",
+              "source": "TIM15_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG15",
+              "source": "TIM3_CC4"
+            },
+            {
+              "signal": "ADC_EXT_TRG16",
+              "source": "EXTI15_TRG"
+            },
+            {
+              "signal": "ADC_EXT_TRG18",
+              "source": "LPTIM1_CH1"
+            },
+            {
+              "signal": "ADC_EXT_TRG19",
+              "source": "LPTIM2_CH1"
+            },
+            {
+              "signal": "ADC_EXT_TRG20",
+              "source": "LPTIM3_CH1"
+            },
+            {
+              "signal": "ADC_EXT_TRG21",
+              "source": "LPTIM4_TRGO"
+            }
           ]
         },
         {
@@ -1594,6 +1680,92 @@
               "signal": "ADC2",
               "dma": "GPDMA1",
               "request": 123
+            }
+          ],
+          "triggers": [
+            {
+              "signal": "ADC_EXT_TRG0",
+              "source": "TIM1_CC1"
+            },
+            {
+              "signal": "ADC_EXT_TRG1",
+              "source": "TIM1_CC2"
+            },
+            {
+              "signal": "ADC_EXT_TRG2",
+              "source": "TIM1_CC3"
+            },
+            {
+              "signal": "ADC_EXT_TRG3",
+              "source": "TIM2_CC2"
+            },
+            {
+              "signal": "ADC_EXT_TRG4",
+              "source": "TIM3_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG5",
+              "source": "TIM4_CC4"
+            },
+            {
+              "signal": "ADC_EXT_TRG6",
+              "source": "EXTI11_TRG"
+            },
+            {
+              "signal": "ADC_EXT_TRG7",
+              "source": "TIM8_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG8",
+              "source": "TIM8_TRGO2"
+            },
+            {
+              "signal": "ADC_EXT_TRG9",
+              "source": "TIM1_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG10",
+              "source": "TIM1_TRGO2"
+            },
+            {
+              "signal": "ADC_EXT_TRG11",
+              "source": "TIM2_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG12",
+              "source": "TIM4_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG13",
+              "source": "TIM6_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG14",
+              "source": "TIM15_TRGO"
+            },
+            {
+              "signal": "ADC_EXT_TRG15",
+              "source": "TIM3_CC4"
+            },
+            {
+              "signal": "ADC_EXT_TRG16",
+              "source": "EXTI15_TRG"
+            },
+            {
+              "signal": "ADC_EXT_TRG18",
+              "source": "LPTIM1_CH1"
+            },
+            {
+              "signal": "ADC_EXT_TRG19",
+              "source": "LPTIM2_CH1"
+            },
+            {
+              "signal": "ADC_EXT_TRG20",
+              "source": "LPTIM3_CH1"
+            },
+            {
+              "signal": "ADC_EXT_TRG21",
+              "source": "LPTIM4_TRGO"
             }
           ]
         },
@@ -2087,6 +2259,10 @@
               "source": "TIM4_TRGO"
             },
             {
+              "signal": "DAC_CHX_TRG4",
+              "source": "TIM5_TRGO"
+            },
+            {
               "signal": "DAC_CHX_TRG5",
               "source": "TIM6_TRGO"
             },
@@ -2095,16 +2271,20 @@
               "source": "TIM7_TRGO"
             },
             {
+              "signal": "DAC_CHX_TRG7",
+              "source": "TIM8_TRGO"
+            },
+            {
               "signal": "DAC_CHX_TRG8",
               "source": "TIM15_TRGO"
             },
             {
               "signal": "DAC_CHX_TRG11",
-              "source": "LPTIM1_TRGO"
+              "source": "LPTIM1_CH1"
             },
             {
               "signal": "DAC_CHX_TRG12",
-              "source": "LPTIM3_TRGO"
+              "source": "LPTIM3_CH1"
             },
             {
               "signal": "DAC_CHX_TRG13",

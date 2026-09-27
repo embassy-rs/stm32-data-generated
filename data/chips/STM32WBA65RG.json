@@ -3307,6 +3307,14 @@
               "source": "TIM3_TRGO"
             },
             {
+              "signal": "TIMX_ITR_IN7",
+              "source": "TIM16_OC1"
+            },
+            {
+              "signal": "TIMX_ITR_IN8",
+              "source": "TIM17_OC1"
+            },
+            {
               "signal": "TIMX_ETR_IN1",
               "source": "COMP1_OUT"
             },

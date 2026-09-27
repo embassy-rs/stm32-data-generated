@@ -1491,6 +1491,10 @@
             },
             {
               "signal": "DAC_CHX_TRG5",
+              "source": "TIM4_TRGO"
+            },
+            {
+              "signal": "DAC_CHX_TRG6",
               "source": "EXTI9_TRG"
             }
           ]
@@ -1574,6 +1578,10 @@
             },
             {
               "signal": "DAC_CHX_TRG5",
+              "source": "TIM4_TRGO"
+            },
+            {
+              "signal": "DAC_CHX_TRG6",
               "source": "EXTI9_TRG"
             }
           ]

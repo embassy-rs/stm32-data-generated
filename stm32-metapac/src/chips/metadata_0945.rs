@@ -2507,6 +2507,14 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM3_TRGO",
             },
             PeripheralTrigger {
+                signal: "TIMX_ITR_IN7",
+                source: "TIM16_OC1",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_ITR_IN8",
+                source: "TIM17_OC1",
+            },
+            PeripheralTrigger {
                 signal: "TIMX_ETR_IN1",
                 source: "COMP1_OUT",
             },

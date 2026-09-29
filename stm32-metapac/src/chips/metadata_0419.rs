@@ -7240,6 +7240,58 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         ],
         triggers: &[
             PeripheralTrigger {
+                signal: "TIMX_TI1_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN3",
+                source: "COMP3_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN4",
+                source: "COMP4_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN5",
+                source: "COMP5_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN3",
+                source: "COMP3_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN4",
+                source: "COMP4_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN5",
+                source: "COMP6_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI3_IN1",
+                source: "COMP4_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI4_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI4_IN2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
                 signal: "TIMX_ITR_IN0",
                 source: "TIM1_TRGO",
             },
@@ -7845,6 +7897,66 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         ],
         triggers: &[
             PeripheralTrigger {
+                signal: "TIMX_TI1_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN3",
+                source: "COMP3_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN4",
+                source: "COMP4_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN5",
+                source: "COMP5_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN6",
+                source: "COMP6_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN7",
+                source: "COMP7_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN3",
+                source: "COMP3_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN4",
+                source: "COMP4_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN5",
+                source: "COMP5_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN6",
+                source: "COMP6_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN7",
+                source: "COMP7_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI3_IN1",
+                source: "COMP3_OUT",
+            },
+            PeripheralTrigger {
                 signal: "TIMX_ITR_IN0",
                 source: "TIM1_TRGO",
             },
@@ -8110,6 +8222,66 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         ],
         triggers: &[
             PeripheralTrigger {
+                signal: "TIMX_TI1_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN3",
+                source: "COMP3_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN4",
+                source: "COMP4_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN5",
+                source: "COMP5_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN6",
+                source: "COMP6_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN7",
+                source: "COMP7_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN3",
+                source: "COMP3_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN4",
+                source: "COMP4_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN5",
+                source: "COMP5_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN7",
+                source: "COMP7_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI3_IN1",
+                source: "COMP5_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI4_IN1",
+                source: "COMP6_OUT",
+            },
+            PeripheralTrigger {
                 signal: "TIMX_ITR_IN0",
                 source: "TIM1_TRGO",
             },
@@ -8327,6 +8499,74 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
         ],
         triggers: &[
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN1",
+                source: "LSI",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN2",
+                source: "LSE",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN3",
+                source: "RTC_WAKEUP",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN4",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN5",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN6",
+                source: "COMP3_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN7",
+                source: "COMP4_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN8",
+                source: "COMP5_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN9",
+                source: "COMP6_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN10",
+                source: "COMP7_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN3",
+                source: "COMP3_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN4",
+                source: "COMP4_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN5",
+                source: "COMP5_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN6",
+                source: "COMP6_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI2_IN7",
+                source: "COMP7_OUT",
+            },
             PeripheralTrigger {
                 signal: "TIMX_ITR_IN0",
                 source: "TIM1_TRGO",

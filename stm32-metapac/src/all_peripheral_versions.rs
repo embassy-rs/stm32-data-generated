@@ -97,7 +97,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("npu", &["v1"]),
     ("octospi", &["v1", "v2"]),
     ("octospim", &["v1"]),
-    ("opamp", &["v2", "v3", "v4", "v5"]),
+    ("opamp", &["c5", "v2", "v3", "v4", "v5"]),
     ("otfdec", &["v1"]),
     ("otg", &["v1"]),
     ("pka", &["n6", "v1a", "v1b", "v1c"]),

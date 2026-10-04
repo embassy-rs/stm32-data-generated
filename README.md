@@ -81,7 +81,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [NPU](#npu) | | | | | | | | | | | | | | | | | | | v1 | | | | | | | |
 | [OCTOSPI](#octospi) | | | | | | | | | | | v2 | v1 | | | | v1 | v2 | | | | v2 | v1 | | | | |
 | [OCTOSPIM](#octospim) | | | | | | | | | | | | v1 | | | | v1 | | | | | | v1 | | | | |
-| [OPAMP](#opamp) | | ❌ | | | | v2 | | | | v5 | v4 | v4 | | ❌ | v3 | v3 | v3 | | | v3 | v3 | v3 | | | | |
+| [OPAMP](#opamp) | | c5 | | | | v2 | | | | v5 | v4 | v4 | | ❌ | v3 | v3 | v3 | | | v3 | v3 | v3 | | | | |
 | [OTFDEC](#otfdec) | | | | | | | | | | | v1 | v1 | | | | | v1 | | | | | v1 | | | | |
 | [OTG](#otg) | | | | v1 | v1 | | v1 | v1 | | | | v1 | | | v1 | v1 | | | v1 | | | v1 | | | v1 | |
 | [PKA](#pka) | | ❌ | | | | | | | | | v1a | v1a | | | | v1c | v1c | | n6 | | v1b | v1b | v1c | v1c | v1a | v1c |
@@ -743,11 +743,12 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
+- **c5**: STM32C5
 - **v2**: STM32F3
 - **v3**: STM32L4, STM32L4+, STM32L5, STM32U0, STM32U3, STM32U5
 - **v4**: STM32H5, STM32H7
 - **v5**: STM32G4
-- **❌ Unsupported**: STM32C5, STM32L1
+- **❌ Unsupported**: STM32L1
 
 ### OTFDEC
 

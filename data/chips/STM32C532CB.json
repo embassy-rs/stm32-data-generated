@@ -1927,6 +1927,11 @@
         {
           "name": "OPAMP1",
           "address": 1073755136,
+          "registers": {
+            "kind": "opamp",
+            "version": "c5",
+            "block": "OPAMP"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": "PCLK1",

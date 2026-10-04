@@ -9,7 +9,7 @@ pub static METADATA: Metadata = Metadata {
             name: "ITCM",
             kind: MemoryRegionKind::Ram,
             address: 0x0,
-            size: 196608,
+            size: 65536,
             settings: None,
         },
         MemoryRegion {
@@ -27,7 +27,7 @@ pub static METADATA: Metadata = Metadata {
             name: "DTCM",
             kind: MemoryRegionKind::Ram,
             address: 0x20000000,
-            size: 196608,
+            size: 65536,
             settings: None,
         },
         MemoryRegion {

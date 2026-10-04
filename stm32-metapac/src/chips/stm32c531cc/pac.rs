@@ -321,7 +321,7 @@ pub const TIM7: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1400
 pub const TIM12: timer::Tim2ch = unsafe { timer::Tim2ch::from_ptr(0x4000_1800usize as _) };
 pub const WWDG: wwdg::Wwdg = unsafe { wwdg::Wwdg::from_ptr(0x4000_2c00usize as _) };
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000usize as _) };
-pub const OPAMP1: *mut () = 0x4000_3400usize as _;
+pub const OPAMP1: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4000_3400usize as _) };
 pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3800usize as _) };
 pub const COMP12: comp::CompCommon = unsafe { comp::CompCommon::from_ptr(0x4000_4000usize as _) };
 pub const COMP1: comp::CompChannel = unsafe { comp::CompChannel::from_ptr(0x4000_400cusize as _) };
@@ -410,6 +410,8 @@ pub mod iwdg;
 pub mod lpdma;
 #[path = "../../peripherals/lptim_v2a.rs"]
 pub mod lptim;
+#[path = "../../peripherals/opamp_c5.rs"]
+pub mod opamp;
 #[path = "../../peripherals/pwr_c5.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_c5.rs"]

@@ -1614,7 +1614,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "OPAMP1",
         address: 0x40003400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "opamp",
+            version: "c5",
+            block: "OPAMP",
+            ir: &opamp::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Clock("PCLK1"),
@@ -4522,6 +4527,8 @@ pub mod iwdg;
 pub mod lpdma;
 #[path = "../registers/lptim_v2a.rs"]
 pub mod lptim;
+#[path = "../registers/opamp_c5.rs"]
+pub mod opamp;
 #[path = "../registers/pwr_c5.rs"]
 pub mod pwr;
 #[path = "../registers/rcc_c5.rs"]

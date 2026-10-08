@@ -434,7 +434,7 @@ pub mod uid;
 pub mod usart;
 #[path = "../../peripherals/usb_v1.rs"]
 pub mod usb;
-#[path = "../../peripherals/usbram_16x2_512.rs"]
+#[path = "../../peripherals/usbram_16x1_512.rs"]
 pub mod usbram;
 #[path = "../../peripherals/vrefintcal_v1.rs"]
 pub mod vrefintcal;

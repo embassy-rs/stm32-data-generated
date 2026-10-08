@@ -4715,7 +4715,24 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: Some(9),
             },
         ],
-        dma_channels: &[],
+        dma_channels: &[
+            PeripheralDmaChannel {
+                signal: "OCTOSPI1",
+                channel: None,
+                dmamux: None,
+                remap: &[],
+                dma: Some("GPDMA1"),
+                request: Some(57),
+            },
+            PeripheralDmaChannel {
+                signal: "OCTOSPI1",
+                channel: None,
+                dmamux: None,
+                remap: &[],
+                dma: Some("GPDMA2"),
+                request: Some(57),
+            },
+        ],
         triggers: &[],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",

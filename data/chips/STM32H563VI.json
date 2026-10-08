@@ -4997,6 +4997,18 @@
               "signal": "GLOBAL",
               "interrupt": "OCTOSPI1"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "OCTOSPI1",
+              "dma": "GPDMA1",
+              "request": 57
+            },
+            {
+              "signal": "OCTOSPI1",
+              "dma": "GPDMA2",
+              "request": 57
+            }
           ]
         },
         {

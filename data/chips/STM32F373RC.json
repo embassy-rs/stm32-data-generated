@@ -4679,7 +4679,7 @@
           "address": 1073766400,
           "registers": {
             "kind": "usbram",
-            "version": "16x2_512",
+            "version": "16x1_512",
             "block": "USBRAM"
           }
         },

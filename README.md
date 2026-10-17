@@ -60,7 +60,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [HASH](#hash) | | c5 | | | v1 | | v1, v2 | v2 | | | v3 | v2, v3 | | | v2 | v2 | v2 | ❌ | v3 | | v3 | v4 | | | v4 | |
 | [HDP](#hdp) | | | | | | | | | | | | | | | | | | ❌ | | | | | | | | |
 | [HRTIM](#hrtim) | | | | | | v1 | | | | v2 | | v1 | | | | | | | | | | | | | | |
-| [HSEM](#hsem) | | | | | | | | | | | | v1, v2, ❌ | | | | | | ❌ | | | | | v1, ❌ | | wba | v3, v4 |
+| [HSEM](#hsem) | | | | | | | | | | | | v1, v2, ❌ | | | | | | ❌ | | | | | v1 | | wba | v3, v4 |
 | [HSP](#hsp) | | | | | | | | | | | | | | | | | | | | | v1 | | | | | |
 | [HSPI](#hspi) | | | | | | | | | | | | | | | | | | | | | | v1 | | | | |
 | [I2C](#i2c) | v2 | v3 | v2 | v1 | v1 | v2 | v1 | v2 | v2 | v2 | v2 | v2, v3 | v2 | v1 | v2 | v2 | v2 | ❌ | v3 | v2 | v2 | v2 | v2 | v1 | v2 | v2 |
@@ -590,7 +590,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v3**: STM32WL
 - **v4**: STM32WL
 - **wba**: STM32WBA
-- **❌ Unsupported**: STM32H7, STM32MP1, STM32WB
+- **❌ Unsupported**: STM32H7, STM32MP1
 
 ### HSP
 

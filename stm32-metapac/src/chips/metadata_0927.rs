@@ -595,7 +595,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "HSEM",
         address: 0x58001400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "hsem",
+            version: "v1",
+            block: "HSEM",
+            ir: &hsem::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK3",
             kernel_clock: Clock("HCLK3"),
@@ -2233,6 +2238,8 @@ pub mod exti;
 pub mod flash;
 #[path = "../registers/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../registers/hsem_v1.rs"]
+pub mod hsem;
 #[path = "../registers/i2c_v2.rs"]
 pub mod i2c;
 #[path = "../registers/ipcc_v1.rs"]

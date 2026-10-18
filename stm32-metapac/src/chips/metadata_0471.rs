@@ -391,7 +391,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         registers: Some(PeripheralRegisters {
             kind: "adc",
             version: "v3_h7",
-            block: "ADC",
+            block: "ADC3",
             ir: &adc::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {

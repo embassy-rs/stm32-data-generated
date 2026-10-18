@@ -1650,7 +1650,7 @@
           "registers": {
             "kind": "adc",
             "version": "v3_h7",
-            "block": "ADC"
+            "block": "ADC3"
           },
           "rcc": {
             "bus_clock": "HCLK4",

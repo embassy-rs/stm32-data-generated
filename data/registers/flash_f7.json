@@ -107,7 +107,7 @@
         "name": "SNB",
         "description": "Sector number",
         "bit_offset": 3,
-        "bit_size": 4
+        "bit_size": 5
       },
       {
         "name": "PSIZE",

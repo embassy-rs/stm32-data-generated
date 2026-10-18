@@ -189,13 +189,13 @@ pub mod regs {
         #[must_use]
         #[inline(always)]
         pub const fn snb(&self) -> u8 {
-            let val = (self.0 >> 3usize) & 0x0f;
+            let val = (self.0 >> 3usize) & 0x1f;
             val as u8
         }
         #[doc = "Sector number"]
         #[inline(always)]
         pub const fn set_snb(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 3usize)) | (((val as u32) & 0x0f) << 3usize);
+            self.0 = (self.0 & !(0x1f << 3usize)) | (((val as u32) & 0x1f) << 3usize);
         }
         #[doc = "Program size"]
         #[must_use]

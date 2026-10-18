@@ -171,7 +171,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "snb",
                     description: Some("Sector number"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
-                    bit_size: 4,
+                    bit_size: 5,
                     array: None,
                     enumm: None,
                 },

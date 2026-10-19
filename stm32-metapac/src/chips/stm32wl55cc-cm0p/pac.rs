@@ -233,7 +233,7 @@ pub mod dac;
 pub mod dmamux;
 #[path = "../../peripherals/exti_w.rs"]
 pub mod exti;
-#[path = "../../peripherals/flash_wl.rs"]
+#[path = "../../peripherals/flash_v4_wl.rs"]
 pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;

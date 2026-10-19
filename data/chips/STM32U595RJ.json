@@ -2088,7 +2088,7 @@
           "address": 1073881088,
           "registers": {
             "kind": "flash",
-            "version": "u5",
+            "version": "v4_u5",
             "block": "FLASH"
           },
           "rcc": {

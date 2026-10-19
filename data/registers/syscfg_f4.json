@@ -3,10 +3,10 @@
     "description": "System configuration controller",
     "items": [
       {
-        "name": "MEMRM",
+        "name": "MEMRMP",
         "description": "memory remap register",
         "byte_offset": 0,
-        "fieldset": "MEMRM"
+        "fieldset": "MEMRMP"
       },
       {
         "name": "PMC",
@@ -65,7 +65,7 @@
       }
     ]
   },
-  "fieldset/MEMRM": {
+  "fieldset/MEMRMP": {
     "description": "memory remap register",
     "fields": [
       {

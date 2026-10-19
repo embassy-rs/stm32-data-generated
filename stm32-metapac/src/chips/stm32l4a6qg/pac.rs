@@ -533,7 +533,7 @@ pub mod dfsdm;
 pub mod dma2d;
 #[path = "../../peripherals/exti_v1.rs"]
 pub mod exti;
-#[path = "../../peripherals/flash_l4.rs"]
+#[path = "../../peripherals/flash_v4_l4.rs"]
 pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;

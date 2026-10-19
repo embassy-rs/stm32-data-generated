@@ -413,7 +413,7 @@
         "name": "EEPROM",
         "kind": "eeprom",
         "address": 134742016,
-        "size": 8192,
+        "size": 4096,
         "access": {
           "read": true,
           "write": true,
@@ -1254,7 +1254,7 @@
           "address": 1073888256,
           "registers": {
             "kind": "flash",
-            "version": "l1",
+            "version": "v3_l1",
             "block": "FLASH"
           },
           "rcc": {

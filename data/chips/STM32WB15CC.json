@@ -904,7 +904,7 @@
         "settings": {
           "erase_size": 2048,
           "write_size": 8,
-          "erase_value": 0
+          "erase_value": 255
         }
       },
       {
@@ -1810,7 +1810,7 @@
           "address": 1476411392,
           "registers": {
             "kind": "flash",
-            "version": "wb",
+            "version": "v4_wb",
             "block": "FLASH"
           },
           "rcc": {

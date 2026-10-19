@@ -698,7 +698,7 @@
           "address": 1073881088,
           "registers": {
             "kind": "flash",
-            "version": "g0x0",
+            "version": "v4_g0x0",
             "block": "FLASH"
           },
           "rcc": {

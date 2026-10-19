@@ -366,14 +366,14 @@ pub mod regs {
         #[doc = "Backup regulator enable When set, the Backup regulator (used to maintain the backup RAM content in Standby and VBAT modes) is enabled. If BREN is reset, the backup regulator is switched off. The backup RAM can still be used in Run and Stop modes. However, its content will be lost in Standby and VBAT modes. If BREN is set, the application must wait till the Backup Regulator Ready flag (BRRDY) is set to indicate that the data written into the SRAM will be maintained in Standby and VBAT modes."]
         #[must_use]
         #[inline(always)]
-        pub const fn bren(&self) -> bool {
+        pub const fn bren(&self) -> super::vals::Retention {
             let val = (self.0 >> 0usize) & 0x01;
-            val != 0
+            super::vals::Retention::from_bits(val as u8)
         }
         #[doc = "Backup regulator enable When set, the Backup regulator (used to maintain the backup RAM content in Standby and VBAT modes) is enabled. If BREN is reset, the backup regulator is switched off. The backup RAM can still be used in Run and Stop modes. However, its content will be lost in Standby and VBAT modes. If BREN is set, the application must wait till the Backup Regulator Ready flag (BRRDY) is set to indicate that the data written into the SRAM will be maintained in Standby and VBAT modes."]
         #[inline(always)]
-        pub const fn set_bren(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        pub const fn set_bren(&mut self, val: super::vals::Retention) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
         }
         #[doc = "VBAT and temperature monitoring enable When set, the VBAT supply and temperature monitoring is enabled."]
         #[must_use]
@@ -472,7 +472,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Cr2 {{ bren: {=bool:?}, monen: {=bool:?}, brrdy: {=bool:?}, vbatl: {=bool:?}, vbath: {=bool:?}, templ: {=bool:?}, temph: {=bool:?} }}",
+                "Cr2 {{ bren: {:?}, monen: {=bool:?}, brrdy: {=bool:?}, vbatl: {=bool:?}, vbath: {=bool:?}, templ: {=bool:?}, temph: {=bool:?} }}",
                 self.bren(),
                 self.monen(),
                 self.brrdy(),
@@ -1000,6 +1000,37 @@ pub mod regs {
     }
 }
 pub mod vals {
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Retention {
+        #[doc = "Content is lost."]
+        Lost = 0x0,
+        #[doc = "Content is preserved."]
+        Preserved = 0x01,
+    }
+    impl Retention {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Retention {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Retention {
+        #[inline(always)]
+        fn from(val: u8) -> Retention {
+            Retention::from_bits(val)
+        }
+    }
+    impl From<Retention> for u8 {
+        #[inline(always)]
+        fn from(val: Retention) -> u8 {
+            Retention::to_bits(val)
+        }
+    }
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]

@@ -3022,7 +3022,7 @@
           "address": 1073888256,
           "registers": {
             "kind": "flash",
-            "version": "f4",
+            "version": "v2_f4",
             "block": "FLASH"
           },
           "interrupts": [

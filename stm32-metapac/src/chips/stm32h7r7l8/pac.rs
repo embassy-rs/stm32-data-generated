@@ -806,7 +806,7 @@ pub mod eth;
 pub mod exti;
 #[path = "../../peripherals/fdcanram_v1.rs"]
 pub mod fdcanram;
-#[path = "../../peripherals/flash_h7rs.rs"]
+#[path = "../../peripherals/flash_v5_h7rs.rs"]
 pub mod flash;
 #[path = "../../peripherals/fmc_v3x1.rs"]
 pub mod fmc;

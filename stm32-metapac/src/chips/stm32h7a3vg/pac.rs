@@ -763,7 +763,7 @@ pub mod dts;
 pub mod exti;
 #[path = "../../peripherals/fdcanram_v2.rs"]
 pub mod fdcanram;
-#[path = "../../peripherals/flash_h7ab.rs"]
+#[path = "../../peripherals/flash_v5_h7ab.rs"]
 pub mod flash;
 #[path = "../../peripherals/fmc_v3x1.rs"]
 pub mod fmc;

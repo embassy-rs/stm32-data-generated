@@ -1273,7 +1273,7 @@
           "address": 1476411392,
           "registers": {
             "kind": "flash",
-            "version": "wb",
+            "version": "v4_wb",
             "block": "FLASH"
           },
           "rcc": {

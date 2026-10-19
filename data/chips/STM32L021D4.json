@@ -777,7 +777,7 @@
           "address": 1073881088,
           "registers": {
             "kind": "flash",
-            "version": "l0",
+            "version": "v3_l0",
             "block": "FLASH"
           },
           "interrupts": [

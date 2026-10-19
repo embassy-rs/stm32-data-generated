@@ -1273,7 +1273,7 @@
           "address": 1073881088,
           "registers": {
             "kind": "flash",
-            "version": "u0",
+            "version": "v4_u0",
             "block": "FLASH"
           },
           "rcc": {
@@ -1287,7 +1287,13 @@
               "register": "AHBRSTR",
               "field": "FLASHRST"
             }
-          }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "FLASH_ECC"
+            }
+          ]
         },
         {
           "name": "GPIOA",

@@ -206,7 +206,7 @@ pub mod dmamux;
 pub mod exti;
 #[path = "../../peripherals/fdcanram_v1.rs"]
 pub mod fdcanram;
-#[path = "../../peripherals/flash_c0.rs"]
+#[path = "../../peripherals/flash_v4_c0.rs"]
 pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;

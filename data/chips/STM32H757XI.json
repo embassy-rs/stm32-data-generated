@@ -1667,6 +1667,12 @@
         "kind": "ram",
         "address": 939524096,
         "size": 65536
+      },
+      {
+        "name": "BKPSRAM",
+        "kind": "ram",
+        "address": 947912704,
+        "size": 4096
       }
     ]
   ],
@@ -4266,7 +4272,7 @@
           "address": 1375739904,
           "registers": {
             "kind": "flash",
-            "version": "h7",
+            "version": "v5_h7",
             "block": "FLASH"
           },
           "interrupts": [
@@ -15770,7 +15776,7 @@
           "address": 1375739904,
           "registers": {
             "kind": "flash",
-            "version": "h7",
+            "version": "v5_h7",
             "block": "FLASH"
           },
           "interrupts": [

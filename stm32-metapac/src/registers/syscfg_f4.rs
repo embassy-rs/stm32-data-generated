@@ -7,14 +7,14 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("System configuration controller"),
         items: &[
             BlockItem {
-                name: "memrm",
+                name: "memrmp",
                 description: Some("memory remap register"),
                 array: None,
                 byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Memrm"),
+                    fieldset: Some("Memrmp"),
                 }),
             },
             BlockItem {
@@ -92,7 +92,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Memrm",
+            name: "Memrmp",
             extends: None,
             description: Some("memory remap register"),
             bit_size: 32,

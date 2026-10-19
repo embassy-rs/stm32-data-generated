@@ -523,7 +523,7 @@
           "address": 1073881088,
           "registers": {
             "kind": "flash",
-            "version": "c0",
+            "version": "v4_c0",
             "block": "FLASH"
           },
           "rcc": {

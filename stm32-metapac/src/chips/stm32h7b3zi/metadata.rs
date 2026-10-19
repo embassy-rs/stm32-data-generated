@@ -19,7 +19,7 @@ pub static METADATA: Metadata = Metadata {
             size: 1048576,
             settings: Some(FlashSettings {
                 erase_size: 8192,
-                write_size: 32,
+                write_size: 16,
                 erase_value: 255,
             }),
         },
@@ -30,7 +30,7 @@ pub static METADATA: Metadata = Metadata {
             size: 1048576,
             settings: Some(FlashSettings {
                 erase_size: 8192,
-                write_size: 32,
+                write_size: 16,
                 erase_value: 255,
             }),
         },
@@ -53,6 +53,20 @@ pub static METADATA: Metadata = Metadata {
             kind: MemoryRegionKind::Ram,
             address: 0x30000000,
             size: 131072,
+            settings: None,
+        },
+        MemoryRegion {
+            name: "SRDSRAM",
+            kind: MemoryRegionKind::Ram,
+            address: 0x38000000,
+            size: 32768,
+            settings: None,
+        },
+        MemoryRegion {
+            name: "BKPSRAM",
+            kind: MemoryRegionKind::Ram,
+            address: 0x38800000,
+            size: 4096,
             settings: None,
         },
     ]],

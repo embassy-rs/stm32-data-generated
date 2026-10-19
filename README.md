@@ -45,7 +45,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [ETH](#eth) | | v2b | | v1a | v1b | | v1b | v1c | | | v2 | v2 | | | | | | | v2a | | | | | | | |
 | [EXTI](#exti) | c0 | u5 | v1 | v1 | v1 | v1 | v1 | v1 | g0 | v1 | h5, h50 | h7, h7rm0399 | v1 | v1 | v1 | v1 | l5 | v1 | n6 | u0 | u3 | u5 | w | | l5 | w, wle |
 | [FDCANRAM](#fdcanram) | v1 | v1 | | | | | | | v1 | v1 | v1 | v1, v2 | | | | | v1 | v1 | v2 | | v1 | v1 | | | | |
-| [FLASH](#flash) | c0 | c5 | f0 | f1, f1_xl | f2 | f3 | f4 | f7 | g0x0, g0x1 | g4c2, g4c3, g4c4 | h5, h50 | h7, h7ab, h7rs | l0 | l1 | l4 | l4 | l5 | | | u0 | u3 | u5 | wb | wb0 | wba | wl |
+| [FLASH](#flash) | v4_c0 | v5_c5 | v1_f0 | v1_f1, v1_f1xl | v2_f2 | v1_f3 | v2_f4 | v2_f7 | v4_g0x0, v4_g0x1 | v4_g4c2, v4_g4c3, v4_g4c4 | v5_h5, v5_h50 | v5_h7, v5_h7ab, v5_h7rs | v3_l0 | v3_l1 | v4_l4 | v4_l4p | v4_l5 | | | v4_u0 | v4_u3 | v4_u5 | v4_wb | wb0 | v4_wba | v4_wl |
 | [FMAC](#fmac) | | | | | | | | | | v1 | v1 | v1 | | | | | | | | | | v1 | | | | |
 | [FMC](#fmc) | | | | | | ❌ | v1x3, v2x1, ❌ | v2x1 | | ❌ | v4 | v3x1 | | | ❌ | ❌ | ❌ | ❌ | n6 | | | | | | | |
 | [FMPI2C](#fmpi2c) | | | | | | | v2 | | | | | | | | | | | | | | | | | | | |
@@ -443,36 +443,37 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **c0**: STM32C0
-- **c5**: STM32C5
-- **f0**: STM32F0
-- **f1**: STM32F1
-- **f1_xl**: STM32F1
-- **f2**: STM32F2
-- **f3**: STM32F3
-- **f4**: STM32F4
-- **f7**: STM32F7
-- **g0x0**: STM32G0
-- **g0x1**: STM32G0
-- **g4c2**: STM32G4
-- **g4c3**: STM32G4
-- **g4c4**: STM32G4
-- **h5**: STM32H5
-- **h50**: STM32H5
-- **h7**: STM32H7
-- **h7ab**: STM32H7
-- **h7rs**: STM32H7
-- **l0**: STM32L0
-- **l1**: STM32L1
-- **l4**: STM32L4, STM32L4+
-- **l5**: STM32L5
-- **u0**: STM32U0
-- **u3**: STM32U3
-- **u5**: STM32U5
-- **wb**: STM32WB
+- **v1_f0**: STM32F0
+- **v1_f1**: STM32F1
+- **v1_f1xl**: STM32F1
+- **v1_f3**: STM32F3
+- **v2_f2**: STM32F2
+- **v2_f4**: STM32F4
+- **v2_f7**: STM32F7
+- **v3_l0**: STM32L0
+- **v3_l1**: STM32L1
+- **v4_c0**: STM32C0
+- **v4_g0x0**: STM32G0
+- **v4_g0x1**: STM32G0
+- **v4_g4c2**: STM32G4
+- **v4_g4c3**: STM32G4
+- **v4_g4c4**: STM32G4
+- **v4_l4**: STM32L4
+- **v4_l4p**: STM32L4+
+- **v4_l5**: STM32L5
+- **v4_u0**: STM32U0
+- **v4_u3**: STM32U3
+- **v4_u5**: STM32U5
+- **v4_wb**: STM32WB
+- **v4_wba**: STM32WBA
+- **v4_wl**: STM32WL
+- **v5_c5**: STM32C5
+- **v5_h5**: STM32H5
+- **v5_h50**: STM32H5
+- **v5_h7**: STM32H7
+- **v5_h7ab**: STM32H7
+- **v5_h7rs**: STM32H7
 - **wb0**: STM32WB0
-- **wba**: STM32WBA
-- **wl**: STM32WL
 
 ### FMAC
 

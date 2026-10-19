@@ -2664,7 +2664,7 @@
           "address": 1073881088,
           "registers": {
             "kind": "flash",
-            "version": "g4c2",
+            "version": "v4_g4c2",
             "block": "FLASH"
           },
           "rcc": {

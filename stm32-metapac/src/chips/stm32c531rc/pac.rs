@@ -392,7 +392,7 @@ pub mod dac;
 pub mod dbgmcu;
 #[path = "../../peripherals/exti_u5.rs"]
 pub mod exti;
-#[path = "../../peripherals/flash_c5.rs"]
+#[path = "../../peripherals/flash_v5_c5.rs"]
 pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;

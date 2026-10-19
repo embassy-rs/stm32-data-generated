@@ -440,7 +440,7 @@ pub mod dfsdm;
 pub mod dma;
 #[path = "../../peripherals/exti_v1.rs"]
 pub mod exti;
-#[path = "../../peripherals/flash_f4.rs"]
+#[path = "../../peripherals/flash_v2_f4.rs"]
 pub mod flash;
 #[path = "../../peripherals/fmpi2c_v2.rs"]
 pub mod fmpi2c;

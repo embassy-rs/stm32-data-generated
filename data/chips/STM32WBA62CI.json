@@ -660,7 +660,7 @@
           "address": 1073881088,
           "registers": {
             "kind": "flash",
-            "version": "wba",
+            "version": "v4_wba",
             "block": "FLASH"
           },
           "rcc": {

@@ -1377,7 +1377,7 @@
         "size": 1048576,
         "settings": {
           "erase_size": 8192,
-          "write_size": 32,
+          "write_size": 16,
           "erase_value": 255
         }
       },
@@ -1388,7 +1388,7 @@
         "size": 1048576,
         "settings": {
           "erase_size": 8192,
-          "write_size": 32,
+          "write_size": 16,
           "erase_value": 255
         }
       },
@@ -1409,6 +1409,18 @@
         "kind": "ram",
         "address": 805306368,
         "size": 131072
+      },
+      {
+        "name": "SRDSRAM",
+        "kind": "ram",
+        "address": 939524096,
+        "size": 32768
+      },
+      {
+        "name": "BKPSRAM",
+        "kind": "ram",
+        "address": 947912704,
+        "size": 4096
       }
     ]
   ],
@@ -3947,7 +3959,7 @@
           "address": 1375739904,
           "registers": {
             "kind": "flash",
-            "version": "h7ab",
+            "version": "v5_h7ab",
             "block": "FLASH"
           },
           "interrupts": [

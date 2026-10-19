@@ -571,7 +571,7 @@ pub mod dlyb;
 pub mod exti;
 #[path = "../../peripherals/fdcanram_v1.rs"]
 pub mod fdcanram;
-#[path = "../../peripherals/flash_u3.rs"]
+#[path = "../../peripherals/flash_v4_u3.rs"]
 pub mod flash;
 #[path = "../../peripherals/gpdma_v1.rs"]
 pub mod gpdma;

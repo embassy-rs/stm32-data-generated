@@ -20,7 +20,7 @@ pub static METADATA: Metadata = Metadata {
             name: "EEPROM",
             kind: MemoryRegionKind::Eeprom,
             address: 0x8080000,
-            size: 8192,
+            size: 4096,
             settings: None,
         },
         MemoryRegion {

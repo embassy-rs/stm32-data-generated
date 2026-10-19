@@ -1069,7 +1069,7 @@
           "address": 1476411392,
           "registers": {
             "kind": "flash",
-            "version": "wl",
+            "version": "v4_wl",
             "block": "FLASH"
           },
           "rcc": {
@@ -3897,7 +3897,7 @@
           "address": 1476411392,
           "registers": {
             "kind": "flash",
-            "version": "wl",
+            "version": "v4_wl",
             "block": "FLASH"
           },
           "rcc": {
@@ -3911,7 +3911,13 @@
               "register": "AHB3RSTR",
               "field": "FLASHRST"
             }
-          }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "RCC_FLASH_C1SEV"
+            }
+          ]
         },
         {
           "name": "GPIOA",
@@ -4624,6 +4630,10 @@
             }
           ],
           "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "RCC_FLASH_C1SEV"
+            },
             {
               "signal": "LSECSS",
               "interrupt": "RTC_LSECSS"

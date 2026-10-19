@@ -3508,7 +3508,7 @@
           "address": 1073881088,
           "registers": {
             "kind": "flash",
-            "version": "g4c4",
+            "version": "v4_g4c4",
             "block": "FLASH"
           },
           "rcc": {

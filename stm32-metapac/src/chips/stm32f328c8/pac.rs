@@ -316,7 +316,7 @@ pub mod dac;
 pub mod dbgmcu;
 #[path = "../../peripherals/exti_v1.rs"]
 pub mod exti;
-#[path = "../../peripherals/flash_f3.rs"]
+#[path = "../../peripherals/flash_v1_f3.rs"]
 pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;

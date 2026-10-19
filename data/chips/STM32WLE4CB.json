@@ -317,13 +317,13 @@
         "name": "SRAM1",
         "kind": "ram",
         "address": 536870912,
-        "size": 24576
+        "size": 16384
       },
       {
         "name": "SRAM2",
         "kind": "ram",
-        "address": 536895488,
-        "size": 24576
+        "address": 536903680,
+        "size": 32768
       }
     ]
   ],
@@ -888,7 +888,7 @@
           "address": 1476411392,
           "registers": {
             "kind": "flash",
-            "version": "wl",
+            "version": "v4_wl",
             "block": "FLASH"
           },
           "rcc": {

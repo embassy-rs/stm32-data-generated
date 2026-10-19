@@ -1239,7 +1239,7 @@
           "address": 1476411392,
           "registers": {
             "kind": "flash",
-            "version": "wl",
+            "version": "v4_wl",
             "block": "FLASH"
           },
           "rcc": {

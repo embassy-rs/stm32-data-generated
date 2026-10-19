@@ -408,7 +408,18 @@
         "name": "BANK_1",
         "kind": "flash",
         "address": 134217728,
-        "size": 196608,
+        "size": 98304,
+        "settings": {
+          "erase_size": 128,
+          "write_size": 4,
+          "erase_value": 0
+        }
+      },
+      {
+        "name": "BANK_2",
+        "kind": "flash",
+        "address": 134316032,
+        "size": 98304,
         "settings": {
           "erase_size": 128,
           "write_size": 4,
@@ -1269,7 +1280,7 @@
           "address": 1073881088,
           "registers": {
             "kind": "flash",
-            "version": "l0",
+            "version": "v3_l0",
             "block": "FLASH"
           },
           "interrupts": [

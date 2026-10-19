@@ -21,7 +21,7 @@ impl Syscfg {
     }
     #[doc = "memory remap register"]
     #[inline(always)]
-    pub const fn memrm(self) -> crate::common::Reg<regs::Memrm, crate::common::RW> {
+    pub const fn memrmp(self) -> crate::common::Reg<regs::Memrmp, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "peripheral mode configuration register"]
@@ -151,8 +151,8 @@ pub mod regs {
     #[doc = "memory remap register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Memrm(pub u32);
-    impl Memrm {
+    pub struct Memrmp(pub u32);
+    impl Memrmp {
         #[doc = "Memory mapping selection"]
         #[must_use]
         #[inline(always)]
@@ -190,15 +190,15 @@ pub mod regs {
             self.0 = (self.0 & !(0x03 << 10usize)) | (((val as u32) & 0x03) << 10usize);
         }
     }
-    impl Default for Memrm {
+    impl Default for Memrmp {
         #[inline(always)]
-        fn default() -> Memrm {
-            Memrm(0)
+        fn default() -> Memrmp {
+            Memrmp(0)
         }
     }
-    impl core::fmt::Debug for Memrm {
+    impl core::fmt::Debug for Memrmp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Memrm")
+            f.debug_struct("Memrmp")
                 .field("mem_mode", &self.mem_mode())
                 .field("fb_mode", &self.fb_mode())
                 .field("swp_fmc", &self.swp_fmc())
@@ -206,11 +206,11 @@ pub mod regs {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Memrm {
+    impl defmt::Format for Memrmp {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Memrm {{ mem_mode: {=u8:?}, fb_mode: {=bool:?}, swp_fmc: {=u8:?} }}",
+                "Memrmp {{ mem_mode: {=u8:?}, fb_mode: {=bool:?}, swp_fmc: {=u8:?} }}",
                 self.mem_mode(),
                 self.fb_mode(),
                 self.swp_fmc()

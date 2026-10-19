@@ -631,6 +631,36 @@
         "address": 536870912,
         "size": 262144
       }
+    ],
+    [
+      {
+        "name": "BANK_1",
+        "kind": "flash",
+        "address": 134217728,
+        "size": 131072,
+        "settings": {
+          "erase_size": 2048,
+          "write_size": 8,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "BANK_2",
+        "kind": "flash",
+        "address": 134348800,
+        "size": 131072,
+        "settings": {
+          "erase_size": 2048,
+          "write_size": 8,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "SRAM",
+        "kind": "ram",
+        "address": 536870912,
+        "size": 262144
+      }
     ]
   ],
   "docs": [
@@ -1816,7 +1846,7 @@
           "address": 1073881088,
           "registers": {
             "kind": "flash",
-            "version": "l5",
+            "version": "v4_l5",
             "block": "FLASH"
           },
           "rcc": {

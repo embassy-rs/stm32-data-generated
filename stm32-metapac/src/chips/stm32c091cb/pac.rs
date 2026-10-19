@@ -192,7 +192,7 @@ pub mod dbgmcu;
 pub mod dmamux;
 #[path = "../../peripherals/exti_c0.rs"]
 pub mod exti;
-#[path = "../../peripherals/flash_c0.rs"]
+#[path = "../../peripherals/flash_v4_c0.rs"]
 pub mod flash;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;

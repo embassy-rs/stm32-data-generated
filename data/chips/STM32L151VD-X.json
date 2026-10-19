@@ -1258,7 +1258,7 @@
       {
         "name": "BANK_2",
         "kind": "flash",
-        "address": 134414336,
+        "address": 134479872,
         "size": 196608,
         "settings": {
           "erase_size": 256,
@@ -2177,7 +2177,7 @@
           "address": 1073888256,
           "registers": {
             "kind": "flash",
-            "version": "l1",
+            "version": "v3_l1",
             "block": "FLASH"
           },
           "rcc": {

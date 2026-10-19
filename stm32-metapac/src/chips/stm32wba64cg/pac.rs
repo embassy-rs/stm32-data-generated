@@ -452,7 +452,7 @@ pub mod dbgmcu;
 pub mod desig;
 #[path = "../../peripherals/exti_l5.rs"]
 pub mod exti;
-#[path = "../../peripherals/flash_wba.rs"]
+#[path = "../../peripherals/flash_v4_wba.rs"]
 pub mod flash;
 #[path = "../../peripherals/gpdma_v1.rs"]
 pub mod gpdma;

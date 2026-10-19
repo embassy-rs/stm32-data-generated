@@ -920,12 +920,6 @@
         "size": 131072
       },
       {
-        "name": "SRAM4",
-        "kind": "ram",
-        "address": 604372992,
-        "size": 73728
-      },
-      {
         "name": "AHB_SRAM1",
         "kind": "ram",
         "address": 805306368,
@@ -2088,7 +2082,7 @@
           "address": 1375739904,
           "registers": {
             "kind": "flash",
-            "version": "h7rs",
+            "version": "v5_h7rs",
             "block": "FLASH"
           },
           "interrupts": [

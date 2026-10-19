@@ -1943,7 +1943,7 @@
           "address": 1073881088,
           "registers": {
             "kind": "flash",
-            "version": "l4",
+            "version": "v4_l4",
             "block": "FLASH"
           },
           "rcc": {

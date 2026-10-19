@@ -455,7 +455,7 @@ pub mod dma;
 pub mod eth;
 #[path = "../../peripherals/exti_v1.rs"]
 pub mod exti;
-#[path = "../../peripherals/flash_f4.rs"]
+#[path = "../../peripherals/flash_v2_f4.rs"]
 pub mod flash;
 #[path = "../../peripherals/fsmc_v1x3.rs"]
 pub mod fsmc;

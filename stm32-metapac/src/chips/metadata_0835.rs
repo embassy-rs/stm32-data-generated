@@ -709,7 +709,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40022000,
         registers: Some(PeripheralRegisters {
             kind: "flash",
-            version: "u0",
+            version: "v4_u0",
             block: "FLASH",
             ir: &flash::REGISTERS,
         }),
@@ -729,7 +729,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         triggers: &[],
-        interrupts: &[],
+        interrupts: &[PeripheralInterrupt {
+            signal: "GLOBAL",
+            interrupt: "FLASH_ECC",
+        }],
         afio: None,
     },
     Peripheral {
@@ -4614,7 +4617,7 @@ pub mod dbgmcu;
 pub mod dmamux;
 #[path = "../registers/exti_u0.rs"]
 pub mod exti;
-#[path = "../registers/flash_u0.rs"]
+#[path = "../registers/flash_v4_u0.rs"]
 pub mod flash;
 #[path = "../registers/gpio_v2.rs"]
 pub mod gpio;

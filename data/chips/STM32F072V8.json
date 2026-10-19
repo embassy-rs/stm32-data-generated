@@ -1225,7 +1225,7 @@
         "size": 65536,
         "settings": {
           "erase_size": 2048,
-          "write_size": 4,
+          "write_size": 2,
           "erase_value": 255
         }
       },
@@ -2130,7 +2130,7 @@
           "address": 1073881088,
           "registers": {
             "kind": "flash",
-            "version": "f0",
+            "version": "v1_f0",
             "block": "FLASH"
           },
           "rcc": {

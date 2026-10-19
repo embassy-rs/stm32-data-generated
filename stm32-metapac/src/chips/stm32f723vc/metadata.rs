@@ -12,7 +12,7 @@ pub static METADATA: Metadata = Metadata {
             size: 65536,
             settings: Some(FlashSettings {
                 erase_size: 16384,
-                write_size: 16,
+                write_size: 4,
                 erase_value: 255,
             }),
         },
@@ -23,7 +23,7 @@ pub static METADATA: Metadata = Metadata {
             size: 65536,
             settings: Some(FlashSettings {
                 erase_size: 65536,
-                write_size: 16,
+                write_size: 4,
                 erase_value: 255,
             }),
         },
@@ -34,7 +34,18 @@ pub static METADATA: Metadata = Metadata {
             size: 131072,
             settings: Some(FlashSettings {
                 erase_size: 131072,
-                write_size: 16,
+                write_size: 4,
+                erase_value: 255,
+            }),
+        },
+        MemoryRegion {
+            name: "OTP",
+            kind: MemoryRegionKind::Flash,
+            address: 0x1ff07800,
+            size: 528,
+            settings: Some(FlashSettings {
+                erase_size: 0,
+                write_size: 4,
                 erase_value: 255,
             }),
         },

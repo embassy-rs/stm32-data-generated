@@ -942,7 +942,7 @@
           "address": 1073881088,
           "registers": {
             "kind": "flash",
-            "version": "c5",
+            "version": "v5_c5",
             "block": "FLASH"
           },
           "interrupts": [

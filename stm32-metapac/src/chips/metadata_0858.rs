@@ -918,7 +918,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x40022000,
         registers: Some(PeripheralRegisters {
             kind: "flash",
-            version: "u3",
+            version: "v4_u3",
             block: "FLASH",
             ir: &flash::REGISTERS,
         }),
@@ -7968,7 +7968,7 @@ pub mod dlyb;
 pub mod exti;
 #[path = "../registers/fdcanram_v1.rs"]
 pub mod fdcanram;
-#[path = "../registers/flash_u3.rs"]
+#[path = "../registers/flash_v4_u3.rs"]
 pub mod flash;
 #[path = "../registers/gpdma_v1.rs"]
 pub mod gpdma;

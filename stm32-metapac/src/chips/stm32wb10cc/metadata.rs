@@ -13,7 +13,7 @@ pub static METADATA: Metadata = Metadata {
             settings: Some(FlashSettings {
                 erase_size: 2048,
                 write_size: 8,
-                erase_value: 0,
+                erase_value: 255,
             }),
         },
         MemoryRegion {

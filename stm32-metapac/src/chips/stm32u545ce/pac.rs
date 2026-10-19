@@ -652,7 +652,7 @@ pub mod dlyb;
 pub mod exti;
 #[path = "../../peripherals/fdcanram_v1.rs"]
 pub mod fdcanram;
-#[path = "../../peripherals/flash_u5.rs"]
+#[path = "../../peripherals/flash_v4_u5.rs"]
 pub mod flash;
 #[path = "../../peripherals/fmac_v1.rs"]
 pub mod fmac;

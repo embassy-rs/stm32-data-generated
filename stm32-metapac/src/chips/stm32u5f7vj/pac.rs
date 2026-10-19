@@ -752,7 +752,7 @@ pub mod dlyb;
 pub mod dma2d;
 #[path = "../../peripherals/exti_u5.rs"]
 pub mod exti;
-#[path = "../../peripherals/flash_u5.rs"]
+#[path = "../../peripherals/flash_v4_u5.rs"]
 pub mod flash;
 #[path = "../../peripherals/fmac_v1.rs"]
 pub mod fmac;

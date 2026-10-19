@@ -3780,7 +3780,7 @@
           "address": 1073888256,
           "registers": {
             "kind": "flash",
-            "version": "f2",
+            "version": "v2_f2",
             "block": "FLASH"
           },
           "interrupts": [

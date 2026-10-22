@@ -18,24 +18,40 @@
       {
         "name": "DHR12R",
         "description": "channel 12-bit right-aligned data holding register",
+        "array": {
+          "len": 1,
+          "stride": 12
+        },
         "byte_offset": 8,
         "fieldset": "DHR12R"
       },
       {
         "name": "DHR12L",
         "description": "channel 12-bit left-aligned data holding register",
+        "array": {
+          "len": 1,
+          "stride": 12
+        },
         "byte_offset": 12,
         "fieldset": "DHR12L"
       },
       {
         "name": "DHR8R",
         "description": "channel 8-bit right-aligned data holding register",
+        "array": {
+          "len": 1,
+          "stride": 12
+        },
         "byte_offset": 16,
         "fieldset": "DHR8R"
       },
       {
         "name": "DOR",
         "description": "channel data output register",
+        "array": {
+          "len": 1,
+          "stride": 4
+        },
         "byte_offset": 44,
         "access": "Read",
         "fieldset": "DOR"
@@ -61,6 +77,10 @@
       {
         "name": "SHSR",
         "description": "sample and hold sample time register",
+        "array": {
+          "len": 1,
+          "stride": 4
+        },
         "byte_offset": 64,
         "fieldset": "SHSR"
       },
@@ -85,7 +105,11 @@
         "name": "OTRIM",
         "description": "channel offset trimming value",
         "bit_offset": 0,
-        "bit_size": 5
+        "bit_size": 5,
+        "array": {
+          "len": 1,
+          "stride": 16
+        }
       }
     ]
   },
@@ -96,50 +120,82 @@
         "name": "EN",
         "description": "channel enable",
         "bit_offset": 0,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 1,
+          "stride": 16
+        }
       },
       {
         "name": "TEN",
         "description": "channel trigger enable",
         "bit_offset": 1,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 1,
+          "stride": 16
+        }
       },
       {
         "name": "TSEL",
         "description": "channel trigger selection",
         "bit_offset": 2,
-        "bit_size": 4
+        "bit_size": 4,
+        "array": {
+          "len": 1,
+          "stride": 16
+        }
       },
       {
         "name": "WAVE",
         "description": "channel noise/triangle wave generation enable",
         "bit_offset": 6,
         "bit_size": 2,
+        "array": {
+          "len": 1,
+          "stride": 16
+        },
         "enum": "WAVE"
       },
       {
         "name": "MAMP",
         "description": "channel mask/amplitude selector",
         "bit_offset": 8,
-        "bit_size": 4
+        "bit_size": 4,
+        "array": {
+          "len": 1,
+          "stride": 16
+        }
       },
       {
         "name": "DMAEN",
         "description": "channel DMA enable",
         "bit_offset": 12,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 1,
+          "stride": 16
+        }
       },
       {
         "name": "DMAUDRIE",
         "description": "channel DMA Underrun Interrupt enable",
         "bit_offset": 13,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 1,
+          "stride": 16
+        }
       },
       {
         "name": "CEN",
         "description": "DAC channel calibration enable",
         "bit_offset": 14,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 1,
+          "stride": 16
+        }
       }
     ]
   },
@@ -219,19 +275,31 @@
         "description": "DAC channel mode",
         "bit_offset": 0,
         "bit_size": 3,
+        "array": {
+          "len": 1,
+          "stride": 16
+        },
         "enum": "MODE"
       },
       {
         "name": "DMADOUBLE",
         "description": "channel DMA double data mode.",
         "bit_offset": 8,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 1,
+          "stride": 16
+        }
       },
       {
         "name": "SINFORMAT",
         "description": "enable signed format for DAC channel",
         "bit_offset": 9,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 1,
+          "stride": 16
+        }
       },
       {
         "name": "HFSEL",
@@ -248,7 +316,11 @@
         "name": "THOLD",
         "description": "channel hold time",
         "bit_offset": 0,
-        "bit_size": 10
+        "bit_size": 10,
+        "array": {
+          "len": 1,
+          "stride": 16
+        }
       }
     ]
   },
@@ -259,7 +331,11 @@
         "name": "TREFRESH",
         "description": "channel refresh time",
         "bit_offset": 0,
-        "bit_size": 8
+        "bit_size": 8,
+        "array": {
+          "len": 1,
+          "stride": 16
+        }
       }
     ]
   },
@@ -281,31 +357,51 @@
         "name": "DACRDY",
         "description": "channel ready status bit",
         "bit_offset": 11,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 1,
+          "stride": 16
+        }
       },
       {
         "name": "DORSTAT",
         "description": "channel output register status bit",
         "bit_offset": 12,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 1,
+          "stride": 16
+        }
       },
       {
         "name": "DMAUDR",
         "description": "channel DMA underrun flag",
         "bit_offset": 13,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 1,
+          "stride": 16
+        }
       },
       {
         "name": "CAL_FLAG",
         "description": "channel calibration offset status",
         "bit_offset": 14,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 1,
+          "stride": 16
+        }
       },
       {
         "name": "BWST",
         "description": "channel busy writing sample time flag",
         "bit_offset": 15,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 1,
+          "stride": 16
+        }
       }
     ]
   },
@@ -316,7 +412,11 @@
         "name": "SWTRIG",
         "description": "channel software trigger",
         "bit_offset": 0,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 1,
+          "stride": 1
+        }
       }
     ]
   },

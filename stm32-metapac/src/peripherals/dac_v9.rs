@@ -31,23 +31,27 @@ impl Dac {
     }
     #[doc = "channel 12-bit right-aligned data holding register"]
     #[inline(always)]
-    pub const fn dhr12r(self) -> crate::common::Reg<regs::Dhr12r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize) as _) }
+    pub const fn dhr12r(self, n: usize) -> crate::common::Reg<regs::Dhr12r, crate::common::RW> {
+        assert!(n < 1usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x08usize + n * 12usize) as _) }
     }
     #[doc = "channel 12-bit left-aligned data holding register"]
     #[inline(always)]
-    pub const fn dhr12l(self) -> crate::common::Reg<regs::Dhr12l, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize) as _) }
+    pub const fn dhr12l(self, n: usize) -> crate::common::Reg<regs::Dhr12l, crate::common::RW> {
+        assert!(n < 1usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0cusize + n * 12usize) as _) }
     }
     #[doc = "channel 8-bit right-aligned data holding register"]
     #[inline(always)]
-    pub const fn dhr8r(self) -> crate::common::Reg<regs::Dhr8r, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize) as _) }
+    pub const fn dhr8r(self, n: usize) -> crate::common::Reg<regs::Dhr8r, crate::common::RW> {
+        assert!(n < 1usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x10usize + n * 12usize) as _) }
     }
     #[doc = "channel data output register"]
     #[inline(always)]
-    pub const fn dor(self) -> crate::common::Reg<regs::Dor, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize) as _) }
+    pub const fn dor(self, n: usize) -> crate::common::Reg<regs::Dor, crate::common::R> {
+        assert!(n < 1usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x2cusize + n * 4usize) as _) }
     }
     #[doc = "status register"]
     #[inline(always)]
@@ -66,8 +70,9 @@ impl Dac {
     }
     #[doc = "sample and hold sample time register"]
     #[inline(always)]
-    pub const fn shsr(self) -> crate::common::Reg<regs::Shsr, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize) as _) }
+    pub const fn shsr(self, n: usize) -> crate::common::Reg<regs::Shsr, crate::common::RW> {
+        assert!(n < 1usize);
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize + n * 4usize) as _) }
     }
     #[doc = "sample and hold hold time register"]
     #[inline(always)]
@@ -89,14 +94,18 @@ pub mod regs {
         #[doc = "channel offset trimming value"]
         #[must_use]
         #[inline(always)]
-        pub const fn otrim(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0x1f;
+        pub const fn otrim(&self, n: usize) -> u8 {
+            assert!(n < 1usize);
+            let offs = 0usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x1f;
             val as u8
         }
         #[doc = "channel offset trimming value"]
         #[inline(always)]
-        pub const fn set_otrim(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x1f << 0usize)) | (((val as u32) & 0x1f) << 0usize);
+        pub const fn set_otrim(&mut self, n: usize, val: u8) {
+            assert!(n < 1usize);
+            let offs = 0usize + n * 16usize;
+            self.0 = (self.0 & !(0x1f << offs)) | (((val as u32) & 0x1f) << offs);
         }
     }
     impl Default for Ccr {
@@ -107,13 +116,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Ccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ccr").field("otrim", &self.otrim()).finish()
+            f.debug_struct("Ccr").field("otrim[0]", &self.otrim(0usize)).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ccr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Ccr {{ otrim: {=u8:?} }}", self.otrim())
+            defmt::write!(f, "Ccr {{ otrim[0]: {=u8:?} }}", self.otrim(0usize))
         }
     }
     #[doc = "control register"]
@@ -124,98 +133,130 @@ pub mod regs {
         #[doc = "channel enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn en(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
+        pub const fn en(&self, n: usize) -> bool {
+            assert!(n < 1usize);
+            let offs = 0usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "channel enable"]
         #[inline(always)]
-        pub const fn set_en(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        pub const fn set_en(&mut self, n: usize, val: bool) {
+            assert!(n < 1usize);
+            let offs = 0usize + n * 16usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "channel trigger enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn ten(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
+        pub const fn ten(&self, n: usize) -> bool {
+            assert!(n < 1usize);
+            let offs = 1usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "channel trigger enable"]
         #[inline(always)]
-        pub const fn set_ten(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        pub const fn set_ten(&mut self, n: usize, val: bool) {
+            assert!(n < 1usize);
+            let offs = 1usize + n * 16usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "channel trigger selection"]
         #[must_use]
         #[inline(always)]
-        pub const fn tsel(&self) -> u8 {
-            let val = (self.0 >> 2usize) & 0x0f;
+        pub const fn tsel(&self, n: usize) -> u8 {
+            assert!(n < 1usize);
+            let offs = 2usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x0f;
             val as u8
         }
         #[doc = "channel trigger selection"]
         #[inline(always)]
-        pub const fn set_tsel(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 2usize)) | (((val as u32) & 0x0f) << 2usize);
+        pub const fn set_tsel(&mut self, n: usize, val: u8) {
+            assert!(n < 1usize);
+            let offs = 2usize + n * 16usize;
+            self.0 = (self.0 & !(0x0f << offs)) | (((val as u32) & 0x0f) << offs);
         }
         #[doc = "channel noise/triangle wave generation enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn wave(&self) -> super::vals::Wave {
-            let val = (self.0 >> 6usize) & 0x03;
+        pub const fn wave(&self, n: usize) -> super::vals::Wave {
+            assert!(n < 1usize);
+            let offs = 6usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x03;
             super::vals::Wave::from_bits(val as u8)
         }
         #[doc = "channel noise/triangle wave generation enable"]
         #[inline(always)]
-        pub const fn set_wave(&mut self, val: super::vals::Wave) {
-            self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
+        pub const fn set_wave(&mut self, n: usize, val: super::vals::Wave) {
+            assert!(n < 1usize);
+            let offs = 6usize + n * 16usize;
+            self.0 = (self.0 & !(0x03 << offs)) | (((val.to_bits() as u32) & 0x03) << offs);
         }
         #[doc = "channel mask/amplitude selector"]
         #[must_use]
         #[inline(always)]
-        pub const fn mamp(&self) -> u8 {
-            let val = (self.0 >> 8usize) & 0x0f;
+        pub const fn mamp(&self, n: usize) -> u8 {
+            assert!(n < 1usize);
+            let offs = 8usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x0f;
             val as u8
         }
         #[doc = "channel mask/amplitude selector"]
         #[inline(always)]
-        pub const fn set_mamp(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 8usize)) | (((val as u32) & 0x0f) << 8usize);
+        pub const fn set_mamp(&mut self, n: usize, val: u8) {
+            assert!(n < 1usize);
+            let offs = 8usize + n * 16usize;
+            self.0 = (self.0 & !(0x0f << offs)) | (((val as u32) & 0x0f) << offs);
         }
         #[doc = "channel DMA enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn dmaen(&self) -> bool {
-            let val = (self.0 >> 12usize) & 0x01;
+        pub const fn dmaen(&self, n: usize) -> bool {
+            assert!(n < 1usize);
+            let offs = 12usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "channel DMA enable"]
         #[inline(always)]
-        pub const fn set_dmaen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        pub const fn set_dmaen(&mut self, n: usize, val: bool) {
+            assert!(n < 1usize);
+            let offs = 12usize + n * 16usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "channel DMA Underrun Interrupt enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn dmaudrie(&self) -> bool {
-            let val = (self.0 >> 13usize) & 0x01;
+        pub const fn dmaudrie(&self, n: usize) -> bool {
+            assert!(n < 1usize);
+            let offs = 13usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "channel DMA Underrun Interrupt enable"]
         #[inline(always)]
-        pub const fn set_dmaudrie(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        pub const fn set_dmaudrie(&mut self, n: usize, val: bool) {
+            assert!(n < 1usize);
+            let offs = 13usize + n * 16usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "DAC channel calibration enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn cen(&self) -> bool {
-            let val = (self.0 >> 14usize) & 0x01;
+        pub const fn cen(&self, n: usize) -> bool {
+            assert!(n < 1usize);
+            let offs = 14usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "DAC channel calibration enable"]
         #[inline(always)]
-        pub const fn set_cen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        pub const fn set_cen(&mut self, n: usize, val: bool) {
+            assert!(n < 1usize);
+            let offs = 14usize + n * 16usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Cr {
@@ -227,14 +268,14 @@ pub mod regs {
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
-                .field("en", &self.en())
-                .field("ten", &self.ten())
-                .field("tsel", &self.tsel())
-                .field("wave", &self.wave())
-                .field("mamp", &self.mamp())
-                .field("dmaen", &self.dmaen())
-                .field("dmaudrie", &self.dmaudrie())
-                .field("cen", &self.cen())
+                .field("en[0]", &self.en(0usize))
+                .field("ten[0]", &self.ten(0usize))
+                .field("tsel[0]", &self.tsel(0usize))
+                .field("wave[0]", &self.wave(0usize))
+                .field("mamp[0]", &self.mamp(0usize))
+                .field("dmaen[0]", &self.dmaen(0usize))
+                .field("dmaudrie[0]", &self.dmaudrie(0usize))
+                .field("cen[0]", &self.cen(0usize))
                 .finish()
         }
     }
@@ -243,15 +284,15 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Cr {{ en: {=bool:?}, ten: {=bool:?}, tsel: {=u8:?}, wave: {:?}, mamp: {=u8:?}, dmaen: {=bool:?}, dmaudrie: {=bool:?}, cen: {=bool:?} }}",
-                self.en(),
-                self.ten(),
-                self.tsel(),
-                self.wave(),
-                self.mamp(),
-                self.dmaen(),
-                self.dmaudrie(),
-                self.cen()
+                "Cr {{ en[0]: {=bool:?}, ten[0]: {=bool:?}, tsel[0]: {=u8:?}, wave[0]: {:?}, mamp[0]: {=u8:?}, dmaen[0]: {=bool:?}, dmaudrie[0]: {=bool:?}, cen[0]: {=bool:?} }}",
+                self.en(0usize),
+                self.ten(0usize),
+                self.tsel(0usize),
+                self.wave(0usize),
+                self.mamp(0usize),
+                self.dmaen(0usize),
+                self.dmaudrie(0usize),
+                self.cen(0usize)
             )
         }
     }
@@ -463,38 +504,50 @@ pub mod regs {
         #[doc = "DAC channel mode"]
         #[must_use]
         #[inline(always)]
-        pub const fn mode(&self) -> super::vals::Mode {
-            let val = (self.0 >> 0usize) & 0x07;
+        pub const fn mode(&self, n: usize) -> super::vals::Mode {
+            assert!(n < 1usize);
+            let offs = 0usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x07;
             super::vals::Mode::from_bits(val as u8)
         }
         #[doc = "DAC channel mode"]
         #[inline(always)]
-        pub const fn set_mode(&mut self, val: super::vals::Mode) {
-            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
+        pub const fn set_mode(&mut self, n: usize, val: super::vals::Mode) {
+            assert!(n < 1usize);
+            let offs = 0usize + n * 16usize;
+            self.0 = (self.0 & !(0x07 << offs)) | (((val.to_bits() as u32) & 0x07) << offs);
         }
         #[doc = "channel DMA double data mode."]
         #[must_use]
         #[inline(always)]
-        pub const fn dmadouble(&self) -> bool {
-            let val = (self.0 >> 8usize) & 0x01;
+        pub const fn dmadouble(&self, n: usize) -> bool {
+            assert!(n < 1usize);
+            let offs = 8usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "channel DMA double data mode."]
         #[inline(always)]
-        pub const fn set_dmadouble(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
+        pub const fn set_dmadouble(&mut self, n: usize, val: bool) {
+            assert!(n < 1usize);
+            let offs = 8usize + n * 16usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "enable signed format for DAC channel"]
         #[must_use]
         #[inline(always)]
-        pub const fn sinformat(&self) -> bool {
-            let val = (self.0 >> 9usize) & 0x01;
+        pub const fn sinformat(&self, n: usize) -> bool {
+            assert!(n < 1usize);
+            let offs = 9usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "enable signed format for DAC channel"]
         #[inline(always)]
-        pub const fn set_sinformat(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        pub const fn set_sinformat(&mut self, n: usize, val: bool) {
+            assert!(n < 1usize);
+            let offs = 9usize + n * 16usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "high frequency interface mode selection"]
         #[must_use]
@@ -518,9 +571,9 @@ pub mod regs {
     impl core::fmt::Debug for Mcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mcr")
-                .field("mode", &self.mode())
-                .field("dmadouble", &self.dmadouble())
-                .field("sinformat", &self.sinformat())
+                .field("mode[0]", &self.mode(0usize))
+                .field("dmadouble[0]", &self.dmadouble(0usize))
+                .field("sinformat[0]", &self.sinformat(0usize))
                 .field("hfsel", &self.hfsel())
                 .finish()
         }
@@ -530,10 +583,10 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Mcr {{ mode: {:?}, dmadouble: {=bool:?}, sinformat: {=bool:?}, hfsel: {=u8:?} }}",
-                self.mode(),
-                self.dmadouble(),
-                self.sinformat(),
+                "Mcr {{ mode[0]: {:?}, dmadouble[0]: {=bool:?}, sinformat[0]: {=bool:?}, hfsel: {=u8:?} }}",
+                self.mode(0usize),
+                self.dmadouble(0usize),
+                self.sinformat(0usize),
                 self.hfsel()
             )
         }
@@ -546,14 +599,18 @@ pub mod regs {
         #[doc = "channel hold time"]
         #[must_use]
         #[inline(always)]
-        pub const fn thold(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0x03ff;
+        pub const fn thold(&self, n: usize) -> u16 {
+            assert!(n < 1usize);
+            let offs = 0usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x03ff;
             val as u16
         }
         #[doc = "channel hold time"]
         #[inline(always)]
-        pub const fn set_thold(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x03ff << 0usize)) | (((val as u32) & 0x03ff) << 0usize);
+        pub const fn set_thold(&mut self, n: usize, val: u16) {
+            assert!(n < 1usize);
+            let offs = 0usize + n * 16usize;
+            self.0 = (self.0 & !(0x03ff << offs)) | (((val as u32) & 0x03ff) << offs);
         }
     }
     impl Default for Shhr {
@@ -564,13 +621,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Shhr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Shhr").field("thold", &self.thold()).finish()
+            f.debug_struct("Shhr").field("thold[0]", &self.thold(0usize)).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Shhr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Shhr {{ thold: {=u16:?} }}", self.thold())
+            defmt::write!(f, "Shhr {{ thold[0]: {=u16:?} }}", self.thold(0usize))
         }
     }
     #[doc = "sample and hold refresh time register"]
@@ -581,14 +638,18 @@ pub mod regs {
         #[doc = "channel refresh time"]
         #[must_use]
         #[inline(always)]
-        pub const fn trefresh(&self) -> u8 {
-            let val = (self.0 >> 0usize) & 0xff;
+        pub const fn trefresh(&self, n: usize) -> u8 {
+            assert!(n < 1usize);
+            let offs = 0usize + n * 16usize;
+            let val = (self.0 >> offs) & 0xff;
             val as u8
         }
         #[doc = "channel refresh time"]
         #[inline(always)]
-        pub const fn set_trefresh(&mut self, val: u8) {
-            self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
+        pub const fn set_trefresh(&mut self, n: usize, val: u8) {
+            assert!(n < 1usize);
+            let offs = 0usize + n * 16usize;
+            self.0 = (self.0 & !(0xff << offs)) | (((val as u32) & 0xff) << offs);
         }
     }
     impl Default for Shrr {
@@ -599,13 +660,15 @@ pub mod regs {
     }
     impl core::fmt::Debug for Shrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Shrr").field("trefresh", &self.trefresh()).finish()
+            f.debug_struct("Shrr")
+                .field("trefresh[0]", &self.trefresh(0usize))
+                .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Shrr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Shrr {{ trefresh: {=u8:?} }}", self.trefresh())
+            defmt::write!(f, "Shrr {{ trefresh[0]: {=u8:?} }}", self.trefresh(0usize))
         }
     }
     #[doc = "sample and hold sample time register"]
@@ -651,62 +714,82 @@ pub mod regs {
         #[doc = "channel ready status bit"]
         #[must_use]
         #[inline(always)]
-        pub const fn dacrdy(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
+        pub const fn dacrdy(&self, n: usize) -> bool {
+            assert!(n < 1usize);
+            let offs = 11usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "channel ready status bit"]
         #[inline(always)]
-        pub const fn set_dacrdy(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        pub const fn set_dacrdy(&mut self, n: usize, val: bool) {
+            assert!(n < 1usize);
+            let offs = 11usize + n * 16usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "channel output register status bit"]
         #[must_use]
         #[inline(always)]
-        pub const fn dorstat(&self) -> bool {
-            let val = (self.0 >> 12usize) & 0x01;
+        pub const fn dorstat(&self, n: usize) -> bool {
+            assert!(n < 1usize);
+            let offs = 12usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "channel output register status bit"]
         #[inline(always)]
-        pub const fn set_dorstat(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        pub const fn set_dorstat(&mut self, n: usize, val: bool) {
+            assert!(n < 1usize);
+            let offs = 12usize + n * 16usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "channel DMA underrun flag"]
         #[must_use]
         #[inline(always)]
-        pub const fn dmaudr(&self) -> bool {
-            let val = (self.0 >> 13usize) & 0x01;
+        pub const fn dmaudr(&self, n: usize) -> bool {
+            assert!(n < 1usize);
+            let offs = 13usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "channel DMA underrun flag"]
         #[inline(always)]
-        pub const fn set_dmaudr(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        pub const fn set_dmaudr(&mut self, n: usize, val: bool) {
+            assert!(n < 1usize);
+            let offs = 13usize + n * 16usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "channel calibration offset status"]
         #[must_use]
         #[inline(always)]
-        pub const fn cal_flag(&self) -> bool {
-            let val = (self.0 >> 14usize) & 0x01;
+        pub const fn cal_flag(&self, n: usize) -> bool {
+            assert!(n < 1usize);
+            let offs = 14usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "channel calibration offset status"]
         #[inline(always)]
-        pub const fn set_cal_flag(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        pub const fn set_cal_flag(&mut self, n: usize, val: bool) {
+            assert!(n < 1usize);
+            let offs = 14usize + n * 16usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "channel busy writing sample time flag"]
         #[must_use]
         #[inline(always)]
-        pub const fn bwst(&self) -> bool {
-            let val = (self.0 >> 15usize) & 0x01;
+        pub const fn bwst(&self, n: usize) -> bool {
+            assert!(n < 1usize);
+            let offs = 15usize + n * 16usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "channel busy writing sample time flag"]
         #[inline(always)]
-        pub const fn set_bwst(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        pub const fn set_bwst(&mut self, n: usize, val: bool) {
+            assert!(n < 1usize);
+            let offs = 15usize + n * 16usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Sr {
@@ -718,11 +801,11 @@ pub mod regs {
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
-                .field("dacrdy", &self.dacrdy())
-                .field("dorstat", &self.dorstat())
-                .field("dmaudr", &self.dmaudr())
-                .field("cal_flag", &self.cal_flag())
-                .field("bwst", &self.bwst())
+                .field("dacrdy[0]", &self.dacrdy(0usize))
+                .field("dorstat[0]", &self.dorstat(0usize))
+                .field("dmaudr[0]", &self.dmaudr(0usize))
+                .field("cal_flag[0]", &self.cal_flag(0usize))
+                .field("bwst[0]", &self.bwst(0usize))
                 .finish()
         }
     }
@@ -731,12 +814,12 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Sr {{ dacrdy: {=bool:?}, dorstat: {=bool:?}, dmaudr: {=bool:?}, cal_flag: {=bool:?}, bwst: {=bool:?} }}",
-                self.dacrdy(),
-                self.dorstat(),
-                self.dmaudr(),
-                self.cal_flag(),
-                self.bwst()
+                "Sr {{ dacrdy[0]: {=bool:?}, dorstat[0]: {=bool:?}, dmaudr[0]: {=bool:?}, cal_flag[0]: {=bool:?}, bwst[0]: {=bool:?} }}",
+                self.dacrdy(0usize),
+                self.dorstat(0usize),
+                self.dmaudr(0usize),
+                self.cal_flag(0usize),
+                self.bwst(0usize)
             )
         }
     }
@@ -748,14 +831,18 @@ pub mod regs {
         #[doc = "channel software trigger"]
         #[must_use]
         #[inline(always)]
-        pub const fn swtrig(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
+        pub const fn swtrig(&self, n: usize) -> bool {
+            assert!(n < 1usize);
+            let offs = 0usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "channel software trigger"]
         #[inline(always)]
-        pub const fn set_swtrig(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+        pub const fn set_swtrig(&mut self, n: usize, val: bool) {
+            assert!(n < 1usize);
+            let offs = 0usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
     impl Default for Swtrigr {
@@ -766,13 +853,15 @@ pub mod regs {
     }
     impl core::fmt::Debug for Swtrigr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Swtrigr").field("swtrig", &self.swtrig()).finish()
+            f.debug_struct("Swtrigr")
+                .field("swtrig[0]", &self.swtrig(0usize))
+                .finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Swtrigr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Swtrigr {{ swtrig: {=bool:?} }}", self.swtrig())
+            defmt::write!(f, "Swtrigr {{ swtrig[0]: {=bool:?} }}", self.swtrig(0usize))
         }
     }
 }

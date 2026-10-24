@@ -5193,6 +5193,11 @@
             },
             {
               "pin": "PA12",
+              "signal": "DE",
+              "af": 3
+            },
+            {
+              "pin": "PA12",
               "signal": "RTS",
               "af": 3
             },
@@ -6356,7 +6361,13 @@
               "register": "AHB3ENR",
               "field": "RIFSCEN"
             }
-          }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "IAC"
+            }
+          ]
         },
         {
           "name": "RISAF1",
@@ -10397,12 +10408,22 @@
             },
             {
               "pin": "PE9",
+              "signal": "DE",
+              "af": 8
+            },
+            {
+              "pin": "PE9",
               "signal": "RTS",
               "af": 8
             },
             {
               "pin": "PF10",
               "signal": "RX",
+              "af": 8
+            },
+            {
+              "pin": "PG1",
+              "signal": "DE",
               "af": 8
             },
             {
@@ -10487,6 +10508,11 @@
             {
               "pin": "PE1",
               "signal": "TX",
+              "af": 8
+            },
+            {
+              "pin": "PF0",
+              "signal": "DE",
               "af": 8
             },
             {
@@ -10754,6 +10780,11 @@
             },
             {
               "pin": "PA12",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PA12",
               "signal": "RTS",
               "af": 7
             },
@@ -10804,6 +10835,11 @@
             },
             {
               "pin": "PF15",
+              "signal": "DE",
+              "af": 4
+            },
+            {
+              "pin": "PF15",
               "signal": "RTS",
               "af": 4
             },
@@ -10843,6 +10879,85 @@
           ]
         },
         {
+          "name": "USART10",
+          "address": 1107303424,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": {
+              "register": "CCIPR14",
+              "field": "USART10SEL"
+            },
+            "enable": {
+              "register": "APB2ENR",
+              "field": "USART10EN"
+            },
+            "reset": {
+              "register": "APB2RSTR",
+              "field": "USART10RST"
+            }
+          },
+          "pins": [
+            {
+              "pin": "PD14",
+              "signal": "RX",
+              "af": 6
+            },
+            {
+              "pin": "PD15",
+              "signal": "TX",
+              "af": 6
+            },
+            {
+              "pin": "PD3",
+              "signal": "RX",
+              "af": 6
+            },
+            {
+              "pin": "PE15",
+              "signal": "CK",
+              "af": 6
+            },
+            {
+              "pin": "PG14",
+              "signal": "RTS",
+              "af": 6
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "USART10"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dma": "GPDMA1",
+              "request": 125
+            },
+            {
+              "signal": "RX",
+              "dma": "HPDMA1",
+              "request": 125
+            },
+            {
+              "signal": "TX",
+              "dma": "GPDMA1",
+              "request": 126
+            },
+            {
+              "signal": "TX",
+              "dma": "HPDMA1",
+              "request": 126
+            }
+          ]
+        },
+        {
           "name": "USART2",
           "address": 1073759232,
           "registers": {
@@ -10878,6 +10993,11 @@
             },
             {
               "pin": "PA1",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PA1",
               "signal": "RTS",
               "af": 7
             },
@@ -10908,6 +11028,11 @@
             },
             {
               "pin": "PF3",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PF3",
               "signal": "RTS",
               "af": 7
             },
@@ -10920,6 +11045,11 @@
               "pin": "PF6",
               "signal": "RX",
               "af": 7
+            },
+            {
+              "pin": "PG14",
+              "signal": "DE",
+              "af": 8
             },
             {
               "pin": "PG14",
@@ -11077,12 +11207,22 @@
             },
             {
               "pin": "PG13",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PG13",
               "signal": "RTS",
               "af": 7
             },
             {
               "pin": "PG15",
               "signal": "CK",
+              "af": 7
+            },
+            {
+              "pin": "PG2",
+              "signal": "DE",
               "af": 7
             },
             {
@@ -11172,6 +11312,11 @@
             {
               "pin": "PD3",
               "signal": "CTS",
+              "af": 7
+            },
+            {
+              "pin": "PD4",
+              "signal": "DE",
               "af": 7
             },
             {

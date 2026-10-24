@@ -1,5 +1,5 @@
-include!("../metadata_0858.rs");
-use crate::metadata::PeripheralRccKernelClock::{Clock, Mux};
+include!("../metadata_0879.rs");
+use crate::metadata::PeripheralRccKernelClock::{Clock, Mux, PrescaledMux};
 pub static METADATA: Metadata = Metadata {
     name: "STM32U3B5WI",
     family: "STM32U3",

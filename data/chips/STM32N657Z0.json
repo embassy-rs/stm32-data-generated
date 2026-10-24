@@ -1869,6 +1869,161 @@
           }
         },
         {
+          "name": "ETH1",
+          "address": 1208180736,
+          "registers": {
+            "kind": "eth",
+            "version": "v2a",
+            "block": "ETH"
+          },
+          "rcc": {
+            "bus_clock": "HCLK5",
+            "kernel_clock": {
+              "register": "CCIPR2",
+              "field": "ETH1CLKSEL"
+            },
+            "enable": {
+              "register": "AHB5ENR",
+              "field": "ETH1EN"
+            },
+            "reset": {
+              "register": "AHB5RSTR",
+              "field": "ETH1RST"
+            }
+          },
+          "pins": [
+            {
+              "pin": "PD1",
+              "signal": "MDC",
+              "af": 11
+            },
+            {
+              "pin": "PF10",
+              "signal": "CRS_DV",
+              "af": 11
+            },
+            {
+              "pin": "PF10",
+              "signal": "RGMII_RX_CTL",
+              "af": 11
+            },
+            {
+              "pin": "PF10",
+              "signal": "RX_DV",
+              "af": 11
+            },
+            {
+              "pin": "PF11",
+              "signal": "RGMII_TX_CTL",
+              "af": 11
+            },
+            {
+              "pin": "PF11",
+              "signal": "TX_EN",
+              "af": 11
+            },
+            {
+              "pin": "PF12",
+              "signal": "RGMII_TXD0",
+              "af": 11
+            },
+            {
+              "pin": "PF12",
+              "signal": "TXD0",
+              "af": 11
+            },
+            {
+              "pin": "PF13",
+              "signal": "RGMII_TXD1",
+              "af": 11
+            },
+            {
+              "pin": "PF13",
+              "signal": "TXD1",
+              "af": 11
+            },
+            {
+              "pin": "PF14",
+              "signal": "RGMII_RXD0",
+              "af": 11
+            },
+            {
+              "pin": "PF14",
+              "signal": "RXD0",
+              "af": 11
+            },
+            {
+              "pin": "PF15",
+              "signal": "RGMII_RXD1",
+              "af": 11
+            },
+            {
+              "pin": "PF15",
+              "signal": "RXD1",
+              "af": 11
+            },
+            {
+              "pin": "PF2",
+              "signal": "RGMII_CLK125",
+              "af": 11
+            },
+            {
+              "pin": "PF3",
+              "signal": "PPS_OUT",
+              "af": 11
+            },
+            {
+              "pin": "PF4",
+              "signal": "MDIO",
+              "af": 11
+            },
+            {
+              "pin": "PF5",
+              "signal": "CLK",
+              "af": 11
+            },
+            {
+              "pin": "PF7",
+              "signal": "REF_CLK",
+              "af": 11
+            },
+            {
+              "pin": "PF7",
+              "signal": "RGMII_RX_CLK",
+              "af": 11
+            },
+            {
+              "pin": "PF7",
+              "signal": "RX_CLK",
+              "af": 11
+            },
+            {
+              "pin": "PF8",
+              "signal": "RGMII_RXD2",
+              "af": 11
+            },
+            {
+              "pin": "PF8",
+              "signal": "RXD2",
+              "af": 11
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "ETH1"
+            },
+            {
+              "signal": "LPI",
+              "interrupt": "ETH1"
+            },
+            {
+              "signal": "WKUP",
+              "interrupt": "ETH1"
+            }
+          ]
+        },
+        {
           "name": "EXTI",
           "address": 1174556672,
           "registers": {
@@ -3338,6 +3493,11 @@
             },
             {
               "pin": "PA12",
+              "signal": "DE",
+              "af": 3
+            },
+            {
+              "pin": "PA12",
               "signal": "RTS",
               "af": 3
             },
@@ -4371,7 +4531,13 @@
               "register": "AHB3ENR",
               "field": "RIFSCEN"
             }
-          }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "IAC"
+            }
+          ]
         },
         {
           "name": "RISAF1",
@@ -4913,134 +5079,6 @@
           ]
         },
         {
-          "name": "SAI2",
-          "address": 1107319808,
-          "registers": {
-            "kind": "sai",
-            "version": "n6",
-            "block": "SAI"
-          },
-          "rcc": {
-            "bus_clock": "PCLK2",
-            "kernel_clock": {
-              "register": "CCIPR7",
-              "field": "SAI2SEL"
-            },
-            "enable": {
-              "register": "APB2ENR",
-              "field": "SAI2EN"
-            },
-            "reset": {
-              "register": "APB2RSTR",
-              "field": "SAI2RST"
-            }
-          },
-          "pins": [
-            {
-              "pin": "PA0",
-              "signal": "SD_B",
-              "af": 10
-            },
-            {
-              "pin": "PA1",
-              "signal": "MCLK_B",
-              "af": 10
-            },
-            {
-              "pin": "PA12",
-              "signal": "FS_B",
-              "af": 10
-            },
-            {
-              "pin": "PA2",
-              "signal": "SCK_B",
-              "af": 10
-            },
-            {
-              "pin": "PB7",
-              "signal": "MCLK_B",
-              "af": 10
-            },
-            {
-              "pin": "PE0",
-              "signal": "MCLK_A",
-              "af": 10
-            },
-            {
-              "pin": "PE12",
-              "signal": "SCK_B",
-              "af": 10
-            },
-            {
-              "pin": "PE13",
-              "signal": "FS_B",
-              "af": 10
-            },
-            {
-              "pin": "PE14",
-              "signal": "MCLK_B",
-              "af": 10
-            },
-            {
-              "pin": "PE7",
-              "signal": "SD_B",
-              "af": 10
-            },
-            {
-              "pin": "PF11",
-              "signal": "SD_B",
-              "af": 10
-            },
-            {
-              "pin": "PF5",
-              "signal": "SD_A",
-              "af": 10
-            },
-            {
-              "pin": "PG13",
-              "signal": "FS_A",
-              "af": 10
-            },
-            {
-              "pin": "PG2",
-              "signal": "MCLK_B",
-              "af": 10
-            }
-          ],
-          "interrupts": [
-            {
-              "signal": "A",
-              "interrupt": "SAI2_A"
-            },
-            {
-              "signal": "B",
-              "interrupt": "SAI2_B"
-            }
-          ],
-          "dma_channels": [
-            {
-              "signal": "A",
-              "dma": "GPDMA1",
-              "request": 93
-            },
-            {
-              "signal": "A",
-              "dma": "HPDMA1",
-              "request": 93
-            },
-            {
-              "signal": "B",
-              "dma": "GPDMA1",
-              "request": 94
-            },
-            {
-              "signal": "B",
-              "dma": "HPDMA1",
-              "request": 94
-            }
-          ]
-        },
-        {
           "name": "SPI1",
           "address": 1107308544,
           "registers": {
@@ -5066,17 +5104,7 @@
           "pins": [
             {
               "pin": "PA15",
-              "signal": "I2S_WS",
-              "af": 5
-            },
-            {
-              "pin": "PA15",
               "signal": "NSS",
-              "af": 5
-            },
-            {
-              "pin": "PA5",
-              "signal": "I2S_CK",
               "af": 5
             },
             {
@@ -5086,27 +5114,12 @@
             },
             {
               "pin": "PA6",
-              "signal": "I2S_SDI",
-              "af": 5
-            },
-            {
-              "pin": "PA6",
               "signal": "MISO",
               "af": 5
             },
             {
               "pin": "PB4",
-              "signal": "I2S_SDI",
-              "af": 5
-            },
-            {
-              "pin": "PB4",
               "signal": "MISO",
-              "af": 5
-            },
-            {
-              "pin": "PB5",
-              "signal": "I2S_SDO",
               "af": 5
             },
             {
@@ -5116,17 +5129,7 @@
             },
             {
               "pin": "PF4",
-              "signal": "I2S_WS",
-              "af": 5
-            },
-            {
-              "pin": "PF4",
               "signal": "NSS",
-              "af": 5
-            },
-            {
-              "pin": "PF7",
-              "signal": "I2S_CK",
               "af": 5
             },
             {
@@ -5190,17 +5193,7 @@
           "pins": [
             {
               "pin": "PA15",
-              "signal": "I2S_WS",
-              "af": 6
-            },
-            {
-              "pin": "PA15",
               "signal": "NSS",
-              "af": 6
-            },
-            {
-              "pin": "PB4",
-              "signal": "I2S_SDI",
               "af": 6
             },
             {
@@ -5210,18 +5203,8 @@
             },
             {
               "pin": "PB5",
-              "signal": "I2S_SDO",
-              "af": 7
-            },
-            {
-              "pin": "PB5",
               "signal": "MOSI",
               "af": 7
-            },
-            {
-              "pin": "PC10",
-              "signal": "I2S_CK",
-              "af": 6
             },
             {
               "pin": "PC10",
@@ -5230,27 +5213,12 @@
             },
             {
               "pin": "PC11",
-              "signal": "I2S_SDI",
-              "af": 6
-            },
-            {
-              "pin": "PC11",
               "signal": "MISO",
               "af": 6
             },
             {
               "pin": "PC12",
-              "signal": "I2S_SDO",
-              "af": 6
-            },
-            {
-              "pin": "PC12",
               "signal": "MOSI",
-              "af": 6
-            },
-            {
-              "pin": "PF4",
-              "signal": "I2S_WS",
               "af": 6
             },
             {
@@ -5492,28 +5460,13 @@
           "pins": [
             {
               "pin": "PA0",
-              "signal": "I2S_WS",
-              "af": 5
-            },
-            {
-              "pin": "PA0",
               "signal": "NSS",
               "af": 5
             },
             {
               "pin": "PA15",
-              "signal": "I2S_WS",
-              "af": 7
-            },
-            {
-              "pin": "PA15",
               "signal": "NSS",
               "af": 7
-            },
-            {
-              "pin": "PA5",
-              "signal": "I2S_CK",
-              "af": 8
             },
             {
               "pin": "PA5",
@@ -5522,27 +5475,12 @@
             },
             {
               "pin": "PA6",
-              "signal": "I2S_SDI",
-              "af": 8
-            },
-            {
-              "pin": "PA6",
               "signal": "MISO",
               "af": 8
             },
             {
               "pin": "PB4",
-              "signal": "I2S_SDI",
-              "af": 8
-            },
-            {
-              "pin": "PB4",
               "signal": "MISO",
-              "af": 8
-            },
-            {
-              "pin": "PB5",
-              "signal": "I2S_SDO",
               "af": 8
             },
             {
@@ -5552,28 +5490,13 @@
             },
             {
               "pin": "PC12",
-              "signal": "I2S_CK",
-              "af": 5
-            },
-            {
-              "pin": "PC12",
               "signal": "SCK",
               "af": 5
             },
             {
               "pin": "PF4",
-              "signal": "I2S_WS",
-              "af": 8
-            },
-            {
-              "pin": "PF4",
               "signal": "NSS",
               "af": 8
-            },
-            {
-              "pin": "PG14",
-              "signal": "I2S_SDO",
-              "af": 5
             },
             {
               "pin": "PG14",
@@ -6944,6 +6867,11 @@
             },
             {
               "pin": "PE9",
+              "signal": "DE",
+              "af": 8
+            },
+            {
+              "pin": "PE9",
               "signal": "RTS",
               "af": 8
             },
@@ -7108,6 +7036,11 @@
             },
             {
               "pin": "PA12",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PA12",
               "signal": "RTS",
               "af": 7
             },
@@ -7134,6 +7067,11 @@
             {
               "pin": "PF14",
               "signal": "CTS",
+              "af": 4
+            },
+            {
+              "pin": "PF15",
+              "signal": "DE",
               "af": 4
             },
             {
@@ -7272,7 +7210,17 @@
             },
             {
               "pin": "PG13",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PG13",
               "signal": "RTS",
+              "af": 7
+            },
+            {
+              "pin": "PG2",
+              "signal": "DE",
               "af": 7
             },
             {

@@ -2044,6 +2044,96 @@
           ]
         },
         {
+          "name": "SPI2",
+          "address": 1073756160,
+          "registers": {
+            "kind": "spi",
+            "version": "v6",
+            "block": "SPI"
+          },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR1",
+              "field": "SPI2SEL"
+            },
+            "enable": {
+              "register": "APB1ENR1",
+              "field": "SPI2EN"
+            },
+            "reset": {
+              "register": "APB1RSTR1",
+              "field": "SPI2RST"
+            },
+            "stop_mode": "Stop2"
+          },
+          "pins": [
+            {
+              "pin": "PA10",
+              "signal": "NSS",
+              "af": 6
+            },
+            {
+              "pin": "PA9",
+              "signal": "MISO",
+              "af": 5
+            },
+            {
+              "pin": "PA9",
+              "signal": "SCK",
+              "af": 6
+            },
+            {
+              "pin": "PB0",
+              "signal": "MOSI",
+              "af": 5
+            },
+            {
+              "pin": "PB10",
+              "signal": "SCK",
+              "af": 5
+            },
+            {
+              "pin": "PB11",
+              "signal": "RDY",
+              "af": 5
+            },
+            {
+              "pin": "PB12",
+              "signal": "NSS",
+              "af": 6
+            },
+            {
+              "pin": "PB13",
+              "signal": "SCK",
+              "af": 5
+            },
+            {
+              "pin": "PB14",
+              "signal": "MISO",
+              "af": 5
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "SPI2"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dma": "GPDMA1",
+              "request": 52
+            },
+            {
+              "signal": "TX",
+              "dma": "GPDMA1",
+              "request": 53
+            }
+          ]
+        },
+        {
           "name": "SPI3",
           "address": 1174413312,
           "registers": {

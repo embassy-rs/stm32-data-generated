@@ -303,7 +303,7 @@
         {
           "position": "F12",
           "signals": [
-            "VDD"
+            "VDDIO2"
           ]
         },
         {
@@ -1001,7 +1001,7 @@
         {
           "position": "64",
           "signals": [
-            "VDD"
+            "VDDIO2"
           ]
         },
         {

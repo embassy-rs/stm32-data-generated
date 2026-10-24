@@ -313,7 +313,7 @@
         {
           "position": "51",
           "signals": [
-            "VDD"
+            "VDDIO2"
           ]
         },
         {

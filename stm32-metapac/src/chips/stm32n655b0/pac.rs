@@ -863,6 +863,7 @@ pub const TIM1: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4200_0000usiz
 pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4200_1000usize as _) };
 pub const USART6: usart::Usart = unsafe { usart::Usart::from_ptr(0x4200_1400usize as _) };
 pub const UART9: usart::Usart = unsafe { usart::Usart::from_ptr(0x4200_1800usize as _) };
+pub const USART10: usart::Usart = unsafe { usart::Usart::from_ptr(0x4200_1c00usize as _) };
 pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4200_3000usize as _) };
 pub const SPI4: spi::Spi = unsafe { spi::Spi::from_ptr(0x4200_3400usize as _) };
 pub const TIM18: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4200_3c00usize as _) };

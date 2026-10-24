@@ -798,16 +798,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "TX",
                 af: Some(9),
             },
-            PeripheralPin {
-                pin: "PH13",
-                signal: "TX",
-                af: Some(9),
-            },
-            PeripheralPin {
-                pin: "PI9",
-                signal: "RX",
-                af: Some(9),
-            },
         ],
         dma_channels: &[],
         triggers: &[],
@@ -968,54 +958,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         dma_channels: &[],
         triggers: &[],
         interrupts: &[],
-        afio: None,
-    },
-    Peripheral {
-        name: "CRYP",
-        address: 0x50060000,
-        registers: Some(PeripheralRegisters {
-            kind: "cryp",
-            version: "v2",
-            block: "CRYP",
-            ir: &cryp::REGISTERS,
-        }),
-        rcc: Some(PeripheralRcc {
-            bus_clock: "HCLK2",
-            kernel_clock: Clock("HCLK2"),
-            enable: Some(PeripheralRccRegister {
-                register: "AHB2ENR",
-                field: "CRYPEN",
-            }),
-            reset: Some(PeripheralRccRegister {
-                register: "AHB2RSTR",
-                field: "CRYPRST",
-            }),
-            stop_mode: StopMode::Stop1,
-        }),
-        pins: &[],
-        dma_channels: &[
-            PeripheralDmaChannel {
-                signal: "OUT",
-                channel: Some("DMA2_CH5"),
-                dmamux: None,
-                remap: &[],
-                dma: None,
-                request: Some(2),
-            },
-            PeripheralDmaChannel {
-                signal: "IN",
-                channel: Some("DMA2_CH6"),
-                dmamux: None,
-                remap: &[],
-                dma: None,
-                request: Some(2),
-            },
-        ],
-        triggers: &[],
-        interrupts: &[PeripheralInterrupt {
-            signal: "GLOBAL",
-            interrupt: "CRYP",
-        }],
         afio: None,
     },
     Peripheral {
@@ -1303,91 +1245,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PG9",
                 signal: "VSYNC",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PH10",
-                signal: "D1",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PH11",
-                signal: "D2",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PH12",
-                signal: "D3",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PH14",
-                signal: "D4",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PH15",
-                signal: "D11",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PH6",
-                signal: "D8",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PH7",
-                signal: "D9",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PH8",
-                signal: "HSYNC",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PH9",
-                signal: "D0",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PI0",
-                signal: "D13",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PI1",
-                signal: "D8",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PI2",
-                signal: "D9",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PI3",
-                signal: "D10",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PI4",
-                signal: "D5",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PI5",
-                signal: "VSYNC",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PI6",
-                signal: "D6",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PI7",
-                signal: "D7",
                 af: Some(13),
             },
         ],
@@ -1715,31 +1572,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PG8",
                 signal: "PPS_OUT",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PH2",
-                signal: "CRS",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PH3",
-                signal: "COL",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PH6",
-                signal: "RXD2",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PH7",
-                signal: "RXD3",
-                af: Some(11),
-            },
-            PeripheralPin {
-                pin: "PI10",
-                signal: "RX_ER",
                 af: Some(11),
             },
         ],
@@ -2314,121 +2146,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "NE2",
                 af: Some(12),
             },
-            PeripheralPin {
-                pin: "PH10",
-                signal: "D18",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PH11",
-                signal: "D19",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PH12",
-                signal: "D20",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PH13",
-                signal: "D21",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PH14",
-                signal: "D22",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PH15",
-                signal: "D23",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PH2",
-                signal: "SDCKE0",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PH3",
-                signal: "SDNE0",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PH5",
-                signal: "SDNWE",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PH6",
-                signal: "SDNE1",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PH7",
-                signal: "SDCKE1",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PH8",
-                signal: "D16",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PH9",
-                signal: "D17",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PI0",
-                signal: "D24",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PI1",
-                signal: "D25",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PI10",
-                signal: "D31",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PI2",
-                signal: "D26",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PI3",
-                signal: "D27",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PI4",
-                signal: "NBL2",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PI5",
-                signal: "NBL3",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PI6",
-                signal: "D28",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PI7",
-                signal: "D29",
-                af: Some(12),
-            },
-            PeripheralPin {
-                pin: "PI9",
-                signal: "D30",
-                af: Some(12),
-            },
         ],
         dma_channels: &[],
         triggers: &[],
@@ -2747,41 +2464,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         afio: None,
     },
     Peripheral {
-        name: "HASH",
-        address: 0x50060400,
-        registers: Some(PeripheralRegisters {
-            kind: "hash",
-            version: "v2",
-            block: "HASH",
-            ir: &hash::REGISTERS,
-        }),
-        rcc: Some(PeripheralRcc {
-            bus_clock: "HCLK2",
-            kernel_clock: Clock("HCLK2"),
-            enable: Some(PeripheralRccRegister {
-                register: "AHB2ENR",
-                field: "HASHEN",
-            }),
-            reset: None,
-            stop_mode: StopMode::Stop1,
-        }),
-        pins: &[],
-        dma_channels: &[PeripheralDmaChannel {
-            signal: "IN",
-            channel: Some("DMA2_CH7"),
-            dmamux: None,
-            remap: &[],
-            dma: None,
-            request: Some(2),
-        }],
-        triggers: &[],
-        interrupts: &[PeripheralInterrupt {
-            signal: "GLOBAL",
-            interrupt: "HASH_RNG",
-        }],
-        afio: None,
-    },
-    Peripheral {
         name: "I2C1",
         address: 0x40005400,
         registers: Some(PeripheralRegisters {
@@ -2936,21 +2618,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "SMBA",
                 af: Some(4),
             },
-            PeripheralPin {
-                pin: "PH4",
-                signal: "SCL",
-                af: Some(4),
-            },
-            PeripheralPin {
-                pin: "PH5",
-                signal: "SDA",
-                af: Some(4),
-            },
-            PeripheralPin {
-                pin: "PH6",
-                signal: "SMBA",
-                af: Some(4),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -3038,21 +2705,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PC9",
                 signal: "SDA",
-                af: Some(4),
-            },
-            PeripheralPin {
-                pin: "PH7",
-                signal: "SCL",
-                af: Some(4),
-            },
-            PeripheralPin {
-                pin: "PH8",
-                signal: "SDA",
-                af: Some(4),
-            },
-            PeripheralPin {
-                pin: "PH9",
-                signal: "SMBA",
                 af: Some(4),
             },
         ],
@@ -3156,21 +2808,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PF15",
-                signal: "SDA",
-                af: Some(4),
-            },
-            PeripheralPin {
-                pin: "PH10",
-                signal: "SMBA",
-                af: Some(4),
-            },
-            PeripheralPin {
-                pin: "PH11",
-                signal: "SCL",
-                af: Some(4),
-            },
-            PeripheralPin {
-                pin: "PH12",
                 signal: "SDA",
                 af: Some(4),
             },
@@ -3297,11 +2934,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PG14",
                 signal: "ETR",
-                af: Some(3),
-            },
-            PeripheralPin {
-                pin: "PH2",
-                signal: "IN2",
                 af: Some(3),
             },
         ],
@@ -3536,241 +3168,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "CLK",
                 af: Some(14),
             },
-            PeripheralPin {
-                pin: "PH10",
-                signal: "R4",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PH11",
-                signal: "R5",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PH12",
-                signal: "R6",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PH13",
-                signal: "G2",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PH14",
-                signal: "G3",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PH15",
-                signal: "G4",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PH2",
-                signal: "R0",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PH3",
-                signal: "R1",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PH8",
-                signal: "R2",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PH9",
-                signal: "R3",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PI0",
-                signal: "G5",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PI1",
-                signal: "G6",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PI10",
-                signal: "HSYNC",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PI12",
-                signal: "HSYNC",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PI13",
-                signal: "VSYNC",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PI14",
-                signal: "CLK",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PI15",
-                signal: "R0",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PI2",
-                signal: "G7",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PI4",
-                signal: "B4",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PI5",
-                signal: "B5",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PI6",
-                signal: "B6",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PI7",
-                signal: "B7",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PI9",
-                signal: "VSYNC",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PJ0",
-                signal: "R1",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PJ1",
-                signal: "R2",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PJ10",
-                signal: "G3",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PJ11",
-                signal: "G4",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PJ12",
-                signal: "B0",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PJ13",
-                signal: "B1",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PJ14",
-                signal: "B2",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PJ15",
-                signal: "B3",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PJ2",
-                signal: "R3",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PJ3",
-                signal: "R4",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PJ4",
-                signal: "R5",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PJ5",
-                signal: "R6",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PJ6",
-                signal: "R7",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PJ7",
-                signal: "G0",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PJ8",
-                signal: "G1",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PJ9",
-                signal: "G2",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PK0",
-                signal: "G5",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PK1",
-                signal: "G6",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PK2",
-                signal: "G7",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PK3",
-                signal: "B4",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PK4",
-                signal: "B5",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PK5",
-                signal: "B6",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PK6",
-                signal: "B7",
-                af: Some(14),
-            },
-            PeripheralPin {
-                pin: "PK7",
-                signal: "DE",
-                af: Some(14),
-            },
         ],
         dma_channels: &[],
         triggers: &[],
@@ -3937,16 +3334,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "BK2_IO2",
                 af: Some(9),
             },
-            PeripheralPin {
-                pin: "PH2",
-                signal: "BK2_IO0",
-                af: Some(9),
-            },
-            PeripheralPin {
-                pin: "PH3",
-                signal: "BK2_IO1",
-                af: Some(9),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -4053,7 +3440,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         triggers: &[],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
-            interrupt: "HASH_RNG",
+            interrupt: "RNG",
         }],
         afio: None,
     },
@@ -4107,16 +3494,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PC13",
-                signal: "TS",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PI8",
-                signal: "TAMP2",
-                af: None,
-            },
-            PeripheralPin {
-                pin: "PI8",
                 signal: "TS",
                 af: None,
             },
@@ -4402,36 +3779,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PG9",
                 signal: "FS_B",
-                af: Some(10),
-            },
-            PeripheralPin {
-                pin: "PH2",
-                signal: "SCK_B",
-                af: Some(10),
-            },
-            PeripheralPin {
-                pin: "PH3",
-                signal: "MCLK_B",
-                af: Some(10),
-            },
-            PeripheralPin {
-                pin: "PI4",
-                signal: "MCLK_A",
-                af: Some(10),
-            },
-            PeripheralPin {
-                pin: "PI5",
-                signal: "SCK_A",
-                af: Some(10),
-            },
-            PeripheralPin {
-                pin: "PI6",
-                signal: "SD_A",
-                af: Some(10),
-            },
-            PeripheralPin {
-                pin: "PI7",
-                signal: "FS_A",
                 af: Some(10),
             },
         ],
@@ -4991,41 +4338,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "SCK",
                 af: Some(5),
             },
-            PeripheralPin {
-                pin: "PI0",
-                signal: "I2S_WS",
-                af: Some(5),
-            },
-            PeripheralPin {
-                pin: "PI0",
-                signal: "NSS",
-                af: Some(5),
-            },
-            PeripheralPin {
-                pin: "PI1",
-                signal: "I2S_CK",
-                af: Some(5),
-            },
-            PeripheralPin {
-                pin: "PI1",
-                signal: "SCK",
-                af: Some(5),
-            },
-            PeripheralPin {
-                pin: "PI2",
-                signal: "MISO",
-                af: Some(5),
-            },
-            PeripheralPin {
-                pin: "PI3",
-                signal: "I2S_SD",
-                af: Some(5),
-            },
-            PeripheralPin {
-                pin: "PI3",
-                signal: "MOSI",
-                af: Some(5),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -5387,21 +4699,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PF9",
                 signal: "MOSI",
-                af: Some(5),
-            },
-            PeripheralPin {
-                pin: "PH5",
-                signal: "NSS",
-                af: Some(5),
-            },
-            PeripheralPin {
-                pin: "PH6",
-                signal: "SCK",
-                af: Some(5),
-            },
-            PeripheralPin {
-                pin: "PH7",
-                signal: "MISO",
                 af: Some(5),
             },
         ],
@@ -5987,16 +5284,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PB15",
-                signal: "CH2",
-                af: Some(9),
-            },
-            PeripheralPin {
-                pin: "PH6",
-                signal: "CH1",
-                af: Some(9),
-            },
-            PeripheralPin {
-                pin: "PH9",
                 signal: "CH2",
                 af: Some(9),
             },
@@ -6711,26 +5998,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "CH4",
                 af: Some(2),
             },
-            PeripheralPin {
-                pin: "PH10",
-                signal: "CH1",
-                af: Some(2),
-            },
-            PeripheralPin {
-                pin: "PH11",
-                signal: "CH2",
-                af: Some(2),
-            },
-            PeripheralPin {
-                pin: "PH12",
-                signal: "CH3",
-                af: Some(2),
-            },
-            PeripheralPin {
-                pin: "PI0",
-                signal: "CH4",
-                af: Some(2),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -7075,56 +6342,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PC9",
                 signal: "CH4",
-                af: Some(3),
-            },
-            PeripheralPin {
-                pin: "PH13",
-                signal: "CH1N",
-                af: Some(3),
-            },
-            PeripheralPin {
-                pin: "PH14",
-                signal: "CH2N",
-                af: Some(3),
-            },
-            PeripheralPin {
-                pin: "PH15",
-                signal: "CH3N",
-                af: Some(3),
-            },
-            PeripheralPin {
-                pin: "PI1",
-                signal: "BKIN2",
-                af: Some(3),
-            },
-            PeripheralPin {
-                pin: "PI2",
-                signal: "CH4",
-                af: Some(3),
-            },
-            PeripheralPin {
-                pin: "PI3",
-                signal: "ETR",
-                af: Some(3),
-            },
-            PeripheralPin {
-                pin: "PI4",
-                signal: "BKIN",
-                af: Some(3),
-            },
-            PeripheralPin {
-                pin: "PI5",
-                signal: "CH1",
-                af: Some(3),
-            },
-            PeripheralPin {
-                pin: "PI6",
-                signal: "CH2",
-                af: Some(3),
-            },
-            PeripheralPin {
-                pin: "PI7",
-                signal: "CH3",
                 af: Some(3),
             },
         ],
@@ -8368,16 +7585,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "ULPI_NXT",
                 af: Some(10),
             },
-            PeripheralPin {
-                pin: "PH4",
-                signal: "ULPI_NXT",
-                af: Some(10),
-            },
-            PeripheralPin {
-                pin: "PI11",
-                signal: "ULPI_DIR",
-                af: Some(10),
-            },
         ],
         dma_channels: &[],
         triggers: &[],
@@ -8771,11 +7978,7 @@ pub(crate) static INTERRUPTS: &[Interrupt] = &[
         number: 78,
     },
     Interrupt {
-        name: "CRYP",
-        number: 79,
-    },
-    Interrupt {
-        name: "HASH_RNG",
+        name: "RNG",
         number: 80,
     },
     Interrupt {
@@ -9092,60 +8295,6 @@ pub(crate) static PINS: &[Pin] = &[
     Pin { name: "PG15" },
     Pin { name: "PH0" },
     Pin { name: "PH1" },
-    Pin { name: "PH2" },
-    Pin { name: "PH3" },
-    Pin { name: "PH4" },
-    Pin { name: "PH5" },
-    Pin { name: "PH6" },
-    Pin { name: "PH7" },
-    Pin { name: "PH8" },
-    Pin { name: "PH9" },
-    Pin { name: "PH10" },
-    Pin { name: "PH11" },
-    Pin { name: "PH12" },
-    Pin { name: "PH13" },
-    Pin { name: "PH14" },
-    Pin { name: "PH15" },
-    Pin { name: "PI0" },
-    Pin { name: "PI1" },
-    Pin { name: "PI2" },
-    Pin { name: "PI3" },
-    Pin { name: "PI4" },
-    Pin { name: "PI5" },
-    Pin { name: "PI6" },
-    Pin { name: "PI7" },
-    Pin { name: "PI8" },
-    Pin { name: "PI9" },
-    Pin { name: "PI10" },
-    Pin { name: "PI11" },
-    Pin { name: "PI12" },
-    Pin { name: "PI13" },
-    Pin { name: "PI14" },
-    Pin { name: "PI15" },
-    Pin { name: "PJ0" },
-    Pin { name: "PJ1" },
-    Pin { name: "PJ2" },
-    Pin { name: "PJ3" },
-    Pin { name: "PJ4" },
-    Pin { name: "PJ5" },
-    Pin { name: "PJ6" },
-    Pin { name: "PJ7" },
-    Pin { name: "PJ8" },
-    Pin { name: "PJ9" },
-    Pin { name: "PJ10" },
-    Pin { name: "PJ11" },
-    Pin { name: "PJ12" },
-    Pin { name: "PJ13" },
-    Pin { name: "PJ14" },
-    Pin { name: "PJ15" },
-    Pin { name: "PK0" },
-    Pin { name: "PK1" },
-    Pin { name: "PK2" },
-    Pin { name: "PK3" },
-    Pin { name: "PK4" },
-    Pin { name: "PK5" },
-    Pin { name: "PK6" },
-    Pin { name: "PK7" },
 ];
 #[path = "../registers/adc_v1_f4.rs"]
 pub mod adc;
@@ -9157,8 +8306,6 @@ pub mod can;
 pub mod cec;
 #[path = "../registers/crc_v3.rs"]
 pub mod crc;
-#[path = "../registers/cryp_v2.rs"]
-pub mod cryp;
 #[path = "../registers/dac_v2.rs"]
 pub mod dac;
 #[path = "../registers/dbgmcu_f7.rs"]
@@ -9179,8 +8326,6 @@ pub mod flash;
 pub mod fmc;
 #[path = "../registers/gpio_v2.rs"]
 pub mod gpio;
-#[path = "../registers/hash_v2.rs"]
-pub mod hash;
 #[path = "../registers/i2c_v2.rs"]
 pub mod i2c;
 #[path = "../registers/iwdg_v2.rs"]

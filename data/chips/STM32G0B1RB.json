@@ -201,7 +201,7 @@
         {
           "position": "D8",
           "signals": [
-            "VDD"
+            "VDDIO2"
           ]
         },
         {
@@ -1041,7 +1041,7 @@
         {
           "position": "41",
           "signals": [
-            "VDD"
+            "VDDIO2"
           ]
         },
         {

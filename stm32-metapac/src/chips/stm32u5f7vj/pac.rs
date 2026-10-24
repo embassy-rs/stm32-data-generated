@@ -692,6 +692,7 @@ pub const DLYB_OCTOSPI1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_f000u
 pub const DLYB_OCTOSPI2: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x420c_f400usize as _) };
 pub const FMC: fsmc::Fsmc = unsafe { fsmc::Fsmc::from_ptr(0x420d_0400usize as _) };
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x420d_1400usize as _) };
+pub const OCTOSPI2: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x420d_2400usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4600_0400usize as _) };
 pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4600_2000usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4600_2400usize as _) };

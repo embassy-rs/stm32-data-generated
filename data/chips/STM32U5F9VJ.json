@@ -4068,6 +4068,43 @@
           ]
         },
         {
+          "name": "OCTOSPI2",
+          "address": 1108157440,
+          "registers": {
+            "kind": "octospi",
+            "version": "v1",
+            "block": "OCTOSPI"
+          },
+          "rcc": {
+            "bus_clock": "HCLK2",
+            "kernel_clock": {
+              "register": "CCIPR2",
+              "field": "OCTOSPISEL"
+            },
+            "enable": {
+              "register": "AHB2ENR2",
+              "field": "OCTOSPI2EN"
+            },
+            "reset": {
+              "register": "AHB2RSTR2",
+              "field": "OCTOSPI2RST"
+            }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "OCTOSPI2"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "OCTOSPI2",
+              "dma": "GPDMA1",
+              "request": 41
+            }
+          ]
+        },
+        {
           "name": "OCTOSPIM",
           "address": 1108099072,
           "registers": {

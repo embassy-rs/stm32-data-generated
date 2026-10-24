@@ -859,7 +859,6 @@ pub const TIM15: timer::Tim2chCmp = unsafe { timer::Tim2chCmp::from_ptr(0x4200_4
 pub const TIM9: timer::Tim2ch = unsafe { timer::Tim2ch::from_ptr(0x4200_4c00usize as _) };
 pub const SPI5: spi::Spi = unsafe { spi::Spi::from_ptr(0x4200_5000usize as _) };
 pub const SAI1: sai::Sai = unsafe { sai::Sai::from_ptr(0x4200_5800usize as _) };
-pub const SAI2: sai::Sai = unsafe { sai::Sai::from_ptr(0x4200_5c00usize as _) };
 pub const RAMCFG: ramcfg::Ramcfg = unsafe { ramcfg::Ramcfg::from_ptr(0x4202_3000usize as _) };
 pub const MDF1: mdf::Mdf = unsafe { mdf::Mdf::from_ptr(0x4202_5000usize as _) };
 pub const ADF1: adf::Adf = unsafe { adf::Adf::from_ptr(0x4202_6000usize as _) };
@@ -938,6 +937,7 @@ pub const MCE4: mce::Mce = unsafe { mce::Mce::from_ptr(0x4802_e000usize as _) };
 pub const GFXMMU: gfxmmu::Gfxmmu = unsafe { gfxmmu::Gfxmmu::from_ptr(0x4803_0000usize as _) };
 pub const GPU2D: gpu2d::Gpu2d = unsafe { gpu2d::Gpu2d::from_ptr(0x4803_4000usize as _) };
 pub const ICACHE: icache::Icache = unsafe { icache::Icache::from_ptr(0x4803_5000usize as _) };
+pub const ETH1: eth::Eth = unsafe { eth::Eth::from_ptr(0x4803_6000usize as _) };
 pub const OTG1PHYCTL: usbphyc::Usbphyc = unsafe { usbphyc::Usbphyc::from_ptr(0x4803_fc00usize as _) };
 pub const USB1_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4804_0000usize as _) };
 pub const USB2_OTG_HS: otg::Otg = unsafe { otg::Otg::from_ptr(0x4808_0000usize as _) };
@@ -977,6 +977,8 @@ pub mod dlybsd;
 pub mod dma2d;
 #[path = "../../peripherals/dts_v1.rs"]
 pub mod dts;
+#[path = "../../peripherals/eth_v2a.rs"]
+pub mod eth;
 #[path = "../../peripherals/exti_n6.rs"]
 pub mod exti;
 #[path = "../../peripherals/fdcanram_v2.rs"]

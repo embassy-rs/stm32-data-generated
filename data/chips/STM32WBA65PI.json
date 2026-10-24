@@ -1,7 +1,7 @@
 {
   "name": "STM32WBA65PI",
   "family": "STM32WBA",
-  "line": "STM32WBx6",
+  "line": "STM32WBAx5",
   "die": "DIE4B0",
   "device_id": 1200,
   "packages": [

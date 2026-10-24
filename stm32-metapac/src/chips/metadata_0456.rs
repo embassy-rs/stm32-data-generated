@@ -1630,11 +1630,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "RXD3",
                 af: Some(11),
             },
-            PeripheralPin {
-                pin: "PI10",
-                signal: "RX_ER",
-                af: Some(11),
-            },
         ],
         dma_channels: &[],
         triggers: &[],
@@ -1818,16 +1813,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
             PeripheralPin {
                 pin: "PH14",
-                signal: "RX",
-                af: Some(9),
-            },
-            PeripheralPin {
-                pin: "PI10",
-                signal: "RX",
-                af: Some(9),
-            },
-            PeripheralPin {
-                pin: "PI9",
                 signal: "RX",
                 af: Some(9),
             },
@@ -5352,11 +5337,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralPin {
                 pin: "PI1",
                 signal: "D8",
-                af: Some(13),
-            },
-            PeripheralPin {
-                pin: "PI10",
-                signal: "D14",
                 af: Some(13),
             },
             PeripheralPin {
@@ -10235,11 +10215,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "RX",
                 af: Some(8),
             },
-            PeripheralPin {
-                pin: "PI9",
-                signal: "RX",
-                af: Some(8),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -12593,8 +12568,6 @@ pub(crate) static PINS: &[Pin] = &[
     Pin { name: "PI6" },
     Pin { name: "PI7" },
     Pin { name: "PI8" },
-    Pin { name: "PI9" },
-    Pin { name: "PI10" },
     Pin { name: "PI11" },
 ];
 #[path = "../registers/adc_v3_g4.rs"]

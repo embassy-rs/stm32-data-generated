@@ -462,7 +462,7 @@
         {
           "position": "76",
           "signals": [
-            "V12PHYHS"
+            "V12_PHYHS"
           ]
         },
         {
@@ -3470,10 +3470,6 @@
             {
               "pin": "PC1",
               "signal": "TAMP3"
-            },
-            {
-              "pin": "PC1",
-              "signal": "TS"
             },
             {
               "pin": "PC13",
@@ -6833,14 +6829,54 @@
           },
           "pins": [
             {
+              "pin": "PA3",
+              "signal": "ULPI_D0",
+              "af": 10
+            },
+            {
               "pin": "PA4",
               "signal": "SOF",
               "af": 12
             },
             {
+              "pin": "PA5",
+              "signal": "ULPI_CK",
+              "af": 10
+            },
+            {
+              "pin": "PB0",
+              "signal": "ULPI_D1",
+              "af": 10
+            },
+            {
+              "pin": "PB1",
+              "signal": "ULPI_D2",
+              "af": 10
+            },
+            {
+              "pin": "PB10",
+              "signal": "ULPI_D3",
+              "af": 10
+            },
+            {
+              "pin": "PB11",
+              "signal": "ULPI_D4",
+              "af": 10
+            },
+            {
               "pin": "PB12",
               "signal": "ID",
               "af": 12
+            },
+            {
+              "pin": "PB12",
+              "signal": "ULPI_D5",
+              "af": 10
+            },
+            {
+              "pin": "PB13",
+              "signal": "ULPI_D6",
+              "af": 10
             },
             {
               "pin": "PB13",
@@ -6855,6 +6891,26 @@
               "pin": "PB15",
               "signal": "DP",
               "af": 12
+            },
+            {
+              "pin": "PB5",
+              "signal": "ULPI_D7",
+              "af": 10
+            },
+            {
+              "pin": "PC0",
+              "signal": "ULPI_STP",
+              "af": 10
+            },
+            {
+              "pin": "PC2",
+              "signal": "ULPI_DIR",
+              "af": 10
+            },
+            {
+              "pin": "PC3",
+              "signal": "ULPI_NXT",
+              "af": 10
             }
           ],
           "interrupts": [

@@ -775,7 +775,11 @@
             "bus_clock": "HCLK2",
             "kernel_clock": {
               "register": "CCIPR2",
-              "field": "ADCDACSEL"
+              "field": "ADCDACSEL",
+              "prescaler": {
+                "register": "CCIPR2",
+                "field": "ADCDACPRE"
+              }
             },
             "enable": {
               "register": "AHB2ENR",
@@ -876,7 +880,11 @@
             "bus_clock": "HCLK2",
             "kernel_clock": {
               "register": "CCIPR2",
-              "field": "ADCDACSEL"
+              "field": "ADCDACSEL",
+              "prescaler": {
+                "register": "CCIPR2",
+                "field": "ADCDACPRE"
+              }
             },
             "enable": {
               "register": "AHB2ENR",
@@ -976,7 +984,11 @@
             "bus_clock": "HCLK2",
             "kernel_clock": {
               "register": "CCIPR2",
-              "field": "ADCDACSEL"
+              "field": "ADCDACSEL",
+              "prescaler": {
+                "register": "CCIPR2",
+                "field": "ADCDACPRE"
+              }
             },
             "enable": {
               "register": "AHB2ENR",
@@ -1259,7 +1271,11 @@
             "bus_clock": "HCLK2",
             "kernel_clock": {
               "register": "CCIPR2",
-              "field": "ADCDACSEL"
+              "field": "ADCDACSEL",
+              "prescaler": {
+                "register": "CCIPR2",
+                "field": "ADCDACPRE"
+              }
             },
             "enable": {
               "register": "AHB2ENR",

@@ -786,7 +786,7 @@
             {
               "pin": "PC14",
               "signal": "TX",
-              "af": 15
+              "af": 13
             }
           ],
           "interrupts": [

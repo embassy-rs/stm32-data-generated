@@ -1830,11 +1830,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "CH2",
                 af: Some(1),
             },
-            PeripheralPin {
-                pin: "PC6",
-                signal: "CH1",
-                af: Some(1),
-            },
         ],
         dma_channels: &[
             PeripheralDmaChannel {
@@ -2565,7 +2560,6 @@ pub(crate) static PINS: &[Pin] = &[
     Pin { name: "PB7" },
     Pin { name: "PB8" },
     Pin { name: "PB9" },
-    Pin { name: "PC6" },
     Pin { name: "PC14" },
     Pin { name: "PC15" },
     Pin { name: "PF2" },

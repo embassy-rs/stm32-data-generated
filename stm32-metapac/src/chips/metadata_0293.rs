@@ -2706,11 +2706,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 af: None,
             },
             PeripheralPin {
-                pin: "PC1",
-                signal: "TS",
-                af: None,
-            },
-            PeripheralPin {
                 pin: "PC13",
                 signal: "OUT",
                 af: None,
@@ -6776,14 +6771,54 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }),
         pins: &[
             PeripheralPin {
+                pin: "PA3",
+                signal: "ULPI_D0",
+                af: Some(10),
+            },
+            PeripheralPin {
                 pin: "PA4",
                 signal: "SOF",
                 af: Some(12),
             },
             PeripheralPin {
+                pin: "PA5",
+                signal: "ULPI_CK",
+                af: Some(10),
+            },
+            PeripheralPin {
+                pin: "PB0",
+                signal: "ULPI_D1",
+                af: Some(10),
+            },
+            PeripheralPin {
+                pin: "PB1",
+                signal: "ULPI_D2",
+                af: Some(10),
+            },
+            PeripheralPin {
+                pin: "PB10",
+                signal: "ULPI_D3",
+                af: Some(10),
+            },
+            PeripheralPin {
+                pin: "PB11",
+                signal: "ULPI_D4",
+                af: Some(10),
+            },
+            PeripheralPin {
                 pin: "PB12",
                 signal: "ID",
                 af: Some(12),
+            },
+            PeripheralPin {
+                pin: "PB12",
+                signal: "ULPI_D5",
+                af: Some(10),
+            },
+            PeripheralPin {
+                pin: "PB13",
+                signal: "ULPI_D6",
+                af: Some(10),
             },
             PeripheralPin {
                 pin: "PB13",
@@ -6799,6 +6834,36 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 pin: "PB15",
                 signal: "DP",
                 af: Some(12),
+            },
+            PeripheralPin {
+                pin: "PB5",
+                signal: "ULPI_D7",
+                af: Some(10),
+            },
+            PeripheralPin {
+                pin: "PC0",
+                signal: "ULPI_STP",
+                af: Some(10),
+            },
+            PeripheralPin {
+                pin: "PC2",
+                signal: "ULPI_DIR",
+                af: Some(10),
+            },
+            PeripheralPin {
+                pin: "PC3",
+                signal: "ULPI_NXT",
+                af: Some(10),
+            },
+            PeripheralPin {
+                pin: "PH4",
+                signal: "ULPI_NXT",
+                af: Some(10),
+            },
+            PeripheralPin {
+                pin: "PI11",
+                signal: "ULPI_DIR",
+                af: Some(10),
             },
         ],
         dma_channels: &[],

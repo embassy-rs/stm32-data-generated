@@ -840,6 +840,7 @@ mod _vectors {
 }
 pub const TIM2: timer::TimGp32 = unsafe { timer::TimGp32::from_ptr(0x4000_0000usize as _) };
 pub const TIM3: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_0400usize as _) };
+pub const TIM4: timer::TimGp32 = unsafe { timer::TimGp32::from_ptr(0x4000_0800usize as _) };
 pub const TIM6: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1000usize as _) };
 pub const TIM7: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4000_1400usize as _) };
 pub const TIM13: timer::Tim1ch = unsafe { timer::Tim1ch::from_ptr(0x4000_1c00usize as _) };
@@ -849,9 +850,11 @@ pub const TIM10: timer::Tim1ch = unsafe { timer::Tim1ch::from_ptr(0x4000_3000usi
 pub const TIM11: timer::Tim1ch = unsafe { timer::Tim1ch::from_ptr(0x4000_3400usize as _) };
 pub const SPI2: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3800usize as _) };
 pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4000_3c00usize as _) };
+pub const USART2: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4400usize as _) };
 pub const USART3: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4800usize as _) };
 pub const UART4: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_4c00usize as _) };
 pub const UART5: usart::Usart = unsafe { usart::Usart::from_ptr(0x4000_5000usize as _) };
+pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400usize as _) };
 pub const I2C2: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5800usize as _) };
 pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5c00usize as _) };
 pub const I3C1: i3c::I3c = unsafe { i3c::I3c::from_ptr(0x4000_6000usize as _) };
@@ -870,15 +873,16 @@ pub const ADC12_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::fr
 pub const TIM1: timer::TimAdv = unsafe { timer::TimAdv::from_ptr(0x4200_0000usize as _) };
 pub const USART1: usart::Usart = unsafe { usart::Usart::from_ptr(0x4200_1000usize as _) };
 pub const USART6: usart::Usart = unsafe { usart::Usart::from_ptr(0x4200_1400usize as _) };
+pub const USART10: usart::Usart = unsafe { usart::Usart::from_ptr(0x4200_1c00usize as _) };
 pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4200_3000usize as _) };
 pub const SPI4: spi::Spi = unsafe { spi::Spi::from_ptr(0x4200_3400usize as _) };
 pub const TIM18: timer::TimBasic = unsafe { timer::TimBasic::from_ptr(0x4200_3c00usize as _) };
 pub const TIM15: timer::Tim2chCmp = unsafe { timer::Tim2chCmp::from_ptr(0x4200_4000usize as _) };
 pub const TIM16: timer::Tim1chCmp = unsafe { timer::Tim1chCmp::from_ptr(0x4200_4400usize as _) };
+pub const TIM17: timer::Tim1chCmp = unsafe { timer::Tim1chCmp::from_ptr(0x4200_4800usize as _) };
 pub const TIM9: timer::Tim2ch = unsafe { timer::Tim2ch::from_ptr(0x4200_4c00usize as _) };
 pub const SPI5: spi::Spi = unsafe { spi::Spi::from_ptr(0x4200_5000usize as _) };
 pub const SAI1: sai::Sai = unsafe { sai::Sai::from_ptr(0x4200_5800usize as _) };
-pub const SAI2: sai::Sai = unsafe { sai::Sai::from_ptr(0x4200_5c00usize as _) };
 pub const RAMCFG: ramcfg::Ramcfg = unsafe { ramcfg::Ramcfg::from_ptr(0x4202_3000usize as _) };
 pub const MDF1: mdf::Mdf = unsafe { mdf::Mdf::from_ptr(0x4202_5000usize as _) };
 pub const ADF1: adf::Adf = unsafe { adf::Adf::from_ptr(0x4202_6000usize as _) };
@@ -910,6 +914,7 @@ pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4600_0c00u
 pub const SPI6: spi::Spi = unsafe { spi::Spi::from_ptr(0x4600_1400usize as _) };
 pub const I2C4: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4600_1c00usize as _) };
 pub const LPTIM2: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4600_2400usize as _) };
+pub const LPTIM4: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4600_2c00usize as _) };
 pub const VREFBUF: vrefbuf::Vrefbuf = unsafe { vrefbuf::Vrefbuf::from_ptr(0x4600_3c00usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4600_4000usize as _) };
 pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4600_4400usize as _) };
@@ -942,9 +947,12 @@ pub const CSI: csi::Csi = unsafe { csi::Csi::from_ptr(0x4800_6000usize as _) };
 pub const HPDMA1: gpdma::Gpdma = unsafe { gpdma::Gpdma::from_ptr(0x4802_0000usize as _) };
 pub const DMA2D: dma2d::Dma2d = unsafe { dma2d::Dma2d::from_ptr(0x4802_1000usize as _) };
 pub const JPEG: jpeg::Jpeg = unsafe { jpeg::Jpeg::from_ptr(0x4802_3000usize as _) };
+pub const FMC: fmc::Fmc = unsafe { fmc::Fmc::from_ptr(0x4802_4000usize as _) };
 pub const XSPI1: xspi::Xspi = unsafe { xspi::Xspi::from_ptr(0x4802_5000usize as _) };
 pub const PSSI: pssi::Pssi = unsafe { pssi::Pssi::from_ptr(0x4802_6400usize as _) };
+pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4802_6800usize as _) };
 pub const DLYB_SDMMC2: dlybsd::Dlybsd = unsafe { dlybsd::Dlybsd::from_ptr(0x4802_6c00usize as _) };
+pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4802_7000usize as _) };
 pub const DLYB_SDMMC1: dlybsd::Dlybsd = unsafe { dlybsd::Dlybsd::from_ptr(0x4802_8000usize as _) };
 pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x4802_8400usize as _) };
 pub const XSPI2: xspi::Xspi = unsafe { xspi::Xspi::from_ptr(0x4802_a000usize as _) };
@@ -1007,6 +1015,8 @@ pub mod eth;
 pub mod exti;
 #[path = "../../peripherals/fdcanram_v2.rs"]
 pub mod fdcanram;
+#[path = "../../peripherals/fmc_n6.rs"]
+pub mod fmc;
 #[path = "../../peripherals/gfxmmu_n6.rs"]
 pub mod gfxmmu;
 #[path = "../../peripherals/gfxtim_v1.rs"]
@@ -1065,6 +1075,8 @@ pub mod rtc;
 pub mod saes;
 #[path = "../../peripherals/sai_n6.rs"]
 pub mod sai;
+#[path = "../../peripherals/sdmmc_v3.rs"]
+pub mod sdmmc;
 #[path = "../../peripherals/spi_v5.rs"]
 pub mod spi;
 #[path = "../../peripherals/syscfg_n6.rs"]

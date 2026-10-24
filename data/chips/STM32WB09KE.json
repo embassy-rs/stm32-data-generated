@@ -494,6 +494,10 @@
               "af": 0
             },
             {
+              "pin": "PB14",
+              "signal": "SMBA"
+            },
+            {
               "pin": "PB6",
               "signal": "SCL",
               "af": 0

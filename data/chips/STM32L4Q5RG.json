@@ -6412,6 +6412,75 @@
           ]
         },
         {
+          "name": "UART5",
+          "address": 1073762304,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR",
+              "field": "UART5SEL"
+            },
+            "enable": {
+              "register": "APB1ENR1",
+              "field": "UART5EN"
+            },
+            "reset": {
+              "register": "APB1RSTR1",
+              "field": "UART5RST"
+            }
+          },
+          "pins": [
+            {
+              "pin": "PB4",
+              "signal": "DE",
+              "af": 8
+            },
+            {
+              "pin": "PB4",
+              "signal": "RTS",
+              "af": 8
+            },
+            {
+              "pin": "PB5",
+              "signal": "CTS",
+              "af": 8
+            },
+            {
+              "pin": "PC12",
+              "signal": "TX",
+              "af": 8
+            },
+            {
+              "pin": "PD2",
+              "signal": "RX",
+              "af": 8
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "UART5"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "RX",
+              "dmamux": "DMAMUX1",
+              "request": 33
+            },
+            {
+              "signal": "TX",
+              "dmamux": "DMAMUX1",
+              "request": 34
+            }
+          ]
+        },
+        {
           "name": "UID",
           "address": 536835472,
           "registers": {

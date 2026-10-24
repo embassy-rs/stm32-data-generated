@@ -2976,10 +2976,6 @@
               "signal": "TAMP3"
             },
             {
-              "pin": "PC1",
-              "signal": "TS"
-            },
-            {
               "pin": "PC13",
               "signal": "OUT"
             },

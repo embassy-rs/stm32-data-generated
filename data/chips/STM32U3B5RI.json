@@ -2859,7 +2859,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK3",
-            "kernel_clock": "PCLK3",
+            "kernel_clock": {
+              "register": "CCIPR3",
+              "field": "LPTIM34SEL"
+            },
             "enable": {
               "register": "APB3ENR",
               "field": "LPTIM3EN"
@@ -2956,7 +2959,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK3",
-            "kernel_clock": "PCLK3",
+            "kernel_clock": {
+              "register": "CCIPR3",
+              "field": "LPTIM34SEL"
+            },
             "enable": {
               "register": "APB3ENR",
               "field": "LPTIM4EN"

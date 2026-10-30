@@ -96,6 +96,13 @@ pub static METADATA: Metadata = Metadata {
             size: 196608,
             settings: None,
         },
+        MemoryRegion {
+            name: "BKPSRAM",
+            kind: MemoryRegionKind::Ram,
+            address: 0x40024000,
+            size: 4096,
+            settings: None,
+        },
     ]],
     peripherals: PERIPHERALS,
     nvic_priority_bits: Some(4),

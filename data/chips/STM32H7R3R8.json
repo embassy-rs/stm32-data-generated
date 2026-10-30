@@ -2168,7 +2168,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK4",
-            "kernel_clock": "PCLK4",
+            "kernel_clock": {
+              "register": "APB45PERCKSELR",
+              "field": "LPTIM23SEL"
+            },
             "enable": {
               "register": "APB4ENR",
               "field": "LPTIM2EN"
@@ -2250,7 +2253,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK4",
-            "kernel_clock": "PCLK4",
+            "kernel_clock": {
+              "register": "APB45PERCKSELR",
+              "field": "LPTIM23SEL"
+            },
             "enable": {
               "register": "APB4ENR",
               "field": "LPTIM3EN"
@@ -2322,7 +2328,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK4",
-            "kernel_clock": "PCLK4",
+            "kernel_clock": {
+              "register": "APB45PERCKSELR",
+              "field": "LPTIM45SEL"
+            },
             "enable": {
               "register": "APB4ENR",
               "field": "LPTIM4EN"

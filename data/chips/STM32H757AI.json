@@ -5014,7 +5014,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK4",
-            "kernel_clock": "PCLK4",
+            "kernel_clock": {
+              "register": "D3CCIPR",
+              "field": "LPTIM345SEL"
+            },
             "enable": {
               "register": "APB4ENR",
               "field": "LPTIM3EN"
@@ -5049,7 +5052,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK4",
-            "kernel_clock": "PCLK4",
+            "kernel_clock": {
+              "register": "D3CCIPR",
+              "field": "LPTIM345SEL"
+            },
             "enable": {
               "register": "APB4ENR",
               "field": "LPTIM4EN"
@@ -5084,7 +5090,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK4",
-            "kernel_clock": "PCLK4",
+            "kernel_clock": {
+              "register": "D3CCIPR",
+              "field": "LPTIM345SEL"
+            },
             "enable": {
               "register": "APB4ENR",
               "field": "LPTIM5EN"
@@ -15327,7 +15336,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK4",
-            "kernel_clock": "PCLK4",
+            "kernel_clock": {
+              "register": "D3CCIPR",
+              "field": "LPTIM345SEL"
+            },
             "enable": {
               "register": "APB4ENR",
               "field": "LPTIM3EN"
@@ -15362,7 +15374,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK4",
-            "kernel_clock": "PCLK4",
+            "kernel_clock": {
+              "register": "D3CCIPR",
+              "field": "LPTIM345SEL"
+            },
             "enable": {
               "register": "APB4ENR",
               "field": "LPTIM4EN"
@@ -15397,7 +15412,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK4",
-            "kernel_clock": "PCLK4",
+            "kernel_clock": {
+              "register": "D3CCIPR",
+              "field": "LPTIM345SEL"
+            },
             "enable": {
               "register": "APB4ENR",
               "field": "LPTIM5EN"

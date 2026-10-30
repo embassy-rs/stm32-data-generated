@@ -3563,7 +3563,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK4",
-            kernel_clock: Clock("PCLK4"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "APB45PERCKSELR",
+                field: "LPTIM23SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB4ENR",
                 field: "LPTIM2EN",
@@ -3694,7 +3697,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK4",
-            kernel_clock: Clock("PCLK4"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "APB45PERCKSELR",
+                field: "LPTIM23SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB4ENR",
                 field: "LPTIM3EN",
@@ -3776,7 +3782,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK4",
-            kernel_clock: Clock("PCLK4"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "APB45PERCKSELR",
+                field: "LPTIM45SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB4ENR",
                 field: "LPTIM4EN",
@@ -3823,7 +3832,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK4",
-            kernel_clock: Clock("PCLK4"),
+            kernel_clock: Mux(PeripheralRccRegister {
+                register: "APB45PERCKSELR",
+                field: "LPTIM45SEL",
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB4ENR",
                 field: "LPTIM5EN",

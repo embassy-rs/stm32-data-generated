@@ -1,0 +1,2175 @@
+{
+  "name": "STM32WBA25HE",
+  "family": "STM32WBA",
+  "line": "STM32WBAx5",
+  "die": "DIE4B2",
+  "device_id": 1202,
+  "packages": [
+    {
+      "name": "STM32WBA25HEFx",
+      "package": "WLCSP37_SMPS_USB",
+      "pins": [
+        {
+          "position": "A5",
+          "signals": [
+            "OSC_IN"
+          ]
+        },
+        {
+          "position": "A7",
+          "signals": [
+            "VDD11"
+          ]
+        },
+        {
+          "position": "B4",
+          "signals": [
+            "VDDRF"
+          ]
+        },
+        {
+          "position": "B6",
+          "signals": [
+            "VDDRFPA"
+          ]
+        },
+        {
+          "position": "B8",
+          "signals": [
+            "VDDSMPS"
+          ]
+        },
+        {
+          "position": "C3",
+          "signals": [
+            "VDDHPA"
+          ]
+        },
+        {
+          "position": "C5",
+          "signals": [
+            "OSC_OUT"
+          ]
+        },
+        {
+          "position": "C7",
+          "signals": [
+            "VSSSMPS"
+          ]
+        },
+        {
+          "position": "D4",
+          "signals": [
+            "VDDANA"
+          ]
+        },
+        {
+          "position": "D6",
+          "signals": [
+            "VDD"
+          ]
+        },
+        {
+          "position": "D8",
+          "signals": [
+            "VLXSMPS"
+          ]
+        },
+        {
+          "position": "E1",
+          "signals": [
+            "NRST"
+          ]
+        },
+        {
+          "position": "E3",
+          "signals": [
+            "VSSRF"
+          ]
+        },
+        {
+          "position": "E5",
+          "signals": [
+            "VSSRF"
+          ]
+        },
+        {
+          "position": "E7",
+          "signals": [
+            "VSS"
+          ]
+        },
+        {
+          "position": "F2",
+          "signals": [
+            "RF"
+          ]
+        },
+        {
+          "position": "F4",
+          "signals": [
+            "VSSRF"
+          ]
+        },
+        {
+          "position": "F6",
+          "signals": [
+            "PA6"
+          ]
+        },
+        {
+          "position": "F8",
+          "signals": [
+            "PA8"
+          ]
+        },
+        {
+          "position": "G1",
+          "signals": [
+            "PH3"
+          ]
+        },
+        {
+          "position": "G3",
+          "signals": [
+            "PB15"
+          ]
+        },
+        {
+          "position": "G5",
+          "signals": [
+            "PA5"
+          ]
+        },
+        {
+          "position": "G7",
+          "signals": [
+            "VSSA"
+          ]
+        },
+        {
+          "position": "H2",
+          "signals": [
+            "PA12"
+          ]
+        },
+        {
+          "position": "H4",
+          "signals": [
+            "PA13"
+          ]
+        },
+        {
+          "position": "H6",
+          "signals": [
+            "PB3"
+          ]
+        },
+        {
+          "position": "H8",
+          "signals": [
+            "VDDA"
+          ]
+        },
+        {
+          "position": "J3",
+          "signals": [
+            "PA15"
+          ]
+        },
+        {
+          "position": "J5",
+          "signals": [
+            "PC15"
+          ]
+        },
+        {
+          "position": "J7",
+          "signals": [
+            "PB8"
+          ]
+        },
+        {
+          "position": "K2",
+          "signals": [
+            "PA14"
+          ]
+        },
+        {
+          "position": "K4",
+          "signals": [
+            "PC14"
+          ]
+        },
+        {
+          "position": "K6",
+          "signals": [
+            "VSS"
+          ]
+        },
+        {
+          "position": "K8",
+          "signals": [
+            "PB9"
+          ]
+        },
+        {
+          "position": "L3",
+          "signals": [
+            "PB4"
+          ]
+        },
+        {
+          "position": "L5",
+          "signals": [
+            "VDD"
+          ]
+        },
+        {
+          "position": "L7",
+          "signals": [
+            "VDDUSB"
+          ]
+        }
+      ]
+    }
+  ],
+  "memory": [
+    [
+      {
+        "name": "BANK_1",
+        "kind": "flash",
+        "address": 134217728,
+        "size": 524288,
+        "settings": {
+          "erase_size": 8192,
+          "write_size": 16,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "OTP",
+        "kind": "flash",
+        "address": 200855552,
+        "size": 512,
+        "settings": {
+          "erase_size": 0,
+          "write_size": 16,
+          "erase_value": 255
+        }
+      },
+      {
+        "name": "SRAM",
+        "kind": "ram",
+        "address": 536870912,
+        "size": 65536
+      },
+      {
+        "name": "SRAM2",
+        "kind": "ram",
+        "address": 536936448,
+        "size": 32768
+      }
+    ]
+  ],
+  "docs": [],
+  "cores": [
+    {
+      "name": "cm33",
+      "peripherals": [
+        {
+          "name": "ADC4",
+          "address": 1174540288,
+          "registers": {
+            "kind": "adc",
+            "version": "v2_wba",
+            "block": "ADC"
+          },
+          "rcc": {
+            "bus_clock": "HCLK4",
+            "kernel_clock": {
+              "register": "CCIPR3",
+              "field": "ADCSEL"
+            },
+            "enable": {
+              "register": "AHB4ENR",
+              "field": "ADC4EN"
+            },
+            "reset": {
+              "register": "AHB4RSTR",
+              "field": "ADC4RST"
+            },
+            "stop_mode": "Stop2"
+          },
+          "pins": [
+            {
+              "pin": "PA5",
+              "signal": "IN4"
+            },
+            {
+              "pin": "PA6",
+              "signal": "IN3"
+            },
+            {
+              "pin": "PA8",
+              "signal": "IN1"
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "ADC4"
+            }
+          ]
+        },
+        {
+          "name": "ADC4_COMMON",
+          "address": 1174541064
+        },
+        {
+          "name": "AES",
+          "address": 1108082688,
+          "registers": {
+            "kind": "aes",
+            "version": "v3b",
+            "block": "AES"
+          },
+          "rcc": {
+            "bus_clock": "HCLK2",
+            "kernel_clock": "HCLK2",
+            "enable": {
+              "register": "AHB2ENR",
+              "field": "AESEN"
+            },
+            "reset": {
+              "register": "AHB2RSTR",
+              "field": "AESRST"
+            }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "AES"
+            }
+          ]
+        },
+        {
+          "name": "CRC",
+          "address": 1073885184,
+          "registers": {
+            "kind": "crc",
+            "version": "v3",
+            "block": "CRC"
+          },
+          "rcc": {
+            "bus_clock": "HCLK1",
+            "kernel_clock": "HCLK1",
+            "enable": {
+              "register": "AHB1ENR",
+              "field": "CRCEN"
+            },
+            "reset": {
+              "register": "AHB1RSTR",
+              "field": "CRCRST"
+            }
+          }
+        },
+        {
+          "name": "DBGMCU",
+          "address": 3758374912,
+          "registers": {
+            "kind": "dbgmcu",
+            "version": "wba",
+            "block": "DBGMCU"
+          }
+        },
+        {
+          "name": "DESIG",
+          "address": 200856832,
+          "registers": {
+            "kind": "desig",
+            "version": "wba",
+            "block": "DESIG"
+          }
+        },
+        {
+          "name": "EXTI",
+          "address": 1174544384,
+          "registers": {
+            "kind": "exti",
+            "version": "l5",
+            "block": "EXTI"
+          },
+          "interrupts": [
+            {
+              "signal": "EXTI1",
+              "interrupt": "EXTI1"
+            },
+            {
+              "signal": "EXTI10",
+              "interrupt": "EXTI10"
+            },
+            {
+              "signal": "EXTI11",
+              "interrupt": "EXTI11"
+            },
+            {
+              "signal": "EXTI12",
+              "interrupt": "EXTI12"
+            },
+            {
+              "signal": "EXTI13",
+              "interrupt": "EXTI13"
+            },
+            {
+              "signal": "EXTI14",
+              "interrupt": "EXTI14"
+            },
+            {
+              "signal": "EXTI15",
+              "interrupt": "EXTI15"
+            },
+            {
+              "signal": "EXTI2",
+              "interrupt": "EXTI2"
+            },
+            {
+              "signal": "EXTI3",
+              "interrupt": "EXTI3"
+            },
+            {
+              "signal": "EXTI4",
+              "interrupt": "EXTI4"
+            },
+            {
+              "signal": "EXTI5",
+              "interrupt": "EXTI5"
+            },
+            {
+              "signal": "EXTI6",
+              "interrupt": "EXTI6"
+            },
+            {
+              "signal": "EXTI7",
+              "interrupt": "EXTI7"
+            },
+            {
+              "signal": "EXTI8",
+              "interrupt": "EXTI8"
+            },
+            {
+              "signal": "EXTI9",
+              "interrupt": "EXTI9"
+            }
+          ]
+        },
+        {
+          "name": "FLASH",
+          "address": 1073881088,
+          "registers": {
+            "kind": "flash",
+            "version": "v4_wba",
+            "block": "FLASH"
+          },
+          "rcc": {
+            "bus_clock": "HCLK1",
+            "kernel_clock": "HCLK1",
+            "enable": {
+              "register": "AHB1ENR",
+              "field": "FLASHEN"
+            }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "FLASH"
+            }
+          ]
+        },
+        {
+          "name": "GPIOA",
+          "address": 1107427328,
+          "registers": {
+            "kind": "gpio",
+            "version": "v2",
+            "block": "GPIO"
+          },
+          "rcc": {
+            "bus_clock": "HCLK2",
+            "kernel_clock": "HCLK2",
+            "enable": {
+              "register": "AHB2ENR",
+              "field": "GPIOAEN"
+            },
+            "reset": {
+              "register": "AHB2RSTR",
+              "field": "GPIOARST"
+            }
+          }
+        },
+        {
+          "name": "GPIOB",
+          "address": 1107428352,
+          "registers": {
+            "kind": "gpio",
+            "version": "v2",
+            "block": "GPIO"
+          },
+          "rcc": {
+            "bus_clock": "HCLK2",
+            "kernel_clock": "HCLK2",
+            "enable": {
+              "register": "AHB2ENR",
+              "field": "GPIOBEN"
+            },
+            "reset": {
+              "register": "AHB2RSTR",
+              "field": "GPIOBRST"
+            }
+          }
+        },
+        {
+          "name": "GPIOC",
+          "address": 1107429376,
+          "registers": {
+            "kind": "gpio",
+            "version": "v2",
+            "block": "GPIO"
+          },
+          "rcc": {
+            "bus_clock": "HCLK2",
+            "kernel_clock": "HCLK2",
+            "enable": {
+              "register": "AHB2ENR",
+              "field": "GPIOCEN"
+            },
+            "reset": {
+              "register": "AHB2RSTR",
+              "field": "GPIOCRST"
+            }
+          }
+        },
+        {
+          "name": "GPIOH",
+          "address": 1107434496,
+          "registers": {
+            "kind": "gpio",
+            "version": "v2",
+            "block": "GPIO"
+          },
+          "rcc": {
+            "bus_clock": "HCLK2",
+            "kernel_clock": "HCLK2",
+            "enable": {
+              "register": "AHB2ENR",
+              "field": "GPIOHEN"
+            },
+            "reset": {
+              "register": "AHB2RSTR",
+              "field": "GPIOHRST"
+            }
+          }
+        },
+        {
+          "name": "GTZC",
+          "address": 1073947648,
+          "registers": {
+            "kind": "gtzc",
+            "version": "wba",
+            "block": "GTZC_TZSC"
+          }
+        },
+        {
+          "name": "GTZC_MPCBB1",
+          "address": 1073949696,
+          "registers": {
+            "kind": "gtzc",
+            "version": "wba",
+            "block": "MPCBB"
+          }
+        },
+        {
+          "name": "GTZC_MPCBB2",
+          "address": 1073950720,
+          "registers": {
+            "kind": "gtzc",
+            "version": "wba",
+            "block": "MPCBB"
+          }
+        },
+        {
+          "name": "GTZC_TZIC",
+          "address": 1342384128,
+          "registers": {
+            "kind": "gtzc",
+            "version": "wba",
+            "block": "TZIC"
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "GTZC"
+            },
+            {
+              "signal": "GTZC",
+              "interrupt": "GTZC"
+            },
+            {
+              "signal": "ILA",
+              "interrupt": "GTZC"
+            }
+          ]
+        },
+        {
+          "name": "GTZC_TZSC",
+          "address": 1073947648,
+          "registers": {
+            "kind": "gtzc",
+            "version": "wba",
+            "block": "GTZC_TZSC"
+          }
+        },
+        {
+          "name": "HASH",
+          "address": 1108083712,
+          "registers": {
+            "kind": "hash",
+            "version": "v4",
+            "block": "HASH"
+          },
+          "rcc": {
+            "bus_clock": "HCLK2",
+            "kernel_clock": "HCLK2",
+            "enable": {
+              "register": "AHB2ENR",
+              "field": "HASHEN"
+            },
+            "reset": {
+              "register": "AHB2RSTR",
+              "field": "HASHRST"
+            }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "HASH"
+            }
+          ]
+        },
+        {
+          "name": "I2C1",
+          "address": 1073763328,
+          "registers": {
+            "kind": "i2c",
+            "version": "v2",
+            "block": "I2C"
+          },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR1",
+              "field": "I2C1SEL"
+            },
+            "enable": {
+              "register": "APB1ENR1",
+              "field": "I2C1EN"
+            },
+            "reset": {
+              "register": "APB1RSTR1",
+              "field": "I2C1RST"
+            },
+            "stop_mode": "Stop2"
+          },
+          "pins": [
+            {
+              "pin": "PA15",
+              "signal": "SCL",
+              "af": 4
+            },
+            {
+              "pin": "PB15",
+              "signal": "SMBA",
+              "af": 4
+            },
+            {
+              "pin": "PB3",
+              "signal": "SDA",
+              "af": 4
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "ER",
+              "interrupt": "I2C1_ER"
+            },
+            {
+              "signal": "EV",
+              "interrupt": "I2C1_EV"
+            }
+          ]
+        },
+        {
+          "name": "I2C3",
+          "address": 1174415360,
+          "registers": {
+            "kind": "i2c",
+            "version": "v2",
+            "block": "I2C"
+          },
+          "rcc": {
+            "bus_clock": "PCLK7",
+            "kernel_clock": {
+              "register": "CCIPR3",
+              "field": "I2C3SEL"
+            },
+            "enable": {
+              "register": "APB7ENR",
+              "field": "I2C3EN"
+            },
+            "reset": {
+              "register": "APB7RSTR",
+              "field": "I2C3RST"
+            },
+            "stop_mode": "Standby"
+          },
+          "pins": [
+            {
+              "pin": "PA6",
+              "signal": "SCL",
+              "af": 4
+            },
+            {
+              "pin": "PA8",
+              "signal": "SDA",
+              "af": 4
+            },
+            {
+              "pin": "PB15",
+              "signal": "SMBA",
+              "af": 6
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "ER",
+              "interrupt": "I2C3_ER"
+            },
+            {
+              "signal": "EV",
+              "interrupt": "I2C3_EV"
+            }
+          ]
+        },
+        {
+          "name": "ICACHE",
+          "address": 1073939456,
+          "registers": {
+            "kind": "icache",
+            "version": "v1_4crr",
+            "block": "ICACHE"
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "ICACHE"
+            }
+          ]
+        },
+        {
+          "name": "IWDG",
+          "address": 1073754112,
+          "registers": {
+            "kind": "iwdg",
+            "version": "v3",
+            "block": "IWDG"
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "IWDG"
+            }
+          ]
+        },
+        {
+          "name": "LPDMA1",
+          "address": 1073872896,
+          "registers": {
+            "kind": "lpdma",
+            "version": "v1",
+            "block": "LPDMA"
+          },
+          "interrupts": [
+            {
+              "signal": "CH0",
+              "interrupt": "LPDMA1_Channel0"
+            },
+            {
+              "signal": "CH1",
+              "interrupt": "LPDMA1_Channel1"
+            },
+            {
+              "signal": "CH2",
+              "interrupt": "LPDMA1_Channel2"
+            },
+            {
+              "signal": "CH3",
+              "interrupt": "LPDMA1_Channel3"
+            },
+            {
+              "signal": "CH4",
+              "interrupt": "LPDMA1_Channel4"
+            },
+            {
+              "signal": "CH5",
+              "interrupt": "LPDMA1_Channel5"
+            },
+            {
+              "signal": "CH6",
+              "interrupt": "LPDMA1_Channel6"
+            },
+            {
+              "signal": "CH7",
+              "interrupt": "LPDMA1_Channel7"
+            }
+          ]
+        },
+        {
+          "name": "LPTIM1",
+          "address": 1174422528,
+          "registers": {
+            "kind": "lptim",
+            "version": "v2a",
+            "block": "LPTIM"
+          },
+          "rcc": {
+            "bus_clock": "PCLK7",
+            "kernel_clock": {
+              "register": "CCIPR3",
+              "field": "LPTIM1SEL"
+            },
+            "enable": {
+              "register": "APB7ENR",
+              "field": "LPTIM1EN"
+            },
+            "reset": {
+              "register": "APB7RSTR",
+              "field": "LPTIM1RST"
+            },
+            "stop_mode": "Standby"
+          },
+          "pins": [
+            {
+              "pin": "PA12",
+              "signal": "CH1",
+              "af": 2
+            },
+            {
+              "pin": "PA15",
+              "signal": "CH2",
+              "af": 2
+            },
+            {
+              "pin": "PA8",
+              "signal": "CH2",
+              "af": 2
+            },
+            {
+              "pin": "PB3",
+              "signal": "IN2",
+              "af": 2
+            },
+            {
+              "pin": "PB8",
+              "signal": "ETR",
+              "af": 0
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "LPTIM1"
+            }
+          ]
+        },
+        {
+          "name": "LPTIM2",
+          "address": 1073779712,
+          "registers": {
+            "kind": "lptim",
+            "version": "v2a",
+            "block": "LPTIM"
+          },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR1",
+              "field": "LPTIM2SEL"
+            },
+            "enable": {
+              "register": "APB1ENR2",
+              "field": "LPTIM2EN"
+            },
+            "reset": {
+              "register": "APB1RSTR2",
+              "field": "LPTIM2RST"
+            },
+            "stop_mode": "Stop2"
+          },
+          "pins": [
+            {
+              "pin": "PA5",
+              "signal": "ETR",
+              "af": 14
+            },
+            {
+              "pin": "PB4",
+              "signal": "IN2",
+              "af": 2
+            },
+            {
+              "pin": "PB9",
+              "signal": "IN1",
+              "af": 13
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "LPTIM2"
+            }
+          ]
+        },
+        {
+          "name": "LPUART1",
+          "address": 1174414336,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "LPUART"
+          },
+          "rcc": {
+            "bus_clock": "PCLK7",
+            "kernel_clock": {
+              "register": "CCIPR3",
+              "field": "LPUART1SEL"
+            },
+            "enable": {
+              "register": "APB7ENR",
+              "field": "LPUART1EN"
+            },
+            "reset": {
+              "register": "APB7RSTR",
+              "field": "LPUART1RST"
+            },
+            "stop_mode": "Standby"
+          },
+          "pins": [
+            {
+              "pin": "PB15",
+              "signal": "CTS",
+              "af": 8
+            },
+            {
+              "pin": "PB15",
+              "signal": "RX",
+              "af": 9
+            },
+            {
+              "pin": "PB8",
+              "signal": "CTS",
+              "af": 8
+            },
+            {
+              "pin": "PB9",
+              "signal": "DE",
+              "af": 8
+            },
+            {
+              "pin": "PB9",
+              "signal": "RTS",
+              "af": 8
+            },
+            {
+              "pin": "PH3",
+              "signal": "RTS",
+              "af": 8
+            },
+            {
+              "pin": "PH3",
+              "signal": "TX",
+              "af": 9
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "LPUART1"
+            }
+          ]
+        },
+        {
+          "name": "OTFDEC1",
+          "address": 1108103168,
+          "registers": {
+            "kind": "otfdec",
+            "version": "v1",
+            "block": "OTFDEC"
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "OTFDEC1"
+            }
+          ]
+        },
+        {
+          "name": "PKA",
+          "address": 1108090880,
+          "registers": {
+            "kind": "pka",
+            "version": "v1a",
+            "block": "PKA"
+          },
+          "rcc": {
+            "bus_clock": "HCLK2",
+            "kernel_clock": "HCLK2",
+            "enable": {
+              "register": "AHB2ENR",
+              "field": "PKAEN"
+            },
+            "reset": {
+              "register": "AHB2RSTR",
+              "field": "PKARST"
+            }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "PKA"
+            }
+          ]
+        },
+        {
+          "name": "PWR",
+          "address": 1174538240,
+          "registers": {
+            "kind": "pwr",
+            "version": "wba",
+            "block": "PWR"
+          },
+          "rcc": {
+            "bus_clock": "HCLK4",
+            "kernel_clock": "HCLK4",
+            "enable": {
+              "register": "AHB4ENR",
+              "field": "PWREN"
+            }
+          },
+          "pins": [
+            {
+              "pin": "PA12",
+              "signal": "WKUP6"
+            },
+            {
+              "pin": "PA5",
+              "signal": "CSLEEP",
+              "af": 0
+            },
+            {
+              "pin": "PA5",
+              "signal": "WKUP6"
+            },
+            {
+              "pin": "PA6",
+              "signal": "CSTOP",
+              "af": 0
+            },
+            {
+              "pin": "PA6",
+              "signal": "WKUP7"
+            },
+            {
+              "pin": "PB9",
+              "signal": "WKUP8"
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "WKUP",
+              "interrupt": "WKUP"
+            }
+          ]
+        },
+        {
+          "name": "RAMCFG",
+          "address": 1073897472,
+          "registers": {
+            "kind": "ramcfg",
+            "version": "wba",
+            "block": "RAMCFG"
+          },
+          "rcc": {
+            "bus_clock": "HCLK1",
+            "kernel_clock": "HCLK1",
+            "enable": {
+              "register": "AHB1ENR",
+              "field": "RAMCFGEN"
+            }
+          },
+          "interrupts": [
+            {
+              "signal": "BKP",
+              "interrupt": "RAMCFG"
+            },
+            {
+              "signal": "ECC",
+              "interrupt": "RAMCFG"
+            }
+          ]
+        },
+        {
+          "name": "RCC",
+          "address": 1174539264,
+          "registers": {
+            "kind": "rcc",
+            "version": "wba",
+            "block": "RCC"
+          },
+          "pins": [
+            {
+              "pin": "PA8",
+              "signal": "MCO",
+              "af": 0
+            },
+            {
+              "pin": "PC14",
+              "signal": "OSC32_IN"
+            },
+            {
+              "pin": "PC15",
+              "signal": "OSC32_OUT"
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "CRS",
+              "interrupt": "RCC_S"
+            },
+            {
+              "signal": "GLOBAL",
+              "interrupt": "RCC"
+            },
+            {
+              "signal": "RCC",
+              "interrupt": "RCC_S"
+            },
+            {
+              "signal": "WAKEUP",
+              "interrupt": "RCC_S"
+            }
+          ]
+        },
+        {
+          "name": "RNG",
+          "address": 1108084736,
+          "registers": {
+            "kind": "rng",
+            "version": "v1",
+            "block": "RNG"
+          },
+          "rcc": {
+            "bus_clock": "HCLK2",
+            "kernel_clock": {
+              "register": "CCIPR2",
+              "field": "RNGSEL"
+            },
+            "enable": {
+              "register": "AHB2ENR",
+              "field": "RNGEN"
+            },
+            "reset": {
+              "register": "AHB2RSTR",
+              "field": "RNGRST"
+            }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "RNG"
+            }
+          ]
+        },
+        {
+          "name": "RTC",
+          "address": 1174435840,
+          "registers": {
+            "kind": "rtc",
+            "version": "v3_u5",
+            "block": "RTC"
+          },
+          "rcc": {
+            "bus_clock": "PCLK7",
+            "kernel_clock": {
+              "register": "BDCR",
+              "field": "RTCSEL"
+            },
+            "enable": {
+              "register": "APB7ENR",
+              "field": "RTCAPBEN"
+            },
+            "stop_mode": "Standby"
+          },
+          "pins": [
+            {
+              "pin": "PB9",
+              "signal": "REFIN",
+              "af": 0
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "ALARM",
+              "interrupt": "RTC_S"
+            },
+            {
+              "signal": "SSRU",
+              "interrupt": "RTC_S"
+            },
+            {
+              "signal": "STAMP",
+              "interrupt": "RTC_S"
+            },
+            {
+              "signal": "TAMP",
+              "interrupt": "RTC_S"
+            },
+            {
+              "signal": "TIMESTAMP",
+              "interrupt": "RTC_S"
+            },
+            {
+              "signal": "WKUP",
+              "interrupt": "RTC_S"
+            }
+          ]
+        },
+        {
+          "name": "SAI1",
+          "address": 1073828864,
+          "registers": {
+            "kind": "sai",
+            "version": "v4_2pdm",
+            "block": "SAI"
+          },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": {
+              "register": "CCIPR2",
+              "field": "SAI1SEL"
+            },
+            "enable": {
+              "register": "APB2ENR",
+              "field": "SAI1EN"
+            },
+            "reset": {
+              "register": "APB2RSTR",
+              "field": "SAI1RST"
+            }
+          },
+          "pins": [
+            {
+              "pin": "PA12",
+              "signal": "SD_B",
+              "af": 13
+            },
+            {
+              "pin": "PA5",
+              "signal": "D2",
+              "af": 3
+            },
+            {
+              "pin": "PA5",
+              "signal": "SCK_A",
+              "af": 11
+            },
+            {
+              "pin": "PA6",
+              "signal": "CK2",
+              "af": 3
+            },
+            {
+              "pin": "PA6",
+              "signal": "MCLK_A",
+              "af": 13
+            },
+            {
+              "pin": "PA6",
+              "signal": "SD_A",
+              "af": 11
+            },
+            {
+              "pin": "PA8",
+              "signal": "D1",
+              "af": 3
+            },
+            {
+              "pin": "PA8",
+              "signal": "FS_A",
+              "af": 13
+            },
+            {
+              "pin": "PB4",
+              "signal": "CK1",
+              "af": 8
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "A",
+              "interrupt": "SAI1"
+            },
+            {
+              "signal": "B",
+              "interrupt": "SAI1"
+            }
+          ]
+        },
+        {
+          "name": "SPI3",
+          "address": 1174413312,
+          "registers": {
+            "kind": "spi",
+            "version": "v6",
+            "block": "SPI"
+          },
+          "rcc": {
+            "bus_clock": "PCLK7",
+            "kernel_clock": {
+              "register": "CCIPR3",
+              "field": "SPI3SEL"
+            },
+            "enable": {
+              "register": "APB7ENR",
+              "field": "SPI3EN"
+            },
+            "reset": {
+              "register": "APB7RSTR",
+              "field": "SPI3RST"
+            },
+            "stop_mode": "Standby"
+          },
+          "pins": [
+            {
+              "pin": "PA5",
+              "signal": "NSS",
+              "af": 6
+            },
+            {
+              "pin": "PA6",
+              "signal": "MOSI",
+              "af": 5
+            },
+            {
+              "pin": "PA6",
+              "signal": "RDY",
+              "af": 6
+            },
+            {
+              "pin": "PA8",
+              "signal": "RDY",
+              "af": 6
+            },
+            {
+              "pin": "PA8",
+              "signal": "SCK",
+              "af": 5
+            },
+            {
+              "pin": "PB4",
+              "signal": "MISO",
+              "af": 4
+            },
+            {
+              "pin": "PB8",
+              "signal": "MOSI",
+              "af": 6
+            },
+            {
+              "pin": "PB9",
+              "signal": "MISO",
+              "af": 6
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "SPI3"
+            }
+          ]
+        },
+        {
+          "name": "SYSCFG",
+          "address": 1174406144,
+          "registers": {
+            "kind": "syscfg",
+            "version": "wba",
+            "block": "SYSCFG"
+          },
+          "rcc": {
+            "bus_clock": "PCLK7",
+            "kernel_clock": "PCLK7",
+            "enable": {
+              "register": "APB7ENR",
+              "field": "SYSCFGEN"
+            },
+            "reset": {
+              "register": "APB7RSTR",
+              "field": "SYSCFGRST"
+            }
+          }
+        },
+        {
+          "name": "TAMP",
+          "address": 1174436864,
+          "pins": [
+            {
+              "pin": "PA14",
+              "signal": "IN3"
+            },
+            {
+              "pin": "PA14",
+              "signal": "OUT4"
+            },
+            {
+              "pin": "PH3",
+              "signal": "IN2"
+            },
+            {
+              "pin": "PH3",
+              "signal": "OUT1"
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "TAMP"
+            }
+          ]
+        },
+        {
+          "name": "TIM16",
+          "address": 1073824768,
+          "registers": {
+            "kind": "timer",
+            "version": "v2",
+            "block": "TIM_1CH_CMP"
+          },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": "PCLK2_TIM",
+            "enable": {
+              "register": "APB2ENR",
+              "field": "TIM16EN"
+            },
+            "reset": {
+              "register": "APB2RSTR",
+              "field": "TIM16RST"
+            }
+          },
+          "pins": [
+            {
+              "pin": "PB15",
+              "signal": "BKIN",
+              "af": 14
+            },
+            {
+              "pin": "PB8",
+              "signal": "CH1N",
+              "af": 14
+            },
+            {
+              "pin": "PB9",
+              "signal": "CH1",
+              "af": 14
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "BRK",
+              "interrupt": "TIM16"
+            },
+            {
+              "signal": "CC",
+              "interrupt": "TIM16"
+            },
+            {
+              "signal": "COM",
+              "interrupt": "TIM16"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM16"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM16"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM16"
+            },
+            {
+              "signal": "TRG",
+              "interrupt": "TIM16"
+            },
+            {
+              "signal": "UP",
+              "interrupt": "TIM16"
+            }
+          ]
+        },
+        {
+          "name": "TIM17",
+          "address": 1073825792,
+          "registers": {
+            "kind": "timer",
+            "version": "v2",
+            "block": "TIM_1CH_CMP"
+          },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": "PCLK2_TIM",
+            "enable": {
+              "register": "APB2ENR",
+              "field": "TIM17EN"
+            },
+            "reset": {
+              "register": "APB2RSTR",
+              "field": "TIM17RST"
+            }
+          },
+          "pins": [
+            {
+              "pin": "PA15",
+              "signal": "BKIN",
+              "af": 14
+            },
+            {
+              "pin": "PB3",
+              "signal": "CH1N",
+              "af": 14
+            },
+            {
+              "pin": "PB4",
+              "signal": "CH1",
+              "af": 14
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "BRK",
+              "interrupt": "TIM17"
+            },
+            {
+              "signal": "CC",
+              "interrupt": "TIM17"
+            },
+            {
+              "signal": "COM",
+              "interrupt": "TIM17"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM17"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM17"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM17"
+            },
+            {
+              "signal": "TRG",
+              "interrupt": "TIM17"
+            },
+            {
+              "signal": "UP",
+              "interrupt": "TIM17"
+            }
+          ]
+        },
+        {
+          "name": "TIM2",
+          "address": 1073741824,
+          "registers": {
+            "kind": "timer",
+            "version": "v2",
+            "block": "TIM_GP32"
+          },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": "PCLK1_TIM",
+            "enable": {
+              "register": "APB1ENR1",
+              "field": "TIM2EN"
+            },
+            "reset": {
+              "register": "APB1RSTR1",
+              "field": "TIM2RST"
+            }
+          },
+          "pins": [
+            {
+              "pin": "PA5",
+              "signal": "CH1",
+              "af": 1
+            },
+            {
+              "pin": "PA5",
+              "signal": "ETR",
+              "af": 2
+            },
+            {
+              "pin": "PA6",
+              "signal": "CH4",
+              "af": 1
+            },
+            {
+              "pin": "PA8",
+              "signal": "CH2",
+              "af": 1
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "BRK",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "CC",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "COM",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "DIR",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "ER",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "IDX",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "TRG",
+              "interrupt": "TIM2"
+            },
+            {
+              "signal": "UP",
+              "interrupt": "TIM2"
+            }
+          ]
+        },
+        {
+          "name": "UID",
+          "address": 200857344,
+          "registers": {
+            "kind": "uid",
+            "version": "v1",
+            "block": "UID"
+          }
+        },
+        {
+          "name": "USART1",
+          "address": 1073821696,
+          "registers": {
+            "kind": "usart",
+            "version": "v4",
+            "block": "USART"
+          },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": {
+              "register": "CCIPR1",
+              "field": "USART1SEL"
+            },
+            "enable": {
+              "register": "APB2ENR",
+              "field": "USART1EN"
+            },
+            "reset": {
+              "register": "APB2RSTR",
+              "field": "USART1RST"
+            },
+            "stop_mode": "Stop2"
+          },
+          "pins": [
+            {
+              "pin": "PA12",
+              "signal": "RX",
+              "af": 7
+            },
+            {
+              "pin": "PA5",
+              "signal": "CK",
+              "af": 7
+            },
+            {
+              "pin": "PA5",
+              "signal": "TX",
+              "af": 10
+            },
+            {
+              "pin": "PA6",
+              "signal": "DE",
+              "af": 7
+            },
+            {
+              "pin": "PA6",
+              "signal": "RTS",
+              "af": 7
+            },
+            {
+              "pin": "PA6",
+              "signal": "TX",
+              "af": 10
+            },
+            {
+              "pin": "PA8",
+              "signal": "RX",
+              "af": 7
+            },
+            {
+              "pin": "PB4",
+              "signal": "CTS",
+              "af": 7
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "USART1"
+            }
+          ]
+        },
+        {
+          "name": "USB",
+          "address": 1073831936,
+          "registers": {
+            "kind": "usb",
+            "version": "v3",
+            "block": "USB"
+          },
+          "pins": [
+            {
+              "pin": "PA13",
+              "signal": "NOE",
+              "af": 3
+            },
+            {
+              "pin": "PA8",
+              "signal": "SOF",
+              "af": 10
+            },
+            {
+              "pin": "PB8",
+              "signal": "DP"
+            },
+            {
+              "pin": "PB9",
+              "signal": "DM"
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "EHCI",
+              "interrupt": "USB_DRD_FS"
+            },
+            {
+              "signal": "HP",
+              "interrupt": "USB_DRD_FS"
+            },
+            {
+              "signal": "LP",
+              "interrupt": "USB_DRD_FS"
+            },
+            {
+              "signal": "OHCI",
+              "interrupt": "USB_DRD_FS"
+            },
+            {
+              "signal": "USBH",
+              "interrupt": "USB_DRD_FS"
+            },
+            {
+              "signal": "WKUP",
+              "interrupt": "USB_DRD_FS"
+            }
+          ]
+        },
+        {
+          "name": "USBRAM",
+          "address": 1073832960,
+          "registers": {
+            "kind": "usbram",
+            "version": "16x2_1024",
+            "block": "USBRAM"
+          }
+        },
+        {
+          "name": "VREFINTCAL",
+          "address": 200857508,
+          "registers": {
+            "kind": "vrefintcal",
+            "version": "v2",
+            "block": "VREFINTCAL"
+          }
+        },
+        {
+          "name": "XSPI1",
+          "address": 1108153344,
+          "pins": [
+            {
+              "pin": "PA12",
+              "signal": "NCS",
+              "af": 14
+            },
+            {
+              "pin": "PA15",
+              "signal": "CLK",
+              "af": 13
+            },
+            {
+              "pin": "PB3",
+              "signal": "IO0",
+              "af": 13
+            },
+            {
+              "pin": "PB4",
+              "signal": "IO1",
+              "af": 11
+            },
+            {
+              "pin": "PB8",
+              "signal": "IO2",
+              "af": 11
+            },
+            {
+              "pin": "PB9",
+              "signal": "IO3",
+              "af": 11
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "XSPI1"
+            }
+          ]
+        }
+      ],
+      "nvic_priority_bits": 4,
+      "interrupts": [
+        {
+          "name": "PVD",
+          "number": 1
+        },
+        {
+          "name": "RTC",
+          "number": 2
+        },
+        {
+          "name": "RTC_S",
+          "number": 3
+        },
+        {
+          "name": "TAMP",
+          "number": 4
+        },
+        {
+          "name": "RAMCFG",
+          "number": 5
+        },
+        {
+          "name": "FLASH",
+          "number": 6
+        },
+        {
+          "name": "FLASH_S",
+          "number": 7
+        },
+        {
+          "name": "GTZC",
+          "number": 8
+        },
+        {
+          "name": "RCC",
+          "number": 9
+        },
+        {
+          "name": "RCC_S",
+          "number": 10
+        },
+        {
+          "name": "EXTI1",
+          "number": 12
+        },
+        {
+          "name": "EXTI2",
+          "number": 13
+        },
+        {
+          "name": "EXTI3",
+          "number": 14
+        },
+        {
+          "name": "EXTI4",
+          "number": 15
+        },
+        {
+          "name": "EXTI5",
+          "number": 16
+        },
+        {
+          "name": "EXTI6",
+          "number": 17
+        },
+        {
+          "name": "EXTI7",
+          "number": 18
+        },
+        {
+          "name": "EXTI8",
+          "number": 19
+        },
+        {
+          "name": "EXTI9",
+          "number": 20
+        },
+        {
+          "name": "EXTI10",
+          "number": 21
+        },
+        {
+          "name": "EXTI11",
+          "number": 22
+        },
+        {
+          "name": "EXTI12",
+          "number": 23
+        },
+        {
+          "name": "EXTI13",
+          "number": 24
+        },
+        {
+          "name": "EXTI14",
+          "number": 25
+        },
+        {
+          "name": "EXTI15",
+          "number": 26
+        },
+        {
+          "name": "IWDG",
+          "number": 27
+        },
+        {
+          "name": "LPDMA1_Channel0",
+          "number": 28
+        },
+        {
+          "name": "LPDMA1_Channel1",
+          "number": 29
+        },
+        {
+          "name": "LPDMA1_Channel2",
+          "number": 30
+        },
+        {
+          "name": "LPDMA1_Channel3",
+          "number": 31
+        },
+        {
+          "name": "LPDMA1_Channel4",
+          "number": 32
+        },
+        {
+          "name": "LPDMA1_Channel5",
+          "number": 33
+        },
+        {
+          "name": "LPDMA1_Channel6",
+          "number": 34
+        },
+        {
+          "name": "LPDMA1_Channel7",
+          "number": 35
+        },
+        {
+          "name": "OTFDEC1",
+          "number": 36
+        },
+        {
+          "name": "TIM2",
+          "number": 40
+        },
+        {
+          "name": "I2C1_EV",
+          "number": 41
+        },
+        {
+          "name": "I2C1_ER",
+          "number": 42
+        },
+        {
+          "name": "USART1",
+          "number": 43
+        },
+        {
+          "name": "LPUART1",
+          "number": 44
+        },
+        {
+          "name": "LPTIM1",
+          "number": 45
+        },
+        {
+          "name": "LPTIM2",
+          "number": 46
+        },
+        {
+          "name": "TIM16",
+          "number": 47
+        },
+        {
+          "name": "TIM17",
+          "number": 48
+        },
+        {
+          "name": "I2C3_EV",
+          "number": 49
+        },
+        {
+          "name": "I2C3_ER",
+          "number": 50
+        },
+        {
+          "name": "SAI1",
+          "number": 51
+        },
+        {
+          "name": "AES",
+          "number": 52
+        },
+        {
+          "name": "RNG",
+          "number": 53
+        },
+        {
+          "name": "FPU",
+          "number": 54
+        },
+        {
+          "name": "HASH",
+          "number": 55
+        },
+        {
+          "name": "PKA",
+          "number": 56
+        },
+        {
+          "name": "SPI3",
+          "number": 57
+        },
+        {
+          "name": "ICACHE",
+          "number": 58
+        },
+        {
+          "name": "ADC4",
+          "number": 59
+        },
+        {
+          "name": "RADIO",
+          "number": 60
+        },
+        {
+          "name": "WKUP",
+          "number": 61
+        },
+        {
+          "name": "WKUP_S",
+          "number": 62
+        },
+        {
+          "name": "RCC_AUDIOSYNC",
+          "number": 63
+        },
+        {
+          "name": "USB_DRD_FS",
+          "number": 64
+        },
+        {
+          "name": "XSPI1",
+          "number": 65
+        }
+      ],
+      "dma_channels": [],
+      "pins": [
+        {
+          "name": "PA5"
+        },
+        {
+          "name": "PA6"
+        },
+        {
+          "name": "PA8"
+        },
+        {
+          "name": "PA12"
+        },
+        {
+          "name": "PA13"
+        },
+        {
+          "name": "PA14"
+        },
+        {
+          "name": "PA15"
+        },
+        {
+          "name": "PB3"
+        },
+        {
+          "name": "PB4"
+        },
+        {
+          "name": "PB8"
+        },
+        {
+          "name": "PB9"
+        },
+        {
+          "name": "PB15"
+        },
+        {
+          "name": "PC14"
+        },
+        {
+          "name": "PC15"
+        },
+        {
+          "name": "PH3"
+        }
+      ]
+    }
+  ]
+}

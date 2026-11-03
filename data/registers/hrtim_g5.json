@@ -1,0 +1,6731 @@
+{
+  "block/HRTIM": {
+    "description": "High Resolution Timer",
+    "items": [
+      {
+        "name": "MCR",
+        "description": "Master Timer Control Register",
+        "byte_offset": 0,
+        "fieldset": "MCR"
+      },
+      {
+        "name": "MISR",
+        "description": "Master Timer Interrupt Status Register",
+        "byte_offset": 4,
+        "access": "Read",
+        "fieldset": "MISR"
+      },
+      {
+        "name": "MICR",
+        "description": "Master Timer Interrupt Clear Register",
+        "byte_offset": 8,
+        "access": "Write",
+        "fieldset": "MICR"
+      },
+      {
+        "name": "MDIER",
+        "description": "Master Timer DMA / Interrupt Enable Register",
+        "byte_offset": 12,
+        "fieldset": "MDIER"
+      },
+      {
+        "name": "MCNTR",
+        "description": "Master Timer Counter Register",
+        "byte_offset": 16,
+        "fieldset": "MCNTR"
+      },
+      {
+        "name": "MPER",
+        "description": "Master Timer Period Register",
+        "byte_offset": 20,
+        "fieldset": "MPER"
+      },
+      {
+        "name": "MREP",
+        "description": "Master Timer Repetition Register",
+        "byte_offset": 24,
+        "fieldset": "MREP"
+      },
+      {
+        "name": "MCMP",
+        "description": "Master Timer Compare X Register",
+        "array": {
+          "offsets": [
+            0,
+            8,
+            12,
+            16
+          ]
+        },
+        "byte_offset": 28,
+        "fieldset": "MCMP"
+      },
+      {
+        "name": "TIM",
+        "description": "High Resolution Timer: Timing Unit",
+        "array": {
+          "len": 6,
+          "stride": 256
+        },
+        "byte_offset": 256,
+        "block": "HRTIM_TIM"
+      },
+      {
+        "name": "CR1",
+        "description": "High Resolution Timer: Control Register 1",
+        "byte_offset": 1792,
+        "fieldset": "HRTIM_CR1"
+      },
+      {
+        "name": "CR2",
+        "description": "High Resolution Timer: Control Register 2",
+        "byte_offset": 1796,
+        "fieldset": "HRTIM_CR2"
+      },
+      {
+        "name": "ISR",
+        "description": "High Resolution Timer: Interrupt Status Register",
+        "byte_offset": 1800,
+        "access": "Read",
+        "fieldset": "HRTIM_ISR"
+      },
+      {
+        "name": "ICR",
+        "description": "High Resolution Timer: Interrupt Clear Register",
+        "byte_offset": 1804,
+        "access": "Write",
+        "fieldset": "HRTIM_ICR"
+      },
+      {
+        "name": "IER",
+        "description": "High Resolution Timer: Interrupt Enable Register",
+        "byte_offset": 1808,
+        "fieldset": "HRTIM_IER"
+      },
+      {
+        "name": "OENR",
+        "description": "High Resolution Timer: Output Enable Register",
+        "byte_offset": 1812,
+        "fieldset": "HRTIM_OENR"
+      },
+      {
+        "name": "ODISR",
+        "description": "High Resolution Timer: Output Disable Register",
+        "byte_offset": 1816,
+        "fieldset": "HRTIM_ODISR"
+      },
+      {
+        "name": "ODSR",
+        "description": "High Resolution Timer: Output Disable Status Register",
+        "byte_offset": 1820,
+        "fieldset": "HRTIM_ODSR"
+      },
+      {
+        "name": "BMCR",
+        "description": "High Resolution Timer: Burst Mode Control Register",
+        "byte_offset": 1824,
+        "fieldset": "HRTIM_BMCR"
+      },
+      {
+        "name": "BMTRGR",
+        "description": "High Resolution Timer: Burst Mode Trigger Register",
+        "byte_offset": 1828,
+        "fieldset": "HRTIM_BMTRGR"
+      },
+      {
+        "name": "BMCMPR",
+        "description": "High Resolution Timer: Burst Mode Compare Register",
+        "byte_offset": 1832,
+        "fieldset": "HRTIM_BMCMPR"
+      },
+      {
+        "name": "BMPER",
+        "description": "High Resolution Timer: Burst Mode Period Register",
+        "byte_offset": 1836,
+        "fieldset": "HRTIM_BMPER"
+      },
+      {
+        "name": "EECR1",
+        "description": "High Resolution Timer: Timer External Event Control Register 1",
+        "byte_offset": 1840,
+        "fieldset": "HRTIM_EECR1"
+      },
+      {
+        "name": "EECR2",
+        "description": "High Resolution Timer: Timer External Event Control Register 2",
+        "byte_offset": 1844,
+        "fieldset": "HRTIM_EECR2"
+      },
+      {
+        "name": "EECR3",
+        "description": "High Resolution Timer: Timer External Event Control Register 3",
+        "byte_offset": 1848,
+        "fieldset": "HRTIM_EECR3"
+      },
+      {
+        "name": "ADC1R",
+        "description": "High Resolution Timer: ADC Trigger [1, 3] Register",
+        "array": {
+          "offsets": [
+            0,
+            8
+          ]
+        },
+        "byte_offset": 1852,
+        "fieldset": "HRTIM_ADC1R"
+      },
+      {
+        "name": "ADC2R",
+        "description": "High Resolution Timer: ADC Trigger [2, 4] Register",
+        "array": {
+          "offsets": [
+            0,
+            8
+          ]
+        },
+        "byte_offset": 1856,
+        "fieldset": "HRTIM_ADC2R"
+      },
+      {
+        "name": "DLLCR",
+        "description": "High Resolution Timer: DLL Control Register",
+        "byte_offset": 1868,
+        "fieldset": "HRTIM_DLLCR"
+      },
+      {
+        "name": "FLTINR1",
+        "description": "High Resolution Timer: Fault Input Register 1",
+        "byte_offset": 1872,
+        "fieldset": "HRTIM_FLTINR1"
+      },
+      {
+        "name": "FLTINR2",
+        "description": "High Resolution Timer: Fault Input Register 2",
+        "byte_offset": 1876,
+        "fieldset": "HRTIM_FLTINR2"
+      },
+      {
+        "name": "BDMUPR",
+        "description": "High Resolution Timer: Burst DMA Master timer update Register",
+        "byte_offset": 1880,
+        "fieldset": "HRTIM_BDMUPR"
+      },
+      {
+        "name": "BDTUPR",
+        "description": "High Resolution Timer: Burst DMA Timer X update Register",
+        "array": {
+          "len": 5,
+          "stride": 4
+        },
+        "byte_offset": 1884,
+        "fieldset": "HRTIM_BDTUPR"
+      },
+      {
+        "name": "BDMADR",
+        "description": "High Resolution Timer: Burst DMA Data Register",
+        "byte_offset": 1904,
+        "access": "Write",
+        "fieldset": "HRTIM_BDMADR"
+      },
+      {
+        "name": "BDTFUPR",
+        "description": "High Resolution Timer: Burst DMA Timer F update Register",
+        "byte_offset": 1908,
+        "fieldset": "HRTIM_BDTFUPR"
+      },
+      {
+        "name": "ADCER",
+        "description": "High Resolution Timer: ADC Extended Trigger Register",
+        "byte_offset": 1912,
+        "fieldset": "HRTIM_ADCER"
+      },
+      {
+        "name": "ADCUR",
+        "description": "High Resolution Timer: ADC Trigger Update Register",
+        "byte_offset": 1916,
+        "fieldset": "HRTIM_ADCUR"
+      },
+      {
+        "name": "ADCPS1",
+        "description": "High Resolution Timer: ADC Post Scaler Register 1",
+        "byte_offset": 1920,
+        "fieldset": "HRTIM_ADCPS1"
+      },
+      {
+        "name": "ADCPS2",
+        "description": "High Resolution Timer: ADC Post Scaler Register 2",
+        "byte_offset": 1924,
+        "fieldset": "HRTIM_ADCPS2"
+      },
+      {
+        "name": "FLTINR3",
+        "description": "High Resolution Timer: Fault Input Register 3",
+        "byte_offset": 1928,
+        "fieldset": "HRTIM_FLTINR3"
+      },
+      {
+        "name": "FLTINR4",
+        "description": "High Resolution Timer: Fault Input Register 4",
+        "byte_offset": 1932,
+        "fieldset": "HRTIM_FLTINR4"
+      },
+      {
+        "name": "FLTINR5",
+        "description": "High Resolution Timer: Fault Input Register 5",
+        "byte_offset": 1936,
+        "fieldset": "HRTIM_FLTINR5"
+      },
+      {
+        "name": "EECR4",
+        "description": "High Resolution Timer: Timer External Event Control Register 4",
+        "byte_offset": 1952,
+        "fieldset": "HRTIM_EECR4"
+      },
+      {
+        "name": "EECR5",
+        "description": "High Resolution Timer: Timer External Event Control Register 5",
+        "byte_offset": 1956,
+        "fieldset": "HRTIM_EECR5"
+      },
+      {
+        "name": "EECR6",
+        "description": "High Resolution Timer: Timer External Event Control Register 6",
+        "byte_offset": 1960,
+        "fieldset": "HRTIM_EECR6"
+      },
+      {
+        "name": "EECR7",
+        "description": "High Resolution Timer: Timer External Event Control Register 7",
+        "byte_offset": 1964,
+        "fieldset": "HRTIM_EECR7"
+      },
+      {
+        "name": "CR3",
+        "description": "High Resolution Timer: Control Register 3",
+        "byte_offset": 1984,
+        "fieldset": "HRTIM_CR3"
+      },
+      {
+        "name": "OR",
+        "description": "High Resolution Timer: Option Register",
+        "byte_offset": 2044,
+        "fieldset": "HRTIM_OR"
+      }
+    ]
+  },
+  "block/HRTIM_TIM": {
+    "description": "High Resolution Timer: Timing Unit",
+    "items": [
+      {
+        "name": "CR",
+        "description": "Timer X Control Register",
+        "byte_offset": 0,
+        "fieldset": "TIMXCR"
+      },
+      {
+        "name": "ISR",
+        "description": "Timer X Interrupt Status Register",
+        "byte_offset": 4,
+        "access": "Read",
+        "fieldset": "TIMXISR"
+      },
+      {
+        "name": "ICR",
+        "description": "Timer X Interrupt Clear Register",
+        "byte_offset": 8,
+        "access": "Write",
+        "fieldset": "TIMXICR"
+      },
+      {
+        "name": "DIER",
+        "description": "Timer X DMA / Interrupt Enable Register",
+        "byte_offset": 12,
+        "fieldset": "TIMXDIER"
+      },
+      {
+        "name": "CNT",
+        "description": "Timer X Counter Register",
+        "byte_offset": 16,
+        "fieldset": "TIMXCNT"
+      },
+      {
+        "name": "PER",
+        "description": "Timer X Period Register",
+        "byte_offset": 20,
+        "fieldset": "TIMXPER"
+      },
+      {
+        "name": "REP",
+        "description": "Timer X Repetition Register",
+        "byte_offset": 24,
+        "fieldset": "TIMXREP"
+      },
+      {
+        "name": "CMP",
+        "description": "Timer X Compare X Register",
+        "array": {
+          "offsets": [
+            0,
+            8,
+            12,
+            16
+          ]
+        },
+        "byte_offset": 28,
+        "fieldset": "TIMXCMP"
+      },
+      {
+        "name": "CMPC",
+        "description": "Timer X Compare X Compound Register",
+        "byte_offset": 32,
+        "fieldset": "TIMXCMPC"
+      },
+      {
+        "name": "CPT",
+        "description": "Timer X Capture X Register",
+        "array": {
+          "len": 2,
+          "stride": 4
+        },
+        "byte_offset": 48,
+        "access": "Read",
+        "fieldset": "TIMXCPT"
+      },
+      {
+        "name": "DT",
+        "description": "Timer X Deadtime Register",
+        "byte_offset": 56,
+        "fieldset": "TIMXDT"
+      },
+      {
+        "name": "SETR",
+        "description": "Timer X Output X Set Register",
+        "array": {
+          "offsets": [
+            0,
+            8
+          ]
+        },
+        "byte_offset": 60,
+        "fieldset": "TIMXSETR"
+      },
+      {
+        "name": "RSTR",
+        "description": "Timer X Output X Reset Register",
+        "array": {
+          "offsets": [
+            0,
+            8
+          ]
+        },
+        "byte_offset": 64,
+        "fieldset": "TIMXRSTR"
+      },
+      {
+        "name": "EEF",
+        "description": "Timer X External Event Filtering Register",
+        "array": {
+          "offsets": [
+            0,
+            4
+          ]
+        },
+        "byte_offset": 76,
+        "fieldset": "TIMXEEF"
+      },
+      {
+        "name": "RST",
+        "description": "Timer X Reset Register",
+        "byte_offset": 84,
+        "fieldset": "TIMXRST"
+      },
+      {
+        "name": "CHP",
+        "description": "Timer X Chopper Register",
+        "byte_offset": 88,
+        "fieldset": "TIMXCHP"
+      },
+      {
+        "name": "CCR",
+        "description": "Timer X Capture X Control Register",
+        "array": {
+          "offsets": [
+            0,
+            4
+          ]
+        },
+        "byte_offset": 92,
+        "fieldset": "TIMXCCR"
+      },
+      {
+        "name": "OUTR",
+        "description": "Timer X Output Register",
+        "byte_offset": 100,
+        "fieldset": "TIMXOUTR"
+      },
+      {
+        "name": "FLT",
+        "description": "Timer X Fault Register",
+        "byte_offset": 104,
+        "fieldset": "TIMXFLT"
+      },
+      {
+        "name": "CR2",
+        "description": "Timer X Control Register 2",
+        "byte_offset": 108,
+        "fieldset": "TIMXCR2"
+      },
+      {
+        "name": "EEFR3",
+        "description": "Timer X External Event Filtering Register 3",
+        "byte_offset": 112,
+        "fieldset": "TIMXEEFR3"
+      },
+      {
+        "name": "EESEL",
+        "description": "Timer X External Event Selection Register",
+        "byte_offset": 116,
+        "fieldset": "TIMXEESEL"
+      },
+      {
+        "name": "COTRG",
+        "description": "Timer X Crossbar Override Trigger Register",
+        "byte_offset": 120,
+        "fieldset": "TIMXCOTRG"
+      },
+      {
+        "name": "COFE",
+        "description": "Timer X Crossbar Override Forcing Event Register",
+        "byte_offset": 124,
+        "fieldset": "TIMXCOFE"
+      },
+      {
+        "name": "CODE",
+        "description": "Timer X Crossbar Override Delayed Fault Event Register",
+        "byte_offset": 128,
+        "fieldset": "TIMXCODE"
+      }
+    ]
+  },
+  "fieldset/HRTIM_ADC1R": {
+    "description": "High Resolution Timer: ADC Trigger 1 Register",
+    "fields": [
+      {
+        "name": "ADC1MC1",
+        "description": "ADC trigger 1 on master compare 1.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1MC2",
+        "description": "ADC trigger 1 on master compare 2.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1MC3",
+        "description": "ADC trigger 1 on master compare 3.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1MC4",
+        "description": "ADC trigger 1 on master compare 4.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "ADCMPER",
+        "description": "ADC trigger 1 on master period.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1EEV1",
+        "description": "ADC trigger 1 on external event 1less thansup>(1)less than/sup>.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1EEV2",
+        "description": "ADC trigger 1 on external event 2less thansup>(1)less than/sup>.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1EEV3",
+        "description": "ADC trigger 1 on external event 3less thansup>(1)less than/sup>.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1EEV4",
+        "description": "ADC trigger 1 on external event 4less thansup>(1)less than/sup>.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1EEV5",
+        "description": "ADC trigger 1 on external event 5less thansup>(1)less than/sup>.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "ADCTC2",
+        "description": "ADC trigger 1 on timer F compare 2.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TAC3",
+        "description": "ADC trigger 1 on timer A compare 3.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TAC4",
+        "description": "ADC trigger 1 on timer A compare 4.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TAPER",
+        "description": "ADC trigger 1 on timer A period.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TARST",
+        "description": "ADC trigger 1 on timer A reset and counter roll-overless thansup>(1)less than/sup>.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TFC3",
+        "description": "ADC trigger 1 on timer F compare 3.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TBC3",
+        "description": "ADC trigger 1 on timer B compare 3.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TBC4",
+        "description": "ADC trigger 1 on timer B compare 4.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TBPER",
+        "description": "ADC trigger 1 on timer B period.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TBRST",
+        "description": "ADC trigger 1 on timer B reset and counter roll-overless thansup>(1)less than/sup>.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TFC4",
+        "description": "ADC trigger 1 on timer F compare 4.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TCC3",
+        "description": "ADC trigger 1 on timer C compare 3.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TCC4",
+        "description": "ADC trigger 1 on timer C compare 4.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TCPER",
+        "description": "ADC trigger 1 on timer C period.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TFPER",
+        "description": "ADC trigger 1 on timer F period.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TDC3",
+        "description": "ADC trigger 1 on timer D compare 3.",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TDC4",
+        "description": "ADC trigger 1 on timer D compare 4.",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TDPER",
+        "description": "ADC trigger 1 on timer D period.",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TFRST",
+        "description": "ADC trigger 1 on timer F reset and counter roll-over.",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TEC3",
+        "description": "ADC trigger 1 on timer E compare 3.",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TEC4",
+        "description": "ADC trigger 1 on timer E compare 4.",
+        "bit_offset": 30,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC1TEPER",
+        "description": "ADC trigger 1 on timer E period.",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_ADC2R": {
+    "description": "High Resolution Timer: ADC Trigger 2 Register",
+    "fields": [
+      {
+        "name": "ADC2MC1",
+        "description": "ADC trigger 2 on master compare 1.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2MC2",
+        "description": "ADC trigger 2 on master compare 2.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2MC3",
+        "description": "ADC trigger 2 on master compare 3.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2MC4",
+        "description": "ADC trigger 2 on master compare 4.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "ADCMPER",
+        "description": "ADC trigger 2 on master period.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2EEV6",
+        "description": "ADC trigger 2 on external event 6less thansup>(1)less than/sup>.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2EEV7",
+        "description": "ADC trigger 2 on external event 7less thansup>(1)less than/sup>.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2EEV8",
+        "description": "ADC trigger 2 on external event 8less thansup>(1)less than/sup>.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2EEV9",
+        "description": "ADC trigger 2 on external event 9less thansup>(1)less than/sup>.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2EEV10",
+        "description": "ADC trigger 2 on external event 10less thansup>(1)less than/sup>.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TAC2",
+        "description": "ADC trigger 2 on timer A compare 2.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TFC2",
+        "description": "ADC trigger 2 on timer F compare 2.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TAC4",
+        "description": "ADC trigger 2 on timer A compare 4.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TAPER",
+        "description": "ADC trigger 2 on timer A period.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TBC2",
+        "description": "ADC trigger 2 on timer B compare 2.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TFC3",
+        "description": "ADC trigger 2 on timer F compare 3.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TBC4",
+        "description": "ADC trigger 2 on timer B compare 4.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TBPER",
+        "description": "ADC trigger 2 on timer B period.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TCC2",
+        "description": "ADC trigger 2 on timer C compare 2.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TFC4",
+        "description": "ADC trigger 2 on timer F compare 4.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TCC4",
+        "description": "ADC trigger 2 on timer C compare 4.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TCPER",
+        "description": "ADC trigger 2 on timer C period.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TCRST",
+        "description": "ADC trigger 2 on timer C reset and counter roll-overless thansup>(1)less than/sup>.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TDC2",
+        "description": "ADC trigger 2 on timer D compare 2.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TFPER",
+        "description": "ADC trigger 2 on timer F period.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TDC4",
+        "description": "ADC trigger 2 on timer D compare 4.",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TDPER",
+        "description": "ADC trigger 2 on timer D period.",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TDRST",
+        "description": "ADC trigger 2 on timer D reset and counter roll-overless thansup>(1)less than/sup>.",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TEC2",
+        "description": "ADC trigger 2 on timer E compare 2.",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TEC3",
+        "description": "ADC trigger 2 on timer E compare 3.",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TEC4",
+        "description": "ADC trigger 2 on timer E compare 4.",
+        "bit_offset": 30,
+        "bit_size": 1
+      },
+      {
+        "name": "ADC2TERST",
+        "description": "ADC trigger 2 on timer E reset and counter roll-over.",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_ADCER": {
+    "description": "HRTIM ADC Extended Trigger Register",
+    "fields": [
+      {
+        "name": "ADC5TRG",
+        "description": "ADC trigger 5 selection.",
+        "bit_offset": 0,
+        "bit_size": 5
+      },
+      {
+        "name": "ADC6TRG",
+        "description": "ADC trigger 6 selection.",
+        "bit_offset": 5,
+        "bit_size": 5
+      },
+      {
+        "name": "ADC7TRG",
+        "description": "ADC trigger 7 selection.",
+        "bit_offset": 10,
+        "bit_size": 5
+      },
+      {
+        "name": "ADC8TRG",
+        "description": "ADC trigger 8 selection.",
+        "bit_offset": 16,
+        "bit_size": 5
+      },
+      {
+        "name": "ADC9TRG",
+        "description": "ADC trigger 9 selection.",
+        "bit_offset": 21,
+        "bit_size": 5
+      },
+      {
+        "name": "ADC10TRG",
+        "description": "ADC trigger 10 selection.",
+        "bit_offset": 26,
+        "bit_size": 5
+      }
+    ]
+  },
+  "fieldset/HRTIM_ADCPS1": {
+    "description": "HRTIM ADC Post Scaler Register 1",
+    "fields": [
+      {
+        "name": "ADC1PSC",
+        "description": "ADC 1 post scaler.",
+        "bit_offset": 0,
+        "bit_size": 5
+      },
+      {
+        "name": "ADC2PSC",
+        "description": "ADC 2 post scaler.",
+        "bit_offset": 6,
+        "bit_size": 5
+      },
+      {
+        "name": "ADC3PSC",
+        "description": "ADC 3 post scaler.",
+        "bit_offset": 12,
+        "bit_size": 5
+      },
+      {
+        "name": "ADC4PSC",
+        "description": "ADC 4 post scaler.",
+        "bit_offset": 18,
+        "bit_size": 5
+      },
+      {
+        "name": "ADC5PSC",
+        "description": "ADC 5 post scaler.",
+        "bit_offset": 24,
+        "bit_size": 5
+      }
+    ]
+  },
+  "fieldset/HRTIM_ADCPS2": {
+    "description": "HRTIM ADC Post Scaler Register 2",
+    "fields": [
+      {
+        "name": "ADC6PSC",
+        "description": "ADC 6 post scaler.",
+        "bit_offset": 0,
+        "bit_size": 5
+      },
+      {
+        "name": "ADC7PSC",
+        "description": "ADC 7 post scaler.",
+        "bit_offset": 6,
+        "bit_size": 5
+      },
+      {
+        "name": "ADC8PSC",
+        "description": "ADC 8 post scaler.",
+        "bit_offset": 12,
+        "bit_size": 5
+      },
+      {
+        "name": "ADC9PSC",
+        "description": "ADC 9 post scaler.",
+        "bit_offset": 18,
+        "bit_size": 5
+      },
+      {
+        "name": "ADC10PSC",
+        "description": "ADC 10 post scaler.",
+        "bit_offset": 24,
+        "bit_size": 5
+      }
+    ]
+  },
+  "fieldset/HRTIM_ADCUR": {
+    "description": "HRTIM ADC Trigger Update Register",
+    "fields": [
+      {
+        "name": "AD5USRC",
+        "description": "ADC trigger 5 update source.",
+        "bit_offset": 0,
+        "bit_size": 3
+      },
+      {
+        "name": "AD6USRC",
+        "description": "ADC trigger 6 update source.",
+        "bit_offset": 4,
+        "bit_size": 3
+      },
+      {
+        "name": "AD7USRC",
+        "description": "ADC trigger 7 update source.",
+        "bit_offset": 8,
+        "bit_size": 3
+      },
+      {
+        "name": "AD8USRC",
+        "description": "ADC trigger 8 update source.",
+        "bit_offset": 12,
+        "bit_size": 3
+      },
+      {
+        "name": "AD9USRC",
+        "description": "ADC trigger 9 update source.",
+        "bit_offset": 16,
+        "bit_size": 3
+      },
+      {
+        "name": "AD10USRC",
+        "description": "ADC trigger 10 update source.",
+        "bit_offset": 20,
+        "bit_size": 3
+      }
+    ]
+  },
+  "fieldset/HRTIM_BDMADR": {
+    "description": "High Resolution Timer:  Burst DMA Data Register",
+    "fields": [
+      {
+        "name": "BDMADR",
+        "description": "Burst DMA data register.",
+        "bit_offset": 0,
+        "bit_size": 32
+      }
+    ]
+  },
+  "fieldset/HRTIM_BDMUPR": {
+    "description": "High Resolution Timer: Burst DMA Master timer update Register",
+    "fields": [
+      {
+        "name": "MCR",
+        "description": "MCR register update enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "MICR",
+        "description": "MICR register update enable.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "MDIER",
+        "description": "MDIER register update enable.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "MCNT",
+        "description": "MCNTR register update enable.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "MPER",
+        "description": "MPER register update enable.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "MREP",
+        "description": "MREP register update enable.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "MCMP1",
+        "description": "MCMP1R register update enable.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "MCMP2",
+        "description": "MCMP2R register update enable.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "MCMP3",
+        "description": "MCMP3R register update enable.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "MCMP4",
+        "description": "MCMP4R register update enable.",
+        "bit_offset": 9,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_BDTFUPR": {
+    "description": "HRTIM burst DMA timer F update register.",
+    "fields": [
+      {
+        "name": "TIMFCR",
+        "description": "HRTIM_TIMxCR register update enable timer x.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFICR",
+        "description": "HRTIM_TIMxICR register update enable timer x.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFDIER",
+        "description": "HRTIM_TIMxDIER register update enable timer x.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFCNT",
+        "description": "HRTIM_CNTxR register update enable timer x.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFPER",
+        "description": "HRTIM_PERxR register update enable timer x.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFREP",
+        "description": "HRTIM_REPxR register update enable timer x.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFCMP1",
+        "description": "HRTIM_CMP1xR register update enable timer x.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFCMP2",
+        "description": "HRTIM_CMP2xR register update enable timer x.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFCMP3",
+        "description": "HRTIM_CMP3xR register update enable timer x.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFCMP4",
+        "description": "HRTIM_CMP4xR register update enable timer x.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFDTR",
+        "description": "HRTIM_DTxR register update enable timer x.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFSET1R",
+        "description": "HRTIM_SET1xR register update enable timer x.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFRST1R",
+        "description": "HRTIM_RST1xR register update enable timer x.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFSET2R",
+        "description": "HRTIM_SET2xR register update enable timer x.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFRST2R",
+        "description": "HRTIM_RST2xR register update enable timer x.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFEEFR1",
+        "description": "HRTIM_EEFxR1 register update enable timer x.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFEEFR2",
+        "description": "HRTIM_EEFxR2 register update enable timer x.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFRSTR",
+        "description": "HRTIM_RSTxR register update enable timer x.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFCHPR",
+        "description": "HRTIM_CHPxR register update enable timer x.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFOUTR",
+        "description": "HRTIM_OUTxR register update enable timer x.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFFLTR",
+        "description": "HRTIM_FLTxR register update enable timer x.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFCR2",
+        "description": "HRTIM_TIMxCR2 register update enable timer x.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFEEFR3",
+        "description": "HRTIM_EEFxR3 register update enable timer x.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFEESELR",
+        "description": "HRTIM_EESELxR register update enable timer x.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFCOTRGR",
+        "description": "HRTIM_COTRGxR register update enable timer x.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFCOFER",
+        "description": "HRTIM_COFExR register update enable timer x.",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFCODER",
+        "description": "HRTIM_CODExR register update enable timer x.",
+        "bit_offset": 26,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_BDTUPR": {
+    "description": "High Resolution Timer: Burst DMA Master timer update Register",
+    "fields": [
+      {
+        "name": "CR",
+        "description": "HRTIM_TIMxCR register update enable timer x.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "ICR",
+        "description": "HRTIM_TIMxICR register update enable timer x.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "DIER",
+        "description": "HRTIM_TIMxDIER register update enable timer x.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "CNT",
+        "description": "HRTIM_CNTxR register update enable timer x.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "PER",
+        "description": "HRTIM_PERxR register update enable timer x.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "REP",
+        "description": "HRTIM_REPxR register update enable timer x.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMCMP1",
+        "description": "HRTIM_CMP1xR register update enable timer x.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMCMP2",
+        "description": "HRTIM_CMP2xR register update enable timer x.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMCMP3",
+        "description": "HRTIM_CMP3xR register update enable timer x.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMCMP4",
+        "description": "HRTIM_CMP4xR register update enable timer x.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMDTR",
+        "description": "HRTIM_DTxR register update enable timer x.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMSET1R",
+        "description": "HRTIM_SET1xR register update enable timer x.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMRST1R",
+        "description": "HRTIM_RST1xR register update enable timer x.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMSET2R",
+        "description": "HRTIM_SET2xR register update enable timer x.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMRST2R",
+        "description": "HRTIM_RST2xR register update enable timer x.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEEFR1",
+        "description": "HRTIM_EEFxR1 register update enable timer x.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEEFR2",
+        "description": "HRTIM_EEFxR2 register update enable timer x.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMRSTR",
+        "description": "HRTIM_RSTxR register update enable timer x.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMCHPR",
+        "description": "HRTIM_CHPxR register update enable timer x.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMOUTR",
+        "description": "HRTIM_OUTxR register update enable timer x.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFLTR",
+        "description": "HRTIM_FLTxR register update enable timer x.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMCR2",
+        "description": "HRTIM_TIMxCR2 register update enable timer x.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEEFR3",
+        "description": "HRTIM_EEFxR3 register update enable timer x.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEESELR",
+        "description": "HRTIM_EESELxR register update enable timer x.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMCOTRGR",
+        "description": "HRTIM_COTRGxR register update enable timer x.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMCOFER",
+        "description": "HRTIM_COFExR register update enable timer x.",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMCODER",
+        "description": "HRTIM_CODExR register update enable timer x.",
+        "bit_offset": 26,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_BMCMPR": {
+    "description": "High Resolution Timer: Burst Mode Compare Register",
+    "fields": [
+      {
+        "name": "BMCMP",
+        "description": "Burst mode compare value.",
+        "bit_offset": 0,
+        "bit_size": 16
+      }
+    ]
+  },
+  "fieldset/HRTIM_BMCR": {
+    "description": "High Resolution Timer: Burst Mode Control Register",
+    "fields": [
+      {
+        "name": "BME",
+        "description": "Burst mode enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "BMOM",
+        "description": "Burst mode operating mode.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "BMCLK",
+        "description": "Burst mode clock source.",
+        "bit_offset": 2,
+        "bit_size": 4
+      },
+      {
+        "name": "BMPRSC",
+        "description": "Burst mode prescaler.",
+        "bit_offset": 6,
+        "bit_size": 4
+      },
+      {
+        "name": "BMPREN",
+        "description": "Burst mode preload enable.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "MTBM",
+        "description": "Master timer burst mode.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "TABM",
+        "description": "Timer A burst mode.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "TBBM",
+        "description": "Timer B burst mode.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "TCBM",
+        "description": "Timer C burst mode.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "TDBM",
+        "description": "Timer D burst mode.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "TEBM",
+        "description": "Timer E burst mode.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "TFBM",
+        "description": "Timer F burst mode.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "BMSTAT",
+        "description": "Burst mode status.",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_BMPER": {
+    "description": "High Resolution Timer: Burst Mode Period Register",
+    "fields": [
+      {
+        "name": "BMPER",
+        "description": "Burst mode period.",
+        "bit_offset": 0,
+        "bit_size": 16
+      }
+    ]
+  },
+  "fieldset/HRTIM_BMTRGR": {
+    "description": "High Resolution Timer: Burst Mode Trigger Register",
+    "fields": [
+      {
+        "name": "SW",
+        "description": "Software start.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTRST",
+        "description": "Master reset or roll-over.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTREP",
+        "description": "Master repetition.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTCMP1",
+        "description": "Master compare 1.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTCMP2",
+        "description": "Master compare 2.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTCMP3",
+        "description": "Master compare 3.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTCMP4",
+        "description": "Master compare 4.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "TARST",
+        "description": "Timer A reset or roll-over.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "TAREP",
+        "description": "Timer A repetition.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "TACMP1",
+        "description": "Timer A compare 1 event.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "TACMP2",
+        "description": "Timer A compare 2 event.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "TBRST",
+        "description": "Timer B reset or roll-over.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "TBREP",
+        "description": "Timer B repetition.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "TBCMP1",
+        "description": "Timer B compare 1 event.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "TBCMP2",
+        "description": "Timer B compare 2 event.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "TCRST",
+        "description": "Timer C reset or roll-over.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "TCREP",
+        "description": "Timer C repetition.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "TCCMP1",
+        "description": "Timer C compare 1 event.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "TFRST",
+        "description": "Timer F reset.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "TDRST",
+        "description": "Timer D reset or roll-over.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "TDREP",
+        "description": "Timer D repetition.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "TFREP",
+        "description": "Timer F repetition.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "TDCMP2",
+        "description": "Timer D compare 2 event.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "TFCMP1",
+        "description": "Timer F compare 1 event.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "TEREP",
+        "description": "Timer E repetition.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "TECMP1",
+        "description": "Timer E compare 1 event.",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "TECMP2",
+        "description": "Timer E compare 2 event.",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "TAEEVG",
+        "description": "Timer A period following external event G.",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "TDEEVH",
+        "description": "Timer D period following external event H.",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVG",
+        "description": "External event G (TIMA filters applied).",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVH",
+        "description": "External event H (TIMD filters applied).",
+        "bit_offset": 30,
+        "bit_size": 1
+      },
+      {
+        "name": "OCHPEV",
+        "description": "On-chip event.",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_CR1": {
+    "description": "High Resolution Timer: Control Register 1",
+    "fields": [
+      {
+        "name": "MUDIS",
+        "description": "Master update disable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "TAUDIS",
+        "description": "Timer A update disable.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "TBUDIS",
+        "description": "Timer B update disable.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "TCUDIS",
+        "description": "Timer C update disable.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "TDUDIS",
+        "description": "Timer D update disable.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "TEUDIS",
+        "description": "Timer E update disable.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "TFUDIS",
+        "description": "Timer F update disable.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "RMUDIS",
+        "description": "Remote master update disable.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "RTAUDIS",
+        "description": "Remote timer A update disable.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "RTBUDIS",
+        "description": "Remote Timer B update disable.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "RTCUDIS",
+        "description": "Remote Timer C update disable.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "RTDUDIS",
+        "description": "Remote Timer D update disable.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "RTEUDIS",
+        "description": "Remote Timer E update disable.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "RTFUDIS",
+        "description": "Remote Timer F update disable.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "AD1USRC",
+        "description": "ADC trigger 1 update source.",
+        "bit_offset": 16,
+        "bit_size": 3
+      },
+      {
+        "name": "AD2USRC",
+        "description": "ADC trigger 2 update source.",
+        "bit_offset": 19,
+        "bit_size": 3
+      },
+      {
+        "name": "AD3USRC",
+        "description": "ADC trigger 3 update source.",
+        "bit_offset": 22,
+        "bit_size": 3
+      },
+      {
+        "name": "AD4USRC",
+        "description": "ADC trigger 4 update source.",
+        "bit_offset": 25,
+        "bit_size": 3
+      }
+    ]
+  },
+  "fieldset/HRTIM_CR2": {
+    "description": "High Resolution Timer: Control Register 2",
+    "fields": [
+      {
+        "name": "MSWU",
+        "description": "Master timer software update.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "TASWU",
+        "description": "Timer A software update.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "TBSWU",
+        "description": "Timer B software update.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "TCSWU",
+        "description": "Timer C software update.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "TDSWU",
+        "description": "Timer D software update.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "TESWU",
+        "description": "Timer E software update.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "TFSWU",
+        "description": "Timer F software update.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "MRST",
+        "description": "Master counter software reset.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "TARST",
+        "description": "Timer A counter software reset.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "TBRST",
+        "description": "Timer B counter software reset.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "TCRST",
+        "description": "Timer C counter software reset.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "TDRST",
+        "description": "Timer D counter software reset.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "TERST",
+        "description": "Timer E counter software reset.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "TFRST",
+        "description": "Timer F counter software reset.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "SWPA",
+        "description": "Swap timer A outputs.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "SWPB",
+        "description": "Swap timer B outputs.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "SWPC",
+        "description": "Swap timer C outputs.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "SWPD",
+        "description": "Swap timer D outputs.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "SWPE",
+        "description": "Swap timer E outputs.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "SWPF",
+        "description": "Swap timer F outputs.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "DBSS",
+        "description": "DMA burst source selection.",
+        "bit_offset": 24,
+        "bit_size": 3
+      }
+    ]
+  },
+  "fieldset/HRTIM_CR3": {
+    "description": "HRTIM control register 3.",
+    "fields": [
+      {
+        "name": "RMUDISA",
+        "description": "Remote master update disable authorization.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "RTAUDISA",
+        "description": "Remote timer A update disable authorization.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "RTBUDISA",
+        "description": "Remote timer B update disable authorization.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "RTCUDISA",
+        "description": "Remote timer C update disable authorization.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "RTDUDISA",
+        "description": "Remote timer D update disable authorization.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "RTEUDISA",
+        "description": "Remote timer E update disable authorization.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "RTFUDISA",
+        "description": "Remote timer F update disable authorization.",
+        "bit_offset": 6,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_DLLCR": {
+    "description": "High Resolution Timer: DLL Control Register",
+    "fields": [
+      {
+        "name": "CAL",
+        "description": "DLL Calibration Start.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "CALEN",
+        "description": "DLL Calibration Enable.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "CALRTE",
+        "description": "DLL Calibration rate.",
+        "bit_offset": 2,
+        "bit_size": 2
+      }
+    ]
+  },
+  "fieldset/HRTIM_EECR1": {
+    "description": "High Resolution Timer: External Events Control Register 1",
+    "fields": [
+      {
+        "name": "EE1SRC",
+        "description": "External event 1 source.",
+        "bit_offset": 0,
+        "bit_size": 2
+      },
+      {
+        "name": "EE1POL",
+        "description": "External event 1 polarity.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "EE1SNS",
+        "description": "External event 1 sensitivity.",
+        "bit_offset": 3,
+        "bit_size": 2
+      },
+      {
+        "name": "EE1FAST",
+        "description": "External event 1 fast mode.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "EE2SRC",
+        "description": "External event 2 source.",
+        "bit_offset": 6,
+        "bit_size": 2
+      },
+      {
+        "name": "EE2POL",
+        "description": "External event 2 polarity.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "EE2SNS",
+        "description": "External event 2 sensitivity.",
+        "bit_offset": 9,
+        "bit_size": 2
+      },
+      {
+        "name": "EE2FAST",
+        "description": "External event 2 fast mode.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "EE3SRC",
+        "description": "External event 3 source.",
+        "bit_offset": 12,
+        "bit_size": 2
+      },
+      {
+        "name": "EE3POL",
+        "description": "External event 3 polarity.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "EE3SNS",
+        "description": "External event 3 sensitivity.",
+        "bit_offset": 15,
+        "bit_size": 2
+      },
+      {
+        "name": "EE3FAST",
+        "description": "External event 3 fast mode.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "EE4SRC",
+        "description": "External event 4 source.",
+        "bit_offset": 18,
+        "bit_size": 2
+      },
+      {
+        "name": "EE4POL",
+        "description": "External event 4 polarity.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "EE4SNS",
+        "description": "External event 4 sensitivity.",
+        "bit_offset": 21,
+        "bit_size": 2
+      },
+      {
+        "name": "EE4FAST",
+        "description": "External event 4 fast mode.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "EE5SRC",
+        "description": "External event 5 source.",
+        "bit_offset": 24,
+        "bit_size": 2
+      },
+      {
+        "name": "EE5POL",
+        "description": "External event 5 polarity.",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "EE5SNS",
+        "description": "External event 5 sensitivity.",
+        "bit_offset": 27,
+        "bit_size": 2
+      },
+      {
+        "name": "EE5FAST",
+        "description": "External event 5 fast mode.",
+        "bit_offset": 29,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_EECR2": {
+    "description": "High Resolution Timer: External Events Control Register 2",
+    "fields": [
+      {
+        "name": "EE6SRC",
+        "description": "External event 6 source.",
+        "bit_offset": 0,
+        "bit_size": 2
+      },
+      {
+        "name": "EE6POL",
+        "description": "External event 6 polarity.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "EE6SNS",
+        "description": "External event 6 sensitivity.",
+        "bit_offset": 3,
+        "bit_size": 2
+      },
+      {
+        "name": "EE7SRC",
+        "description": "External event 7 source.",
+        "bit_offset": 6,
+        "bit_size": 2
+      },
+      {
+        "name": "EE7POL",
+        "description": "External event 7 polarity.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "EE7SNS",
+        "description": "External event 7 sensitivity.",
+        "bit_offset": 9,
+        "bit_size": 2
+      },
+      {
+        "name": "EE8SRC",
+        "description": "External event 8 source.",
+        "bit_offset": 12,
+        "bit_size": 2
+      },
+      {
+        "name": "EE8POL",
+        "description": "External event 8 polarity.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "EE8SNS",
+        "description": "External event 8 sensitivity.",
+        "bit_offset": 15,
+        "bit_size": 2
+      },
+      {
+        "name": "EE9SRC",
+        "description": "External event 9 source.",
+        "bit_offset": 18,
+        "bit_size": 2
+      },
+      {
+        "name": "EE9POL",
+        "description": "External event 9 polarity.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "EE9SNS",
+        "description": "External event 9 sensitivity.",
+        "bit_offset": 21,
+        "bit_size": 2
+      },
+      {
+        "name": "EE10SRC",
+        "description": "External event 10 source.",
+        "bit_offset": 24,
+        "bit_size": 2
+      },
+      {
+        "name": "EE10POL",
+        "description": "External event 10 polarity.",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "EE10SNS",
+        "description": "External event 10 sensitivity.",
+        "bit_offset": 27,
+        "bit_size": 2
+      }
+    ]
+  },
+  "fieldset/HRTIM_EECR3": {
+    "description": "High Resolution Timer: External Events Control Register 2",
+    "fields": [
+      {
+        "name": "EE6F",
+        "description": "External event 6 filter.",
+        "bit_offset": 0,
+        "bit_size": 4
+      },
+      {
+        "name": "EE7F",
+        "description": "External event 7 filter.",
+        "bit_offset": 6,
+        "bit_size": 4
+      },
+      {
+        "name": "EE8F",
+        "description": "External event 8 filter.",
+        "bit_offset": 12,
+        "bit_size": 4
+      },
+      {
+        "name": "EE9F",
+        "description": "External event 9 filter.",
+        "bit_offset": 18,
+        "bit_size": 4
+      },
+      {
+        "name": "EE10F",
+        "description": "External event 10 filter.",
+        "bit_offset": 24,
+        "bit_size": 4
+      },
+      {
+        "name": "EEVSD",
+        "description": "External event sampling clock division.",
+        "bit_offset": 30,
+        "bit_size": 2
+      }
+    ]
+  },
+  "fieldset/HRTIM_EECR4": {
+    "description": "HRTIM timer external event control register 4.",
+    "fields": [
+      {
+        "name": "EE11SRC",
+        "description": "External event 11 source.",
+        "bit_offset": 0,
+        "bit_size": 2
+      },
+      {
+        "name": "EE11POL",
+        "description": "External event 11 polarity.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "EE11SNS",
+        "description": "External event 11 sensitivity.",
+        "bit_offset": 3,
+        "bit_size": 2
+      },
+      {
+        "name": "EE11FAST",
+        "description": "External event 11 fast mode.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "EE12SRC",
+        "description": "External event 2 source.",
+        "bit_offset": 6,
+        "bit_size": 2
+      },
+      {
+        "name": "EE12POL",
+        "description": "External event 2 polarity.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "EE12SNS",
+        "description": "External event 2 sensitivity.",
+        "bit_offset": 9,
+        "bit_size": 2
+      },
+      {
+        "name": "EE12FAST",
+        "description": "External event 2 fast mode.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "EE13SRC",
+        "description": "External event 3 source.",
+        "bit_offset": 12,
+        "bit_size": 2
+      },
+      {
+        "name": "EE13POL",
+        "description": "External event 3 polarity.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "EE13SNS",
+        "description": "External event 3 sensitivity.",
+        "bit_offset": 15,
+        "bit_size": 2
+      },
+      {
+        "name": "EE13FAST",
+        "description": "External event 3 fast mode.",
+        "bit_offset": 17,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_EECR5": {
+    "description": "HRTIM timer external event control register 5.",
+    "fields": [
+      {
+        "name": "EE14SRC",
+        "description": "External event 14 source.",
+        "bit_offset": 0,
+        "bit_size": 2
+      },
+      {
+        "name": "EE14POL",
+        "description": "External event 14 polarity.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "EE14SNS",
+        "description": "External event 14 sensitivity.",
+        "bit_offset": 3,
+        "bit_size": 2
+      },
+      {
+        "name": "EE15SRC",
+        "description": "External event 15 source.",
+        "bit_offset": 6,
+        "bit_size": 2
+      },
+      {
+        "name": "EE15POL",
+        "description": "External event 15 polarity.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "EE15SNS",
+        "description": "External event 15 sensitivity.",
+        "bit_offset": 9,
+        "bit_size": 2
+      },
+      {
+        "name": "EE16SRC",
+        "description": "External event 16 source.",
+        "bit_offset": 12,
+        "bit_size": 2
+      },
+      {
+        "name": "EE16POL",
+        "description": "External event 16 polarity.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "EE16SNS",
+        "description": "External event 16 sensitivity.",
+        "bit_offset": 15,
+        "bit_size": 2
+      }
+    ]
+  },
+  "fieldset/HRTIM_EECR6": {
+    "description": "HRTIM timer external event control register 6.",
+    "fields": [
+      {
+        "name": "EE14F",
+        "description": "External event 14 filter.",
+        "bit_offset": 0,
+        "bit_size": 4
+      },
+      {
+        "name": "EE15F",
+        "description": "External event 15 filter.",
+        "bit_offset": 6,
+        "bit_size": 4
+      },
+      {
+        "name": "EE16F",
+        "description": "External event 16 filter.",
+        "bit_offset": 12,
+        "bit_size": 4
+      }
+    ]
+  },
+  "fieldset/HRTIM_EECR7": {
+    "description": "HRTIM timer external event control register 7.",
+    "fields": [
+      {
+        "name": "EE1SRC",
+        "description": "External event 1 source - bit 2.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "EE2SRC",
+        "description": "External event 2 source - bit 2.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "EE3SRC",
+        "description": "External event 3 source - bit 2.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "EE4SRC",
+        "description": "External event 4 source - bit 2.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "EE5SRC",
+        "description": "External event 5 source - bit 2.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "EE6SRC",
+        "description": "External event 6 source - bit 2.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "EE7SRC",
+        "description": "External event 7 source - bit 2.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "EE8SRC",
+        "description": "External event 8 source - bit 2.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "EE9SRC",
+        "description": "External event 9 source - bit 2.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "EE10SRC",
+        "description": "External event 10 source - bit 2.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "EE11SRC",
+        "description": "External event 11 source - bit 2.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "EE12SRC",
+        "description": "External event 12 source - bit 2.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "EE13SRC",
+        "description": "External event 13 source - bit 2.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "EE14SRC",
+        "description": "External event 14 source - bit 2.",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "EE15SRC",
+        "description": "External event 15 source - bit 2.",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "EE16SRC",
+        "description": "External event 16 source - bit 2.",
+        "bit_offset": 30,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_FLTINR1": {
+    "description": "High Resolution Timer: Fault Input Register 1",
+    "fields": [
+      {
+        "name": "FLT1E",
+        "description": "Fault 1 enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT1P",
+        "description": "Fault 1 polarity.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT1SRC",
+        "description": "Fault 1 source bit 0.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT1F",
+        "description": "Fault 1 filter.",
+        "bit_offset": 3,
+        "bit_size": 4
+      },
+      {
+        "name": "FLT1LCK",
+        "description": "Fault 1 lock.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT2E",
+        "description": "Fault 2 enable.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT2P",
+        "description": "Fault 2 polarity.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT2SRC",
+        "description": "Fault 2 source bit 0.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT2F",
+        "description": "Fault 2 filter.",
+        "bit_offset": 11,
+        "bit_size": 4
+      },
+      {
+        "name": "FLT2LCK",
+        "description": "Fault 2 lock.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT3E",
+        "description": "Fault 3 enable.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT3P",
+        "description": "Fault 3 polarity.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT3SRC",
+        "description": "Fault 3 source bit 0.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT3F",
+        "description": "Fault 3 filter.",
+        "bit_offset": 19,
+        "bit_size": 4
+      },
+      {
+        "name": "FLT3LCK",
+        "description": "Fault 3 lock.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT4E",
+        "description": "Fault 4 enable.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT4P",
+        "description": "Fault 4 polarity.",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT4SRC",
+        "description": "Fault 4 source bit 0.",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT4F",
+        "description": "Fault 4 filter.",
+        "bit_offset": 27,
+        "bit_size": 4
+      },
+      {
+        "name": "FLT4LCK",
+        "description": "Fault 4 lock.",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_FLTINR2": {
+    "description": "High Resolution Timer: Fault Input Register 2",
+    "fields": [
+      {
+        "name": "FLTE",
+        "description": "Fault 5 enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "FLTP",
+        "description": "Fault 5 polarity.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "FLTSRC",
+        "description": "FLT5SRC[0]: Fault 5 source bit 0.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "FLTF",
+        "description": "Fault 5 filter.",
+        "bit_offset": 3,
+        "bit_size": 4
+      },
+      {
+        "name": "FLTLCK",
+        "description": "Fault 5 lock.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT6E",
+        "description": "Fault 6 enable.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT6P",
+        "description": "Fault 6 polarity.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT6SRC",
+        "description": "FLT6SRC[0]: Fault 6 source bit 0.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT6F",
+        "description": "Fault 6 filter.",
+        "bit_offset": 11,
+        "bit_size": 4
+      },
+      {
+        "name": "FLT6LCK",
+        "description": "Fault 6 lock.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT1SRC",
+        "description": "Fault 1 source bit 1.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT2SRC",
+        "description": "Fault 2 source bit 1.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT3SRC",
+        "description": "Fault 3 source bit 1.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT4SRC",
+        "description": "Fault 4 source bit 1.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT5SRC_1",
+        "description": "FLT5SRC[1].",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT6SRC_1",
+        "description": "FLT6SRC[1].",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT7SRC",
+        "description": "Fault 7 source bit 1.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT8SRC",
+        "description": "Fault 8 source bit 1.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "FLTSD",
+        "description": "Fault sampling clock division.",
+        "bit_offset": 24,
+        "bit_size": 2
+      }
+    ]
+  },
+  "fieldset/HRTIM_FLTINR3": {
+    "description": "HRTIM fault input register 3.",
+    "fields": [
+      {
+        "name": "FLT1BLKE",
+        "description": "Fault 1 blanking enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT1BLKS",
+        "description": "Fault 1 blanking source.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT1CNT",
+        "description": "Fault 1 counter.",
+        "bit_offset": 2,
+        "bit_size": 4
+      },
+      {
+        "name": "FLT1CRES",
+        "description": "Fault 1 counter reset.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT1RSTM",
+        "description": "Fault 1 reset mode.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT2BLKE",
+        "description": "Fault 2 blanking enable.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT2BLKS",
+        "description": "Fault 2 blanking source.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT2CNT",
+        "description": "Fault 2 counter.",
+        "bit_offset": 10,
+        "bit_size": 4
+      },
+      {
+        "name": "FLT2CRES",
+        "description": "Fault 2 counter reset.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT2RSTM",
+        "description": "Fault 2 reset mode.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT3BLKE",
+        "description": "Fault 3 blanking enable.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT3BLKS",
+        "description": "Fault 3 blanking source.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT3CNT",
+        "description": "Fault 3 counter.",
+        "bit_offset": 18,
+        "bit_size": 4
+      },
+      {
+        "name": "FLT3CRES",
+        "description": "Fault 3 counter reset.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT3RSTM",
+        "description": "Fault 3 reset mode.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT4BLKE",
+        "description": "Fault 4 blanking enable.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT4BLKS",
+        "description": "Fault 4 blanking source.",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT4CNT",
+        "description": "Fault 4 counter.",
+        "bit_offset": 26,
+        "bit_size": 4
+      },
+      {
+        "name": "FLT4CRES",
+        "description": "Fault 4 counter reset.",
+        "bit_offset": 30,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT4RSTM",
+        "description": "Fault 4 reset mode.",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_FLTINR4": {
+    "description": "HRTIM fault input register 4.",
+    "fields": [
+      {
+        "name": "FLT5BLKE",
+        "description": "Fault 5 blanking enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT5BLKS",
+        "description": "Fault 5 blanking source.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT5CNT",
+        "description": "Fault 5 counter.",
+        "bit_offset": 2,
+        "bit_size": 4
+      },
+      {
+        "name": "FLT5CRES",
+        "description": "Fault 5 counter reset.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT5RSTM",
+        "description": "Fault 5 reset mode.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT6BLKE",
+        "description": "Fault 6 blanking enable.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT6BLKS",
+        "description": "Fault 6 blanking source.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT6CNT",
+        "description": "Fault 6 counter.",
+        "bit_offset": 10,
+        "bit_size": 4
+      },
+      {
+        "name": "FLT6CRES",
+        "description": "Fault 6 counter reset.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT6RSTM",
+        "description": "Fault 6 reset mode.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT7BLKE",
+        "description": "Fault 7 blanking enable.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT7BLKS",
+        "description": "Fault 7 blanking source.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT7CNT",
+        "description": "Fault 7 counter.",
+        "bit_offset": 18,
+        "bit_size": 4
+      },
+      {
+        "name": "FLT7CRES",
+        "description": "Fault 7 counter reset.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT7RSTM",
+        "description": "Fault 7 reset mode.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT8BLKE",
+        "description": "Fault 8 blanking enable.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT8BLKS",
+        "description": "Fault 8 blanking source.",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT8CNT",
+        "description": "Fault 8 counter.",
+        "bit_offset": 26,
+        "bit_size": 4
+      },
+      {
+        "name": "FLT8CRES",
+        "description": "Fault 8 counter reset.",
+        "bit_offset": 30,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT8RSTM",
+        "description": "Fault 8 reset mode.",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_FLTINR5": {
+    "description": "HRTIM fault input register 5.",
+    "fields": [
+      {
+        "name": "FLT7E",
+        "description": "Fault 7 enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT7P",
+        "description": "Fault 7 polarity.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT7SRC",
+        "description": "Fault 7 source bit 0.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT7F",
+        "description": "Fault 7 filter.",
+        "bit_offset": 3,
+        "bit_size": 4
+      },
+      {
+        "name": "FLT7LCK",
+        "description": "Fault 7 lock.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT8E",
+        "description": "Fault 8 enable.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT8P",
+        "description": "Fault 8 polarity.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT8SRC",
+        "description": "Fault 8 source bit 0.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT8F",
+        "description": "Fault 8 filter.",
+        "bit_offset": 11,
+        "bit_size": 4
+      },
+      {
+        "name": "FLT8LCK",
+        "description": "Fault 8 lock.",
+        "bit_offset": 15,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_ICR": {
+    "description": "High Resolution Timer: Interrupt Clear Register",
+    "fields": [
+      {
+        "name": "FLT1C",
+        "description": "Fault 1 interrupt flag clear.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT2C",
+        "description": "Fault 2 interrupt flag clear.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT3C",
+        "description": "Fault 3 interrupt flag clear.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT4C",
+        "description": "Fault 4 interrupt flag clear.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT5C",
+        "description": "Fault 5 interrupt flag clear.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "SYSFLT",
+        "description": "System fault interrupt flag clear.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT6C",
+        "description": "Fault 6 interrupt flag clear.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT7C",
+        "description": "Fault 7 interrupt flag clear.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT8C",
+        "description": "Fault 8 interrupt flag clear.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "DLLRDY",
+        "description": "DLL Ready Interrupt flag Clear.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "BMPER",
+        "description": "Burst mode period flag clear.",
+        "bit_offset": 17,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_IER": {
+    "description": "High Resolution Timer: Interrupt Enable Register",
+    "fields": [
+      {
+        "name": "FLT1IE",
+        "description": "Fault 1 interrupt enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT2IE",
+        "description": "Fault 2 interrupt enable.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT3IE",
+        "description": "Fault 3 interrupt enable.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT4IE",
+        "description": "Fault 4 interrupt enable.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT5IE",
+        "description": "Fault 5 interrupt enable.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "SYSFLT",
+        "description": "System fault interrupt enable.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT6IE",
+        "description": "Fault 6 interrupt enable.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT7IE",
+        "description": "Fault 7 interrupt enable.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT8IE",
+        "description": "Fault 8 interrupt enable.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "DLLRDY",
+        "description": "DLL Ready Interrupt Enable.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "BMPER",
+        "description": "Burst mode period interrupt enable.",
+        "bit_offset": 17,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_ISR": {
+    "description": "High Resolution Timer: Interrupt Status Register",
+    "fields": [
+      {
+        "name": "FLT1",
+        "description": "Fault 1 interrupt flag.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT2",
+        "description": "Fault 2 interrupt flag.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT3",
+        "description": "Fault 3 interrupt flag.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT4",
+        "description": "Fault 4 interrupt flag.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT5",
+        "description": "Fault 5 interrupt flag.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "SYSFLT",
+        "description": "System fault interrupt flag.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT6",
+        "description": "Fault 6 interrupt flag.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT7",
+        "description": "Fault 7 interrupt flag.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT8",
+        "description": "Fault 8 interrupt flag.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "DLLRDY",
+        "description": "DLL Ready Interrupt Flag.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "BMPER",
+        "description": "Burst mode period interrupt flag.",
+        "bit_offset": 17,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_ODISR": {
+    "description": "High Resolution Timer: Output Disable Register",
+    "fields": [
+      {
+        "name": "TA1ODIS",
+        "description": "Timer A output 1 disable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "TA2ODIS",
+        "description": "Timer A output 2 disable.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "TB1ODIS",
+        "description": "Timer B output 1 disable.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "TB2ODIS",
+        "description": "Timer B output 2 disable.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "TC1ODIS",
+        "description": "Timer C output 1 disable.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "TC2ODIS",
+        "description": "Timer C output 2 disable.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "TD1ODIS",
+        "description": "Timer D output 1 disable.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "TD2ODIS",
+        "description": "Timer D output 2 disable.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "TE1ODIS",
+        "description": "Timer E output 1 disable.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "TE2ODIS",
+        "description": "Timer E output 2 disable.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "TF1ODIS",
+        "description": "Timer F output 1 disable.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "TF2ODIS",
+        "description": "Timer F output 2 disable.",
+        "bit_offset": 11,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_ODSR": {
+    "description": "High Resolution Timer: Output Disable Status Register",
+    "fields": [
+      {
+        "name": "TA1ODS",
+        "description": "Timer A output 1 disable status.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "TA2ODS",
+        "description": "Timer A output 2 disable status.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "TB1ODS",
+        "description": "Timer B output 1 disable status.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "TB2ODS",
+        "description": "Timer B output 2 disable status.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "TC1ODS",
+        "description": "Timer C output 1 disable status.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "TC2ODS",
+        "description": "Timer C output 2 disable status.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "TD1ODS",
+        "description": "Timer D output 1 disable status.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "TD2ODS",
+        "description": "Timer D output 2 disable status.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "TE1ODS",
+        "description": "Timer E output 1 disable status.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "TE2ODS",
+        "description": "Timer E output 2 disable status.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "TF1ODS",
+        "description": "Timer F output 1 disable status.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "TF2ODS",
+        "description": "Timer F output 2 disable status.",
+        "bit_offset": 11,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_OENR": {
+    "description": "High Resolution Timer: Output Enable Register",
+    "fields": [
+      {
+        "name": "TA1OEN",
+        "description": "Timer A output 1 enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "TA2OEN",
+        "description": "Timer A output 2 enable.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "TB1OEN",
+        "description": "Timer B output 1 enable.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "TB2OEN",
+        "description": "Timer B output 2 enable.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "TC1OEN",
+        "description": "Timer C output 1 enable.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "TC2OEN",
+        "description": "Timer C output 2 enable.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "TD1OEN",
+        "description": "Timer D output 1 enable.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "TD2OEN",
+        "description": "Timer D output 2 enable.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "TE1OEN",
+        "description": "Timer E output 1 enable.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "TE2OEN",
+        "description": "Timer E output 2 enable.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "TF1OEN",
+        "description": "Timer F output 1 enable.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "TF2OEN",
+        "description": "Timer F output 2 enable.",
+        "bit_offset": 11,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/HRTIM_OR": {
+    "description": "HRTIM option register.",
+    "fields": [
+      {
+        "name": "BMTRGSEL",
+        "description": "Update Enable Selection.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "UPDENSEL",
+        "description": "Update Enable Selection.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "INSYNCSEL",
+        "description": "Synchronization Input Selection.",
+        "bit_offset": 2,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/MCMP": {
+    "description": "Master Timer Compare X Register",
+    "fields": [
+      {
+        "name": "MCMP",
+        "description": "Master timer compare 1 value.",
+        "bit_offset": 0,
+        "bit_size": 16
+      }
+    ]
+  },
+  "fieldset/MCNTR": {
+    "description": "Master Timer Counter Register",
+    "fields": [
+      {
+        "name": "MCNT",
+        "description": "Counter value.",
+        "bit_offset": 0,
+        "bit_size": 16
+      }
+    ]
+  },
+  "fieldset/MCR": {
+    "description": "Master Timer Control Register",
+    "fields": [
+      {
+        "name": "CKPSC",
+        "description": "Clock prescaler.",
+        "bit_offset": 0,
+        "bit_size": 3
+      },
+      {
+        "name": "CONT",
+        "description": "Continuous mode.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "RETRIG",
+        "description": "Re-triggerable mode.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "HALF",
+        "description": "Half mode.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "INTLVD",
+        "description": "Interleaved mode.",
+        "bit_offset": 6,
+        "bit_size": 2
+      },
+      {
+        "name": "SYNCIN",
+        "description": "Synchronization input.",
+        "bit_offset": 8,
+        "bit_size": 2,
+        "enum": "SYNCIN"
+      },
+      {
+        "name": "SYNCRSTM",
+        "description": "Synchronization resets master.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "SYNCSTRTM",
+        "description": "Synchronization starts master.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "SYNCOUT",
+        "description": "Synchronization output.",
+        "bit_offset": 12,
+        "bit_size": 2,
+        "enum": "SYNCOUT"
+      },
+      {
+        "name": "SYNCSRC",
+        "description": "Synchronization source.",
+        "bit_offset": 14,
+        "bit_size": 2,
+        "enum": "SYNCSRC"
+      },
+      {
+        "name": "MCEN",
+        "description": "Master timer counter enable.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "TACEN",
+        "description": "Timer A counter enable.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "TBCEN",
+        "description": "Timer B counter enable.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "TCCEN",
+        "description": "Timer C counter enable.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "TDCEN",
+        "description": "Timer D counter enable.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "TECEN",
+        "description": "Timer E counter enable.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "TFCEN",
+        "description": "Timer F counter enable.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "DACSYNC",
+        "description": "DAC synchronization.",
+        "bit_offset": 25,
+        "bit_size": 2,
+        "enum": "DACSYNC"
+      },
+      {
+        "name": "PREEN",
+        "description": "Preload enable.",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "MREPU",
+        "description": "Master timer repetition update.",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "BRSTDMA",
+        "description": "Burst DMA update.",
+        "bit_offset": 30,
+        "bit_size": 2,
+        "enum": "BRSTDMA"
+      }
+    ]
+  },
+  "fieldset/MDIER": {
+    "description": "Master Timer DMA / Interrupt Enable Register",
+    "fields": [
+      {
+        "name": "MCMP1IE",
+        "description": "Master compare 1 interrupt enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "MCMP2IE",
+        "description": "Master compare 2 interrupt enable.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "MCMP3IE",
+        "description": "Master compare 3 interrupt enable.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "MCMP4IE",
+        "description": "Master compare 4 interrupt enable.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "MREPIE",
+        "description": "Master repetition interrupt enable.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "SYNCIE",
+        "description": "Sync input interrupt enable.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "MUPDIE",
+        "description": "Master update interrupt enable.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "MCMP1DE",
+        "description": "Master compare 1 DMA request enable.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "MCMP2DE",
+        "description": "Master compare 2 DMA request enable.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "MCMP3DE",
+        "description": "Master compare 3 DMA request enable.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "MCMP4DE",
+        "description": "Master compare 4 DMA request enable.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "MREPDE",
+        "description": "Master repetition DMA request enable.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "SYNCDE",
+        "description": "Sync input DMA request enable.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "MUPDDE",
+        "description": "Master update DMA request enable.",
+        "bit_offset": 22,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/MICR": {
+    "description": "Master Timer Interrupt Clear Register",
+    "fields": [
+      {
+        "name": "MCMP1C",
+        "description": "Master compare 1 interrupt flag clear.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "MCMP2C",
+        "description": "Master compare 2 interrupt flag clear.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "MCMP3C",
+        "description": "Master compare 3 interrupt flag clear.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "MCMP4C",
+        "description": "Master compare 4 interrupt flag clear.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "MREPC",
+        "description": "Repetition interrupt flag clear.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "SYNCC",
+        "description": "Sync input interrupt flag clear.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "MUPDC",
+        "description": "Master update interrupt flag clear.",
+        "bit_offset": 6,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/MISR": {
+    "description": "Master Timer Interrupt Status Register",
+    "fields": [
+      {
+        "name": "MCMP1",
+        "description": "Master compare 1 interrupt flag.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "MCMP2",
+        "description": "Master compare 2 interrupt flag.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "MCMP3",
+        "description": "Master compare 3 interrupt flag.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "MCMP4",
+        "description": "Master compare 4 interrupt flag.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "MREP",
+        "description": "Master repetition interrupt flag.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "SYNC",
+        "description": "Sync input interrupt flag.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "MUPD",
+        "description": "Master update interrupt flag.",
+        "bit_offset": 6,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/MPER": {
+    "description": "Master Timer Period Register",
+    "fields": [
+      {
+        "name": "MPER",
+        "description": "Master timer period value.",
+        "bit_offset": 0,
+        "bit_size": 16
+      }
+    ]
+  },
+  "fieldset/MREP": {
+    "description": "Master Timer Repetition Register",
+    "fields": [
+      {
+        "name": "MREP",
+        "description": "Master timer repetition period value.",
+        "bit_offset": 0,
+        "bit_size": 8
+      }
+    ]
+  },
+  "fieldset/TIMXCCR": {
+    "description": "Timerx Capture 2 Control Register",
+    "fields": [
+      {
+        "name": "SWCPT",
+        "description": "Software capture.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "UPDCPT",
+        "description": "Update capture.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "EXEVACPT",
+        "description": "External event A capture.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "EXEVBCPT",
+        "description": "External event B capture.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "EXEVCCPT",
+        "description": "External event C capture.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "EXEVDCPT",
+        "description": "External event D capture.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "EXEVECPT",
+        "description": "External event E capture.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "EXEVFCPT",
+        "description": "External event F capture.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "EXEVGCPT",
+        "description": "External event G capture.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "EXEVHCPT",
+        "description": "External event H capture.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "EXEVICPT",
+        "description": "External event I capture.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "EXEVJCPT",
+        "description": "External event J capture.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "TWSET",
+        "description": "Timer F output 1 set.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "TWRST",
+        "description": "Timer F output 1 reset.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "TWCMP1",
+        "description": "Timer F compare 1.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "TWCMP2",
+        "description": "Timer E compare 2.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "TXSET",
+        "description": "Timer B output 1 set.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "TXRST",
+        "description": "Timer B output 1 reset.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "TXCMP1",
+        "description": "Timer B compare 1.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "TXCMP2",
+        "description": "Timer B compare 2.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "TYSET",
+        "description": "Timer C output 1 set.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "TYRST",
+        "description": "Timer C output 1 reset.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "TCCMP1",
+        "description": "Timer C compare 1.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "TCCMP2",
+        "description": "Timer C compare 2.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "TZSET",
+        "description": "Timer D output 1 set.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "TZRST",
+        "description": "Timer D output 1 reset.",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "TDCMP1",
+        "description": "Timer D compare 1.",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "TDCMP2",
+        "description": "Timer D compare 2.",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "TTSET",
+        "description": "Timer E output 1 set.",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "TTRST",
+        "description": "Timer E output 1 reset.",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "TECMP1",
+        "description": "Timer E compare 1.",
+        "bit_offset": 30,
+        "bit_size": 1
+      },
+      {
+        "name": "TECMP2",
+        "description": "Timer E compare 2.",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/TIMXCHP": {
+    "description": "Timerx Chopper Register",
+    "fields": [
+      {
+        "name": "CARFRQ",
+        "description": "Timer x carrier frequency value.",
+        "bit_offset": 0,
+        "bit_size": 4
+      },
+      {
+        "name": "CARDTY",
+        "description": "Timer x chopper duty cycle value.",
+        "bit_offset": 4,
+        "bit_size": 3
+      },
+      {
+        "name": "STRTPW",
+        "description": "Timer x start pulsewidth.",
+        "bit_offset": 7,
+        "bit_size": 4
+      }
+    ]
+  },
+  "fieldset/TIMXCMP": {
+    "description": "Timerx Compare X Register",
+    "fields": [
+      {
+        "name": "CMP",
+        "description": "Timer x compare 1 value.",
+        "bit_offset": 0,
+        "bit_size": 16
+      }
+    ]
+  },
+  "fieldset/TIMXCMPC": {
+    "description": "Timerx Compare X Compound Register",
+    "fields": [
+      {
+        "name": "CMP",
+        "description": "Timer x compare 1 value.",
+        "bit_offset": 0,
+        "bit_size": 16
+      },
+      {
+        "name": "REP",
+        "description": "Timer x repetition value aliased from HRTIM_REPx register.",
+        "bit_offset": 16,
+        "bit_size": 8
+      }
+    ]
+  },
+  "fieldset/TIMXCNT": {
+    "description": "Timerx Counter Register",
+    "fields": [
+      {
+        "name": "CNT",
+        "description": "Timer x counter value.",
+        "bit_offset": 0,
+        "bit_size": 16
+      }
+    ]
+  },
+  "fieldset/TIMXCODE": {
+    "description": "HRTIM timer A crossbar override delayed fault event register.",
+    "fields": [
+      {
+        "name": "DLY1FLTD",
+        "description": "Delayed 1 Fault duration.",
+        "bit_offset": 0,
+        "bit_size": 9
+      },
+      {
+        "name": "DLY2FLTD",
+        "description": "Delayed 2 Fault duration.",
+        "bit_offset": 16,
+        "bit_size": 9
+      }
+    ]
+  },
+  "fieldset/TIMXCOFE": {
+    "description": "HRTIM timer A crossbar override forcing event register.",
+    "fields": [
+      {
+        "name": "COFMA",
+        "description": "Crossbar override force mode output A.",
+        "bit_offset": 0,
+        "bit_size": 3
+      },
+      {
+        "name": "EEVAFRCA",
+        "description": "External event A forces output A.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVBFRCA",
+        "description": "External event B forces output A.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVCFRCA",
+        "description": "External event C forces output A.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVDFRCA",
+        "description": "External event D forces output A.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVEFRCA",
+        "description": "External event E forces output A.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVFFRCA",
+        "description": "External event F forces output A.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVGFRCA",
+        "description": "External event G forces output A.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVHFRCA",
+        "description": "External event H forces output A.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVIFRCA",
+        "description": "External event I forces output A.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVJFRCA",
+        "description": "External event J forces output A.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "COFMB",
+        "description": "Crossbar override force mode output B.",
+        "bit_offset": 16,
+        "bit_size": 3
+      },
+      {
+        "name": "EEVAFRCB",
+        "description": "External event A forces output B.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVBFRCB",
+        "description": "External event B forces output B.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVCFRCB",
+        "description": "External event C forces output B.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVDFRCB",
+        "description": "External event D forces output B.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVEFRCB",
+        "description": "External event E forces output B.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVFFRCB",
+        "description": "External event F forces output B.",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVGFRCB",
+        "description": "External event G forces output B.",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVHFRCB",
+        "description": "External event H forces output B.",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVIFRCB",
+        "description": "External event I forces output B.",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVJFRCB",
+        "description": "External event J forces output B.",
+        "bit_offset": 29,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/TIMXCOTRG": {
+    "description": "HRTIM timer A crossbar override trigger register.",
+    "fields": [
+      {
+        "name": "SWT",
+        "description": "Software trigger.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT1",
+        "description": "FLT1 trigger.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT2",
+        "description": "FLT2 trigger.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT3",
+        "description": "FLT3 trigger.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT4",
+        "description": "FLT4 trigger.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT5",
+        "description": "FLT5 trigger.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT6",
+        "description": "FLT6 trigger.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT7",
+        "description": "FLT7 trigger.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT8",
+        "description": "FLT8 trigger.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT1A2",
+        "description": "FLT1A2 trigger.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT2A3",
+        "description": "FLT2A3 trigger.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT3A4",
+        "description": "FLT2A3 trigger.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT4A5",
+        "description": "FLT4A5 trigger.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT5A6",
+        "description": "FLT5A6 trigger.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT6A7",
+        "description": "FLT6A7 trigger.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT7A8",
+        "description": "FLT7A8 trigger.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVA",
+        "description": "EEVA trigger.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVB",
+        "description": "EEVB trigger.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVC",
+        "description": "EEVC trigger.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVD",
+        "description": "EEVD trigger.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVE",
+        "description": "EEVE trigger.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVF",
+        "description": "EEVF trigger.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVG",
+        "description": "EEVG trigger.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVH",
+        "description": "EEVH trigger.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVI",
+        "description": "EEVI trigger.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVJ",
+        "description": "EEVJ trigger.",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "EXT_TRG0",
+        "description": "External trigger 0.",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "EXT_TRG1",
+        "description": "External trigger 1.",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "EXT_TRG2",
+        "description": "External trigger 2.",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "EXT_TRG3",
+        "description": "External trigger 3.",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "EXT_TRG4",
+        "description": "External trigger 4.",
+        "bit_offset": 30,
+        "bit_size": 1
+      },
+      {
+        "name": "EXT_TRG5",
+        "description": "External trigger 5.",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/TIMXCPT": {
+    "description": "Timerx Capture X Register",
+    "fields": [
+      {
+        "name": "CPT",
+        "description": "Timer x capture 1 value.",
+        "bit_offset": 0,
+        "bit_size": 16
+      },
+      {
+        "name": "DIR",
+        "description": "Timer x capture 1 direction status.",
+        "bit_offset": 16,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/TIMXCR": {
+    "description": "Timerx Control Register",
+    "fields": [
+      {
+        "name": "CKPSC",
+        "description": "HRTIM timer x clock prescaler.",
+        "bit_offset": 0,
+        "bit_size": 3
+      },
+      {
+        "name": "CONT",
+        "description": "Continuous mode.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "RETRIG",
+        "description": "Re-triggerable mode.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "HALF",
+        "description": "Half mode enable.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "PSHPLL",
+        "description": "Push-pull mode enable.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "INTLVD",
+        "description": "Interleaved mode.",
+        "bit_offset": 7,
+        "bit_size": 2
+      },
+      {
+        "name": "RSYNCU",
+        "description": "Re-synchronized update.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "SYNCRST",
+        "description": "Synchronization resets timer x.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "SYNCSTRT",
+        "description": "Synchronization starts timer x.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "DELCMP2",
+        "description": "CMP2 auto-delayed mode.",
+        "bit_offset": 12,
+        "bit_size": 2,
+        "enum": "DELCMP"
+      },
+      {
+        "name": "DELCMP4",
+        "description": "CMP4 auto-delayed mode.",
+        "bit_offset": 14,
+        "bit_size": 2,
+        "enum": "DELCMP"
+      },
+      {
+        "name": "TFU",
+        "description": "Timer F update.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "REPU",
+        "description": "Timer x repetition update.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "RSTU",
+        "description": "Timer x reset update.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "TAU",
+        "description": "Timer A update.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "TBU",
+        "description": "Timer B update.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "TCU",
+        "description": "Timer C update.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "TDU",
+        "description": "Timer D update.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "TEU",
+        "description": "Timer E update.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTU",
+        "description": "Master timer update.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "DACSYNC",
+        "description": "DAC synchronization.",
+        "bit_offset": 25,
+        "bit_size": 2,
+        "enum": "DACSYNC"
+      },
+      {
+        "name": "PREEN",
+        "description": "Preload enable.",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "UPDGAT",
+        "description": "Update gating.",
+        "bit_offset": 28,
+        "bit_size": 4,
+        "enum": "UPDGAT"
+      }
+    ]
+  },
+  "fieldset/TIMXCR2": {
+    "description": "HRTIM Timer X Control Register 2",
+    "fields": [
+      {
+        "name": "DCDE",
+        "description": "Dual channel DAC trigger enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "DCDS",
+        "description": "Dual channel DAC Step trigger.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "DCDR",
+        "description": "Dual channel DAC reset trigger.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "UDM",
+        "description": "Up-Down mode.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "ROM",
+        "description": "Roll-over mode.",
+        "bit_offset": 6,
+        "bit_size": 2
+      },
+      {
+        "name": "OUTROM",
+        "description": "Output roll-over mode.",
+        "bit_offset": 8,
+        "bit_size": 2
+      },
+      {
+        "name": "ADROM",
+        "description": "ADC roll-over mode.",
+        "bit_offset": 10,
+        "bit_size": 2
+      },
+      {
+        "name": "BMROM",
+        "description": "Burst mode roll-over mode.",
+        "bit_offset": 12,
+        "bit_size": 2
+      },
+      {
+        "name": "FEROM",
+        "description": "Fault and event roll-over mode.",
+        "bit_offset": 14,
+        "bit_size": 2
+      },
+      {
+        "name": "GTCMP1",
+        "description": "Greater than compare 1 PWM mode.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "GTCMP3",
+        "description": "Greater than compare 3 PWM mode.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "TRGHLF",
+        "description": "Triggered-half mode.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "TRGHLFT",
+        "description": "Triggered-half timeout mode.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "ADCTRGCH1",
+        "description": "ADC trigger for channel 1.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "ADCTRGCH2",
+        "description": "ADC trigger for channel 2.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "COE",
+        "description": "Crossbar override enable.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "COR",
+        "description": "Crossbar override rearm.",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "COM",
+        "description": "Crossbar override mode.",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "DCDCOE",
+        "description": "Dual channel DAC crossbar override enable.",
+        "bit_offset": 27,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/TIMXDIER": {
+    "description": "Timerx DMA / Interrupt Enable Register",
+    "fields": [
+      {
+        "name": "CMP1IE",
+        "description": "Compare 1 interrupt enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP2IE",
+        "description": "Compare 2 interrupt enable.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP3IE",
+        "description": "Compare 3 interrupt enable.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP4IE",
+        "description": "Compare 4 interrupt enable.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "REPIE",
+        "description": "Repetition interrupt enable.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "COTIE",
+        "description": "Crossbar Override Trigger interrupt enable.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "UPDIE",
+        "description": "Update interrupt enable.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "CPT1IE",
+        "description": "Capture interrupt enable.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "CPT2IE",
+        "description": "Capture interrupt enable.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "SET1IE",
+        "description": "Output 1 set interrupt enable timer x.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "RST1IE",
+        "description": "Output 1 reset interrupt enable timer x.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "SET2IE",
+        "description": "Output 2 set interrupt enable timer x.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "RST2IE",
+        "description": "Output 2 reset interrupt enable timer x.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "RSTIE",
+        "description": "Reset/roll-over interrupt enable.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "DLYPRTIE",
+        "description": "Delayed protection interrupt enable.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "CORDEIE",
+        "description": "Crossbar override rearm delay elapsed interrupt enable.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP1DE",
+        "description": "Compare 1 DMA request enable.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP2DE",
+        "description": "Compare 2 DMA request enable.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP3DE",
+        "description": "Compare 3 DMA request enable.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP4DE",
+        "description": "Compare 4 DMA request enable.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "REPDE",
+        "description": "Repetition DMA request enable.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "COTDE",
+        "description": "Crossbar Override Trigger DMA request enable.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "UPDDE",
+        "description": "Update DMA request enable.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "CPT1DE",
+        "description": "Capture 1 DMA request enable.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "CPT2DE",
+        "description": "Capture 2 DMA request enable.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "SET1DE",
+        "description": "Output 1 set DMA request enable timer x.",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "RST1DE",
+        "description": "Output 1 reset DMA request enable timer x.",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "SET2DE",
+        "description": "Output 2 set DMA request enable timer x.",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "RST2DE",
+        "description": "Output 2 reset DMA request enable timer x.",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "RSTDE",
+        "description": "Reset/roll-over DMA request enable.",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "DLYPRTDE",
+        "description": "Delayed protection DMA request enable.",
+        "bit_offset": 30,
+        "bit_size": 1
+      },
+      {
+        "name": "CORDEDE",
+        "description": "Crossbar override rearm delay elapsed DMA request enable.",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/TIMXDT": {
+    "description": "Timerx Deadtime Register",
+    "fields": [
+      {
+        "name": "DTR",
+        "description": "Deadtime rising value timer x.",
+        "bit_offset": 0,
+        "bit_size": 9
+      },
+      {
+        "name": "SDTR",
+        "description": "Sign deadtime rising value timer x.",
+        "bit_offset": 9,
+        "bit_size": 1,
+        "enum": "SDT"
+      },
+      {
+        "name": "DTPRSC",
+        "description": "Deadtime prescaler.",
+        "bit_offset": 10,
+        "bit_size": 3
+      },
+      {
+        "name": "DTRSLK",
+        "description": "Deadtime rising sign lock timer x.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "DTRLK",
+        "description": "Deadtime rising lock timer x.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "DTF",
+        "description": "Deadtime falling value timer x.",
+        "bit_offset": 16,
+        "bit_size": 9
+      },
+      {
+        "name": "SDTF",
+        "description": "Sign deadtime falling value timer x.",
+        "bit_offset": 25,
+        "bit_size": 1,
+        "enum": "SDT"
+      },
+      {
+        "name": "DTM",
+        "description": "Deadtime mode.",
+        "bit_offset": 26,
+        "bit_size": 2
+      },
+      {
+        "name": "DTFSLK",
+        "description": "Deadtime falling sign lock timer x.",
+        "bit_offset": 30,
+        "bit_size": 1
+      },
+      {
+        "name": "DTFLK",
+        "description": "Deadtime falling lock timer x.",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/TIMXEEF": {
+    "description": "Timer X External Event Filtering Register",
+    "fields": [
+      {
+        "name": "EEALTCH",
+        "description": "External event A latch.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "EEAFLTR",
+        "description": "External event A filter.",
+        "bit_offset": 1,
+        "bit_size": 5
+      },
+      {
+        "name": "EEBLTCH",
+        "description": "External event B latch.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "EEBFLTR",
+        "description": "External event B filter.",
+        "bit_offset": 7,
+        "bit_size": 5
+      },
+      {
+        "name": "EECLTCH",
+        "description": "External event C latch.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "EECFLTR",
+        "description": "External event C filter.",
+        "bit_offset": 13,
+        "bit_size": 5
+      },
+      {
+        "name": "EEDLTCH",
+        "description": "External event D latch.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "EEDFLTR",
+        "description": "External event D filter.",
+        "bit_offset": 19,
+        "bit_size": 5
+      },
+      {
+        "name": "EEELTCH",
+        "description": "External event E latch.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "EEEFLTR",
+        "description": "External event E filter.",
+        "bit_offset": 25,
+        "bit_size": 5
+      }
+    ]
+  },
+  "fieldset/TIMXEEFR3": {
+    "description": "HRTIM timer A external event filtering register 3.",
+    "fields": [
+      {
+        "name": "EEVYCE",
+        "description": "External event Y counter enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVYCRES",
+        "description": "External event Y counter reset.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVYRSTM",
+        "description": "External event Y reset mode.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVYSEL",
+        "description": "External event Y Selection.",
+        "bit_offset": 4,
+        "bit_size": 4
+      },
+      {
+        "name": "EEVYCNT",
+        "description": "External event Y counter.",
+        "bit_offset": 8,
+        "bit_size": 6
+      },
+      {
+        "name": "EEVZCE",
+        "description": "External event Z counter enable.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVZCRES",
+        "description": "External event Z counter reset.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVZRSTM",
+        "description": "External event Z reset mode.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "EEVZSEL",
+        "description": "External event Z selection.",
+        "bit_offset": 20,
+        "bit_size": 4
+      },
+      {
+        "name": "EEVZCNT",
+        "description": "External event Z counter.",
+        "bit_offset": 24,
+        "bit_size": 6
+      }
+    ]
+  },
+  "fieldset/TIMXEESEL": {
+    "description": "HRTIM timer A external event selection register.",
+    "fields": [
+      {
+        "name": "EEVASEL",
+        "description": "External event A selection.",
+        "bit_offset": 0,
+        "bit_size": 2
+      },
+      {
+        "name": "EEVBSEL",
+        "description": "External event B selection.",
+        "bit_offset": 3,
+        "bit_size": 2
+      },
+      {
+        "name": "EEVCSEL",
+        "description": "External event C selection.",
+        "bit_offset": 6,
+        "bit_size": 2
+      },
+      {
+        "name": "EEVDSEL",
+        "description": "External event D selection.",
+        "bit_offset": 9,
+        "bit_size": 2
+      },
+      {
+        "name": "EEVESEL",
+        "description": "External event E selection.",
+        "bit_offset": 12,
+        "bit_size": 2
+      },
+      {
+        "name": "EEVFSEL",
+        "description": "External event F selection.",
+        "bit_offset": 16,
+        "bit_size": 2
+      },
+      {
+        "name": "EEVGSEL",
+        "description": "External event G selection.",
+        "bit_offset": 19,
+        "bit_size": 2
+      },
+      {
+        "name": "EEVHSEL",
+        "description": "External event H selection.",
+        "bit_offset": 22,
+        "bit_size": 2
+      },
+      {
+        "name": "EEVISEL",
+        "description": "External event I selection.",
+        "bit_offset": 25,
+        "bit_size": 2
+      },
+      {
+        "name": "EEVJSEL",
+        "description": "External event J selection.",
+        "bit_offset": 28,
+        "bit_size": 2
+      }
+    ]
+  },
+  "fieldset/TIMXFLT": {
+    "description": "Timerx Fault Register",
+    "fields": [
+      {
+        "name": "FLT1EN",
+        "description": "Fault 1 enable.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT2EN",
+        "description": "Fault 2 enable.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT3EN",
+        "description": "Fault 3 enable.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT4EN",
+        "description": "Fault 4 enable.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT5EN",
+        "description": "Fault 5 enable.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT6EN",
+        "description": "Fault 6 enable.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT7EN",
+        "description": "Fault 7 enable.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT8EN",
+        "description": "Fault 8 enable.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT1A2EN",
+        "description": "Fault 1 AND Fault 2 enable.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT2A3EN",
+        "description": "Fault 2 AND Fault 3 enable.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT3A4EN",
+        "description": "Fault 3 AND Fault 4 enable.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT4A5EN",
+        "description": "Fault 4 AND Fault 5 enable.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT5A6EN",
+        "description": "Fault 5 AND Fault 6 enable.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT6A7EN",
+        "description": "Fault 6 AND Fault 7 enable.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "FLT7A8EN",
+        "description": "Fault 7 AND Fault 8 enable.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "FLTLCK",
+        "description": "Fault sources lock.",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/TIMXICR": {
+    "description": "Timerx Interrupt Clear Register",
+    "fields": [
+      {
+        "name": "CMP1C",
+        "description": "Compare 1 interrupt flag clear.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP2C",
+        "description": "Compare 2 interrupt flag clear.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP3C",
+        "description": "Compare 3 interrupt flag clear.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP4C",
+        "description": "Compare 4 interrupt flag clear.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "REPC",
+        "description": "Repetition interrupt flag clear.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "COTC",
+        "description": "Crossbar Override Trigger flag clear.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "UPDC",
+        "description": "Update interrupt flag clear.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "CPT1C",
+        "description": "Capture 1 interrupt flag clear.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "CPT2C",
+        "description": "Capture 2 interrupt flag clear.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "SET1C",
+        "description": "Output 1 set flag clear timer x.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "RST1C",
+        "description": "Output 1 reset flag clear timer x.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "SET2C",
+        "description": "Output 2 set flag clear timer x.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "RST2C",
+        "description": "Output 2 reset flag clear timer x.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "RSTC",
+        "description": "Reset interrupt flag clear.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "DLYPRTC",
+        "description": "Delayed protection flag clear.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "CORDEC",
+        "description": "Crossbar Override Rearm Delay Elapsed flag clear.",
+        "bit_offset": 15,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/TIMXISR": {
+    "description": "Timerx Interrupt Status Register",
+    "fields": [
+      {
+        "name": "CMP1",
+        "description": "Compare 1 interrupt flag.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP2",
+        "description": "Compare 2 interrupt flag.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP3",
+        "description": "Compare 3 interrupt flag.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP4",
+        "description": "Compare 4 interrupt flag.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "REP",
+        "description": "Repetition interrupt flag.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "COT",
+        "description": "Crossbar Override Trigger flag.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "UPD",
+        "description": "Update interrupt flag.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "CPT1",
+        "description": "Capture 1 interrupt flag.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "CPT2",
+        "description": "Capture 2 interrupt flag.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "SET1",
+        "description": "Output 1 set interrupt flag timer x.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "RST1",
+        "description": "Output 1 reset interrupt flag timer x.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "SET2",
+        "description": "Output 2 set interrupt flag timer x.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "RST2",
+        "description": "Output 2 reset interrupt flag timer x.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "RST",
+        "description": "Reset and/or roll-over interrupt flag.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "DLYPRT",
+        "description": "Delayed protection flag.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "CORDE",
+        "description": "Crossbar Override Rearm Delay Elapsed flag.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "CPPSTAT",
+        "description": "Current push-pull status.",
+        "bit_offset": 16,
+        "bit_size": 1,
+        "enum": "CPPSTAT"
+      },
+      {
+        "name": "IPPSTAT",
+        "description": "Idle push-pull Status.",
+        "bit_offset": 17,
+        "bit_size": 1,
+        "enum": "IPPSTAT"
+      },
+      {
+        "name": "O1STAT",
+        "description": "Output 1 status.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "O2STAT",
+        "description": "Output 2 status.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "O1CPY",
+        "description": "Output 1 copy.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "O2CPY",
+        "description": "Output 2 copy.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "COS",
+        "description": "Crossbar Override status.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "COTS",
+        "description": "Crossbar Override Trigger status.",
+        "bit_offset": 23,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/TIMXOUTR": {
+    "description": "Timerx Output Register",
+    "fields": [
+      {
+        "name": "POL1",
+        "description": "Output 1 polarity.",
+        "bit_offset": 1,
+        "bit_size": 1,
+        "enum": "POL"
+      },
+      {
+        "name": "IDLEM1",
+        "description": "Output 1 Idle mode.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "IDLES1",
+        "description": "Output 1 Idle State.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "FAULT1",
+        "description": "Output 1 fault state.",
+        "bit_offset": 4,
+        "bit_size": 2,
+        "enum": "FAULT"
+      },
+      {
+        "name": "CHP1",
+        "description": "Output 1 chopper enable.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "DIDL1",
+        "description": "Output 1 deadtime upon burst mode idle entry.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "DTEN",
+        "description": "Deadtime enable.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "DLYPRTEN",
+        "description": "Delayed protection enable.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "DLYPRT",
+        "description": "Delayed protection.",
+        "bit_offset": 10,
+        "bit_size": 3,
+        "enum": "DLYPRT"
+      },
+      {
+        "name": "BIAR",
+        "description": "Balanced Idle Automatic Resume.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "POL2",
+        "description": "Output 2 polarity.",
+        "bit_offset": 17,
+        "bit_size": 1,
+        "enum": "POL"
+      },
+      {
+        "name": "IDLEM2",
+        "description": "Output 2 idle mode.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "IDLES2",
+        "description": "Output 2 idle state.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "FAULT2",
+        "description": "Output 2 fault state.",
+        "bit_offset": 20,
+        "bit_size": 2,
+        "enum": "FAULT"
+      },
+      {
+        "name": "CHP2",
+        "description": "Output 2 chopper enable.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "DIDL2",
+        "description": "Output 2 deadtime upon burst mode Idle entry.",
+        "bit_offset": 23,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/TIMXPER": {
+    "description": "Timerx Period Register",
+    "fields": [
+      {
+        "name": "PER",
+        "description": "Timer x period value.",
+        "bit_offset": 0,
+        "bit_size": 16
+      }
+    ]
+  },
+  "fieldset/TIMXREP": {
+    "description": "Timerx Repetition Register",
+    "fields": [
+      {
+        "name": "REP",
+        "description": "Timer x repetition period value.",
+        "bit_offset": 0,
+        "bit_size": 8
+      }
+    ]
+  },
+  "fieldset/TIMXRST": {
+    "description": "Timerx Reset Register",
+    "fields": [
+      {
+        "name": "TIMFCMP1",
+        "description": "Timer F compare 1.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "UPDT",
+        "description": "Timer A update reset.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP2",
+        "description": "Timer A compare 2 reset.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP4",
+        "description": "Timer A compare 4 reset.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTPER",
+        "description": "Master timer period.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTCMP1",
+        "description": "Master compare 1.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTCMP2",
+        "description": "Master compare 2.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTCMP3",
+        "description": "Master compare 3.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTCMP4",
+        "description": "Master compare 4.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTA",
+        "description": "External event A.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTB",
+        "description": "External event B.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTC",
+        "description": "External event C.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTD",
+        "description": "External event D.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTE",
+        "description": "External event E.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTF",
+        "description": "External event F.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTG",
+        "description": "External event G.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTH",
+        "description": "External event H.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTI",
+        "description": "External event I.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTJ",
+        "description": "External event J.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMCMP1",
+        "description": "Timer B compare 1.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMCMP2",
+        "description": "Timer B compare 2.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMCMP4",
+        "description": "Timer B compare 4.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMCCMP1",
+        "description": "Timer C compare 1.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMCCMP2",
+        "description": "Timer C compare 2.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMCCMP4",
+        "description": "Timer C compare 4.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMDCMP1",
+        "description": "Timer D compare 1.",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMDCMP2",
+        "description": "Timer D compare 2.",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMDCMP4",
+        "description": "Timer D compare 4.",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMECMP1",
+        "description": "Timer E compare 1.",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMECMP2",
+        "description": "Timer E compare 2.",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMECMP4",
+        "description": "Timer E compare 4.",
+        "bit_offset": 30,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMFCMP2",
+        "description": "Timer F compare 2.",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/TIMXRSTR": {
+    "description": "Timerx OutputX Reset Register",
+    "fields": [
+      {
+        "name": "SRT",
+        "description": "Software set trigger.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "RESYNC",
+        "description": "Timer A resynchronization.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "PER",
+        "description": "Timer x period.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP1",
+        "description": "Timer x compare 1.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP2",
+        "description": "Timer x compare 2.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP3",
+        "description": "Timer x compare 3.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP4",
+        "description": "Timer x compare 4.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTPER",
+        "description": "Master period.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTCMP1",
+        "description": "Master compare 1.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTCMP2",
+        "description": "Master compare 2.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTCMP3",
+        "description": "Master compare 3.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTCMP4",
+        "description": "Master compare 4.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT1",
+        "description": "Timer event 1.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT2",
+        "description": "Timer event 2.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT3",
+        "description": "Timer event 3.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT4",
+        "description": "Timer event 4.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT5",
+        "description": "Timer event 5.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT6",
+        "description": "Timer event 6.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT7",
+        "description": "Timer event 7.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT8",
+        "description": "Timer event 8.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT9",
+        "description": "Timer event 9.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTA",
+        "description": "External event A.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTB",
+        "description": "External event B.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTC",
+        "description": "External event C.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTD",
+        "description": "External event D.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTE",
+        "description": "External event E.",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTF",
+        "description": "External event F.",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTG",
+        "description": "External event G.",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTH",
+        "description": "External event H.",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTI",
+        "description": "External event I.",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTJ",
+        "description": "External event J.",
+        "bit_offset": 30,
+        "bit_size": 1
+      },
+      {
+        "name": "UPDATE",
+        "description": "Registers update (transfer from preload register to active register).",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "fieldset/TIMXSETR": {
+    "description": "Timerx OutputX Set Register",
+    "fields": [
+      {
+        "name": "SST",
+        "description": "Software set trigger.",
+        "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "RESYNC",
+        "description": "Timer A resynchronization.",
+        "bit_offset": 1,
+        "bit_size": 1
+      },
+      {
+        "name": "PER",
+        "description": "Timer x period.",
+        "bit_offset": 2,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP1",
+        "description": "Timer x compare 1.",
+        "bit_offset": 3,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP2",
+        "description": "Timer x compare 2.",
+        "bit_offset": 4,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP3",
+        "description": "Timer x compare 3.",
+        "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "CMP4",
+        "description": "Timer x compare 4.",
+        "bit_offset": 6,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTPER",
+        "description": "Master period.",
+        "bit_offset": 7,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTCMP1",
+        "description": "Master compare 1.",
+        "bit_offset": 8,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTCMP2",
+        "description": "Master compare 2.",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTCMP3",
+        "description": "Master compare 3.",
+        "bit_offset": 10,
+        "bit_size": 1
+      },
+      {
+        "name": "MSTCMP4",
+        "description": "Master compare 4.",
+        "bit_offset": 11,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT1",
+        "description": "Timer event 1.",
+        "bit_offset": 12,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT2",
+        "description": "Timer event 2.",
+        "bit_offset": 13,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT3",
+        "description": "Timer event 3.",
+        "bit_offset": 14,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT4",
+        "description": "Timer event 4.",
+        "bit_offset": 15,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT5",
+        "description": "Timer event 5.",
+        "bit_offset": 16,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT6",
+        "description": "Timer event 6.",
+        "bit_offset": 17,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT7",
+        "description": "Timer event 7.",
+        "bit_offset": 18,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT8",
+        "description": "Timer event 8.",
+        "bit_offset": 19,
+        "bit_size": 1
+      },
+      {
+        "name": "TIMEVNT9",
+        "description": "Timer event 9.",
+        "bit_offset": 20,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTA",
+        "description": "External event A.",
+        "bit_offset": 21,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTB",
+        "description": "External event B.",
+        "bit_offset": 22,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTC",
+        "description": "External event C.",
+        "bit_offset": 23,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTD",
+        "description": "External event D.",
+        "bit_offset": 24,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTE",
+        "description": "External event E.",
+        "bit_offset": 25,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTF",
+        "description": "External event F.",
+        "bit_offset": 26,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTG",
+        "description": "External event G.",
+        "bit_offset": 27,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTH",
+        "description": "External event H.",
+        "bit_offset": 28,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTI",
+        "description": "External event I.",
+        "bit_offset": 29,
+        "bit_size": 1
+      },
+      {
+        "name": "EXTEVNTJ",
+        "description": "External event J.",
+        "bit_offset": 30,
+        "bit_size": 1
+      },
+      {
+        "name": "UPDATE",
+        "description": "Registers update (transfer from preload register to active register).",
+        "bit_offset": 31,
+        "bit_size": 1
+      }
+    ]
+  },
+  "enum/BRSTDMA": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "Independent",
+        "description": "Update done independently from the DMA burst transfer completion",
+        "value": 0
+      },
+      {
+        "name": "Completion",
+        "description": "Update done when the DMA burst transfer is completed",
+        "value": 1
+      },
+      {
+        "name": "Rollover",
+        "description": "Update done on master timer roll-over following a DMA burst transfer completion",
+        "value": 2
+      }
+    ]
+  },
+  "enum/CPPSTAT": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "Output1Active",
+        "description": "Signal applied on output 1 and output 2 forced inactive",
+        "value": 0
+      },
+      {
+        "name": "Output2Active",
+        "description": "Signal applied on output 2 and output 1 forced inactive",
+        "value": 1
+      }
+    ]
+  },
+  "enum/DACSYNC": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "Disabled",
+        "description": "No DAC trigger generated",
+        "value": 0
+      },
+      {
+        "name": "DACSync1",
+        "description": "Trigger generated on DACSync1",
+        "value": 1
+      },
+      {
+        "name": "DACSync2",
+        "description": "Trigger generated on DACSync2",
+        "value": 2
+      },
+      {
+        "name": "DACSync3",
+        "description": "Trigger generated on DACSync3",
+        "value": 3
+      }
+    ]
+  },
+  "enum/DELCMP": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "Standard",
+        "description": "CMP register is always active (standard compare mode)",
+        "value": 0
+      },
+      {
+        "name": "Capture1",
+        "description": "CMP is recomputed and is active following a capture 1 event",
+        "value": 1
+      },
+      {
+        "name": "CaptureX_Compare1",
+        "description": "CMP is recomputed and is active following a capture 1 event or a Compare 1 match",
+        "value": 2
+      },
+      {
+        "name": "CaptureX_Compare3",
+        "description": "CMP is recomputed and is active following a capture 1 event or a Compare 3 match",
+        "value": 3
+      }
+    ]
+  },
+  "enum/DLYPRT": {
+    "bit_size": 3,
+    "variants": [
+      {
+        "name": "Output1_EE6",
+        "description": "Output 1 delayed idle on external event 6",
+        "value": 0
+      },
+      {
+        "name": "Output2_EE6",
+        "description": "Output 2 delayed idle on external event 6",
+        "value": 1
+      },
+      {
+        "name": "Output1_2_EE6",
+        "description": "Output 1 and 2 delayed idle on external event 6",
+        "value": 2
+      },
+      {
+        "name": "Balanced_EE6",
+        "description": "Balanced idle on external event 6",
+        "value": 3
+      },
+      {
+        "name": "Output1_EE7",
+        "description": "Output 1 delayed idle on external event 7",
+        "value": 4
+      },
+      {
+        "name": "Output2_EE7",
+        "description": "Output 2 delayed idle on external event 7",
+        "value": 5
+      },
+      {
+        "name": "Output1_2_EE7",
+        "description": "Output 1 and 2 delayed idle on external event 7",
+        "value": 6
+      },
+      {
+        "name": "Balanced_EE7",
+        "description": "Balanced idle on external event 7",
+        "value": 7
+      }
+    ]
+  },
+  "enum/FAULT": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "Disabled",
+        "description": "No action: the output is not affected by the fault input and stays in run mode",
+        "value": 0
+      },
+      {
+        "name": "SetActive",
+        "description": "Output goes to active state after a fault event",
+        "value": 1
+      },
+      {
+        "name": "SetInactive",
+        "description": "Output goes to inactive state after a fault event",
+        "value": 2
+      },
+      {
+        "name": "SetHighZ",
+        "description": "Output goes to high-z state after a fault event",
+        "value": 3
+      }
+    ]
+  },
+  "enum/IPPSTAT": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "Output1Active",
+        "description": "Protection occurred when the output 1 was active and output 2 forced inactive",
+        "value": 0
+      },
+      {
+        "name": "Output2Active",
+        "description": "Protection occurred when the output 2 was active and output 1 forced inactive",
+        "value": 1
+      }
+    ]
+  },
+  "enum/POL": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "ActiveHigh",
+        "description": "Positive polarity (output active high)",
+        "value": 0
+      },
+      {
+        "name": "ActiveLow",
+        "description": "Negative polarity (output active low)",
+        "value": 1
+      }
+    ]
+  },
+  "enum/SDT": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "Positive",
+        "description": "Positive deadtime (both outputs inactive during deadtime)",
+        "value": 0
+      },
+      {
+        "name": "Negative",
+        "description": "Negative deadtime (both outputs active during deadtime)",
+        "value": 1
+      }
+    ]
+  },
+  "enum/SYNCIN": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "Disabled",
+        "description": "Disabled. HRTIM is not synchronized and runs in standalone mode",
+        "value": 0
+      },
+      {
+        "name": "Internal",
+        "description": "Internal event: the HRTIM is synchronized with the on-chip timer",
+        "value": 2
+      },
+      {
+        "name": "External",
+        "description": "External event: a positive pulse on HRTIM_SCIN input triggers the HRTIM",
+        "value": 3
+      }
+    ]
+  },
+  "enum/SYNCOUT": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "Disabled",
+        "description": "Disabled",
+        "value": 0
+      },
+      {
+        "name": "PositivePulse",
+        "description": "Positive pulse on SCOUT output (16x f_HRTIM clock cycles)",
+        "value": 2
+      },
+      {
+        "name": "NegativePulse",
+        "description": "Negative pulse on SCOUT output (16x f_HRTIM clock cycles)",
+        "value": 3
+      }
+    ]
+  },
+  "enum/SYNCSRC": {
+    "bit_size": 2,
+    "variants": [
+      {
+        "name": "MasterStart",
+        "description": "Master timer Start",
+        "value": 0
+      },
+      {
+        "name": "MasterCompare1",
+        "description": "Master timer Compare 1 event",
+        "value": 1
+      },
+      {
+        "name": "TimerAStart",
+        "description": "Timer A start/reset",
+        "value": 2
+      },
+      {
+        "name": "TimerACompare1",
+        "description": "Timer A Compare 1 event",
+        "value": 3
+      }
+    ]
+  },
+  "enum/UPDGAT": {
+    "bit_size": 4,
+    "variants": [
+      {
+        "name": "Independent",
+        "description": "Update occurs independently from the DMA burst transfer",
+        "value": 0
+      },
+      {
+        "name": "DMABurst",
+        "description": "Update occurs when the DMA burst transfer is completed",
+        "value": 1
+      },
+      {
+        "name": "DMABurst_Update",
+        "description": "Update occurs on the update event following DMA burst transfer completion",
+        "value": 2
+      },
+      {
+        "name": "Input1",
+        "description": "Update occurs on a rising edge of HRTIM update enable input 1",
+        "value": 3
+      },
+      {
+        "name": "Input2",
+        "description": "Update occurs on a rising edge of HRTIM update enable input 2",
+        "value": 4
+      },
+      {
+        "name": "Input3",
+        "description": "Update occurs on a rising edge of HRTIM update enable input 3",
+        "value": 5
+      },
+      {
+        "name": "Input1_Update",
+        "description": "Update occurs on the update event following a rising edge of HRTIM update enable input 1",
+        "value": 6
+      },
+      {
+        "name": "Input2_Update",
+        "description": "Update occurs on the update event following a rising edge of HRTIM update enable input 2",
+        "value": 7
+      },
+      {
+        "name": "Input3_Update",
+        "description": "Update occurs on the update event following a rising edge of HRTIM update enable input 3",
+        "value": 8
+      }
+    ]
+  }
+}

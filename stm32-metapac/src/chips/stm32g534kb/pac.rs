@@ -574,7 +574,7 @@ pub const DTS: dts::Dts = unsafe { dts::Dts::from_ptr(0x4000_8c00usize as _) };
 pub const FDCAN1: *mut () = 0x4000_a000usize as _;
 pub const FDCANRAM: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_ac00usize as _) };
 pub const FDCANRAM1: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_ac00usize as _) };
-pub const HRTIM1: *mut () = 0x4001_0000usize as _;
+pub const HRTIM1: hrtim::Hrtim = unsafe { hrtim::Hrtim::from_ptr(0x4001_0000usize as _) };
 pub const TIM1: *mut () = 0x4001_2c00usize as _;
 pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3000usize as _) };
 pub const TIM8: *mut () = 0x4001_3400usize as _;
@@ -655,6 +655,8 @@ pub mod fdcanram;
 pub mod gpdma;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../../peripherals/hrtim_g5.rs"]
+pub mod hrtim;
 #[path = "../../peripherals/i2c_v3.rs"]
 pub mod i2c;
 #[path = "../../peripherals/rcc_g5.rs"]

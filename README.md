@@ -60,7 +60,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [GTZC](#gtzc) | | | | | | | | | | | ❌ | h503, v1, v1_h5_ef, ❌ | | | | | | l5 | | | | v1 | v1 | | | wba | ❌ |
 | [HASH](#hash) | | c5 | | | v1 | | v1, v2 | v2 | | | ❌ | v3 | v2, v3 | | | v2 | v2 | v2 | ❌ | v3 | | v3 | v4 | | | v4 | |
 | [HDP](#hdp) | | | | | | | | | | | | | | | | | | | ❌ | | | | | | | | |
-| [HRTIM](#hrtim) | | | | | | v1 | | | | v2 | ❌ | | v1 | | | | | | | | | | | | | | |
+| [HRTIM](#hrtim) | | | | | | v1 | | | | v2 | g5 | | v1 | | | | | | | | | | | | | | |
 | [HSEM](#hsem) | | | | | | | | | | | | | v1, v2, ❌ | | | | | | ❌ | | | | | v1 | | wba | v3, v4 |
 | [HSP](#hsp) | | | | | | | | | | | | | | | | | | | | | | v1 | | | | | |
 | [HSPI](#hspi) | | | | | | | | | | | | | | | | | | | | | | | v1 | | | | |
@@ -598,9 +598,9 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
+- **g5**: STM32G5
 - **v1**: STM32F3, STM32H7
 - **v2**: STM32G4
-- **❌ Unsupported**: STM32G5
 
 ### HSEM
 

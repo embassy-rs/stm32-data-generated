@@ -3165,6 +3165,11 @@
         {
           "name": "HRTIM1",
           "address": 1073807360,
+          "registers": {
+            "kind": "hrtim",
+            "version": "g5",
+            "block": "HRTIM"
+          },
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": "PCLK2_TIM",

@@ -3458,7 +3458,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ahbdis"),
+                    enumm: None,
                 },
                 Field {
                     name: "ahb2dis",
@@ -3466,7 +3466,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ahbdis"),
+                    enumm: None,
                 },
                 Field {
                     name: "ahb3dis",
@@ -3474,7 +3474,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ahbdis"),
+                    enumm: None,
                 },
                 Field {
                     name: "ahb4dis",
@@ -3482,7 +3482,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Ahbdis"),
+                    enumm: None,
                 },
                 Field {
                     name: "apb1dis",
@@ -3490,7 +3490,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Apbdis"),
+                    enumm: None,
                 },
                 Field {
                     name: "apb2dis",
@@ -3498,7 +3498,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Apbdis"),
+                    enumm: None,
                 },
                 Field {
                     name: "apb3dis",
@@ -3506,7 +3506,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Apbdis"),
+                    enumm: None,
                 },
             ],
         },
@@ -3530,7 +3530,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hsirdy"),
+                    enumm: None,
                 },
                 Field {
                     name: "hsikeron",
@@ -3554,7 +3554,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hsidivf"),
+                    enumm: None,
                 },
                 Field {
                     name: "hsi48on",
@@ -3570,7 +3570,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hsirdy"),
+                    enumm: None,
                 },
                 Field {
                     name: "hseon",
@@ -3586,7 +3586,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hserdy"),
+                    enumm: None,
                 },
                 Field {
                     name: "hsebyp",
@@ -3594,7 +3594,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hsebyp"),
+                    enumm: None,
                 },
                 Field {
                     name: "hsecsson",
@@ -3626,7 +3626,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 2 })),
-                    enumm: Some("Pllrdy"),
+                    enumm: None,
                 },
             ],
         },
@@ -3680,7 +3680,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lsirdyc"),
+                    enumm: None,
                 },
                 Field {
                     name: "lserdyc",
@@ -3688,7 +3688,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lserdyc"),
+                    enumm: None,
                 },
                 Field {
                     name: "hsirdyc",
@@ -3696,7 +3696,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hsirdyc"),
+                    enumm: None,
                 },
                 Field {
                     name: "hserdyc",
@@ -3704,7 +3704,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hserdyc"),
+                    enumm: None,
                 },
                 Field {
                     name: "hsi48rdyc",
@@ -3712,7 +3712,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hsirdyc"),
+                    enumm: None,
                 },
                 Field {
                     name: "pllrdyc",
@@ -3720,7 +3720,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
-                    enumm: Some("Pllrdyc"),
+                    enumm: None,
                 },
                 Field {
                     name: "lsecssc",
@@ -3728,7 +3728,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lsecssc"),
+                    enumm: None,
                 },
                 Field {
                     name: "hsecssc",
@@ -3736,7 +3736,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hsecssc"),
+                    enumm: None,
                 },
             ],
         },
@@ -3752,7 +3752,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lsirdyie"),
+                    enumm: None,
                 },
                 Field {
                     name: "lserdyie",
@@ -3760,7 +3760,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lserdyie"),
+                    enumm: None,
                 },
                 Field {
                     name: "hsirdyie",
@@ -3768,7 +3768,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hsirdyie"),
+                    enumm: None,
                 },
                 Field {
                     name: "hserdyie",
@@ -3776,7 +3776,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hserdyie"),
+                    enumm: None,
                 },
                 Field {
                     name: "hsi48rdyie",
@@ -3784,7 +3784,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hsirdyie"),
+                    enumm: None,
                 },
                 Field {
                     name: "pllrdyie",
@@ -3792,7 +3792,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
-                    enumm: Some("Pllrdyie"),
+                    enumm: None,
                 },
                 Field {
                     name: "lsecssie",
@@ -3800,7 +3800,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lsecssie"),
+                    enumm: None,
                 },
             ],
         },
@@ -3816,7 +3816,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lsirdyf"),
+                    enumm: None,
                 },
                 Field {
                     name: "lserdyf",
@@ -3824,7 +3824,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lserdyf"),
+                    enumm: None,
                 },
                 Field {
                     name: "hsirdyf",
@@ -3832,7 +3832,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hsirdyf"),
+                    enumm: None,
                 },
                 Field {
                     name: "hserdyf",
@@ -3840,7 +3840,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hserdyf"),
+                    enumm: None,
                 },
                 Field {
                     name: "hsi48rdyf",
@@ -3848,7 +3848,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hsirdyf"),
+                    enumm: None,
                 },
                 Field {
                     name: "pllrdyf",
@@ -3856,7 +3856,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
-                    enumm: Some("Pllrdyf"),
+                    enumm: None,
                 },
                 Field {
                     name: "lsecssf",
@@ -3864,7 +3864,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lsecssf"),
+                    enumm: None,
                 },
                 Field {
                     name: "hsecssf",
@@ -3872,7 +3872,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hsecssf"),
+                    enumm: None,
                 },
             ],
         },
@@ -4022,7 +4022,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Spriv"),
+                    enumm: None,
                 },
                 Field {
                     name: "nspriv",
@@ -4030,7 +4030,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Nspriv"),
+                    enumm: None,
                 },
             ],
         },
@@ -4046,7 +4046,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Rmvf"),
+                    enumm: None,
                 },
                 Field {
                     name: "pinrstf",
@@ -4054,7 +4054,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Pinrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "porrstf",
@@ -4062,7 +4062,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Porrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "sftrstf",
@@ -4070,7 +4070,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Sftrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "iwdgrstf",
@@ -4078,7 +4078,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Iwdgrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "wwdgrstf",
@@ -4086,7 +4086,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Wwdgrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "lpwrrstf",
@@ -4094,7 +4094,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lpwrrstf"),
+                    enumm: None,
                 },
             ],
         },
@@ -4118,7 +4118,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lserdy"),
+                    enumm: None,
                 },
                 Field {
                     name: "lsebyp",
@@ -4126,7 +4126,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lsebyp"),
+                    enumm: None,
                 },
                 Field {
                     name: "lsedrv",
@@ -4150,7 +4150,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lsecssd"),
+                    enumm: None,
                 },
                 Field {
                     name: "rtcsel",
@@ -4190,7 +4190,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lsirdy"),
+                    enumm: None,
                 },
             ],
         },
@@ -4206,7 +4206,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hsisec"),
+                    enumm: None,
                 },
                 Field {
                     name: "hsesec",
@@ -4214,7 +4214,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hsesec"),
+                    enumm: None,
                 },
                 Field {
                     name: "lsisec",
@@ -4222,7 +4222,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lsisec"),
+                    enumm: None,
                 },
                 Field {
                     name: "lsesec",
@@ -4230,7 +4230,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lsesec"),
+                    enumm: None,
                 },
                 Field {
                     name: "sysclksec",
@@ -4238,7 +4238,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Sysclksec"),
+                    enumm: None,
                 },
                 Field {
                     name: "prescsec",
@@ -4246,7 +4246,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Prescsec"),
+                    enumm: None,
                 },
                 Field {
                     name: "pllsec",
@@ -4254,7 +4254,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
-                    enumm: Some("Pllsec"),
+                    enumm: None,
                 },
                 Field {
                     name: "hsi48sec",
@@ -4262,7 +4262,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hsisec"),
+                    enumm: None,
                 },
                 Field {
                     name: "rmvfsec",
@@ -4270,7 +4270,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Rmvfsec"),
+                    enumm: None,
                 },
             ],
         },
@@ -4282,64 +4282,64 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Div1",
                     description: Some("ADC kernel clock not divided (default after reset)."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
-                    description: Some("ADC kernel clock divided by 2."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B0x2",
-                    description: Some("ADC kernel clock divided by 4."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B0x3",
-                    description: Some("ADC kernel clock divided by 6."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "B0x4",
-                    description: Some("ADC kernel clock divided by 8."),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "B0x5",
+                    name: "Div10",
                     description: Some("ADC kernel clock divided by 10."),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "B0x6",
+                    name: "Div12",
                     description: Some("ADC kernel clock divided by 12."),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "B0x7",
-                    description: Some("ADC kernel clock divided by 16."),
-                    value: 7,
-                },
-                EnumVariant {
-                    name: "B0x8",
-                    description: Some("ADC kernel clock divided by 32."),
-                    value: 8,
-                },
-                EnumVariant {
-                    name: "B0x9",
-                    description: Some("ADC kernel clock divided by 64."),
-                    value: 9,
-                },
-                EnumVariant {
-                    name: "B0xA",
+                    name: "Div128",
                     description: Some("ADC kernel clock divided by 128."),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "B0xB",
+                    name: "Div16",
+                    description: Some("ADC kernel clock divided by 16."),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "Div2",
+                    description: Some("ADC kernel clock divided by 2."),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Div256",
                     description: Some("ADC kernel clock divided by 256."),
                     value: 11,
+                },
+                EnumVariant {
+                    name: "Div32",
+                    description: Some("ADC kernel clock divided by 32."),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "Div4",
+                    description: Some("ADC kernel clock divided by 4."),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Div6",
+                    description: Some("ADC kernel clock divided by 6."),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "Div64",
+                    description: Some("ADC kernel clock divided by 64."),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "Div8",
+                    description: Some("ADC kernel clock divided by 8."),
+                    value: 4,
                 },
             ],
         },
@@ -4386,44 +4386,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "Sys",
                     description: Some("SYS"),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Ahbdis",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some(
-                        "AHB1 clock enabled, distributed to peripherals according to their dedicated clock enable control bits.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("AHB1 clock disabled."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Apbdis",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some(
-                        "APB1 clock enabled, distributed to peripherals according to their dedicated clock enable control bits.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("APB1 clock disabled."),
                     value: 1,
                 },
             ],
@@ -4515,95 +4477,44 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "B0x8",
-                    description: Some("rcc_hclk=sys_ck / 2."),
-                    value: 8,
-                },
-                EnumVariant {
-                    name: "B0x9",
-                    description: Some("rcc_hclk=sys_ck / 4."),
-                    value: 9,
-                },
-                EnumVariant {
-                    name: "B0xA",
-                    description: Some("rcc_hclk=sys_ck / 8."),
-                    value: 10,
-                },
-                EnumVariant {
-                    name: "B0xB",
-                    description: Some("rcc_hclk=sys_ck / 16."),
-                    value: 11,
-                },
-                EnumVariant {
-                    name: "B0xC",
-                    description: Some("rcc_hclk=sys_ck / 64."),
-                    value: 12,
-                },
-                EnumVariant {
-                    name: "B0xD",
+                    name: "Div128",
                     description: Some("rcc_hclk=sys_ck / 128."),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "B0xE",
+                    name: "Div16",
+                    description: Some("rcc_hclk=sys_ck / 16."),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "Div2",
+                    description: Some("rcc_hclk=sys_ck / 2."),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "Div256",
                     description: Some("rcc_hclk=sys_ck / 256."),
                     value: 14,
                 },
                 EnumVariant {
-                    name: "B0xF",
+                    name: "Div4",
+                    description: Some("rcc_hclk=sys_ck / 4."),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "Div512",
                     description: Some("rcc_hclk=sys_ck / 512."),
                     value: 15,
                 },
-            ],
-        },
-        Enum {
-            name: "Hsebyp",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("HSE oscillator not bypassed (default after reset)."),
-                    value: 0,
+                    name: "Div64",
+                    description: Some("rcc_hclk=sys_ck / 64."),
+                    value: 12,
                 },
                 EnumVariant {
-                    name: "B0x1",
-                    description: Some("HSE oscillator bypassed with an external clock."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hsecssc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("HSECSSF no effect (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("HSECSSF cleared."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hsecssf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no clock security interrupt caused by HSE clock failure (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("clock security interrupt caused by HSE clock failure."),
-                    value: 1,
+                    name: "Div8",
+                    description: Some("rcc_hclk=sys_ck / 8."),
+                    value: 10,
                 },
             ],
         },
@@ -4613,98 +4524,13 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Analog",
                     description: Some("HSE in analog mode (default after reset)."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Digital",
                     description: Some("HSE in digital mode."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hserdy",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("HSE clock is not ready (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("HSE clock is ready."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hserdyc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("HSERDYF no effect (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("HSERDYF cleared."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hserdyf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no clock ready interrupt caused by the HSE (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("clock ready interrupt caused by the HSE."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hserdyie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("HSE ready interrupt disabled (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("HSE ready interrupt enabled."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hsesec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("nonsecure."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("secure."),
                     value: 1,
                 },
             ],
@@ -4715,130 +4541,24 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Div1",
                     description: Some("division by 1, hsi_ck, hsi_ker_ck=64MHz (default after reset)."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Div2",
                     description: Some("division by 2, hsi_ck, hsi_ker_ck=32MHz."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "Div4",
                     description: Some("division by 4, hsi_ck, hsi_ker_ck=16MHz."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
+                    name: "Div8",
                     description: Some("division by 8, hsi_ck, hsi_ker_ck=8MHz."),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Hsidivf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some(
-                        "new division ratio not yet propagated to hsi_ck, hsi_ker_ck (default after reset).",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some(
-                        "hsi_ck, hsi_ker_ck clock frequency reflects the new HSIDIV value (default register value when the clock setting is completed).",
-                    ),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hsirdy",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("HSI48 clock is not ready (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("HSI48 clock is ready."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hsirdyc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("HSI48RDYF no effect (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("HSI48RDYF cleared."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hsirdyf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no clock ready interrupt caused by the HSI48 oscillator (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("clock ready interrupt caused by the HSI48 oscillator."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hsirdyie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("HSI48 ready interrupt disabled (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("HSI48 ready interrupt enabled."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Hsisec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("nonsecure."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("secure."),
-                    value: 1,
                 },
             ],
         },
@@ -4993,31 +4713,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("Intermediate clock 1 division ratio is 5 (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Div3",
                     description: Some("Intermediate clock 1 division ratio is 3."),
                     value: 1,
                 },
-            ],
-        },
-        Enum {
-            name: "Iwdgrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("no independent watchdog reset occurred (default after power-on reset)."),
+                    name: "Div5",
+                    description: Some("Intermediate clock 1 division ratio is 5 (default after reset)."),
                     value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("independent watchdog reset occurred."),
-                    value: 1,
                 },
             ],
         },
@@ -5101,291 +4804,19 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lpwrrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("No illegal low-power mode reset occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("Illegal low-power mode reset occurred."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsebyp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("LSE oscillator not bypassed (default after VDD domain reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("LSE oscillator bypassed."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsecssc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("LSECSSF no effect (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("LSECSSF cleared."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsecssd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no failure detected on 32kHz oscillator (default after VDD domain reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("failure detected on 32kHz oscillator."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsecssf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no clock security interrupt caused by HSE clock failure (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("clock security interrupt caused by HSE clock failure."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsecssie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("LSE CSS interrupt disabled (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("LSE CSS interrupt enabled."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Lsedrv",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x2",
-                    description: Some("medium-high drive."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B0x3",
+                    name: "Highest",
                     description: Some("highest drive."),
                     value: 3,
                 },
-            ],
-        },
-        Enum {
-            name: "Lserdy",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("LSE oscillator not ready (default after VDD domain reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("LSE oscillator ready."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lserdyc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("LSERDYF no effect (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("LSERDYF cleared."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lserdyf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no clock ready interrupt caused by the LSE (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("clock ready interrupt caused by the LSE."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lserdyie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("LSE ready interrupt disabled (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("LSE ready interrupt enabled."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsesec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("nonsecure."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("secure."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsirdy",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("LSI oscillator not ready (default after power-on reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("LSI oscillator ready."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsirdyc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("LSIRDYF no effect (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("LSIRDYF cleared."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsirdyf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no clock ready interrupt caused by the LSI (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("clock ready interrupt caused by the LSI."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsirdyie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("LSI ready interrupt disabled (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("LSI ready interrupt enabled."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Lsisec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("nonsecure."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("secure."),
-                    value: 1,
+                    name: "MediumHigh",
+                    description: Some("medium-high drive."),
+                    value: 2,
                 },
             ],
         },
@@ -5395,34 +4826,34 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Disabled",
                     description: Some("prescaler disabled, no clock output on MCO1 (default after reset)."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Div1",
                     description: Some("division by 1 (bypass)."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "Div15",
+                    description: Some("division by 15."),
+                    value: 15,
+                },
+                EnumVariant {
+                    name: "Div2",
                     description: Some("division by 2."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
+                    name: "Div3",
                     description: Some("division by 3."),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B0x4",
+                    name: "Div4",
                     description: Some("division by 4."),
                     value: 4,
-                },
-                EnumVariant {
-                    name: "B0xF",
-                    description: Some("division by 15."),
-                    value: 15,
                 },
             ],
         },
@@ -5432,67 +4863,29 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("HSI clock selected (hsi_ck) (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("LSE oscillator clock selected (lse_ck)."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B0x2",
+                    name: "Hse",
                     description: Some("HSE clock selected (hse_ck)."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
-                    description: Some("PLL1 clock selected (pll1_q_ck)."),
-                    value: 3,
+                    name: "Hsi",
+                    description: Some("HSI clock selected (hsi_ck) (default after reset)."),
+                    value: 0,
                 },
                 EnumVariant {
-                    name: "B0x4",
+                    name: "Hsi48",
                     description: Some("HSI48 clock selected (hsi48_ker_ck)."),
                     value: 4,
                 },
-            ],
-        },
-        Enum {
-            name: "Nspriv",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some(
-                        "Read and write to RCC nonsecure functions can be done by privileged or unprivileged access.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some(
-                        "Read and write to RCC nonsecure functions can be done by privileged access only.",
-                    ),
+                    name: "Lse",
+                    description: Some("LSE oscillator clock selected (lse_ck)."),
                     value: 1,
                 },
-            ],
-        },
-        Enum {
-            name: "Pinrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("no reset from pin occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("reset from pin occurred (default after power-on reset)."),
-                    value: 1,
+                    name: "Pll1Q",
+                    description: Some("PLL1 clock selected (pll1_q_ck)."),
+                    value: 3,
                 },
             ],
         },
@@ -5502,84 +4895,84 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Div1",
                     description: Some("Selected kernel is not divided (default after reset)."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
-                    description: Some("Selected kernel clock is divided by 2."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B0x2",
-                    description: Some("Selected kernel clock is divided by 4."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B0x3",
-                    description: Some("Selected kernel clock is divided by 8."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "B0x4",
-                    description: Some("Selected kernel clock is divided by 16."),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "B0x5",
-                    description: Some("Selected kernel clock is divided by 32."),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "B0x6",
-                    description: Some("Selected kernel clock is divided by 64."),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "B0x7",
-                    description: Some("Selected kernel clock is divided by 128."),
-                    value: 7,
-                },
-                EnumVariant {
-                    name: "B0x8",
-                    description: Some("Selected kernel clock is divided by 256."),
-                    value: 8,
-                },
-                EnumVariant {
-                    name: "B0x9",
-                    description: Some("Selected kernel clock is divided by 512."),
-                    value: 9,
-                },
-                EnumVariant {
-                    name: "B0xA",
+                    name: "Div1024",
                     description: Some("Selected kernel clock is divided by 1024."),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "B0xB",
-                    description: Some("Selected kernel clock is divided by 2048."),
-                    value: 11,
+                    name: "Div128",
+                    description: Some("Selected kernel clock is divided by 128."),
+                    value: 7,
                 },
                 EnumVariant {
-                    name: "B0xC",
-                    description: Some("Selected kernel clock is divided by 4096."),
-                    value: 12,
+                    name: "Div16",
+                    description: Some("Selected kernel clock is divided by 16."),
+                    value: 4,
                 },
                 EnumVariant {
-                    name: "B0xD",
-                    description: Some("Selected kernel clock is divided by 8192."),
-                    value: 13,
-                },
-                EnumVariant {
-                    name: "B0xE",
+                    name: "Div16384",
                     description: Some("Selected kernel clock is divided by 16384."),
                     value: 14,
                 },
                 EnumVariant {
-                    name: "B0xF",
+                    name: "Div2",
+                    description: Some("Selected kernel clock is divided by 2."),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Div2048",
+                    description: Some("Selected kernel clock is divided by 2048."),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "Div256",
+                    description: Some("Selected kernel clock is divided by 256."),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "Div32",
+                    description: Some("Selected kernel clock is divided by 32."),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "Div32768",
                     description: Some("Selected kernel clock is divided by 32768."),
                     value: 15,
+                },
+                EnumVariant {
+                    name: "Div4",
+                    description: Some("Selected kernel clock is divided by 4."),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Div4096",
+                    description: Some("Selected kernel clock is divided by 4096."),
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "Div512",
+                    description: Some("Selected kernel clock is divided by 512."),
+                    value: 9,
+                },
+                EnumVariant {
+                    name: "Div64",
+                    description: Some("Selected kernel clock is divided by 64."),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "Div8",
+                    description: Some("Selected kernel clock is divided by 8."),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "Div8192",
+                    description: Some("Selected kernel clock is divided by 8192."),
+                    value: 13,
                 },
             ],
         },
@@ -5626,24 +5019,24 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Range1",
                     description: Some(
                         "PLL1 input (ref1_ck) clock range frequency between 1 and 2MHz (default after reset).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Range2",
                     description: Some("PLL1 input (ref1_ck) clock range frequency between 2 and 4MHz."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "Range4",
                     description: Some("PLL1 input (ref1_ck) clock range frequency between 4 and 8MHz."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
+                    name: "Range8",
                     description: Some("PLL1 input (ref1_ck) clock range frequency between 8 and 16MHz."),
                     value: 3,
                 },
@@ -5655,32 +5048,32 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 6,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Disabled",
                     description: Some("prescaler disabled (default after reset)."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Div1",
                     description: Some("division by 1 (bypass)."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "Div2",
                     description: Some("division by 2."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x20",
-                    description: Some("division by 32."),
-                    value: 32,
-                },
-                EnumVariant {
-                    name: "B0x3",
+                    name: "Div3",
                     description: Some("division by 3."),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B0x3f",
+                    name: "Div32",
+                    description: Some("division by 32."),
+                    value: 32,
+                },
+                EnumVariant {
+                    name: "Div63",
                     description: Some("division by 63."),
                     value: 63,
                 },
@@ -5692,29 +5085,29 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 9,
             variants: &[
                 EnumVariant {
-                    name: "B0x003",
-                    description: Some("PLL1N=4."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "B0x004",
-                    description: Some("PLL1N=5."),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "B0x005",
-                    description: Some("PLL1N=6."),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "B0x080",
+                    name: "Mul129",
                     description: Some("PLL1N=129 (default after reset)."),
                     value: 128,
                 },
                 EnumVariant {
-                    name: "B0x1ff",
+                    name: "Mul4",
+                    description: Some("PLL1N=4."),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "Mul5",
+                    description: Some("PLL1N=5."),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "Mul512",
                     description: Some("PLL1N=512."),
                     value: 511,
+                },
+                EnumVariant {
+                    name: "Mul6",
+                    description: Some("PLL1N=6."),
+                    value: 5,
                 },
             ],
         },
@@ -5724,29 +5117,29 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 7,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("Not allowed."),
-                    value: 0,
+                    name: "Div128",
+                    description: Some("pll1_p_ck=vco1_ck / 128."),
+                    value: 127,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Div2",
                     description: Some("pll1_p_ck=vco1_ck / 2 (default after reset)."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
-                    description: Some("Not allowed."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B0x3",
+                    name: "Div4",
                     description: Some("pll1_p_ck=vco1_ck / 4."),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B0x7f",
-                    description: Some("pll1_p_ck=vco1_ck / 128."),
-                    value: 127,
+                    name: "NotAllowed0",
+                    description: Some("Not allowed."),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "NotAllowed1",
+                    description: Some("Not allowed."),
+                    value: 2,
                 },
             ],
         },
@@ -5756,29 +5149,29 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 7,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Div1",
                     description: Some("pll1_q_ck=vco1_ck."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Div128",
+                    description: Some("pll1_q_ck=vco1_ck / 128."),
+                    value: 127,
+                },
+                EnumVariant {
+                    name: "Div2",
                     description: Some("pll1_q_ck=vco1_ck / 2 (default after reset)."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "Div3",
                     description: Some("pll1_q_ck=vco1_ck / 3."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
+                    name: "Div4",
                     description: Some("pll1_q_ck=vco1_ck / 4."),
                     value: 3,
-                },
-                EnumVariant {
-                    name: "B0x7f",
-                    description: Some("pll1_q_ck=vco1_ck / 128."),
-                    value: 127,
                 },
             ],
         },
@@ -5788,114 +5181,29 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 7,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Div1",
                     description: Some("pll1_r_ck=vco1_ck / 1."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Div128",
+                    description: Some("pll1_r_ck=vco1_ck / 128."),
+                    value: 127,
+                },
+                EnumVariant {
+                    name: "Div2",
                     description: Some("pll1_r_ck=vco1_ck / 2 (default after reset)."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "Div3",
                     description: Some("pll1_r_ck=vco1_ck / 3."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
+                    name: "Div4",
                     description: Some("pll1_r_ck=vco1_ck / 4."),
                     value: 3,
-                },
-                EnumVariant {
-                    name: "B0x7f",
-                    description: Some("pll1_r_ck=vco1_ck / 128."),
-                    value: 127,
-                },
-            ],
-        },
-        Enum {
-            name: "Pllrdy",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("PLL1 unlocked (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("PLL1 locked."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pllrdyc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("PLL1RDYF no effect (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("PLL1RDYF cleared."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pllrdyf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no clock ready interrupt caused by PLL1 lock (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("clock ready interrupt caused by PLL1 lock."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pllrdyie",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("PLL1 lock interrupt disabled (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("PLL1 lock interrupt enabled."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Pllsec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("nonsecure."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("secure."),
-                    value: 1,
                 },
             ],
         },
@@ -5905,24 +5213,24 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Disable0",
                     description: Some("no clock sent to PLL1M divider and PLL1 (default after reset)."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
-                    description: Some("HSI selected as PLL clock (hsi_ck)."),
-                    value: 1,
+                    name: "Disable1",
+                    description: Some("no clock sent to PLL1M divider and PLL1."),
+                    value: 3,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "Hse",
                     description: Some("HSE selected as PLL clock (hse_ck)."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
-                    description: Some("no clock sent to PLL1M divider and PLL1."),
-                    value: 3,
+                    name: "Hsi",
+                    description: Some("HSI selected as PLL clock (hsi_ck)."),
+                    value: 1,
                 },
             ],
         },
@@ -5932,31 +5240,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("wide VCO range: 128 to 560MHz (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "MediumVco",
                     description: Some("medium VCO range: 150 to 420MHz."),
                     value: 1,
                 },
-            ],
-        },
-        Enum {
-            name: "Porrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("no POR reset occurred."),
+                    name: "WideVco",
+                    description: Some("wide VCO range: 128 to 560MHz (default after reset)."),
                     value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("POR reset occurred (default after power-on reset)."),
-                    value: 1,
                 },
             ],
         },
@@ -6003,75 +5294,24 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B0x4",
+                    name: "Div16",
+                    description: Some("rcc_pclk1=rcc_hclk1 / 16."),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "Div2",
                     description: Some("rcc_pclk1=rcc_hclk1 / 2."),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "B0x5",
+                    name: "Div4",
                     description: Some("rcc_pclk1=rcc_hclk1 / 4."),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "B0x6",
+                    name: "Div8",
                     description: Some("rcc_pclk1=rcc_hclk1 / 8."),
                     value: 6,
-                },
-                EnumVariant {
-                    name: "B0x7",
-                    description: Some("rcc_pclk1=rcc_hclk1 / 16."),
-                    value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Prescsec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("nonsecure."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("secure."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Rmvf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("reset of the reset flags not activated (default after power-on reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("resets the value of the reset flags."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Rmvfsec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("nonsecure."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("secure."),
-                    value: 1,
                 },
             ],
         },
@@ -6081,39 +5321,39 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 6,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Disable0",
                     description: Some("no clock (default after reset)."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Disable1",
                     description: Some("no clock."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "HseDiv2",
                     description: Some("HSE/2."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
+                    name: "HseDiv3",
                     description: Some("HSE/3."),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B0x3e",
+                    name: "HseDiv4",
+                    description: Some("HSE/4."),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "HseDiv62",
                     description: Some("HSE/62."),
                     value: 62,
                 },
                 EnumVariant {
-                    name: "B0x3f",
+                    name: "HseDiv63",
                     description: Some("HSE/63."),
                     value: 63,
-                },
-                EnumVariant {
-                    name: "B0x4",
-                    description: Some("HSE/4."),
-                    value: 4,
                 },
             ],
         },
@@ -6123,41 +5363,24 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Disable",
                     description: Some("no clock (default after RTC domain reset)."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "HseDivRtcpre",
+                    description: Some("HSE divided by RTCPRE value selected as RTC clock."),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "Lse",
                     description: Some("LSE selected as RTC clock."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "Lsi",
                     description: Some("LSI selected as RTC clock."),
                     value: 2,
-                },
-                EnumVariant {
-                    name: "B0x3",
-                    description: Some("HSE divided by RTCPRE value selected as RTC clock."),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Sftrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no CPU software reset occurred (default after power-on reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("a system reset has been generated by the CPU."),
-                    value: 1,
                 },
             ],
         },
@@ -6268,42 +5491,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Spriv",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some(
-                        "Read and write to RCC secure functions can be done by privileged or unprivileged access.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("Read and write to RCC secure functions can be done by privileged access only."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Sysclksec",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("nonsecure."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("secure."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Syssw",
             description: None,
             bit_size: 2,
@@ -6331,17 +5518,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("HSI used as system clock (hsi_ck) (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Hse",
                     description: Some("HSE used as system clock (hse_ck)."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "Hsi",
+                    description: Some("HSI used as system clock (hsi_ck) (default after reset)."),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Pll1P",
                     description: Some("PLL1 used as system clock (pll1_p_ck)."),
                     value: 2,
                 },
@@ -6531,23 +5718,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "Pll2Q",
                     description: Some("PLL2_Q"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Wwdgrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("no window watchdog reset occurred from WWDG (default after power-on reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("window watchdog reset occurred from WWDG."),
-                    value: 1,
                 },
             ],
         },

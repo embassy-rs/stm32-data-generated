@@ -1886,7 +1886,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "HRTIM1",
         address: 0x40010000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "hrtim",
+            version: "g5",
+            block: "HRTIM",
+            ir: &hrtim::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
             kernel_clock: Clock("PCLK2_TIM"),
@@ -7137,6 +7142,8 @@ pub mod fdcanram;
 pub mod gpdma;
 #[path = "../registers/gpio_v2.rs"]
 pub mod gpio;
+#[path = "../registers/hrtim_g5.rs"]
+pub mod hrtim;
 #[path = "../registers/i2c_v3.rs"]
 pub mod i2c;
 #[path = "../registers/rcc_g5.rs"]

@@ -73,7 +73,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("gpu2d", &["v1"]),
     ("gtzc", &["h503", "l5", "v1", "v1_h5_ef", "wba"]),
     ("hash", &["c5", "v1", "v2", "v3", "v4"]),
-    ("hrtim", &["v1", "v2"]),
+    ("hrtim", &["g5", "v1", "v2"]),
     ("hsem", &["v1", "v2", "v3", "v4", "wba"]),
     ("hsp", &["v1"]),
     ("hspi", &["v1"]),

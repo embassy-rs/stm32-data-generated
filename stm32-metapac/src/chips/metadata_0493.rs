@@ -3813,7 +3813,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "OCTOSPI1",
         address: 0x47001400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "octospi",
+            version: "v2",
+            block: "OCTOSPI",
+            ir: &octospi::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK4",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -9574,6 +9579,8 @@ pub mod i3c;
 pub mod iwdg;
 #[path = "../registers/lptim_v2a.rs"]
 pub mod lptim;
+#[path = "../registers/octospi_v2.rs"]
+pub mod octospi;
 #[path = "../registers/otfdec_v1.rs"]
 pub mod otfdec;
 #[path = "../registers/pka_v1a.rs"]

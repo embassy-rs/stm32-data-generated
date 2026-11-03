@@ -1803,7 +1803,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "XSPI1",
         address: 0x420d1400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "octospi",
+            version: "v2",
+            block: "OCTOSPI",
+            ir: &octospi::REGISTERS,
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -2131,6 +2136,8 @@ pub mod iwdg;
 pub mod lpdma;
 #[path = "../registers/lptim_v2a.rs"]
 pub mod lptim;
+#[path = "../registers/octospi_v2.rs"]
+pub mod octospi;
 #[path = "../registers/otfdec_v1.rs"]
 pub mod otfdec;
 #[path = "../registers/pka_v1a.rs"]

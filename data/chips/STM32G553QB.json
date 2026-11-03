@@ -11225,6 +11225,11 @@
         {
           "name": "XSPI1",
           "address": 1191187456,
+          "registers": {
+            "kind": "octospi",
+            "version": "v2",
+            "block": "OCTOSPI"
+          },
           "rcc": {
             "bus_clock": "HCLK4",
             "kernel_clock": {

@@ -458,7 +458,7 @@ pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4402_0800usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4402_0c00usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4402_2000usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0x4402_4000usize as _) };
-pub const XSPI1: *mut () = 0x4700_1400usize as _;
+pub const XSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x4700_1400usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 4;
@@ -504,6 +504,8 @@ pub mod iwdg;
 pub mod lpdma;
 #[path = "../../peripherals/lptim_v2a.rs"]
 pub mod lptim;
+#[path = "../../peripherals/octospi_v2.rs"]
+pub mod octospi;
 #[path = "../../peripherals/pwr_c5.rs"]
 pub mod pwr;
 #[path = "../../peripherals/rcc_c5.rs"]

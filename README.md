@@ -80,7 +80,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [MDIOS](#mdios) | | | | | | | | v1 | | | | | v1 | | | | | | | v1 | | | | | | | |
 | [MDMA](#mdma) | | | | | | | | | | | | | v1 | | | | | | ❌ | | | | | | | | |
 | [NPU](#npu) | | | | | | | | | | | | | | | | | | | | v1 | | | | | | | |
-| [OCTOSPI](#octospi) | | | | | | | | | | | | v2, ❌ | v1 | | | | v1 | v2 | | | | v2 | v1 | | | | |
+| [OCTOSPI](#octospi) | | v2 | | | | | | | | | v2 | v2 | v1 | | | | v1 | v2 | | | | v2 | v1 | | | v2 | |
 | [OCTOSPIM](#octospim) | | | | | | | | | | | | v1 | v1 | | | | v1 | | | | | | v1 | | | | |
 | [OPAMP](#opamp) | | c5 | | | | v2 | | | | v5 | ❌ | v4 | v4 | | ❌ | v3 | v3 | v3 | | | v3 | v3 | v3 | | | | |
 | [OTFDEC](#otfdec) | | | | | | | | | | | v1 | v1 | v1 | | | | | v1 | | | | | v1 | | | v1 | |
@@ -124,7 +124,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [VREFBUF](#vrefbuf) | | | | | | | | | v1 | v2b | ❌ | v2a2 | v2a1 | | | v1 | v1 | v1 | ❌ | v1 | ❌ | v2a1 | v2a1 | v1 | | v2a1 | v1 |
 | [VREFINTCAL](#vrefintcal) | | | v1 | | | v1 | | v1 | v1 | v1 | | | | v1 | v1 | v1 | v1 | v1 | | | v1 | | | v1 | | v2 | v1 |
 | [WWDG](#wwdg) | v2 | v2 | v1 | v1 | v1 | v1 | v1 | v1 | v2 | v2 | ❌ | v2 | v2 | v1 | v1 | v1 | v1 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | | v2 | v2 |
-| [XSPI](#xspi) | | ❌ | | | | | | | | | ❌ | | v1 | | | | | | | v1 | | | | | | ❌ | |
+| [XSPI](#xspi) | | | | | | | | | | | | | v1 | | | | | | | v1 | | | | | | | |
 | [XSPIM](#xspim) | | | | | | | | | | | | | v1 | | | | | | | v1 | | | | | | | |
 
 ## Detailed peripheral information
@@ -756,8 +756,7 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **v1**: STM32H7, STM32L4+, STM32U5
-- **v2**: STM32H5, STM32L5, STM32U3
-- **❌ Unsupported**: STM32H5
+- **v2**: STM32C5, STM32G5, STM32H5, STM32L5, STM32U3, STM32WBA
 
 ### OCTOSPIM
 
@@ -1232,7 +1231,6 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **v1**: STM32H7, STM32N6
-- **❌ Unsupported**: STM32C5, STM32G5, STM32WBA
 
 ### XSPIM
 

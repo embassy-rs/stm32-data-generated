@@ -5798,7 +5798,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "OCTOSPI1",
         address: 0x47001400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "octospi",
+            version: "v2",
+            block: "OCTOSPI",
+            ir: &octospi::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK4",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -5844,7 +5849,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "OCTOSPI2",
         address: 0x47002400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "octospi",
+            version: "v2",
+            block: "OCTOSPI",
+            ir: &octospi::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK4",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -13429,6 +13439,8 @@ pub mod jpeg;
 pub mod lptim;
 #[path = "../registers/ltdc_v1.rs"]
 pub mod ltdc;
+#[path = "../registers/octospi_v2.rs"]
+pub mod octospi;
 #[path = "../registers/octospim_v1.rs"]
 pub mod octospim;
 #[path = "../registers/opamp_v4.rs"]

@@ -647,7 +647,7 @@ pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4600_8000usiz
 pub const DLYB_SDMMC1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x4600_8400usize as _) };
 pub const DLYB_OCTOSPI1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x4600_f000usize as _) };
 pub const FMC: fmc::Fmc = unsafe { fmc::Fmc::from_ptr(0x4700_0400usize as _) };
-pub const OCTOSPI1: *mut () = 0x4700_1400usize as _;
+pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x4700_1400usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 4;
@@ -707,6 +707,8 @@ pub mod i3c;
 pub mod iwdg;
 #[path = "../../peripherals/lptim_v2a.rs"]
 pub mod lptim;
+#[path = "../../peripherals/octospi_v2.rs"]
+pub mod octospi;
 #[path = "../../peripherals/otfdec_v1.rs"]
 pub mod otfdec;
 #[path = "../../peripherals/pka_v1a.rs"]

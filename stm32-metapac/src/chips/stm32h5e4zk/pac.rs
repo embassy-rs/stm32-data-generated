@@ -833,8 +833,8 @@ pub const DLYB_SDMMC2: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x4600_8800usi
 pub const SDMMC2: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x4600_8c00usize as _) };
 pub const DLYB_OCTOSPI1: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x4600_f000usize as _) };
 pub const DLYB_OCTOSPI2: dlyb::Dlyb = unsafe { dlyb::Dlyb::from_ptr(0x4600_f400usize as _) };
-pub const OCTOSPI1: *mut () = 0x4700_1400usize as _;
-pub const OCTOSPI2: *mut () = 0x4700_2400usize as _;
+pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x4700_1400usize as _) };
+pub const OCTOSPI2: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x4700_2400usize as _) };
 pub const OCTOSPIM: octospim::Octospim = unsafe { octospim::Octospim::from_ptr(0x4700_3400usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
@@ -905,6 +905,8 @@ pub mod jpeg;
 pub mod lptim;
 #[path = "../../peripherals/ltdc_v1.rs"]
 pub mod ltdc;
+#[path = "../../peripherals/octospi_v2.rs"]
+pub mod octospi;
 #[path = "../../peripherals/octospim_v1.rs"]
 pub mod octospim;
 #[path = "../../peripherals/opamp_v4.rs"]

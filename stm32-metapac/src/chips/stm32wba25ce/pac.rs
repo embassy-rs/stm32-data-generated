@@ -319,7 +319,7 @@ pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
 pub const PKA: pka::Pka = unsafe { pka::Pka::from_ptr(0x420c_2000usize as _) };
 pub const OTFDEC1: otfdec::Otfdec = unsafe { otfdec::Otfdec::from_ptr(0x420c_5000usize as _) };
-pub const XSPI1: *mut () = 0x420d_1400usize as _;
+pub const XSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x420d_1400usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4600_0400usize as _) };
 pub const SPI3: spi::Spi = unsafe { spi::Spi::from_ptr(0x4600_2000usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4600_2400usize as _) };
@@ -371,6 +371,8 @@ pub mod iwdg;
 pub mod lpdma;
 #[path = "../../peripherals/lptim_v2a.rs"]
 pub mod lptim;
+#[path = "../../peripherals/octospi_v2.rs"]
+pub mod octospi;
 #[path = "../../peripherals/otfdec_v1.rs"]
 pub mod otfdec;
 #[path = "../../peripherals/pka_v1a.rs"]

@@ -739,7 +739,7 @@ pub const GPIOH: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4600_1c00usize as 
 pub const HASH: *mut () = 0x4600_6400usize as _;
 pub const RNG: *mut () = 0x4600_6800usize as _;
 pub const PKA: *mut () = 0x4600_8000usize as _;
-pub const XSPI1: *mut () = 0x4700_1400usize as _;
+pub const XSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x4700_1400usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
 pub const NVIC_PRIO_BITS: u8 = 4;
@@ -763,6 +763,8 @@ pub mod gpdma;
 pub mod gpio;
 #[path = "../../peripherals/i2c_v3.rs"]
 pub mod i2c;
+#[path = "../../peripherals/octospi_v2.rs"]
+pub mod octospi;
 #[path = "../../peripherals/rcc_g5.rs"]
 pub mod rcc;
 #[path = "../../peripherals/spi_v5_i2s.rs"]

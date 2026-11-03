@@ -1835,6 +1835,11 @@
         {
           "name": "XSPI1",
           "address": 1108153344,
+          "registers": {
+            "kind": "octospi",
+            "version": "v2",
+            "block": "OCTOSPI"
+          },
           "pins": [
             {
               "pin": "PA12",

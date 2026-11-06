@@ -8519,17 +8519,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fmcswp {
         #[doc = "The switch is in neutral mode and output clock is gated (default after reset)."]
-        B0x0 = 0x0,
+        Neutral = 0x0,
         #[doc = "The switch is selecting hclk5."]
-        B0x1 = 0x01,
+        Hclk5 = 0x01,
         #[doc = "The switch is selecting pll1_q_ck."]
-        B0x2 = 0x02,
+        Pll1Q = 0x02,
         #[doc = "The switch is selecting pll2_r_ck."]
-        B0x3 = 0x03,
+        Pll2R = 0x03,
         #[doc = "The switch is selecting hsi_ker_ck."]
-        B0x4 = 0x04,
+        Hsi = 0x04,
         #[doc = "The switch is in recovery position (hclk5/4)."]
-        B0x5 = 0x05,
+        Recovery = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -10762,15 +10762,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Xspiswp {
         #[doc = "The switch is in neutral mode and output clock is gated (default after reset)."]
-        B0x0 = 0x0,
+        Neutral = 0x0,
         #[doc = "The switch is selecting hclk5."]
-        B0x1 = 0x01,
+        Hclk5 = 0x01,
         #[doc = "The switch is selecting pll2_s_ck."]
-        B0x2 = 0x02,
+        Pll2S = 0x02,
         #[doc = "The switch is selecting pll2_t_ck."]
-        B0x3 = 0x03,
+        Pll2T = 0x03,
         #[doc = "The switch is in recovery position (hclk5/4)."]
-        B0x4 = 0x04,
+        Recovery = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,

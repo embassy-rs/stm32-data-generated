@@ -7258,12 +7258,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Disable",
                     description: Some("No internal clock available for timers input capture (default after reset)"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Hsi1024Hsi8Csi128",
                     description: Some(
                         "hsi_ker_ck/1024, hsi_ker_ck/8 and csi_ker_ck/128 selected for timers input capture",
                     ),

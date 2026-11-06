@@ -355,14 +355,14 @@ pub mod regs {
         #[doc = "Enables the pull down on output voltage during power-down mode."]
         #[must_use]
         #[inline(always)]
-        pub const fn mode_pdn(&self) -> super::vals::ModePdn {
+        pub const fn mode_pdn(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::ModePdn::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Enables the pull down on output voltage during power-down mode."]
         #[inline(always)]
-        pub const fn set_mode_pdn(&mut self, val: super::vals::ModePdn) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub const fn set_mode_pdn(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "SMPS low-power mode enable (SVOS high only)."]
         #[must_use]
@@ -410,7 +410,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Cr1 {{ sden: {=bool:?}, mode_pdn: {:?}, lpds08v: {=bool:?}, popl: {:?} }}",
+                "Cr1 {{ sden: {=bool:?}, mode_pdn: {=bool:?}, lpds08v: {=bool:?}, popl: {:?} }}",
                 self.sden(),
                 self.mode_pdn(),
                 self.lpds08v(),
@@ -1684,97 +1684,97 @@ pub mod regs {
         #[doc = "Wake-up polarity bit for WKUP1 pin."]
         #[must_use]
         #[inline(always)]
-        pub const fn wkupp1(&self) -> super::vals::Wkupp1 {
+        pub const fn wkupp1(&self) -> super::vals::Wkupp {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Wkupp1::from_bits(val as u8)
+            super::vals::Wkupp::from_bits(val as u8)
         }
         #[doc = "Wake-up polarity bit for WKUP1 pin."]
         #[inline(always)]
-        pub const fn set_wkupp1(&mut self, val: super::vals::Wkupp1) {
+        pub const fn set_wkupp1(&mut self, val: super::vals::Wkupp) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
         }
         #[doc = "Wake-up polarity bit for WKUP2 pin."]
         #[must_use]
         #[inline(always)]
-        pub const fn wkupp2(&self) -> super::vals::Wkupp2 {
+        pub const fn wkupp2(&self) -> super::vals::Wkupp {
             let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Wkupp2::from_bits(val as u8)
+            super::vals::Wkupp::from_bits(val as u8)
         }
         #[doc = "Wake-up polarity bit for WKUP2 pin."]
         #[inline(always)]
-        pub const fn set_wkupp2(&mut self, val: super::vals::Wkupp2) {
+        pub const fn set_wkupp2(&mut self, val: super::vals::Wkupp) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
         }
         #[doc = "Wake-up polarity bit for WKUP3 pin."]
         #[must_use]
         #[inline(always)]
-        pub const fn wkupp3(&self) -> super::vals::Wkupp3 {
+        pub const fn wkupp3(&self) -> super::vals::Wkupp {
             let val = (self.0 >> 10usize) & 0x01;
-            super::vals::Wkupp3::from_bits(val as u8)
+            super::vals::Wkupp::from_bits(val as u8)
         }
         #[doc = "Wake-up polarity bit for WKUP3 pin."]
         #[inline(always)]
-        pub const fn set_wkupp3(&mut self, val: super::vals::Wkupp3) {
+        pub const fn set_wkupp3(&mut self, val: super::vals::Wkupp) {
             self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
         }
         #[doc = "Wake-up polarity bit for WKUP4 pin."]
         #[must_use]
         #[inline(always)]
-        pub const fn wkupp4(&self) -> super::vals::Wkupp4 {
+        pub const fn wkupp4(&self) -> super::vals::Wkupp {
             let val = (self.0 >> 11usize) & 0x01;
-            super::vals::Wkupp4::from_bits(val as u8)
+            super::vals::Wkupp::from_bits(val as u8)
         }
         #[doc = "Wake-up polarity bit for WKUP4 pin."]
         #[inline(always)]
-        pub const fn set_wkupp4(&mut self, val: super::vals::Wkupp4) {
+        pub const fn set_wkupp4(&mut self, val: super::vals::Wkupp) {
             self.0 = (self.0 & !(0x01 << 11usize)) | (((val.to_bits() as u32) & 0x01) << 11usize);
         }
         #[doc = "Wake-up pull configuration for WKUP1 pin."]
         #[must_use]
         #[inline(always)]
-        pub const fn wkuppupd1(&self) -> super::vals::Wkuppupd1 {
+        pub const fn wkuppupd1(&self) -> super::vals::Wkuppupd {
             let val = (self.0 >> 16usize) & 0x03;
-            super::vals::Wkuppupd1::from_bits(val as u8)
+            super::vals::Wkuppupd::from_bits(val as u8)
         }
         #[doc = "Wake-up pull configuration for WKUP1 pin."]
         #[inline(always)]
-        pub const fn set_wkuppupd1(&mut self, val: super::vals::Wkuppupd1) {
+        pub const fn set_wkuppupd1(&mut self, val: super::vals::Wkuppupd) {
             self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
         }
         #[doc = "Wake-up pull configuration for WKUP2 pin."]
         #[must_use]
         #[inline(always)]
-        pub const fn wkuppupd2(&self) -> super::vals::Wkuppupd2 {
+        pub const fn wkuppupd2(&self) -> super::vals::Wkuppupd {
             let val = (self.0 >> 18usize) & 0x03;
-            super::vals::Wkuppupd2::from_bits(val as u8)
+            super::vals::Wkuppupd::from_bits(val as u8)
         }
         #[doc = "Wake-up pull configuration for WKUP2 pin."]
         #[inline(always)]
-        pub const fn set_wkuppupd2(&mut self, val: super::vals::Wkuppupd2) {
+        pub const fn set_wkuppupd2(&mut self, val: super::vals::Wkuppupd) {
             self.0 = (self.0 & !(0x03 << 18usize)) | (((val.to_bits() as u32) & 0x03) << 18usize);
         }
         #[doc = "Wake-up pull configuration for WKUP3 pin."]
         #[must_use]
         #[inline(always)]
-        pub const fn wkuppupd3(&self) -> super::vals::Wkuppupd3 {
+        pub const fn wkuppupd3(&self) -> super::vals::Wkuppupd {
             let val = (self.0 >> 20usize) & 0x03;
-            super::vals::Wkuppupd3::from_bits(val as u8)
+            super::vals::Wkuppupd::from_bits(val as u8)
         }
         #[doc = "Wake-up pull configuration for WKUP3 pin."]
         #[inline(always)]
-        pub const fn set_wkuppupd3(&mut self, val: super::vals::Wkuppupd3) {
+        pub const fn set_wkuppupd3(&mut self, val: super::vals::Wkuppupd) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32) & 0x03) << 20usize);
         }
         #[doc = "Wake-up pull configuration for WKUP4 pin."]
         #[must_use]
         #[inline(always)]
-        pub const fn wkuppupd4(&self) -> super::vals::Wkuppupd4 {
+        pub const fn wkuppupd4(&self) -> super::vals::Wkuppupd {
             let val = (self.0 >> 22usize) & 0x03;
-            super::vals::Wkuppupd4::from_bits(val as u8)
+            super::vals::Wkuppupd::from_bits(val as u8)
         }
         #[doc = "Wake-up pull configuration for WKUP4 pin."]
         #[inline(always)]
-        pub const fn set_wkuppupd4(&mut self, val: super::vals::Wkuppupd4) {
+        pub const fn set_wkuppupd4(&mut self, val: super::vals::Wkuppupd) {
             self.0 = (self.0 & !(0x03 << 22usize)) | (((val.to_bits() as u32) & 0x03) << 22usize);
         }
     }
@@ -1913,9 +1913,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Asv {
         #[doc = "V less than sub>DDA18ADC less than /sub> is not present. Logical and electrical isolation is applied to ignore this supply."]
-        B0x0 = 0x0,
+        NotValid = 0x0,
         #[doc = "V less than sub>DDA18ADC less than /sub> is valid."]
-        B0x1 = 0x01,
+        Valid = 0x01,
     }
     impl Asv {
         #[inline(always)]
@@ -1944,9 +1944,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cssf {
         #[doc = "No effect."]
-        B0x0 = 0x0,
+        NoEffect = 0x0,
         #[doc = "When written, clear the CPU flags (STOPF, SBF)."]
-        B0x1 = 0x01,
+        Clear = 0x01,
     }
     impl Cssf {
         #[inline(always)]
@@ -1973,42 +1973,11 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum ModePdn {
-        #[doc = "Pull-down disabled. The output is in high impedance during the shutdown (default)."]
-        B0x0 = 0x0,
-        #[doc = "Pull-down enabled."]
-        B0x1 = 0x01,
-    }
-    impl ModePdn {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> ModePdn {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for ModePdn {
-        #[inline(always)]
-        fn from(val: u8) -> ModePdn {
-            ModePdn::from_bits(val)
-        }
-    }
-    impl From<ModePdn> for u8 {
-        #[inline(always)]
-        fn from(val: ModePdn) -> u8 {
-            ModePdn::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pdds {
         #[doc = "Stop mode when device enters deepsleep."]
-        B0x0 = 0x0,
+        StopMode = 0x0,
         #[doc = "Standby mode when device enters deepsleep."]
-        B0x1 = 0x01,
+        StandbyMode = 0x01,
     }
     impl Pdds {
         #[inline(always)]
@@ -2037,11 +2006,11 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Popl {
         #[doc = "No guaranteed minimum low time."]
-        B0x0 = 0x0,
+        NoMinimum = 0x0,
         #[doc = "~ 1 ms guaranteed minimum low time (1 x 32 LSI cycles)."]
-        B0x1 = 0x01,
+        Ms1 = 0x01,
         #[doc = "~ 2 ms guaranteed minimum low time (2 x 32 LSI cycles)."]
-        B0x2 = 0x02,
+        Ms2 = 0x02,
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
@@ -2071,7 +2040,7 @@ pub mod vals {
         _RESERVED_1d = 0x1d,
         _RESERVED_1e = 0x1e,
         #[doc = "~ 31 ms guaranteed minimum low time (31 x 32 LSI cycles)."]
-        B0x1f = 0x1f,
+        Ms31 = 0x1f,
     }
     impl Popl {
         #[inline(always)]
@@ -2100,9 +2069,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Priv0 {
         #[doc = "CR1 can be read and written with privileged or unprivileged access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "CR1 can be read and written only with privileged access."]
-        B0x1 = 0x01,
+        Privileged = 0x01,
     }
     impl Priv0 {
         #[inline(always)]
@@ -2131,9 +2100,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Priv1 {
         #[doc = "CR2 can be read and written with privileged or unprivileged access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "CR2 can be read and written only with privileged access."]
-        B0x1 = 0x01,
+        Privileged = 0x01,
     }
     impl Priv1 {
         #[inline(always)]
@@ -2162,9 +2131,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Priv2 {
         #[doc = "CR3 can be read and written with privileged or unprivileged access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "CR3 can be read and written only with privileged access."]
-        B0x1 = 0x01,
+        Privileged = 0x01,
     }
     impl Priv2 {
         #[inline(always)]
@@ -2193,9 +2162,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Priv3 {
         #[doc = "CR4 can be read and written with privileged or unprivileged access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "CR4 can be read and written only with privileged access."]
-        B0x1 = 0x01,
+        Privileged = 0x01,
     }
     impl Priv3 {
         #[inline(always)]
@@ -2224,9 +2193,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Priv4 {
         #[doc = "VOSCR can be read and written with privileged or unprivileged access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "VOSCR can be read and written only with privileged access."]
-        B0x1 = 0x01,
+        Privileged = 0x01,
     }
     impl Priv4 {
         #[inline(always)]
@@ -2255,9 +2224,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Priv5 {
         #[doc = "BDCR1, BDCR2, and DBPCR can be read and written with privileged or unprivileged access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "BDCR1, BDCR2, and DBPCR can be read and written only with privileged access."]
-        B0x1 = 0x01,
+        Privileged = 0x01,
     }
     impl Priv5 {
         #[inline(always)]
@@ -2286,9 +2255,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Priv6 {
         #[doc = "CPUCR can be read and written with privileged or unprivileged access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "CPUCR can be read and written only with privileged access."]
-        B0x1 = 0x01,
+        Privileged = 0x01,
     }
     impl Priv6 {
         #[inline(always)]
@@ -2317,9 +2286,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Priv7 {
         #[doc = "SVMCR1, SVMCR2, and SVMCR3 can be read and written with privileged or unprivileged access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "SVMCR1, SVMCR2, and SVMCR3 can be read and written only with privileged access."]
-        B0x1 = 0x01,
+        Privileged = 0x01,
     }
     impl Priv7 {
         #[inline(always)]
@@ -2348,9 +2317,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pvdo {
         #[doc = "Voltage level on PVD_IN is equal or higher than the internal VREFINT."]
-        B0x0 = 0x0,
+        AboveOrEqual = 0x0,
         #[doc = "Voltage level on PVD_IN is lower than the internal VREFINT."]
-        B0x1 = 0x01,
+        Below = 0x01,
     }
     impl Pvdo {
         #[inline(always)]
@@ -2379,9 +2348,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sbf {
         #[doc = "System has not been in Standby mode."]
-        B0x0 = 0x0,
+        NotEntered = 0x0,
         #[doc = "System has been in Standby mode."]
-        B0x1 = 0x01,
+        Entered = 0x01,
     }
     impl Sbf {
         #[inline(always)]
@@ -2410,9 +2379,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sec0 {
         #[doc = "CR1 can be read and written with secure or non-secure access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "CR1 can be read and written only with secure access."]
-        B0x1 = 0x01,
+        Secure = 0x01,
     }
     impl Sec0 {
         #[inline(always)]
@@ -2441,9 +2410,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sec1 {
         #[doc = "CR2 can be read and written with secure or non-secure access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "CR2 can be read and written only with secure access."]
-        B0x1 = 0x01,
+        Secure = 0x01,
     }
     impl Sec1 {
         #[inline(always)]
@@ -2472,9 +2441,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sec2 {
         #[doc = "CR3 can be read and written with secure or non-secure access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "CR3 can be read and written only with secure access."]
-        B0x1 = 0x01,
+        Secure = 0x01,
     }
     impl Sec2 {
         #[inline(always)]
@@ -2503,9 +2472,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sec3 {
         #[doc = "CR4 can be read and written with secure or non-secure access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "CR4 can be read and written only with secure access."]
-        B0x1 = 0x01,
+        Secure = 0x01,
     }
     impl Sec3 {
         #[inline(always)]
@@ -2534,9 +2503,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sec4 {
         #[doc = "VOSCR can be read and written with secure or non-secure access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "VOSCR can be read and written only with secure access."]
-        B0x1 = 0x01,
+        Secure = 0x01,
     }
     impl Sec4 {
         #[inline(always)]
@@ -2565,9 +2534,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sec5 {
         #[doc = "BDCR1, BDCR2, and DBPCR can be read and written with secure or non-secure access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "BDCR1, BDCR2, and DBPCR can be read and written only with secure access."]
-        B0x1 = 0x01,
+        Secure = 0x01,
     }
     impl Sec5 {
         #[inline(always)]
@@ -2596,9 +2565,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sec6 {
         #[doc = "CPUCR can be read and written with secure or non-secure access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "CPUCR can be read and written only with secure access."]
-        B0x1 = 0x01,
+        Secure = 0x01,
     }
     impl Sec6 {
         #[inline(always)]
@@ -2627,9 +2596,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sec7 {
         #[doc = "SVMCR1, SVMCR2, and SVMCR3 can be read and written with secure or non-secure access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "SVMCR1, SVMCR2, and SVMCR3 can be read and written only with secure access."]
-        B0x1 = 0x01,
+        Secure = 0x01,
     }
     impl Sec7 {
         #[inline(always)]
@@ -2658,9 +2627,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Stopf {
         #[doc = "System has not been in Stop mode."]
-        B0x0 = 0x0,
+        NotEntered = 0x0,
         #[doc = "System has been in Stop mode."]
-        B0x1 = 0x01,
+        Entered = 0x01,
     }
     impl Stopf {
         #[inline(always)]
@@ -2689,9 +2658,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Svos {
         #[doc = "SVOS low."]
-        B0x0 = 0x0,
+        Low = 0x0,
         #[doc = "SVOS high (default)."]
-        B0x1 = 0x01,
+        High = 0x01,
     }
     impl Svos {
         #[inline(always)]
@@ -2720,9 +2689,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Temph {
         #[doc = "Temperature below high threshold level."]
-        B0x0 = 0x0,
+        NotReached = 0x0,
         #[doc = "Temperature equal or above high threshold level."]
-        B0x1 = 0x01,
+        Reached = 0x01,
     }
     impl Temph {
         #[inline(always)]
@@ -2751,9 +2720,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Templ {
         #[doc = "Temperature above low threshold level."]
-        B0x0 = 0x0,
+        NotReached = 0x0,
         #[doc = "Temperature equal or below low threshold level."]
-        B0x1 = 0x01,
+        Reached = 0x01,
     }
     impl Templ {
         #[inline(always)]
@@ -2782,9 +2751,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usb33rdy {
         #[doc = "V less than sub>DD33USB less than /sub> is below the threshold of the USB33 voltage monitor."]
-        B0x0 = 0x0,
+        NotReady = 0x0,
         #[doc = "V less than sub>DD33USB less than /sub> is equal or above the threshold of the USB33 voltage monitor."]
-        B0x1 = 0x01,
+        Ready = 0x01,
     }
     impl Usb33rdy {
         #[inline(always)]
@@ -2813,9 +2782,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usb33sv {
         #[doc = "V less than sub>DD33USB less than /sub> is not present. Logical and electrical isolation is applied to ignore this supply."]
-        B0x0 = 0x0,
+        NotValid = 0x0,
         #[doc = "V less than sub>DD33USB less than /sub> is valid."]
-        B0x1 = 0x01,
+        Valid = 0x01,
     }
     impl Usb33sv {
         #[inline(always)]
@@ -2844,9 +2813,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vbath {
         #[doc = "V less than sub>BAT less than /sub> level below high threshold level."]
-        B0x0 = 0x0,
+        NotReached = 0x0,
         #[doc = "V less than sub>BAT less than /sub> level equal or above high threshold level."]
-        B0x1 = 0x01,
+        Reached = 0x01,
     }
     impl Vbath {
         #[inline(always)]
@@ -2875,9 +2844,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vbatl {
         #[doc = "V less than sub>BAT less than /sub> level above low threshold level."]
-        B0x0 = 0x0,
+        NotReached = 0x0,
         #[doc = "V less than sub>BAT less than /sub> level equal or below low threshold level."]
-        B0x1 = 0x01,
+        Reached = 0x01,
     }
     impl Vbatl {
         #[inline(always)]
@@ -2906,9 +2875,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vcoreh {
         #[doc = "V less than sub>DDCORE less than /sub> level below high threshold level, or monitor disabled."]
-        B0x0 = 0x0,
+        NotReached = 0x0,
         #[doc = "V less than sub>DDCORE less than /sub> level equal or above high threshold level."]
-        B0x1 = 0x01,
+        Reached = 0x01,
     }
     impl Vcoreh {
         #[inline(always)]
@@ -2937,9 +2906,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vcorel {
         #[doc = "V less than sub>DDCORE less than /sub> level above low threshold level, or monitor disabled."]
-        B0x0 = 0x0,
+        NotReached = 0x0,
         #[doc = "V less than sub>DDCORE less than /sub> level equal or below low threshold level."]
-        B0x1 = 0x01,
+        Reached = 0x01,
     }
     impl Vcorel {
         #[inline(always)]
@@ -2968,9 +2937,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vcorells {
         #[doc = "V less than sub>DDCORE less than /sub> low-voltage threshold 1 selected (VOS low)."]
-        B0x0 = 0x0,
+        Threshold1 = 0x0,
         #[doc = "V less than sub>DDCORE less than /sub> low-voltage threshold 2 selected (VOS high)."]
-        B0x1 = 0x01,
+        Threshold2 = 0x01,
     }
     impl Vcorells {
         #[inline(always)]
@@ -2999,9 +2968,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio2rdy {
         #[doc = "V less than sub>DDIO2 less than /sub> is below the threshold of the VDDIO2 voltage monitor."]
-        B0x0 = 0x0,
+        NotReady = 0x0,
         #[doc = "V less than sub>DDIO2 less than /sub> is equal or above the threshold of the VDDIO2 voltage monitor."]
-        B0x1 = 0x01,
+        Ready = 0x01,
     }
     impl Vddio2rdy {
         #[inline(always)]
@@ -3030,9 +2999,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio2sv {
         #[doc = "V less than sub>DDIO2 less than /sub> is not present. Logical and electrical isolation is applied to ignore this supply."]
-        B0x0 = 0x0,
+        NotValid = 0x0,
         #[doc = "V less than sub>DDIO2 less than /sub> is valid."]
-        B0x1 = 0x01,
+        Valid = 0x01,
     }
     impl Vddio2sv {
         #[inline(always)]
@@ -3061,9 +3030,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio2vrsel {
         #[doc = "3v3 voltage range selected. If V less than sub>DDIO2 less than /sub> is in 1v8 range with this setting, I/Os work in degraded mode."]
-        B0x0 = 0x0,
+        Range3v3 = 0x0,
         #[doc = "1v8 voltage range selected. HSLV_VDDIO2 option bit must be set to allow 1v8 voltage range operation. Setting this configuration while V less than sub>DDIO2 less than /sub> is in 3v3 range damages the device."]
-        B0x1 = 0x01,
+        Range1v8 = 0x01,
     }
     impl Vddio2vrsel {
         #[inline(always)]
@@ -3092,9 +3061,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio3rdy {
         #[doc = "V less than sub>DDIO3 less than /sub> is below the threshold of the VDDIO3 voltage monitor."]
-        B0x0 = 0x0,
+        NotReady = 0x0,
         #[doc = "V less than sub>DDIO3 less than /sub> is equal or above the threshold of the VDDIO3 voltage monitor."]
-        B0x1 = 0x01,
+        Ready = 0x01,
     }
     impl Vddio3rdy {
         #[inline(always)]
@@ -3123,9 +3092,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio3sv {
         #[doc = "V less than sub>DDIO3 less than /sub> is not present. Logical and electrical isolation is applied to ignore this supply."]
-        B0x0 = 0x0,
+        NotValid = 0x0,
         #[doc = "V less than sub>DDIO3 less than /sub> is valid."]
-        B0x1 = 0x01,
+        Valid = 0x01,
     }
     impl Vddio3sv {
         #[inline(always)]
@@ -3154,9 +3123,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio3vrsel {
         #[doc = "3v3 voltage range selected. If V less than sub>DDIO3 less than /sub> is in 1v8 range with this setting, I/Os work in degraded mode."]
-        B0x0 = 0x0,
+        Range3v3 = 0x0,
         #[doc = "1v8 voltage range selected. HSLV_VDDIO3 option bit must be set to allow 1v8 voltage range operation. Setting this configuration while V less than sub>DDIO3 less than /sub> is in 3v3 range damages the device."]
-        B0x1 = 0x01,
+        Range1v8 = 0x01,
     }
     impl Vddio3vrsel {
         #[inline(always)]
@@ -3185,9 +3154,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio4rdy {
         #[doc = "V less than sub>DDIO4 less than /sub> is below the threshold of the V less than sub>DDIO4 less than /sub> voltage monitor."]
-        B0x0 = 0x0,
+        NotReady = 0x0,
         #[doc = "V less than sub>DDIO4 less than /sub> is equal or above the threshold of the V less than sub>DDIO4 less than /sub> voltage monitor."]
-        B0x1 = 0x01,
+        Ready = 0x01,
     }
     impl Vddio4rdy {
         #[inline(always)]
@@ -3216,9 +3185,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio4sv {
         #[doc = "V less than sub>DDIO4 less than /sub> is not present. Logical and electrical isolation is applied to ignore this supply."]
-        B0x0 = 0x0,
+        NotValid = 0x0,
         #[doc = "V less than sub>DDIO4 less than /sub> is valid."]
-        B0x1 = 0x01,
+        Valid = 0x01,
     }
     impl Vddio4sv {
         #[inline(always)]
@@ -3247,9 +3216,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio4vrsel {
         #[doc = "3v3 voltage range selected. If V less than sub>DDIO4 less than /sub> is in 1v8 range with this setting, I/Os work in degraded mode."]
-        B0x0 = 0x0,
+        Range3v3 = 0x0,
         #[doc = "1v8 voltage range selected. HSLV_VDDIO4 option bit must be set to allow 1v8 voltage range operation. Setting this configuration while V less than sub>DDIO4 less than /sub> is in 3v3 range damages the device."]
-        B0x1 = 0x01,
+        Range1v8 = 0x01,
     }
     impl Vddio4vrsel {
         #[inline(always)]
@@ -3278,9 +3247,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio4vrstby {
         #[doc = "VDDIO4VRSEL not retained in Standby mode."]
-        B0x0 = 0x0,
+        NotRetained = 0x0,
         #[doc = "VDDIO4VRSEL retained in Standby mode."]
-        B0x1 = 0x01,
+        Retained = 0x01,
     }
     impl Vddio4vrstby {
         #[inline(always)]
@@ -3309,9 +3278,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio5rdy {
         #[doc = "V less than sub>DDIO5 less than /sub> is below the threshold of the V less than sub>DDIO5 less than /sub> voltage monitor."]
-        B0x0 = 0x0,
+        NotReady = 0x0,
         #[doc = "V less than sub>DDIO5 less than /sub> is equal or above the threshold of the V less than sub>DDIO5 less than /sub> voltage monitor."]
-        B0x1 = 0x01,
+        Ready = 0x01,
     }
     impl Vddio5rdy {
         #[inline(always)]
@@ -3340,9 +3309,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio5sv {
         #[doc = "V less than sub>DDIO5 less than /sub> is not present. Logical and electrical isolation is applied to ignore this supply."]
-        B0x0 = 0x0,
+        NotValid = 0x0,
         #[doc = "V less than sub>DDIO5 less than /sub> is valid."]
-        B0x1 = 0x01,
+        Valid = 0x01,
     }
     impl Vddio5sv {
         #[inline(always)]
@@ -3371,9 +3340,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio5vrsel {
         #[doc = "3v3 voltage range selected. If V less than sub>DDIO5 less than /sub> is in 1v8 range with this setting, I/Os work in degraded mode."]
-        B0x0 = 0x0,
+        Range3v3 = 0x0,
         #[doc = "1v8 voltage range selected. HSLV_VDDIO5 option bit must be set to allow 1v8 voltage range operation. Setting this configuration while V less than sub>DDIO5 less than /sub> is in 3v3 range damages the device."]
-        B0x1 = 0x01,
+        Range1v8 = 0x01,
     }
     impl Vddio5vrsel {
         #[inline(always)]
@@ -3402,9 +3371,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddio5vrstby {
         #[doc = "VDDIO5VRSEL not retained in Standby mode."]
-        B0x0 = 0x0,
+        NotRetained = 0x0,
         #[doc = "VDDIO5VRSEL retained in Standby mod."]
-        B0x1 = 0x01,
+        Retained = 0x01,
     }
     impl Vddio5vrstby {
         #[inline(always)]
@@ -3433,9 +3402,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vddiovrsel {
         #[doc = "3v3 voltage range selected. If V less than sub>DD less than /sub> is in 1v8 range with this setting, I/Os work in degraded mode."]
-        B0x0 = 0x0,
+        Range3v3 = 0x0,
         #[doc = "1v8 voltage range selected. HSLV_VDD option bit must be set to allow 1v8 voltage range operation. Setting this configuration while V less than sub>DD less than /sub> is in 3v3 range damages the device."]
-        B0x1 = 0x01,
+        Range1v8 = 0x01,
     }
     impl Vddiovrsel {
         #[inline(always)]
@@ -3464,9 +3433,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vos {
         #[doc = "VOS low level (default)."]
-        B0x0 = 0x0,
+        Low = 0x0,
         #[doc = "VOS high level."]
-        B0x1 = 0x01,
+        High = 0x01,
     }
     impl Vos {
         #[inline(always)]
@@ -3495,9 +3464,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupc1 {
         #[doc = "No effect."]
-        B0x0 = 0x0,
+        NoEffect = 0x0,
         #[doc = "Writing 1 clears WKUPF1 in WKUPSR."]
-        B0x1 = 0x01,
+        Clear = 0x01,
     }
     impl Wkupc1 {
         #[inline(always)]
@@ -3526,9 +3495,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupc2 {
         #[doc = "No effect."]
-        B0x0 = 0x0,
+        NoEffect = 0x0,
         #[doc = "Writing 1 clears WKUPF2 in WKUPSR."]
-        B0x1 = 0x01,
+        Clear = 0x01,
     }
     impl Wkupc2 {
         #[inline(always)]
@@ -3557,9 +3526,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupc3 {
         #[doc = "No effect."]
-        B0x0 = 0x0,
+        NoEffect = 0x0,
         #[doc = "Writing 1 clears WKUPF3 in WKUPSR."]
-        B0x1 = 0x01,
+        Clear = 0x01,
     }
     impl Wkupc3 {
         #[inline(always)]
@@ -3588,9 +3557,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupc4 {
         #[doc = "No effect."]
-        B0x0 = 0x0,
+        NoEffect = 0x0,
         #[doc = "Writing 1 clears WKUPF4 in WKUPSR."]
-        B0x1 = 0x01,
+        Clear = 0x01,
     }
     impl Wkupc4 {
         #[inline(always)]
@@ -3619,9 +3588,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupf1 {
         #[doc = "No wake-up event occurred."]
-        B0x0 = 0x0,
+        NoEvent = 0x0,
         #[doc = "A wake-up event was received from WKUP1 pin."]
-        B0x1 = 0x01,
+        Event = 0x01,
     }
     impl Wkupf1 {
         #[inline(always)]
@@ -3650,9 +3619,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupf2 {
         #[doc = "No wake-up event occurred."]
-        B0x0 = 0x0,
+        NoEvent = 0x0,
         #[doc = "A wake-up event was received from WKUP2 pin."]
-        B0x1 = 0x01,
+        Event = 0x01,
     }
     impl Wkupf2 {
         #[inline(always)]
@@ -3681,9 +3650,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupf3 {
         #[doc = "No wake-up event occurred."]
-        B0x0 = 0x0,
+        NoEvent = 0x0,
         #[doc = "A wake-up event was received from WKUP3 pin."]
-        B0x1 = 0x01,
+        Event = 0x01,
     }
     impl Wkupf3 {
         #[inline(always)]
@@ -3712,9 +3681,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupf4 {
         #[doc = "No wake-up event occurred."]
-        B0x0 = 0x0,
+        NoEvent = 0x0,
         #[doc = "A wake-up event was received from WKUP4 pin."]
-        B0x1 = 0x01,
+        Event = 0x01,
     }
     impl Wkupf4 {
         #[inline(always)]
@@ -3741,15 +3710,15 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Wkupp1 {
+    pub enum Wkupp {
         #[doc = "Detection on high level (rising edge)."]
-        B0x0 = 0x0,
+        High = 0x0,
         #[doc = "Detection on low level (falling edge)."]
-        B0x1 = 0x01,
+        Low = 0x01,
     }
-    impl Wkupp1 {
+    impl Wkupp {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wkupp1 {
+        pub const fn from_bits(val: u8) -> Wkupp {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -3757,109 +3726,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Wkupp1 {
+    impl From<u8> for Wkupp {
         #[inline(always)]
-        fn from(val: u8) -> Wkupp1 {
-            Wkupp1::from_bits(val)
+        fn from(val: u8) -> Wkupp {
+            Wkupp::from_bits(val)
         }
     }
-    impl From<Wkupp1> for u8 {
+    impl From<Wkupp> for u8 {
         #[inline(always)]
-        fn from(val: Wkupp1) -> u8 {
-            Wkupp1::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Wkupp2 {
-        #[doc = "Detection on high level (rising edge)."]
-        B0x0 = 0x0,
-        #[doc = "Detection on low level (falling edge)."]
-        B0x1 = 0x01,
-    }
-    impl Wkupp2 {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wkupp2 {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Wkupp2 {
-        #[inline(always)]
-        fn from(val: u8) -> Wkupp2 {
-            Wkupp2::from_bits(val)
-        }
-    }
-    impl From<Wkupp2> for u8 {
-        #[inline(always)]
-        fn from(val: Wkupp2) -> u8 {
-            Wkupp2::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Wkupp3 {
-        #[doc = "Detection on high level (rising edge)."]
-        B0x0 = 0x0,
-        #[doc = "Detection on low level (falling edge)."]
-        B0x1 = 0x01,
-    }
-    impl Wkupp3 {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wkupp3 {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Wkupp3 {
-        #[inline(always)]
-        fn from(val: u8) -> Wkupp3 {
-            Wkupp3::from_bits(val)
-        }
-    }
-    impl From<Wkupp3> for u8 {
-        #[inline(always)]
-        fn from(val: Wkupp3) -> u8 {
-            Wkupp3::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Wkupp4 {
-        #[doc = "Detection on high level (rising edge)."]
-        B0x0 = 0x0,
-        #[doc = "Detection on low level (falling edge)."]
-        B0x1 = 0x01,
-    }
-    impl Wkupp4 {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wkupp4 {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Wkupp4 {
-        #[inline(always)]
-        fn from(val: u8) -> Wkupp4 {
-            Wkupp4::from_bits(val)
-        }
-    }
-    impl From<Wkupp4> for u8 {
-        #[inline(always)]
-        fn from(val: Wkupp4) -> u8 {
-            Wkupp4::to_bits(val)
+        fn from(val: Wkupp) -> u8 {
+            Wkupp::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -3867,9 +3743,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkuppriv1 {
         #[doc = "Bits related to WKUP1 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written with privileged or unprivileged access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "Bits related to WKUP1 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written only with privileged access."]
-        B0x1 = 0x01,
+        Privileged = 0x01,
     }
     impl Wkuppriv1 {
         #[inline(always)]
@@ -3898,9 +3774,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkuppriv2 {
         #[doc = "Bits related to WKUP2 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written with privileged or unprivileged access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "Bits related to WKUP2 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written only with privileged access."]
-        B0x1 = 0x01,
+        Privileged = 0x01,
     }
     impl Wkuppriv2 {
         #[inline(always)]
@@ -3929,9 +3805,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkuppriv3 {
         #[doc = "Bits related to WKUP3 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written with privileged or unprivileged access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "Bits related to WKUP3 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written only with privileged access."]
-        B0x1 = 0x01,
+        Privileged = 0x01,
     }
     impl Wkuppriv3 {
         #[inline(always)]
@@ -3960,9 +3836,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkuppriv4 {
         #[doc = "Bits related to WKUP4 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written with privileged or unprivileged access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "Bits related to WKUP4 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written only with privileged access."]
-        B0x1 = 0x01,
+        Privileged = 0x01,
     }
     impl Wkuppriv4 {
         #[inline(always)]
@@ -3989,18 +3865,18 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Wkuppupd1 {
+    pub enum Wkuppupd {
         #[doc = "No pulls."]
-        B0x0 = 0x0,
+        NoPull = 0x0,
         #[doc = "Pull-up."]
-        B0x1 = 0x01,
+        PullUp = 0x01,
         #[doc = "Pull-down."]
-        B0x2 = 0x02,
+        PullDown = 0x02,
         _RESERVED_3 = 0x03,
     }
-    impl Wkuppupd1 {
+    impl Wkuppupd {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wkuppupd1 {
+        pub const fn from_bits(val: u8) -> Wkuppupd {
             unsafe { core::mem::transmute(val & 0x03) }
         }
         #[inline(always)]
@@ -4008,118 +3884,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Wkuppupd1 {
+    impl From<u8> for Wkuppupd {
         #[inline(always)]
-        fn from(val: u8) -> Wkuppupd1 {
-            Wkuppupd1::from_bits(val)
+        fn from(val: u8) -> Wkuppupd {
+            Wkuppupd::from_bits(val)
         }
     }
-    impl From<Wkuppupd1> for u8 {
+    impl From<Wkuppupd> for u8 {
         #[inline(always)]
-        fn from(val: Wkuppupd1) -> u8 {
-            Wkuppupd1::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Wkuppupd2 {
-        #[doc = "No pulls."]
-        B0x0 = 0x0,
-        #[doc = "Pull-up."]
-        B0x1 = 0x01,
-        #[doc = "Pull-down."]
-        B0x2 = 0x02,
-        _RESERVED_3 = 0x03,
-    }
-    impl Wkuppupd2 {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wkuppupd2 {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Wkuppupd2 {
-        #[inline(always)]
-        fn from(val: u8) -> Wkuppupd2 {
-            Wkuppupd2::from_bits(val)
-        }
-    }
-    impl From<Wkuppupd2> for u8 {
-        #[inline(always)]
-        fn from(val: Wkuppupd2) -> u8 {
-            Wkuppupd2::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Wkuppupd3 {
-        #[doc = "No pulls."]
-        B0x0 = 0x0,
-        #[doc = "Pull-up."]
-        B0x1 = 0x01,
-        #[doc = "Pull-down."]
-        B0x2 = 0x02,
-        _RESERVED_3 = 0x03,
-    }
-    impl Wkuppupd3 {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wkuppupd3 {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Wkuppupd3 {
-        #[inline(always)]
-        fn from(val: u8) -> Wkuppupd3 {
-            Wkuppupd3::from_bits(val)
-        }
-    }
-    impl From<Wkuppupd3> for u8 {
-        #[inline(always)]
-        fn from(val: Wkuppupd3) -> u8 {
-            Wkuppupd3::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Wkuppupd4 {
-        #[doc = "No pulls."]
-        B0x0 = 0x0,
-        #[doc = "Pull-up."]
-        B0x1 = 0x01,
-        #[doc = "Pull-down."]
-        B0x2 = 0x02,
-        _RESERVED_3 = 0x03,
-    }
-    impl Wkuppupd4 {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wkuppupd4 {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Wkuppupd4 {
-        #[inline(always)]
-        fn from(val: u8) -> Wkuppupd4 {
-            Wkuppupd4::from_bits(val)
-        }
-    }
-    impl From<Wkuppupd4> for u8 {
-        #[inline(always)]
-        fn from(val: Wkuppupd4) -> u8 {
-            Wkuppupd4::to_bits(val)
+        fn from(val: Wkuppupd) -> u8 {
+            Wkuppupd::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -4127,9 +3901,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupsec1 {
         #[doc = "Bits related to WKUP1 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written with secure or non-secure access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "Bits related to WKUP1 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written only with secure access."]
-        B0x1 = 0x01,
+        Secure = 0x01,
     }
     impl Wkupsec1 {
         #[inline(always)]
@@ -4158,9 +3932,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupsec2 {
         #[doc = "Bits related to WKUP2 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written with secure or non-secure access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "Bits related to WKUP2 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written only with secure access."]
-        B0x1 = 0x01,
+        Secure = 0x01,
     }
     impl Wkupsec2 {
         #[inline(always)]
@@ -4189,9 +3963,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupsec3 {
         #[doc = "Bits related to WKUP3 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written with secure or non-secure access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "Bits related to WKUP3 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written only with secure access."]
-        B0x1 = 0x01,
+        Secure = 0x01,
     }
     impl Wkupsec3 {
         #[inline(always)]
@@ -4220,9 +3994,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupsec4 {
         #[doc = "Bits related to WKUP4 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written with secure or non-secure access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "Bits related to WKUP4 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written only with secure access."]
-        B0x1 = 0x01,
+        Secure = 0x01,
     }
     impl Wkupsec4 {
         #[inline(always)]

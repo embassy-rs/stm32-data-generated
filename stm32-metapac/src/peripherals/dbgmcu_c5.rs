@@ -1550,7 +1550,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Size {
         #[doc = "The register file occupies a single 4-Kbyte region."]
-        B0x0 = 0x0,
+        FourK = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -1594,13 +1594,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum TraceMode {
         #[doc = "Trace pins assigned for asynchronous mode (TRACESWO)."]
-        B0x0 = 0x0,
+        Async = 0x0,
         #[doc = "Trace pins assigned for synchronous mode with a port width of 1 (TRACECK, TRACED0)."]
-        B0x1 = 0x01,
+        Sync1 = 0x01,
         #[doc = "Trace pins assigned for synchronous mode with a port width of 2 ((TRACECK, TRACED0-1)."]
-        B0x2 = 0x02,
+        Sync2 = 0x02,
         #[doc = "Trace pins assigned for synchronous mode with a port width of 4 ((TRACECK, TRACED0-3)."]
-        B0x3 = 0x03,
+        Sync4 = 0x03,
     }
     impl TraceMode {
         #[inline(always)]

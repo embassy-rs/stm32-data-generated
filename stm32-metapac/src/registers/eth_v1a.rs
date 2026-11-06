@@ -1037,7 +1037,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Dtcefd"),
+                    enumm: None,
                 },
             ],
         },
@@ -1417,7 +1417,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Rd"),
+                    enumm: None,
                 },
                 Field {
                     name: "ipco",
@@ -1449,7 +1449,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Rod"),
+                    enumm: None,
                 },
                 Field {
                     name: "fes",
@@ -1465,7 +1465,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Csd"),
+                    enumm: None,
                 },
                 Field {
                     name: "ifg",
@@ -1481,7 +1481,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Jd"),
+                    enumm: None,
                 },
                 Field {
                     name: "wd",
@@ -1489,7 +1489,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Wd"),
+                    enumm: None,
                 },
             ],
         },
@@ -1649,7 +1649,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Zqpd"),
+                    enumm: None,
                 },
                 Field {
                     name: "pt",
@@ -1713,7 +1713,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Bfd"),
+                    enumm: None,
                 },
                 Field {
                     name: "pcf",
@@ -2597,23 +2597,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Bfd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Disabled",
-                    description: Some("Address filters filter all incoming broadcast frames"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Enabled",
-                    description: Some("Address filters pass all received broadcast frames"),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
             name: "Bl",
             description: None,
             bit_size: 2,
@@ -2678,23 +2661,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "Cr60100",
                     description: Some("60-100MHz HCLK/42"),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
-            name: "Csd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Disabled",
-                    description: Some("No error generated due to loss of carrier"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Enabled",
-                    description: Some("Errors generated due to loss of carrier"),
                     value: 0,
                 },
             ],
@@ -2782,25 +2748,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "Stopped",
                     description: Some("Reception is stopped after transfer of the current frame"),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
-            name: "Dtcefd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Disabled",
-                    description: Some(
-                        "Do not drop frames that only have errors in the receive checksum offload engine",
-                    ),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Enabled",
-                    description: Some("Drop frames with errors only in the receive checksum offload engine"),
                     value: 0,
                 },
             ],
@@ -3043,23 +2990,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Jd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Disabled",
-                    description: Some("Jabber disabled, transmit frames up to 16384 bytes"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Enabled",
-                    description: Some("Jabber enabled, transmit frames up to 2048 bytes"),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
             name: "Lm",
             description: None,
             bit_size: 1,
@@ -3272,23 +3202,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Rd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Disabled",
-                    description: Some("MAC attempts only 1 transmission"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Enabled",
-                    description: Some("MAC attempts retries based on the settings of BL"),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
             name: "Rdp",
             description: None,
             bit_size: 6,
@@ -3372,23 +3285,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "Unmasked",
                     description: Some("Received-good-unicast counter half-full interrupt enabled"),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
-            name: "Rod",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Disabled",
-                    description: Some("MAC disables reception of frames in half-duplex mode"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Enabled",
-                    description: Some("MAC receives all packets from PHY while transmitting"),
                     value: 0,
                 },
             ],
@@ -3727,23 +3623,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Wd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Disabled",
-                    description: Some("Watchdog disabled, receive frames may be up to to 16384 bytes"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Enabled",
-                    description: Some("Watchdog enabled, receive frames limited to 2048 bytes"),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
             name: "Wffrpr",
             description: None,
             bit_size: 1,
@@ -3752,23 +3631,6 @@ pub(crate) static REGISTERS: IR = IR {
                 description: Some("Reset wakeup frame filter register point to 0b000. Automatically cleared"),
                 value: 1,
             }],
-        },
-        Enum {
-            name: "Zqpd",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Disabled",
-                    description: Some("Automatic generation of zero-quanta pause control frames is disabled"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Enabled",
-                    description: Some("Normal operation with automatic zero-quanta pause control frame generation"),
-                    value: 0,
-                },
-            ],
         },
     ],
 };

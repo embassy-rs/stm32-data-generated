@@ -293,7 +293,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Dmdis"),
+                    enumm: None,
                 },
                 Field {
                     name: "fs",
@@ -449,23 +449,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "PeripheralToMemory",
                     description: Some("Peripheral-to-memory"),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
-            name: "Dmdis",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Disabled",
-                    description: Some("Direct mode is disabled"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Enabled",
-                    description: Some("Direct mode is enabled"),
                     value: 0,
                 },
             ],

@@ -214,15 +214,13 @@
         "name": "BOOT0_PD",
         "description": "BOOT0 pin pull-down disable.",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "BOOT0_PD"
+        "bit_size": 1
       },
       {
         "name": "BOOT1_PD",
         "description": "BOOT1 pin pull-down disable.",
         "bit_offset": 1,
-        "bit_size": 1,
-        "enum": "BOOT1_PD"
+        "bit_size": 1
       }
     ]
   },
@@ -378,7 +376,7 @@
         "description": "RW margin enable input for TCM memories.",
         "bit_offset": 0,
         "bit_size": 1,
-        "enum": "RME_TCM"
+        "enum": "RME"
       },
       {
         "name": "RM_TCM",
@@ -403,7 +401,7 @@
         "description": "RW margin enable input for caches memories.",
         "bit_offset": 7,
         "bit_size": 1,
-        "enum": "RME_CACHE"
+        "enum": "RME"
       },
       {
         "name": "RM_CACHE",
@@ -529,29 +527,25 @@
         "name": "SDMMC1_EARLY_WR_RSP_ENABLE",
         "description": "None.",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "SDMMC1_EARLY_WR_RSP_ENABLE"
+        "bit_size": 1
       },
       {
         "name": "SDMMC2_EARLY_WR_RSP_ENABLE",
         "description": "None.",
         "bit_offset": 1,
-        "bit_size": 1,
-        "enum": "SDMMC2_EARLY_WR_RSP_ENABLE"
+        "bit_size": 1
       },
       {
         "name": "USB1_EARLY_WR_RSP_ENABLE",
         "description": "None.",
         "bit_offset": 2,
-        "bit_size": 1,
-        "enum": "USB1_EARLY_WR_RSP_ENABLE"
+        "bit_size": 1
       },
       {
         "name": "USB2_EARLY_WR_RSP_ENABLE",
         "description": "None.",
         "bit_offset": 3,
-        "bit_size": 1,
-        "enum": "USB2_EARLY_WR_RSP_ENABLE"
+        "bit_size": 1
       }
     ]
   },
@@ -607,8 +601,7 @@
         "name": "INTERLEAVING_ACTIVE",
         "description": "Control interleaving on NPU RAMs.",
         "bit_offset": 0,
-        "bit_size": 1,
-        "enum": "INTERLEAVING_ACTIVE"
+        "bit_size": 1
       }
     ]
   },
@@ -666,15 +659,14 @@
         "name": "EN",
         "description": "Enables the compensation cell of I/Os supplied by VDDIOx.",
         "bit_offset": 8,
-        "bit_size": 1,
-        "enum": "VDDIO1CCCR_EN"
+        "bit_size": 1
       },
       {
         "name": "CS",
         "description": "Selects the code to be applied for the compensation cell of I/Os supplied by VDDIOx.",
         "bit_offset": 9,
         "bit_size": 1,
-        "enum": "VDDIO1CCCR_CS"
+        "enum": "VDDIOxCCCR_CS"
       }
     ]
   },
@@ -698,7 +690,7 @@
         "description": "Provides the compensation cell status of I/Os supplied by VDDIOx.",
         "bit_offset": 8,
         "bit_size": 1,
-        "enum": "VDDIO1CCSR_READY"
+        "enum": "VDDIOxCCSR_READY"
       }
     ]
   },
@@ -721,15 +713,14 @@
         "name": "EN",
         "description": "Enables the compensation cell of I/Os supplied by VDDIOx.",
         "bit_offset": 8,
-        "bit_size": 1,
-        "enum": "VDDIO2CCCR_EN"
+        "bit_size": 1
       },
       {
         "name": "CS",
         "description": "Selects the code to be applied for the compensation cell of I/Os supplied by VDDIOx.",
         "bit_offset": 9,
         "bit_size": 1,
-        "enum": "VDDIO2CCCR_CS"
+        "enum": "VDDIOxCCCR_CS"
       }
     ]
   },
@@ -753,7 +744,7 @@
         "description": "Provides the compensation cell status of I/Os supplied by VDDIOx.",
         "bit_offset": 8,
         "bit_size": 1,
-        "enum": "VDDIO2CCSR_READY"
+        "enum": "VDDIOxCCSR_READY"
       }
     ]
   },
@@ -776,15 +767,14 @@
         "name": "EN",
         "description": "Enables the compensation cell of I/Os supplied by VDDIOx.",
         "bit_offset": 8,
-        "bit_size": 1,
-        "enum": "VDDIO3CCCR_EN"
+        "bit_size": 1
       },
       {
         "name": "CS",
         "description": "Selects the code to be applied for the compensation cell of I/Os supplied by VDDIOx.",
         "bit_offset": 9,
         "bit_size": 1,
-        "enum": "VDDIO3CCCR_CS"
+        "enum": "VDDIOxCCCR_CS"
       }
     ]
   },
@@ -808,7 +798,7 @@
         "description": "Provides the compensation cell status of I/Os supplied by VDDIOx.",
         "bit_offset": 8,
         "bit_size": 1,
-        "enum": "VDDIO3CCSR_READY"
+        "enum": "VDDIOxCCSR_READY"
       }
     ]
   },
@@ -831,15 +821,14 @@
         "name": "EN",
         "description": "Enables the compensation cell of I/Os supplied by VDDIOx.",
         "bit_offset": 8,
-        "bit_size": 1,
-        "enum": "VDDIO4CCCR_EN"
+        "bit_size": 1
       },
       {
         "name": "CS",
         "description": "Selects the code to be applied for the compensation cell of I/Os supplied by VDDIOx.",
         "bit_offset": 9,
         "bit_size": 1,
-        "enum": "VDDIO4CCCR_CS"
+        "enum": "VDDIOxCCCR_CS"
       }
     ]
   },
@@ -863,7 +852,7 @@
         "description": "Provides the compensation cell status of I/Os supplied by VDDIOx.",
         "bit_offset": 8,
         "bit_size": 1,
-        "enum": "VDDIO4CCSR_READY"
+        "enum": "VDDIOxCCSR_READY"
       }
     ]
   },
@@ -886,8 +875,7 @@
         "name": "EN",
         "description": "Enables the compensation cell of I/Os supplied by VDDIO.",
         "bit_offset": 8,
-        "bit_size": 1,
-        "enum": "VDDIOCCCR_EN"
+        "bit_size": 1
       },
       {
         "name": "CS",
@@ -937,12 +925,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Disconnected",
         "description": "Backup SRAM double ECC error signal disconnected from TIM1/8/15/16/17 break inputs.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Connected",
         "description": "Backup SRAM double ECC error signal connected to TIM1/8/15/16/17 break inputs.",
         "value": 1
       }
@@ -952,28 +940,13 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "VSS",
         "description": "BOOT0 pin connected to VSS (or left open if BOOT0_PD = 0).",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "VDD",
         "description": "BOOT0 pin connected to VDD.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/BOOT0_PD": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "Pull-down enabled. The BOOT0 pin can be left open and takes a value of 0 if open.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "Pull-down disabled. The BOOT0 pin must not be left open.",
         "value": 1
       }
     ]
@@ -982,28 +955,13 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "VSS",
         "description": "BOOT1 pin connected to VSS (or left open if BOOT1_PD = 0 in BOOTCR).",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "VDD",
         "description": "BOOT1 pin connected to VDD.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/BOOT1_PD": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "Pull-down enabled. The BOOT1 pin can be left open and takes a value of 0 if open.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "Pull-down disabled. The BOOT1 pin must not be left open.",
         "value": 1
       }
     ]
@@ -1012,12 +970,12 @@
     "bit_size": 4,
     "variants": [
       {
-        "name": "B_0x8",
+        "name": "Kbytes128",
         "description": "128 Kbytes (default value).",
         "value": 8
       },
       {
-        "name": "B_0x9",
+        "name": "Kbytes256",
         "description": "256 Kbytes.",
         "value": 9
       }
@@ -1027,17 +985,17 @@
     "bit_size": 4,
     "variants": [
       {
-        "name": "B_0x7",
+        "name": "Kbytes64",
         "description": "64 KB (default value).",
         "value": 7
       },
       {
-        "name": "B_0x8",
+        "name": "Kbytes128",
         "description": "128 Kbytes.",
         "value": 8
       },
       {
-        "name": "B_0x9",
+        "name": "Kbytes256",
         "description": "256 Kbytes.",
         "value": 9
       }
@@ -1047,12 +1005,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "NoRetiming",
         "description": "No retiming on Rx path.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Retiming",
         "description": "Retiming on Rx path.",
         "value": 1
       }
@@ -1062,12 +1020,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "NoRetiming",
         "description": "No retiming on Tx path.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Retiming",
         "description": "Retiming on Tx path.",
         "value": 1
       }
@@ -1077,12 +1035,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Disconnected",
         "description": "Cortex-M55 cache double ECC error signal disconnected from TIM1/8/15/16/17 break inputs.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Connected",
         "description": "Cortex-M55 cache double ECC error signal connected to TIM1/8/15/16/17 break inputs.",
         "value": 1
       }
@@ -1092,12 +1050,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Disconnected",
         "description": "Cortex-M55 lockup output disconnected from TIM1/8/15/16/17 break inputs.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Connected",
         "description": "Cortex-M55 lockup output disconnected from TIM1/8/15/16/17 break inputs.",
         "value": 1
       }
@@ -1107,12 +1065,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Disconnected",
         "description": "Cortex-M55 TCM double ECC error signal disconnected from TIM1/8/15/16/17 break inputs.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Connected",
         "description": "Cortex-M55 TCM double ECC error signal connected to TIM1/8/15/16/17 break inputs.",
         "value": 1
       }
@@ -1122,28 +1080,13 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Warm",
         "description": "Warm reset (default value).",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "PowerOn",
         "description": "Power-on reset.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/INTERLEAVING_ACTIVE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "Interleaving disabled.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "Interleaving enabled.",
         "value": 1
       }
     ]
@@ -1152,12 +1095,12 @@
     "bit_size": 32,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Disabled",
         "description": "High-speed mode disabled, or use ADC ANA pin.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Enabled",
         "description": "High-speed mode enabled, or connect internal ADC ANA signal to GPIO.",
         "value": 1
       }
@@ -1167,12 +1110,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Interrupt",
         "description": "Lockup state must be recovered from NVIC interrupt (default value).",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Nmi",
         "description": "Lockup generates a NMI on the core.",
         "value": 1
       }
@@ -1182,12 +1125,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Interrupt",
         "description": "Lockup state shall be recovered from interrupt (default value).",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Reset",
         "description": "Lockup requests a warm reset to the RCC.",
         "value": 1
       }
@@ -1197,12 +1140,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Capture",
         "description": "Error capture.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Clean",
         "description": "Clean error.",
         "value": 1
       }
@@ -1212,12 +1155,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Reset",
         "description": "PKA, SAES, CRYP1/2, and HASH reset in case of potential tamper.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "NoReset",
         "description": "PKA, SAES, CRYP1/2, and HASH not reset in case of potential tamper.",
         "value": 1
       }
@@ -1227,42 +1170,27 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Disconnected",
         "description": "PVD interrupt disconnected from TIM1/8/15/16/17 break input. PVDE bits can be programmed by the application.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Connected",
         "description": "PVD interrupt connected to TIM1/8/15/16/17 break input. PVDE and bits are read only.",
         "value": 1
       }
     ]
   },
-  "enum/RME_CACHE": {
+  "enum/RME": {
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Default",
         "description": "Default RW margin settings.",
         "value": 0
       },
       {
-        "name": "B_0x1",
-        "description": "Use external pin RW margin setting.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/RME_TCM": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "Default RW margin settings.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
+        "name": "ExternalPin",
         "description": "Use external pin RW margin setting.",
         "value": 1
       }
@@ -1272,43 +1200,13 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "NoDelay",
         "description": "No delay on the feedback clock.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "HalfCycle",
         "description": "Half a cycle delay on the feedback clock.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/SDMMC1_EARLY_WR_RSP_ENABLE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "Early-write response disabled. The last AHB write data beat receives the AXI buffered response for the complete AHB transaction.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "Early-write response enabled. AHB-Lite write data beats receive an automatic OK response from the AHB-to-AXI bridge, whatever the B-channel AXI response.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/SDMMC2_EARLY_WR_RSP_ENABLE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "Early-write response disabled. The last AHB write data beat receives the AXI buffered response for the complete AHB transaction.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "Early-write response enabled. AHB-Lite write data beats receive an automatic OK response from the AHB-to-AXI bridge, whatever the B-channel AXI response.",
         "value": 1
       }
     ]
@@ -1317,239 +1215,29 @@
     "bit_size": 4,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Standard",
         "description": "Standard run mode (no HDP).",
         "value": 0
       },
       {
-        "name": "B_0xC",
+        "name": "FsmMode",
         "description": "Analyze fsm mode analysis.",
         "value": 12
       },
       {
-        "name": "B_0xD",
+        "name": "FsmMos",
         "description": "Analyze fsm mos analysis.",
         "value": 13
       },
       {
-        "name": "B_0xE",
+        "name": "FsmRampe",
         "description": "Analyze fsm rampe analysis.",
         "value": 14
       },
       {
-        "name": "B_0xF",
+        "name": "FsmMode2",
         "description": "Analyze fsm mode analysis.",
         "value": 15
-      }
-    ]
-  },
-  "enum/USB1_EARLY_WR_RSP_ENABLE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "Early-write response disabled. The last AHB write data beat receives the AXI buffered response for the complete AHB transaction.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "Early-write response enabled. AHB-Lite write data beats receive an automatic OK response from the AHB-to-AXI bridge, whatever the B-channel AXI response.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/USB2_EARLY_WR_RSP_ENABLE": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "Early-write response disabled. The last AHB write data beat receives the AXI buffered response for the complete AHB transaction.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "Early-write response enabled. AHB-Lite write data beats receive an automatic OK response from the AHB-to-AXI bridge, whatever the B-channel AXI response.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/VDDIO1CCCR_CS": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "VDDIOx I/O code from the cell (available in the VDDIOxCCSR).",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "VDDIOx I/O code from RANSRC[3:0] and RAPSRC[3:0] in this register.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/VDDIO1CCCR_EN": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "VDDIOx I/O compensation cell disabled.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "VDDIOx I/O compensation cell enabled.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/VDDIO1CCSR_READY": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "VDDIOx I/O compensation cell not ready.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "VDDIOx I/O compensation cell ready.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/VDDIO2CCCR_CS": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "VDDIOx I/O code from the cell (available in the VDDIOxCCSR).",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "VDDIOx I/O code from RANSRC[3:0] and RAPSRC[3:0] in this register.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/VDDIO2CCCR_EN": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "VDDIOx I/O compensation cell disabled.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "VDDIOx I/O compensation cell enabled.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/VDDIO2CCSR_READY": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "VDDIOx I/O compensation cell not ready.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "VDDIOx I/O compensation cell ready.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/VDDIO3CCCR_CS": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "VDDIOx I/O code from the cell (available in the VDDIOxCCSR).",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "VDDIOx I/O code from RANSRC[3:0] and RAPSRC[3:0] in this register.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/VDDIO3CCCR_EN": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "VDDIOx I/O compensation cell disabled.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "VDDIOx I/O compensation cell enabled.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/VDDIO3CCSR_READY": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "VDDIOx I/O compensation cell not ready.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "VDDIOx I/O compensation cell ready.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/VDDIO4CCCR_CS": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "VDDIOx I/O code from the cell (available in the VDDIOxCCSR).",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "VDDIOx I/O code from RANSRC[3:0] and RAPSRC[3:0] in this register.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/VDDIO4CCCR_EN": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "VDDIOx I/O compensation cell disabled.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "VDDIOx I/O compensation cell enabled.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/VDDIO4CCSR_READY": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "VDDIOx I/O compensation cell not ready.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "VDDIOx I/O compensation cell ready.",
-        "value": 1
       }
     ]
   },
@@ -1557,28 +1245,13 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Cell",
         "description": "VDDIO I/O code from the cell (available in the VDDIOCCSR).",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "CCCR",
         "description": "VDDIO I/O code from RANSRC[3:0] and RAPSRC[3:0].",
-        "value": 1
-      }
-    ]
-  },
-  "enum/VDDIOCCCR_EN": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "VDDIO I/O compensation cell disabled.",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "VDDIO I/O compensation cell enabled.",
         "value": 1
       }
     ]
@@ -1587,13 +1260,43 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "NotReady",
         "description": "VDDIO I/O compensation cell not ready.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Ready",
         "description": "VDDIO I/O compensation cell ready.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/VDDIOxCCCR_CS": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "Cell",
+        "description": "VDDIOx I/O code from the cell (available in the VDDIOxCCSR).",
+        "value": 0
+      },
+      {
+        "name": "CCCR",
+        "description": "VDDIOx I/O code from RANSRC[3:0] and RAPSRC[3:0] in this register.",
+        "value": 1
+      }
+    ]
+  },
+  "enum/VDDIOxCCSR_READY": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "NotReady",
+        "description": "VDDIOx I/O compensation cell not ready.",
+        "value": 0
+      },
+      {
+        "name": "Ready",
+        "description": "VDDIOx I/O compensation cell ready.",
         "value": 1
       }
     ]

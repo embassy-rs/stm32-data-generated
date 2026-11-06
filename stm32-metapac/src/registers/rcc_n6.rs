@@ -13289,7 +13289,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("I2c2sel"),
+                    enumm: Some("I2c1sel"),
                 },
                 Field {
                     name: "i2c3sel",
@@ -13297,7 +13297,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("I2c3sel"),
+                    enumm: Some("I2c1sel"),
                 },
                 Field {
                     name: "i2c4sel",
@@ -13305,7 +13305,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("I2c4sel"),
+                    enumm: Some("I2c1sel"),
                 },
                 Field {
                     name: "i3c1sel",
@@ -13313,7 +13313,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("I3c1sel"),
+                    enumm: Some("I2c1sel"),
                 },
                 Field {
                     name: "i3c2sel",
@@ -13321,7 +13321,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("I3c2sel"),
+                    enumm: Some("I2c1sel"),
                 },
                 Field {
                     name: "ltdcsel",
@@ -13377,7 +13377,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Mdfsel"),
+                    enumm: Some("Adfsel"),
                 },
             ],
         },
@@ -13393,7 +13393,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Xspisel"),
+                    enumm: Some("Fmcsel"),
                 },
                 Field {
                     name: "xspi2sel",
@@ -13401,7 +13401,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Xspisel"),
+                    enumm: Some("Fmcsel"),
                 },
                 Field {
                     name: "xspi3sel",
@@ -13409,7 +13409,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Xspisel"),
+                    enumm: Some("Fmcsel"),
                 },
                 Field {
                     name: "otgphy1sel",
@@ -13673,7 +13673,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Cpusws"),
+                    enumm: Some("Cpusw"),
                 },
                 Field {
                     name: "syssw",
@@ -13689,7 +13689,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Syssws"),
+                    enumm: Some("Syssw"),
                 },
             ],
         },
@@ -13929,7 +13929,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Lserdyf"),
+                    enumm: Some("Lsecssf"),
                 },
                 Field {
                     name: "msirdyf",
@@ -13953,7 +13953,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Hserdyf"),
+                    enumm: Some("Hsecssf"),
                 },
                 Field {
                     name: "pllrdyf",
@@ -20773,7 +20773,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("RsrRmvf"),
+                    enumm: Some("HwrsrRmvf"),
                 },
                 Field {
                     name: "lckrstf",
@@ -21347,16 +21347,16 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Lock",
+                    description: Some("ACLKNC configuration bits are accessible by lock software only."),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "NonLock",
                     description: Some(
                         "ACLKNC configuration bits are accessible by non-lock software only (default after reset).",
                     ),
                     value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("ACLKNC configuration bits are accessible by lock software only."),
-                    value: 1,
                 },
             ],
         },
@@ -21366,14 +21366,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NonPublic",
                     description: Some(
                         "ACLKNC configuration bits are accessible by non-public software only (default after reset).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Public",
                     description: Some("ACLKNC configuration bits are accessible by public software only."),
                     value: 1,
                 },
@@ -21385,14 +21385,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NonPrivilege",
                     description: Some(
                         "ACLKNC configuration bits are accessible by non-privilege software only (default after reset).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Privilege",
                     description: Some("ACLKNC configuration bits are accessible by privilege software only."),
                     value: 1,
                 },
@@ -21404,14 +21404,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NonSecure",
                     description: Some(
                         "ACLKNC configuration bits are accessible by non-secure software only (default after reset).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Secure",
                     description: Some("ACLKNC configuration bits are accessible by secure software only."),
                     value: 1,
                 },
@@ -21423,16 +21423,16 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Lock",
+                    description: Some("ACLKN configuration bits are accessible by lock software only."),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "NonLock",
                     description: Some(
                         "ACLKN configuration bits are accessible by non-lock software only (default after reset).",
                     ),
                     value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("ACLKN configuration bits are accessible by lock software only."),
-                    value: 1,
                 },
             ],
         },
@@ -21442,14 +21442,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NonPublic",
                     description: Some(
                         "ACLKN configuration bits are accessible by non-public software only (default after reset).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Public",
                     description: Some("ACLKN configuration bits are accessible by public software only."),
                     value: 1,
                 },
@@ -21461,14 +21461,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NonPrivilege",
                     description: Some(
                         "ACLKN configuration bits are accessible by non-privilege software only (default after reset).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Privilege",
                     description: Some("ACLKN configuration bits are accessible by privilege software only."),
                     value: 1,
                 },
@@ -21480,14 +21480,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NonSecure",
                     description: Some(
                         "ACLKN configuration bits are accessible by non-secure software only (default after reset).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Secure",
                     description: Some("ACLKN configuration bits are accessible by secure software only."),
                     value: 1,
                 },
@@ -21977,33 +21977,6 @@ pub(crate) static REGISTERS: IR = IR {
         },
         Enum {
             name: "Cpusw",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "Hse",
-                    description: Some("hse_ck selected as system clock."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "Hsi",
-                    description: Some("hsi_ck selected as system clock (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Ic1",
-                    description: Some("ic1_ck selected as system clock."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "Msi",
-                    description: Some("msi_ck selected as system clock."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Cpusws",
             description: None,
             bit_size: 2,
             variants: &[
@@ -22716,23 +22689,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Hserdyf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ClockReady",
-                    description: Some("clock ready interrupt caused by the HSE."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "NoClockReady",
-                    description: Some("no clock ready interrupt caused by the HSE (default after reset)."),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
             name: "Hserdyie",
             description: None,
             bit_size: 1,
@@ -23096,12 +23052,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotOccurred",
                     description: Some("no Window Watchdog Reset occurred from WWDG (default after power-on reset)."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Occurred",
                     description: Some("Window Watchdog Reset occurred from WWDG."),
                     value: 1,
                 },
@@ -23109,191 +23065,6 @@ pub(crate) static REGISTERS: IR = IR {
         },
         Enum {
             name: "I2c1sel",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "HsiDiv",
-                    description: Some("hsi_div_ck selected as reference clock."),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "Ic10",
-                    description: Some("ic10_ck selected as reference clock."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "Ic15",
-                    description: Some("ic15_ck selected as reference clock."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "Msi",
-                    description: Some("msi_ck selected as reference clock."),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "Pclk1",
-                    description: Some("pclk1 selected as reference clock."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Per",
-                    description: Some("per_ck selected as reference clock."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "I2c2sel",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "HsiDiv",
-                    description: Some("hsi_div_ck selected as reference clock."),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "Ic10",
-                    description: Some("ic10_ck selected as reference clock."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "Ic15",
-                    description: Some("ic15_ck selected as reference clock."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "Msi",
-                    description: Some("msi_ck selected as reference clock."),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "Pclk1",
-                    description: Some("pclk1 selected as reference clock."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Per",
-                    description: Some("per_ck selected as reference clock."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "I2c3sel",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "HsiDiv",
-                    description: Some("hsi_div_ck selected as reference clock."),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "Ic10",
-                    description: Some("ic10_ck selected as reference clock."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "Ic15",
-                    description: Some("ic15_ck selected as reference clock."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "Msi",
-                    description: Some("msi_ck selected as reference clock."),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "Pclk1",
-                    description: Some("pclk1 selected as reference clock."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Per",
-                    description: Some("per_ck selected as reference clock."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "I2c4sel",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "HsiDiv",
-                    description: Some("hsi_div_ck selected as reference clock."),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "Ic10",
-                    description: Some("ic10_ck selected as reference clock."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "Ic15",
-                    description: Some("ic15_ck selected as reference clock."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "Msi",
-                    description: Some("msi_ck selected as reference clock."),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "Pclk1",
-                    description: Some("pclk1 selected as reference clock."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Per",
-                    description: Some("per_ck selected as reference clock."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "I3c1sel",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "HsiDiv",
-                    description: Some("hsi_div_ck selected as reference clock."),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "Ic10",
-                    description: Some("ic10_ck selected as reference clock."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "Ic15",
-                    description: Some("ic15_ck selected as reference clock."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "Msi",
-                    description: Some("msi_ck selected as reference clock."),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "Pclk1",
-                    description: Some("pclk1 selected as reference clock."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Per",
-                    description: Some("per_ck selected as reference clock."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "I3c2sel",
             description: None,
             bit_size: 3,
             variants: &[
@@ -25096,23 +24867,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Lserdyf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NoReady",
-                    description: Some("no clock ready interrupt caused by the LSE (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Ready",
-                    description: Some("clock ready interrupt caused by the LSE."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Lserdyie",
             description: None,
             bit_size: 1,
@@ -25374,53 +25128,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "Div4",
                     description: Some("ck_icn_p_mce3 is divided by 4."),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Mdfsel",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "Hclk2",
-                    description: Some("hclk2 selected as reference clock."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "HsiDiv",
-                    description: Some("hsi_div_ck selected as reference clock."),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "I2sCkin",
-                    description: Some("I2S_CKIN selected as reference clock."),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "Ic7",
-                    description: Some("ic7_ck selected as reference clock."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "Ic8",
-                    description: Some("ic8_ck selected as reference clock."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "Msi",
-                    description: Some("msi_ck selected as reference clock."),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "Per",
-                    description: Some("per_ck selected as reference clock."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Timg",
-                    description: Some("timg_ck selected as reference clock."),
-                    value: 7,
                 },
             ],
         },
@@ -26707,23 +26414,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "RsrRmvf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Clear",
-                    description: Some("clear the value of the reset flags."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "NoClear",
-                    description: Some("clear of the reset flags not activated (default after power-on reset)."),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
             name: "RsrSftrstf",
             description: None,
             bit_size: 1,
@@ -27297,33 +26987,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Syssws",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "Hse",
-                    description: Some("hse_ck selected as system clock."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "Hsi",
-                    description: Some("hsi_ck selected as system clock (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Ic2",
-                    description: Some("ic2_ck selected as system clock."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "Msi",
-                    description: Some("msi_ck selected as system clock."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
             name: "Timpre",
             description: None,
             bit_size: 2,
@@ -27495,33 +27158,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "Enabled",
                     description: Some("Wakeup interrupt enabled."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Xspisel",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "Hclk5",
-                    description: Some("hclk5 selected as reference clock."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Ic3",
-                    description: Some("ic3_ck selected as reference clock."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "Ic4",
-                    description: Some("ic4_ck selected as reference clock."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "Per",
-                    description: Some("per_ck selected as reference clock."),
                     value: 1,
                 },
             ],

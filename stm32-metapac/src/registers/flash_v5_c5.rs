@@ -1209,7 +1209,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Optsr2Sram2Ecc"),
+                    enumm: None,
                 },
             ],
         },
@@ -1409,34 +1409,34 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("No FLASH operation ongoing during previous reset."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("Single write operation interrupted."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B0x3",
-                    description: Some("Page erase operation interrupted."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "B0x4",
+                    name: "BankEraseInt",
                     description: Some("Bank erase operation interrupted."),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "B0x5",
+                    name: "MassEraseInt",
                     description: Some("Mass erase operation interrupted."),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "B0x6",
+                    name: "NoFlashInt",
+                    description: Some("No FLASH operation ongoing during previous reset."),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "OptChangeInt",
                     description: Some("Option change operation interrupted."),
                     value: 6,
+                },
+                EnumVariant {
+                    name: "PgEraseInt",
+                    description: Some("Page erase operation interrupted."),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "SingleWrInt",
+                    description: Some("Single write operation interrupted."),
+                    value: 1,
                 },
             ],
         },
@@ -1446,40 +1446,40 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some(
-                        "Double error on first 16bits data or first 32 bits data accessed on the FLASH line.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("Double error on second 16bits data accessed on the FLASH line."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B0x2",
-                    description: Some(
-                        "Double error on third 16bits data or second 32 bits data accessed on the FLASH line.",
-                    ),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B0x3",
-                    description: Some("Double error on fourth 16bits data accessed on the FLASH line."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "B0x4",
+                    name: "Fifth",
                     description: Some(
                         "Double error on fifth 16bits data or third 32 bits data accessed on the FLASH line.",
                     ),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "B0x5",
+                    name: "First",
+                    description: Some(
+                        "Double error on first 16bits data or first 32 bits data accessed on the FLASH line.",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Fourth",
+                    description: Some("Double error on fourth 16bits data accessed on the FLASH line."),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "Second",
+                    description: Some("Double error on second 16bits data accessed on the FLASH line."),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Sixth",
                     description: Some("Double error on sixth 16bits data."),
                     value: 5,
+                },
+                EnumVariant {
+                    name: "Third",
+                    description: Some(
+                        "Double error on third 16bits data or second 32 bits data accessed on the FLASH line.",
+                    ),
+                    value: 2,
                 },
             ],
         },
@@ -1501,36 +1501,19 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Optsr2Sram2Ecc",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Disabled",
-                    description: Some("SRAM2 ECC check disabled."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Enabled",
-                    description: Some("SRAM2 ECC check enabled."),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
             name: "OptsrBoot0",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("BOOT0 = 0."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "High",
                     description: Some("BOOT0 = 1."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Low",
+                    description: Some("BOOT0 = 0."),
+                    value: 0,
                 },
             ],
         },
@@ -1557,12 +1540,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Frozen",
                     description: Some("Independent watchdog frozen in Standby mode."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Running",
                     description: Some("Independent watchdog keep running in Standby mode."),
                     value: 1,
                 },
@@ -1574,12 +1557,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Frozen",
                     description: Some("Independent watchdog frozen in system Stop mode."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Running",
                     description: Some("Independent watchdog keep running in system Stop mode."),
                     value: 1,
                 },
@@ -1591,12 +1574,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Hardware",
                     description: Some("IWDG watchdog is controlled by hardware."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Software",
                     description: Some("IWDG watchdog is controlled by software."),
                     value: 1,
                 },
@@ -1608,14 +1591,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("a reset is generated when entering Standby mode on core domain."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "NoReset",
                     description: Some("no reset generated when entering Standby mode on core domain."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Reset",
+                    description: Some("a reset is generated when entering Standby mode on core domain."),
+                    value: 0,
                 },
             ],
         },
@@ -1625,14 +1608,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("a reset is generated when entering Stop mode on core domain."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "NoReset",
                     description: Some("no reset generated when entering Stop mode on core domain."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Reset",
+                    description: Some("a reset is generated when entering Stop mode on core domain."),
+                    value: 0,
                 },
             ],
         },
@@ -1642,12 +1625,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Hardware",
                     description: Some("WWDG watchdog is controlled by hardware."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Software",
                     description: Some("WWDG watchdog is controlled by software."),
                     value: 1,
                 },
@@ -1659,12 +1642,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some("Access to registers is always granted."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Privileged",
                     description: Some("Access to registers is denied in case of unprivileged access."),
                     value: 1,
                 },
@@ -1676,12 +1659,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Protected",
                     description: Some("write protected;."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Unprotected",
                     description: Some("not write protected."),
                     value: 1,
                 },
@@ -1693,12 +1676,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Protected",
                     description: Some("write protected."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Unprotected",
                     description: Some("not write protected."),
                     value: 1,
                 },

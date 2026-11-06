@@ -230,26 +230,26 @@ pub mod regs {
         #[doc = "BOOT0 pin pull-down disable."]
         #[must_use]
         #[inline(always)]
-        pub const fn boot0_pd(&self) -> super::vals::Boot0Pd {
+        pub const fn boot0_pd(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Boot0Pd::from_bits(val as u8)
+            val != 0
         }
         #[doc = "BOOT0 pin pull-down disable."]
         #[inline(always)]
-        pub const fn set_boot0_pd(&mut self, val: super::vals::Boot0Pd) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub const fn set_boot0_pd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "BOOT1 pin pull-down disable."]
         #[must_use]
         #[inline(always)]
-        pub const fn boot1_pd(&self) -> super::vals::Boot1Pd {
+        pub const fn boot1_pd(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Boot1Pd::from_bits(val as u8)
+            val != 0
         }
         #[doc = "BOOT1 pin pull-down disable."]
         #[inline(always)]
-        pub const fn set_boot1_pd(&mut self, val: super::vals::Boot1Pd) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub const fn set_boot1_pd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
     }
     impl Default for Bootcr {
@@ -271,7 +271,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Bootcr {{ boot0_pd: {:?}, boot1_pd: {:?} }}",
+                "Bootcr {{ boot0_pd: {=bool:?}, boot1_pd: {=bool:?} }}",
                 self.boot0_pd(),
                 self.boot1_pd()
             )
@@ -663,13 +663,13 @@ pub mod regs {
         #[doc = "RW margin enable input for TCM memories."]
         #[must_use]
         #[inline(always)]
-        pub const fn rme_tcm(&self) -> super::vals::RmeTcm {
+        pub const fn rme_tcm(&self) -> super::vals::Rme {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::RmeTcm::from_bits(val as u8)
+            super::vals::Rme::from_bits(val as u8)
         }
         #[doc = "RW margin enable input for TCM memories."]
         #[inline(always)]
-        pub const fn set_rme_tcm(&mut self, val: super::vals::RmeTcm) {
+        pub const fn set_rme_tcm(&mut self, val: super::vals::Rme) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
         }
         #[doc = "External RW margin inputs for TCM memories."]
@@ -711,13 +711,13 @@ pub mod regs {
         #[doc = "RW margin enable input for caches memories."]
         #[must_use]
         #[inline(always)]
-        pub const fn rme_cache(&self) -> super::vals::RmeCache {
+        pub const fn rme_cache(&self) -> super::vals::Rme {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::RmeCache::from_bits(val as u8)
+            super::vals::Rme::from_bits(val as u8)
         }
         #[doc = "RW margin enable input for caches memories."]
         #[inline(always)]
-        pub const fn set_rme_cache(&mut self, val: super::vals::RmeCache) {
+        pub const fn set_rme_cache(&mut self, val: super::vals::Rme) {
             self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
         }
         #[doc = "External read/write (RW) margin inputs for caches memories."]
@@ -1070,50 +1070,50 @@ is OFF."]
         #[doc = "None."]
         #[must_use]
         #[inline(always)]
-        pub const fn sdmmc1_early_wr_rsp_enable(&self) -> super::vals::Sdmmc1EarlyWrRspEnable {
+        pub const fn sdmmc1_early_wr_rsp_enable(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Sdmmc1EarlyWrRspEnable::from_bits(val as u8)
+            val != 0
         }
         #[doc = "None."]
         #[inline(always)]
-        pub const fn set_sdmmc1_early_wr_rsp_enable(&mut self, val: super::vals::Sdmmc1EarlyWrRspEnable) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub const fn set_sdmmc1_early_wr_rsp_enable(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "None."]
         #[must_use]
         #[inline(always)]
-        pub const fn sdmmc2_early_wr_rsp_enable(&self) -> super::vals::Sdmmc2EarlyWrRspEnable {
+        pub const fn sdmmc2_early_wr_rsp_enable(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Sdmmc2EarlyWrRspEnable::from_bits(val as u8)
+            val != 0
         }
         #[doc = "None."]
         #[inline(always)]
-        pub const fn set_sdmmc2_early_wr_rsp_enable(&mut self, val: super::vals::Sdmmc2EarlyWrRspEnable) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub const fn set_sdmmc2_early_wr_rsp_enable(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "None."]
         #[must_use]
         #[inline(always)]
-        pub const fn usb1_early_wr_rsp_enable(&self) -> super::vals::Usb1EarlyWrRspEnable {
+        pub const fn usb1_early_wr_rsp_enable(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Usb1EarlyWrRspEnable::from_bits(val as u8)
+            val != 0
         }
         #[doc = "None."]
         #[inline(always)]
-        pub const fn set_usb1_early_wr_rsp_enable(&mut self, val: super::vals::Usb1EarlyWrRspEnable) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub const fn set_usb1_early_wr_rsp_enable(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "None."]
         #[must_use]
         #[inline(always)]
-        pub const fn usb2_early_wr_rsp_enable(&self) -> super::vals::Usb2EarlyWrRspEnable {
+        pub const fn usb2_early_wr_rsp_enable(&self) -> bool {
             let val = (self.0 >> 3usize) & 0x01;
-            super::vals::Usb2EarlyWrRspEnable::from_bits(val as u8)
+            val != 0
         }
         #[doc = "None."]
         #[inline(always)]
-        pub const fn set_usb2_early_wr_rsp_enable(&mut self, val: super::vals::Usb2EarlyWrRspEnable) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val.to_bits() as u32) & 0x01) << 3usize);
+        pub const fn set_usb2_early_wr_rsp_enable(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
         }
     }
     impl Default for Icnewrcr {
@@ -1137,7 +1137,7 @@ is OFF."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Icnewrcr {{ sdmmc1_early_wr_rsp_enable: {:?}, sdmmc2_early_wr_rsp_enable: {:?}, usb1_early_wr_rsp_enable: {:?}, usb2_early_wr_rsp_enable: {:?} }}",
+                "Icnewrcr {{ sdmmc1_early_wr_rsp_enable: {=bool:?}, sdmmc2_early_wr_rsp_enable: {=bool:?}, usb1_early_wr_rsp_enable: {=bool:?}, usb2_early_wr_rsp_enable: {=bool:?} }}",
                 self.sdmmc1_early_wr_rsp_enable(),
                 self.sdmmc2_early_wr_rsp_enable(),
                 self.usb1_early_wr_rsp_enable(),
@@ -1299,14 +1299,14 @@ is OFF."]
         #[doc = "Control interleaving on NPU RAMs."]
         #[must_use]
         #[inline(always)]
-        pub const fn interleaving_active(&self) -> super::vals::InterleavingActive {
+        pub const fn interleaving_active(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::InterleavingActive::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Control interleaving on NPU RAMs."]
         #[inline(always)]
-        pub const fn set_interleaving_active(&mut self, val: super::vals::InterleavingActive) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub const fn set_interleaving_active(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
     impl Default for NpuIcncr {
@@ -1327,7 +1327,7 @@ is OFF."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "NpuIcncr {{ interleaving_active: {:?} }}",
+                "NpuIcncr {{ interleaving_active: {=bool:?} }}",
                 self.interleaving_active()
             )
         }
@@ -1475,25 +1475,25 @@ is OFF."]
         #[doc = "Enables the compensation cell of I/Os supplied by VDDIOx."]
         #[must_use]
         #[inline(always)]
-        pub const fn en(&self) -> super::vals::Vddio1cccrEn {
+        pub const fn en(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Vddio1cccrEn::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Enables the compensation cell of I/Os supplied by VDDIOx."]
         #[inline(always)]
-        pub const fn set_en(&mut self, val: super::vals::Vddio1cccrEn) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub const fn set_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Selects the code to be applied for the compensation cell of I/Os supplied by VDDIOx."]
         #[must_use]
         #[inline(always)]
-        pub const fn cs(&self) -> super::vals::Vddio1cccrCs {
+        pub const fn cs(&self) -> super::vals::VddiOxCccrCs {
             let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Vddio1cccrCs::from_bits(val as u8)
+            super::vals::VddiOxCccrCs::from_bits(val as u8)
         }
         #[doc = "Selects the code to be applied for the compensation cell of I/Os supplied by VDDIOx."]
         #[inline(always)]
-        pub const fn set_cs(&mut self, val: super::vals::Vddio1cccrCs) {
+        pub const fn set_cs(&mut self, val: super::vals::VddiOxCccrCs) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
         }
     }
@@ -1518,7 +1518,7 @@ is OFF."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Vddio1cccr {{ ransrc: {=u8:?}, rapsrc: {=u8:?}, en: {:?}, cs: {:?} }}",
+                "Vddio1cccr {{ ransrc: {=u8:?}, rapsrc: {=u8:?}, en: {=bool:?}, cs: {:?} }}",
                 self.ransrc(),
                 self.rapsrc(),
                 self.en(),
@@ -1558,13 +1558,13 @@ is OFF."]
         #[doc = "Provides the compensation cell status of I/Os supplied by VDDIOx."]
         #[must_use]
         #[inline(always)]
-        pub const fn ready(&self) -> super::vals::Vddio1ccsrReady {
+        pub const fn ready(&self) -> super::vals::VddiOxCcsrReady {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Vddio1ccsrReady::from_bits(val as u8)
+            super::vals::VddiOxCcsrReady::from_bits(val as u8)
         }
         #[doc = "Provides the compensation cell status of I/Os supplied by VDDIOx."]
         #[inline(always)]
-        pub const fn set_ready(&mut self, val: super::vals::Vddio1ccsrReady) {
+        pub const fn set_ready(&mut self, val: super::vals::VddiOxCcsrReady) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
         }
     }
@@ -1627,25 +1627,25 @@ is OFF."]
         #[doc = "Enables the compensation cell of I/Os supplied by VDDIOx."]
         #[must_use]
         #[inline(always)]
-        pub const fn en(&self) -> super::vals::Vddio2cccrEn {
+        pub const fn en(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Vddio2cccrEn::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Enables the compensation cell of I/Os supplied by VDDIOx."]
         #[inline(always)]
-        pub const fn set_en(&mut self, val: super::vals::Vddio2cccrEn) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub const fn set_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Selects the code to be applied for the compensation cell of I/Os supplied by VDDIOx."]
         #[must_use]
         #[inline(always)]
-        pub const fn cs(&self) -> super::vals::Vddio2cccrCs {
+        pub const fn cs(&self) -> super::vals::VddiOxCccrCs {
             let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Vddio2cccrCs::from_bits(val as u8)
+            super::vals::VddiOxCccrCs::from_bits(val as u8)
         }
         #[doc = "Selects the code to be applied for the compensation cell of I/Os supplied by VDDIOx."]
         #[inline(always)]
-        pub const fn set_cs(&mut self, val: super::vals::Vddio2cccrCs) {
+        pub const fn set_cs(&mut self, val: super::vals::VddiOxCccrCs) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
         }
     }
@@ -1670,7 +1670,7 @@ is OFF."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Vddio2cccr {{ ransrc: {=u8:?}, rapsrc: {=u8:?}, en: {:?}, cs: {:?} }}",
+                "Vddio2cccr {{ ransrc: {=u8:?}, rapsrc: {=u8:?}, en: {=bool:?}, cs: {:?} }}",
                 self.ransrc(),
                 self.rapsrc(),
                 self.en(),
@@ -1710,13 +1710,13 @@ is OFF."]
         #[doc = "Provides the compensation cell status of I/Os supplied by VDDIOx."]
         #[must_use]
         #[inline(always)]
-        pub const fn ready(&self) -> super::vals::Vddio2ccsrReady {
+        pub const fn ready(&self) -> super::vals::VddiOxCcsrReady {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Vddio2ccsrReady::from_bits(val as u8)
+            super::vals::VddiOxCcsrReady::from_bits(val as u8)
         }
         #[doc = "Provides the compensation cell status of I/Os supplied by VDDIOx."]
         #[inline(always)]
-        pub const fn set_ready(&mut self, val: super::vals::Vddio2ccsrReady) {
+        pub const fn set_ready(&mut self, val: super::vals::VddiOxCcsrReady) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
         }
     }
@@ -1779,25 +1779,25 @@ is OFF."]
         #[doc = "Enables the compensation cell of I/Os supplied by VDDIOx."]
         #[must_use]
         #[inline(always)]
-        pub const fn en(&self) -> super::vals::Vddio3cccrEn {
+        pub const fn en(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Vddio3cccrEn::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Enables the compensation cell of I/Os supplied by VDDIOx."]
         #[inline(always)]
-        pub const fn set_en(&mut self, val: super::vals::Vddio3cccrEn) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub const fn set_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Selects the code to be applied for the compensation cell of I/Os supplied by VDDIOx."]
         #[must_use]
         #[inline(always)]
-        pub const fn cs(&self) -> super::vals::Vddio3cccrCs {
+        pub const fn cs(&self) -> super::vals::VddiOxCccrCs {
             let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Vddio3cccrCs::from_bits(val as u8)
+            super::vals::VddiOxCccrCs::from_bits(val as u8)
         }
         #[doc = "Selects the code to be applied for the compensation cell of I/Os supplied by VDDIOx."]
         #[inline(always)]
-        pub const fn set_cs(&mut self, val: super::vals::Vddio3cccrCs) {
+        pub const fn set_cs(&mut self, val: super::vals::VddiOxCccrCs) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
         }
     }
@@ -1822,7 +1822,7 @@ is OFF."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Vddio3cccr {{ ransrc: {=u8:?}, rapsrc: {=u8:?}, en: {:?}, cs: {:?} }}",
+                "Vddio3cccr {{ ransrc: {=u8:?}, rapsrc: {=u8:?}, en: {=bool:?}, cs: {:?} }}",
                 self.ransrc(),
                 self.rapsrc(),
                 self.en(),
@@ -1862,13 +1862,13 @@ is OFF."]
         #[doc = "Provides the compensation cell status of I/Os supplied by VDDIOx."]
         #[must_use]
         #[inline(always)]
-        pub const fn ready(&self) -> super::vals::Vddio3ccsrReady {
+        pub const fn ready(&self) -> super::vals::VddiOxCcsrReady {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Vddio3ccsrReady::from_bits(val as u8)
+            super::vals::VddiOxCcsrReady::from_bits(val as u8)
         }
         #[doc = "Provides the compensation cell status of I/Os supplied by VDDIOx."]
         #[inline(always)]
-        pub const fn set_ready(&mut self, val: super::vals::Vddio3ccsrReady) {
+        pub const fn set_ready(&mut self, val: super::vals::VddiOxCcsrReady) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
         }
     }
@@ -1931,25 +1931,25 @@ is OFF."]
         #[doc = "Enables the compensation cell of I/Os supplied by VDDIOx."]
         #[must_use]
         #[inline(always)]
-        pub const fn en(&self) -> super::vals::Vddio4cccrEn {
+        pub const fn en(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Vddio4cccrEn::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Enables the compensation cell of I/Os supplied by VDDIOx."]
         #[inline(always)]
-        pub const fn set_en(&mut self, val: super::vals::Vddio4cccrEn) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub const fn set_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Selects the code to be applied for the compensation cell of I/Os supplied by VDDIOx."]
         #[must_use]
         #[inline(always)]
-        pub const fn cs(&self) -> super::vals::Vddio4cccrCs {
+        pub const fn cs(&self) -> super::vals::VddiOxCccrCs {
             let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Vddio4cccrCs::from_bits(val as u8)
+            super::vals::VddiOxCccrCs::from_bits(val as u8)
         }
         #[doc = "Selects the code to be applied for the compensation cell of I/Os supplied by VDDIOx."]
         #[inline(always)]
-        pub const fn set_cs(&mut self, val: super::vals::Vddio4cccrCs) {
+        pub const fn set_cs(&mut self, val: super::vals::VddiOxCccrCs) {
             self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
         }
     }
@@ -1974,7 +1974,7 @@ is OFF."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Vddio4cccr {{ ransrc: {=u8:?}, rapsrc: {=u8:?}, en: {:?}, cs: {:?} }}",
+                "Vddio4cccr {{ ransrc: {=u8:?}, rapsrc: {=u8:?}, en: {=bool:?}, cs: {:?} }}",
                 self.ransrc(),
                 self.rapsrc(),
                 self.en(),
@@ -2014,13 +2014,13 @@ is OFF."]
         #[doc = "Provides the compensation cell status of I/Os supplied by VDDIOx."]
         #[must_use]
         #[inline(always)]
-        pub const fn ready(&self) -> super::vals::Vddio4ccsrReady {
+        pub const fn ready(&self) -> super::vals::VddiOxCcsrReady {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Vddio4ccsrReady::from_bits(val as u8)
+            super::vals::VddiOxCcsrReady::from_bits(val as u8)
         }
         #[doc = "Provides the compensation cell status of I/Os supplied by VDDIOx."]
         #[inline(always)]
-        pub const fn set_ready(&mut self, val: super::vals::Vddio4ccsrReady) {
+        pub const fn set_ready(&mut self, val: super::vals::VddiOxCcsrReady) {
             self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
         }
     }
@@ -2083,14 +2083,14 @@ is OFF."]
         #[doc = "Enables the compensation cell of I/Os supplied by VDDIO."]
         #[must_use]
         #[inline(always)]
-        pub const fn en(&self) -> super::vals::VddiocccrEn {
+        pub const fn en(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::VddiocccrEn::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Enables the compensation cell of I/Os supplied by VDDIO."]
         #[inline(always)]
-        pub const fn set_en(&mut self, val: super::vals::VddiocccrEn) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub const fn set_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Selects the code to be applied for the compensation cell of I/Os supplied by VDDIO."]
         #[must_use]
@@ -2126,7 +2126,7 @@ is OFF."]
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Vddiocccr {{ ransrc: {=u8:?}, rapsrc: {=u8:?}, en: {:?}, cs: {:?} }}",
+                "Vddiocccr {{ ransrc: {=u8:?}, rapsrc: {=u8:?}, en: {=bool:?}, cs: {:?} }}",
                 self.ransrc(),
                 self.rapsrc(),
                 self.en(),
@@ -2247,9 +2247,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bkpraml {
         #[doc = "Backup SRAM double ECC error signal disconnected from TIM1/8/15/16/17 break inputs."]
-        B0x0 = 0x0,
+        Disconnected = 0x0,
         #[doc = "Backup SRAM double ECC error signal connected to TIM1/8/15/16/17 break inputs."]
-        B0x1 = 0x01,
+        Connected = 0x01,
     }
     impl Bkpraml {
         #[inline(always)]
@@ -2278,9 +2278,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Boot0 {
         #[doc = "BOOT0 pin connected to VSS (or left open if BOOT0_PD = 0)."]
-        B0x0 = 0x0,
+        Vss = 0x0,
         #[doc = "BOOT0 pin connected to VDD."]
-        B0x1 = 0x01,
+        Vdd = 0x01,
     }
     impl Boot0 {
         #[inline(always)]
@@ -2307,42 +2307,11 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Boot0Pd {
-        #[doc = "Pull-down enabled. The BOOT0 pin can be left open and takes a value of 0 if open."]
-        B0x0 = 0x0,
-        #[doc = "Pull-down disabled. The BOOT0 pin must not be left open."]
-        B0x1 = 0x01,
-    }
-    impl Boot0Pd {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Boot0Pd {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Boot0Pd {
-        #[inline(always)]
-        fn from(val: u8) -> Boot0Pd {
-            Boot0Pd::from_bits(val)
-        }
-    }
-    impl From<Boot0Pd> for u8 {
-        #[inline(always)]
-        fn from(val: Boot0Pd) -> u8 {
-            Boot0Pd::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Boot1 {
         #[doc = "BOOT1 pin connected to VSS (or left open if BOOT1_PD = 0 in BOOTCR)."]
-        B0x0 = 0x0,
+        Vss = 0x0,
         #[doc = "BOOT1 pin connected to VDD."]
-        B0x1 = 0x01,
+        Vdd = 0x01,
     }
     impl Boot1 {
         #[inline(always)]
@@ -2369,42 +2338,11 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Boot1Pd {
-        #[doc = "Pull-down enabled. The BOOT1 pin can be left open and takes a value of 0 if open."]
-        B0x0 = 0x0,
-        #[doc = "Pull-down disabled. The BOOT1 pin must not be left open."]
-        B0x1 = 0x01,
-    }
-    impl Boot1Pd {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Boot1Pd {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Boot1Pd {
-        #[inline(always)]
-        fn from(val: u8) -> Boot1Pd {
-            Boot1Pd::from_bits(val)
-        }
-    }
-    impl From<Boot1Pd> for u8 {
-        #[inline(always)]
-        fn from(val: Boot1Pd) -> u8 {
-            Boot1Pd::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CfgRetimeRx {
         #[doc = "No retiming on Rx path."]
-        B0x0 = 0x0,
+        NoRetiming = 0x0,
         #[doc = "Retiming on Rx path."]
-        B0x1 = 0x01,
+        Retiming = 0x01,
     }
     impl CfgRetimeRx {
         #[inline(always)]
@@ -2433,9 +2371,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CfgRetimeTx {
         #[doc = "No retiming on Tx path."]
-        B0x0 = 0x0,
+        NoRetiming = 0x0,
         #[doc = "Retiming on Tx path."]
-        B0x1 = 0x01,
+        Retiming = 0x01,
     }
     impl CfgRetimeTx {
         #[inline(always)]
@@ -2472,9 +2410,9 @@ pub mod vals {
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
         #[doc = "128 Kbytes (default value)."]
-        B0x8 = 0x08,
+        Kbytes128 = 0x08,
         #[doc = "256 Kbytes."]
-        B0x9 = 0x09,
+        Kbytes256 = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
@@ -2516,11 +2454,11 @@ pub mod vals {
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         #[doc = "64 KB (default value)."]
-        B0x7 = 0x07,
+        Kbytes64 = 0x07,
         #[doc = "128 Kbytes."]
-        B0x8 = 0x08,
+        Kbytes128 = 0x08,
         #[doc = "256 Kbytes."]
-        B0x9 = 0x09,
+        Kbytes256 = 0x09,
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
@@ -2555,9 +2493,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cm55cachel {
         #[doc = "Cortex-M55 cache double ECC error signal disconnected from TIM1/8/15/16/17 break inputs."]
-        B0x0 = 0x0,
+        Disconnected = 0x0,
         #[doc = "Cortex-M55 cache double ECC error signal connected to TIM1/8/15/16/17 break inputs."]
-        B0x1 = 0x01,
+        Connected = 0x01,
     }
     impl Cm55cachel {
         #[inline(always)]
@@ -2586,9 +2524,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cm55l {
         #[doc = "Cortex-M55 lockup output disconnected from TIM1/8/15/16/17 break inputs."]
-        B0x0 = 0x0,
+        Disconnected = 0x0,
         #[doc = "Cortex-M55 lockup output disconnected from TIM1/8/15/16/17 break inputs."]
-        B0x1 = 0x01,
+        Connected = 0x01,
     }
     impl Cm55l {
         #[inline(always)]
@@ -2617,9 +2555,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cm55tcml {
         #[doc = "Cortex-M55 TCM double ECC error signal disconnected from TIM1/8/15/16/17 break inputs."]
-        B0x0 = 0x0,
+        Disconnected = 0x0,
         #[doc = "Cortex-M55 TCM double ECC error signal connected to TIM1/8/15/16/17 break inputs."]
-        B0x1 = 0x01,
+        Connected = 0x01,
     }
     impl Cm55tcml {
         #[inline(always)]
@@ -2648,9 +2586,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CoreResetType {
         #[doc = "Warm reset (default value)."]
-        B0x0 = 0x0,
+        Warm = 0x0,
         #[doc = "Power-on reset."]
-        B0x1 = 0x01,
+        PowerOn = 0x01,
     }
     impl CoreResetType {
         #[inline(always)]
@@ -2674,45 +2612,14 @@ pub mod vals {
             CoreResetType::to_bits(val)
         }
     }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum InterleavingActive {
-        #[doc = "Interleaving disabled."]
-        B0x0 = 0x0,
-        #[doc = "Interleaving enabled."]
-        B0x1 = 0x01,
-    }
-    impl InterleavingActive {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> InterleavingActive {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for InterleavingActive {
-        #[inline(always)]
-        fn from(val: u8) -> InterleavingActive {
-            InterleavingActive::from_bits(val)
-        }
-    }
-    impl From<InterleavingActive> for u8 {
-        #[inline(always)]
-        fn from(val: InterleavingActive) -> u8 {
-            InterleavingActive::to_bits(val)
-        }
-    }
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     pub struct Iocr(u32);
     impl Iocr {
         #[doc = "High-speed mode disabled, or use ADC ANA pin."]
-        pub const B0x0: Self = Self(0x0);
+        pub const Disabled: Self = Self(0x0);
         #[doc = "High-speed mode enabled, or connect internal ADC ANA signal to GPIO."]
-        pub const B0x1: Self = Self(0x01);
+        pub const Enabled: Self = Self(0x01);
     }
     impl Iocr {
         pub const fn from_bits(val: u32) -> Iocr {
@@ -2725,8 +2632,8 @@ pub mod vals {
     impl core::fmt::Debug for Iocr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("B0x0"),
-                0x01 => f.write_str("B0x1"),
+                0x0 => f.write_str("Disabled"),
+                0x01 => f.write_str("Enabled"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2735,8 +2642,8 @@ pub mod vals {
     impl defmt::Format for Iocr {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "B0x0"),
-                0x01 => defmt::write!(f, "B0x1"),
+                0x0 => defmt::write!(f, "Disabled"),
+                0x01 => defmt::write!(f, "Enabled"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -2758,9 +2665,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum LockupNmiEn {
         #[doc = "Lockup state must be recovered from NVIC interrupt (default value)."]
-        B0x0 = 0x0,
+        Interrupt = 0x0,
         #[doc = "Lockup generates a NMI on the core."]
-        B0x1 = 0x01,
+        Nmi = 0x01,
     }
     impl LockupNmiEn {
         #[inline(always)]
@@ -2789,9 +2696,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum LockupRstEn {
         #[doc = "Lockup state shall be recovered from interrupt (default value)."]
-        B0x0 = 0x0,
+        Interrupt = 0x0,
         #[doc = "Lockup requests a warm reset to the RCC."]
-        B0x1 = 0x01,
+        Reset = 0x01,
     }
     impl LockupRstEn {
         #[inline(always)]
@@ -2820,9 +2727,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PahbErrorAck {
         #[doc = "Error capture."]
-        B0x0 = 0x0,
+        Capture = 0x0,
         #[doc = "Clean error."]
-        B0x1 = 0x01,
+        Clean = 0x01,
     }
     impl PahbErrorAck {
         #[inline(always)]
@@ -2851,9 +2758,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pottampersetmask {
         #[doc = "PKA, SAES, CRYP1/2, and HASH reset in case of potential tamper."]
-        B0x0 = 0x0,
+        Reset = 0x0,
         #[doc = "PKA, SAES, CRYP1/2, and HASH not reset in case of potential tamper."]
-        B0x1 = 0x01,
+        NoReset = 0x01,
     }
     impl Pottampersetmask {
         #[inline(always)]
@@ -2882,9 +2789,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PvdlLock {
         #[doc = "PVD interrupt disconnected from TIM1/8/15/16/17 break input. PVDE bits can be programmed by the application."]
-        B0x0 = 0x0,
+        Disconnected = 0x0,
         #[doc = "PVD interrupt connected to TIM1/8/15/16/17 break input. PVDE and bits are read only."]
-        B0x1 = 0x01,
+        Connected = 0x01,
     }
     impl PvdlLock {
         #[inline(always)]
@@ -2911,15 +2818,15 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum RmeCache {
+    pub enum Rme {
         #[doc = "Default RW margin settings."]
-        B0x0 = 0x0,
+        Default = 0x0,
         #[doc = "Use external pin RW margin setting."]
-        B0x1 = 0x01,
+        ExternalPin = 0x01,
     }
-    impl RmeCache {
+    impl Rme {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> RmeCache {
+        pub const fn from_bits(val: u8) -> Rme {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -2927,47 +2834,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for RmeCache {
+    impl From<u8> for Rme {
         #[inline(always)]
-        fn from(val: u8) -> RmeCache {
-            RmeCache::from_bits(val)
+        fn from(val: u8) -> Rme {
+            Rme::from_bits(val)
         }
     }
-    impl From<RmeCache> for u8 {
+    impl From<Rme> for u8 {
         #[inline(always)]
-        fn from(val: RmeCache) -> u8 {
-            RmeCache::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum RmeTcm {
-        #[doc = "Default RW margin settings."]
-        B0x0 = 0x0,
-        #[doc = "Use external pin RW margin setting."]
-        B0x1 = 0x01,
-    }
-    impl RmeTcm {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> RmeTcm {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for RmeTcm {
-        #[inline(always)]
-        fn from(val: u8) -> RmeTcm {
-            RmeTcm::from_bits(val)
-        }
-    }
-    impl From<RmeTcm> for u8 {
-        #[inline(always)]
-        fn from(val: RmeTcm) -> u8 {
-            RmeTcm::to_bits(val)
+        fn from(val: Rme) -> u8 {
+            Rme::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -2975,9 +2851,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdfbclk180 {
         #[doc = "No delay on the feedback clock."]
-        B0x0 = 0x0,
+        NoDelay = 0x0,
         #[doc = "Half a cycle delay on the feedback clock."]
-        B0x1 = 0x01,
+        HalfCycle = 0x01,
     }
     impl Sdfbclk180 {
         #[inline(always)]
@@ -3004,71 +2880,9 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Sdmmc1EarlyWrRspEnable {
-        #[doc = "Early-write response disabled. The last AHB write data beat receives the AXI buffered response for the complete AHB transaction."]
-        B0x0 = 0x0,
-        #[doc = "Early-write response enabled. AHB-Lite write data beats receive an automatic OK response from the AHB-to-AXI bridge, whatever the B-channel AXI response."]
-        B0x1 = 0x01,
-    }
-    impl Sdmmc1EarlyWrRspEnable {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Sdmmc1EarlyWrRspEnable {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Sdmmc1EarlyWrRspEnable {
-        #[inline(always)]
-        fn from(val: u8) -> Sdmmc1EarlyWrRspEnable {
-            Sdmmc1EarlyWrRspEnable::from_bits(val)
-        }
-    }
-    impl From<Sdmmc1EarlyWrRspEnable> for u8 {
-        #[inline(always)]
-        fn from(val: Sdmmc1EarlyWrRspEnable) -> u8 {
-            Sdmmc1EarlyWrRspEnable::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Sdmmc2EarlyWrRspEnable {
-        #[doc = "Early-write response disabled. The last AHB write data beat receives the AXI buffered response for the complete AHB transaction."]
-        B0x0 = 0x0,
-        #[doc = "Early-write response enabled. AHB-Lite write data beats receive an automatic OK response from the AHB-to-AXI bridge, whatever the B-channel AXI response."]
-        B0x1 = 0x01,
-    }
-    impl Sdmmc2EarlyWrRspEnable {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Sdmmc2EarlyWrRspEnable {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Sdmmc2EarlyWrRspEnable {
-        #[inline(always)]
-        fn from(val: u8) -> Sdmmc2EarlyWrRspEnable {
-            Sdmmc2EarlyWrRspEnable::from_bits(val)
-        }
-    }
-    impl From<Sdmmc2EarlyWrRspEnable> for u8 {
-        #[inline(always)]
-        fn from(val: Sdmmc2EarlyWrRspEnable) -> u8 {
-            Sdmmc2EarlyWrRspEnable::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smpshdpsel {
         #[doc = "Standard run mode (no HDP)."]
-        B0x0 = 0x0,
+        Standard = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -3081,13 +2895,13 @@ pub mod vals {
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         #[doc = "Analyze fsm mode analysis."]
-        B0xC = 0x0c,
+        FsmMode = 0x0c,
         #[doc = "Analyze fsm mos analysis."]
-        B0xD = 0x0d,
+        FsmMos = 0x0d,
         #[doc = "Analyze fsm rampe analysis."]
-        B0xE = 0x0e,
+        FsmRampe = 0x0e,
         #[doc = "Analyze fsm mode analysis."]
-        B0xF = 0x0f,
+        FsmMode2 = 0x0f,
     }
     impl Smpshdpsel {
         #[inline(always)]
@@ -3114,79 +2928,17 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Usb1EarlyWrRspEnable {
-        #[doc = "Early-write response disabled. The last AHB write data beat receives the AXI buffered response for the complete AHB transaction."]
-        B0x0 = 0x0,
-        #[doc = "Early-write response enabled. AHB-Lite write data beats receive an automatic OK response from the AHB-to-AXI bridge, whatever the B-channel AXI response."]
-        B0x1 = 0x01,
-    }
-    impl Usb1EarlyWrRspEnable {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Usb1EarlyWrRspEnable {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Usb1EarlyWrRspEnable {
-        #[inline(always)]
-        fn from(val: u8) -> Usb1EarlyWrRspEnable {
-            Usb1EarlyWrRspEnable::from_bits(val)
-        }
-    }
-    impl From<Usb1EarlyWrRspEnable> for u8 {
-        #[inline(always)]
-        fn from(val: Usb1EarlyWrRspEnable) -> u8 {
-            Usb1EarlyWrRspEnable::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Usb2EarlyWrRspEnable {
-        #[doc = "Early-write response disabled. The last AHB write data beat receives the AXI buffered response for the complete AHB transaction."]
-        B0x0 = 0x0,
-        #[doc = "Early-write response enabled. AHB-Lite write data beats receive an automatic OK response from the AHB-to-AXI bridge, whatever the B-channel AXI response."]
-        B0x1 = 0x01,
-    }
-    impl Usb2EarlyWrRspEnable {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Usb2EarlyWrRspEnable {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Usb2EarlyWrRspEnable {
-        #[inline(always)]
-        fn from(val: u8) -> Usb2EarlyWrRspEnable {
-            Usb2EarlyWrRspEnable::from_bits(val)
-        }
-    }
-    impl From<Usb2EarlyWrRspEnable> for u8 {
-        #[inline(always)]
-        fn from(val: Usb2EarlyWrRspEnable) -> u8 {
-            Usb2EarlyWrRspEnable::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Vddio1cccrCs {
+    pub enum VddiOxCccrCs {
         #[doc = "VDDIOx I/O code from the cell (available in the VDDIOxCCSR)."]
-        B0x0 = 0x0,
+        Cell = 0x0,
         #[doc = "VDDIOx I/O code from RANSRC\\[3:0\\]
 and RAPSRC\\[3:0\\]
 in this register."]
-        B0x1 = 0x01,
+        Cccr = 0x01,
     }
-    impl Vddio1cccrCs {
+    impl VddiOxCccrCs {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vddio1cccrCs {
+        pub const fn from_bits(val: u8) -> VddiOxCccrCs {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -3194,61 +2946,30 @@ in this register."]
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Vddio1cccrCs {
+    impl From<u8> for VddiOxCccrCs {
         #[inline(always)]
-        fn from(val: u8) -> Vddio1cccrCs {
-            Vddio1cccrCs::from_bits(val)
+        fn from(val: u8) -> VddiOxCccrCs {
+            VddiOxCccrCs::from_bits(val)
         }
     }
-    impl From<Vddio1cccrCs> for u8 {
+    impl From<VddiOxCccrCs> for u8 {
         #[inline(always)]
-        fn from(val: Vddio1cccrCs) -> u8 {
-            Vddio1cccrCs::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Vddio1cccrEn {
-        #[doc = "VDDIOx I/O compensation cell disabled."]
-        B0x0 = 0x0,
-        #[doc = "VDDIOx I/O compensation cell enabled."]
-        B0x1 = 0x01,
-    }
-    impl Vddio1cccrEn {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vddio1cccrEn {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vddio1cccrEn {
-        #[inline(always)]
-        fn from(val: u8) -> Vddio1cccrEn {
-            Vddio1cccrEn::from_bits(val)
-        }
-    }
-    impl From<Vddio1cccrEn> for u8 {
-        #[inline(always)]
-        fn from(val: Vddio1cccrEn) -> u8 {
-            Vddio1cccrEn::to_bits(val)
+        fn from(val: VddiOxCccrCs) -> u8 {
+            VddiOxCccrCs::to_bits(val)
         }
     }
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Vddio1ccsrReady {
+    pub enum VddiOxCcsrReady {
         #[doc = "VDDIOx I/O compensation cell not ready."]
-        B0x0 = 0x0,
+        NotReady = 0x0,
         #[doc = "VDDIOx I/O compensation cell ready."]
-        B0x1 = 0x01,
+        Ready = 0x01,
     }
-    impl Vddio1ccsrReady {
+    impl VddiOxCcsrReady {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vddio1ccsrReady {
+        pub const fn from_bits(val: u8) -> VddiOxCcsrReady {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -3256,301 +2977,16 @@ in this register."]
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Vddio1ccsrReady {
+    impl From<u8> for VddiOxCcsrReady {
         #[inline(always)]
-        fn from(val: u8) -> Vddio1ccsrReady {
-            Vddio1ccsrReady::from_bits(val)
+        fn from(val: u8) -> VddiOxCcsrReady {
+            VddiOxCcsrReady::from_bits(val)
         }
     }
-    impl From<Vddio1ccsrReady> for u8 {
+    impl From<VddiOxCcsrReady> for u8 {
         #[inline(always)]
-        fn from(val: Vddio1ccsrReady) -> u8 {
-            Vddio1ccsrReady::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Vddio2cccrCs {
-        #[doc = "VDDIOx I/O code from the cell (available in the VDDIOxCCSR)."]
-        B0x0 = 0x0,
-        #[doc = "VDDIOx I/O code from RANSRC\\[3:0\\]
-and RAPSRC\\[3:0\\]
-in this register."]
-        B0x1 = 0x01,
-    }
-    impl Vddio2cccrCs {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vddio2cccrCs {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vddio2cccrCs {
-        #[inline(always)]
-        fn from(val: u8) -> Vddio2cccrCs {
-            Vddio2cccrCs::from_bits(val)
-        }
-    }
-    impl From<Vddio2cccrCs> for u8 {
-        #[inline(always)]
-        fn from(val: Vddio2cccrCs) -> u8 {
-            Vddio2cccrCs::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Vddio2cccrEn {
-        #[doc = "VDDIOx I/O compensation cell disabled."]
-        B0x0 = 0x0,
-        #[doc = "VDDIOx I/O compensation cell enabled."]
-        B0x1 = 0x01,
-    }
-    impl Vddio2cccrEn {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vddio2cccrEn {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vddio2cccrEn {
-        #[inline(always)]
-        fn from(val: u8) -> Vddio2cccrEn {
-            Vddio2cccrEn::from_bits(val)
-        }
-    }
-    impl From<Vddio2cccrEn> for u8 {
-        #[inline(always)]
-        fn from(val: Vddio2cccrEn) -> u8 {
-            Vddio2cccrEn::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Vddio2ccsrReady {
-        #[doc = "VDDIOx I/O compensation cell not ready."]
-        B0x0 = 0x0,
-        #[doc = "VDDIOx I/O compensation cell ready."]
-        B0x1 = 0x01,
-    }
-    impl Vddio2ccsrReady {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vddio2ccsrReady {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vddio2ccsrReady {
-        #[inline(always)]
-        fn from(val: u8) -> Vddio2ccsrReady {
-            Vddio2ccsrReady::from_bits(val)
-        }
-    }
-    impl From<Vddio2ccsrReady> for u8 {
-        #[inline(always)]
-        fn from(val: Vddio2ccsrReady) -> u8 {
-            Vddio2ccsrReady::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Vddio3cccrCs {
-        #[doc = "VDDIOx I/O code from the cell (available in the VDDIOxCCSR)."]
-        B0x0 = 0x0,
-        #[doc = "VDDIOx I/O code from RANSRC\\[3:0\\]
-and RAPSRC\\[3:0\\]
-in this register."]
-        B0x1 = 0x01,
-    }
-    impl Vddio3cccrCs {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vddio3cccrCs {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vddio3cccrCs {
-        #[inline(always)]
-        fn from(val: u8) -> Vddio3cccrCs {
-            Vddio3cccrCs::from_bits(val)
-        }
-    }
-    impl From<Vddio3cccrCs> for u8 {
-        #[inline(always)]
-        fn from(val: Vddio3cccrCs) -> u8 {
-            Vddio3cccrCs::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Vddio3cccrEn {
-        #[doc = "VDDIOx I/O compensation cell disabled."]
-        B0x0 = 0x0,
-        #[doc = "VDDIOx I/O compensation cell enabled."]
-        B0x1 = 0x01,
-    }
-    impl Vddio3cccrEn {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vddio3cccrEn {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vddio3cccrEn {
-        #[inline(always)]
-        fn from(val: u8) -> Vddio3cccrEn {
-            Vddio3cccrEn::from_bits(val)
-        }
-    }
-    impl From<Vddio3cccrEn> for u8 {
-        #[inline(always)]
-        fn from(val: Vddio3cccrEn) -> u8 {
-            Vddio3cccrEn::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Vddio3ccsrReady {
-        #[doc = "VDDIOx I/O compensation cell not ready."]
-        B0x0 = 0x0,
-        #[doc = "VDDIOx I/O compensation cell ready."]
-        B0x1 = 0x01,
-    }
-    impl Vddio3ccsrReady {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vddio3ccsrReady {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vddio3ccsrReady {
-        #[inline(always)]
-        fn from(val: u8) -> Vddio3ccsrReady {
-            Vddio3ccsrReady::from_bits(val)
-        }
-    }
-    impl From<Vddio3ccsrReady> for u8 {
-        #[inline(always)]
-        fn from(val: Vddio3ccsrReady) -> u8 {
-            Vddio3ccsrReady::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Vddio4cccrCs {
-        #[doc = "VDDIOx I/O code from the cell (available in the VDDIOxCCSR)."]
-        B0x0 = 0x0,
-        #[doc = "VDDIOx I/O code from RANSRC\\[3:0\\]
-and RAPSRC\\[3:0\\]
-in this register."]
-        B0x1 = 0x01,
-    }
-    impl Vddio4cccrCs {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vddio4cccrCs {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vddio4cccrCs {
-        #[inline(always)]
-        fn from(val: u8) -> Vddio4cccrCs {
-            Vddio4cccrCs::from_bits(val)
-        }
-    }
-    impl From<Vddio4cccrCs> for u8 {
-        #[inline(always)]
-        fn from(val: Vddio4cccrCs) -> u8 {
-            Vddio4cccrCs::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Vddio4cccrEn {
-        #[doc = "VDDIOx I/O compensation cell disabled."]
-        B0x0 = 0x0,
-        #[doc = "VDDIOx I/O compensation cell enabled."]
-        B0x1 = 0x01,
-    }
-    impl Vddio4cccrEn {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vddio4cccrEn {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vddio4cccrEn {
-        #[inline(always)]
-        fn from(val: u8) -> Vddio4cccrEn {
-            Vddio4cccrEn::from_bits(val)
-        }
-    }
-    impl From<Vddio4cccrEn> for u8 {
-        #[inline(always)]
-        fn from(val: Vddio4cccrEn) -> u8 {
-            Vddio4cccrEn::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Vddio4ccsrReady {
-        #[doc = "VDDIOx I/O compensation cell not ready."]
-        B0x0 = 0x0,
-        #[doc = "VDDIOx I/O compensation cell ready."]
-        B0x1 = 0x01,
-    }
-    impl Vddio4ccsrReady {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Vddio4ccsrReady {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Vddio4ccsrReady {
-        #[inline(always)]
-        fn from(val: u8) -> Vddio4ccsrReady {
-            Vddio4ccsrReady::from_bits(val)
-        }
-    }
-    impl From<Vddio4ccsrReady> for u8 {
-        #[inline(always)]
-        fn from(val: Vddio4ccsrReady) -> u8 {
-            Vddio4ccsrReady::to_bits(val)
+        fn from(val: VddiOxCcsrReady) -> u8 {
+            VddiOxCcsrReady::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -3558,10 +2994,10 @@ in this register."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VddiocccrCs {
         #[doc = "VDDIO I/O code from the cell (available in the VDDIOCCSR)."]
-        B0x0 = 0x0,
+        Cell = 0x0,
         #[doc = "VDDIO I/O code from RANSRC\\[3:0\\]
 and RAPSRC\\[3:0\\]."]
-        B0x1 = 0x01,
+        Cccr = 0x01,
     }
     impl VddiocccrCs {
         #[inline(always)]
@@ -3588,42 +3024,11 @@ and RAPSRC\\[3:0\\]."]
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum VddiocccrEn {
-        #[doc = "VDDIO I/O compensation cell disabled."]
-        B0x0 = 0x0,
-        #[doc = "VDDIO I/O compensation cell enabled."]
-        B0x1 = 0x01,
-    }
-    impl VddiocccrEn {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> VddiocccrEn {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for VddiocccrEn {
-        #[inline(always)]
-        fn from(val: u8) -> VddiocccrEn {
-            VddiocccrEn::from_bits(val)
-        }
-    }
-    impl From<VddiocccrEn> for u8 {
-        #[inline(always)]
-        fn from(val: VddiocccrEn) -> u8 {
-            VddiocccrEn::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VddioccsrReady {
         #[doc = "VDDIO I/O compensation cell not ready."]
-        B0x0 = 0x0,
+        NotReady = 0x0,
         #[doc = "VDDIO I/O compensation cell ready."]
-        B0x1 = 0x01,
+        Ready = 0x01,
     }
     impl VddioccsrReady {
         #[inline(always)]

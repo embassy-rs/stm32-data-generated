@@ -6588,9 +6588,9 @@ selected as clock source"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Timicsel {
         #[doc = "No internal clock available for timers input capture (default after reset)"]
-        B0x0 = 0x0,
+        Disable = 0x0,
         #[doc = "hsi_ker_ck/1024, hsi_ker_ck/8 and csi_ker_ck/128 selected for timers input capture"]
-        B0x1 = 0x01,
+        Hsi1024Hsi8Csi128 = 0x01,
     }
     impl Timicsel {
         #[inline(always)]

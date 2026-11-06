@@ -216,8 +216,7 @@
         "name": "DMDIS",
         "description": "Direct mode disable",
         "bit_offset": 2,
-        "bit_size": 1,
-        "enum": "DMDIS"
+        "bit_size": 1
       },
       {
         "name": "FS",
@@ -377,21 +376,6 @@
         "name": "MemoryToMemory",
         "description": "Memory-to-memory",
         "value": 2
-      }
-    ]
-  },
-  "enum/DMDIS": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Enabled",
-        "description": "Direct mode is enabled",
-        "value": 0
-      },
-      {
-        "name": "Disabled",
-        "description": "Direct mode is disabled",
-        "value": 1
       }
     ]
   },

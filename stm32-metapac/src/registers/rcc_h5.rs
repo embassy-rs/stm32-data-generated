@@ -3219,7 +3219,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Spi1sel"),
+                    enumm: Some("Saisel"),
                 },
                 Field {
                     name: "spi2sel",
@@ -3229,7 +3229,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Spi2sel"),
+                    enumm: Some("Saisel"),
                 },
                 Field {
                     name: "spi3sel",
@@ -3239,7 +3239,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
                     bit_size: 3,
                     array: None,
-                    enumm: Some("Spi3sel"),
+                    enumm: Some("Saisel"),
                 },
                 Field {
                     name: "spi4sel",
@@ -5111,14 +5111,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some(
                         "Read and write to RCC non-secure functions can be done by privileged or unprivileged access.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Privileged",
                     description: Some(
                         "Read and write to RCC non-secure functions can be done by privileged access only",
                     ),
@@ -8898,102 +8898,6 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Spi1sel",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "Audioclk",
-                    description: Some("AUDIOCLK selected as kernel clock"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "Per",
-                    description: Some("per_ck selected as kernel clock"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "Pll1Q",
-                    description: Some("pll1_q_ck selected as kernel clock (default after reset)"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Pll2P",
-                    description: Some("pll2_p_ck selected as kernel clock"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Pll3P",
-                    description: Some("pll3_p_ck selected as kernel clock"),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Spi2sel",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "Audioclk",
-                    description: Some("AUDIOCLK selected as kernel clock"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "Per",
-                    description: Some("per_ck selected as kernel clock"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "Pll1Q",
-                    description: Some("pll1_q_ck selected as kernel clock (default after reset)"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Pll2P",
-                    description: Some("pll2_p_ck selected as kernel clock"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Pll3P",
-                    description: Some("pll3_p_ck selected as kernel clock"),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Spi3sel",
-            description: None,
-            bit_size: 3,
-            variants: &[
-                EnumVariant {
-                    name: "Audioclk",
-                    description: Some("AUDIOCLK selected as kernel clock"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "Per",
-                    description: Some("per_ck selected as kernel clock"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "Pll1Q",
-                    description: Some("pll1_q_ck selected as kernel clock (default after reset)"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Pll2P",
-                    description: Some("pll2_p_ck selected as kernel clock"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Pll3P",
-                    description: Some("pll3_p_ck selected as kernel clock"),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
             name: "Spi4sel",
             description: None,
             bit_size: 3,
@@ -9205,12 +9109,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Disable",
                     description: Some("No internal clock available for timers input capture (default after reset)"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Hsi1024Hsi8Csi128",
                     description: Some(
                         "hsi_ker_ck/1024, hsi_ker_ck/8 and csi_ker_ck/128 selected for timers input capture",
                     ),

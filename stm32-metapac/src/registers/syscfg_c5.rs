@@ -331,7 +331,7 @@ pub(crate) static REGISTERS: IR = IR {
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                 bit_size: 1,
                 array: None,
-                enumm: Some("EccnmiMaskEn"),
+                enumm: None,
             }],
         },
         FieldSet {
@@ -526,14 +526,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("Code from the cell (available in the CCVR)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Cccr",
                     description: Some("Code from CCCR."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Cell",
+                    description: Some("Code from the cell (available in the CCVR)."),
+                    value: 0,
                 },
             ],
         },
@@ -543,31 +543,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("Double ECC error flag disconnected to timer break inputs."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Connected",
                     description: Some("Double ECC error flag connected to timer break inputs."),
                     value: 1,
                 },
-            ],
-        },
-        Enum {
-            name: "EccnmiMaskEn",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("NMI generated if a double ECC error in the FLITF data part."),
+                    name: "Disconnected",
+                    description: Some("Double ECC error flag disconnected to timer break inputs."),
                     value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("NMI not generated if a double ECC error in the FLITF data part."),
-                    value: 1,
                 },
             ],
         },
@@ -594,12 +577,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "ActiveHigh",
                     description: Some("active high."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "ActiveLow",
                     description: Some("active low."),
                     value: 1,
                 },
@@ -611,14 +594,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("Ethernet functional / power-down sequence not yet completed."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Completed",
                     description: Some("Ethernet power-down sequence completed."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NotCompleted",
+                    description: Some("Ethernet functional / power-down sequence not yet completed."),
+                    value: 0,
                 },
             ],
         },
@@ -628,23 +611,23 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B0x51",
+                    name: "Hdpl1",
                     description: Some(
                         "HDPL1, hide protection level to be used to execute and protect an immutable root of trust (IROT) stage.",
                     ),
                     value: 81,
                 },
                 EnumVariant {
-                    name: "B0x6f",
-                    description: Some("HDPL3, hide protection level to be used to execute the application."),
-                    value: 111,
-                },
-                EnumVariant {
-                    name: "B0x8a",
+                    name: "Hdpl2",
                     description: Some(
                         "HDPL2, hide protection level to be used to execute and protect an updatable Root of Trust (UROT) stage.",
                     ),
                     value: 138,
+                },
+                EnumVariant {
+                    name: "Hdpl3",
+                    description: Some("HDPL3, hide protection level to be used to execute the application."),
+                    value: 111,
                 },
             ],
         },
@@ -654,12 +637,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 8,
             variants: &[
                 EnumVariant {
-                    name: "B0x6a",
+                    name: "Increment",
                     description: Some("Recommended value to increment HDPL level by one."),
                     value: 106,
                 },
                 EnumVariant {
-                    name: "B0xB4",
+                    name: "NoIncrement",
                     description: Some("No increment."),
                     value: 180,
                 },
@@ -671,14 +654,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("ICACHE erase ongoing."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Done",
                     description: Some("ICACHE erase ended."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Ongoing",
+                    description: Some("ICACHE erase ongoing."),
+                    value: 0,
                 },
             ],
         },
@@ -688,14 +671,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("Memory erase ongoing if not yet cleared by software."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Done",
                     description: Some("Memory erase done."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Ongoing",
+                    description: Some("Memory erase ongoing if not yet cleared by software."),
+                    value: 0,
                 },
             ],
         },
@@ -705,24 +688,24 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("OBK-TIL = TIL."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Plus1",
                     description: Some("OBK-TIL = TIL + 1."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "Plus2",
                     description: Some("OBK-TIL = TIL + 2."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
+                    name: "Plus3",
                     description: Some("OBK-TIL = TIL + 3."),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "Same",
+                    description: Some("OBK-TIL = TIL."),
+                    value: 0,
                 },
             ],
         },
@@ -732,14 +715,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("PVD interrupt disconnected from timer break inputs."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Connected",
                     description: Some("PVD interrupt is connected to timer break inputs."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Disconnected",
+                    description: Some("PVD interrupt disconnected from timer break inputs."),
+                    value: 0,
                 },
             ],
         },
@@ -749,14 +732,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("SRAM double ECC error flag disconnected from timer break inputs."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Connected",
                     description: Some("SRAM double ECC error flag connected to timer break inputs."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Disconnected",
+                    description: Some("SRAM double ECC error flag disconnected from timer break inputs."),
+                    value: 0,
                 },
             ],
         },

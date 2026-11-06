@@ -450,14 +450,14 @@ pub mod regs {
         #[doc = "RAM_PARITY_CHECK"]
         #[must_use]
         #[inline(always)]
-        pub const fn ram_parity_check(&self) -> super::vals::RamParityCheck {
+        pub const fn ram_parity_check(&self) -> bool {
             let val = (self.0 >> 14usize) & 0x01;
-            super::vals::RamParityCheck::from_bits(val as u8)
+            val != 0
         }
         #[doc = "RAM_PARITY_CHECK"]
         #[inline(always)]
-        pub const fn set_ram_parity_check(&mut self, val: super::vals::RamParityCheck) {
-            self.0 = (self.0 & !(0x01 << 14usize)) | (((val.to_bits() as u32) & 0x01) << 14usize);
+        pub const fn set_ram_parity_check(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
         }
         #[doc = "BOOT_SEL"]
         #[must_use]
@@ -525,7 +525,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Obr {{ opterr: {=bool:?}, rdprt: {:?}, wdg_sw: {:?}, n_rst_stop: {:?}, n_rst_stdby: {:?}, n_boot0: {=bool:?}, n_boot1: {=bool:?}, vdda_monitor: {=bool:?}, ram_parity_check: {:?}, boot_sel: {:?}, data0: {=u8:?}, data1: {=u8:?} }}",
+                "Obr {{ opterr: {=bool:?}, rdprt: {:?}, wdg_sw: {:?}, n_rst_stop: {:?}, n_rst_stdby: {:?}, n_boot0: {=bool:?}, n_boot1: {=bool:?}, vdda_monitor: {=bool:?}, ram_parity_check: {=bool:?}, boot_sel: {:?}, data0: {=u8:?}, data1: {=u8:?} }}",
                 self.opterr(),
                 self.rdprt(),
                 self.wdg_sw(),
@@ -789,37 +789,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: NRstStop) -> u8 {
             NRstStop::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum RamParityCheck {
-        #[doc = "RAM parity check enabled"]
-        Enabled = 0x0,
-        #[doc = "RAM parity check disabled"]
-        Disabled = 0x01,
-    }
-    impl RamParityCheck {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> RamParityCheck {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for RamParityCheck {
-        #[inline(always)]
-        fn from(val: u8) -> RamParityCheck {
-            RamParityCheck::from_bits(val)
-        }
-    }
-    impl From<RamParityCheck> for u8 {
-        #[inline(always)]
-        fn from(val: RamParityCheck) -> u8 {
-            RamParityCheck::to_bits(val)
         }
     }
     #[repr(u8)]

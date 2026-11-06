@@ -698,15 +698,13 @@
         "name": "IO_VDD_HSLV",
         "description": "High-speed IO at low VDD voltage status bit. This bit can be set only with VDD below 2.5 V.",
         "bit_offset": 16,
-        "bit_size": 1,
-        "enum": "OPTSR_IO_VDD_HSLV"
+        "bit_size": 1
       },
       {
         "name": "IO_VDDIO2_HSLV",
         "description": "High-speed IO at low VDDIO2 voltage status bit. This bit can be set only with VDDIO2 below 2.5 V.",
         "bit_offset": 17,
-        "bit_size": 1,
-        "enum": "OPTSR_IO_VDDIO_HSLV"
+        "bit_size": 1
       },
       {
         "name": "IWDG_STOP",
@@ -743,15 +741,13 @@
         "name": "BKPRAM_ECC",
         "description": "Backup RAM ECC detection and correction disable",
         "bit_offset": 4,
-        "bit_size": 1,
-        "enum": "OPTSR_BKPRAM_ECC"
+        "bit_size": 1
       },
       {
         "name": "SRAM2_ECC",
         "description": "SRAM2 ECC detection and correction disable",
         "bit_offset": 6,
-        "bit_size": 1,
-        "enum": "OPTSR_SRAM_ECC"
+        "bit_size": 1
       },
       {
         "name": "SRAM1_RST",
@@ -763,8 +759,7 @@
         "name": "SRAM1_ECC",
         "description": "SRAM1 ECC detection and correction disable",
         "bit_offset": 10,
-        "bit_size": 1,
-        "enum": "OPTSR_SRAM_ECC"
+        "bit_size": 1
       }
     ]
   },
@@ -886,32 +881,32 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "NoFlashInt",
         "description": "No Flash operation on going during previous reset",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "SingleWrInt",
         "description": "Single write operation interrupted",
         "value": 1
       },
       {
-        "name": "B_0x3",
+        "name": "SectorEraseInt",
         "description": "Sector erase operation interrupted",
         "value": 3
       },
       {
-        "name": "B_0x4",
+        "name": "BankEraseInt",
         "description": "Bank erase operation interrupted",
         "value": 4
       },
       {
-        "name": "B_0x5",
+        "name": "MassEraseInt",
         "description": "Mass erase operation interrupted",
         "value": 5
       },
       {
-        "name": "B_0x6",
+        "name": "OptChangeInt",
         "description": "Option change operation interrupted",
         "value": 6
       }
@@ -921,12 +916,12 @@
     "bit_size": 8,
     "variants": [
       {
-        "name": "B_0xB4",
+        "name": "Locked",
         "description": "The NSBOOTADD and SWAP_BANK are frozen.",
         "value": 180
       },
       {
-        "name": "B_0xC3",
+        "name": "Unlocked",
         "description": "The SWAP_BANK and NSBOOTADD can still be modified following their individual rules.",
         "value": 195
       }
@@ -936,28 +931,13 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Any",
         "description": "access to non secure registers is always granted",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Privileged",
         "description": "access to non secure registers is denied in case of non privileged access.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/OPTSR_BKPRAM_ECC": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "BKPRAM ECC check enabled",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "BKPRAM ECC check disabled",
         "value": 1
       }
     ]
@@ -966,54 +946,24 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Disabled",
         "description": "BOR OFF, POR/PDR reset threshold level is applied",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Level1",
         "description": "BOR Level 1, the threshold level is low (around 2.1 V)",
         "value": 1
       },
       {
-        "name": "B_0x2",
+        "name": "Level2",
         "description": "BOR Level 2, the threshold level is medium (around 2.4 V)",
         "value": 2
       },
       {
-        "name": "B_0x3",
+        "name": "Level3",
         "description": "BOR Level 3, the threshold level is high (around 2.7 V)",
         "value": 3
-      }
-    ]
-  },
-  "enum/OPTSR_IO_VDDIO_HSLV": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "High-speed IO at low VDDIO2 voltage feature disabled (VDDIO2 can exceed 2.5 V)",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "High-speed IO at low VDDIO2 voltage feature enabled (VDDIO2 remains below 2.5 V)",
-        "value": 1
-      }
-    ]
-  },
-  "enum/OPTSR_IO_VDD_HSLV": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "High-speed IO at low VDD voltage feature disabled (VDD can exceed 2.5 V)",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "High-speed IO at low VDD voltage feature enabled (VDD remains below 2.5 V)",
-        "value": 1
       }
     ]
   },
@@ -1021,12 +971,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Frozen",
         "description": "Independent watchdog frozen in Standby mode",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Running",
         "description": "Independent watchdog keep running in Standby mode.",
         "value": 1
       }
@@ -1036,12 +986,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Frozen",
         "description": "Independent watchdog frozen in system Stop mode",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Running",
         "description": "Independent watchdog keep running in system Stop mode.",
         "value": 1
       }
@@ -1051,12 +1001,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Hardware",
         "description": "IWDG watchdog is controlled by hardware",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Software",
         "description": "IWDG watchdog is controlled by software",
         "value": 1
       }
@@ -1066,12 +1016,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Reset",
         "description": "a reset is generated when entering Shutdown mode on core domain",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "NoReset",
         "description": "no reset generated when entering Shutdown mode on core domain.",
         "value": 1
       }
@@ -1081,12 +1031,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Reset",
         "description": "a reset is generated when entering Standby mode on core domain",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "NoReset",
         "description": "no reset generated when entering Standby mode on core domain.",
         "value": 1
       }
@@ -1096,28 +1046,13 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Reset",
         "description": "a reset is generated when entering Stop mode on core domain",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "NoReset",
         "description": "no reset generated when entering Stop mode on core domain.",
-        "value": 1
-      }
-    ]
-  },
-  "enum/OPTSR_SRAM_ECC": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "B_0x0",
-        "description": "SRAM2 ECC check enabled",
-        "value": 0
-      },
-      {
-        "name": "B_0x1",
-        "description": "SRAM2 ECC check disabled",
         "value": 1
       }
     ]
@@ -1126,12 +1061,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Hardware",
         "description": "WWDG watchdog is controlled by hardware",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Software",
         "description": "WWDG watchdog is controlled by software",
         "value": 1
       }
@@ -1141,12 +1076,12 @@
     "bit_size": 8,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Unprivileged",
         "description": "sectors y in bank 1 is non privileged",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Privileged",
         "description": "sector y in bank 1 is privileged",
         "value": 1
       }

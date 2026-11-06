@@ -5237,32 +5237,32 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("The switch is in neutral mode and output clock is gated (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Hclk5",
                     description: Some("The switch is selecting hclk5."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
-                    description: Some("The switch is selecting pll1_q_ck."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B0x3",
-                    description: Some("The switch is selecting pll2_r_ck."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "B0x4",
+                    name: "Hsi",
                     description: Some("The switch is selecting hsi_ker_ck."),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "B0x5",
+                    name: "Neutral",
+                    description: Some("The switch is in neutral mode and output clock is gated (default after reset)."),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Pll1Q",
+                    description: Some("The switch is selecting pll1_q_ck."),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Pll2R",
+                    description: Some("The switch is selecting pll2_r_ck."),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "Recovery",
                     description: Some("The switch is in recovery position (hclk5/4)."),
                     value: 5,
                 },
@@ -9465,27 +9465,27 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("The switch is in neutral mode and output clock is gated (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Hclk5",
                     description: Some("The switch is selecting hclk5."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "Neutral",
+                    description: Some("The switch is in neutral mode and output clock is gated (default after reset)."),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Pll2S",
                     description: Some("The switch is selecting pll2_s_ck."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
+                    name: "Pll2T",
                     description: Some("The switch is selecting pll2_t_ck."),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B0x4",
+                    name: "Recovery",
                     description: Some("The switch is in recovery position (hclk5/4)."),
                     value: 4,
                 },

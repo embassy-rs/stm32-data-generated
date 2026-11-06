@@ -75,14 +75,14 @@ pub mod regs {
         #[doc = "User trimming enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn usertrim(&self) -> super::vals::Usertrim {
+        pub const fn usertrim(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Usertrim::from_bits(val as u8)
+            val != 0
         }
         #[doc = "User trimming enable."]
         #[inline(always)]
-        pub const fn set_usertrim(&mut self, val: super::vals::Usertrim) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub const fn set_usertrim(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "Inverting input primary selection."]
         #[must_use]
@@ -183,14 +183,14 @@ pub mod regs {
         #[doc = "OPAMP calibration reference voltage output control."]
         #[must_use]
         #[inline(always)]
-        pub const fn tstref(&self) -> super::vals::Tstref {
+        pub const fn tstref(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
-            super::vals::Tstref::from_bits(val as u8)
+            val != 0
         }
         #[doc = "OPAMP calibration reference voltage output control."]
         #[inline(always)]
-        pub const fn set_tstref(&mut self, val: super::vals::Tstref) {
-            self.0 = (self.0 & !(0x01 << 29usize)) | (((val.to_bits() as u32) & 0x01) << 29usize);
+        pub const fn set_tstref(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "Operational amplifier calibration output."]
         #[must_use]
@@ -249,7 +249,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "OpampCsr {{ opaen: {=bool:?}, force_vp: {:?}, vp_sel: {:?}, usertrim: {:?}, vm_sel: {:?}, opahsm: {:?}, opaintoen: {:?}, calon: {=bool:?}, calsel: {:?}, pga_gain: {:?}, trimoffsetp: {=u8:?}, trimoffsetn: {=u8:?}, tstref: {:?}, calout: {=bool:?}, lock: {:?} }}",
+                "OpampCsr {{ opaen: {=bool:?}, force_vp: {:?}, vp_sel: {:?}, usertrim: {=bool:?}, vm_sel: {:?}, opahsm: {:?}, opaintoen: {:?}, calon: {=bool:?}, calsel: {:?}, pga_gain: {:?}, trimoffsetp: {=u8:?}, trimoffsetn: {=u8:?}, tstref: {=bool:?}, calout: {=bool:?}, lock: {:?} }}",
                 self.opaen(),
                 self.force_vp(),
                 self.vp_sel(),
@@ -386,13 +386,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calsel {
         #[doc = "0."]
-        B0x0 = 0x0,
+        Percent33 = 0x0,
         #[doc = "0."]
-        B0x1 = 0x01,
+        Percent10 = 0x01,
         #[doc = "0."]
-        B0x2 = 0x02,
+        Percent50 = 0x02,
         #[doc = "0."]
-        B0x3 = 0x03,
+        Percent90 = 0x03,
     }
     impl Calsel {
         #[inline(always)]
@@ -421,9 +421,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum ForceVp {
         #[doc = "Do not force (normal operation)."]
-        B0x0 = 0x0,
+        DoNotForce = 0x0,
         #[doc = "Force."]
-        B0x1 = 0x01,
+        Force = 0x01,
     }
     impl ForceVp {
         #[inline(always)]
@@ -452,9 +452,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Opahsm {
         #[doc = "Normal speed."]
-        B0x0 = 0x0,
+        NormalSpeed = 0x0,
         #[doc = "High speed."]
-        B0x1 = 0x01,
+        HighSpeed = 0x01,
     }
     impl Opahsm {
         #[inline(always)]
@@ -483,9 +483,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Opaintoen {
         #[doc = "OPAMP_VOUT pin."]
-        B0x0 = 0x0,
+        OpampVout = 0x0,
         #[doc = "ADC/COMP channel."]
-        B0x1 = 0x01,
+        AdcComp = 0x01,
     }
     impl Opaintoen {
         #[inline(always)]
@@ -514,9 +514,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OpampCsrLock {
         #[doc = "OPAMP_CSR is read-write."]
-        B0x0 = 0x0,
+        ReadWrite = 0x0,
         #[doc = "OPAMP_CSR is read-only."]
-        B0x1 = 0x01,
+        ReadOnly = 0x01,
     }
     impl OpampCsrLock {
         #[inline(always)]
@@ -545,9 +545,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OpampTcmrLock {
         #[doc = "Read-write."]
-        B0x0 = 0x0,
+        ReadWrite = 0x0,
         #[doc = "Read-only (OPAMP_TCMR locked)."]
-        B0x1 = 0x01,
+        ReadOnly = 0x01,
     }
     impl OpampTcmrLock {
         #[inline(always)]
@@ -576,49 +576,49 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PgaGain {
         #[doc = "gain 2."]
-        B0x0 = 0x0,
+        Gain2 = 0x0,
         #[doc = "gain 4."]
-        B0x1 = 0x01,
+        Gain4 = 0x01,
         #[doc = "gain 8."]
-        B0x2 = 0x02,
+        Gain8 = 0x02,
         #[doc = "gain 16."]
-        B0x3 = 0x03,
+        Gain16 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
         #[doc = "gain -1 / gain 2 with bias on OPAMP_VINM0."]
-        B0x8 = 0x08,
+        Gain2InputVinm0 = 0x08,
         #[doc = "gain -3 / gain 4 with bias on OPAMP_VINM0."]
-        B0x9 = 0x09,
+        Gain4InputVinm0 = 0x09,
         #[doc = "gain -7 / gain 8 with bias on OPAMP_VINM0."]
-        B0xA = 0x0a,
+        Gain8InputVinm0 = 0x0a,
         #[doc = "gain -15 / gain 16 with bias on OPAMP_VINM0."]
-        B0xB = 0x0b,
+        Gain16InputVinm0 = 0x0b,
         _RESERVED_c = 0x0c,
         _RESERVED_d = 0x0d,
         _RESERVED_e = 0x0e,
         _RESERVED_f = 0x0f,
         #[doc = "gain 2 with filtering on OPAMP_VINM0."]
-        B0x10 = 0x10,
+        Gain2FilteringVinm0 = 0x10,
         #[doc = "gain 4 with filtering on OPAMP_VINM0."]
-        B0x11 = 0x11,
+        Gain4FilteringVinm0 = 0x11,
         #[doc = "gain 8 with filtering on OPAMP_VINM0."]
-        B0x12 = 0x12,
+        Gain8FilteringVinm0 = 0x12,
         #[doc = "gain 16 with filtering on OPAMP_VINM0."]
-        B0x13 = 0x13,
+        Gain16FilteringVinm0 = 0x13,
         _RESERVED_14 = 0x14,
         _RESERVED_15 = 0x15,
         _RESERVED_16 = 0x16,
         _RESERVED_17 = 0x17,
         #[doc = "gain -1 / gain 2 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."]
-        B0x18 = 0x18,
+        Gain2InputVinm0filteringVinm1 = 0x18,
         #[doc = "gain -3 / gain 4 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."]
-        B0x19 = 0x19,
+        Gain4InputVinm0filteringVinm1 = 0x19,
         #[doc = "gain -7 / gain 8 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."]
-        B0x1a = 0x1a,
+        Gain8InputVinm0filteringVinm1 = 0x1a,
         #[doc = "gain -15 / gain 16 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."]
-        B0x1b = 0x1b,
+        Gain16InputVinm0filteringVinm1 = 0x1b,
         _RESERVED_1c = 0x1c,
         _RESERVED_1d = 0x1d,
         _RESERVED_1e = 0x1e,
@@ -651,49 +651,49 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PgasGain {
         #[doc = "gain 2."]
-        B0x0 = 0x0,
+        Gain2 = 0x0,
         #[doc = "gain 4."]
-        B0x1 = 0x01,
+        Gain4 = 0x01,
         #[doc = "gain 8."]
-        B0x2 = 0x02,
+        Gain8 = 0x02,
         #[doc = "gain 16."]
-        B0x3 = 0x03,
+        Gain16 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
         #[doc = "gain -1 / gain 2 with bias on OPAMP_VINM0."]
-        B0x8 = 0x08,
+        Gain2InputVinm0 = 0x08,
         #[doc = "gain -3 / gain 4 with bias on OPAMP_VINM0."]
-        B0x9 = 0x09,
+        Gain4InputVinm0 = 0x09,
         #[doc = "gain -7 / gain 8 with bias on OPAMP_VINM0."]
-        B0xA = 0x0a,
+        Gain8InputVinm0 = 0x0a,
         #[doc = "gain -15 / gain 16 with bias on OPAMP_VINM0."]
-        B0xB = 0x0b,
+        Gain16InputVinm0 = 0x0b,
         _RESERVED_c = 0x0c,
         _RESERVED_d = 0x0d,
         _RESERVED_e = 0x0e,
         _RESERVED_f = 0x0f,
         #[doc = "gain 2 with filtering on OPAMP_VINM0."]
-        B0x10 = 0x10,
+        Gain2FilteringVinm0 = 0x10,
         #[doc = "gain 4 with filtering on OPAMP_VINM0."]
-        B0x11 = 0x11,
+        Gain4FilteringVinm0 = 0x11,
         #[doc = "gain 8 with filtering on OPAMP_VINM0."]
-        B0x12 = 0x12,
+        Gain8FilteringVinm0 = 0x12,
         #[doc = "gain 16 with filtering on OPAMP_VINM0."]
-        B0x13 = 0x13,
+        Gain16FilteringVinm0 = 0x13,
         _RESERVED_14 = 0x14,
         _RESERVED_15 = 0x15,
         _RESERVED_16 = 0x16,
         _RESERVED_17 = 0x17,
         #[doc = "gain -1 / gain 2 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."]
-        B0x18 = 0x18,
+        Gain2InputVinm0filteringVinm1 = 0x18,
         #[doc = "gain -3 / gain 4 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."]
-        B0x19 = 0x19,
+        Gain4InputVinm0filteringVinm1 = 0x19,
         #[doc = "gain -7 / gain 8 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."]
-        B0x1a = 0x1a,
+        Gain8InputVinm0filteringVinm1 = 0x1a,
         #[doc = "gain -15 / gain of 16 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."]
-        B0x1b = 0x1b,
+        Gain16InputVinm0filteringVinm1 = 0x1b,
         _RESERVED_1c = 0x1c,
         _RESERVED_1d = 0x1d,
         _RESERVED_1e = 0x1e,
@@ -727,21 +727,21 @@ pub mod vals {
     pub enum TimcmSel {
         #[doc = "None (input configuration permanently controlled through VP_SEL\\[1:0\\]
 and VM_SEL)."]
-        B0x0 = 0x0,
+        None = 0x0,
         #[doc = "opamp_tc1."]
-        B0x1 = 0x01,
+        OpampTc1 = 0x01,
         #[doc = "opamp_tc2."]
-        B0x2 = 0x02,
+        OpampTc2 = 0x02,
         #[doc = "opamp_tc3."]
-        B0x3 = 0x03,
+        OpampTc3 = 0x03,
         #[doc = "opamp_tc4."]
-        B0x4 = 0x04,
+        OpampTc4 = 0x04,
         #[doc = "opamp_tc5."]
-        B0x5 = 0x05,
+        OpampTc5 = 0x05,
         #[doc = "opamp_tc6."]
-        B0x6 = 0x06,
+        OpampTc6 = 0x06,
         #[doc = "opamp_tc7."]
-        B0x7 = 0x07,
+        OpampTc7 = 0x07,
     }
     impl TimcmSel {
         #[inline(always)]
@@ -771,21 +771,21 @@ and VM_SEL)."]
     pub enum TimpgaSel {
         #[doc = "None (gain permanently controlled through PGA_GAIN\\[4:0\\]
 and VM_SEL\\[1:0\\])."]
-        B0x0 = 0x0,
+        None = 0x0,
         #[doc = "opamp_tp1."]
-        B0x1 = 0x01,
+        OpampTp1 = 0x01,
         #[doc = "opamp_tp2."]
-        B0x2 = 0x02,
+        OpampTp2 = 0x02,
         #[doc = "opamp_tp3."]
-        B0x3 = 0x03,
+        OpampTp3 = 0x03,
         #[doc = "opamp_tp4."]
-        B0x4 = 0x04,
+        OpampTp4 = 0x04,
         #[doc = "opamp_tp5."]
-        B0x5 = 0x05,
+        OpampTp5 = 0x05,
         #[doc = "opamp_tp6."]
-        B0x6 = 0x06,
+        OpampTp6 = 0x06,
         #[doc = "opamp_tp7."]
-        B0x7 = 0x07,
+        OpampTp7 = 0x07,
     }
     impl TimpgaSel {
         #[inline(always)]
@@ -812,77 +812,15 @@ and VM_SEL\\[1:0\\])."]
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Tstref {
-        #[doc = "Does not output calibration reference voltage."]
-        B0x0 = 0x0,
-        #[doc = "Outputs calibration reference voltage."]
-        B0x1 = 0x01,
-    }
-    impl Tstref {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tstref {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tstref {
-        #[inline(always)]
-        fn from(val: u8) -> Tstref {
-            Tstref::from_bits(val)
-        }
-    }
-    impl From<Tstref> for u8 {
-        #[inline(always)]
-        fn from(val: Tstref) -> u8 {
-            Tstref::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Usertrim {
-        #[doc = "Disable (trimming by user not possible)."]
-        B0x0 = 0x0,
-        #[doc = "Enable (trimming by user possible)."]
-        B0x1 = 0x01,
-    }
-    impl Usertrim {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Usertrim {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Usertrim {
-        #[inline(always)]
-        fn from(val: u8) -> Usertrim {
-            Usertrim::from_bits(val)
-        }
-    }
-    impl From<Usertrim> for u8 {
-        #[inline(always)]
-        fn from(val: Usertrim) -> u8 {
-            Usertrim::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VmSel {
         #[doc = "OPAMP_VINM0 pin."]
-        B0x0 = 0x0,
+        Vinm0 = 0x0,
         #[doc = "OPAMP_VINM1 pin."]
-        B0x1 = 0x01,
+        Vinm1 = 0x01,
         #[doc = "Internal resistor divider middle point."]
-        B0x2 = 0x02,
+        Pga = 0x02,
         #[doc = "Operational amplifier output."]
-        B0x3 = 0x03,
+        Follower = 0x03,
     }
     impl VmSel {
         #[inline(always)]
@@ -911,9 +849,9 @@ and VM_SEL\\[1:0\\])."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VmsSel {
         #[doc = "Internal resistor divider middle point (operation as PGA)."]
-        B0x0 = 0x0,
+        Pga = 0x0,
         #[doc = "Operational amplifier output (operation as follower)."]
-        B0x1 = 0x01,
+        Follower = 0x01,
     }
     impl VmsSel {
         #[inline(always)]
@@ -942,13 +880,13 @@ and VM_SEL\\[1:0\\])."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VpSel {
         #[doc = "OPAMP_VINP0 pin."]
-        B0x0 = 0x0,
+        Vinp0 = 0x0,
         #[doc = "OPAMP_VINP1 pin."]
-        B0x1 = 0x01,
+        Vinp1 = 0x01,
         #[doc = "OPAMP_VINP2 pin."]
-        B0x2 = 0x02,
+        Vinp2 = 0x02,
         #[doc = "OPAMP_VINP3 pin or DAC output channel."]
-        B0x3 = 0x03,
+        Vinp3OrDac = 0x03,
     }
     impl VpSel {
         #[inline(always)]
@@ -977,13 +915,13 @@ and VM_SEL\\[1:0\\])."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum VpsSel {
         #[doc = "OPAMP_VINP0."]
-        B0x0 = 0x0,
+        Vinp0 = 0x0,
         #[doc = "OPAMP_VINP1."]
-        B0x1 = 0x01,
+        Vinp1 = 0x01,
         #[doc = "OPAMP_VINP2."]
-        B0x2 = 0x02,
+        Vinp2 = 0x02,
         #[doc = "OPAMP_VINP3 pin or DAC output channel."]
-        B0x3 = 0x03,
+        Vinp3OrDac = 0x03,
     }
     impl VpsSel {
         #[inline(always)]

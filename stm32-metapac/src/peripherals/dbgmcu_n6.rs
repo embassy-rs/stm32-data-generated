@@ -185,14 +185,14 @@ pub mod regs {
         #[doc = "NPU stop in debug mode."]
         #[must_use]
         #[inline(always)]
-        pub const fn npu_dbg_freeze(&self) -> super::vals::NpuDbgFreeze {
+        pub const fn npu_dbg_freeze(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
-            super::vals::NpuDbgFreeze::from_bits(val as u8)
+            val != 0
         }
         #[doc = "NPU stop in debug mode."]
         #[inline(always)]
-        pub const fn set_npu_dbg_freeze(&mut self, val: super::vals::NpuDbgFreeze) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+        pub const fn set_npu_dbg_freeze(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
     }
     impl Default for Ahb5fz1 {
@@ -229,7 +229,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ahb5fz1 {{ dbg_hpdma1_stop[0]: {=bool:?}, dbg_hpdma1_stop[1]: {=bool:?}, dbg_hpdma1_stop[2]: {=bool:?}, dbg_hpdma1_stop[3]: {=bool:?}, dbg_hpdma1_stop[4]: {=bool:?}, dbg_hpdma1_stop[5]: {=bool:?}, dbg_hpdma1_stop[6]: {=bool:?}, dbg_hpdma1_stop[7]: {=bool:?}, dbg_hpdma1_stop[8]: {=bool:?}, dbg_hpdma1_stop[9]: {=bool:?}, dbg_hpdma1_stop[10]: {=bool:?}, dbg_hpdma1_stop[11]: {=bool:?}, dbg_hpdma1_stop[12]: {=bool:?}, dbg_hpdma1_stop[13]: {=bool:?}, dbg_hpdma1_stop[14]: {=bool:?}, dbg_hpdma1_stop[15]: {=bool:?}, npu_dbg_freeze: {:?} }}",
+                "Ahb5fz1 {{ dbg_hpdma1_stop[0]: {=bool:?}, dbg_hpdma1_stop[1]: {=bool:?}, dbg_hpdma1_stop[2]: {=bool:?}, dbg_hpdma1_stop[3]: {=bool:?}, dbg_hpdma1_stop[4]: {=bool:?}, dbg_hpdma1_stop[5]: {=bool:?}, dbg_hpdma1_stop[6]: {=bool:?}, dbg_hpdma1_stop[7]: {=bool:?}, dbg_hpdma1_stop[8]: {=bool:?}, dbg_hpdma1_stop[9]: {=bool:?}, dbg_hpdma1_stop[10]: {=bool:?}, dbg_hpdma1_stop[11]: {=bool:?}, dbg_hpdma1_stop[12]: {=bool:?}, dbg_hpdma1_stop[13]: {=bool:?}, dbg_hpdma1_stop[14]: {=bool:?}, dbg_hpdma1_stop[15]: {=bool:?}, npu_dbg_freeze: {=bool:?} }}",
                 self.dbg_hpdma1_stop(0usize),
                 self.dbg_hpdma1_stop(1usize),
                 self.dbg_hpdma1_stop(2usize),
@@ -897,26 +897,26 @@ pub mod regs {
         #[doc = "Debug clock enable through software."]
         #[must_use]
         #[inline(always)]
-        pub const fn dbgclken(&self) -> super::vals::Dbgclken {
+        pub const fn dbgclken(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
-            super::vals::Dbgclken::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Debug clock enable through software."]
         #[inline(always)]
-        pub const fn set_dbgclken(&mut self, val: super::vals::Dbgclken) {
-            self.0 = (self.0 & !(0x01 << 20usize)) | (((val.to_bits() as u32) & 0x01) << 20usize);
+        pub const fn set_dbgclken(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "TPIU export clock enable through software."]
         #[must_use]
         #[inline(always)]
-        pub const fn traceclken(&self) -> super::vals::Traceclken {
+        pub const fn traceclken(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
-            super::vals::Traceclken::from_bits(val as u8)
+            val != 0
         }
         #[doc = "TPIU export clock enable through software."]
         #[inline(always)]
-        pub const fn set_traceclken(&mut self, val: super::vals::Traceclken) {
-            self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+        pub const fn set_traceclken(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "DBTRGIO connection control."]
         #[must_use]
@@ -933,14 +933,14 @@ pub mod regs {
         #[doc = "TSGEN halt enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn hlt_tsgen_en(&self) -> super::vals::HltTsgenEn {
+        pub const fn hlt_tsgen_en(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::HltTsgenEn::from_bits(val as u8)
+            val != 0
         }
         #[doc = "TSGEN halt enable."]
         #[inline(always)]
-        pub const fn set_hlt_tsgen_en(&mut self, val: super::vals::HltTsgenEn) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+        pub const fn set_hlt_tsgen_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
     impl Default for Cr {
@@ -967,7 +967,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Cr {{ dbg_sleep: {=bool:?}, dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, dbgclken: {:?}, traceclken: {:?}, dbtrgoen: {:?}, hlt_tsgen_en: {:?} }}",
+                "Cr {{ dbg_sleep: {=bool:?}, dbg_stop: {=bool:?}, dbg_standby: {=bool:?}, dbgclken: {=bool:?}, traceclken: {=bool:?}, dbtrgoen: {:?}, hlt_tsgen_en: {=bool:?} }}",
                 self.dbg_sleep(),
                 self.dbg_stop(),
                 self.dbg_standby(),
@@ -1166,25 +1166,25 @@ pub mod regs {
         #[doc = "Access point 0 presence."]
         #[must_use]
         #[inline(always)]
-        pub const fn ap0_present(&self) -> super::vals::Ap0Present {
+        pub const fn ap0_present(&self) -> super::vals::ApPresent {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::Ap0Present::from_bits(val as u8)
+            super::vals::ApPresent::from_bits(val as u8)
         }
         #[doc = "Access point 0 presence."]
         #[inline(always)]
-        pub const fn set_ap0_present(&mut self, val: super::vals::Ap0Present) {
+        pub const fn set_ap0_present(&mut self, val: super::vals::ApPresent) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
         }
         #[doc = "Access point 1 presence."]
         #[must_use]
         #[inline(always)]
-        pub const fn ap1_present(&self) -> super::vals::Ap1Present {
+        pub const fn ap1_present(&self) -> super::vals::ApPresent {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Ap1Present::from_bits(val as u8)
+            super::vals::ApPresent::from_bits(val as u8)
         }
         #[doc = "Access point 1 presence."]
         #[inline(always)]
-        pub const fn set_ap1_present(&mut self, val: super::vals::Ap1Present) {
+        pub const fn set_ap1_present(&mut self, val: super::vals::ApPresent) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "Access point 0 enable."]
@@ -1202,14 +1202,14 @@ pub mod regs {
         #[doc = "Access point 1 enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn ap1_enable(&self) -> super::vals::Ap1Enable {
+        pub const fn ap1_enable(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
-            super::vals::Ap1Enable::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Access point 1 enable."]
         #[inline(always)]
-        pub const fn set_ap1_enable(&mut self, val: super::vals::Ap1Enable) {
-            self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+        pub const fn set_ap1_enable(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
     }
     impl Default for Sr {
@@ -1233,7 +1233,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Sr {{ ap0_present: {:?}, ap1_present: {:?}, ap0_enable: {:?}, ap1_enable: {:?} }}",
+                "Sr {{ ap0_present: {:?}, ap1_present: {:?}, ap0_enable: {:?}, ap1_enable: {=bool:?} }}",
                 self.ap0_present(),
                 self.ap1_present(),
                 self.ap0_enable(),
@@ -1249,7 +1249,7 @@ pub mod vals {
     pub enum Ap0Enable {
         _RESERVED_0 = 0x0,
         #[doc = "Always enable."]
-        B0x1 = 0x01,
+        Enabled = 0x01,
     }
     impl Ap0Enable {
         #[inline(always)]
@@ -1276,14 +1276,14 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ap0Present {
+    pub enum ApPresent {
         _RESERVED_0 = 0x0,
         #[doc = "AP present."]
-        B0x1 = 0x01,
+        Present = 0x01,
     }
-    impl Ap0Present {
+    impl ApPresent {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ap0Present {
+        pub const fn from_bits(val: u8) -> ApPresent {
             unsafe { core::mem::transmute(val & 0x01) }
         }
         #[inline(always)]
@@ -1291,108 +1291,16 @@ pub mod vals {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Ap0Present {
+    impl From<u8> for ApPresent {
         #[inline(always)]
-        fn from(val: u8) -> Ap0Present {
-            Ap0Present::from_bits(val)
+        fn from(val: u8) -> ApPresent {
+            ApPresent::from_bits(val)
         }
     }
-    impl From<Ap0Present> for u8 {
+    impl From<ApPresent> for u8 {
         #[inline(always)]
-        fn from(val: Ap0Present) -> u8 {
-            Ap0Present::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ap1Enable {
-        #[doc = "AP disabled (debug access locked)."]
-        B0x0 = 0x0,
-        #[doc = "AP enabled (debug access open)."]
-        B0x1 = 0x01,
-    }
-    impl Ap1Enable {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ap1Enable {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ap1Enable {
-        #[inline(always)]
-        fn from(val: u8) -> Ap1Enable {
-            Ap1Enable::from_bits(val)
-        }
-    }
-    impl From<Ap1Enable> for u8 {
-        #[inline(always)]
-        fn from(val: Ap1Enable) -> u8 {
-            Ap1Enable::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Ap1Present {
-        _RESERVED_0 = 0x0,
-        #[doc = "AP present."]
-        B0x1 = 0x01,
-    }
-    impl Ap1Present {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Ap1Present {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Ap1Present {
-        #[inline(always)]
-        fn from(val: u8) -> Ap1Present {
-            Ap1Present::from_bits(val)
-        }
-    }
-    impl From<Ap1Present> for u8 {
-        #[inline(always)]
-        fn from(val: Ap1Present) -> u8 {
-            Ap1Present::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Dbgclken {
-        #[doc = "Debug clock is off."]
-        B0x0 = 0x0,
-        #[doc = "Debug clock is on."]
-        B0x1 = 0x01,
-    }
-    impl Dbgclken {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Dbgclken {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Dbgclken {
-        #[inline(always)]
-        fn from(val: u8) -> Dbgclken {
-            Dbgclken::from_bits(val)
-        }
-    }
-    impl From<Dbgclken> for u8 {
-        #[inline(always)]
-        fn from(val: Dbgclken) -> u8 {
-            Dbgclken::to_bits(val)
+        fn from(val: ApPresent) -> u8 {
+            ApPresent::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1400,9 +1308,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dbtrgoen {
         #[doc = "DBTRGIO connected to DBTRGIN."]
-        B0x0 = 0x0,
+        Input = 0x0,
         #[doc = "DBTRGIO connected to DBTRGOUT."]
-        B0x1 = 0x01,
+        Output = 0x01,
     }
     impl Dbtrgoen {
         #[inline(always)]
@@ -1431,7 +1339,7 @@ pub mod vals {
     pub struct DevId(u16);
     impl DevId {
         #[doc = "STM32N6xx."]
-        pub const B0x486: Self = Self(0x0486);
+        pub const Stm32n6xx: Self = Self(0x0486);
     }
     impl DevId {
         pub const fn from_bits(val: u16) -> DevId {
@@ -1444,7 +1352,7 @@ pub mod vals {
     impl core::fmt::Debug for DevId {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0486 => f.write_str("B0x486"),
+                0x0486 => f.write_str("Stm32n6xx"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -1453,7 +1361,7 @@ pub mod vals {
     impl defmt::Format for DevId {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0486 => defmt::write!(f, "B0x486"),
+                0x0486 => defmt::write!(f, "Stm32n6xx"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -1475,9 +1383,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum DeviceAck {
         #[doc = "Debugger has read DBG_AUTH_DEV."]
-        B0x0 = 0x0,
+        DebuggerRead = 0x0,
         #[doc = "Processor has written DBG_AUTH_DEV."]
-        B0x1 = 0x01,
+        ProcessorWritten = 0x01,
     }
     impl DeviceAck {
         #[inline(always)]
@@ -1504,42 +1412,11 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum HltTsgenEn {
-        #[doc = "TSGEN keeps on counting when processor is in halt."]
-        B0x0 = 0x0,
-        #[doc = "TSGEN stops counting when processor is in halt."]
-        B0x1 = 0x01,
-    }
-    impl HltTsgenEn {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> HltTsgenEn {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for HltTsgenEn {
-        #[inline(always)]
-        fn from(val: u8) -> HltTsgenEn {
-            HltTsgenEn::from_bits(val)
-        }
-    }
-    impl From<HltTsgenEn> for u8 {
-        #[inline(always)]
-        fn from(val: HltTsgenEn) -> u8 {
-            HltTsgenEn::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum HostAck {
         #[doc = "Processor has read DBG_AUTH_HOST."]
-        B0x0 = 0x0,
+        ProcessorRead = 0x0,
         #[doc = "Debugger has written DBG_AUTH_HOST."]
-        B0x1 = 0x01,
+        DebuggerWritten = 0x01,
     }
     impl HostAck {
         #[inline(always)]
@@ -1561,68 +1438,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: HostAck) -> u8 {
             HostAck::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum NpuDbgFreeze {
-        #[doc = "Normal operation. The NPU continues to operate while Cortex-M55 is in debug mode."]
-        B0x0 = 0x0,
-        #[doc = "Stop in debug. NPU is suspended while Cortex-M55 is in debug mode."]
-        B0x1 = 0x01,
-    }
-    impl NpuDbgFreeze {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> NpuDbgFreeze {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for NpuDbgFreeze {
-        #[inline(always)]
-        fn from(val: u8) -> NpuDbgFreeze {
-            NpuDbgFreeze::from_bits(val)
-        }
-    }
-    impl From<NpuDbgFreeze> for u8 {
-        #[inline(always)]
-        fn from(val: NpuDbgFreeze) -> u8 {
-            NpuDbgFreeze::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Traceclken {
-        #[doc = "TPIU clock is off."]
-        B0x0 = 0x0,
-        #[doc = "TPIU clock is on."]
-        B0x1 = 0x01,
-    }
-    impl Traceclken {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Traceclken {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Traceclken {
-        #[inline(always)]
-        fn from(val: u8) -> Traceclken {
-            Traceclken::from_bits(val)
-        }
-    }
-    impl From<Traceclken> for u8 {
-        #[inline(always)]
-        fn from(val: Traceclken) -> u8 {
-            Traceclken::to_bits(val)
         }
     }
 }

@@ -399,14 +399,14 @@ pub mod regs {
         #[doc = "Direct mode disable"]
         #[must_use]
         #[inline(always)]
-        pub const fn dmdis(&self) -> super::vals::Dmdis {
+        pub const fn dmdis(&self) -> bool {
             let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Dmdis::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Direct mode disable"]
         #[inline(always)]
-        pub const fn set_dmdis(&mut self, val: super::vals::Dmdis) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        pub const fn set_dmdis(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
         }
         #[doc = "FIFO status"]
         #[must_use]
@@ -454,7 +454,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Fcr {{ fth: {:?}, dmdis: {:?}, fs: {:?}, feie: {=bool:?} }}",
+                "Fcr {{ fth: {:?}, dmdis: {=bool:?}, fs: {:?}, feie: {=bool:?} }}",
                 self.fth(),
                 self.dmdis(),
                 self.fs(),
@@ -744,37 +744,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Dir) -> u8 {
             Dir::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Dmdis {
-        #[doc = "Direct mode is enabled"]
-        Enabled = 0x0,
-        #[doc = "Direct mode is disabled"]
-        Disabled = 0x01,
-    }
-    impl Dmdis {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Dmdis {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Dmdis {
-        #[inline(always)]
-        fn from(val: u8) -> Dmdis {
-            Dmdis::from_bits(val)
-        }
-    }
-    impl From<Dmdis> for u8 {
-        #[inline(always)]
-        fn from(val: Dmdis) -> u8 {
-            Dmdis::to_bits(val)
         }
     }
     #[repr(u8)]

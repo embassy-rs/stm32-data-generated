@@ -7978,14 +7978,14 @@ pub mod regs {
         #[doc = "Enable PCS latencies."]
         #[must_use]
         #[inline(always)]
-        pub const fn epcsl(&self) -> super::vals::Epcsl {
+        pub const fn epcsl(&self) -> bool {
             let val = (self.0 >> 25usize) & 0x01;
-            super::vals::Epcsl::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Enable PCS latencies."]
         #[inline(always)]
-        pub const fn set_epcsl(&mut self, val: super::vals::Epcsl) {
-            self.0 = (self.0 & !(0x01 << 25usize)) | (((val.to_bits() as u32) & 0x01) << 25usize);
+        pub const fn set_epcsl(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 25usize)) | (((val as u32) & 0x01) << 25usize);
         }
         #[doc = "Enable Timestamp Capturing in PTP Clock Domain."]
         #[must_use]
@@ -8062,7 +8062,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Mactscr {{ tsena: {=bool:?}, tscfupdt: {=bool:?}, tsinit: {=bool:?}, tsupdt: {=bool:?}, tsaddreg: {=bool:?}, ptge: {=bool:?}, tsenall: {=bool:?}, tsctrlssr: {=bool:?}, tsver2ena: {=bool:?}, tsipena: {=bool:?}, tsipv6ena: {=bool:?}, tsipv4ena: {=bool:?}, tsevntena: {=bool:?}, tsmstrena: {=bool:?}, snaptypsel: {=u8:?}, tsenmacaddr: {=bool:?}, txtsstsm: {=bool:?}, epcsl: {:?}, ecpd: {=bool:?}, lita: {:?}, av8021asmen: {=bool:?} }}",
+                "Mactscr {{ tsena: {=bool:?}, tscfupdt: {=bool:?}, tsinit: {=bool:?}, tsupdt: {=bool:?}, tsaddreg: {=bool:?}, ptge: {=bool:?}, tsenall: {=bool:?}, tsctrlssr: {=bool:?}, tsver2ena: {=bool:?}, tsipena: {=bool:?}, tsipv6ena: {=bool:?}, tsipv4ena: {=bool:?}, tsevntena: {=bool:?}, tsmstrena: {=bool:?}, snaptypsel: {=u8:?}, tsenmacaddr: {=bool:?}, txtsstsm: {=bool:?}, epcsl: {=bool:?}, ecpd: {=bool:?}, lita: {:?}, av8021asmen: {=bool:?} }}",
                 self.tsena(),
                 self.tscfupdt(),
                 self.tsinit(),
@@ -10594,9 +10594,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Da {
         #[doc = "Weighted Round-Robin with Rx:Tx or Tx:Rx."]
-        B0x0 = 0x0,
+        RoundRobin = 0x0,
         #[doc = "Fixed priority."]
-        B0x1 = 0x01,
+        FixedPriority = 0x01,
     }
     impl Da {
         #[inline(always)]
@@ -10623,44 +10623,13 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Epcsl {
-        #[doc = "The XPCS latencies are not considered in the captured timestamp."]
-        B0x0 = 0x0,
-        #[doc = "Timestamp captured at the egress and ingress ports includes the ingress and egress latencies provided by XPCS."]
-        B0x1 = 0x01,
-    }
-    impl Epcsl {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Epcsl {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Epcsl {
-        #[inline(always)]
-        fn from(val: u8) -> Epcsl {
-            Epcsl::from_bits(val)
-        }
-    }
-    impl From<Epcsl> for u8 {
-        #[inline(always)]
-        fn from(val: Epcsl) -> u8 {
-            Epcsl::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Itcu {
         #[doc = "256."]
-        B0x0 = 0x0,
+        Units256 = 0x0,
         #[doc = "512."]
-        B0x1 = 0x01,
+        Units512 = 0x01,
         #[doc = "1024."]
-        B0x2 = 0x02,
+        Units1024 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Itcu {
@@ -10690,13 +10659,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Jto {
         #[doc = "2 Kbytes."]
-        B0x0 = 0x0,
+        Kbytes2 = 0x0,
         #[doc = "3 Kbytes."]
-        B0x1 = 0x01,
+        Kbytes3 = 0x01,
         #[doc = "4 Kbytes."]
-        B0x2 = 0x02,
+        Kbytes4 = 0x02,
         #[doc = "5 Kbytes."]
-        B0x3 = 0x03,
+        Kbytes5 = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
@@ -10706,11 +10675,11 @@ pub mod vals {
         _RESERVED_a = 0x0a,
         _RESERVED_b = 0x0b,
         #[doc = "14 Kbytes."]
-        B0xC = 0x0c,
+        Kbytes14 = 0x0c,
         #[doc = "15 Kbytes."]
-        B0xD = 0x0d,
+        Kbytes15 = 0x0d,
         #[doc = "16383 Bytes."]
-        B0xE = 0x0e,
+        Bytes16383 = 0x0e,
         _RESERVED_f = 0x0f,
     }
     impl Jto {
@@ -10741,7 +10710,7 @@ pub mod vals {
     pub enum Lita {
         _RESERVED_0 = 0x0,
         #[doc = "Toggle inputs and PCS latencies are computed by MAC."]
-        B0x1 = 0x01,
+        Disabled = 0x01,
     }
     impl Lita {
         #[inline(always)]
@@ -10770,21 +10739,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pr {
         #[doc = "The priority ratio is 1:1."]
-        B0x0 = 0x0,
+        Ratio11 = 0x0,
         #[doc = "The priority ratio is 2:1."]
-        B0x1 = 0x01,
+        Ratio21 = 0x01,
         #[doc = "The priority ratio is 3:1."]
-        B0x2 = 0x02,
+        Ratio31 = 0x02,
         #[doc = "The priority ratio is 4:1."]
-        B0x3 = 0x03,
+        Ratio41 = 0x03,
         #[doc = "The priority ratio is 5:1."]
-        B0x4 = 0x04,
+        Ratio51 = 0x04,
         #[doc = "The priority ratio is 6:1."]
-        B0x5 = 0x05,
+        Ratio61 = 0x05,
         #[doc = "The priority ratio is 7:1."]
-        B0x6 = 0x06,
+        Ratio71 = 0x06,
         #[doc = "The priority ratio is 8:1."]
-        B0x7 = 0x07,
+        Ratio81 = 0x07,
     }
     impl Pr {
         #[inline(always)]
@@ -10814,10 +10783,10 @@ pub mod vals {
     pub enum Psel {
         #[doc = "RBCT\\[9:0\\]
 is used to generate interrupt based on the number of bytes received."]
-        B0x0 = 0x0,
+        Bytes = 0x0,
         #[doc = "RBCT\\[9:0\\]
 is used to generate interrupt based on the number of packets received."]
-        B0x1 = 0x01,
+        Packets = 0x01,
     }
     impl Psel {
         #[inline(always)]
@@ -10846,20 +10815,20 @@ is used to generate interrupt based on the number of packets received."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rps {
         #[doc = "Stopped (Reset or Stop Receive Command issued)."]
-        B0x0 = 0x0,
+        Stopped = 0x0,
         #[doc = "Running (Fetching Rx Transfer Descriptor)."]
-        B0x1 = 0x01,
+        RunningFetching = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "Running (Waiting for Rx packet)."]
-        B0x3 = 0x03,
+        RunningWaiting = 0x03,
         #[doc = "Suspended (Rx Descriptor Unavailable)."]
-        B0x4 = 0x04,
+        Suspended = 0x04,
         #[doc = "Running (Closing the Rx Descriptor)."]
-        B0x5 = 0x05,
+        RunningClosing = 0x05,
         #[doc = "Timestamp write state."]
-        B0x6 = 0x06,
+        TimestampWriting = 0x06,
         #[doc = "Running (Transferring the received packet data from the Rx buffer to the system memory)."]
-        B0x7 = 0x07,
+        RunningWriting = 0x07,
         _RESERVED_8 = 0x08,
         _RESERVED_9 = 0x09,
         _RESERVED_a = 0x0a,
@@ -10896,13 +10865,13 @@ is used to generate interrupt based on the number of packets received."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rwtu {
         #[doc = "256."]
-        B0x0 = 0x0,
+        Units256 = 0x0,
         #[doc = "512."]
-        B0x1 = 0x01,
+        Units512 = 0x01,
         #[doc = "1024."]
-        B0x2 = 0x02,
+        Units1024 = 0x02,
         #[doc = "2048."]
-        B0x3 = 0x03,
+        Units2048 = 0x03,
     }
     impl Rwtu {
         #[inline(always)]
@@ -10931,20 +10900,20 @@ is used to generate interrupt based on the number of packets received."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tps {
         #[doc = "Stopped (Reset or Stop Transmit Command issued)."]
-        B0x0 = 0x0,
+        Stopped = 0x0,
         #[doc = "Running (Fetching Tx Transfer Descriptor)."]
-        B0x1 = 0x01,
+        RunningFetching = 0x01,
         #[doc = "Running (Waiting for status)."]
-        B0x2 = 0x02,
+        RunningWaiting = 0x02,
         #[doc = "Running (Reading Data from system memory buffer and queuing it to the Tx buffer (Tx FIFO))."]
-        B0x3 = 0x03,
+        RunningReading = 0x03,
         #[doc = "Timestamp write state."]
-        B0x4 = 0x04,
+        TimestampWriting = 0x04,
         _RESERVED_5 = 0x05,
         #[doc = "Suspended (Tx Descriptor Unavailable or Tx Buffer Underflow)."]
-        B0x6 = 0x06,
+        Suspended = 0x06,
         #[doc = "Running (Closing Tx Descriptor)."]
-        B0x7 = 0x07,
+        RunningClosing = 0x07,
         _RESERVED_8 = 0x08,
         _RESERVED_9 = 0x09,
         _RESERVED_a = 0x0a,
@@ -10982,11 +10951,11 @@ is used to generate interrupt based on the number of packets received."]
     pub enum Tsstssel {
         _RESERVED_0 = 0x0,
         #[doc = "Internal."]
-        B0x1 = 0x01,
+        Internal = 0x01,
         #[doc = "External."]
-        B0x2 = 0x02,
+        External = 0x02,
         #[doc = "Both."]
-        B0x3 = 0x03,
+        Both = 0x03,
     }
     impl Tsstssel {
         #[inline(always)]

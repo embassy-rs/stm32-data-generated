@@ -315,7 +315,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 14 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("RamParityCheck"),
+                    enumm: None,
                 },
                 Field {
                     name: "boot_sel",
@@ -463,23 +463,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "Reset",
                     description: Some("Reset generated when entering Stop mode"),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
-            name: "RamParityCheck",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Disabled",
-                    description: Some("RAM parity check disabled"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Enabled",
-                    description: Some("RAM parity check enabled"),
                     value: 0,
                 },
             ],

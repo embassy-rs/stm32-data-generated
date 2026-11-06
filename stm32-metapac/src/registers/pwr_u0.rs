@@ -2317,44 +2317,44 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "External",
+                    description: Some("External input analog voltage PVD_IN (compared internally to VREFINT)"),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "V201",
                     description: Some("V<sub>PVD0</sub> around 2.01V"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "V221",
                     description: Some("V<sub>PVD1</sub> around 2.21V"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "V241",
                     description: Some("V<sub>PVD2</sub> around 2.41V"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
+                    name: "V251",
                     description: Some("V<sub>PVD3</sub> around 2.51V"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B0x4",
+                    name: "V261",
                     description: Some("V<sub>PVD4</sub> around 2.61V"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "B0x5",
+                    name: "V281",
                     description: Some("V<sub>PVD5</sub> around 2.81V"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "B0x6",
+                    name: "V291",
                     description: Some("V<sub>PVD6</sub> around 2.91V"),
                     value: 6,
-                },
-                EnumVariant {
-                    name: "B0x7",
-                    description: Some("External input analog voltage PVD_IN (compared internally to VREFINT)"),
-                    value: 7,
                 },
             ],
         },

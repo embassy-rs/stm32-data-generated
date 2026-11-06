@@ -1519,9 +1519,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AesBusy {
         #[doc = "AES core is idle."]
-        B0x0 = 0x0,
+        Idle = 0x0,
         #[doc = "AES core is busy."]
-        B0x1 = 0x01,
+        Busy = 0x01,
     }
     impl AesBusy {
         #[inline(always)]
@@ -1550,9 +1550,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AesInit {
         #[doc = "AES core is not initialized (no key or state set)."]
-        B0x0 = 0x0,
+        NotInitialized = 0x0,
         #[doc = "AES core is fully initialized."]
-        B0x1 = 0x01,
+        Initialized = 0x01,
     }
     impl AesInit {
         #[inline(always)]
@@ -1581,9 +1581,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AesKeyLd {
         #[doc = "AES core is waiting for 128 random bits from the entropy sources for generating its key."]
-        B0x0 = 0x0,
+        Waiting = 0x0,
         #[doc = "AES key register has been loaded with a random key."]
-        B0x1 = 0x01,
+        Loaded = 0x01,
     }
     impl AesKeyLd {
         #[inline(always)]
@@ -1612,9 +1612,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AesReset {
         #[doc = "No effect."]
-        B0x0 = 0x0,
+        NoEffect = 0x0,
         #[doc = "Reset AES core."]
-        B0x1 = 0x01,
+        Reset = 0x01,
     }
     impl AesReset {
         #[inline(always)]
@@ -1643,9 +1643,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AllOscsDown {
         #[doc = "At least one oscillator is ON."]
-        B0x0 = 0x0,
+        AtLeastOneOn = 0x0,
         #[doc = "All oscillators are down."]
-        B0x1 = 0x01,
+        AllDown = 0x01,
     }
     impl AllOscsDown {
         #[inline(always)]
@@ -1674,9 +1674,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum ClrRevclkFlag {
         #[doc = "no reset."]
-        B0x0 = 0x0,
+        NoReset = 0x0,
         #[doc = "reset revclk flag."]
-        B0x1 = 0x01,
+        Reset = 0x01,
     }
     impl ClrRevclkFlag {
         #[inline(always)]
@@ -1705,9 +1705,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum EntropyErr {
         #[doc = "No fault detected."]
-        B0x0 = 0x0,
+        NoFault = 0x0,
         #[doc = "Embedded heath monitor detects an error in bit stream quality."]
-        B0x1 = 0x01,
+        Error = 0x01,
     }
     impl EntropyErr {
         #[inline(always)]
@@ -1736,9 +1736,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FifoFull {
         #[doc = "FIFO is not full."]
-        B0x0 = 0x0,
+        NotFull = 0x0,
         #[doc = "The internal data FIFO is full and four 32-bit random values can be read."]
-        B0x1 = 0x01,
+        Full = 0x01,
     }
     impl FifoFull {
         #[inline(always)]
@@ -1767,9 +1767,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RevealClkErr {
         #[doc = "Internal clock for RNG clock is present."]
-        B0x0 = 0x0,
+        Present = 0x0,
         #[doc = "Internal RNG clock is not present."]
-        B0x1 = 0x01,
+        NotPresent = 0x01,
     }
     impl RevealClkErr {
         #[inline(always)]
@@ -1798,9 +1798,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RstHealthFlags {
         #[doc = "no reset."]
-        B0x0 = 0x0,
+        NoReset = 0x0,
         #[doc = "reset health flag."]
-        B0x1 = 0x01,
+        Reset = 0x01,
     }
     impl RstHealthFlags {
         #[inline(always)]
@@ -1829,9 +1829,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum ValReady {
         #[doc = "No value is ready in FIFO."]
-        B0x0 = 0x0,
+        NotReady = 0x0,
         #[doc = "A 32-bit value is available in the internal FIFO."]
-        B0x1 = 0x01,
+        Ready = 0x01,
     }
     impl ValReady {
         #[inline(always)]

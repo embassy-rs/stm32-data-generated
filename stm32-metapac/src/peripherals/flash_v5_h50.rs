@@ -1493,26 +1493,26 @@ pub mod regs {
         #[doc = "High-speed IO at low VDD voltage status bit. This bit can be set only with VDD below 2.5 V."]
         #[must_use]
         #[inline(always)]
-        pub const fn io_vdd_hslv(&self) -> super::vals::OptsrIoVddHslv {
+        pub const fn io_vdd_hslv(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
-            super::vals::OptsrIoVddHslv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "High-speed IO at low VDD voltage status bit. This bit can be set only with VDD below 2.5 V."]
         #[inline(always)]
-        pub const fn set_io_vdd_hslv(&mut self, val: super::vals::OptsrIoVddHslv) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+        pub const fn set_io_vdd_hslv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "High-speed IO at low VDDIO2 voltage status bit. This bit can be set only with VDDIO2 below 2.5 V."]
         #[must_use]
         #[inline(always)]
-        pub const fn io_vddio2_hslv(&self) -> super::vals::OptsrIoVddioHslv {
+        pub const fn io_vddio2_hslv(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
-            super::vals::OptsrIoVddioHslv::from_bits(val as u8)
+            val != 0
         }
         #[doc = "High-speed IO at low VDDIO2 voltage status bit. This bit can be set only with VDDIO2 below 2.5 V."]
         #[inline(always)]
-        pub const fn set_io_vddio2_hslv(&mut self, val: super::vals::OptsrIoVddioHslv) {
-            self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+        pub const fn set_io_vddio2_hslv(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "IWDG Stop mode freeze option status bit When set the independent watchdog IWDG is in system Stop mode."]
         #[must_use]
@@ -1581,7 +1581,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Optsr {{ bor_lev: {:?}, borh_en: {=bool:?}, iwdg_sw: {:?}, wwdg_sw: {:?}, nrst_shdw: {:?}, nrst_stop: {:?}, nrst_stdby: {:?}, product_state: {:?}, io_vdd_hslv: {:?}, io_vddio2_hslv: {:?}, iwdg_stop: {:?}, iwdg_stdby: {:?}, swap_bank: {=bool:?} }}",
+                "Optsr {{ bor_lev: {:?}, borh_en: {=bool:?}, iwdg_sw: {:?}, wwdg_sw: {:?}, nrst_shdw: {:?}, nrst_stop: {:?}, nrst_stdby: {:?}, product_state: {:?}, io_vdd_hslv: {=bool:?}, io_vddio2_hslv: {=bool:?}, iwdg_stop: {:?}, iwdg_stdby: {:?}, swap_bank: {=bool:?} }}",
                 self.bor_lev(),
                 self.borh_en(),
                 self.iwdg_sw(),
@@ -1618,26 +1618,26 @@ pub mod regs {
         #[doc = "Backup RAM ECC detection and correction disable"]
         #[must_use]
         #[inline(always)]
-        pub const fn bkpram_ecc(&self) -> super::vals::OptsrBkpramEcc {
+        pub const fn bkpram_ecc(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::OptsrBkpramEcc::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Backup RAM ECC detection and correction disable"]
         #[inline(always)]
-        pub const fn set_bkpram_ecc(&mut self, val: super::vals::OptsrBkpramEcc) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub const fn set_bkpram_ecc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "SRAM2 ECC detection and correction disable"]
         #[must_use]
         #[inline(always)]
-        pub const fn sram2_ecc(&self) -> super::vals::OptsrSramEcc {
+        pub const fn sram2_ecc(&self) -> bool {
             let val = (self.0 >> 6usize) & 0x01;
-            super::vals::OptsrSramEcc::from_bits(val as u8)
+            val != 0
         }
         #[doc = "SRAM2 ECC detection and correction disable"]
         #[inline(always)]
-        pub const fn set_sram2_ecc(&mut self, val: super::vals::OptsrSramEcc) {
-            self.0 = (self.0 & !(0x01 << 6usize)) | (((val.to_bits() as u32) & 0x01) << 6usize);
+        pub const fn set_sram2_ecc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 6usize)) | (((val as u32) & 0x01) << 6usize);
         }
         #[doc = "SRAM1 erase upon system reset"]
         #[must_use]
@@ -1654,14 +1654,14 @@ pub mod regs {
         #[doc = "SRAM1 ECC detection and correction disable"]
         #[must_use]
         #[inline(always)]
-        pub const fn sram1_ecc(&self) -> super::vals::OptsrSramEcc {
+        pub const fn sram1_ecc(&self) -> bool {
             let val = (self.0 >> 10usize) & 0x01;
-            super::vals::OptsrSramEcc::from_bits(val as u8)
+            val != 0
         }
         #[doc = "SRAM1 ECC detection and correction disable"]
         #[inline(always)]
-        pub const fn set_sram1_ecc(&mut self, val: super::vals::OptsrSramEcc) {
-            self.0 = (self.0 & !(0x01 << 10usize)) | (((val.to_bits() as u32) & 0x01) << 10usize);
+        pub const fn set_sram1_ecc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
         }
     }
     impl Default for Optsr2 {
@@ -1686,7 +1686,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Optsr2 {{ sram2_rst: {=bool:?}, bkpram_ecc: {:?}, sram2_ecc: {:?}, sram1_rst: {=bool:?}, sram1_ecc: {:?} }}",
+                "Optsr2 {{ sram2_rst: {=bool:?}, bkpram_ecc: {=bool:?}, sram2_ecc: {=bool:?}, sram1_rst: {=bool:?}, sram1_ecc: {=bool:?} }}",
                 self.sram2_rst(),
                 self.bkpram_ecc(),
                 self.sram2_ecc(),
@@ -2016,18 +2016,18 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CodeOp {
         #[doc = "No Flash operation on going during previous reset"]
-        B0x0 = 0x0,
+        NoFlashInt = 0x0,
         #[doc = "Single write operation interrupted"]
-        B0x1 = 0x01,
+        SingleWrInt = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "Sector erase operation interrupted"]
-        B0x3 = 0x03,
+        SectorEraseInt = 0x03,
         #[doc = "Bank erase operation interrupted"]
-        B0x4 = 0x04,
+        BankEraseInt = 0x04,
         #[doc = "Mass erase operation interrupted"]
-        B0x5 = 0x05,
+        MassEraseInt = 0x05,
         #[doc = "Option change operation interrupted"]
-        B0x6 = 0x06,
+        OptChangeInt = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl CodeOp {
@@ -2057,9 +2057,9 @@ pub mod vals {
     pub struct NsbootrNsbootLock(u8);
     impl NsbootrNsbootLock {
         #[doc = "The NSBOOTADD and SWAP_BANK are frozen."]
-        pub const B0xB4: Self = Self(0xb4);
+        pub const Locked: Self = Self(0xb4);
         #[doc = "The SWAP_BANK and NSBOOTADD can still be modified following their individual rules."]
-        pub const B0xC3: Self = Self(0xc3);
+        pub const Unlocked: Self = Self(0xc3);
     }
     impl NsbootrNsbootLock {
         pub const fn from_bits(val: u8) -> NsbootrNsbootLock {
@@ -2072,8 +2072,8 @@ pub mod vals {
     impl core::fmt::Debug for NsbootrNsbootLock {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0xb4 => f.write_str("B0xB4"),
-                0xc3 => f.write_str("B0xC3"),
+                0xb4 => f.write_str("Locked"),
+                0xc3 => f.write_str("Unlocked"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2082,8 +2082,8 @@ pub mod vals {
     impl defmt::Format for NsbootrNsbootLock {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0xb4 => defmt::write!(f, "B0xB4"),
-                0xc3 => defmt::write!(f, "B0xC3"),
+                0xb4 => defmt::write!(f, "Locked"),
+                0xc3 => defmt::write!(f, "Unlocked"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -2105,9 +2105,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nspriv {
         #[doc = "access to non secure registers is always granted"]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "access to non secure registers is denied in case of non privileged access."]
-        B0x1 = 0x01,
+        Privileged = 0x01,
     }
     impl Nspriv {
         #[inline(always)]
@@ -2134,46 +2134,15 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum OptsrBkpramEcc {
-        #[doc = "BKPRAM ECC check enabled"]
-        B0x0 = 0x0,
-        #[doc = "BKPRAM ECC check disabled"]
-        B0x1 = 0x01,
-    }
-    impl OptsrBkpramEcc {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> OptsrBkpramEcc {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for OptsrBkpramEcc {
-        #[inline(always)]
-        fn from(val: u8) -> OptsrBkpramEcc {
-            OptsrBkpramEcc::from_bits(val)
-        }
-    }
-    impl From<OptsrBkpramEcc> for u8 {
-        #[inline(always)]
-        fn from(val: OptsrBkpramEcc) -> u8 {
-            OptsrBkpramEcc::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrBorLev {
         #[doc = "BOR OFF, POR/PDR reset threshold level is applied"]
-        B0x0 = 0x0,
+        Disabled = 0x0,
         #[doc = "BOR Level 1, the threshold level is low (around 2.1 V)"]
-        B0x1 = 0x01,
+        Level1 = 0x01,
         #[doc = "BOR Level 2, the threshold level is medium (around 2.4 V)"]
-        B0x2 = 0x02,
+        Level2 = 0x02,
         #[doc = "BOR Level 3, the threshold level is high (around 2.7 V)"]
-        B0x3 = 0x03,
+        Level3 = 0x03,
     }
     impl OptsrBorLev {
         #[inline(always)]
@@ -2200,73 +2169,11 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum OptsrIoVddHslv {
-        #[doc = "High-speed IO at low VDD voltage feature disabled (VDD can exceed 2.5 V)"]
-        B0x0 = 0x0,
-        #[doc = "High-speed IO at low VDD voltage feature enabled (VDD remains below 2.5 V)"]
-        B0x1 = 0x01,
-    }
-    impl OptsrIoVddHslv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> OptsrIoVddHslv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for OptsrIoVddHslv {
-        #[inline(always)]
-        fn from(val: u8) -> OptsrIoVddHslv {
-            OptsrIoVddHslv::from_bits(val)
-        }
-    }
-    impl From<OptsrIoVddHslv> for u8 {
-        #[inline(always)]
-        fn from(val: OptsrIoVddHslv) -> u8 {
-            OptsrIoVddHslv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum OptsrIoVddioHslv {
-        #[doc = "High-speed IO at low VDDIO2 voltage feature disabled (VDDIO2 can exceed 2.5 V)"]
-        B0x0 = 0x0,
-        #[doc = "High-speed IO at low VDDIO2 voltage feature enabled (VDDIO2 remains below 2.5 V)"]
-        B0x1 = 0x01,
-    }
-    impl OptsrIoVddioHslv {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> OptsrIoVddioHslv {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for OptsrIoVddioHslv {
-        #[inline(always)]
-        fn from(val: u8) -> OptsrIoVddioHslv {
-            OptsrIoVddioHslv::from_bits(val)
-        }
-    }
-    impl From<OptsrIoVddioHslv> for u8 {
-        #[inline(always)]
-        fn from(val: OptsrIoVddioHslv) -> u8 {
-            OptsrIoVddioHslv::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIwdgStdby {
         #[doc = "Independent watchdog frozen in Standby mode"]
-        B0x0 = 0x0,
+        Frozen = 0x0,
         #[doc = "Independent watchdog keep running in Standby mode."]
-        B0x1 = 0x01,
+        Running = 0x01,
     }
     impl OptsrIwdgStdby {
         #[inline(always)]
@@ -2295,9 +2202,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIwdgStop {
         #[doc = "Independent watchdog frozen in system Stop mode"]
-        B0x0 = 0x0,
+        Frozen = 0x0,
         #[doc = "Independent watchdog keep running in system Stop mode."]
-        B0x1 = 0x01,
+        Running = 0x01,
     }
     impl OptsrIwdgStop {
         #[inline(always)]
@@ -2326,9 +2233,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIwdgSw {
         #[doc = "IWDG watchdog is controlled by hardware"]
-        B0x0 = 0x0,
+        Hardware = 0x0,
         #[doc = "IWDG watchdog is controlled by software"]
-        B0x1 = 0x01,
+        Software = 0x01,
     }
     impl OptsrIwdgSw {
         #[inline(always)]
@@ -2357,9 +2264,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrNrstShdw {
         #[doc = "a reset is generated when entering Shutdown mode on core domain"]
-        B0x0 = 0x0,
+        Reset = 0x0,
         #[doc = "no reset generated when entering Shutdown mode on core domain."]
-        B0x1 = 0x01,
+        NoReset = 0x01,
     }
     impl OptsrNrstShdw {
         #[inline(always)]
@@ -2388,9 +2295,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrNrstStdby {
         #[doc = "a reset is generated when entering Standby mode on core domain"]
-        B0x0 = 0x0,
+        Reset = 0x0,
         #[doc = "no reset generated when entering Standby mode on core domain."]
-        B0x1 = 0x01,
+        NoReset = 0x01,
     }
     impl OptsrNrstStdby {
         #[inline(always)]
@@ -2419,9 +2326,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrNrstStop {
         #[doc = "a reset is generated when entering Stop mode on core domain"]
-        B0x0 = 0x0,
+        Reset = 0x0,
         #[doc = "no reset generated when entering Stop mode on core domain."]
-        B0x1 = 0x01,
+        NoReset = 0x01,
     }
     impl OptsrNrstStop {
         #[inline(always)]
@@ -2448,42 +2355,11 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum OptsrSramEcc {
-        #[doc = "SRAM2 ECC check enabled"]
-        B0x0 = 0x0,
-        #[doc = "SRAM2 ECC check disabled"]
-        B0x1 = 0x01,
-    }
-    impl OptsrSramEcc {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> OptsrSramEcc {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for OptsrSramEcc {
-        #[inline(always)]
-        fn from(val: u8) -> OptsrSramEcc {
-            OptsrSramEcc::from_bits(val)
-        }
-    }
-    impl From<OptsrSramEcc> for u8 {
-        #[inline(always)]
-        fn from(val: OptsrSramEcc) -> u8 {
-            OptsrSramEcc::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrWwdgSw {
         #[doc = "WWDG watchdog is controlled by hardware"]
-        B0x0 = 0x0,
+        Hardware = 0x0,
         #[doc = "WWDG watchdog is controlled by software"]
-        B0x1 = 0x01,
+        Software = 0x01,
     }
     impl OptsrWwdgSw {
         #[inline(always)]
@@ -2512,9 +2388,9 @@ pub mod vals {
     pub struct Privbb(u8);
     impl Privbb {
         #[doc = "sectors y in bank 1 is non privileged"]
-        pub const B0x0: Self = Self(0x0);
+        pub const Unprivileged: Self = Self(0x0);
         #[doc = "sector y in bank 1 is privileged"]
-        pub const B0x1: Self = Self(0x01);
+        pub const Privileged: Self = Self(0x01);
     }
     impl Privbb {
         pub const fn from_bits(val: u8) -> Privbb {
@@ -2527,8 +2403,8 @@ pub mod vals {
     impl core::fmt::Debug for Privbb {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("B0x0"),
-                0x01 => f.write_str("B0x1"),
+                0x0 => f.write_str("Unprivileged"),
+                0x01 => f.write_str("Privileged"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2537,8 +2413,8 @@ pub mod vals {
     impl defmt::Format for Privbb {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "B0x0"),
-                0x01 => defmt::write!(f, "B0x1"),
+                0x0 => defmt::write!(f, "Unprivileged"),
+                0x01 => defmt::write!(f, "Privileged"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }

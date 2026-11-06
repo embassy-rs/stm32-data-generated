@@ -1834,13 +1834,13 @@ and a half-word read must read DATA\\[15:0\\]."]
         #[doc = "Instruction mode This field defines the instruction phase mode of operation. Others: reserved"]
         #[must_use]
         #[inline(always)]
-        pub const fn imode(&self) -> super::vals::WccrImode {
+        pub const fn imode(&self) -> super::vals::CcrImode {
             let val = (self.0 >> 0usize) & 0x07;
-            super::vals::WccrImode::from_bits(val as u8)
+            super::vals::CcrImode::from_bits(val as u8)
         }
         #[doc = "Instruction mode This field defines the instruction phase mode of operation. Others: reserved"]
         #[inline(always)]
-        pub const fn set_imode(&mut self, val: super::vals::WccrImode) {
+        pub const fn set_imode(&mut self, val: super::vals::CcrImode) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
         #[doc = "Instruction double transfer rate This bit sets the DTR mode for the instruction phase."]
@@ -1858,25 +1858,25 @@ and a half-word read must read DATA\\[15:0\\]."]
         #[doc = "Instruction size This bit defines instruction size:"]
         #[must_use]
         #[inline(always)]
-        pub const fn isize(&self) -> super::vals::WccrIsize {
+        pub const fn isize(&self) -> super::vals::CcrIsize {
             let val = (self.0 >> 4usize) & 0x03;
-            super::vals::WccrIsize::from_bits(val as u8)
+            super::vals::CcrIsize::from_bits(val as u8)
         }
         #[doc = "Instruction size This bit defines instruction size:"]
         #[inline(always)]
-        pub const fn set_isize(&mut self, val: super::vals::WccrIsize) {
+        pub const fn set_isize(&mut self, val: super::vals::CcrIsize) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "Address mode This field defines the address phase mode of operation. Others: reserved"]
         #[must_use]
         #[inline(always)]
-        pub const fn admode(&self) -> super::vals::WccrAdmode {
+        pub const fn admode(&self) -> super::vals::CcrAdmode {
             let val = (self.0 >> 8usize) & 0x07;
-            super::vals::WccrAdmode::from_bits(val as u8)
+            super::vals::CcrAdmode::from_bits(val as u8)
         }
         #[doc = "Address mode This field defines the address phase mode of operation. Others: reserved"]
         #[inline(always)]
-        pub const fn set_admode(&mut self, val: super::vals::WccrAdmode) {
+        pub const fn set_admode(&mut self, val: super::vals::CcrAdmode) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
         }
         #[doc = "Address double transfer rate This bit sets the DTR mode for the address phase."]
@@ -1894,13 +1894,13 @@ and a half-word read must read DATA\\[15:0\\]."]
         #[doc = "Address size This field defines address size."]
         #[must_use]
         #[inline(always)]
-        pub const fn adsize(&self) -> super::vals::WccrAdsize {
+        pub const fn adsize(&self) -> super::vals::CcrAdsize {
             let val = (self.0 >> 12usize) & 0x03;
-            super::vals::WccrAdsize::from_bits(val as u8)
+            super::vals::CcrAdsize::from_bits(val as u8)
         }
         #[doc = "Address size This field defines address size."]
         #[inline(always)]
-        pub const fn set_adsize(&mut self, val: super::vals::WccrAdsize) {
+        pub const fn set_adsize(&mut self, val: super::vals::CcrAdsize) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
         #[doc = "Alternate-byte mode This field defines the alternate-byte phase mode of operation. Others: reserved"]
@@ -1930,13 +1930,13 @@ and a half-word read must read DATA\\[15:0\\]."]
         #[doc = "Alternate bytes size This field defines alternate bytes size:"]
         #[must_use]
         #[inline(always)]
-        pub const fn absize(&self) -> super::vals::WccrAbsize {
+        pub const fn absize(&self) -> super::vals::CcrAbsize {
             let val = (self.0 >> 20usize) & 0x03;
-            super::vals::WccrAbsize::from_bits(val as u8)
+            super::vals::CcrAbsize::from_bits(val as u8)
         }
         #[doc = "Alternate bytes size This field defines alternate bytes size:"]
         #[inline(always)]
-        pub const fn set_absize(&mut self, val: super::vals::WccrAbsize) {
+        pub const fn set_absize(&mut self, val: super::vals::CcrAbsize) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32) & 0x03) << 20usize);
         }
         #[doc = "Data mode This field defines the data phase mode of operation."]
@@ -2099,13 +2099,13 @@ and a half-word read must read DATA\\[15:0\\]."]
         #[doc = "Instruction mode This field defines the instruction phase mode of operation. Others: reserved"]
         #[must_use]
         #[inline(always)]
-        pub const fn imode(&self) -> super::vals::WpccrImode {
+        pub const fn imode(&self) -> super::vals::CcrImode {
             let val = (self.0 >> 0usize) & 0x07;
-            super::vals::WpccrImode::from_bits(val as u8)
+            super::vals::CcrImode::from_bits(val as u8)
         }
         #[doc = "Instruction mode This field defines the instruction phase mode of operation. Others: reserved"]
         #[inline(always)]
-        pub const fn set_imode(&mut self, val: super::vals::WpccrImode) {
+        pub const fn set_imode(&mut self, val: super::vals::CcrImode) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
         #[doc = "Instruction double transfer rate This bit sets the DTR mode for the instruction phase."]
@@ -2123,25 +2123,25 @@ and a half-word read must read DATA\\[15:0\\]."]
         #[doc = "Instruction size This field defines instruction size."]
         #[must_use]
         #[inline(always)]
-        pub const fn isize(&self) -> super::vals::WpccrIsize {
+        pub const fn isize(&self) -> super::vals::CcrIsize {
             let val = (self.0 >> 4usize) & 0x03;
-            super::vals::WpccrIsize::from_bits(val as u8)
+            super::vals::CcrIsize::from_bits(val as u8)
         }
         #[doc = "Instruction size This field defines instruction size."]
         #[inline(always)]
-        pub const fn set_isize(&mut self, val: super::vals::WpccrIsize) {
+        pub const fn set_isize(&mut self, val: super::vals::CcrIsize) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "Address mode This field defines the address phase mode of operation. Others: reserved"]
         #[must_use]
         #[inline(always)]
-        pub const fn admode(&self) -> super::vals::WpccrAdmode {
+        pub const fn admode(&self) -> super::vals::CcrAdmode {
             let val = (self.0 >> 8usize) & 0x07;
-            super::vals::WpccrAdmode::from_bits(val as u8)
+            super::vals::CcrAdmode::from_bits(val as u8)
         }
         #[doc = "Address mode This field defines the address phase mode of operation. Others: reserved"]
         #[inline(always)]
-        pub const fn set_admode(&mut self, val: super::vals::WpccrAdmode) {
+        pub const fn set_admode(&mut self, val: super::vals::CcrAdmode) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
         }
         #[doc = "Address double transfer rate This bit sets the DTR mode for the address phase."]
@@ -2159,13 +2159,13 @@ and a half-word read must read DATA\\[15:0\\]."]
         #[doc = "Address size This field defines address size."]
         #[must_use]
         #[inline(always)]
-        pub const fn adsize(&self) -> super::vals::WpccrAdsize {
+        pub const fn adsize(&self) -> super::vals::CcrAdsize {
             let val = (self.0 >> 12usize) & 0x03;
-            super::vals::WpccrAdsize::from_bits(val as u8)
+            super::vals::CcrAdsize::from_bits(val as u8)
         }
         #[doc = "Address size This field defines address size."]
         #[inline(always)]
-        pub const fn set_adsize(&mut self, val: super::vals::WpccrAdsize) {
+        pub const fn set_adsize(&mut self, val: super::vals::CcrAdsize) {
             self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
         }
         #[doc = "Alternate-byte mode This field defines the alternate byte phase mode of operation."]
@@ -2195,13 +2195,13 @@ and a half-word read must read DATA\\[15:0\\]."]
         #[doc = "Alternate bytes size This bit defines alternate bytes size."]
         #[must_use]
         #[inline(always)]
-        pub const fn absize(&self) -> super::vals::WpccrAbsize {
+        pub const fn absize(&self) -> super::vals::CcrAbsize {
             let val = (self.0 >> 20usize) & 0x03;
-            super::vals::WpccrAbsize::from_bits(val as u8)
+            super::vals::CcrAbsize::from_bits(val as u8)
         }
         #[doc = "Alternate bytes size This bit defines alternate bytes size."]
         #[inline(always)]
-        pub const fn set_absize(&mut self, val: super::vals::WpccrAbsize) {
+        pub const fn set_absize(&mut self, val: super::vals::CcrAbsize) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32) & 0x03) << 20usize);
         }
         #[doc = "Data mode This field defines the data phase mode of operation. 101; data on 16 lines Others: reserved"]
@@ -2434,9 +2434,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Apms {
         #[doc = "Automatic status-polling mode is stopped only by abort or by disabling the XSPI."]
-        B0x0 = 0x0,
+        Abort = 0x0,
         #[doc = "Automatic status-polling mode stops as soon as there is a match."]
-        B0x1 = 0x01,
+        Match = 0x01,
     }
     impl Apms {
         #[inline(always)]
@@ -2465,13 +2465,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CcrAbmode {
         #[doc = "no alternate bytes"]
-        B0x0 = 0x0,
+        None = 0x0,
         #[doc = "alternate bytes on a single line"]
-        B0x1 = 0x01,
+        OneLine = 0x01,
         #[doc = "alternate bytes on two lines"]
-        B0x2 = 0x02,
+        TwoLines = 0x02,
         #[doc = "alternate bytes on four lines"]
-        B0x3 = 0x03,
+        FourLines = 0x03,
         _RESERVED_4 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
@@ -2504,13 +2504,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CcrAbsize {
         #[doc = "8-bit alternate bytes"]
-        B0x0 = 0x0,
+        _8bit = 0x0,
         #[doc = "16-bit alternate bytes"]
-        B0x1 = 0x01,
+        _16bit = 0x01,
         #[doc = "24-bit alternate bytes"]
-        B0x2 = 0x02,
+        _24bit = 0x02,
         #[doc = "32-bit alternate bytes"]
-        B0x3 = 0x03,
+        _32bit = 0x03,
     }
     impl CcrAbsize {
         #[inline(always)]
@@ -2539,15 +2539,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CcrAdmode {
         #[doc = "no address"]
-        B0x0 = 0x0,
+        None = 0x0,
         #[doc = "address on a single line"]
-        B0x1 = 0x01,
+        OneLine = 0x01,
         #[doc = "address on two lines"]
-        B0x2 = 0x02,
+        TwoLines = 0x02,
         #[doc = "address on four lines"]
-        B0x3 = 0x03,
+        FourLines = 0x03,
         #[doc = "address on eight lines"]
-        B0x4 = 0x04,
+        EightLines = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -2579,13 +2579,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CcrAdsize {
         #[doc = "8-bit address"]
-        B0x0 = 0x0,
+        _8bit = 0x0,
         #[doc = "16-bit address"]
-        B0x1 = 0x01,
+        _16bit = 0x01,
         #[doc = "24-bit address"]
-        B0x2 = 0x02,
+        _24bit = 0x02,
         #[doc = "32-bit address"]
-        B0x3 = 0x03,
+        _32bit = 0x03,
     }
     impl CcrAdsize {
         #[inline(always)]
@@ -2614,17 +2614,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CcrDmode {
         #[doc = "no data"]
-        B0x0 = 0x0,
+        None = 0x0,
         #[doc = "data on a single line"]
-        B0x1 = 0x01,
+        OneLine = 0x01,
         #[doc = "data on two lines"]
-        B0x2 = 0x02,
+        TwoLines = 0x02,
         #[doc = "data on four lines"]
-        B0x3 = 0x03,
+        FourLines = 0x03,
         #[doc = "data on eight lines"]
-        B0x4 = 0x04,
+        EightLines = 0x04,
         #[doc = "data on 16 lines"]
-        B0x5 = 0x05,
+        SixteenLines = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -2655,15 +2655,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CcrImode {
         #[doc = "no instruction"]
-        B0x0 = 0x0,
+        None = 0x0,
         #[doc = "instruction on a single line"]
-        B0x1 = 0x01,
+        OneLine = 0x01,
         #[doc = "instruction on two lines"]
-        B0x2 = 0x02,
+        TwoLines = 0x02,
         #[doc = "instruction on four lines"]
-        B0x3 = 0x03,
+        FourLines = 0x03,
         #[doc = "instruction on eight lines"]
-        B0x4 = 0x04,
+        EightLines = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -2695,13 +2695,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CcrIsize {
         #[doc = "8-bit instruction"]
-        B0x0 = 0x0,
+        _8bit = 0x0,
         #[doc = "16-bit instruction"]
-        B0x1 = 0x01,
+        _16bit = 0x01,
         #[doc = "24-bit instruction"]
-        B0x2 = 0x02,
+        _24bit = 0x02,
         #[doc = "32-bit instruction"]
-        B0x3 = 0x03,
+        _32bit = 0x03,
     }
     impl CcrIsize {
         #[inline(always)]
@@ -2730,9 +2730,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckmode {
         #[doc = "CLK must stay low while NCS is high (chip-select released), referred to as clock mode 0."]
-        B0x0 = 0x0,
+        Mode0 = 0x0,
         #[doc = "CLK must stay high while NCS is high (chip-select released), referred to as clock mode 3."]
-        B0x1 = 0x01,
+        Mode3 = 0x01,
     }
     impl Ckmode {
         #[inline(always)]
@@ -2761,7 +2761,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Csbound {
         #[doc = "NCS boundary disabled"]
-        B0x0 = 0x0,
+        Disabled = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -2821,9 +2821,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Csht {
         #[doc = "NCS stays high for at least 1 cycle between external device commands."]
-        B0x0 = 0x0,
+        Cycles1 = 0x0,
         #[doc = "NCS stays high for at least 2 cycles between external device commands."]
-        B0x1 = 0x01,
+        Cycles2 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
@@ -2886,7 +2886,7 @@ pub mod vals {
         _RESERVED_3d = 0x3d,
         _RESERVED_3e = 0x3e,
         #[doc = "NCS stays high for at least 64 cycles between external device commands."]
-        B0x3f = 0x3f,
+        Cycles64 = 0x3f,
     }
     impl Csht {
         #[inline(always)]
@@ -2915,9 +2915,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cssel {
         #[doc = "NCS1 active"]
-        B0x0 = 0x0,
+        Ncs1 = 0x0,
         #[doc = "NCS2 active"]
-        B0x1 = 0x01,
+        Ncs2 = 0x01,
     }
     impl Cssel {
         #[inline(always)]
@@ -2946,13 +2946,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fmode {
         #[doc = "indirect-write mode"]
-        B0x0 = 0x0,
+        IndirectWrite = 0x0,
         #[doc = "indirect-read mode"]
-        B0x1 = 0x01,
+        IndirectRead = 0x01,
         #[doc = "automatic status-polling mode"]
-        B0x2 = 0x02,
+        AutoStatusPolling = 0x02,
         #[doc = "memory-mapped mode"]
-        B0x3 = 0x03,
+        MemoryMapped = 0x03,
     }
     impl Fmode {
         #[inline(always)]
@@ -2981,9 +2981,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fthres {
         #[doc = "FTF is set if there are one or more free bytes available to be written to in the FIFO"]
-        B0x0 = 0x0,
+        NeedOneByte = 0x0,
         #[doc = "FTF is set if there are two or more free bytes available to be written to in the FIFO"]
-        B0x1 = 0x01,
+        NeedTwoBytes = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
         _RESERVED_4 = 0x04,
@@ -3046,7 +3046,7 @@ pub mod vals {
         _RESERVED_3d = 0x3d,
         _RESERVED_3e = 0x3e,
         #[doc = "FTF is set if there are 64 free bytes available to be written to in the FIFO"]
-        B0x3f = 0x3f,
+        NeedSixtyFourBytes = 0x3f,
     }
     impl Fthres {
         #[inline(always)]
@@ -3075,9 +3075,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lm {
         #[doc = "Variable initial latency"]
-        B0x0 = 0x0,
+        Variable = 0x0,
         #[doc = "Fixed latency"]
-        B0x1 = 0x01,
+        Fixed = 0x01,
     }
     impl Lm {
         #[inline(always)]
@@ -3106,9 +3106,9 @@ pub mod vals {
     pub struct Mask(u32);
     impl Mask {
         #[doc = "bit n of the data received in automatic status-polling mode is masked and its value is not considered in the matching logic."]
-        pub const B0x0: Self = Self(0x0);
+        pub const Masked: Self = Self(0x0);
         #[doc = "bit n of the data received in automatic status-polling mode is unmasked and its value is considered in the matching logic."]
-        pub const B0x1: Self = Self(0x01);
+        pub const Unmasked: Self = Self(0x01);
     }
     impl Mask {
         pub const fn from_bits(val: u32) -> Mask {
@@ -3121,8 +3121,8 @@ pub mod vals {
     impl core::fmt::Debug for Mask {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("B0x0"),
-                0x01 => f.write_str("B0x1"),
+                0x0 => f.write_str("Masked"),
+                0x01 => f.write_str("Unmasked"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -3131,8 +3131,8 @@ pub mod vals {
     impl defmt::Format for Mask {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "B0x0"),
-                0x01 => defmt::write!(f, "B0x1"),
+                0x0 => defmt::write!(f, "Masked"),
+                0x01 => defmt::write!(f, "Unmasked"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -3154,7 +3154,7 @@ pub mod vals {
     pub struct Maxtran(u8);
     impl Maxtran {
         #[doc = "maximum communication disabled"]
-        pub const B0x0: Self = Self(0x0);
+        pub const Disabled: Self = Self(0x0);
     }
     impl Maxtran {
         pub const fn from_bits(val: u8) -> Maxtran {
@@ -3167,7 +3167,7 @@ pub mod vals {
     impl core::fmt::Debug for Maxtran {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("B0x0"),
+                0x0 => f.write_str("Disabled"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -3176,7 +3176,7 @@ pub mod vals {
     impl defmt::Format for Maxtran {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "B0x0"),
+                0x0 => defmt::write!(f, "Disabled"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -3198,13 +3198,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msel {
         #[doc = "data exchanged over IO\\[3:0\\]"]
-        B0x0 = 0x0,
+        Io30 = 0x0,
         #[doc = "data exchanged over IO\\[7:4\\]"]
-        B0x1 = 0x01,
+        Io74 = 0x01,
         #[doc = "data exchanged over IO\\[11:8\\]"]
-        B0x2 = 0x02,
+        Io118 = 0x02,
         #[doc = "data exchanged over IO\\[15:12\\]"]
-        B0x3 = 0x03,
+        Io1512 = 0x03,
     }
     impl Msel {
         #[inline(always)]
@@ -3233,17 +3233,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mtyp {
         #[doc = "Micron mode, D0/D1 ordering in DTR 8-data-bit mode. Regular-command protocol in single-, dual-, quad-, and octal-SPI modes."]
-        B0x0 = 0x0,
+        Micron = 0x0,
         #[doc = "Macronix mode, D1/D0 ordering in DTR 8-data-bit mode. Regular-command protocol in single-, dual-, quad-, and octal-SPI modes."]
-        B0x1 = 0x01,
+        Macronix = 0x01,
         #[doc = "Standard mode"]
-        B0x2 = 0x02,
+        Standard = 0x02,
         #[doc = "Macronix RAM mode, D1/D0 ordering in DTR 8-data-bit mode. Regular-command protocol in single-, dual-, quad-, and octal-SPI modes with dedicated address mapping."]
-        B0x3 = 0x03,
+        MacronixRam = 0x03,
         #[doc = "HyperBus memory mode, the protocol follows the HyperBus<sup> </sup>specification. 8-data-bit DTR mode must be selected."]
-        B0x4 = 0x04,
+        HyperBusMemory = 0x04,
         #[doc = "HyperBus register mode, addressing register space. The memory-mapped accesses in this mode must be non-cacheable, or indirect read/write modes must be used."]
-        B0x5 = 0x05,
+        HyperBusRegister = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -3274,9 +3274,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pmm {
         #[doc = "AND-match mode, SMF is set if all the unmasked bits received from the device match the corresponding bits in the match register."]
-        B0x0 = 0x0,
+        MatchAnd = 0x0,
         #[doc = "OR-match mode, SMF is set if any of the unmasked bits received from the device matches its corresponding bit in the match register."]
-        B0x1 = 0x01,
+        MatchOr = 0x01,
     }
     impl Pmm {
         #[inline(always)]
@@ -3305,7 +3305,7 @@ pub mod vals {
     pub struct Refresh(u32);
     impl Refresh {
         #[doc = "refresh disabled"]
-        pub const B0x0: Self = Self(0x0);
+        pub const Disabled: Self = Self(0x0);
     }
     impl Refresh {
         pub const fn from_bits(val: u32) -> Refresh {
@@ -3318,7 +3318,7 @@ pub mod vals {
     impl core::fmt::Debug for Refresh {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("B0x0"),
+                0x0 => f.write_str("Disabled"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -3327,7 +3327,7 @@ pub mod vals {
     impl defmt::Format for Refresh {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "B0x0"),
+                0x0 => defmt::write!(f, "Disabled"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -3349,15 +3349,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WccrAbmode {
         #[doc = "no alternate bytes"]
-        B0x0 = 0x0,
+        None = 0x0,
         #[doc = "alternate bytes on a single line"]
-        B0x1 = 0x01,
+        OneLine = 0x01,
         #[doc = "alternate bytes on two lines"]
-        B0x2 = 0x02,
+        TwoLines = 0x02,
         #[doc = "alternate bytes on four lines"]
-        B0x3 = 0x03,
+        FourLines = 0x03,
         #[doc = "alternate bytes on eight lines"]
-        B0x4 = 0x04,
+        EightLines = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -3387,132 +3387,22 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum WccrAbsize {
-        #[doc = "8-bit alternate bytes"]
-        B0x0 = 0x0,
-        #[doc = "16-bit alternate bytes"]
-        B0x1 = 0x01,
-        #[doc = "24-bit alternate bytes"]
-        B0x2 = 0x02,
-        #[doc = "32-bit alternate bytes"]
-        B0x3 = 0x03,
-    }
-    impl WccrAbsize {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> WccrAbsize {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for WccrAbsize {
-        #[inline(always)]
-        fn from(val: u8) -> WccrAbsize {
-            WccrAbsize::from_bits(val)
-        }
-    }
-    impl From<WccrAbsize> for u8 {
-        #[inline(always)]
-        fn from(val: WccrAbsize) -> u8 {
-            WccrAbsize::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum WccrAdmode {
-        #[doc = "no address"]
-        B0x0 = 0x0,
-        #[doc = "address on a single line"]
-        B0x1 = 0x01,
-        #[doc = "address on two lines"]
-        B0x2 = 0x02,
-        #[doc = "address on four lines"]
-        B0x3 = 0x03,
-        #[doc = "address on eight lines"]
-        B0x4 = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl WccrAdmode {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> WccrAdmode {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for WccrAdmode {
-        #[inline(always)]
-        fn from(val: u8) -> WccrAdmode {
-            WccrAdmode::from_bits(val)
-        }
-    }
-    impl From<WccrAdmode> for u8 {
-        #[inline(always)]
-        fn from(val: WccrAdmode) -> u8 {
-            WccrAdmode::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum WccrAdsize {
-        #[doc = "8-bit address"]
-        B0x0 = 0x0,
-        #[doc = "16-bit address"]
-        B0x1 = 0x01,
-        #[doc = "24-bit address"]
-        B0x2 = 0x02,
-        #[doc = "32-bit address"]
-        B0x3 = 0x03,
-    }
-    impl WccrAdsize {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> WccrAdsize {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for WccrAdsize {
-        #[inline(always)]
-        fn from(val: u8) -> WccrAdsize {
-            WccrAdsize::from_bits(val)
-        }
-    }
-    impl From<WccrAdsize> for u8 {
-        #[inline(always)]
-        fn from(val: WccrAdsize) -> u8 {
-            WccrAdsize::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WccrDmode {
         #[doc = "no data"]
-        B0x0 = 0x0,
+        None = 0x0,
         #[doc = "data on a single line"]
-        B0x1 = 0x01,
+        OneLine = 0x01,
         #[doc = "data on two lines"]
-        B0x2 = 0x02,
+        TwoLines = 0x02,
         #[doc = "data on four lines"]
-        B0x3 = 0x03,
+        FourLines = 0x03,
         #[doc = "data on eight lines"]
-        B0x4 = 0x04,
+        EightLines = 0x04,
         #[doc = "Data on 16 lines"]
-        B0x5 = 0x05,
+        SixteenLines = 0x05,
         _RESERVED_6 = 0x06,
         #[doc = "DATA reserved"]
-        B0x7 = 0x07,
+        Reserved = 0x07,
     }
     impl WccrDmode {
         #[inline(always)]
@@ -3539,97 +3429,22 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum WccrImode {
-        #[doc = "no instruction"]
-        B0x0 = 0x0,
-        #[doc = "instruction on a single line"]
-        B0x1 = 0x01,
-        #[doc = "instruction on two lines"]
-        B0x2 = 0x02,
-        #[doc = "instruction on four lines"]
-        B0x3 = 0x03,
-        #[doc = "instruction on eight lines"]
-        B0x4 = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl WccrImode {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> WccrImode {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for WccrImode {
-        #[inline(always)]
-        fn from(val: u8) -> WccrImode {
-            WccrImode::from_bits(val)
-        }
-    }
-    impl From<WccrImode> for u8 {
-        #[inline(always)]
-        fn from(val: WccrImode) -> u8 {
-            WccrImode::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum WccrIsize {
-        #[doc = "8-bit instruction"]
-        B0x0 = 0x0,
-        #[doc = "16-bit instruction"]
-        B0x1 = 0x01,
-        #[doc = "24-bit instruction"]
-        B0x2 = 0x02,
-        #[doc = "32-bit instruction"]
-        B0x3 = 0x03,
-    }
-    impl WccrIsize {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> WccrIsize {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for WccrIsize {
-        #[inline(always)]
-        fn from(val: u8) -> WccrIsize {
-            WccrIsize::from_bits(val)
-        }
-    }
-    impl From<WccrIsize> for u8 {
-        #[inline(always)]
-        fn from(val: WccrIsize) -> u8 {
-            WccrIsize::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WpccrAbmode {
         #[doc = "no alternate bytes"]
-        B0x0 = 0x0,
+        None = 0x0,
         #[doc = "alternate bytes on a single line"]
-        B0x1 = 0x01,
+        OneLine = 0x01,
         #[doc = "alternate bytes on two lines"]
-        B0x2 = 0x02,
+        TwoLines = 0x02,
         #[doc = "alternate bytes on four lines"]
-        B0x3 = 0x03,
+        FourLines = 0x03,
         #[doc = "alternate bytes on eight lines"]
-        B0x4 = 0x04,
+        EightLines = 0x04,
         #[doc = "alternate bytes on 16 lines"]
-        B0x5 = 0x05,
+        SixteenLines = 0x05,
         _RESERVED_6 = 0x06,
         #[doc = "DATA reserved"]
-        B0x7 = 0x07,
+        Reserved = 0x07,
     }
     impl WpccrAbmode {
         #[inline(always)]
@@ -3656,127 +3471,17 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum WpccrAbsize {
-        #[doc = "8-bit alternate bytes"]
-        B0x0 = 0x0,
-        #[doc = "16-bit alternate bytes"]
-        B0x1 = 0x01,
-        #[doc = "24-bit alternate bytes"]
-        B0x2 = 0x02,
-        #[doc = "32-bit alternate bytes"]
-        B0x3 = 0x03,
-    }
-    impl WpccrAbsize {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> WpccrAbsize {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for WpccrAbsize {
-        #[inline(always)]
-        fn from(val: u8) -> WpccrAbsize {
-            WpccrAbsize::from_bits(val)
-        }
-    }
-    impl From<WpccrAbsize> for u8 {
-        #[inline(always)]
-        fn from(val: WpccrAbsize) -> u8 {
-            WpccrAbsize::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum WpccrAdmode {
-        #[doc = "no address"]
-        B0x0 = 0x0,
-        #[doc = "address on a single line"]
-        B0x1 = 0x01,
-        #[doc = "address on two lines"]
-        B0x2 = 0x02,
-        #[doc = "address on four lines"]
-        B0x3 = 0x03,
-        #[doc = "address on eight lines"]
-        B0x4 = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl WpccrAdmode {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> WpccrAdmode {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for WpccrAdmode {
-        #[inline(always)]
-        fn from(val: u8) -> WpccrAdmode {
-            WpccrAdmode::from_bits(val)
-        }
-    }
-    impl From<WpccrAdmode> for u8 {
-        #[inline(always)]
-        fn from(val: WpccrAdmode) -> u8 {
-            WpccrAdmode::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum WpccrAdsize {
-        #[doc = "8-bit address"]
-        B0x0 = 0x0,
-        #[doc = "16-bit address"]
-        B0x1 = 0x01,
-        #[doc = "24-bit address"]
-        B0x2 = 0x02,
-        #[doc = "32-bit address"]
-        B0x3 = 0x03,
-    }
-    impl WpccrAdsize {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> WpccrAdsize {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for WpccrAdsize {
-        #[inline(always)]
-        fn from(val: u8) -> WpccrAdsize {
-            WpccrAdsize::from_bits(val)
-        }
-    }
-    impl From<WpccrAdsize> for u8 {
-        #[inline(always)]
-        fn from(val: WpccrAdsize) -> u8 {
-            WpccrAdsize::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WpccrDmode {
         #[doc = "no data"]
-        B0x0 = 0x0,
+        None = 0x0,
         #[doc = "data on a single line"]
-        B0x1 = 0x01,
+        OneLine = 0x01,
         #[doc = "data on two lines"]
-        B0x2 = 0x02,
+        TwoLines = 0x02,
         #[doc = "data on four lines"]
-        B0x3 = 0x03,
+        FourLines = 0x03,
         #[doc = "data on eight lines"]
-        B0x4 = 0x04,
+        EightLines = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
@@ -3806,93 +3511,18 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum WpccrImode {
-        #[doc = "no instruction"]
-        B0x0 = 0x0,
-        #[doc = "instruction on a single line"]
-        B0x1 = 0x01,
-        #[doc = "instruction on two lines"]
-        B0x2 = 0x02,
-        #[doc = "instruction on four lines"]
-        B0x3 = 0x03,
-        #[doc = "instruction on eight lines"]
-        B0x4 = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl WpccrImode {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> WpccrImode {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for WpccrImode {
-        #[inline(always)]
-        fn from(val: u8) -> WpccrImode {
-            WpccrImode::from_bits(val)
-        }
-    }
-    impl From<WpccrImode> for u8 {
-        #[inline(always)]
-        fn from(val: WpccrImode) -> u8 {
-            WpccrImode::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum WpccrIsize {
-        #[doc = "8-bit instruction"]
-        B0x0 = 0x0,
-        #[doc = "16-bit instruction"]
-        B0x1 = 0x01,
-        #[doc = "24-bit instruction"]
-        B0x2 = 0x02,
-        #[doc = "32-bit instruction"]
-        B0x3 = 0x03,
-    }
-    impl WpccrIsize {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> WpccrIsize {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for WpccrIsize {
-        #[inline(always)]
-        fn from(val: u8) -> WpccrIsize {
-            WpccrIsize::from_bits(val)
-        }
-    }
-    impl From<WpccrIsize> for u8 {
-        #[inline(always)]
-        fn from(val: WpccrIsize) -> u8 {
-            WpccrIsize::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wrapsize {
         #[doc = "wrapped reads are not supported by the memory."]
-        B0x0 = 0x0,
+        NotSupported = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "external memory supports wrap size of 16 bytes."]
-        B0x2 = 0x02,
+        Bytes16 = 0x02,
         #[doc = "external memory supports wrap size of 32 bytes."]
-        B0x3 = 0x03,
+        Bytes32 = 0x03,
         #[doc = "external memory supports wrap size of 64 bytes."]
-        B0x4 = 0x04,
+        Bytes64 = 0x04,
         #[doc = "external memory supports wrap size of 128 bytes."]
-        B0x5 = 0x05,
+        Bytes128 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -3923,9 +3553,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wzl {
         #[doc = "latency on write accesses"]
-        B0x0 = 0x0,
+        Latency = 0x0,
         #[doc = "no latency on write accesses"]
-        B0x1 = 0x01,
+        NoLatency = 0x01,
     }
     impl Wzl {
         #[inline(always)]

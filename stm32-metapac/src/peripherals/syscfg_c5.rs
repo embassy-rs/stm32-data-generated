@@ -466,14 +466,14 @@ pub mod regs {
         #[doc = "NMI behavior setup when a double ECC error occurs on FLITF data part."]
         #[must_use]
         #[inline(always)]
-        pub const fn eccnmi_mask_en(&self) -> super::vals::EccnmiMaskEn {
+        pub const fn eccnmi_mask_en(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
-            super::vals::EccnmiMaskEn::from_bits(val as u8)
+            val != 0
         }
         #[doc = "NMI behavior setup when a double ECC error occurs on FLITF data part."]
         #[inline(always)]
-        pub const fn set_eccnmi_mask_en(&mut self, val: super::vals::EccnmiMaskEn) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val.to_bits() as u32) & 0x01) << 0usize);
+        pub const fn set_eccnmi_mask_en(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
     }
     impl Default for Eccnmir {
@@ -492,7 +492,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Eccnmir {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Eccnmir {{ eccnmi_mask_en: {:?} }}", self.eccnmi_mask_en())
+            defmt::write!(f, "Eccnmir {{ eccnmi_mask_en: {=bool:?} }}", self.eccnmi_mask_en())
         }
     }
     #[doc = "SBS FPU interrupt mask register."]
@@ -887,9 +887,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cs1 {
         #[doc = "Code from the cell (available in the CCVR)."]
-        B0x0 = 0x0,
+        Cell = 0x0,
         #[doc = "Code from CCCR."]
-        B0x1 = 0x01,
+        Cccr = 0x01,
     }
     impl Cs1 {
         #[inline(always)]
@@ -918,9 +918,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Eccl {
         #[doc = "Double ECC error flag disconnected to timer break inputs."]
-        B0x0 = 0x0,
+        Disconnected = 0x0,
         #[doc = "Double ECC error flag connected to timer break inputs."]
-        B0x1 = 0x01,
+        Connected = 0x01,
     }
     impl Eccl {
         #[inline(always)]
@@ -942,37 +942,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Eccl) -> u8 {
             Eccl::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum EccnmiMaskEn {
-        #[doc = "NMI generated if a double ECC error in the FLITF data part."]
-        B0x0 = 0x0,
-        #[doc = "NMI not generated if a double ECC error in the FLITF data part."]
-        B0x1 = 0x01,
-    }
-    impl EccnmiMaskEn {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> EccnmiMaskEn {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for EccnmiMaskEn {
-        #[inline(always)]
-        fn from(val: u8) -> EccnmiMaskEn {
-            EccnmiMaskEn::from_bits(val)
-        }
-    }
-    impl From<EccnmiMaskEn> for u8 {
-        #[inline(always)]
-        fn from(val: EccnmiMaskEn) -> u8 {
-            EccnmiMaskEn::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -1025,9 +994,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ethintpol {
         #[doc = "active high."]
-        B0x0 = 0x0,
+        ActiveHigh = 0x0,
         #[doc = "active low."]
-        B0x1 = 0x01,
+        ActiveLow = 0x01,
     }
     impl Ethintpol {
         #[inline(always)]
@@ -1056,9 +1025,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ethpdack {
         #[doc = "Ethernet functional / power-down sequence not yet completed."]
-        B0x0 = 0x0,
+        NotCompleted = 0x0,
         #[doc = "Ethernet power-down sequence completed."]
-        B0x1 = 0x01,
+        Completed = 0x01,
     }
     impl Ethpdack {
         #[inline(always)]
@@ -1087,11 +1056,11 @@ pub mod vals {
     pub struct Hdpl(u8);
     impl Hdpl {
         #[doc = "HDPL1, hide protection level to be used to execute and protect an immutable root of trust (IROT) stage."]
-        pub const B0x51: Self = Self(0x51);
+        pub const Hdpl1: Self = Self(0x51);
         #[doc = "HDPL3, hide protection level to be used to execute the application."]
-        pub const B0x6f: Self = Self(0x6f);
+        pub const Hdpl3: Self = Self(0x6f);
         #[doc = "HDPL2, hide protection level to be used to execute and protect an updatable Root of Trust (UROT) stage."]
-        pub const B0x8a: Self = Self(0x8a);
+        pub const Hdpl2: Self = Self(0x8a);
     }
     impl Hdpl {
         pub const fn from_bits(val: u8) -> Hdpl {
@@ -1104,9 +1073,9 @@ pub mod vals {
     impl core::fmt::Debug for Hdpl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x51 => f.write_str("B0x51"),
-                0x6f => f.write_str("B0x6f"),
-                0x8a => f.write_str("B0x8a"),
+                0x51 => f.write_str("Hdpl1"),
+                0x6f => f.write_str("Hdpl3"),
+                0x8a => f.write_str("Hdpl2"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -1115,9 +1084,9 @@ pub mod vals {
     impl defmt::Format for Hdpl {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x51 => defmt::write!(f, "B0x51"),
-                0x6f => defmt::write!(f, "B0x6f"),
-                0x8a => defmt::write!(f, "B0x8a"),
+                0x51 => defmt::write!(f, "Hdpl1"),
+                0x6f => defmt::write!(f, "Hdpl3"),
+                0x8a => defmt::write!(f, "Hdpl2"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -1139,9 +1108,9 @@ pub mod vals {
     pub struct IncrHdpl(u8);
     impl IncrHdpl {
         #[doc = "Recommended value to increment HDPL level by one."]
-        pub const B0x6a: Self = Self(0x6a);
+        pub const Increment: Self = Self(0x6a);
         #[doc = "No increment."]
-        pub const B0xB4: Self = Self(0xb4);
+        pub const NoIncrement: Self = Self(0xb4);
     }
     impl IncrHdpl {
         pub const fn from_bits(val: u8) -> IncrHdpl {
@@ -1154,8 +1123,8 @@ pub mod vals {
     impl core::fmt::Debug for IncrHdpl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x6a => f.write_str("B0x6a"),
-                0xb4 => f.write_str("B0xB4"),
+                0x6a => f.write_str("Increment"),
+                0xb4 => f.write_str("NoIncrement"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -1164,8 +1133,8 @@ pub mod vals {
     impl defmt::Format for IncrHdpl {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x6a => defmt::write!(f, "B0x6a"),
-                0xb4 => defmt::write!(f, "B0xB4"),
+                0x6a => defmt::write!(f, "Increment"),
+                0xb4 => defmt::write!(f, "NoIncrement"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -1187,9 +1156,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ipmee {
         #[doc = "ICACHE erase ongoing."]
-        B0x0 = 0x0,
+        Ongoing = 0x0,
         #[doc = "ICACHE erase ended."]
-        B0x1 = 0x01,
+        Done = 0x01,
     }
     impl Ipmee {
         #[inline(always)]
@@ -1218,9 +1187,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mclr {
         #[doc = "Memory erase ongoing if not yet cleared by software."]
-        B0x0 = 0x0,
+        Ongoing = 0x0,
         #[doc = "Memory erase done."]
-        B0x1 = 0x01,
+        Done = 0x01,
     }
     impl Mclr {
         #[inline(always)]
@@ -1249,13 +1218,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nexttil {
         #[doc = "OBK-TIL = TIL."]
-        B0x0 = 0x0,
+        Same = 0x0,
         #[doc = "OBK-TIL = TIL + 1."]
-        B0x1 = 0x01,
+        Plus1 = 0x01,
         #[doc = "OBK-TIL = TIL + 2."]
-        B0x2 = 0x02,
+        Plus2 = 0x02,
         #[doc = "OBK-TIL = TIL + 3."]
-        B0x3 = 0x03,
+        Plus3 = 0x03,
     }
     impl Nexttil {
         #[inline(always)]
@@ -1284,9 +1253,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pvdl {
         #[doc = "PVD interrupt disconnected from timer break inputs."]
-        B0x0 = 0x0,
+        Disconnected = 0x0,
         #[doc = "PVD interrupt is connected to timer break inputs."]
-        B0x1 = 0x01,
+        Connected = 0x01,
     }
     impl Pvdl {
         #[inline(always)]
@@ -1315,9 +1284,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sel {
         #[doc = "SRAM double ECC error flag disconnected from timer break inputs."]
-        B0x0 = 0x0,
+        Disconnected = 0x0,
         #[doc = "SRAM double ECC error flag connected to timer break inputs."]
-        B0x1 = 0x01,
+        Connected = 0x01,
     }
     impl Sel {
         #[inline(always)]

@@ -6056,37 +6056,37 @@ pub mod regs {
         #[doc = "SPI1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled"]
         #[must_use]
         #[inline(always)]
-        pub const fn spi1sel(&self) -> super::vals::Spi1sel {
+        pub const fn spi1sel(&self) -> super::vals::Saisel {
             let val = (self.0 >> 0usize) & 0x07;
-            super::vals::Spi1sel::from_bits(val as u8)
+            super::vals::Saisel::from_bits(val as u8)
         }
         #[doc = "SPI1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled"]
         #[inline(always)]
-        pub const fn set_spi1sel(&mut self, val: super::vals::Spi1sel) {
+        pub const fn set_spi1sel(&mut self, val: super::vals::Saisel) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
         }
         #[doc = "SPI2 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled"]
         #[must_use]
         #[inline(always)]
-        pub const fn spi2sel(&self) -> super::vals::Spi2sel {
+        pub const fn spi2sel(&self) -> super::vals::Saisel {
             let val = (self.0 >> 3usize) & 0x07;
-            super::vals::Spi2sel::from_bits(val as u8)
+            super::vals::Saisel::from_bits(val as u8)
         }
         #[doc = "SPI2 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled"]
         #[inline(always)]
-        pub const fn set_spi2sel(&mut self, val: super::vals::Spi2sel) {
+        pub const fn set_spi2sel(&mut self, val: super::vals::Saisel) {
             self.0 = (self.0 & !(0x07 << 3usize)) | (((val.to_bits() as u32) & 0x07) << 3usize);
         }
         #[doc = "SPI3 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled"]
         #[must_use]
         #[inline(always)]
-        pub const fn spi3sel(&self) -> super::vals::Spi3sel {
+        pub const fn spi3sel(&self) -> super::vals::Saisel {
             let val = (self.0 >> 6usize) & 0x07;
-            super::vals::Spi3sel::from_bits(val as u8)
+            super::vals::Saisel::from_bits(val as u8)
         }
         #[doc = "SPI3 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled"]
         #[inline(always)]
-        pub const fn set_spi3sel(&mut self, val: super::vals::Spi3sel) {
+        pub const fn set_spi3sel(&mut self, val: super::vals::Saisel) {
             self.0 = (self.0 & !(0x07 << 6usize)) | (((val.to_bits() as u32) & 0x07) << 6usize);
         }
         #[doc = "SPI4 kernel clock source selection others: reserved, the kernel clock is disabled"]
@@ -9310,9 +9310,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nspriv {
         #[doc = "Read and write to RCC non-secure functions can be done by privileged or unprivileged access."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "Read and write to RCC non-secure functions can be done by privileged access only"]
-        B0x1 = 0x01,
+        Privileged = 0x01,
     }
     impl Nspriv {
         #[inline(always)]
@@ -10594,126 +10594,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Spi1sel {
-        #[doc = "pll1_q_ck selected as kernel clock (default after reset)"]
-        Pll1Q = 0x0,
-        #[doc = "pll2_p_ck selected as kernel clock"]
-        Pll2P = 0x01,
-        #[doc = "pll3_p_ck selected as kernel clock"]
-        Pll3P = 0x02,
-        #[doc = "AUDIOCLK selected as kernel clock"]
-        Audioclk = 0x03,
-        #[doc = "per_ck selected as kernel clock"]
-        Per = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl Spi1sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Spi1sel {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Spi1sel {
-        #[inline(always)]
-        fn from(val: u8) -> Spi1sel {
-            Spi1sel::from_bits(val)
-        }
-    }
-    impl From<Spi1sel> for u8 {
-        #[inline(always)]
-        fn from(val: Spi1sel) -> u8 {
-            Spi1sel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Spi2sel {
-        #[doc = "pll1_q_ck selected as kernel clock (default after reset)"]
-        Pll1Q = 0x0,
-        #[doc = "pll2_p_ck selected as kernel clock"]
-        Pll2P = 0x01,
-        #[doc = "pll3_p_ck selected as kernel clock"]
-        Pll3P = 0x02,
-        #[doc = "AUDIOCLK selected as kernel clock"]
-        Audioclk = 0x03,
-        #[doc = "per_ck selected as kernel clock"]
-        Per = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl Spi2sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Spi2sel {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Spi2sel {
-        #[inline(always)]
-        fn from(val: u8) -> Spi2sel {
-            Spi2sel::from_bits(val)
-        }
-    }
-    impl From<Spi2sel> for u8 {
-        #[inline(always)]
-        fn from(val: Spi2sel) -> u8 {
-            Spi2sel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Spi3sel {
-        #[doc = "pll1_q_ck selected as kernel clock (default after reset)"]
-        Pll1Q = 0x0,
-        #[doc = "pll2_p_ck selected as kernel clock"]
-        Pll2P = 0x01,
-        #[doc = "pll3_p_ck selected as kernel clock"]
-        Pll3P = 0x02,
-        #[doc = "AUDIOCLK selected as kernel clock"]
-        Audioclk = 0x03,
-        #[doc = "per_ck selected as kernel clock"]
-        Per = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl Spi3sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Spi3sel {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Spi3sel {
-        #[inline(always)]
-        fn from(val: u8) -> Spi3sel {
-            Spi3sel::from_bits(val)
-        }
-    }
-    impl From<Spi3sel> for u8 {
-        #[inline(always)]
-        fn from(val: Spi3sel) -> u8 {
-            Spi3sel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spi4sel {
         #[doc = "rcc_pclk2 selected as kernel clock (default after reset)"]
         Pclk2 = 0x0,
@@ -11002,9 +10882,9 @@ selected as clock source"]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Timicsel {
         #[doc = "No internal clock available for timers input capture (default after reset)"]
-        B0x0 = 0x0,
+        Disable = 0x0,
         #[doc = "hsi_ker_ck/1024, hsi_ker_ck/8 and csi_ker_ck/128 selected for timers input capture"]
-        B0x1 = 0x01,
+        Hsi1024Hsi8Csi128 = 0x01,
     }
     impl Timicsel {
         #[inline(always)]

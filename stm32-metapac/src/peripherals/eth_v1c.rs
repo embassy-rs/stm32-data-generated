@@ -1149,14 +1149,14 @@ pub mod regs {
         #[doc = "Dropping of TCP/IP checksum error frames disable"]
         #[must_use]
         #[inline(always)]
-        pub const fn dtcefd(&self) -> super::vals::Dtcefd {
+        pub const fn dtcefd(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
-            super::vals::Dtcefd::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Dropping of TCP/IP checksum error frames disable"]
         #[inline(always)]
-        pub const fn set_dtcefd(&mut self, val: super::vals::Dtcefd) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+        pub const fn set_dtcefd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
     }
     impl Default for Dmaomr {
@@ -1188,7 +1188,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Dmaomr {{ sr: {:?}, osf: {=bool:?}, rtc: {:?}, fugf: {:?}, fef: {:?}, st: {:?}, ttc: {:?}, ftf: {:?}, tsf: {:?}, dfrf: {=bool:?}, rsf: {:?}, dtcefd: {:?} }}",
+                "Dmaomr {{ sr: {:?}, osf: {=bool:?}, rtc: {:?}, fugf: {:?}, fef: {:?}, st: {:?}, ttc: {:?}, ftf: {:?}, tsf: {:?}, dfrf: {=bool:?}, rsf: {:?}, dtcefd: {=bool:?} }}",
                 self.sr(),
                 self.osf(),
                 self.rtc(),
@@ -1976,14 +1976,14 @@ pub mod regs {
         #[doc = "Retry disable"]
         #[must_use]
         #[inline(always)]
-        pub const fn rd(&self) -> super::vals::Rd {
+        pub const fn rd(&self) -> bool {
             let val = (self.0 >> 9usize) & 0x01;
-            super::vals::Rd::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Retry disable"]
         #[inline(always)]
-        pub const fn set_rd(&mut self, val: super::vals::Rd) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
+        pub const fn set_rd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
         }
         #[doc = "IPv4 checksum offload"]
         #[must_use]
@@ -2024,14 +2024,14 @@ pub mod regs {
         #[doc = "Receive own disable"]
         #[must_use]
         #[inline(always)]
-        pub const fn rod(&self) -> super::vals::Rod {
+        pub const fn rod(&self) -> bool {
             let val = (self.0 >> 13usize) & 0x01;
-            super::vals::Rod::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Receive own disable"]
         #[inline(always)]
-        pub const fn set_rod(&mut self, val: super::vals::Rod) {
-            self.0 = (self.0 & !(0x01 << 13usize)) | (((val.to_bits() as u32) & 0x01) << 13usize);
+        pub const fn set_rod(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
         }
         #[doc = "Fast Ethernet speed"]
         #[must_use]
@@ -2048,14 +2048,14 @@ pub mod regs {
         #[doc = "Carrier sense disable"]
         #[must_use]
         #[inline(always)]
-        pub const fn csd(&self) -> super::vals::Csd {
+        pub const fn csd(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
-            super::vals::Csd::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Carrier sense disable"]
         #[inline(always)]
-        pub const fn set_csd(&mut self, val: super::vals::Csd) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+        pub const fn set_csd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "Interframe gap"]
         #[must_use]
@@ -2072,26 +2072,26 @@ pub mod regs {
         #[doc = "Jabber disable"]
         #[must_use]
         #[inline(always)]
-        pub const fn jd(&self) -> super::vals::Jd {
+        pub const fn jd(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
-            super::vals::Jd::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Jabber disable"]
         #[inline(always)]
-        pub const fn set_jd(&mut self, val: super::vals::Jd) {
-            self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+        pub const fn set_jd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "Watchdog disable"]
         #[must_use]
         #[inline(always)]
-        pub const fn wd(&self) -> super::vals::Wd {
+        pub const fn wd(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
-            super::vals::Wd::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Watchdog disable"]
         #[inline(always)]
-        pub const fn set_wd(&mut self, val: super::vals::Wd) {
-            self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+        pub const fn set_wd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "CRC stripping for type frames"]
         #[must_use]
@@ -2139,7 +2139,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Maccr {{ re: {=bool:?}, te: {=bool:?}, dc: {=bool:?}, bl: {:?}, apcs: {:?}, rd: {:?}, ipco: {:?}, dm: {:?}, lm: {:?}, rod: {:?}, fes: {:?}, csd: {:?}, ifg: {:?}, jd: {:?}, wd: {:?}, cstf: {=bool:?} }}",
+                "Maccr {{ re: {=bool:?}, te: {=bool:?}, dc: {=bool:?}, bl: {:?}, apcs: {:?}, rd: {=bool:?}, ipco: {:?}, dm: {:?}, lm: {:?}, rod: {=bool:?}, fes: {:?}, csd: {=bool:?}, ifg: {:?}, jd: {=bool:?}, wd: {=bool:?}, cstf: {=bool:?} }}",
                 self.re(),
                 self.te(),
                 self.dc(),
@@ -2422,14 +2422,14 @@ pub mod regs {
         #[doc = "Zero-quanta pause disable"]
         #[must_use]
         #[inline(always)]
-        pub const fn zqpd(&self) -> super::vals::Zqpd {
+        pub const fn zqpd(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Zqpd::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Zero-quanta pause disable"]
         #[inline(always)]
-        pub const fn set_zqpd(&mut self, val: super::vals::Zqpd) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub const fn set_zqpd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Pause time"]
         #[must_use]
@@ -2468,7 +2468,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Macfcr {{ fcb: {:?}, tfce: {=bool:?}, rfce: {=bool:?}, upfd: {=bool:?}, plt: {:?}, zqpd: {:?}, pt: {=u16:?} }}",
+                "Macfcr {{ fcb: {:?}, tfce: {=bool:?}, rfce: {=bool:?}, upfd: {=bool:?}, plt: {:?}, zqpd: {=bool:?}, pt: {=u16:?} }}",
                 self.fcb(),
                 self.tfce(),
                 self.rfce(),
@@ -2547,14 +2547,14 @@ pub mod regs {
         #[doc = "Broadcast frames disable"]
         #[must_use]
         #[inline(always)]
-        pub const fn bfd(&self) -> super::vals::Bfd {
+        pub const fn bfd(&self) -> bool {
             let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Bfd::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Broadcast frames disable"]
         #[inline(always)]
-        pub const fn set_bfd(&mut self, val: super::vals::Bfd) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
+        pub const fn set_bfd(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
         }
         #[doc = "Pass control frames"]
         #[must_use]
@@ -2645,7 +2645,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Macffr {{ pm: {=bool:?}, hu: {:?}, hm: {:?}, daif: {:?}, pam: {=bool:?}, bfd: {:?}, pcf: {:?}, saif: {:?}, saf: {=bool:?}, hpf: {:?}, ra: {=bool:?} }}",
+                "Macffr {{ pm: {=bool:?}, hu: {:?}, hm: {:?}, daif: {:?}, pam: {=bool:?}, bfd: {=bool:?}, pcf: {:?}, saif: {:?}, saf: {=bool:?}, hpf: {:?}, ra: {=bool:?} }}",
                 self.pm(),
                 self.hu(),
                 self.hm(),
@@ -4503,37 +4503,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Bfd {
-        #[doc = "Address filters pass all received broadcast frames"]
-        Enabled = 0x0,
-        #[doc = "Address filters filter all incoming broadcast frames"]
-        Disabled = 0x01,
-    }
-    impl Bfd {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Bfd {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Bfd {
-        #[inline(always)]
-        fn from(val: u8) -> Bfd {
-            Bfd::from_bits(val)
-        }
-    }
-    impl From<Bfd> for u8 {
-        #[inline(always)]
-        fn from(val: Bfd) -> u8 {
-            Bfd::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bl {
         #[doc = "For retransmission n, wait up to 2^min(n, 10) time slots"]
         Bl10 = 0x0,
@@ -4634,37 +4603,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Cr) -> u8 {
             Cr::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Csd {
-        #[doc = "Errors generated due to loss of carrier"]
-        Enabled = 0x0,
-        #[doc = "No error generated due to loss of carrier"]
-        Disabled = 0x01,
-    }
-    impl Csd {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Csd {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Csd {
-        #[inline(always)]
-        fn from(val: u8) -> Csd {
-            Csd::from_bits(val)
-        }
-    }
-    impl From<Csd> for u8 {
-        #[inline(always)]
-        fn from(val: Csd) -> u8 {
-            Csd::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -4820,37 +4758,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: DmaomrSr) -> u8 {
             DmaomrSr::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Dtcefd {
-        #[doc = "Drop frames with errors only in the receive checksum offload engine"]
-        Enabled = 0x0,
-        #[doc = "Do not drop frames that only have errors in the receive checksum offload engine"]
-        Disabled = 0x01,
-    }
-    impl Dtcefd {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Dtcefd {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Dtcefd {
-        #[inline(always)]
-        fn from(val: u8) -> Dtcefd {
-            Dtcefd::from_bits(val)
-        }
-    }
-    impl From<Dtcefd> for u8 {
-        #[inline(always)]
-        fn from(val: Dtcefd) -> u8 {
-            Dtcefd::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -5234,37 +5141,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Ipco) -> u8 {
             Ipco::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Jd {
-        #[doc = "Jabber enabled, transmit frames up to 2048 bytes"]
-        Enabled = 0x0,
-        #[doc = "Jabber disabled, transmit frames up to 16384 bytes"]
-        Disabled = 0x01,
-    }
-    impl Jd {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Jd {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Jd {
-        #[inline(always)]
-        fn from(val: u8) -> Jd {
-            Jd::from_bits(val)
-        }
-    }
-    impl From<Jd> for u8 {
-        #[inline(always)]
-        fn from(val: Jd) -> u8 {
-            Jd::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -5748,37 +5624,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Rd {
-        #[doc = "MAC attempts retries based on the settings of BL"]
-        Enabled = 0x0,
-        #[doc = "MAC attempts only 1 transmission"]
-        Disabled = 0x01,
-    }
-    impl Rd {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Rd {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Rd {
-        #[inline(always)]
-        fn from(val: u8) -> Rd {
-            Rd::from_bits(val)
-        }
-    }
-    impl From<Rd> for u8 {
-        #[inline(always)]
-        fn from(val: Rd) -> u8 {
-            Rd::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rdp {
         _RESERVED_0 = 0x0,
         #[doc = "1 beat per RxDMA transaction"]
@@ -5964,37 +5809,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Rgufm) -> u8 {
             Rgufm::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Rod {
-        #[doc = "MAC receives all packets from PHY while transmitting"]
-        Enabled = 0x0,
-        #[doc = "MAC disables reception of frames in half-duplex mode"]
-        Disabled = 0x01,
-    }
-    impl Rod {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Rod {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Rod {
-        #[inline(always)]
-        fn from(val: u8) -> Rod {
-            Rod::from_bits(val)
-        }
-    }
-    impl From<Rod> for u8 {
-        #[inline(always)]
-        fn from(val: Rod) -> u8 {
-            Rod::to_bits(val)
         }
     }
     #[repr(transparent)]
@@ -6557,37 +6371,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Wd {
-        #[doc = "Watchdog enabled, receive frames limited to 2048 bytes"]
-        Enabled = 0x0,
-        #[doc = "Watchdog disabled, receive frames may be up to to 16384 bytes"]
-        Disabled = 0x01,
-    }
-    impl Wd {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Wd {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Wd {
-        #[inline(always)]
-        fn from(val: u8) -> Wd {
-            Wd::from_bits(val)
-        }
-    }
-    impl From<Wd> for u8 {
-        #[inline(always)]
-        fn from(val: Wd) -> u8 {
-            Wd::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wffrpr {
         _RESERVED_0 = 0x0,
         #[doc = "Reset wakeup frame filter register point to 0b000. Automatically cleared"]
@@ -6613,37 +6396,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Wffrpr) -> u8 {
             Wffrpr::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Zqpd {
-        #[doc = "Normal operation with automatic zero-quanta pause control frame generation"]
-        Enabled = 0x0,
-        #[doc = "Automatic generation of zero-quanta pause control frames is disabled"]
-        Disabled = 0x01,
-    }
-    impl Zqpd {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Zqpd {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Zqpd {
-        #[inline(always)]
-        fn from(val: u8) -> Zqpd {
-            Zqpd::from_bits(val)
-        }
-    }
-    impl From<Zqpd> for u8 {
-        #[inline(always)]
-        fn from(val: Zqpd) -> u8 {
-            Zqpd::to_bits(val)
         }
     }
 }

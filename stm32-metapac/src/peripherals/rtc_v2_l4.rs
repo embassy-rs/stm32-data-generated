@@ -1469,14 +1469,14 @@ pub mod regs {
         #[doc = "Tamper pull-up disable"]
         #[must_use]
         #[inline(always)]
-        pub const fn tamppudis(&self) -> super::vals::Tamppudis {
+        pub const fn tamppudis(&self) -> bool {
             let val = (self.0 >> 15usize) & 0x01;
-            super::vals::Tamppudis::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Tamper pull-up disable"]
         #[inline(always)]
-        pub const fn set_tamppudis(&mut self, val: super::vals::Tamppudis) {
-            self.0 = (self.0 & !(0x01 << 15usize)) | (((val.to_bits() as u32) & 0x01) << 15usize);
+        pub const fn set_tamppudis(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
         }
         #[doc = "Tamper interrupt enable"]
         #[must_use]
@@ -1565,7 +1565,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Tampcr {{ tampe[0]: {=bool:?}, tampe[1]: {=bool:?}, tampe[2]: {=bool:?}, tamptrg[0]: {:?}, tamptrg[1]: {:?}, tamptrg[2]: {:?}, tampie: {=bool:?}, tampts: {=bool:?}, tampfreq: {:?}, tampflt: {:?}, tampprch: {:?}, tamppudis: {:?}, tampxie[0]: {=bool:?}, tampxie[1]: {=bool:?}, tampxie[2]: {=bool:?}, tampxnoerase[0]: {=bool:?}, tampxnoerase[1]: {=bool:?}, tampxnoerase[2]: {=bool:?}, tampxmf[0]: {=bool:?}, tampxmf[1]: {=bool:?}, tampxmf[2]: {=bool:?} }}",
+                "Tampcr {{ tampe[0]: {=bool:?}, tampe[1]: {=bool:?}, tampe[2]: {=bool:?}, tamptrg[0]: {:?}, tamptrg[1]: {:?}, tamptrg[2]: {:?}, tampie: {=bool:?}, tampts: {=bool:?}, tampfreq: {:?}, tampflt: {:?}, tampprch: {:?}, tamppudis: {=bool:?}, tampxie[0]: {=bool:?}, tampxie[1]: {=bool:?}, tampxie[2]: {=bool:?}, tampxnoerase[0]: {=bool:?}, tampxnoerase[1]: {=bool:?}, tampxnoerase[2]: {=bool:?}, tampxmf[0]: {=bool:?}, tampxmf[1]: {=bool:?}, tampxmf[2]: {=bool:?} }}",
                 self.tampe(0usize),
                 self.tampe(1usize),
                 self.tampe(2usize),
@@ -2531,37 +2531,6 @@ is don’t care"]
         #[inline(always)]
         fn from(val: Tampprch) -> u8 {
             Tampprch::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Tamppudis {
-        #[doc = "Precharge RTC_TAMPx pins before sampling (enable internal pull-up)"]
-        Enabled = 0x0,
-        #[doc = "Disable precharge of RTC_TAMPx pins"]
-        Disabled = 0x01,
-    }
-    impl Tamppudis {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Tamppudis {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Tamppudis {
-        #[inline(always)]
-        fn from(val: u8) -> Tamppudis {
-            Tamppudis::from_bits(val)
-        }
-    }
-    impl From<Tamppudis> for u8 {
-        #[inline(always)]
-        fn from(val: Tamppudis) -> u8 {
-            Tamppudis::to_bits(val)
         }
     }
     #[repr(u8)]

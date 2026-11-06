@@ -1243,11 +1243,11 @@ pub mod vals {
     pub struct DbgAuthHdpl(u8);
     impl DbgAuthHdpl {
         #[doc = "HDPL1"]
-        pub const B0x51: Self = Self(0x51);
+        pub const Hdpl1: Self = Self(0x51);
         #[doc = "HDPL3"]
-        pub const B0x6f: Self = Self(0x6f);
+        pub const Hdpl3: Self = Self(0x6f);
         #[doc = "HDPL2"]
-        pub const B0x8a: Self = Self(0x8a);
+        pub const Hdpl2: Self = Self(0x8a);
     }
     impl DbgAuthHdpl {
         pub const fn from_bits(val: u8) -> DbgAuthHdpl {
@@ -1260,9 +1260,9 @@ pub mod vals {
     impl core::fmt::Debug for DbgAuthHdpl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x51 => f.write_str("B0x51"),
-                0x6f => f.write_str("B0x6f"),
-                0x8a => f.write_str("B0x8a"),
+                0x51 => f.write_str("Hdpl1"),
+                0x6f => f.write_str("Hdpl3"),
+                0x8a => f.write_str("Hdpl2"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -1271,9 +1271,9 @@ pub mod vals {
     impl defmt::Format for DbgAuthHdpl {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x51 => defmt::write!(f, "B0x51"),
-                0x6f => defmt::write!(f, "B0x6f"),
-                0x8a => defmt::write!(f, "B0x8a"),
+                0x51 => defmt::write!(f, "Hdpl1"),
+                0x6f => defmt::write!(f, "Hdpl3"),
+                0x8a => defmt::write!(f, "Hdpl2"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -1295,7 +1295,7 @@ pub mod vals {
     pub struct DbgcfgLock(u8);
     impl DbgcfgLock {
         #[doc = "Writes to SBS_DBGCR allowed (default)"]
-        pub const B0xB4: Self = Self(0xb4);
+        pub const Allowed: Self = Self(0xb4);
     }
     impl DbgcfgLock {
         pub const fn from_bits(val: u8) -> DbgcfgLock {
@@ -1308,7 +1308,7 @@ pub mod vals {
     impl core::fmt::Debug for DbgcfgLock {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0xb4 => f.write_str("B0xB4"),
+                0xb4 => f.write_str("Allowed"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -1317,7 +1317,7 @@ pub mod vals {
     impl defmt::Format for DbgcfgLock {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0xb4 => defmt::write!(f, "B0xB4"),
+                0xb4 => defmt::write!(f, "Allowed"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -1339,9 +1339,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum EpochSel {
         #[doc = "SEC_EPOCH counter input selected"]
-        B0x0 = 0x0,
+        SecEpoch = 0x0,
         #[doc = "NS_EPOCH (non-secure) input selected"]
-        B0x1 = 0x01,
+        NsEpoch = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -1410,13 +1410,13 @@ pub mod vals {
     pub struct Hdpl(u8);
     impl Hdpl {
         #[doc = "HDPL1, iRoT"]
-        pub const B0x51: Self = Self(0x51);
+        pub const Hdpl1: Self = Self(0x51);
         #[doc = "HDPL3, application (secure/non-secure)"]
-        pub const B0x6f: Self = Self(0x6f);
+        pub const Hdpl3: Self = Self(0x6f);
         #[doc = "HDPL2, uRoT"]
-        pub const B0x8a: Self = Self(0x8a);
+        pub const Hdpl2: Self = Self(0x8a);
         #[doc = "HDPL0, RSS"]
-        pub const B0xB4: Self = Self(0xb4);
+        pub const Hdpl0: Self = Self(0xb4);
     }
     impl Hdpl {
         pub const fn from_bits(val: u8) -> Hdpl {
@@ -1429,10 +1429,10 @@ pub mod vals {
     impl core::fmt::Debug for Hdpl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x51 => f.write_str("B0x51"),
-                0x6f => f.write_str("B0x6f"),
-                0x8a => f.write_str("B0x8a"),
-                0xb4 => f.write_str("B0xB4"),
+                0x51 => f.write_str("Hdpl1"),
+                0x6f => f.write_str("Hdpl3"),
+                0x8a => f.write_str("Hdpl2"),
+                0xb4 => f.write_str("Hdpl0"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -1441,10 +1441,10 @@ pub mod vals {
     impl defmt::Format for Hdpl {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x51 => defmt::write!(f, "B0x51"),
-                0x6f => defmt::write!(f, "B0x6f"),
-                0x8a => defmt::write!(f, "B0x8a"),
-                0xb4 => defmt::write!(f, "B0xB4"),
+                0x51 => defmt::write!(f, "Hdpl1"),
+                0x6f => defmt::write!(f, "Hdpl3"),
+                0x8a => defmt::write!(f, "Hdpl2"),
+                0xb4 => defmt::write!(f, "Hdpl0"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -1466,9 +1466,9 @@ pub mod vals {
     pub struct IncrHdpl(u8);
     impl IncrHdpl {
         #[doc = "recommended value to increment HDPL level by one"]
-        pub const B0x6a: Self = Self(0x6a);
+        pub const Increment: Self = Self(0x6a);
         #[doc = "no increment"]
-        pub const B0xB4: Self = Self(0xb4);
+        pub const NoIncrement: Self = Self(0xb4);
     }
     impl IncrHdpl {
         pub const fn from_bits(val: u8) -> IncrHdpl {
@@ -1481,8 +1481,8 @@ pub mod vals {
     impl core::fmt::Debug for IncrHdpl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x6a => f.write_str("B0x6a"),
-                0xb4 => f.write_str("B0xB4"),
+                0x6a => f.write_str("Increment"),
+                0xb4 => f.write_str("NoIncrement"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -1491,8 +1491,8 @@ pub mod vals {
     impl defmt::Format for IncrHdpl {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x6a => defmt::write!(f, "B0x6a"),
-                0xb4 => defmt::write!(f, "B0xB4"),
+                0x6a => defmt::write!(f, "Increment"),
+                0xb4 => defmt::write!(f, "NoIncrement"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -1514,9 +1514,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sec {
         #[doc = "SBS_CFGR2 register accessible through secure or non-secure transaction"]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "SBS_CFGR2 register only accessible through secure transaction"]
-        B0x1 = 0x01,
+        Secure = 0x01,
     }
     impl Sec {
         #[inline(always)]

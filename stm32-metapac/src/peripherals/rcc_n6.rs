@@ -21646,61 +21646,61 @@ pub mod regs {
         #[doc = "Source selection for the I2C2 kernel clock."]
         #[must_use]
         #[inline(always)]
-        pub const fn i2c2sel(&self) -> super::vals::I2c2sel {
+        pub const fn i2c2sel(&self) -> super::vals::I2c1sel {
             let val = (self.0 >> 4usize) & 0x07;
-            super::vals::I2c2sel::from_bits(val as u8)
+            super::vals::I2c1sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the I2C2 kernel clock."]
         #[inline(always)]
-        pub const fn set_i2c2sel(&mut self, val: super::vals::I2c2sel) {
+        pub const fn set_i2c2sel(&mut self, val: super::vals::I2c1sel) {
             self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
         }
         #[doc = "Source selection for the I2C3 kernel clock."]
         #[must_use]
         #[inline(always)]
-        pub const fn i2c3sel(&self) -> super::vals::I2c3sel {
+        pub const fn i2c3sel(&self) -> super::vals::I2c1sel {
             let val = (self.0 >> 8usize) & 0x07;
-            super::vals::I2c3sel::from_bits(val as u8)
+            super::vals::I2c1sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the I2C3 kernel clock."]
         #[inline(always)]
-        pub const fn set_i2c3sel(&mut self, val: super::vals::I2c3sel) {
+        pub const fn set_i2c3sel(&mut self, val: super::vals::I2c1sel) {
             self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
         }
         #[doc = "Source selection for the I2C4 kernel clock."]
         #[must_use]
         #[inline(always)]
-        pub const fn i2c4sel(&self) -> super::vals::I2c4sel {
+        pub const fn i2c4sel(&self) -> super::vals::I2c1sel {
             let val = (self.0 >> 12usize) & 0x07;
-            super::vals::I2c4sel::from_bits(val as u8)
+            super::vals::I2c1sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the I2C4 kernel clock."]
         #[inline(always)]
-        pub const fn set_i2c4sel(&mut self, val: super::vals::I2c4sel) {
+        pub const fn set_i2c4sel(&mut self, val: super::vals::I2c1sel) {
             self.0 = (self.0 & !(0x07 << 12usize)) | (((val.to_bits() as u32) & 0x07) << 12usize);
         }
         #[doc = "Source selection for the I3C1 kernel clock."]
         #[must_use]
         #[inline(always)]
-        pub const fn i3c1sel(&self) -> super::vals::I3c1sel {
+        pub const fn i3c1sel(&self) -> super::vals::I2c1sel {
             let val = (self.0 >> 16usize) & 0x07;
-            super::vals::I3c1sel::from_bits(val as u8)
+            super::vals::I2c1sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the I3C1 kernel clock."]
         #[inline(always)]
-        pub const fn set_i3c1sel(&mut self, val: super::vals::I3c1sel) {
+        pub const fn set_i3c1sel(&mut self, val: super::vals::I2c1sel) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val.to_bits() as u32) & 0x07) << 16usize);
         }
         #[doc = "Source selection for the I3C2 kernel clock."]
         #[must_use]
         #[inline(always)]
-        pub const fn i3c2sel(&self) -> super::vals::I3c2sel {
+        pub const fn i3c2sel(&self) -> super::vals::I2c1sel {
             let val = (self.0 >> 20usize) & 0x07;
-            super::vals::I3c2sel::from_bits(val as u8)
+            super::vals::I2c1sel::from_bits(val as u8)
         }
         #[doc = "Source selection for the I3C2 kernel clock."]
         #[inline(always)]
-        pub const fn set_i3c2sel(&mut self, val: super::vals::I3c2sel) {
+        pub const fn set_i3c2sel(&mut self, val: super::vals::I2c1sel) {
             self.0 = (self.0 & !(0x07 << 20usize)) | (((val.to_bits() as u32) & 0x07) << 20usize);
         }
         #[doc = "Source selection for the LTDC kernel clock."]
@@ -21807,13 +21807,13 @@ pub mod regs {
         #[doc = "Source selection for the MDF1 kernel clock."]
         #[must_use]
         #[inline(always)]
-        pub const fn mdf1sel(&self) -> super::vals::Mdfsel {
+        pub const fn mdf1sel(&self) -> super::vals::Adfsel {
             let val = (self.0 >> 16usize) & 0x07;
-            super::vals::Mdfsel::from_bits(val as u8)
+            super::vals::Adfsel::from_bits(val as u8)
         }
         #[doc = "Source selection for the MDF1 kernel clock."]
         #[inline(always)]
-        pub const fn set_mdf1sel(&mut self, val: super::vals::Mdfsel) {
+        pub const fn set_mdf1sel(&mut self, val: super::vals::Adfsel) {
             self.0 = (self.0 & !(0x07 << 16usize)) | (((val.to_bits() as u32) & 0x07) << 16usize);
         }
     }
@@ -21856,37 +21856,37 @@ pub mod regs {
         #[doc = "Source selection for the XSPI1 kernel clock."]
         #[must_use]
         #[inline(always)]
-        pub const fn xspi1sel(&self) -> super::vals::Xspisel {
+        pub const fn xspi1sel(&self) -> super::vals::Fmcsel {
             let val = (self.0 >> 0usize) & 0x03;
-            super::vals::Xspisel::from_bits(val as u8)
+            super::vals::Fmcsel::from_bits(val as u8)
         }
         #[doc = "Source selection for the XSPI1 kernel clock."]
         #[inline(always)]
-        pub const fn set_xspi1sel(&mut self, val: super::vals::Xspisel) {
+        pub const fn set_xspi1sel(&mut self, val: super::vals::Fmcsel) {
             self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "Source selection for the XSPI2 kernel clock."]
         #[must_use]
         #[inline(always)]
-        pub const fn xspi2sel(&self) -> super::vals::Xspisel {
+        pub const fn xspi2sel(&self) -> super::vals::Fmcsel {
             let val = (self.0 >> 4usize) & 0x03;
-            super::vals::Xspisel::from_bits(val as u8)
+            super::vals::Fmcsel::from_bits(val as u8)
         }
         #[doc = "Source selection for the XSPI2 kernel clock."]
         #[inline(always)]
-        pub const fn set_xspi2sel(&mut self, val: super::vals::Xspisel) {
+        pub const fn set_xspi2sel(&mut self, val: super::vals::Fmcsel) {
             self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
         }
         #[doc = "Source selection for the XSPI3 kernel clock."]
         #[must_use]
         #[inline(always)]
-        pub const fn xspi3sel(&self) -> super::vals::Xspisel {
+        pub const fn xspi3sel(&self) -> super::vals::Fmcsel {
             let val = (self.0 >> 8usize) & 0x03;
-            super::vals::Xspisel::from_bits(val as u8)
+            super::vals::Fmcsel::from_bits(val as u8)
         }
         #[doc = "Source selection for the XSPI3 kernel clock."]
         #[inline(always)]
-        pub const fn set_xspi3sel(&mut self, val: super::vals::Xspisel) {
+        pub const fn set_xspi3sel(&mut self, val: super::vals::Fmcsel) {
             self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
         }
         #[doc = "Source selection for the OTGPHY1 kernel clock."]
@@ -22417,13 +22417,13 @@ pub mod regs {
         #[doc = "CPU clock switch status."]
         #[must_use]
         #[inline(always)]
-        pub const fn cpusws(&self) -> super::vals::Cpusws {
+        pub const fn cpusws(&self) -> super::vals::Cpusw {
             let val = (self.0 >> 20usize) & 0x03;
-            super::vals::Cpusws::from_bits(val as u8)
+            super::vals::Cpusw::from_bits(val as u8)
         }
         #[doc = "CPU clock switch status."]
         #[inline(always)]
-        pub const fn set_cpusws(&mut self, val: super::vals::Cpusws) {
+        pub const fn set_cpusws(&mut self, val: super::vals::Cpusw) {
             self.0 = (self.0 & !(0x03 << 20usize)) | (((val.to_bits() as u32) & 0x03) << 20usize);
         }
         #[doc = "System clock switch selection."]
@@ -22441,13 +22441,13 @@ pub mod regs {
         #[doc = "System clock switch status."]
         #[must_use]
         #[inline(always)]
-        pub const fn syssws(&self) -> super::vals::Syssws {
+        pub const fn syssws(&self) -> super::vals::Syssw {
             let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Syssws::from_bits(val as u8)
+            super::vals::Syssw::from_bits(val as u8)
         }
         #[doc = "System clock switch status."]
         #[inline(always)]
-        pub const fn set_syssws(&mut self, val: super::vals::Syssws) {
+        pub const fn set_syssws(&mut self, val: super::vals::Syssw) {
             self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
         }
     }
@@ -22939,13 +22939,13 @@ pub mod regs {
         #[doc = "LSE ready interrupt flag."]
         #[must_use]
         #[inline(always)]
-        pub const fn lserdyf(&self) -> super::vals::Lserdyf {
+        pub const fn lserdyf(&self) -> super::vals::Lsecssf {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::Lserdyf::from_bits(val as u8)
+            super::vals::Lsecssf::from_bits(val as u8)
         }
         #[doc = "LSE ready interrupt flag."]
         #[inline(always)]
-        pub const fn set_lserdyf(&mut self, val: super::vals::Lserdyf) {
+        pub const fn set_lserdyf(&mut self, val: super::vals::Lsecssf) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
         }
         #[doc = "MSI ready interrupt flag."]
@@ -22975,13 +22975,13 @@ pub mod regs {
         #[doc = "HSE ready interrupt flag."]
         #[must_use]
         #[inline(always)]
-        pub const fn hserdyf(&self) -> super::vals::Hserdyf {
+        pub const fn hserdyf(&self) -> super::vals::Hsecssf {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Hserdyf::from_bits(val as u8)
+            super::vals::Hsecssf::from_bits(val as u8)
         }
         #[doc = "HSE ready interrupt flag."]
         #[inline(always)]
-        pub const fn set_hserdyf(&mut self, val: super::vals::Hserdyf) {
+        pub const fn set_hserdyf(&mut self, val: super::vals::Hsecssf) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
         #[doc = "PLL1 ready interrupt flag."]
@@ -35290,13 +35290,13 @@ pub mod regs {
         #[doc = "Remove reset flag."]
         #[must_use]
         #[inline(always)]
-        pub const fn rmvf(&self) -> super::vals::RsrRmvf {
+        pub const fn rmvf(&self) -> super::vals::HwrsrRmvf {
             let val = (self.0 >> 16usize) & 0x01;
-            super::vals::RsrRmvf::from_bits(val as u8)
+            super::vals::HwrsrRmvf::from_bits(val as u8)
         }
         #[doc = "Remove reset flag."]
         #[inline(always)]
-        pub const fn set_rmvf(&mut self, val: super::vals::RsrRmvf) {
+        pub const fn set_rmvf(&mut self, val: super::vals::HwrsrRmvf) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
         #[doc = "CPU lockup reset flag."]
@@ -36488,9 +36488,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclknclock {
         #[doc = "ACLKNC configuration bits are accessible by non-lock software only (default after reset)."]
-        B0x0 = 0x0,
+        NonLock = 0x0,
         #[doc = "ACLKNC configuration bits are accessible by lock software only."]
-        B0x1 = 0x01,
+        Lock = 0x01,
     }
     impl Aclknclock {
         #[inline(always)]
@@ -36519,9 +36519,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclkncpub {
         #[doc = "ACLKNC configuration bits are accessible by non-public software only (default after reset)."]
-        B0x0 = 0x0,
+        NonPublic = 0x0,
         #[doc = "ACLKNC configuration bits are accessible by public software only."]
-        B0x1 = 0x01,
+        Public = 0x01,
     }
     impl Aclkncpub {
         #[inline(always)]
@@ -36550,9 +36550,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclkncpv {
         #[doc = "ACLKNC configuration bits are accessible by non-privilege software only (default after reset)."]
-        B0x0 = 0x0,
+        NonPrivilege = 0x0,
         #[doc = "ACLKNC configuration bits are accessible by privilege software only."]
-        B0x1 = 0x01,
+        Privilege = 0x01,
     }
     impl Aclkncpv {
         #[inline(always)]
@@ -36581,9 +36581,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclkncsec {
         #[doc = "ACLKNC configuration bits are accessible by non-secure software only (default after reset)."]
-        B0x0 = 0x0,
+        NonSecure = 0x0,
         #[doc = "ACLKNC configuration bits are accessible by secure software only."]
-        B0x1 = 0x01,
+        Secure = 0x01,
     }
     impl Aclkncsec {
         #[inline(always)]
@@ -36612,9 +36612,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclknlock {
         #[doc = "ACLKN configuration bits are accessible by non-lock software only (default after reset)."]
-        B0x0 = 0x0,
+        NonLock = 0x0,
         #[doc = "ACLKN configuration bits are accessible by lock software only."]
-        B0x1 = 0x01,
+        Lock = 0x01,
     }
     impl Aclknlock {
         #[inline(always)]
@@ -36643,9 +36643,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclknpub {
         #[doc = "ACLKN configuration bits are accessible by non-public software only (default after reset)."]
-        B0x0 = 0x0,
+        NonPublic = 0x0,
         #[doc = "ACLKN configuration bits are accessible by public software only."]
-        B0x1 = 0x01,
+        Public = 0x01,
     }
     impl Aclknpub {
         #[inline(always)]
@@ -36674,9 +36674,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclknpv {
         #[doc = "ACLKN configuration bits are accessible by non-privilege software only (default after reset)."]
-        B0x0 = 0x0,
+        NonPrivilege = 0x0,
         #[doc = "ACLKN configuration bits are accessible by privilege software only."]
-        B0x1 = 0x01,
+        Privilege = 0x01,
     }
     impl Aclknpv {
         #[inline(always)]
@@ -36705,9 +36705,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclknsec {
         #[doc = "ACLKN configuration bits are accessible by non-secure software only (default after reset)."]
-        B0x0 = 0x0,
+        NonSecure = 0x0,
         #[doc = "ACLKN configuration bits are accessible by secure software only."]
-        B0x1 = 0x01,
+        Secure = 0x01,
     }
     impl Aclknsec {
         #[inline(always)]
@@ -37495,41 +37495,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Cpusw) -> u8 {
             Cpusw::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Cpusws {
-        #[doc = "hsi_ck selected as system clock (default after reset)."]
-        Hsi = 0x0,
-        #[doc = "msi_ck selected as system clock."]
-        Msi = 0x01,
-        #[doc = "hse_ck selected as system clock."]
-        Hse = 0x02,
-        #[doc = "ic1_ck selected as system clock."]
-        Ic1 = 0x03,
-    }
-    impl Cpusws {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Cpusws {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Cpusws {
-        #[inline(always)]
-        fn from(val: u8) -> Cpusws {
-            Cpusws::from_bits(val)
-        }
-    }
-    impl From<Cpusws> for u8 {
-        #[inline(always)]
-        fn from(val: Cpusws) -> u8 {
-            Cpusws::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -38585,37 +38550,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Hserdyf {
-        #[doc = "no clock ready interrupt caused by the HSE (default after reset)."]
-        NoClockReady = 0x0,
-        #[doc = "clock ready interrupt caused by the HSE."]
-        ClockReady = 0x01,
-    }
-    impl Hserdyf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Hserdyf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Hserdyf {
-        #[inline(always)]
-        fn from(val: u8) -> Hserdyf {
-            Hserdyf::from_bits(val)
-        }
-    }
-    impl From<Hserdyf> for u8 {
-        #[inline(always)]
-        fn from(val: Hserdyf) -> u8 {
-            Hserdyf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hserdyie {
         #[doc = "HSE ready interrupt disabled (default after reset)."]
         Disabled = 0x0,
@@ -39245,9 +39179,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum HwrsrWwdgrstf {
         #[doc = "no Window Watchdog Reset occurred from WWDG (default after power-on reset)."]
-        B0x0 = 0x0,
+        NotOccurred = 0x0,
         #[doc = "Window Watchdog Reset occurred from WWDG."]
-        B0x1 = 0x01,
+        Occurred = 0x01,
     }
     impl HwrsrWwdgrstf {
         #[inline(always)]
@@ -39310,211 +39244,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: I2c1sel) -> u8 {
             I2c1sel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum I2c2sel {
-        #[doc = "pclk1 selected as reference clock."]
-        Pclk1 = 0x0,
-        #[doc = "per_ck selected as reference clock."]
-        Per = 0x01,
-        #[doc = "ic10_ck selected as reference clock."]
-        Ic10 = 0x02,
-        #[doc = "ic15_ck selected as reference clock."]
-        Ic15 = 0x03,
-        #[doc = "msi_ck selected as reference clock."]
-        Msi = 0x04,
-        #[doc = "hsi_div_ck selected as reference clock."]
-        HsiDiv = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl I2c2sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> I2c2sel {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for I2c2sel {
-        #[inline(always)]
-        fn from(val: u8) -> I2c2sel {
-            I2c2sel::from_bits(val)
-        }
-    }
-    impl From<I2c2sel> for u8 {
-        #[inline(always)]
-        fn from(val: I2c2sel) -> u8 {
-            I2c2sel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum I2c3sel {
-        #[doc = "pclk1 selected as reference clock."]
-        Pclk1 = 0x0,
-        #[doc = "per_ck selected as reference clock."]
-        Per = 0x01,
-        #[doc = "ic10_ck selected as reference clock."]
-        Ic10 = 0x02,
-        #[doc = "ic15_ck selected as reference clock."]
-        Ic15 = 0x03,
-        #[doc = "msi_ck selected as reference clock."]
-        Msi = 0x04,
-        #[doc = "hsi_div_ck selected as reference clock."]
-        HsiDiv = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl I2c3sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> I2c3sel {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for I2c3sel {
-        #[inline(always)]
-        fn from(val: u8) -> I2c3sel {
-            I2c3sel::from_bits(val)
-        }
-    }
-    impl From<I2c3sel> for u8 {
-        #[inline(always)]
-        fn from(val: I2c3sel) -> u8 {
-            I2c3sel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum I2c4sel {
-        #[doc = "pclk1 selected as reference clock."]
-        Pclk1 = 0x0,
-        #[doc = "per_ck selected as reference clock."]
-        Per = 0x01,
-        #[doc = "ic10_ck selected as reference clock."]
-        Ic10 = 0x02,
-        #[doc = "ic15_ck selected as reference clock."]
-        Ic15 = 0x03,
-        #[doc = "msi_ck selected as reference clock."]
-        Msi = 0x04,
-        #[doc = "hsi_div_ck selected as reference clock."]
-        HsiDiv = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl I2c4sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> I2c4sel {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for I2c4sel {
-        #[inline(always)]
-        fn from(val: u8) -> I2c4sel {
-            I2c4sel::from_bits(val)
-        }
-    }
-    impl From<I2c4sel> for u8 {
-        #[inline(always)]
-        fn from(val: I2c4sel) -> u8 {
-            I2c4sel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum I3c1sel {
-        #[doc = "pclk1 selected as reference clock."]
-        Pclk1 = 0x0,
-        #[doc = "per_ck selected as reference clock."]
-        Per = 0x01,
-        #[doc = "ic10_ck selected as reference clock."]
-        Ic10 = 0x02,
-        #[doc = "ic15_ck selected as reference clock."]
-        Ic15 = 0x03,
-        #[doc = "msi_ck selected as reference clock."]
-        Msi = 0x04,
-        #[doc = "hsi_div_ck selected as reference clock."]
-        HsiDiv = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl I3c1sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> I3c1sel {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for I3c1sel {
-        #[inline(always)]
-        fn from(val: u8) -> I3c1sel {
-            I3c1sel::from_bits(val)
-        }
-    }
-    impl From<I3c1sel> for u8 {
-        #[inline(always)]
-        fn from(val: I3c1sel) -> u8 {
-            I3c1sel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum I3c2sel {
-        #[doc = "pclk1 selected as reference clock."]
-        Pclk1 = 0x0,
-        #[doc = "per_ck selected as reference clock."]
-        Per = 0x01,
-        #[doc = "ic10_ck selected as reference clock."]
-        Ic10 = 0x02,
-        #[doc = "ic15_ck selected as reference clock."]
-        Ic15 = 0x03,
-        #[doc = "msi_ck selected as reference clock."]
-        Msi = 0x04,
-        #[doc = "hsi_div_ck selected as reference clock."]
-        HsiDiv = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-    }
-    impl I3c2sel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> I3c2sel {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for I3c2sel {
-        #[inline(always)]
-        fn from(val: u8) -> I3c2sel {
-            I3c2sel::from_bits(val)
-        }
-    }
-    impl From<I3c2sel> for u8 {
-        #[inline(always)]
-        fn from(val: I3c2sel) -> u8 {
-            I3c2sel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -40780,37 +40509,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Lserdyf {
-        #[doc = "no clock ready interrupt caused by the LSE (default after reset)."]
-        NoReady = 0x0,
-        #[doc = "clock ready interrupt caused by the LSE."]
-        Ready = 0x01,
-    }
-    impl Lserdyf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Lserdyf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Lserdyf {
-        #[inline(always)]
-        fn from(val: u8) -> Lserdyf {
-            Lserdyf::from_bits(val)
-        }
-    }
-    impl From<Lserdyf> for u8 {
-        #[inline(always)]
-        fn from(val: Lserdyf) -> u8 {
-            Lserdyf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lserdyie {
         #[doc = "LSE ready interrupt disabled (default after reset)."]
         Disabled = 0x0,
@@ -41161,49 +40859,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Mcopre) -> u8 {
             Mcopre::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Mdfsel {
-        #[doc = "hclk2 selected as reference clock."]
-        Hclk2 = 0x0,
-        #[doc = "per_ck selected as reference clock."]
-        Per = 0x01,
-        #[doc = "ic7_ck selected as reference clock."]
-        Ic7 = 0x02,
-        #[doc = "ic8_ck selected as reference clock."]
-        Ic8 = 0x03,
-        #[doc = "msi_ck selected as reference clock."]
-        Msi = 0x04,
-        #[doc = "hsi_div_ck selected as reference clock."]
-        HsiDiv = 0x05,
-        #[doc = "I2S_CKIN selected as reference clock."]
-        I2sCkin = 0x06,
-        #[doc = "timg_ck selected as reference clock."]
-        Timg = 0x07,
-    }
-    impl Mdfsel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Mdfsel {
-            unsafe { core::mem::transmute(val & 0x07) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Mdfsel {
-        #[inline(always)]
-        fn from(val: u8) -> Mdfsel {
-            Mdfsel::from_bits(val)
-        }
-    }
-    impl From<Mdfsel> for u8 {
-        #[inline(always)]
-        fn from(val: Mdfsel) -> u8 {
-            Mdfsel::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -42791,37 +42446,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum RsrRmvf {
-        #[doc = "clear of the reset flags not activated (default after power-on reset)."]
-        NoClear = 0x0,
-        #[doc = "clear the value of the reset flags."]
-        Clear = 0x01,
-    }
-    impl RsrRmvf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> RsrRmvf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for RsrRmvf {
-        #[inline(always)]
-        fn from(val: u8) -> RsrRmvf {
-            RsrRmvf::from_bits(val)
-        }
-    }
-    impl From<RsrRmvf> for u8 {
-        #[inline(always)]
-        fn from(val: RsrRmvf) -> u8 {
-            RsrRmvf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RsrSftrstf {
         #[doc = "no Software System reset occurred (default after power-on reset)."]
         Absence = 0x0,
@@ -43617,41 +43241,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Syssws {
-        #[doc = "hsi_ck selected as system clock (default after reset)."]
-        Hsi = 0x0,
-        #[doc = "msi_ck selected as system clock."]
-        Msi = 0x01,
-        #[doc = "hse_ck selected as system clock."]
-        Hse = 0x02,
-        #[doc = "ic2_ck selected as system clock."]
-        Ic2 = 0x03,
-    }
-    impl Syssws {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Syssws {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Syssws {
-        #[inline(always)]
-        fn from(val: u8) -> Syssws {
-            Syssws::from_bits(val)
-        }
-    }
-    impl From<Syssws> for u8 {
-        #[inline(always)]
-        fn from(val: Syssws) -> u8 {
-            Syssws::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Timpre {
         #[doc = "timg_ck = sys_bus_ck (default after reset)."]
         Div1 = 0x0,
@@ -43889,41 +43478,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Wkupie) -> u8 {
             Wkupie::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Xspisel {
-        #[doc = "hclk5 selected as reference clock."]
-        Hclk5 = 0x0,
-        #[doc = "per_ck selected as reference clock."]
-        Per = 0x01,
-        #[doc = "ic3_ck selected as reference clock."]
-        Ic3 = 0x02,
-        #[doc = "ic4_ck selected as reference clock."]
-        Ic4 = 0x03,
-    }
-    impl Xspisel {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Xspisel {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Xspisel {
-        #[inline(always)]
-        fn from(val: u8) -> Xspisel {
-            Xspisel::from_bits(val)
-        }
-    }
-    impl From<Xspisel> for u8 {
-        #[inline(always)]
-        fn from(val: Xspisel) -> u8 {
-            Xspisel::to_bits(val)
         }
     }
     #[repr(u8)]

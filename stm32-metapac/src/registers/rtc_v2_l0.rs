@@ -887,7 +887,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Tamppudis"),
+                    enumm: None,
                 },
                 Field {
                     name: "tampxie",
@@ -1434,23 +1434,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "Cycles8",
                     description: Some("8 RTCCLK cycles"),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Tamppudis",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Disabled",
-                    description: Some("Disable precharge of RTC_TAMPx pins"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Enabled",
-                    description: Some("Precharge RTC_TAMPx pins before sampling (enable internal pull-up)"),
-                    value: 0,
                 },
             ],
         },

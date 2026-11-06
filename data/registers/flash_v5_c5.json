@@ -835,8 +835,7 @@
         "name": "SRAM2_ECC",
         "description": "SRAM2 ECC detection and correction disable.",
         "bit_offset": 4,
-        "bit_size": 1,
-        "enum": "OPTSR2_SRAM2_ECC"
+        "bit_size": 1
       }
     ]
   },
@@ -992,32 +991,32 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "NoFlashInt",
         "description": "No FLASH operation ongoing during previous reset.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "SingleWrInt",
         "description": "Single write operation interrupted.",
         "value": 1
       },
       {
-        "name": "B_0x3",
+        "name": "PgEraseInt",
         "description": "Page erase operation interrupted.",
         "value": 3
       },
       {
-        "name": "B_0x4",
+        "name": "BankEraseInt",
         "description": "Bank erase operation interrupted.",
         "value": 4
       },
       {
-        "name": "B_0x5",
+        "name": "MassEraseInt",
         "description": "Mass erase operation interrupted.",
         "value": 5
       },
       {
-        "name": "B_0x6",
+        "name": "OptChangeInt",
         "description": "Option change operation interrupted.",
         "value": 6
       }
@@ -1027,32 +1026,32 @@
     "bit_size": 3,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "First",
         "description": "Double error on first 16bits data or first 32 bits data accessed on the FLASH line.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Second",
         "description": "Double error on second 16bits data accessed on the FLASH line.",
         "value": 1
       },
       {
-        "name": "B_0x2",
+        "name": "Third",
         "description": "Double error on third 16bits data or second 32 bits data accessed on the FLASH line.",
         "value": 2
       },
       {
-        "name": "B_0x3",
+        "name": "Fourth",
         "description": "Double error on fourth 16bits data accessed on the FLASH line.",
         "value": 3
       },
       {
-        "name": "B_0x4",
+        "name": "Fifth",
         "description": "Double error on fifth 16bits data or third 32 bits data accessed on the FLASH line.",
         "value": 4
       },
       {
-        "name": "B_0x5",
+        "name": "Sixth",
         "description": "Double error on sixth 16bits data.",
         "value": 5
       }
@@ -1073,31 +1072,16 @@
       }
     ]
   },
-  "enum/OPTSR2_SRAM2_ECC": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "Enabled",
-        "description": "SRAM2 ECC check enabled.",
-        "value": 0
-      },
-      {
-        "name": "Disabled",
-        "description": "SRAM2 ECC check disabled.",
-        "value": 1
-      }
-    ]
-  },
   "enum/OPTSR_BOOT0": {
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Low",
         "description": "BOOT0 = 0.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "High",
         "description": "BOOT0 = 1.",
         "value": 1
       }
@@ -1122,12 +1106,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Frozen",
         "description": "Independent watchdog frozen in Standby mode.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Running",
         "description": "Independent watchdog keep running in Standby mode.",
         "value": 1
       }
@@ -1137,12 +1121,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Frozen",
         "description": "Independent watchdog frozen in system Stop mode.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Running",
         "description": "Independent watchdog keep running in system Stop mode.",
         "value": 1
       }
@@ -1152,12 +1136,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Hardware",
         "description": "IWDG watchdog is controlled by hardware.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Software",
         "description": "IWDG watchdog is controlled by software.",
         "value": 1
       }
@@ -1167,12 +1151,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Reset",
         "description": "a reset is generated when entering Standby mode on core domain.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "NoReset",
         "description": "no reset generated when entering Standby mode on core domain.",
         "value": 1
       }
@@ -1182,12 +1166,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Reset",
         "description": "a reset is generated when entering Stop mode on core domain.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "NoReset",
         "description": "no reset generated when entering Stop mode on core domain.",
         "value": 1
       }
@@ -1197,12 +1181,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Hardware",
         "description": "WWDG watchdog is controlled by hardware.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Software",
         "description": "WWDG watchdog is controlled by software.",
         "value": 1
       }
@@ -1212,12 +1196,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Any",
         "description": "Access to registers is always granted.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Privileged",
         "description": "Access to registers is denied in case of unprivileged access.",
         "value": 1
       }
@@ -1227,12 +1211,12 @@
     "bit_size": 32,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Protected",
         "description": "write protected;.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Unprotected",
         "description": "not write protected.",
         "value": 1
       }
@@ -1242,12 +1226,12 @@
     "bit_size": 32,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "Protected",
         "description": "write protected.",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "Unprotected",
         "description": "not write protected.",
         "value": 1
       }

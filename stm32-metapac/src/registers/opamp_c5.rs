@@ -67,7 +67,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Usertrim"),
+                    enumm: None,
                 },
                 Field {
                     name: "vm_sel",
@@ -139,7 +139,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Tstref"),
+                    enumm: None,
                 },
                 Field {
                     name: "calout",
@@ -223,22 +223,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("0."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Percent10",
                     description: Some("0."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "Percent33",
+                    description: Some("0."),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Percent50",
                     description: Some("0."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
+                    name: "Percent90",
                     description: Some("0."),
                     value: 3,
                 },
@@ -250,12 +250,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "DoNotForce",
                     description: Some("Do not force (normal operation)."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Force",
                     description: Some("Force."),
                     value: 1,
                 },
@@ -267,14 +267,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("Normal speed."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "HighSpeed",
                     description: Some("High speed."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NormalSpeed",
+                    description: Some("Normal speed."),
+                    value: 0,
                 },
             ],
         },
@@ -284,14 +284,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("OPAMP_VOUT pin."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "AdcComp",
                     description: Some("ADC/COMP channel."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "OpampVout",
+                    description: Some("OPAMP_VOUT pin."),
+                    value: 0,
                 },
             ],
         },
@@ -301,14 +301,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("OPAMP_CSR is read-write."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "ReadOnly",
                     description: Some("OPAMP_CSR is read-only."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "ReadWrite",
+                    description: Some("OPAMP_CSR is read-write."),
+                    value: 0,
                 },
             ],
         },
@@ -318,14 +318,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("Read-write."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "ReadOnly",
                     description: Some("Read-only (OPAMP_TCMR locked)."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "ReadWrite",
+                    description: Some("Read-write."),
+                    value: 0,
                 },
             ],
         },
@@ -335,84 +335,84 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("gain 2."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("gain 4."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B0x10",
-                    description: Some("gain 2 with filtering on OPAMP_VINM0."),
-                    value: 16,
-                },
-                EnumVariant {
-                    name: "B0x11",
-                    description: Some("gain 4 with filtering on OPAMP_VINM0."),
-                    value: 17,
-                },
-                EnumVariant {
-                    name: "B0x12",
-                    description: Some("gain 8 with filtering on OPAMP_VINM0."),
-                    value: 18,
-                },
-                EnumVariant {
-                    name: "B0x13",
-                    description: Some("gain 16 with filtering on OPAMP_VINM0."),
-                    value: 19,
-                },
-                EnumVariant {
-                    name: "B0x18",
-                    description: Some("gain -1 / gain 2 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."),
-                    value: 24,
-                },
-                EnumVariant {
-                    name: "B0x19",
-                    description: Some("gain -3 / gain 4 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."),
-                    value: 25,
-                },
-                EnumVariant {
-                    name: "B0x1a",
-                    description: Some("gain -7 / gain 8 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."),
-                    value: 26,
-                },
-                EnumVariant {
-                    name: "B0x1b",
-                    description: Some("gain -15 / gain 16 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."),
-                    value: 27,
-                },
-                EnumVariant {
-                    name: "B0x2",
-                    description: Some("gain 8."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B0x3",
+                    name: "Gain16",
                     description: Some("gain 16."),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B0x8",
+                    name: "Gain16FilteringVinm0",
+                    description: Some("gain 16 with filtering on OPAMP_VINM0."),
+                    value: 19,
+                },
+                EnumVariant {
+                    name: "Gain16InputVinm0",
+                    description: Some("gain -15 / gain 16 with bias on OPAMP_VINM0."),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "Gain16InputVinm0filteringVinm1",
+                    description: Some("gain -15 / gain 16 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."),
+                    value: 27,
+                },
+                EnumVariant {
+                    name: "Gain2",
+                    description: Some("gain 2."),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Gain2FilteringVinm0",
+                    description: Some("gain 2 with filtering on OPAMP_VINM0."),
+                    value: 16,
+                },
+                EnumVariant {
+                    name: "Gain2InputVinm0",
                     description: Some("gain -1 / gain 2 with bias on OPAMP_VINM0."),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "B0x9",
+                    name: "Gain2InputVinm0filteringVinm1",
+                    description: Some("gain -1 / gain 2 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."),
+                    value: 24,
+                },
+                EnumVariant {
+                    name: "Gain4",
+                    description: Some("gain 4."),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Gain4FilteringVinm0",
+                    description: Some("gain 4 with filtering on OPAMP_VINM0."),
+                    value: 17,
+                },
+                EnumVariant {
+                    name: "Gain4InputVinm0",
                     description: Some("gain -3 / gain 4 with bias on OPAMP_VINM0."),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "B0xA",
+                    name: "Gain4InputVinm0filteringVinm1",
+                    description: Some("gain -3 / gain 4 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."),
+                    value: 25,
+                },
+                EnumVariant {
+                    name: "Gain8",
+                    description: Some("gain 8."),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Gain8FilteringVinm0",
+                    description: Some("gain 8 with filtering on OPAMP_VINM0."),
+                    value: 18,
+                },
+                EnumVariant {
+                    name: "Gain8InputVinm0",
                     description: Some("gain -7 / gain 8 with bias on OPAMP_VINM0."),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "B0xB",
-                    description: Some("gain -15 / gain 16 with bias on OPAMP_VINM0."),
-                    value: 11,
+                    name: "Gain8InputVinm0filteringVinm1",
+                    description: Some("gain -7 / gain 8 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."),
+                    value: 26,
                 },
             ],
         },
@@ -422,84 +422,84 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("gain 2."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("gain 4."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B0x10",
-                    description: Some("gain 2 with filtering on OPAMP_VINM0."),
-                    value: 16,
-                },
-                EnumVariant {
-                    name: "B0x11",
-                    description: Some("gain 4 with filtering on OPAMP_VINM0."),
-                    value: 17,
-                },
-                EnumVariant {
-                    name: "B0x12",
-                    description: Some("gain 8 with filtering on OPAMP_VINM0."),
-                    value: 18,
-                },
-                EnumVariant {
-                    name: "B0x13",
-                    description: Some("gain 16 with filtering on OPAMP_VINM0."),
-                    value: 19,
-                },
-                EnumVariant {
-                    name: "B0x18",
-                    description: Some("gain -1 / gain 2 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."),
-                    value: 24,
-                },
-                EnumVariant {
-                    name: "B0x19",
-                    description: Some("gain -3 / gain 4 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."),
-                    value: 25,
-                },
-                EnumVariant {
-                    name: "B0x1a",
-                    description: Some("gain -7 / gain 8 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."),
-                    value: 26,
-                },
-                EnumVariant {
-                    name: "B0x1b",
-                    description: Some("gain -15 / gain of 16 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."),
-                    value: 27,
-                },
-                EnumVariant {
-                    name: "B0x2",
-                    description: Some("gain 8."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B0x3",
+                    name: "Gain16",
                     description: Some("gain 16."),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B0x8",
+                    name: "Gain16FilteringVinm0",
+                    description: Some("gain 16 with filtering on OPAMP_VINM0."),
+                    value: 19,
+                },
+                EnumVariant {
+                    name: "Gain16InputVinm0",
+                    description: Some("gain -15 / gain 16 with bias on OPAMP_VINM0."),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "Gain16InputVinm0filteringVinm1",
+                    description: Some("gain -15 / gain of 16 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."),
+                    value: 27,
+                },
+                EnumVariant {
+                    name: "Gain2",
+                    description: Some("gain 2."),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Gain2FilteringVinm0",
+                    description: Some("gain 2 with filtering on OPAMP_VINM0."),
+                    value: 16,
+                },
+                EnumVariant {
+                    name: "Gain2InputVinm0",
                     description: Some("gain -1 / gain 2 with bias on OPAMP_VINM0."),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "B0x9",
+                    name: "Gain2InputVinm0filteringVinm1",
+                    description: Some("gain -1 / gain 2 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."),
+                    value: 24,
+                },
+                EnumVariant {
+                    name: "Gain4",
+                    description: Some("gain 4."),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Gain4FilteringVinm0",
+                    description: Some("gain 4 with filtering on OPAMP_VINM0."),
+                    value: 17,
+                },
+                EnumVariant {
+                    name: "Gain4InputVinm0",
                     description: Some("gain -3 / gain 4 with bias on OPAMP_VINM0."),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "B0xA",
+                    name: "Gain4InputVinm0filteringVinm1",
+                    description: Some("gain -3 / gain 4 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."),
+                    value: 25,
+                },
+                EnumVariant {
+                    name: "Gain8",
+                    description: Some("gain 8."),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Gain8FilteringVinm0",
+                    description: Some("gain 8 with filtering on OPAMP_VINM0."),
+                    value: 18,
+                },
+                EnumVariant {
+                    name: "Gain8InputVinm0",
                     description: Some("gain -7 / gain 8 with bias on OPAMP_VINM0."),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "B0xB",
-                    description: Some("gain -15 / gain 16 with bias on OPAMP_VINM0."),
-                    value: 11,
+                    name: "Gain8InputVinm0filteringVinm1",
+                    description: Some("gain -7 / gain 8 with bias on OPAMP_VINM0 and filtering on OPAMP_VINM1."),
+                    value: 26,
                 },
             ],
         },
@@ -509,44 +509,44 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "None",
                     description: Some(
                         "None (input configuration permanently controlled through VP_SEL[1:0] and VM_SEL).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "OpampTc1",
                     description: Some("opamp_tc1."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "OpampTc2",
                     description: Some("opamp_tc2."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
+                    name: "OpampTc3",
                     description: Some("opamp_tc3."),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B0x4",
+                    name: "OpampTc4",
                     description: Some("opamp_tc4."),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "B0x5",
+                    name: "OpampTc5",
                     description: Some("opamp_tc5."),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "B0x6",
+                    name: "OpampTc6",
                     description: Some("opamp_tc6."),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "B0x7",
+                    name: "OpampTc7",
                     description: Some("opamp_tc7."),
                     value: 7,
                 },
@@ -558,78 +558,44 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "None",
                     description: Some("None (gain permanently controlled through PGA_GAIN[4:0] and VM_SEL[1:0])."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "OpampTp1",
                     description: Some("opamp_tp1."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "OpampTp2",
                     description: Some("opamp_tp2."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
+                    name: "OpampTp3",
                     description: Some("opamp_tp3."),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B0x4",
+                    name: "OpampTp4",
                     description: Some("opamp_tp4."),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "B0x5",
+                    name: "OpampTp5",
                     description: Some("opamp_tp5."),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "B0x6",
+                    name: "OpampTp6",
                     description: Some("opamp_tp6."),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "B0x7",
+                    name: "OpampTp7",
                     description: Some("opamp_tp7."),
                     value: 7,
-                },
-            ],
-        },
-        Enum {
-            name: "Tstref",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("Does not output calibration reference voltage."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("Outputs calibration reference voltage."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Usertrim",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("Disable (trimming by user not possible)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("Enable (trimming by user possible)."),
-                    value: 1,
                 },
             ],
         },
@@ -639,24 +605,24 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("OPAMP_VINM0 pin."),
-                    value: 0,
+                    name: "Follower",
+                    description: Some("Operational amplifier output."),
+                    value: 3,
                 },
                 EnumVariant {
-                    name: "B0x1",
-                    description: Some("OPAMP_VINM1 pin."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B0x2",
+                    name: "Pga",
                     description: Some("Internal resistor divider middle point."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
-                    description: Some("Operational amplifier output."),
-                    value: 3,
+                    name: "Vinm0",
+                    description: Some("OPAMP_VINM0 pin."),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Vinm1",
+                    description: Some("OPAMP_VINM1 pin."),
+                    value: 1,
                 },
             ],
         },
@@ -666,14 +632,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("Internal resistor divider middle point (operation as PGA)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Follower",
                     description: Some("Operational amplifier output (operation as follower)."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Pga",
+                    description: Some("Internal resistor divider middle point (operation as PGA)."),
+                    value: 0,
                 },
             ],
         },
@@ -683,22 +649,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Vinp0",
                     description: Some("OPAMP_VINP0 pin."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Vinp1",
                     description: Some("OPAMP_VINP1 pin."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "Vinp2",
                     description: Some("OPAMP_VINP2 pin."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
+                    name: "Vinp3OrDac",
                     description: Some("OPAMP_VINP3 pin or DAC output channel."),
                     value: 3,
                 },
@@ -710,22 +676,22 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Vinp0",
                     description: Some("OPAMP_VINP0."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Vinp1",
                     description: Some("OPAMP_VINP1."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "Vinp2",
                     description: Some("OPAMP_VINP2."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
+                    name: "Vinp3OrDac",
                     description: Some("OPAMP_VINP3 pin or DAC output channel."),
                     value: 3,
                 },

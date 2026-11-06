@@ -328,7 +328,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("ModePdn"),
+                    enumm: None,
                 },
                 Field {
                     name: "lpds08v",
@@ -1018,7 +1018,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Wkupp1"),
+                    enumm: Some("Wkupp"),
                 },
                 Field {
                     name: "wkupp2",
@@ -1026,7 +1026,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Wkupp2"),
+                    enumm: Some("Wkupp"),
                 },
                 Field {
                     name: "wkupp3",
@@ -1034,7 +1034,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 10 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Wkupp3"),
+                    enumm: Some("Wkupp"),
                 },
                 Field {
                     name: "wkupp4",
@@ -1042,7 +1042,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 11 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Wkupp4"),
+                    enumm: Some("Wkupp"),
                 },
                 Field {
                     name: "wkuppupd1",
@@ -1050,7 +1050,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Wkuppupd1"),
+                    enumm: Some("Wkuppupd"),
                 },
                 Field {
                     name: "wkuppupd2",
@@ -1058,7 +1058,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Wkuppupd2"),
+                    enumm: Some("Wkuppupd"),
                 },
                 Field {
                     name: "wkuppupd3",
@@ -1066,7 +1066,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Wkuppupd3"),
+                    enumm: Some("Wkuppupd"),
                 },
                 Field {
                     name: "wkuppupd4",
@@ -1074,7 +1074,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Wkuppupd4"),
+                    enumm: Some("Wkuppupd"),
                 },
             ],
         },
@@ -1126,14 +1126,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotValid",
                     description: Some(
                         "V less than sub>DDA18ADC less than /sub> is not present. Logical and electrical isolation is applied to ignore this supply.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Valid",
                     description: Some("V less than sub>DDA18ADC less than /sub> is valid."),
                     value: 1,
                 },
@@ -1145,33 +1145,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("No effect."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Clear",
                     description: Some("When written, clear the CPU flags (STOPF, SBF)."),
                     value: 1,
                 },
-            ],
-        },
-        Enum {
-            name: "ModePdn",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some(
-                        "Pull-down disabled. The output is in high impedance during the shutdown (default).",
-                    ),
+                    name: "NoEffect",
+                    description: Some("No effect."),
                     value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("Pull-down enabled."),
-                    value: 1,
                 },
             ],
         },
@@ -1181,14 +1162,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("Stop mode when device enters deepsleep."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "StandbyMode",
                     description: Some("Standby mode when device enters deepsleep."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "StopMode",
+                    description: Some("Stop mode when device enters deepsleep."),
+                    value: 0,
                 },
             ],
         },
@@ -1198,24 +1179,24 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 5,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("No guaranteed minimum low time."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Ms1",
                     description: Some("~ 1 ms guaranteed minimum low time (1 x 32 LSI cycles)."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x1f",
+                    name: "Ms2",
+                    description: Some("~ 2 ms guaranteed minimum low time (2 x 32 LSI cycles)."),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Ms31",
                     description: Some("~ 31 ms guaranteed minimum low time (31 x 32 LSI cycles)."),
                     value: 31,
                 },
                 EnumVariant {
-                    name: "B0x2",
-                    description: Some("~ 2 ms guaranteed minimum low time (2 x 32 LSI cycles)."),
-                    value: 2,
+                    name: "NoMinimum",
+                    description: Some("No guaranteed minimum low time."),
+                    value: 0,
                 },
             ],
         },
@@ -1225,12 +1206,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some("CR1 can be read and written with privileged or unprivileged access."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Privileged",
                     description: Some("CR1 can be read and written only with privileged access."),
                     value: 1,
                 },
@@ -1242,12 +1223,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some("CR2 can be read and written with privileged or unprivileged access."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Privileged",
                     description: Some("CR2 can be read and written only with privileged access."),
                     value: 1,
                 },
@@ -1259,12 +1240,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some("CR3 can be read and written with privileged or unprivileged access."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Privileged",
                     description: Some("CR3 can be read and written only with privileged access."),
                     value: 1,
                 },
@@ -1276,12 +1257,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some("CR4 can be read and written with privileged or unprivileged access."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Privileged",
                     description: Some("CR4 can be read and written only with privileged access."),
                     value: 1,
                 },
@@ -1293,12 +1274,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some("VOSCR can be read and written with privileged or unprivileged access."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Privileged",
                     description: Some("VOSCR can be read and written only with privileged access."),
                     value: 1,
                 },
@@ -1310,14 +1291,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some(
                         "BDCR1, BDCR2, and DBPCR can be read and written with privileged or unprivileged access.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Privileged",
                     description: Some("BDCR1, BDCR2, and DBPCR can be read and written only with privileged access."),
                     value: 1,
                 },
@@ -1329,12 +1310,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some("CPUCR can be read and written with privileged or unprivileged access."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Privileged",
                     description: Some("CPUCR can be read and written only with privileged access."),
                     value: 1,
                 },
@@ -1346,14 +1327,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some(
                         "SVMCR1, SVMCR2, and SVMCR3 can be read and written with privileged or unprivileged access.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Privileged",
                     description: Some(
                         "SVMCR1, SVMCR2, and SVMCR3 can be read and written only with privileged access.",
                     ),
@@ -1367,12 +1348,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "AboveOrEqual",
                     description: Some("Voltage level on PVD_IN is equal or higher than the internal VREFINT."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Below",
                     description: Some("Voltage level on PVD_IN is lower than the internal VREFINT."),
                     value: 1,
                 },
@@ -1384,14 +1365,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("System has not been in Standby mode."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Entered",
                     description: Some("System has been in Standby mode."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NotEntered",
+                    description: Some("System has not been in Standby mode."),
+                    value: 0,
                 },
             ],
         },
@@ -1401,12 +1382,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some("CR1 can be read and written with secure or non-secure access."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Secure",
                     description: Some("CR1 can be read and written only with secure access."),
                     value: 1,
                 },
@@ -1418,12 +1399,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some("CR2 can be read and written with secure or non-secure access."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Secure",
                     description: Some("CR2 can be read and written only with secure access."),
                     value: 1,
                 },
@@ -1435,12 +1416,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some("CR3 can be read and written with secure or non-secure access."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Secure",
                     description: Some("CR3 can be read and written only with secure access."),
                     value: 1,
                 },
@@ -1452,12 +1433,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some("CR4 can be read and written with secure or non-secure access."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Secure",
                     description: Some("CR4 can be read and written only with secure access."),
                     value: 1,
                 },
@@ -1469,12 +1450,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some("VOSCR can be read and written with secure or non-secure access."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Secure",
                     description: Some("VOSCR can be read and written only with secure access."),
                     value: 1,
                 },
@@ -1486,14 +1467,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some(
                         "BDCR1, BDCR2, and DBPCR can be read and written with secure or non-secure access.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Secure",
                     description: Some("BDCR1, BDCR2, and DBPCR can be read and written only with secure access."),
                     value: 1,
                 },
@@ -1505,12 +1486,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some("CPUCR can be read and written with secure or non-secure access."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Secure",
                     description: Some("CPUCR can be read and written only with secure access."),
                     value: 1,
                 },
@@ -1522,14 +1503,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some(
                         "SVMCR1, SVMCR2, and SVMCR3 can be read and written with secure or non-secure access.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Secure",
                     description: Some("SVMCR1, SVMCR2, and SVMCR3 can be read and written only with secure access."),
                     value: 1,
                 },
@@ -1541,14 +1522,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("System has not been in Stop mode."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Entered",
                     description: Some("System has been in Stop mode."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NotEntered",
+                    description: Some("System has not been in Stop mode."),
+                    value: 0,
                 },
             ],
         },
@@ -1558,14 +1539,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("SVOS low."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "High",
                     description: Some("SVOS high (default)."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Low",
+                    description: Some("SVOS low."),
+                    value: 0,
                 },
             ],
         },
@@ -1575,12 +1556,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotReached",
                     description: Some("Temperature below high threshold level."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Reached",
                     description: Some("Temperature equal or above high threshold level."),
                     value: 1,
                 },
@@ -1592,12 +1573,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotReached",
                     description: Some("Temperature above low threshold level."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Reached",
                     description: Some("Temperature equal or below low threshold level."),
                     value: 1,
                 },
@@ -1609,14 +1590,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotReady",
                     description: Some(
                         "V less than sub>DD33USB less than /sub> is below the threshold of the USB33 voltage monitor.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Ready",
                     description: Some(
                         "V less than sub>DD33USB less than /sub> is equal or above the threshold of the USB33 voltage monitor.",
                     ),
@@ -1630,14 +1611,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotValid",
                     description: Some(
                         "V less than sub>DD33USB less than /sub> is not present. Logical and electrical isolation is applied to ignore this supply.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Valid",
                     description: Some("V less than sub>DD33USB less than /sub> is valid."),
                     value: 1,
                 },
@@ -1649,12 +1630,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotReached",
                     description: Some("V less than sub>BAT less than /sub> level below high threshold level."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Reached",
                     description: Some("V less than sub>BAT less than /sub> level equal or above high threshold level."),
                     value: 1,
                 },
@@ -1666,12 +1647,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotReached",
                     description: Some("V less than sub>BAT less than /sub> level above low threshold level."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Reached",
                     description: Some("V less than sub>BAT less than /sub> level equal or below low threshold level."),
                     value: 1,
                 },
@@ -1683,14 +1664,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotReached",
                     description: Some(
                         "V less than sub>DDCORE less than /sub> level below high threshold level, or monitor disabled.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Reached",
                     description: Some(
                         "V less than sub>DDCORE less than /sub> level equal or above high threshold level.",
                     ),
@@ -1704,14 +1685,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotReached",
                     description: Some(
                         "V less than sub>DDCORE less than /sub> level above low threshold level, or monitor disabled.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Reached",
                     description: Some(
                         "V less than sub>DDCORE less than /sub> level equal or below low threshold level.",
                     ),
@@ -1725,14 +1706,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Threshold1",
                     description: Some(
                         "V less than sub>DDCORE less than /sub> low-voltage threshold 1 selected (VOS low).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Threshold2",
                     description: Some(
                         "V less than sub>DDCORE less than /sub> low-voltage threshold 2 selected (VOS high).",
                     ),
@@ -1746,14 +1727,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotReady",
                     description: Some(
                         "V less than sub>DDIO2 less than /sub> is below the threshold of the VDDIO2 voltage monitor.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Ready",
                     description: Some(
                         "V less than sub>DDIO2 less than /sub> is equal or above the threshold of the VDDIO2 voltage monitor.",
                     ),
@@ -1767,14 +1748,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotValid",
                     description: Some(
                         "V less than sub>DDIO2 less than /sub> is not present. Logical and electrical isolation is applied to ignore this supply.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Valid",
                     description: Some("V less than sub>DDIO2 less than /sub> is valid."),
                     value: 1,
                 },
@@ -1786,18 +1767,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some(
-                        "3v3 voltage range selected. If V less than sub>DDIO2 less than /sub> is in 1v8 range with this setting, I/Os work in degraded mode.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Range1v8",
                     description: Some(
                         "1v8 voltage range selected. HSLV_VDDIO2 option bit must be set to allow 1v8 voltage range operation. Setting this configuration while V less than sub>DDIO2 less than /sub> is in 3v3 range damages the device.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Range3v3",
+                    description: Some(
+                        "3v3 voltage range selected. If V less than sub>DDIO2 less than /sub> is in 1v8 range with this setting, I/Os work in degraded mode.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1807,14 +1788,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotReady",
                     description: Some(
                         "V less than sub>DDIO3 less than /sub> is below the threshold of the VDDIO3 voltage monitor.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Ready",
                     description: Some(
                         "V less than sub>DDIO3 less than /sub> is equal or above the threshold of the VDDIO3 voltage monitor.",
                     ),
@@ -1828,14 +1809,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotValid",
                     description: Some(
                         "V less than sub>DDIO3 less than /sub> is not present. Logical and electrical isolation is applied to ignore this supply.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Valid",
                     description: Some("V less than sub>DDIO3 less than /sub> is valid."),
                     value: 1,
                 },
@@ -1847,18 +1828,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some(
-                        "3v3 voltage range selected. If V less than sub>DDIO3 less than /sub> is in 1v8 range with this setting, I/Os work in degraded mode.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Range1v8",
                     description: Some(
                         "1v8 voltage range selected. HSLV_VDDIO3 option bit must be set to allow 1v8 voltage range operation. Setting this configuration while V less than sub>DDIO3 less than /sub> is in 3v3 range damages the device.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Range3v3",
+                    description: Some(
+                        "3v3 voltage range selected. If V less than sub>DDIO3 less than /sub> is in 1v8 range with this setting, I/Os work in degraded mode.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1868,14 +1849,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotReady",
                     description: Some(
                         "V less than sub>DDIO4 less than /sub> is below the threshold of the V less than sub>DDIO4 less than /sub> voltage monitor.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Ready",
                     description: Some(
                         "V less than sub>DDIO4 less than /sub> is equal or above the threshold of the V less than sub>DDIO4 less than /sub> voltage monitor.",
                     ),
@@ -1889,14 +1870,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotValid",
                     description: Some(
                         "V less than sub>DDIO4 less than /sub> is not present. Logical and electrical isolation is applied to ignore this supply.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Valid",
                     description: Some("V less than sub>DDIO4 less than /sub> is valid."),
                     value: 1,
                 },
@@ -1908,18 +1889,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some(
-                        "3v3 voltage range selected. If V less than sub>DDIO4 less than /sub> is in 1v8 range with this setting, I/Os work in degraded mode.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Range1v8",
                     description: Some(
                         "1v8 voltage range selected. HSLV_VDDIO4 option bit must be set to allow 1v8 voltage range operation. Setting this configuration while V less than sub>DDIO4 less than /sub> is in 3v3 range damages the device.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Range3v3",
+                    description: Some(
+                        "3v3 voltage range selected. If V less than sub>DDIO4 less than /sub> is in 1v8 range with this setting, I/Os work in degraded mode.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -1929,12 +1910,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotRetained",
                     description: Some("VDDIO4VRSEL not retained in Standby mode."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Retained",
                     description: Some("VDDIO4VRSEL retained in Standby mode."),
                     value: 1,
                 },
@@ -1946,14 +1927,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotReady",
                     description: Some(
                         "V less than sub>DDIO5 less than /sub> is below the threshold of the V less than sub>DDIO5 less than /sub> voltage monitor.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Ready",
                     description: Some(
                         "V less than sub>DDIO5 less than /sub> is equal or above the threshold of the V less than sub>DDIO5 less than /sub> voltage monitor.",
                     ),
@@ -1967,14 +1948,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotValid",
                     description: Some(
                         "V less than sub>DDIO5 less than /sub> is not present. Logical and electrical isolation is applied to ignore this supply.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Valid",
                     description: Some("V less than sub>DDIO5 less than /sub> is valid."),
                     value: 1,
                 },
@@ -1986,18 +1967,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some(
-                        "3v3 voltage range selected. If V less than sub>DDIO5 less than /sub> is in 1v8 range with this setting, I/Os work in degraded mode.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Range1v8",
                     description: Some(
                         "1v8 voltage range selected. HSLV_VDDIO5 option bit must be set to allow 1v8 voltage range operation. Setting this configuration while V less than sub>DDIO5 less than /sub> is in 3v3 range damages the device.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Range3v3",
+                    description: Some(
+                        "3v3 voltage range selected. If V less than sub>DDIO5 less than /sub> is in 1v8 range with this setting, I/Os work in degraded mode.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -2007,12 +1988,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NotRetained",
                     description: Some("VDDIO5VRSEL not retained in Standby mode."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Retained",
                     description: Some("VDDIO5VRSEL retained in Standby mod."),
                     value: 1,
                 },
@@ -2024,18 +2005,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some(
-                        "3v3 voltage range selected. If V less than sub>DD less than /sub> is in 1v8 range with this setting, I/Os work in degraded mode.",
-                    ),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Range1v8",
                     description: Some(
                         "1v8 voltage range selected. HSLV_VDD option bit must be set to allow 1v8 voltage range operation. Setting this configuration while V less than sub>DD less than /sub> is in 3v3 range damages the device.",
                     ),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Range3v3",
+                    description: Some(
+                        "3v3 voltage range selected. If V less than sub>DD less than /sub> is in 1v8 range with this setting, I/Os work in degraded mode.",
+                    ),
+                    value: 0,
                 },
             ],
         },
@@ -2045,14 +2026,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("VOS low level (default)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "High",
                     description: Some("VOS high level."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Low",
+                    description: Some("VOS low level (default)."),
+                    value: 0,
                 },
             ],
         },
@@ -2062,14 +2043,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("No effect."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Clear",
                     description: Some("Writing 1 clears WKUPF1 in WKUPSR."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NoEffect",
+                    description: Some("No effect."),
+                    value: 0,
                 },
             ],
         },
@@ -2079,14 +2060,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("No effect."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Clear",
                     description: Some("Writing 1 clears WKUPF2 in WKUPSR."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NoEffect",
+                    description: Some("No effect."),
+                    value: 0,
                 },
             ],
         },
@@ -2096,14 +2077,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("No effect."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Clear",
                     description: Some("Writing 1 clears WKUPF3 in WKUPSR."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NoEffect",
+                    description: Some("No effect."),
+                    value: 0,
                 },
             ],
         },
@@ -2113,14 +2094,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("No effect."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Clear",
                     description: Some("Writing 1 clears WKUPF4 in WKUPSR."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NoEffect",
+                    description: Some("No effect."),
+                    value: 0,
                 },
             ],
         },
@@ -2130,14 +2111,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("No wake-up event occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Event",
                     description: Some("A wake-up event was received from WKUP1 pin."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NoEvent",
+                    description: Some("No wake-up event occurred."),
+                    value: 0,
                 },
             ],
         },
@@ -2147,14 +2128,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("No wake-up event occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Event",
                     description: Some("A wake-up event was received from WKUP2 pin."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NoEvent",
+                    description: Some("No wake-up event occurred."),
+                    value: 0,
                 },
             ],
         },
@@ -2164,14 +2145,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("No wake-up event occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Event",
                     description: Some("A wake-up event was received from WKUP3 pin."),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "NoEvent",
+                    description: Some("No wake-up event occurred."),
+                    value: 0,
                 },
             ],
         },
@@ -2181,80 +2162,29 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("No wake-up event occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Event",
                     description: Some("A wake-up event was received from WKUP4 pin."),
                     value: 1,
                 },
-            ],
-        },
-        Enum {
-            name: "Wkupp1",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("Detection on high level (rising edge)."),
+                    name: "NoEvent",
+                    description: Some("No wake-up event occurred."),
                     value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("Detection on low level (falling edge)."),
-                    value: 1,
                 },
             ],
         },
         Enum {
-            name: "Wkupp2",
+            name: "Wkupp",
             description: None,
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "High",
                     description: Some("Detection on high level (rising edge)."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
-                    description: Some("Detection on low level (falling edge)."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Wkupp3",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("Detection on high level (rising edge)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("Detection on low level (falling edge)."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Wkupp4",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("Detection on high level (rising edge)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "Low",
                     description: Some("Detection on low level (falling edge)."),
                     value: 1,
                 },
@@ -2266,14 +2196,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some(
                         "Bits related to WKUP1 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written with privileged or unprivileged access.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Privileged",
                     description: Some(
                         "Bits related to WKUP1 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written only with privileged access.",
                     ),
@@ -2287,14 +2217,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some(
                         "Bits related to WKUP2 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written with privileged or unprivileged access.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Privileged",
                     description: Some(
                         "Bits related to WKUP2 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written only with privileged access.",
                     ),
@@ -2308,14 +2238,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some(
                         "Bits related to WKUP3 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written with privileged or unprivileged access.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Privileged",
                     description: Some(
                         "Bits related to WKUP3 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written only with privileged access.",
                     ),
@@ -2329,14 +2259,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some(
                         "Bits related to WKUP4 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written with privileged or unprivileged access.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Privileged",
                     description: Some(
                         "Bits related to WKUP4 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written only with privileged access.",
                     ),
@@ -2345,90 +2275,24 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Wkuppupd1",
+            name: "Wkuppupd",
             description: None,
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "NoPull",
                     description: Some("No pulls."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
-                    description: Some("Pull-up."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B0x2",
+                    name: "PullDown",
                     description: Some("Pull-down."),
                     value: 2,
                 },
-            ],
-        },
-        Enum {
-            name: "Wkuppupd2",
-            description: None,
-            bit_size: 2,
-            variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("No pulls."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "PullUp",
                     description: Some("Pull-up."),
                     value: 1,
-                },
-                EnumVariant {
-                    name: "B0x2",
-                    description: Some("Pull-down."),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Wkuppupd3",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("No pulls."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("Pull-up."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B0x2",
-                    description: Some("Pull-down."),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Wkuppupd4",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "B0x0",
-                    description: Some("No pulls."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("Pull-up."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B0x2",
-                    description: Some("Pull-down."),
-                    value: 2,
                 },
             ],
         },
@@ -2438,14 +2302,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some(
                         "Bits related to WKUP1 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written with secure or non-secure access.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Secure",
                     description: Some(
                         "Bits related to WKUP1 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written only with secure access.",
                     ),
@@ -2459,14 +2323,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some(
                         "Bits related to WKUP2 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written with secure or non-secure access.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Secure",
                     description: Some(
                         "Bits related to WKUP2 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written only with secure access.",
                     ),
@@ -2480,14 +2344,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some(
                         "Bits related to WKUP3 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written with secure or non-secure access.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Secure",
                     description: Some(
                         "Bits related to WKUP3 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written only with secure access.",
                     ),
@@ -2501,14 +2365,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Any",
                     description: Some(
                         "Bits related to WKUP4 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written with secure or non-secure access.",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Secure",
                     description: Some(
                         "Bits related to WKUP4 pin in WKUPCR, WKUPSR, and WKUPEPR can be read and written only with secure access.",
                     ),

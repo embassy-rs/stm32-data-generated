@@ -1804,14 +1804,14 @@ pub mod regs {
         #[doc = "SRAM2 ECC detection and correction disable."]
         #[must_use]
         #[inline(always)]
-        pub const fn sram2_ecc(&self) -> super::vals::Optsr2Sram2Ecc {
+        pub const fn sram2_ecc(&self) -> bool {
             let val = (self.0 >> 4usize) & 0x01;
-            super::vals::Optsr2Sram2Ecc::from_bits(val as u8)
+            val != 0
         }
         #[doc = "SRAM2 ECC detection and correction disable."]
         #[inline(always)]
-        pub const fn set_sram2_ecc(&mut self, val: super::vals::Optsr2Sram2Ecc) {
-            self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
+        pub const fn set_sram2_ecc(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
     }
     impl Default for Optsr2 {
@@ -1834,7 +1834,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Optsr2 {{ sram1_rst: {=bool:?}, sram2_rst: {=bool:?}, sram2_ecc: {:?} }}",
+                "Optsr2 {{ sram1_rst: {=bool:?}, sram2_rst: {=bool:?}, sram2_ecc: {=bool:?} }}",
                 self.sram1_rst(),
                 self.sram2_rst(),
                 self.sram2_ecc()
@@ -2248,18 +2248,18 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CodeOp {
         #[doc = "No FLASH operation ongoing during previous reset."]
-        B0x0 = 0x0,
+        NoFlashInt = 0x0,
         #[doc = "Single write operation interrupted."]
-        B0x1 = 0x01,
+        SingleWrInt = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "Page erase operation interrupted."]
-        B0x3 = 0x03,
+        PgEraseInt = 0x03,
         #[doc = "Bank erase operation interrupted."]
-        B0x4 = 0x04,
+        BankEraseInt = 0x04,
         #[doc = "Mass erase operation interrupted."]
-        B0x5 = 0x05,
+        MassEraseInt = 0x05,
         #[doc = "Option change operation interrupted."]
-        B0x6 = 0x06,
+        OptChangeInt = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl CodeOp {
@@ -2289,17 +2289,17 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum DataAddrEcc {
         #[doc = "Double error on first 16bits data or first 32 bits data accessed on the FLASH line."]
-        B0x0 = 0x0,
+        First = 0x0,
         #[doc = "Double error on second 16bits data accessed on the FLASH line."]
-        B0x1 = 0x01,
+        Second = 0x01,
         #[doc = "Double error on third 16bits data or second 32 bits data accessed on the FLASH line."]
-        B0x2 = 0x02,
+        Third = 0x02,
         #[doc = "Double error on fourth 16bits data accessed on the FLASH line."]
-        B0x3 = 0x03,
+        Fourth = 0x03,
         #[doc = "Double error on fifth 16bits data or third 32 bits data accessed on the FLASH line."]
-        B0x4 = 0x04,
+        Fifth = 0x04,
         #[doc = "Double error on sixth 16bits data."]
-        B0x5 = 0x05,
+        Sixth = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
     }
@@ -2359,42 +2359,11 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Optsr2Sram2Ecc {
-        #[doc = "SRAM2 ECC check enabled."]
-        Enabled = 0x0,
-        #[doc = "SRAM2 ECC check disabled."]
-        Disabled = 0x01,
-    }
-    impl Optsr2Sram2Ecc {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Optsr2Sram2Ecc {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Optsr2Sram2Ecc {
-        #[inline(always)]
-        fn from(val: u8) -> Optsr2Sram2Ecc {
-            Optsr2Sram2Ecc::from_bits(val)
-        }
-    }
-    impl From<Optsr2Sram2Ecc> for u8 {
-        #[inline(always)]
-        fn from(val: Optsr2Sram2Ecc) -> u8 {
-            Optsr2Sram2Ecc::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrBoot0 {
         #[doc = "BOOT0 = 0."]
-        B0x0 = 0x0,
+        Low = 0x0,
         #[doc = "BOOT0 = 1."]
-        B0x1 = 0x01,
+        High = 0x01,
     }
     impl OptsrBoot0 {
         #[inline(always)]
@@ -2454,9 +2423,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIwdgStdby {
         #[doc = "Independent watchdog frozen in Standby mode."]
-        B0x0 = 0x0,
+        Frozen = 0x0,
         #[doc = "Independent watchdog keep running in Standby mode."]
-        B0x1 = 0x01,
+        Running = 0x01,
     }
     impl OptsrIwdgStdby {
         #[inline(always)]
@@ -2485,9 +2454,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIwdgStop {
         #[doc = "Independent watchdog frozen in system Stop mode."]
-        B0x0 = 0x0,
+        Frozen = 0x0,
         #[doc = "Independent watchdog keep running in system Stop mode."]
-        B0x1 = 0x01,
+        Running = 0x01,
     }
     impl OptsrIwdgStop {
         #[inline(always)]
@@ -2516,9 +2485,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIwdgSw {
         #[doc = "IWDG watchdog is controlled by hardware."]
-        B0x0 = 0x0,
+        Hardware = 0x0,
         #[doc = "IWDG watchdog is controlled by software."]
-        B0x1 = 0x01,
+        Software = 0x01,
     }
     impl OptsrIwdgSw {
         #[inline(always)]
@@ -2547,9 +2516,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrNrstStdby {
         #[doc = "a reset is generated when entering Standby mode on core domain."]
-        B0x0 = 0x0,
+        Reset = 0x0,
         #[doc = "no reset generated when entering Standby mode on core domain."]
-        B0x1 = 0x01,
+        NoReset = 0x01,
     }
     impl OptsrNrstStdby {
         #[inline(always)]
@@ -2578,9 +2547,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrNrstStop {
         #[doc = "a reset is generated when entering Stop mode on core domain."]
-        B0x0 = 0x0,
+        Reset = 0x0,
         #[doc = "no reset generated when entering Stop mode on core domain."]
-        B0x1 = 0x01,
+        NoReset = 0x01,
     }
     impl OptsrNrstStop {
         #[inline(always)]
@@ -2609,9 +2578,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrWwdgSw {
         #[doc = "WWDG watchdog is controlled by hardware."]
-        B0x0 = 0x0,
+        Hardware = 0x0,
         #[doc = "WWDG watchdog is controlled by software."]
-        B0x1 = 0x01,
+        Software = 0x01,
     }
     impl OptsrWwdgSw {
         #[inline(always)]
@@ -2640,9 +2609,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Priv {
         #[doc = "Access to registers is always granted."]
-        B0x0 = 0x0,
+        Any = 0x0,
         #[doc = "Access to registers is denied in case of unprivileged access."]
-        B0x1 = 0x01,
+        Privileged = 0x01,
     }
     impl Priv {
         #[inline(always)]
@@ -2671,9 +2640,9 @@ pub mod vals {
     pub struct Wrp1rWrpsg1(u32);
     impl Wrp1rWrpsg1 {
         #[doc = "write protected;."]
-        pub const B0x0: Self = Self(0x0);
+        pub const Protected: Self = Self(0x0);
         #[doc = "not write protected."]
-        pub const B0x1: Self = Self(0x01);
+        pub const Unprotected: Self = Self(0x01);
     }
     impl Wrp1rWrpsg1 {
         pub const fn from_bits(val: u32) -> Wrp1rWrpsg1 {
@@ -2686,8 +2655,8 @@ pub mod vals {
     impl core::fmt::Debug for Wrp1rWrpsg1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("B0x0"),
-                0x01 => f.write_str("B0x1"),
+                0x0 => f.write_str("Protected"),
+                0x01 => f.write_str("Unprotected"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2696,8 +2665,8 @@ pub mod vals {
     impl defmt::Format for Wrp1rWrpsg1 {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "B0x0"),
-                0x01 => defmt::write!(f, "B0x1"),
+                0x0 => defmt::write!(f, "Protected"),
+                0x01 => defmt::write!(f, "Unprotected"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }
@@ -2719,9 +2688,9 @@ pub mod vals {
     pub struct Wrp2rWrpsg2(u32);
     impl Wrp2rWrpsg2 {
         #[doc = "write protected."]
-        pub const B0x0: Self = Self(0x0);
+        pub const Protected: Self = Self(0x0);
         #[doc = "not write protected."]
-        pub const B0x1: Self = Self(0x01);
+        pub const Unprotected: Self = Self(0x01);
     }
     impl Wrp2rWrpsg2 {
         pub const fn from_bits(val: u32) -> Wrp2rWrpsg2 {
@@ -2734,8 +2703,8 @@ pub mod vals {
     impl core::fmt::Debug for Wrp2rWrpsg2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x0 => f.write_str("B0x0"),
-                0x01 => f.write_str("B0x1"),
+                0x0 => f.write_str("Protected"),
+                0x01 => f.write_str("Unprotected"),
                 other => core::write!(f, "0x{:02X}", other),
             }
         }
@@ -2744,8 +2713,8 @@ pub mod vals {
     impl defmt::Format for Wrp2rWrpsg2 {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x0 => defmt::write!(f, "B0x0"),
-                0x01 => defmt::write!(f, "B0x1"),
+                0x0 => defmt::write!(f, "Protected"),
+                0x01 => defmt::write!(f, "Unprotected"),
                 other => defmt::write!(f, "0x{:02X}", other),
             }
         }

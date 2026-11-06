@@ -5007,7 +5007,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Epcsl"),
+                    enumm: None,
                 },
                 Field {
                     name: "ecpd",
@@ -6211,33 +6211,14 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("Weighted Round-Robin with Rx:Tx or Tx:Rx."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
+                    name: "FixedPriority",
                     description: Some("Fixed priority."),
                     value: 1,
                 },
-            ],
-        },
-        Enum {
-            name: "Epcsl",
-            description: None,
-            bit_size: 1,
-            variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("The XPCS latencies are not considered in the captured timestamp."),
+                    name: "RoundRobin",
+                    description: Some("Weighted Round-Robin with Rx:Tx or Tx:Rx."),
                     value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some(
-                        "Timestamp captured at the egress and ingress ports includes the ingress and egress latencies provided by XPCS.",
-                    ),
-                    value: 1,
                 },
             ],
         },
@@ -6247,19 +6228,19 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Units1024",
+                    description: Some("1024."),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Units256",
                     description: Some("256."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Units512",
                     description: Some("512."),
                     value: 1,
-                },
-                EnumVariant {
-                    name: "B0x2",
-                    description: Some("1024."),
-                    value: 2,
                 },
             ],
         },
@@ -6269,39 +6250,39 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("2 Kbytes."),
-                    value: 0,
+                    name: "Bytes16383",
+                    description: Some("16383 Bytes."),
+                    value: 14,
                 },
                 EnumVariant {
-                    name: "B0x1",
-                    description: Some("3 Kbytes."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B0x2",
-                    description: Some("4 Kbytes."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B0x3",
-                    description: Some("5 Kbytes."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "B0xC",
+                    name: "Kbytes14",
                     description: Some("14 Kbytes."),
                     value: 12,
                 },
                 EnumVariant {
-                    name: "B0xD",
+                    name: "Kbytes15",
                     description: Some("15 Kbytes."),
                     value: 13,
                 },
                 EnumVariant {
-                    name: "B0xE",
-                    description: Some("16383 Bytes."),
-                    value: 14,
+                    name: "Kbytes2",
+                    description: Some("2 Kbytes."),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Kbytes3",
+                    description: Some("3 Kbytes."),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Kbytes4",
+                    description: Some("4 Kbytes."),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Kbytes5",
+                    description: Some("5 Kbytes."),
+                    value: 3,
                 },
             ],
         },
@@ -6310,7 +6291,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 1,
             variants: &[EnumVariant {
-                name: "B0x1",
+                name: "Disabled",
                 description: Some("Toggle inputs and PCS latencies are computed by MAC."),
                 value: 1,
             }],
@@ -6321,42 +6302,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Ratio11",
                     description: Some("The priority ratio is 1:1."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Ratio21",
                     description: Some("The priority ratio is 2:1."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "Ratio31",
                     description: Some("The priority ratio is 3:1."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
+                    name: "Ratio41",
                     description: Some("The priority ratio is 4:1."),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B0x4",
+                    name: "Ratio51",
                     description: Some("The priority ratio is 5:1."),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "B0x5",
+                    name: "Ratio61",
                     description: Some("The priority ratio is 6:1."),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "B0x6",
+                    name: "Ratio71",
                     description: Some("The priority ratio is 7:1."),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "B0x7",
+                    name: "Ratio81",
                     description: Some("The priority ratio is 8:1."),
                     value: 7,
                 },
@@ -6368,12 +6349,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Bytes",
                     description: Some("RBCT[9:0] is used to generate interrupt based on the number of bytes received."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Packets",
                     description: Some(
                         "RBCT[9:0] is used to generate interrupt based on the number of packets received.",
                     ),
@@ -6387,41 +6368,41 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("Stopped (Reset or Stop Receive Command issued)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("Running (Fetching Rx Transfer Descriptor)."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B0x3",
-                    description: Some("Running (Waiting for Rx packet)."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "B0x4",
-                    description: Some("Suspended (Rx Descriptor Unavailable)."),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "B0x5",
+                    name: "RunningClosing",
                     description: Some("Running (Closing the Rx Descriptor)."),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "B0x6",
-                    description: Some("Timestamp write state."),
-                    value: 6,
+                    name: "RunningFetching",
+                    description: Some("Running (Fetching Rx Transfer Descriptor)."),
+                    value: 1,
                 },
                 EnumVariant {
-                    name: "B0x7",
+                    name: "RunningWaiting",
+                    description: Some("Running (Waiting for Rx packet)."),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "RunningWriting",
                     description: Some(
                         "Running (Transferring the received packet data from the Rx buffer to the system memory).",
                     ),
                     value: 7,
+                },
+                EnumVariant {
+                    name: "Stopped",
+                    description: Some("Stopped (Reset or Stop Receive Command issued)."),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Suspended",
+                    description: Some("Suspended (Rx Descriptor Unavailable)."),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "TimestampWriting",
+                    description: Some("Timestamp write state."),
+                    value: 6,
                 },
             ],
         },
@@ -6431,24 +6412,24 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("256."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "B0x1",
-                    description: Some("512."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "B0x2",
+                    name: "Units1024",
                     description: Some("1024."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
+                    name: "Units2048",
                     description: Some("2048."),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "Units256",
+                    description: Some("256."),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Units512",
+                    description: Some("512."),
+                    value: 1,
                 },
             ],
         },
@@ -6458,41 +6439,41 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
-                    description: Some("Stopped (Reset or Stop Transmit Command issued)."),
-                    value: 0,
+                    name: "RunningClosing",
+                    description: Some("Running (Closing Tx Descriptor)."),
+                    value: 7,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "RunningFetching",
                     description: Some("Running (Fetching Tx Transfer Descriptor)."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
-                    description: Some("Running (Waiting for status)."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "B0x3",
+                    name: "RunningReading",
                     description: Some(
                         "Running (Reading Data from system memory buffer and queuing it to the Tx buffer (Tx FIFO)).",
                     ),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "B0x4",
-                    description: Some("Timestamp write state."),
-                    value: 4,
+                    name: "RunningWaiting",
+                    description: Some("Running (Waiting for status)."),
+                    value: 2,
                 },
                 EnumVariant {
-                    name: "B0x6",
+                    name: "Stopped",
+                    description: Some("Stopped (Reset or Stop Transmit Command issued)."),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Suspended",
                     description: Some("Suspended (Tx Descriptor Unavailable or Tx Buffer Underflow)."),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "B0x7",
-                    description: Some("Running (Closing Tx Descriptor)."),
-                    value: 7,
+                    name: "TimestampWriting",
+                    description: Some("Timestamp write state."),
+                    value: 4,
                 },
             ],
         },
@@ -6502,19 +6483,19 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x1",
-                    description: Some("Internal."),
-                    value: 1,
+                    name: "Both",
+                    description: Some("Both."),
+                    value: 3,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "External",
                     description: Some("External."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
-                    description: Some("Both."),
-                    value: 3,
+                    name: "Internal",
+                    description: Some("Internal."),
+                    value: 1,
                 },
             ],
         },

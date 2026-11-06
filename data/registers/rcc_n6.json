@@ -9398,35 +9398,35 @@
         "description": "Source selection for the I2C2 kernel clock.",
         "bit_offset": 4,
         "bit_size": 3,
-        "enum": "I2C2SEL"
+        "enum": "I2C1SEL"
       },
       {
         "name": "I2C3SEL",
         "description": "Source selection for the I2C3 kernel clock.",
         "bit_offset": 8,
         "bit_size": 3,
-        "enum": "I2C3SEL"
+        "enum": "I2C1SEL"
       },
       {
         "name": "I2C4SEL",
         "description": "Source selection for the I2C4 kernel clock.",
         "bit_offset": 12,
         "bit_size": 3,
-        "enum": "I2C4SEL"
+        "enum": "I2C1SEL"
       },
       {
         "name": "I3C1SEL",
         "description": "Source selection for the I3C1 kernel clock.",
         "bit_offset": 16,
         "bit_size": 3,
-        "enum": "I3C1SEL"
+        "enum": "I2C1SEL"
       },
       {
         "name": "I3C2SEL",
         "description": "Source selection for the I3C2 kernel clock.",
         "bit_offset": 20,
         "bit_size": 3,
-        "enum": "I3C2SEL"
+        "enum": "I2C1SEL"
       },
       {
         "name": "LTDCSEL",
@@ -9473,7 +9473,7 @@
         "description": "Source selection for the MDF1 kernel clock.",
         "bit_offset": 16,
         "bit_size": 3,
-        "enum": "MDFSEL"
+        "enum": "ADFSEL"
       }
     ]
   },
@@ -9485,21 +9485,21 @@
         "description": "Source selection for the XSPI1 kernel clock.",
         "bit_offset": 0,
         "bit_size": 2,
-        "enum": "XSPISEL"
+        "enum": "FMCSEL"
       },
       {
         "name": "XSPI2SEL",
         "description": "Source selection for the XSPI2 kernel clock.",
         "bit_offset": 4,
         "bit_size": 2,
-        "enum": "XSPISEL"
+        "enum": "FMCSEL"
       },
       {
         "name": "XSPI3SEL",
         "description": "Source selection for the XSPI3 kernel clock.",
         "bit_offset": 8,
         "bit_size": 2,
-        "enum": "XSPISEL"
+        "enum": "FMCSEL"
       },
       {
         "name": "OTGPHY1SEL",
@@ -9716,7 +9716,7 @@
         "description": "CPU clock switch status.",
         "bit_offset": 20,
         "bit_size": 2,
-        "enum": "CPUSWS"
+        "enum": "CPUSW"
       },
       {
         "name": "SYSSW",
@@ -9730,7 +9730,7 @@
         "description": "System clock switch status.",
         "bit_offset": 28,
         "bit_size": 2,
-        "enum": "SYSSWS"
+        "enum": "SYSSW"
       }
     ]
   },
@@ -9937,7 +9937,7 @@
         "description": "LSE ready interrupt flag.",
         "bit_offset": 1,
         "bit_size": 1,
-        "enum": "LSERDYF"
+        "enum": "LSECSSF"
       },
       {
         "name": "MSIRDYF",
@@ -9958,7 +9958,7 @@
         "description": "HSE ready interrupt flag.",
         "bit_offset": 4,
         "bit_size": 1,
-        "enum": "HSERDYF"
+        "enum": "HSECSSF"
       },
       {
         "name": "PLLRDYF",
@@ -14914,7 +14914,7 @@
         "description": "Remove reset flag.",
         "bit_offset": 16,
         "bit_size": 1,
-        "enum": "RSR_RMVF"
+        "enum": "HWRSR_RMVF"
       },
       {
         "name": "LCKRSTF",
@@ -15373,12 +15373,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "NON_LOCK",
         "description": "ACLKNC configuration bits are accessible by non-lock software only (default after reset).",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "LOCK",
         "description": "ACLKNC configuration bits are accessible by lock software only.",
         "value": 1
       }
@@ -15388,12 +15388,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "NON_PUBLIC",
         "description": "ACLKNC configuration bits are accessible by non-public software only (default after reset).",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "PUBLIC",
         "description": "ACLKNC configuration bits are accessible by public software only.",
         "value": 1
       }
@@ -15403,12 +15403,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "NON_PRIVILEGE",
         "description": "ACLKNC configuration bits are accessible by non-privilege software only (default after reset).",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "PRIVILEGE",
         "description": "ACLKNC configuration bits are accessible by privilege software only.",
         "value": 1
       }
@@ -15418,12 +15418,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "NON_SECURE",
         "description": "ACLKNC configuration bits are accessible by non-secure software only (default after reset).",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "SECURE",
         "description": "ACLKNC configuration bits are accessible by secure software only.",
         "value": 1
       }
@@ -15433,12 +15433,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "NON_LOCK",
         "description": "ACLKN configuration bits are accessible by non-lock software only (default after reset).",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "LOCK",
         "description": "ACLKN configuration bits are accessible by lock software only.",
         "value": 1
       }
@@ -15448,12 +15448,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "NON_PUBLIC",
         "description": "ACLKN configuration bits are accessible by non-public software only (default after reset).",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "PUBLIC",
         "description": "ACLKN configuration bits are accessible by public software only.",
         "value": 1
       }
@@ -15463,12 +15463,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "NON_PRIVILEGE",
         "description": "ACLKN configuration bits are accessible by non-privilege software only (default after reset).",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "PRIVILEGE",
         "description": "ACLKN configuration bits are accessible by privilege software only.",
         "value": 1
       }
@@ -15478,12 +15478,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "NON_SECURE",
         "description": "ACLKN configuration bits are accessible by non-secure software only (default after reset).",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "SECURE",
         "description": "ACLKN configuration bits are accessible by secure software only.",
         "value": 1
       }
@@ -15890,31 +15890,6 @@
     ]
   },
   "enum/CPUSW": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "HSI",
-        "description": "hsi_ck selected as system clock (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "MSI",
-        "description": "msi_ck selected as system clock.",
-        "value": 1
-      },
-      {
-        "name": "HSE",
-        "description": "hse_ck selected as system clock.",
-        "value": 2
-      },
-      {
-        "name": "IC1",
-        "description": "ic1_ck selected as system clock.",
-        "value": 3
-      }
-    ]
-  },
-  "enum/CPUSWS": {
     "bit_size": 2,
     "variants": [
       {
@@ -16539,21 +16514,6 @@
       }
     ]
   },
-  "enum/HSERDYF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NO_CLOCK_READY",
-        "description": "no clock ready interrupt caused by the HSE (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "CLOCK_READY",
-        "description": "clock ready interrupt caused by the HSE.",
-        "value": 1
-      }
-    ]
-  },
   "enum/HSERDYIE": {
     "bit_size": 1,
     "variants": [
@@ -16868,193 +16828,18 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "B_0x0",
+        "name": "NOT_OCCURRED",
         "description": "no Window Watchdog Reset occurred from WWDG (default after power-on reset).",
         "value": 0
       },
       {
-        "name": "B_0x1",
+        "name": "OCCURRED",
         "description": "Window Watchdog Reset occurred from WWDG.",
         "value": 1
       }
     ]
   },
   "enum/I2C1SEL": {
-    "bit_size": 3,
-    "variants": [
-      {
-        "name": "PCLK1",
-        "description": "pclk1 selected as reference clock.",
-        "value": 0
-      },
-      {
-        "name": "PER",
-        "description": "per_ck selected as reference clock.",
-        "value": 1
-      },
-      {
-        "name": "IC10",
-        "description": "ic10_ck selected as reference clock.",
-        "value": 2
-      },
-      {
-        "name": "IC15",
-        "description": "ic15_ck selected as reference clock.",
-        "value": 3
-      },
-      {
-        "name": "MSI",
-        "description": "msi_ck selected as reference clock.",
-        "value": 4
-      },
-      {
-        "name": "HSI_DIV",
-        "description": "hsi_div_ck selected as reference clock.",
-        "value": 5
-      }
-    ]
-  },
-  "enum/I2C2SEL": {
-    "bit_size": 3,
-    "variants": [
-      {
-        "name": "PCLK1",
-        "description": "pclk1 selected as reference clock.",
-        "value": 0
-      },
-      {
-        "name": "PER",
-        "description": "per_ck selected as reference clock.",
-        "value": 1
-      },
-      {
-        "name": "IC10",
-        "description": "ic10_ck selected as reference clock.",
-        "value": 2
-      },
-      {
-        "name": "IC15",
-        "description": "ic15_ck selected as reference clock.",
-        "value": 3
-      },
-      {
-        "name": "MSI",
-        "description": "msi_ck selected as reference clock.",
-        "value": 4
-      },
-      {
-        "name": "HSI_DIV",
-        "description": "hsi_div_ck selected as reference clock.",
-        "value": 5
-      }
-    ]
-  },
-  "enum/I2C3SEL": {
-    "bit_size": 3,
-    "variants": [
-      {
-        "name": "PCLK1",
-        "description": "pclk1 selected as reference clock.",
-        "value": 0
-      },
-      {
-        "name": "PER",
-        "description": "per_ck selected as reference clock.",
-        "value": 1
-      },
-      {
-        "name": "IC10",
-        "description": "ic10_ck selected as reference clock.",
-        "value": 2
-      },
-      {
-        "name": "IC15",
-        "description": "ic15_ck selected as reference clock.",
-        "value": 3
-      },
-      {
-        "name": "MSI",
-        "description": "msi_ck selected as reference clock.",
-        "value": 4
-      },
-      {
-        "name": "HSI_DIV",
-        "description": "hsi_div_ck selected as reference clock.",
-        "value": 5
-      }
-    ]
-  },
-  "enum/I2C4SEL": {
-    "bit_size": 3,
-    "variants": [
-      {
-        "name": "PCLK1",
-        "description": "pclk1 selected as reference clock.",
-        "value": 0
-      },
-      {
-        "name": "PER",
-        "description": "per_ck selected as reference clock.",
-        "value": 1
-      },
-      {
-        "name": "IC10",
-        "description": "ic10_ck selected as reference clock.",
-        "value": 2
-      },
-      {
-        "name": "IC15",
-        "description": "ic15_ck selected as reference clock.",
-        "value": 3
-      },
-      {
-        "name": "MSI",
-        "description": "msi_ck selected as reference clock.",
-        "value": 4
-      },
-      {
-        "name": "HSI_DIV",
-        "description": "hsi_div_ck selected as reference clock.",
-        "value": 5
-      }
-    ]
-  },
-  "enum/I3C1SEL": {
-    "bit_size": 3,
-    "variants": [
-      {
-        "name": "PCLK1",
-        "description": "pclk1 selected as reference clock.",
-        "value": 0
-      },
-      {
-        "name": "PER",
-        "description": "per_ck selected as reference clock.",
-        "value": 1
-      },
-      {
-        "name": "IC10",
-        "description": "ic10_ck selected as reference clock.",
-        "value": 2
-      },
-      {
-        "name": "IC15",
-        "description": "ic15_ck selected as reference clock.",
-        "value": 3
-      },
-      {
-        "name": "MSI",
-        "description": "msi_ck selected as reference clock.",
-        "value": 4
-      },
-      {
-        "name": "HSI_DIV",
-        "description": "hsi_div_ck selected as reference clock.",
-        "value": 5
-      }
-    ]
-  },
-  "enum/I3C2SEL": {
     "bit_size": 3,
     "variants": [
       {
@@ -18789,21 +18574,6 @@
       }
     ]
   },
-  "enum/LSERDYF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NO_READY",
-        "description": "no clock ready interrupt caused by the LSE (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "READY",
-        "description": "clock ready interrupt caused by the LSE.",
-        "value": 1
-      }
-    ]
-  },
   "enum/LSERDYIE": {
     "bit_size": 1,
     "variants": [
@@ -19036,51 +18806,6 @@
         "name": "DIV16",
         "description": "ck_icn_p_mce3 is divided by 16.",
         "value": 15
-      }
-    ]
-  },
-  "enum/MDFSEL": {
-    "bit_size": 3,
-    "variants": [
-      {
-        "name": "HCLK2",
-        "description": "hclk2 selected as reference clock.",
-        "value": 0
-      },
-      {
-        "name": "PER",
-        "description": "per_ck selected as reference clock.",
-        "value": 1
-      },
-      {
-        "name": "IC7",
-        "description": "ic7_ck selected as reference clock.",
-        "value": 2
-      },
-      {
-        "name": "IC8",
-        "description": "ic8_ck selected as reference clock.",
-        "value": 3
-      },
-      {
-        "name": "MSI",
-        "description": "msi_ck selected as reference clock.",
-        "value": 4
-      },
-      {
-        "name": "HSI_DIV",
-        "description": "hsi_div_ck selected as reference clock.",
-        "value": 5
-      },
-      {
-        "name": "I2S_CKIN",
-        "description": "I2S_CKIN selected as reference clock.",
-        "value": 6
-      },
-      {
-        "name": "TIMG",
-        "description": "timg_ck selected as reference clock.",
-        "value": 7
       }
     ]
   },
@@ -20234,21 +19959,6 @@
       }
     ]
   },
-  "enum/RSR_RMVF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "NO_CLEAR",
-        "description": "clear of the reset flags not activated (default after power-on reset).",
-        "value": 0
-      },
-      {
-        "name": "CLEAR",
-        "description": "clear the value of the reset flags.",
-        "value": 1
-      }
-    ]
-  },
   "enum/RSR_SFTRSTF": {
     "bit_size": 1,
     "variants": [
@@ -20764,31 +20474,6 @@
       }
     ]
   },
-  "enum/SYSSWS": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "HSI",
-        "description": "hsi_ck selected as system clock (default after reset).",
-        "value": 0
-      },
-      {
-        "name": "MSI",
-        "description": "msi_ck selected as system clock.",
-        "value": 1
-      },
-      {
-        "name": "HSE",
-        "description": "hse_ck selected as system clock.",
-        "value": 2
-      },
-      {
-        "name": "IC2",
-        "description": "ic2_ck selected as system clock.",
-        "value": 3
-      }
-    ]
-  },
   "enum/TIMPRE": {
     "bit_size": 2,
     "variants": [
@@ -20946,31 +20631,6 @@
         "name": "ENABLED",
         "description": "Wakeup interrupt enabled.",
         "value": 1
-      }
-    ]
-  },
-  "enum/XSPISEL": {
-    "bit_size": 2,
-    "variants": [
-      {
-        "name": "HCLK5",
-        "description": "hclk5 selected as reference clock.",
-        "value": 0
-      },
-      {
-        "name": "PER",
-        "description": "per_ck selected as reference clock.",
-        "value": 1
-      },
-      {
-        "name": "IC3",
-        "description": "ic3_ck selected as reference clock.",
-        "value": 2
-      },
-      {
-        "name": "IC4",
-        "description": "ic4_ck selected as reference clock.",
-        "value": 3
       }
     ]
   },

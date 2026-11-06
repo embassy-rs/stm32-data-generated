@@ -939,6 +939,18 @@
               "signal": "GLOBAL",
               "interrupt": "DAC1"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "CH1",
+              "dma": "GPDMA1",
+              "request": 2
+            },
+            {
+              "signal": "CH1",
+              "dma": "GPDMA2",
+              "request": 2
+            }
           ]
         },
         {
@@ -963,6 +975,18 @@
             {
               "signal": "GLOBAL",
               "interrupt": "DAC10"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "CH1",
+              "dma": "GPDMA1",
+              "request": 140
+            },
+            {
+              "signal": "CH1",
+              "dma": "GPDMA2",
+              "request": 140
             }
           ]
         },
@@ -995,6 +1019,18 @@
               "signal": "GLOBAL",
               "interrupt": "DAC2"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "CH1",
+              "dma": "GPDMA1",
+              "request": 3
+            },
+            {
+              "signal": "CH1",
+              "dma": "GPDMA2",
+              "request": 3
+            }
           ]
         },
         {
@@ -1019,6 +1055,18 @@
             {
               "signal": "GLOBAL",
               "interrupt": "DAC5"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "CH1",
+              "dma": "GPDMA1",
+              "request": 135
+            },
+            {
+              "signal": "CH1",
+              "dma": "GPDMA2",
+              "request": 135
             }
           ]
         },
@@ -1045,6 +1093,18 @@
               "signal": "GLOBAL",
               "interrupt": "DAC6"
             }
+          ],
+          "dma_channels": [
+            {
+              "signal": "CH1",
+              "dma": "GPDMA1",
+              "request": 136
+            },
+            {
+              "signal": "CH1",
+              "dma": "GPDMA2",
+              "request": 136
+            }
           ]
         },
         {
@@ -1069,6 +1129,18 @@
             {
               "signal": "GLOBAL",
               "interrupt": "DAC7"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "CH1",
+              "dma": "GPDMA1",
+              "request": 137
+            },
+            {
+              "signal": "CH1",
+              "dma": "GPDMA2",
+              "request": 137
             }
           ]
         },
@@ -1131,6 +1203,18 @@
             {
               "signal": "GLOBAL",
               "interrupt": "DAC9"
+            }
+          ],
+          "dma_channels": [
+            {
+              "signal": "CH1",
+              "dma": "GPDMA1",
+              "request": 139
+            },
+            {
+              "signal": "CH1",
+              "dma": "GPDMA2",
+              "request": 139
             }
           ]
         },

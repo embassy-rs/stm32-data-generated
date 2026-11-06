@@ -902,7 +902,7 @@ pub(crate) static REGISTERS: IR = IR {
             description: None,
             bit_size: 4,
             variants: &[EnumVariant {
-                name: "B0x0",
+                name: "FourK",
                 description: Some("The register file occupies a single 4-Kbyte region."),
                 value: 0,
             }],
@@ -913,26 +913,26 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "B0x0",
+                    name: "Async",
                     description: Some("Trace pins assigned for asynchronous mode (TRACESWO)."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "B0x1",
+                    name: "Sync1",
                     description: Some(
                         "Trace pins assigned for synchronous mode with a port width of 1 (TRACECK, TRACED0).",
                     ),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "B0x2",
+                    name: "Sync2",
                     description: Some(
                         "Trace pins assigned for synchronous mode with a port width of 2 ((TRACECK, TRACED0-1).",
                     ),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "B0x3",
+                    name: "Sync4",
                     description: Some(
                         "Trace pins assigned for synchronous mode with a port width of 4 ((TRACECK, TRACED0-3).",
                     ),

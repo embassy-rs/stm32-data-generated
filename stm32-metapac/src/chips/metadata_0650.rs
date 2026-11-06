@@ -136,10 +136,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM2_CC4",
             },
             PeripheralTrigger {
-                signal: "ADC_EXT_TRG4",
-                source: "TIM22_TRGO",
-            },
-            PeripheralTrigger {
                 signal: "ADC_EXT_TRG5",
                 source: "TIM2_CC3",
             },
@@ -1273,16 +1269,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(8),
             },
         ],
-        triggers: &[
-            PeripheralTrigger {
-                signal: "TIMX_TI4_IN1",
-                source: "COMP1_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_TI4_IN2",
-                source: "COMP2_OUT",
-            },
-        ],
+        triggers: &[],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",
@@ -1374,16 +1361,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
         ],
         dma_channels: &[],
-        triggers: &[
-            PeripheralTrigger {
-                signal: "TIMX_TI1_IN1",
-                source: "COMP1_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_TI1_IN2",
-                source: "COMP2_OUT",
-            },
-        ],
+        triggers: &[],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",

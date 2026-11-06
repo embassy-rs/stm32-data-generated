@@ -663,10 +663,6 @@
               "source": "TIM3_TRGO"
             },
             {
-              "signal": "ADC_EXT_TRG5",
-              "source": "TIM4_CH4"
-            },
-            {
               "signal": "ADC_EXT_TRG6",
               "source": "EXTI11_TRG"
             },
@@ -689,10 +685,6 @@
             {
               "signal": "ADC_JEXT_TRG4",
               "source": "TIM3_CH4"
-            },
-            {
-              "signal": "ADC_JEXT_TRG5",
-              "source": "TIM4_TRGO"
             },
             {
               "signal": "ADC_JEXT_TRG6",
@@ -794,10 +786,6 @@
               "source": "TIM3_TRGO"
             },
             {
-              "signal": "ADC_EXT_TRG5",
-              "source": "TIM4_CH4"
-            },
-            {
               "signal": "ADC_EXT_TRG6",
               "source": "EXTI11_TRG"
             },
@@ -820,10 +808,6 @@
             {
               "signal": "ADC_JEXT_TRG4",
               "source": "TIM3_CH4"
-            },
-            {
-              "signal": "ADC_JEXT_TRG5",
-              "source": "TIM4_TRGO"
             },
             {
               "signal": "ADC_JEXT_TRG6",

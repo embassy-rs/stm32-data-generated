@@ -996,10 +996,6 @@
           ],
           "triggers": [
             {
-              "signal": "ADC_EXT_TRG0",
-              "source": "TIM6_TRGO"
-            },
-            {
               "signal": "ADC_EXT_TRG1",
               "source": "TIM21_CC2"
             },
@@ -1022,10 +1018,6 @@
             {
               "signal": "ADC_EXT_TRG5",
               "source": "TIM2_CC3"
-            },
-            {
-              "signal": "ADC_EXT_TRG6",
-              "source": "TIM3_TRGO"
             },
             {
               "signal": "ADC_EXT_TRG7",

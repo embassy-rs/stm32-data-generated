@@ -709,10 +709,6 @@
               "source": "TIM1_CC4"
             },
             {
-              "signal": "ADC_EXT_TRG2",
-              "source": "TIM2_TRGO"
-            },
-            {
               "signal": "ADC_EXT_TRG3",
               "source": "TIM3_TRGO"
             },

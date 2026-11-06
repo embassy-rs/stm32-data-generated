@@ -231,58 +231,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM3_CC4",
             },
             PeripheralTrigger {
-                signal: "ADC_EXT_TRG16",
-                source: "TIM20_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG17",
-                source: "TIM20_TRGO2",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG18",
-                source: "TIM20_CC1",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG19",
-                source: "TIM20_CC2",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG20",
-                source: "TIM20_CC3",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG21",
-                source: "HRTIM_ADC_TRG1",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG22",
-                source: "HRTIM_ADC_TRG3",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG23",
-                source: "HRTIM_ADC_TRG5",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG24",
-                source: "HRTIM_ADC_TRG6",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG25",
-                source: "HRTIM_ADC_TRG7",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG26",
-                source: "HRTIM_ADC_TRG8",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG27",
-                source: "HRTIM_ADC_TRG9",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG28",
-                source: "HRTIM_ADC_TRG10",
-            },
-            PeripheralTrigger {
                 signal: "ADC_EXT_TRG29",
                 source: "LPTIMOUT",
             },
@@ -353,50 +301,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "ADC_JEXT_TRG15",
                 source: "TIM15_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG16",
-                source: "TIM20_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG17",
-                source: "TIM20_TRGO2",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG18",
-                source: "TIM20_CC4",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG19",
-                source: "HRTIM_ADC_TRG2",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG20",
-                source: "HRTIM_ADC_TRG4",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG21",
-                source: "HRTIM_ADC_TRG5",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG22",
-                source: "HRTIM_ADC_TRG6",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG23",
-                source: "HRTIM_ADC_TRG7",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG24",
-                source: "HRTIM_ADC_TRG8",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG25",
-                source: "HRTIM_ADC_TRG9",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG26",
-                source: "HRTIM_ADC_TRG10",
             },
             PeripheralTrigger {
                 signal: "ADC_JEXT_TRG27",
@@ -684,58 +588,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM3_CC4",
             },
             PeripheralTrigger {
-                signal: "ADC_EXT_TRG16",
-                source: "TIM20_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG17",
-                source: "TIM20_TRGO2",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG18",
-                source: "TIM20_CC1",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG19",
-                source: "TIM20_CC2",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG20",
-                source: "TIM20_CC3",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG21",
-                source: "HRTIM_ADC_TRG1",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG22",
-                source: "HRTIM_ADC_TRG3",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG23",
-                source: "HRTIM_ADC_TRG5",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG24",
-                source: "HRTIM_ADC_TRG6",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG25",
-                source: "HRTIM_ADC_TRG7",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG26",
-                source: "HRTIM_ADC_TRG8",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG27",
-                source: "HRTIM_ADC_TRG9",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG28",
-                source: "HRTIM_ADC_TRG10",
-            },
-            PeripheralTrigger {
                 signal: "ADC_EXT_TRG29",
                 source: "LPTIMOUT",
             },
@@ -806,50 +658,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "ADC_JEXT_TRG15",
                 source: "TIM15_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG16",
-                source: "TIM20_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG17",
-                source: "TIM20_TRGO2",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG18",
-                source: "TIM20_CC4",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG19",
-                source: "HRTIM_ADC_TRG2",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG20",
-                source: "HRTIM_ADC_TRG4",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG21",
-                source: "HRTIM_ADC_TRG5",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG22",
-                source: "HRTIM_ADC_TRG6",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG23",
-                source: "HRTIM_ADC_TRG7",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG24",
-                source: "HRTIM_ADC_TRG8",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG25",
-                source: "HRTIM_ADC_TRG9",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG26",
-                source: "HRTIM_ADC_TRG10",
             },
             PeripheralTrigger {
                 signal: "ADC_JEXT_TRG27",
@@ -1417,34 +1225,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM3_TRGO",
             },
             PeripheralTrigger {
-                signal: "DAC_CHX_TRG9",
-                source: "HRTIM_DAC_RESET_TRG1",
-            },
-            PeripheralTrigger {
-                signal: "DAC_CHX_TRG10",
-                source: "HRTIM_DAC_RESET_TRG2",
-            },
-            PeripheralTrigger {
-                signal: "DAC_CHX_TRG11",
-                source: "HRTIM_DAC_RESET_TRG3",
-            },
-            PeripheralTrigger {
-                signal: "DAC_CHX_TRG12",
-                source: "HRTIM_DAC_RESET_TRG4",
-            },
-            PeripheralTrigger {
-                signal: "DAC_CHX_TRG13",
-                source: "HRTIM_DAC_RESET_TRG5",
-            },
-            PeripheralTrigger {
-                signal: "DAC_CHX_TRG14",
-                source: "HRTIM_DAC_RESET_TRG6",
-            },
-            PeripheralTrigger {
-                signal: "DAC_CHX_TRG15",
-                source: "HRTIM_DAC_TRG1",
-            },
-            PeripheralTrigger {
                 signal: "DAC_INC_CHX_TRG1",
                 source: "TIM8_TRGO",
             },
@@ -1475,30 +1255,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "DAC_INC_CHX_TRG8",
                 source: "TIM3_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "DAC_INC_CHX_TRG9",
-                source: "HRTIM_DAC_STEP_TRG1",
-            },
-            PeripheralTrigger {
-                signal: "DAC_INC_CHX_TRG10",
-                source: "HRTIM_DAC_STEP_TRG2",
-            },
-            PeripheralTrigger {
-                signal: "DAC_INC_CHX_TRG11",
-                source: "HRTIM_DAC_STEP_TRG3",
-            },
-            PeripheralTrigger {
-                signal: "DAC_INC_CHX_TRG12",
-                source: "HRTIM_DAC_STEP_TRG4",
-            },
-            PeripheralTrigger {
-                signal: "DAC_INC_CHX_TRG13",
-                source: "HRTIM_DAC_STEP_TRG5",
-            },
-            PeripheralTrigger {
-                signal: "DAC_INC_CHX_TRG14",
-                source: "HRTIM_DAC_STEP_TRG6",
             },
         ],
         interrupts: &[PeripheralInterrupt {
@@ -1582,34 +1338,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM3_TRGO",
             },
             PeripheralTrigger {
-                signal: "DAC_CHX_TRG9",
-                source: "HRTIM_DAC_RESET_TRG1",
-            },
-            PeripheralTrigger {
-                signal: "DAC_CHX_TRG10",
-                source: "HRTIM_DAC_RESET_TRG2",
-            },
-            PeripheralTrigger {
-                signal: "DAC_CHX_TRG11",
-                source: "HRTIM_DAC_RESET_TRG3",
-            },
-            PeripheralTrigger {
-                signal: "DAC_CHX_TRG12",
-                source: "HRTIM_DAC_RESET_TRG4",
-            },
-            PeripheralTrigger {
-                signal: "DAC_CHX_TRG13",
-                source: "HRTIM_DAC_RESET_TRG5",
-            },
-            PeripheralTrigger {
-                signal: "DAC_CHX_TRG14",
-                source: "HRTIM_DAC_RESET_TRG6",
-            },
-            PeripheralTrigger {
-                signal: "DAC_CHX_TRG15",
-                source: "HRTIM_DAC_TRG3",
-            },
-            PeripheralTrigger {
                 signal: "DAC_INC_CHX_TRG1",
                 source: "TIM1_TRGO",
             },
@@ -1640,30 +1368,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "DAC_INC_CHX_TRG8",
                 source: "TIM3_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "DAC_INC_CHX_TRG9",
-                source: "HRTIM_DAC_STEP_TRG1",
-            },
-            PeripheralTrigger {
-                signal: "DAC_INC_CHX_TRG10",
-                source: "HRTIM_DAC_STEP_TRG2",
-            },
-            PeripheralTrigger {
-                signal: "DAC_INC_CHX_TRG11",
-                source: "HRTIM_DAC_STEP_TRG3",
-            },
-            PeripheralTrigger {
-                signal: "DAC_INC_CHX_TRG12",
-                source: "HRTIM_DAC_STEP_TRG4",
-            },
-            PeripheralTrigger {
-                signal: "DAC_INC_CHX_TRG13",
-                source: "HRTIM_DAC_STEP_TRG5",
-            },
-            PeripheralTrigger {
-                signal: "DAC_INC_CHX_TRG14",
-                source: "HRTIM_DAC_STEP_TRG6",
             },
         ],
         interrupts: &[PeripheralInterrupt {
@@ -4151,10 +3855,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM4_TRGO",
             },
             PeripheralTrigger {
-                signal: "TIMX_ITR_IN4",
-                source: "TIM5_TRGO",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_ITR_IN5",
                 source: "TIM8_TRGO",
             },
@@ -4169,14 +3869,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_ITR_IN8",
                 source: "TIM17_OC1",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ITR_IN9",
-                source: "TIM20_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ITR_IN10",
-                source: "HRTIM_OUT_SYNC2",
             },
             PeripheralTrigger {
                 signal: "TIMX_ETR_IN1",
@@ -4195,18 +3887,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP4_OUT",
             },
             PeripheralTrigger {
-                signal: "TIMX_ETR_IN5",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN6",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN7",
-                source: "COMP7_OUT",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_ETR_IN8",
                 source: "ADC1_AWD1",
             },
@@ -4217,18 +3897,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_ETR_IN10",
                 source: "ADC1_AWD3",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN11",
-                source: "ADC4_AWD1",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN12",
-                source: "ADC4_AWD2",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN13",
-                source: "ADC4_AWD3",
             },
             PeripheralTrigger {
                 signal: "TIMX_BRK_IN1",
@@ -4247,18 +3915,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP4_OUT",
             },
             PeripheralTrigger {
-                signal: "TIMX_BRK_IN5",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK_IN6",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK_IN7",
-                source: "COMP7_OUT",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_BRK2_IN1",
                 source: "COMP1_OUT",
             },
@@ -4273,18 +3929,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_BRK2_IN4",
                 source: "COMP4_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK2_IN5",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK2_IN6",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK2_IN7",
-                source: "COMP7_OUT",
             },
             PeripheralTrigger {
                 signal: "TIMX_SYS_BRK_IN0",
@@ -4321,18 +3965,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_OCREF_CLR_IN3",
                 source: "COMP4_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN4",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN5",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN6",
-                source: "COMP7_OUT",
             },
         ],
         interrupts: &[
@@ -4471,28 +4103,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP2_OUT",
             },
             PeripheralTrigger {
-                signal: "TIMX_TI1_IN4",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_TI1_IN5",
-                source: "COMP7_OUT",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_TI2_IN1",
                 source: "COMP2_OUT",
             },
             PeripheralTrigger {
                 signal: "TIMX_TI2_IN2",
                 source: "COMP3_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_TI2_IN3",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_TI2_IN4",
-                source: "COMP7_OUT",
             },
             PeripheralTrigger {
                 signal: "TIMX_ITR_IN0",
@@ -4511,10 +4127,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM4_TRGO",
             },
             PeripheralTrigger {
-                signal: "TIMX_ITR_IN4",
-                source: "TIM5_TRGO",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_ITR_IN5",
                 source: "TIM8_TRGO",
             },
@@ -4525,14 +4137,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_ITR_IN8",
                 source: "TIM17_OC1",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ITR_IN9",
-                source: "TIM20_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ITR_IN10",
-                source: "HRTIM_OUT_SYNC2",
             },
             PeripheralTrigger {
                 signal: "TIMX_BRK_IN1",
@@ -4549,18 +4153,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_BRK_IN4",
                 source: "COMP4_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK_IN5",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK_IN6",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK_IN7",
-                source: "COMP7_OUT",
             },
             PeripheralTrigger {
                 signal: "TIMX_SYS_BRK_IN0",
@@ -4597,18 +4189,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_OCREF_CLR_IN3",
                 source: "COMP4_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN4",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN5",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN6",
-                source: "COMP7_OUT",
             },
         ],
         interrupts: &[
@@ -4726,10 +4306,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         ],
         triggers: &[
             PeripheralTrigger {
-                signal: "TIMX_TI1_IN1",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_TI1_IN2",
                 source: "MCO",
             },
@@ -4766,10 +4342,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM4_TRGO",
             },
             PeripheralTrigger {
-                signal: "TIMX_ITR_IN4",
-                source: "TIM5_TRGO",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_ITR_IN5",
                 source: "TIM8_TRGO",
             },
@@ -4780,14 +4352,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_ITR_IN8",
                 source: "TIM17_OC1",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ITR_IN9",
-                source: "TIM20_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ITR_IN10",
-                source: "HRTIM_OUT_SYNC2",
             },
             PeripheralTrigger {
                 signal: "TIMX_BRK_IN1",
@@ -4804,18 +4368,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_BRK_IN4",
                 source: "COMP4_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK_IN5",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK_IN6",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK_IN7",
-                source: "COMP7_OUT",
             },
             PeripheralTrigger {
                 signal: "TIMX_SYS_BRK_IN0",
@@ -4852,18 +4404,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_OCREF_CLR_IN3",
                 source: "COMP4_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN4",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN5",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN6",
-                source: "COMP7_OUT",
             },
         ],
         interrupts: &[
@@ -4976,10 +4516,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         ],
         triggers: &[
             PeripheralTrigger {
-                signal: "TIMX_TI1_IN1",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_TI1_IN2",
                 source: "MCO",
             },
@@ -5016,10 +4552,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM4_TRGO",
             },
             PeripheralTrigger {
-                signal: "TIMX_ITR_IN4",
-                source: "TIM5_TRGO",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_ITR_IN5",
                 source: "TIM8_TRGO",
             },
@@ -5030,14 +4562,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_ITR_IN8",
                 source: "TIM17_OC1",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ITR_IN9",
-                source: "TIM20_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ITR_IN10",
-                source: "HRTIM_OUT_SYNC2",
             },
             PeripheralTrigger {
                 signal: "TIMX_BRK_IN1",
@@ -5054,18 +4578,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_BRK_IN4",
                 source: "COMP4_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK_IN5",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK_IN6",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK_IN7",
-                source: "COMP7_OUT",
             },
             PeripheralTrigger {
                 signal: "TIMX_SYS_BRK_IN0",
@@ -5102,18 +4614,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_OCREF_CLR_IN3",
                 source: "COMP4_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN4",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN5",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN6",
-                source: "COMP7_OUT",
             },
         ],
         interrupts: &[
@@ -5306,10 +4806,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP4_OUT",
             },
             PeripheralTrigger {
-                signal: "TIMX_TI1_IN5",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_TI2_IN1",
                 source: "COMP1_OUT",
             },
@@ -5324,10 +4820,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_TI2_IN4",
                 source: "COMP4_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_TI2_IN5",
-                source: "COMP6_OUT",
             },
             PeripheralTrigger {
                 signal: "TIMX_TI3_IN1",
@@ -5354,10 +4846,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM4_TRGO",
             },
             PeripheralTrigger {
-                signal: "TIMX_ITR_IN4",
-                source: "TIM5_TRGO",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_ITR_IN5",
                 source: "TIM8_TRGO",
             },
@@ -5372,14 +4860,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_ITR_IN8",
                 source: "TIM17_OC1",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ITR_IN9",
-                source: "TIM20_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ITR_IN10",
-                source: "HRTIM_OUT_SYNC2",
             },
             PeripheralTrigger {
                 signal: "TIMX_ITR_IN11",
@@ -5402,28 +4882,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP4_OUT",
             },
             PeripheralTrigger {
-                signal: "TIMX_ETR_IN5",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN6",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN7",
-                source: "COMP7_OUT",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_ETR_IN8",
                 source: "TIM3_ETR",
             },
             PeripheralTrigger {
                 signal: "TIMX_ETR_IN9",
                 source: "TIM4_ETR",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN10",
-                source: "TIM5_ETR",
             },
             PeripheralTrigger {
                 signal: "TIMX_ETR_IN11",
@@ -5448,18 +4912,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_OCREF_CLR_IN3",
                 source: "COMP4_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN4",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN5",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN6",
-                source: "COMP7_OUT",
             },
         ],
         interrupts: &[
@@ -5660,18 +5112,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP4_OUT",
             },
             PeripheralTrigger {
-                signal: "TIMX_TI1_IN5",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_TI1_IN6",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_TI1_IN7",
-                source: "COMP7_OUT",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_TI2_IN1",
                 source: "COMP1_OUT",
             },
@@ -5686,18 +5126,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_TI2_IN4",
                 source: "COMP4_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_TI2_IN5",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_TI2_IN6",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_TI2_IN7",
-                source: "COMP7_OUT",
             },
             PeripheralTrigger {
                 signal: "TIMX_TI3_IN1",
@@ -5716,10 +5144,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM4_TRGO",
             },
             PeripheralTrigger {
-                signal: "TIMX_ITR_IN4",
-                source: "TIM5_TRGO",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_ITR_IN5",
                 source: "TIM8_TRGO",
             },
@@ -5736,14 +5160,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM17_OC1",
             },
             PeripheralTrigger {
-                signal: "TIMX_ITR_IN9",
-                source: "TIM20_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ITR_IN10",
-                source: "HRTIM_OUT_SYNC2",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_ETR_IN1",
                 source: "COMP1_OUT",
             },
@@ -5758,18 +5174,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_ETR_IN4",
                 source: "COMP4_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN5",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN6",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN7",
-                source: "COMP7_OUT",
             },
             PeripheralTrigger {
                 signal: "TIMX_ETR_IN8",
@@ -5806,18 +5210,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_OCREF_CLR_IN3",
                 source: "COMP4_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN4",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN5",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN6",
-                source: "COMP7_OUT",
             },
         ],
         interrupts: &[
@@ -5985,18 +5377,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP4_OUT",
             },
             PeripheralTrigger {
-                signal: "TIMX_TI1_IN5",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_TI1_IN6",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_TI1_IN7",
-                source: "COMP7_OUT",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_TI2_IN1",
                 source: "COMP1_OUT",
             },
@@ -6013,22 +5393,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP4_OUT",
             },
             PeripheralTrigger {
-                signal: "TIMX_TI2_IN5",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_TI2_IN7",
-                source: "COMP7_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_TI3_IN1",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_TI4_IN1",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_ITR_IN0",
                 source: "TIM1_TRGO",
             },
@@ -6039,10 +5403,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_ITR_IN2",
                 source: "TIM3_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ITR_IN4",
-                source: "TIM5_TRGO",
             },
             PeripheralTrigger {
                 signal: "TIMX_ITR_IN5",
@@ -6061,14 +5421,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM17_OC1",
             },
             PeripheralTrigger {
-                signal: "TIMX_ITR_IN9",
-                source: "TIM20_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ITR_IN10",
-                source: "HRTIM_OUT_SYNC2",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_ETR_IN1",
                 source: "COMP1_OUT",
             },
@@ -6085,24 +5437,8 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP4_OUT",
             },
             PeripheralTrigger {
-                signal: "TIMX_ETR_IN5",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN6",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN7",
-                source: "COMP7_OUT",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_ETR_IN8",
                 source: "TIM3_ETR",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN9",
-                source: "TIM5_ETR",
             },
         ],
         interrupts: &[
@@ -6548,10 +5884,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM4_TRGO",
             },
             PeripheralTrigger {
-                signal: "TIMX_ITR_IN4",
-                source: "TIM5_TRGO",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_ITR_IN6",
                 source: "TIM15_TRGO",
             },
@@ -6562,14 +5894,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_ITR_IN8",
                 source: "TIM17_OC1",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ITR_IN9",
-                source: "TIM20_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ITR_IN10",
-                source: "HRTIM_OUT_SYNC2",
             },
             PeripheralTrigger {
                 signal: "TIMX_ETR_IN1",
@@ -6588,18 +5912,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP4_OUT",
             },
             PeripheralTrigger {
-                signal: "TIMX_ETR_IN5",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN6",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN7",
-                source: "COMP7_OUT",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_ETR_IN8",
                 source: "ADC2_AWD1",
             },
@@ -6610,18 +5922,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_ETR_IN10",
                 source: "ADC2_AWD3",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN11",
-                source: "ADC3_AWD1",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN12",
-                source: "ADC3_AWD2",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_ETR_IN13",
-                source: "ADC3_AWD3",
             },
             PeripheralTrigger {
                 signal: "TIMX_BRK_IN1",
@@ -6640,18 +5940,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP4_OUT",
             },
             PeripheralTrigger {
-                signal: "TIMX_BRK_IN5",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK_IN6",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK_IN7",
-                source: "COMP7_OUT",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_BRK2_IN1",
                 source: "COMP1_OUT",
             },
@@ -6666,18 +5954,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_BRK2_IN4",
                 source: "COMP4_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK2_IN5",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK2_IN6",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK2_IN7",
-                source: "COMP7_OUT",
             },
             PeripheralTrigger {
                 signal: "TIMX_SYS_BRK_IN0",
@@ -6714,18 +5990,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_OCREF_CLR_IN3",
                 source: "COMP4_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN4",
-                source: "COMP5_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN5",
-                source: "COMP6_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN6",
-                source: "COMP7_OUT",
             },
         ],
         interrupts: &[

@@ -114,18 +114,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }],
         triggers: &[
             PeripheralTrigger {
-                signal: "ADC_EXT_TRG0",
-                source: "TIM1_CH1",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG1",
-                source: "TIM1_CH2",
-            },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG2",
-                source: "TIM1_CH3",
-            },
-            PeripheralTrigger {
                 signal: "ADC_EXT_TRG3",
                 source: "TIM2_CH2",
             },
@@ -134,20 +122,8 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM3_TRGO",
             },
             PeripheralTrigger {
-                signal: "ADC_EXT_TRG5",
-                source: "TIM4_CH4",
-            },
-            PeripheralTrigger {
                 signal: "ADC_EXT_TRG6",
                 source: "EXTI11_TRG",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG0",
-                source: "TIM1_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG1",
-                source: "TIM1_CH4",
             },
             PeripheralTrigger {
                 signal: "ADC_JEXT_TRG2",
@@ -160,10 +136,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "ADC_JEXT_TRG4",
                 source: "TIM3_CH4",
-            },
-            PeripheralTrigger {
-                signal: "ADC_JEXT_TRG5",
-                source: "TIM4_TRGO",
             },
             PeripheralTrigger {
                 signal: "ADC_JEXT_TRG6",

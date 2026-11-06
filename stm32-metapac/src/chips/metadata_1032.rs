@@ -930,10 +930,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP1_OUT",
             },
             PeripheralTrigger {
-                signal: "I2C_TRG9",
-                source: "COMP2_OUT",
-            },
-            PeripheralTrigger {
                 signal: "I2C_TRG10",
                 source: "RTC_ALRA_TRG",
             },
@@ -1064,10 +1060,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "I2C_TRG8",
                 source: "COMP1_OUT",
-            },
-            PeripheralTrigger {
-                signal: "I2C_TRG9",
-                source: "COMP2_OUT",
             },
             PeripheralTrigger {
                 signal: "I2C_TRG10",
@@ -1227,10 +1219,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP1_OUT",
             },
             PeripheralTrigger {
-                signal: "LPTIM_EXT_TRG7",
-                source: "COMP2_OUT",
-            },
-            PeripheralTrigger {
                 signal: "LPTIM_IN1_MUX0",
                 source: "LPTIM1_IN1",
             },
@@ -1243,20 +1231,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "LPTIM1_IN2",
             },
             PeripheralTrigger {
-                signal: "LPTIM_IN2_MUX1",
-                source: "COMP2_OUT",
-            },
-            PeripheralTrigger {
                 signal: "LPTIM_IC1_MUX0",
                 source: "LPTIM1_CH1",
             },
             PeripheralTrigger {
                 signal: "LPTIM_IC1_MUX1",
                 source: "COMP1_OUT",
-            },
-            PeripheralTrigger {
-                signal: "LPTIM_IC1_MUX2",
-                source: "COMP2_OUT",
             },
             PeripheralTrigger {
                 signal: "LPTIM_IC2_MUX0",
@@ -1385,10 +1365,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP1_OUT",
             },
             PeripheralTrigger {
-                signal: "LPTIM_EXT_TRG7",
-                source: "COMP2_OUT",
-            },
-            PeripheralTrigger {
                 signal: "LPTIM_IN1_MUX0",
                 source: "LPTIM2_IN1",
             },
@@ -1401,20 +1377,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "LPTIM2_IN2",
             },
             PeripheralTrigger {
-                signal: "LPTIM_IN2_MUX1",
-                source: "COMP2_OUT",
-            },
-            PeripheralTrigger {
                 signal: "LPTIM_IC1_MUX0",
                 source: "LPTIM2_CH1",
             },
             PeripheralTrigger {
                 signal: "LPTIM_IC1_MUX1",
                 source: "COMP1_OUT",
-            },
-            PeripheralTrigger {
-                signal: "LPTIM_IC1_MUX2",
-                source: "COMP2_OUT",
             },
             PeripheralTrigger {
                 signal: "LPTIM_IC2_MUX0",
@@ -2113,10 +2081,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP1_OUT",
             },
             PeripheralTrigger {
-                signal: "SPI_TRG9",
-                source: "COMP2_OUT",
-            },
-            PeripheralTrigger {
                 signal: "SPI_TRG10",
                 source: "RTC_ALRA_TRG",
             },
@@ -2242,10 +2206,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "SPI_TRG8",
                 source: "COMP1_OUT",
-            },
-            PeripheralTrigger {
-                signal: "SPI_TRG9",
-                source: "COMP2_OUT",
             },
             PeripheralTrigger {
                 signal: "SPI_TRG10",
@@ -2626,10 +2586,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP1_OUT",
             },
             PeripheralTrigger {
-                signal: "TIMX_TI1_IN2",
-                source: "COMP2_OUT",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_ITR_IN1",
                 source: "TIM2_TRGO",
             },
@@ -2650,10 +2606,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP1_OUT",
             },
             PeripheralTrigger {
-                signal: "TIMX_ETR_IN2",
-                source: "COMP2_OUT",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_ETR_IN11",
                 source: "ADC4_AWD1",
             },
@@ -2670,16 +2622,8 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP1_OUT",
             },
             PeripheralTrigger {
-                signal: "TIMX_BRK_IN2",
-                source: "COMP2_OUT",
-            },
-            PeripheralTrigger {
                 signal: "TIMX_BRK2_IN1",
                 source: "COMP1_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_BRK2_IN2",
-                source: "COMP2_OUT",
             },
             PeripheralTrigger {
                 signal: "TIMX_SYS_BRK_IN0",
@@ -2704,10 +2648,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_OCREF_CLR_IN0",
                 source: "COMP1_OUT",
-            },
-            PeripheralTrigger {
-                signal: "TIMX_OCREF_CLR_IN1",
-                source: "COMP2_OUT",
             },
         ],
         interrupts: &[
@@ -3600,10 +3540,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "COMP1_OUT",
             },
             PeripheralTrigger {
-                signal: "USART_TRG9",
-                source: "COMP2_OUT",
-            },
-            PeripheralTrigger {
                 signal: "USART_TRG10",
                 source: "RTC_ALRA_TRG",
             },
@@ -3774,10 +3710,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "USART_TRG8",
                 source: "COMP1_OUT",
-            },
-            PeripheralTrigger {
-                signal: "USART_TRG9",
-                source: "COMP2_OUT",
             },
             PeripheralTrigger {
                 signal: "USART_TRG10",

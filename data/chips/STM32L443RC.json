@@ -1694,24 +1694,8 @@
               "source": "TIM2_CC2"
             },
             {
-              "signal": "ADC_EXT_TRG4",
-              "source": "TIM3_TRGO"
-            },
-            {
-              "signal": "ADC_EXT_TRG5",
-              "source": "TIM4_CC4"
-            },
-            {
               "signal": "ADC_EXT_TRG6",
               "source": "EXTI11_TRG"
-            },
-            {
-              "signal": "ADC_EXT_TRG7",
-              "source": "TIM8_TRGO"
-            },
-            {
-              "signal": "ADC_EXT_TRG8",
-              "source": "TIM8_TRGO2"
             },
             {
               "signal": "ADC_EXT_TRG9",
@@ -1726,20 +1710,12 @@
               "source": "TIM2_TRGO"
             },
             {
-              "signal": "ADC_EXT_TRG12",
-              "source": "TIM4_TRGO"
-            },
-            {
               "signal": "ADC_EXT_TRG13",
               "source": "TIM6_TRGO"
             },
             {
               "signal": "ADC_EXT_TRG14",
               "source": "TIM15_TRGO"
-            },
-            {
-              "signal": "ADC_EXT_TRG15",
-              "source": "TIM3_CC4"
             },
             {
               "signal": "ADC_JEXT_TRG0",
@@ -1758,44 +1734,12 @@
               "source": "TIM2_CC1"
             },
             {
-              "signal": "ADC_JEXT_TRG4",
-              "source": "TIM3_CC4"
-            },
-            {
-              "signal": "ADC_JEXT_TRG5",
-              "source": "TIM4_TRGO"
-            },
-            {
               "signal": "ADC_JEXT_TRG6",
               "source": "EXTI15_TRG"
             },
             {
-              "signal": "ADC_JEXT_TRG7",
-              "source": "TIM8_CC4"
-            },
-            {
               "signal": "ADC_JEXT_TRG8",
               "source": "TIM1_TRGO2"
-            },
-            {
-              "signal": "ADC_JEXT_TRG9",
-              "source": "TIM8_TRGO"
-            },
-            {
-              "signal": "ADC_JEXT_TRG10",
-              "source": "TIM8_TRGO2"
-            },
-            {
-              "signal": "ADC_JEXT_TRG11",
-              "source": "TIM3_CC3"
-            },
-            {
-              "signal": "ADC_JEXT_TRG12",
-              "source": "TIM3_TRGO"
-            },
-            {
-              "signal": "ADC_JEXT_TRG13",
-              "source": "TIM3_CC1"
             },
             {
               "signal": "ADC_JEXT_TRG14",
@@ -2182,24 +2126,12 @@
               "source": "TIM6_TRGO"
             },
             {
-              "signal": "DAC_CHX_TRG1",
-              "source": "TIM8_TRGO"
-            },
-            {
               "signal": "DAC_CHX_TRG2",
               "source": "TIM7_TRGO"
             },
             {
-              "signal": "DAC_CHX_TRG3",
-              "source": "TIM5_TRGO"
-            },
-            {
               "signal": "DAC_CHX_TRG4",
               "source": "TIM2_TRGO"
-            },
-            {
-              "signal": "DAC_CHX_TRG5",
-              "source": "TIM4_TRGO"
             },
             {
               "signal": "DAC_CHX_TRG6",
@@ -4409,16 +4341,6 @@
               "channel": "DMA1_CH7",
               "request": 7
             }
-          ],
-          "triggers": [
-            {
-              "signal": "TIMX_BRK_IN1",
-              "source": "DFSDM1_BREAK0"
-            },
-            {
-              "signal": "TIMX_BRK_IN2",
-              "source": "DFSDM1_BREAK1"
-            }
           ]
         },
         {
@@ -4538,16 +4460,6 @@
               "channel": "DMA1_CH5",
               "request": 7
             }
-          ],
-          "triggers": [
-            {
-              "signal": "TIMX_BRK_IN1",
-              "source": "DFSDM1_BREAK0"
-            },
-            {
-              "signal": "TIMX_BRK_IN2",
-              "source": "DFSDM1_BREAK1"
-            }
           ]
         },
         {
@@ -4646,16 +4558,6 @@
               "signal": "UP",
               "channel": "DMA1_CH6",
               "request": 4
-            }
-          ],
-          "triggers": [
-            {
-              "signal": "TIMX_BRK_IN1",
-              "source": "DFSDM1_BREAK0"
-            },
-            {
-              "signal": "TIMX_BRK_IN2",
-              "source": "DFSDM1_BREAK1"
             }
           ]
         },

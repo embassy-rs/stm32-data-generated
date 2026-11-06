@@ -591,10 +591,6 @@
             {
               "signal": "ADC_EXT_TRG3",
               "source": "TIM3_TRGO"
-            },
-            {
-              "signal": "ADC_EXT_TRG4",
-              "source": "TIM15_TRGO"
             }
           ]
         },

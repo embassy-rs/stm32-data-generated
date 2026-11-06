@@ -714,10 +714,6 @@
               "source": "TIM2_CC4"
             },
             {
-              "signal": "ADC_EXT_TRG4",
-              "source": "TIM22_TRGO"
-            },
-            {
               "signal": "ADC_EXT_TRG5",
               "source": "TIM2_CC3"
             },
@@ -1775,16 +1771,6 @@
               "channel": "DMA1_CH7",
               "request": 8
             }
-          ],
-          "triggers": [
-            {
-              "signal": "TIMX_TI4_IN1",
-              "source": "COMP1_OUT"
-            },
-            {
-              "signal": "TIMX_TI4_IN2",
-              "source": "COMP2_OUT"
-            }
           ]
         },
         {
@@ -1876,16 +1862,6 @@
             {
               "signal": "UP",
               "interrupt": "TIM21"
-            }
-          ],
-          "triggers": [
-            {
-              "signal": "TIMX_TI1_IN1",
-              "source": "COMP1_OUT"
-            },
-            {
-              "signal": "TIMX_TI1_IN2",
-              "source": "COMP2_OUT"
             }
           ]
         },

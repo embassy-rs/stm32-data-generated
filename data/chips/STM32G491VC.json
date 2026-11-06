@@ -1077,38 +1077,6 @@
               "source": "TIM20_CC3"
             },
             {
-              "signal": "ADC_EXT_TRG21",
-              "source": "HRTIM_ADC_TRG1"
-            },
-            {
-              "signal": "ADC_EXT_TRG22",
-              "source": "HRTIM_ADC_TRG3"
-            },
-            {
-              "signal": "ADC_EXT_TRG23",
-              "source": "HRTIM_ADC_TRG5"
-            },
-            {
-              "signal": "ADC_EXT_TRG24",
-              "source": "HRTIM_ADC_TRG6"
-            },
-            {
-              "signal": "ADC_EXT_TRG25",
-              "source": "HRTIM_ADC_TRG7"
-            },
-            {
-              "signal": "ADC_EXT_TRG26",
-              "source": "HRTIM_ADC_TRG8"
-            },
-            {
-              "signal": "ADC_EXT_TRG27",
-              "source": "HRTIM_ADC_TRG9"
-            },
-            {
-              "signal": "ADC_EXT_TRG28",
-              "source": "HRTIM_ADC_TRG10"
-            },
-            {
               "signal": "ADC_EXT_TRG29",
               "source": "LPTIMOUT"
             },
@@ -1191,38 +1159,6 @@
             {
               "signal": "ADC_JEXT_TRG18",
               "source": "TIM20_CC4"
-            },
-            {
-              "signal": "ADC_JEXT_TRG19",
-              "source": "HRTIM_ADC_TRG2"
-            },
-            {
-              "signal": "ADC_JEXT_TRG20",
-              "source": "HRTIM_ADC_TRG4"
-            },
-            {
-              "signal": "ADC_JEXT_TRG21",
-              "source": "HRTIM_ADC_TRG5"
-            },
-            {
-              "signal": "ADC_JEXT_TRG22",
-              "source": "HRTIM_ADC_TRG6"
-            },
-            {
-              "signal": "ADC_JEXT_TRG23",
-              "source": "HRTIM_ADC_TRG7"
-            },
-            {
-              "signal": "ADC_JEXT_TRG24",
-              "source": "HRTIM_ADC_TRG8"
-            },
-            {
-              "signal": "ADC_JEXT_TRG25",
-              "source": "HRTIM_ADC_TRG9"
-            },
-            {
-              "signal": "ADC_JEXT_TRG26",
-              "source": "HRTIM_ADC_TRG10"
             },
             {
               "signal": "ADC_JEXT_TRG27",
@@ -1491,38 +1427,6 @@
               "source": "TIM20_CC3"
             },
             {
-              "signal": "ADC_EXT_TRG21",
-              "source": "HRTIM_ADC_TRG1"
-            },
-            {
-              "signal": "ADC_EXT_TRG22",
-              "source": "HRTIM_ADC_TRG3"
-            },
-            {
-              "signal": "ADC_EXT_TRG23",
-              "source": "HRTIM_ADC_TRG5"
-            },
-            {
-              "signal": "ADC_EXT_TRG24",
-              "source": "HRTIM_ADC_TRG6"
-            },
-            {
-              "signal": "ADC_EXT_TRG25",
-              "source": "HRTIM_ADC_TRG7"
-            },
-            {
-              "signal": "ADC_EXT_TRG26",
-              "source": "HRTIM_ADC_TRG8"
-            },
-            {
-              "signal": "ADC_EXT_TRG27",
-              "source": "HRTIM_ADC_TRG9"
-            },
-            {
-              "signal": "ADC_EXT_TRG28",
-              "source": "HRTIM_ADC_TRG10"
-            },
-            {
               "signal": "ADC_EXT_TRG29",
               "source": "LPTIMOUT"
             },
@@ -1605,38 +1509,6 @@
             {
               "signal": "ADC_JEXT_TRG18",
               "source": "TIM20_CC4"
-            },
-            {
-              "signal": "ADC_JEXT_TRG19",
-              "source": "HRTIM_ADC_TRG2"
-            },
-            {
-              "signal": "ADC_JEXT_TRG20",
-              "source": "HRTIM_ADC_TRG4"
-            },
-            {
-              "signal": "ADC_JEXT_TRG21",
-              "source": "HRTIM_ADC_TRG5"
-            },
-            {
-              "signal": "ADC_JEXT_TRG22",
-              "source": "HRTIM_ADC_TRG6"
-            },
-            {
-              "signal": "ADC_JEXT_TRG23",
-              "source": "HRTIM_ADC_TRG7"
-            },
-            {
-              "signal": "ADC_JEXT_TRG24",
-              "source": "HRTIM_ADC_TRG8"
-            },
-            {
-              "signal": "ADC_JEXT_TRG25",
-              "source": "HRTIM_ADC_TRG9"
-            },
-            {
-              "signal": "ADC_JEXT_TRG26",
-              "source": "HRTIM_ADC_TRG10"
             },
             {
               "signal": "ADC_JEXT_TRG27",
@@ -1872,46 +1744,6 @@
               "source": "TIM20_CC1"
             },
             {
-              "signal": "ADC_EXT_TRG19",
-              "source": "HRTIM_ADC_TRG2"
-            },
-            {
-              "signal": "ADC_EXT_TRG20",
-              "source": "HRTIM_ADC_TRG4"
-            },
-            {
-              "signal": "ADC_EXT_TRG21",
-              "source": "HRTIM_ADC_TRG1"
-            },
-            {
-              "signal": "ADC_EXT_TRG22",
-              "source": "HRTIM_ADC_TRG3"
-            },
-            {
-              "signal": "ADC_EXT_TRG23",
-              "source": "HRTIM_ADC_TRG5"
-            },
-            {
-              "signal": "ADC_EXT_TRG24",
-              "source": "HRTIM_ADC_TRG6"
-            },
-            {
-              "signal": "ADC_EXT_TRG25",
-              "source": "HRTIM_ADC_TRG7"
-            },
-            {
-              "signal": "ADC_EXT_TRG26",
-              "source": "HRTIM_ADC_TRG8"
-            },
-            {
-              "signal": "ADC_EXT_TRG27",
-              "source": "HRTIM_ADC_TRG9"
-            },
-            {
-              "signal": "ADC_EXT_TRG28",
-              "source": "HRTIM_ADC_TRG10"
-            },
-            {
               "signal": "ADC_EXT_TRG29",
               "source": "LPTIMOUT"
             },
@@ -1994,46 +1826,6 @@
             {
               "signal": "ADC_JEXT_TRG18",
               "source": "TIM20_CC2"
-            },
-            {
-              "signal": "ADC_JEXT_TRG19",
-              "source": "HRTIM_ADC_TRG2"
-            },
-            {
-              "signal": "ADC_JEXT_TRG20",
-              "source": "HRTIM_ADC_TRG4"
-            },
-            {
-              "signal": "ADC_JEXT_TRG21",
-              "source": "HRTIM_ADC_TRG5"
-            },
-            {
-              "signal": "ADC_JEXT_TRG22",
-              "source": "HRTIM_ADC_TRG6"
-            },
-            {
-              "signal": "ADC_JEXT_TRG23",
-              "source": "HRTIM_ADC_TRG7"
-            },
-            {
-              "signal": "ADC_JEXT_TRG24",
-              "source": "HRTIM_ADC_TRG8"
-            },
-            {
-              "signal": "ADC_JEXT_TRG25",
-              "source": "HRTIM_ADC_TRG9"
-            },
-            {
-              "signal": "ADC_JEXT_TRG26",
-              "source": "HRTIM_ADC_TRG10"
-            },
-            {
-              "signal": "ADC_JEXT_TRG27",
-              "source": "HRTIM_ADC_TRG1"
-            },
-            {
-              "signal": "ADC_JEXT_TRG28",
-              "source": "HRTIM_ADC_TRG3"
             },
             {
               "signal": "ADC_JEXT_TRG29",
@@ -2527,34 +2319,6 @@
               "source": "TIM3_TRGO"
             },
             {
-              "signal": "DAC_CHX_TRG9",
-              "source": "HRTIM_DAC_RESET_TRG1"
-            },
-            {
-              "signal": "DAC_CHX_TRG10",
-              "source": "HRTIM_DAC_RESET_TRG2"
-            },
-            {
-              "signal": "DAC_CHX_TRG11",
-              "source": "HRTIM_DAC_RESET_TRG3"
-            },
-            {
-              "signal": "DAC_CHX_TRG12",
-              "source": "HRTIM_DAC_RESET_TRG4"
-            },
-            {
-              "signal": "DAC_CHX_TRG13",
-              "source": "HRTIM_DAC_RESET_TRG5"
-            },
-            {
-              "signal": "DAC_CHX_TRG14",
-              "source": "HRTIM_DAC_RESET_TRG6"
-            },
-            {
-              "signal": "DAC_CHX_TRG15",
-              "source": "HRTIM_DAC_TRG1"
-            },
-            {
               "signal": "DAC_INC_CHX_TRG1",
               "source": "TIM8_TRGO"
             },
@@ -2585,30 +2349,6 @@
             {
               "signal": "DAC_INC_CHX_TRG8",
               "source": "TIM3_TRGO"
-            },
-            {
-              "signal": "DAC_INC_CHX_TRG9",
-              "source": "HRTIM_DAC_STEP_TRG1"
-            },
-            {
-              "signal": "DAC_INC_CHX_TRG10",
-              "source": "HRTIM_DAC_STEP_TRG2"
-            },
-            {
-              "signal": "DAC_INC_CHX_TRG11",
-              "source": "HRTIM_DAC_STEP_TRG3"
-            },
-            {
-              "signal": "DAC_INC_CHX_TRG12",
-              "source": "HRTIM_DAC_STEP_TRG4"
-            },
-            {
-              "signal": "DAC_INC_CHX_TRG13",
-              "source": "HRTIM_DAC_STEP_TRG5"
-            },
-            {
-              "signal": "DAC_INC_CHX_TRG14",
-              "source": "HRTIM_DAC_STEP_TRG6"
             }
           ]
         },
@@ -2684,34 +2424,6 @@
               "source": "TIM3_TRGO"
             },
             {
-              "signal": "DAC_CHX_TRG9",
-              "source": "HRTIM_DAC_RESET_TRG1"
-            },
-            {
-              "signal": "DAC_CHX_TRG10",
-              "source": "HRTIM_DAC_RESET_TRG2"
-            },
-            {
-              "signal": "DAC_CHX_TRG11",
-              "source": "HRTIM_DAC_RESET_TRG3"
-            },
-            {
-              "signal": "DAC_CHX_TRG12",
-              "source": "HRTIM_DAC_RESET_TRG4"
-            },
-            {
-              "signal": "DAC_CHX_TRG13",
-              "source": "HRTIM_DAC_RESET_TRG5"
-            },
-            {
-              "signal": "DAC_CHX_TRG14",
-              "source": "HRTIM_DAC_RESET_TRG6"
-            },
-            {
-              "signal": "DAC_CHX_TRG15",
-              "source": "HRTIM_DAC_TRG3"
-            },
-            {
               "signal": "DAC_INC_CHX_TRG1",
               "source": "TIM1_TRGO"
             },
@@ -2742,30 +2454,6 @@
             {
               "signal": "DAC_INC_CHX_TRG8",
               "source": "TIM3_TRGO"
-            },
-            {
-              "signal": "DAC_INC_CHX_TRG9",
-              "source": "HRTIM_DAC_STEP_TRG1"
-            },
-            {
-              "signal": "DAC_INC_CHX_TRG10",
-              "source": "HRTIM_DAC_STEP_TRG2"
-            },
-            {
-              "signal": "DAC_INC_CHX_TRG11",
-              "source": "HRTIM_DAC_STEP_TRG3"
-            },
-            {
-              "signal": "DAC_INC_CHX_TRG12",
-              "source": "HRTIM_DAC_STEP_TRG4"
-            },
-            {
-              "signal": "DAC_INC_CHX_TRG13",
-              "source": "HRTIM_DAC_STEP_TRG5"
-            },
-            {
-              "signal": "DAC_INC_CHX_TRG14",
-              "source": "HRTIM_DAC_STEP_TRG6"
             }
           ]
         },
@@ -5377,10 +5065,6 @@
               "source": "TIM4_TRGO"
             },
             {
-              "signal": "TIMX_ITR_IN4",
-              "source": "TIM5_TRGO"
-            },
-            {
               "signal": "TIMX_ITR_IN5",
               "source": "TIM8_TRGO"
             },
@@ -5401,10 +5085,6 @@
               "source": "TIM20_TRGO"
             },
             {
-              "signal": "TIMX_ITR_IN10",
-              "source": "HRTIM_OUT_SYNC2"
-            },
-            {
               "signal": "TIMX_ETR_IN1",
               "source": "COMP1_OUT"
             },
@@ -5421,18 +5101,6 @@
               "source": "COMP4_OUT"
             },
             {
-              "signal": "TIMX_ETR_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_ETR_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_ETR_IN7",
-              "source": "COMP7_OUT"
-            },
-            {
               "signal": "TIMX_ETR_IN8",
               "source": "ADC1_AWD1"
             },
@@ -5443,18 +5111,6 @@
             {
               "signal": "TIMX_ETR_IN10",
               "source": "ADC1_AWD3"
-            },
-            {
-              "signal": "TIMX_ETR_IN11",
-              "source": "ADC4_AWD1"
-            },
-            {
-              "signal": "TIMX_ETR_IN12",
-              "source": "ADC4_AWD2"
-            },
-            {
-              "signal": "TIMX_ETR_IN13",
-              "source": "ADC4_AWD3"
             },
             {
               "signal": "TIMX_BRK_IN1",
@@ -5473,18 +5129,6 @@
               "source": "COMP4_OUT"
             },
             {
-              "signal": "TIMX_BRK_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_BRK_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_BRK_IN7",
-              "source": "COMP7_OUT"
-            },
-            {
               "signal": "TIMX_BRK2_IN1",
               "source": "COMP1_OUT"
             },
@@ -5499,18 +5143,6 @@
             {
               "signal": "TIMX_BRK2_IN4",
               "source": "COMP4_OUT"
-            },
-            {
-              "signal": "TIMX_BRK2_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_BRK2_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_BRK2_IN7",
-              "source": "COMP7_OUT"
             },
             {
               "signal": "TIMX_SYS_BRK_IN0",
@@ -5547,18 +5179,6 @@
             {
               "signal": "TIMX_OCREF_CLR_IN3",
               "source": "COMP4_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN4",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN5",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN6",
-              "source": "COMP7_OUT"
             }
           ]
         },
@@ -5704,28 +5324,12 @@
               "source": "COMP2_OUT"
             },
             {
-              "signal": "TIMX_TI1_IN4",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_TI1_IN5",
-              "source": "COMP7_OUT"
-            },
-            {
               "signal": "TIMX_TI2_IN1",
               "source": "COMP2_OUT"
             },
             {
               "signal": "TIMX_TI2_IN2",
               "source": "COMP3_OUT"
-            },
-            {
-              "signal": "TIMX_TI2_IN3",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_TI2_IN4",
-              "source": "COMP7_OUT"
             },
             {
               "signal": "TIMX_ITR_IN0",
@@ -5744,10 +5348,6 @@
               "source": "TIM4_TRGO"
             },
             {
-              "signal": "TIMX_ITR_IN4",
-              "source": "TIM5_TRGO"
-            },
-            {
               "signal": "TIMX_ITR_IN5",
               "source": "TIM8_TRGO"
             },
@@ -5764,10 +5364,6 @@
               "source": "TIM20_TRGO"
             },
             {
-              "signal": "TIMX_ITR_IN10",
-              "source": "HRTIM_OUT_SYNC2"
-            },
-            {
               "signal": "TIMX_BRK_IN1",
               "source": "COMP1_OUT"
             },
@@ -5782,18 +5378,6 @@
             {
               "signal": "TIMX_BRK_IN4",
               "source": "COMP4_OUT"
-            },
-            {
-              "signal": "TIMX_BRK_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_BRK_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_BRK_IN7",
-              "source": "COMP7_OUT"
             },
             {
               "signal": "TIMX_SYS_BRK_IN0",
@@ -5830,18 +5414,6 @@
             {
               "signal": "TIMX_OCREF_CLR_IN3",
               "source": "COMP4_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN4",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN5",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN6",
-              "source": "COMP7_OUT"
             }
           ]
         },
@@ -5955,10 +5527,6 @@
           ],
           "triggers": [
             {
-              "signal": "TIMX_TI1_IN1",
-              "source": "COMP6_OUT"
-            },
-            {
               "signal": "TIMX_TI1_IN2",
               "source": "MCO"
             },
@@ -5995,10 +5563,6 @@
               "source": "TIM4_TRGO"
             },
             {
-              "signal": "TIMX_ITR_IN4",
-              "source": "TIM5_TRGO"
-            },
-            {
               "signal": "TIMX_ITR_IN5",
               "source": "TIM8_TRGO"
             },
@@ -6015,10 +5579,6 @@
               "source": "TIM20_TRGO"
             },
             {
-              "signal": "TIMX_ITR_IN10",
-              "source": "HRTIM_OUT_SYNC2"
-            },
-            {
               "signal": "TIMX_BRK_IN1",
               "source": "COMP1_OUT"
             },
@@ -6033,18 +5593,6 @@
             {
               "signal": "TIMX_BRK_IN4",
               "source": "COMP4_OUT"
-            },
-            {
-              "signal": "TIMX_BRK_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_BRK_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_BRK_IN7",
-              "source": "COMP7_OUT"
             },
             {
               "signal": "TIMX_SYS_BRK_IN0",
@@ -6081,18 +5629,6 @@
             {
               "signal": "TIMX_OCREF_CLR_IN3",
               "source": "COMP4_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN4",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN5",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN6",
-              "source": "COMP7_OUT"
             }
           ]
         },
@@ -6201,10 +5737,6 @@
           ],
           "triggers": [
             {
-              "signal": "TIMX_TI1_IN1",
-              "source": "COMP5_OUT"
-            },
-            {
               "signal": "TIMX_TI1_IN2",
               "source": "MCO"
             },
@@ -6241,10 +5773,6 @@
               "source": "TIM4_TRGO"
             },
             {
-              "signal": "TIMX_ITR_IN4",
-              "source": "TIM5_TRGO"
-            },
-            {
               "signal": "TIMX_ITR_IN5",
               "source": "TIM8_TRGO"
             },
@@ -6261,10 +5789,6 @@
               "source": "TIM20_TRGO"
             },
             {
-              "signal": "TIMX_ITR_IN10",
-              "source": "HRTIM_OUT_SYNC2"
-            },
-            {
               "signal": "TIMX_BRK_IN1",
               "source": "COMP1_OUT"
             },
@@ -6279,18 +5803,6 @@
             {
               "signal": "TIMX_BRK_IN4",
               "source": "COMP4_OUT"
-            },
-            {
-              "signal": "TIMX_BRK_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_BRK_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_BRK_IN7",
-              "source": "COMP7_OUT"
             },
             {
               "signal": "TIMX_SYS_BRK_IN0",
@@ -6327,18 +5839,6 @@
             {
               "signal": "TIMX_OCREF_CLR_IN3",
               "source": "COMP4_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN4",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN5",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN6",
-              "source": "COMP7_OUT"
             }
           ]
         },
@@ -6538,10 +6038,6 @@
               "source": "COMP4_OUT"
             },
             {
-              "signal": "TIMX_TI1_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
               "signal": "TIMX_TI2_IN1",
               "source": "COMP1_OUT"
             },
@@ -6556,10 +6052,6 @@
             {
               "signal": "TIMX_TI2_IN4",
               "source": "COMP4_OUT"
-            },
-            {
-              "signal": "TIMX_TI2_IN5",
-              "source": "COMP6_OUT"
             },
             {
               "signal": "TIMX_TI3_IN1",
@@ -6586,10 +6078,6 @@
               "source": "TIM4_TRGO"
             },
             {
-              "signal": "TIMX_ITR_IN4",
-              "source": "TIM5_TRGO"
-            },
-            {
               "signal": "TIMX_ITR_IN5",
               "source": "TIM8_TRGO"
             },
@@ -6608,10 +6096,6 @@
             {
               "signal": "TIMX_ITR_IN9",
               "source": "TIM20_TRGO"
-            },
-            {
-              "signal": "TIMX_ITR_IN10",
-              "source": "HRTIM_OUT_SYNC2"
             },
             {
               "signal": "TIMX_ITR_IN11",
@@ -6634,28 +6118,12 @@
               "source": "COMP4_OUT"
             },
             {
-              "signal": "TIMX_ETR_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_ETR_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_ETR_IN7",
-              "source": "COMP7_OUT"
-            },
-            {
               "signal": "TIMX_ETR_IN8",
               "source": "TIM3_ETR"
             },
             {
               "signal": "TIMX_ETR_IN9",
               "source": "TIM4_ETR"
-            },
-            {
-              "signal": "TIMX_ETR_IN10",
-              "source": "TIM5_ETR"
             },
             {
               "signal": "TIMX_ETR_IN11",
@@ -6680,18 +6148,6 @@
             {
               "signal": "TIMX_OCREF_CLR_IN3",
               "source": "COMP4_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN4",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN5",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN6",
-              "source": "COMP7_OUT"
             }
           ]
         },
@@ -6885,10 +6341,6 @@
               "source": "TIM4_TRGO"
             },
             {
-              "signal": "TIMX_ITR_IN4",
-              "source": "TIM5_TRGO"
-            },
-            {
               "signal": "TIMX_ITR_IN5",
               "source": "TIM8_TRGO"
             },
@@ -6903,10 +6355,6 @@
             {
               "signal": "TIMX_ITR_IN8",
               "source": "TIM17_OC1"
-            },
-            {
-              "signal": "TIMX_ITR_IN10",
-              "source": "HRTIM_OUT_SYNC2"
             },
             {
               "signal": "TIMX_ETR_IN1",
@@ -6925,18 +6373,6 @@
               "source": "COMP4_OUT"
             },
             {
-              "signal": "TIMX_ETR_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_ETR_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_ETR_IN7",
-              "source": "COMP7_OUT"
-            },
-            {
               "signal": "TIMX_ETR_IN8",
               "source": "ADC3_AWD1"
             },
@@ -6947,18 +6383,6 @@
             {
               "signal": "TIMX_ETR_IN10",
               "source": "ADC3_AWD3"
-            },
-            {
-              "signal": "TIMX_ETR_IN11",
-              "source": "ADC5_AWD1"
-            },
-            {
-              "signal": "TIMX_ETR_IN12",
-              "source": "ADC5_AWD2"
-            },
-            {
-              "signal": "TIMX_ETR_IN13",
-              "source": "ADC5_AWD3"
             },
             {
               "signal": "TIMX_BRK_IN1",
@@ -6977,18 +6401,6 @@
               "source": "COMP4_OUT"
             },
             {
-              "signal": "TIMX_BRK_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_BRK_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_BRK_IN7",
-              "source": "COMP7_OUT"
-            },
-            {
               "signal": "TIMX_BRK2_IN1",
               "source": "COMP1_OUT"
             },
@@ -7003,18 +6415,6 @@
             {
               "signal": "TIMX_BRK2_IN4",
               "source": "COMP4_OUT"
-            },
-            {
-              "signal": "TIMX_BRK2_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_BRK2_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_BRK2_IN7",
-              "source": "COMP7_OUT"
             },
             {
               "signal": "TIMX_SYS_BRK_IN0",
@@ -7051,18 +6451,6 @@
             {
               "signal": "TIMX_OCREF_CLR_IN3",
               "source": "COMP4_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN4",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN5",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN6",
-              "source": "COMP7_OUT"
             }
           ]
         },
@@ -7262,18 +6650,6 @@
               "source": "COMP4_OUT"
             },
             {
-              "signal": "TIMX_TI1_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_TI1_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_TI1_IN7",
-              "source": "COMP7_OUT"
-            },
-            {
               "signal": "TIMX_TI2_IN1",
               "source": "COMP1_OUT"
             },
@@ -7290,18 +6666,6 @@
               "source": "COMP4_OUT"
             },
             {
-              "signal": "TIMX_TI2_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_TI2_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_TI2_IN7",
-              "source": "COMP7_OUT"
-            },
-            {
               "signal": "TIMX_TI3_IN1",
               "source": "COMP3_OUT"
             },
@@ -7316,10 +6680,6 @@
             {
               "signal": "TIMX_ITR_IN3",
               "source": "TIM4_TRGO"
-            },
-            {
-              "signal": "TIMX_ITR_IN4",
-              "source": "TIM5_TRGO"
             },
             {
               "signal": "TIMX_ITR_IN5",
@@ -7342,10 +6702,6 @@
               "source": "TIM20_TRGO"
             },
             {
-              "signal": "TIMX_ITR_IN10",
-              "source": "HRTIM_OUT_SYNC2"
-            },
-            {
               "signal": "TIMX_ETR_IN1",
               "source": "COMP1_OUT"
             },
@@ -7360,18 +6716,6 @@
             {
               "signal": "TIMX_ETR_IN4",
               "source": "COMP4_OUT"
-            },
-            {
-              "signal": "TIMX_ETR_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_ETR_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_ETR_IN7",
-              "source": "COMP7_OUT"
             },
             {
               "signal": "TIMX_ETR_IN8",
@@ -7408,18 +6752,6 @@
             {
               "signal": "TIMX_OCREF_CLR_IN3",
               "source": "COMP4_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN4",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN5",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN6",
-              "source": "COMP7_OUT"
             }
           ]
         },
@@ -7594,18 +6926,6 @@
               "source": "COMP4_OUT"
             },
             {
-              "signal": "TIMX_TI1_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_TI1_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_TI1_IN7",
-              "source": "COMP7_OUT"
-            },
-            {
               "signal": "TIMX_TI2_IN1",
               "source": "COMP1_OUT"
             },
@@ -7622,22 +6942,6 @@
               "source": "COMP4_OUT"
             },
             {
-              "signal": "TIMX_TI2_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_TI2_IN7",
-              "source": "COMP7_OUT"
-            },
-            {
-              "signal": "TIMX_TI3_IN1",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_TI4_IN1",
-              "source": "COMP6_OUT"
-            },
-            {
               "signal": "TIMX_ITR_IN0",
               "source": "TIM1_TRGO"
             },
@@ -7648,10 +6952,6 @@
             {
               "signal": "TIMX_ITR_IN2",
               "source": "TIM3_TRGO"
-            },
-            {
-              "signal": "TIMX_ITR_IN4",
-              "source": "TIM5_TRGO"
             },
             {
               "signal": "TIMX_ITR_IN5",
@@ -7674,10 +6974,6 @@
               "source": "TIM20_TRGO"
             },
             {
-              "signal": "TIMX_ITR_IN10",
-              "source": "HRTIM_OUT_SYNC2"
-            },
-            {
               "signal": "TIMX_ETR_IN1",
               "source": "COMP1_OUT"
             },
@@ -7694,24 +6990,8 @@
               "source": "COMP4_OUT"
             },
             {
-              "signal": "TIMX_ETR_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_ETR_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_ETR_IN7",
-              "source": "COMP7_OUT"
-            },
-            {
               "signal": "TIMX_ETR_IN8",
               "source": "TIM3_ETR"
-            },
-            {
-              "signal": "TIMX_ETR_IN9",
-              "source": "TIM5_ETR"
             }
           ]
         },
@@ -8109,10 +7389,6 @@
               "source": "TIM4_TRGO"
             },
             {
-              "signal": "TIMX_ITR_IN4",
-              "source": "TIM5_TRGO"
-            },
-            {
               "signal": "TIMX_ITR_IN6",
               "source": "TIM15_TRGO"
             },
@@ -8129,10 +7405,6 @@
               "source": "TIM20_TRGO"
             },
             {
-              "signal": "TIMX_ITR_IN10",
-              "source": "HRTIM_OUT_SYNC2"
-            },
-            {
               "signal": "TIMX_ETR_IN1",
               "source": "COMP1_OUT"
             },
@@ -8147,18 +7419,6 @@
             {
               "signal": "TIMX_ETR_IN4",
               "source": "COMP4_OUT"
-            },
-            {
-              "signal": "TIMX_ETR_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_ETR_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_ETR_IN7",
-              "source": "COMP7_OUT"
             },
             {
               "signal": "TIMX_ETR_IN8",
@@ -8201,18 +7461,6 @@
               "source": "COMP4_OUT"
             },
             {
-              "signal": "TIMX_BRK_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_BRK_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_BRK_IN7",
-              "source": "COMP7_OUT"
-            },
-            {
               "signal": "TIMX_BRK2_IN1",
               "source": "COMP1_OUT"
             },
@@ -8227,18 +7475,6 @@
             {
               "signal": "TIMX_BRK2_IN4",
               "source": "COMP4_OUT"
-            },
-            {
-              "signal": "TIMX_BRK2_IN5",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_BRK2_IN6",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_BRK2_IN7",
-              "source": "COMP7_OUT"
             },
             {
               "signal": "TIMX_SYS_BRK_IN0",
@@ -8275,18 +7511,6 @@
             {
               "signal": "TIMX_OCREF_CLR_IN3",
               "source": "COMP4_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN4",
-              "source": "COMP5_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN5",
-              "source": "COMP6_OUT"
-            },
-            {
-              "signal": "TIMX_OCREF_CLR_IN6",
-              "source": "COMP7_OUT"
             }
           ]
         },

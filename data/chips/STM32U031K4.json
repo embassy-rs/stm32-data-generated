@@ -1875,10 +1875,6 @@
             {
               "signal": "TIMX_TI1_IN1",
               "source": "COMP1_OUT"
-            },
-            {
-              "signal": "TIMX_TI2_IN1",
-              "source": "COMP2_OUT"
             }
           ]
         },

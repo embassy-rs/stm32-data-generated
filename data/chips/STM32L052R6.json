@@ -1248,10 +1248,6 @@
               "source": "TIM2_CC3"
             },
             {
-              "signal": "ADC_EXT_TRG6",
-              "source": "TIM3_TRGO"
-            },
-            {
               "signal": "ADC_EXT_TRG7",
               "source": "EXTI11_TRG"
             }
@@ -1466,24 +1462,12 @@
               "source": "TIM6_TRGO"
             },
             {
-              "signal": "DAC_CHX_TRG1",
-              "source": "TIM3_TRGO"
-            },
-            {
-              "signal": "DAC_CHX_TRG2",
-              "source": "TIM3_CC3"
-            },
-            {
               "signal": "DAC_CHX_TRG3",
               "source": "TIM21_TRGO"
             },
             {
               "signal": "DAC_CHX_TRG4",
               "source": "TIM2_TRGO"
-            },
-            {
-              "signal": "DAC_CHX_TRG5",
-              "source": "TIM7_TRGO"
             },
             {
               "signal": "DAC_CHX_TRG6",

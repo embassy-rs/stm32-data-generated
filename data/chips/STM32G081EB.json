@@ -469,10 +469,6 @@
               "source": "TIM6_TRGO"
             },
             {
-              "signal": "ADC_EXT_TRG6",
-              "source": "TIM4_TRGO"
-            },
-            {
               "signal": "ADC_EXT_TRG7",
               "source": "EXTI11_TRG"
             }

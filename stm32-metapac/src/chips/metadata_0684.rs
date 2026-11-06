@@ -148,10 +148,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM2_CC3",
             },
             PeripheralTrigger {
-                signal: "ADC_EXT_TRG6",
-                source: "TIM3_TRGO",
-            },
-            PeripheralTrigger {
                 signal: "ADC_EXT_TRG7",
                 source: "EXTI11_TRG",
             },
@@ -458,24 +454,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 source: "TIM6_TRGO",
             },
             PeripheralTrigger {
-                signal: "DAC_CHX_TRG1",
-                source: "TIM3_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "DAC_CHX_TRG2",
-                source: "TIM3_CC3",
-            },
-            PeripheralTrigger {
                 signal: "DAC_CHX_TRG3",
                 source: "TIM21_TRGO",
             },
             PeripheralTrigger {
                 signal: "DAC_CHX_TRG4",
                 source: "TIM2_TRGO",
-            },
-            PeripheralTrigger {
-                signal: "DAC_CHX_TRG5",
-                source: "TIM7_TRGO",
             },
             PeripheralTrigger {
                 signal: "DAC_CHX_TRG6",

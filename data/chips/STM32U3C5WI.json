@@ -1406,10 +1406,6 @@
               "source": "TIM4_TRGO"
             },
             {
-              "signal": "DAC_CHX_TRG4",
-              "source": "TIM5_TRGO"
-            },
-            {
               "signal": "DAC_CHX_TRG5",
               "source": "TIM6_TRGO"
             },

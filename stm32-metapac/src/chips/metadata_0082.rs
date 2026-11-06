@@ -112,10 +112,6 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 signal: "ADC_EXT_TRG3",
                 source: "TIM3_TRGO",
             },
-            PeripheralTrigger {
-                signal: "ADC_EXT_TRG4",
-                source: "TIM15_TRGO",
-            },
         ],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",

@@ -7,38 +7,38 @@ pub(crate) static REGISTERS: IR = IR {
         description: Some("OPAMP register block."),
         items: &[
             BlockItem {
-                name: "opamp_csr",
+                name: "csr",
                 description: Some("OPAMP control/status register."),
                 array: None,
                 byte_offset: 0x0,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("OpampCsr"),
+                    fieldset: Some("Csr"),
                 }),
             },
             BlockItem {
-                name: "opamp_tcmr",
+                name: "tcmr",
                 description: Some("OPAMP timer-controlled mode register."),
                 array: None,
                 byte_offset: 0x4,
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("OpampTcmr"),
+                    fieldset: Some("Tcmr"),
                 }),
             },
         ],
     }],
     fieldsets: &[
         FieldSet {
-            name: "OpampCsr",
+            name: "Csr",
             extends: None,
             description: Some("OPAMP control/status register."),
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "opaen",
+                    name: "opampen",
                     description: Some("Operational amplifier enable."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
@@ -51,7 +51,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("ForceVp"),
+                    enumm: None,
                 },
                 Field {
                     name: "vp_sel",
@@ -83,7 +83,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 7 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Opahsm"),
+                    enumm: None,
                 },
                 Field {
                     name: "opaintoen",
@@ -91,7 +91,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("Opaintoen"),
+                    enumm: None,
                 },
                 Field {
                     name: "calon",
@@ -155,12 +155,12 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("OpampCsrLock"),
+                    enumm: None,
                 },
             ],
         },
         FieldSet {
-            name: "OpampTcmr",
+            name: "Tcmr",
             extends: None,
             description: Some("OPAMP timer-controlled mode register."),
             bit_size: 32,
@@ -241,74 +241,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "Percent90",
                     description: Some("0."),
                     value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "ForceVp",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "DoNotForce",
-                    description: Some("Do not force (normal operation)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Force",
-                    description: Some("Force."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "Opahsm",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "HighSpeed",
-                    description: Some("High speed."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "NormalSpeed",
-                    description: Some("Normal speed."),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
-            name: "Opaintoen",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "AdcComp",
-                    description: Some("ADC/COMP channel."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "OpampVout",
-                    description: Some("OPAMP_VOUT pin."),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
-            name: "OpampCsrLock",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "ReadOnly",
-                    description: Some("OPAMP_CSR is read-only."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "ReadWrite",
-                    description: Some("OPAMP_CSR is read-write."),
-                    value: 0,
                 },
             ],
         },
@@ -605,7 +537,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Follower",
+                    name: "Output",
                     description: Some("Operational amplifier output."),
                     value: 3,
                 },

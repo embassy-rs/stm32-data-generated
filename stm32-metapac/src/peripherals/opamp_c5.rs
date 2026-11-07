@@ -21,12 +21,12 @@ impl Opamp {
     }
     #[doc = "OPAMP control/status register."]
     #[inline(always)]
-    pub const fn opamp_csr(self) -> crate::common::Reg<regs::OpampCsr, crate::common::RW> {
+    pub const fn csr(self) -> crate::common::Reg<regs::Csr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "OPAMP timer-controlled mode register."]
     #[inline(always)]
-    pub const fn opamp_tcmr(self) -> crate::common::Reg<regs::OpampTcmr, crate::common::RW> {
+    pub const fn tcmr(self) -> crate::common::Reg<regs::Tcmr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
 }
@@ -34,31 +34,31 @@ pub mod regs {
     #[doc = "OPAMP control/status register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct OpampCsr(pub u32);
-    impl OpampCsr {
+    pub struct Csr(pub u32);
+    impl Csr {
         #[doc = "Operational amplifier enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn opaen(&self) -> bool {
+        pub const fn opampen(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
         #[doc = "Operational amplifier enable."]
         #[inline(always)]
-        pub const fn set_opaen(&mut self, val: bool) {
+        pub const fn set_opampen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
         #[doc = "Force internal reference on noninverting input."]
         #[must_use]
         #[inline(always)]
-        pub const fn force_vp(&self) -> super::vals::ForceVp {
+        pub const fn force_vp(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
-            super::vals::ForceVp::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Force internal reference on noninverting input."]
         #[inline(always)]
-        pub const fn set_force_vp(&mut self, val: super::vals::ForceVp) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val.to_bits() as u32) & 0x01) << 1usize);
+        pub const fn set_force_vp(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
         }
         #[doc = "Noninverting input primary selection."]
         #[must_use]
@@ -99,26 +99,26 @@ pub mod regs {
         #[doc = "Operational amplifier high-speed mode."]
         #[must_use]
         #[inline(always)]
-        pub const fn opahsm(&self) -> super::vals::Opahsm {
+        pub const fn opahsm(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Opahsm::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Operational amplifier high-speed mode."]
         #[inline(always)]
-        pub const fn set_opahsm(&mut self, val: super::vals::Opahsm) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub const fn set_opahsm(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
         }
         #[doc = "Operational amplifier internal output enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn opaintoen(&self) -> super::vals::Opaintoen {
+        pub const fn opaintoen(&self) -> bool {
             let val = (self.0 >> 8usize) & 0x01;
-            super::vals::Opaintoen::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Operational amplifier internal output enable."]
         #[inline(always)]
-        pub const fn set_opaintoen(&mut self, val: super::vals::Opaintoen) {
-            self.0 = (self.0 & !(0x01 << 8usize)) | (((val.to_bits() as u32) & 0x01) << 8usize);
+        pub const fn set_opaintoen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
         #[doc = "Calibration mode enable."]
         #[must_use]
@@ -207,26 +207,26 @@ pub mod regs {
         #[doc = "OPAMP_CSR register lock."]
         #[must_use]
         #[inline(always)]
-        pub const fn lock(&self) -> super::vals::OpampCsrLock {
+        pub const fn lock(&self) -> bool {
             let val = (self.0 >> 31usize) & 0x01;
-            super::vals::OpampCsrLock::from_bits(val as u8)
+            val != 0
         }
         #[doc = "OPAMP_CSR register lock."]
         #[inline(always)]
-        pub const fn set_lock(&mut self, val: super::vals::OpampCsrLock) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
+        pub const fn set_lock(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
-    impl Default for OpampCsr {
+    impl Default for Csr {
         #[inline(always)]
-        fn default() -> OpampCsr {
-            OpampCsr(0)
+        fn default() -> Csr {
+            Csr(0)
         }
     }
-    impl core::fmt::Debug for OpampCsr {
+    impl core::fmt::Debug for Csr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("OpampCsr")
-                .field("opaen", &self.opaen())
+            f.debug_struct("Csr")
+                .field("opampen", &self.opampen())
                 .field("force_vp", &self.force_vp())
                 .field("vp_sel", &self.vp_sel())
                 .field("usertrim", &self.usertrim())
@@ -245,12 +245,12 @@ pub mod regs {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for OpampCsr {
+    impl defmt::Format for Csr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "OpampCsr {{ opaen: {=bool:?}, force_vp: {:?}, vp_sel: {:?}, usertrim: {=bool:?}, vm_sel: {:?}, opahsm: {:?}, opaintoen: {:?}, calon: {=bool:?}, calsel: {:?}, pga_gain: {:?}, trimoffsetp: {=u8:?}, trimoffsetn: {=u8:?}, tstref: {=bool:?}, calout: {=bool:?}, lock: {:?} }}",
-                self.opaen(),
+                "Csr {{ opampen: {=bool:?}, force_vp: {=bool:?}, vp_sel: {:?}, usertrim: {=bool:?}, vm_sel: {:?}, opahsm: {=bool:?}, opaintoen: {=bool:?}, calon: {=bool:?}, calsel: {:?}, pga_gain: {:?}, trimoffsetp: {=u8:?}, trimoffsetn: {=u8:?}, tstref: {=bool:?}, calout: {=bool:?}, lock: {=bool:?} }}",
+                self.opampen(),
                 self.force_vp(),
                 self.vp_sel(),
                 self.usertrim(),
@@ -271,8 +271,8 @@ pub mod regs {
     #[doc = "OPAMP timer-controlled mode register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct OpampTcmr(pub u32);
-    impl OpampTcmr {
+    pub struct Tcmr(pub u32);
+    impl Tcmr {
         #[doc = "OPAMP inverting input secondary selection."]
         #[must_use]
         #[inline(always)]
@@ -346,15 +346,15 @@ pub mod regs {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val.to_bits() as u32) & 0x01) << 31usize);
         }
     }
-    impl Default for OpampTcmr {
+    impl Default for Tcmr {
         #[inline(always)]
-        fn default() -> OpampTcmr {
-            OpampTcmr(0)
+        fn default() -> Tcmr {
+            Tcmr(0)
         }
     }
-    impl core::fmt::Debug for OpampTcmr {
+    impl core::fmt::Debug for Tcmr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("OpampTcmr")
+            f.debug_struct("Tcmr")
                 .field("vms_sel", &self.vms_sel())
                 .field("vps_sel", &self.vps_sel())
                 .field("timcm_sel", &self.timcm_sel())
@@ -365,11 +365,11 @@ pub mod regs {
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for OpampTcmr {
+    impl defmt::Format for Tcmr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "OpampTcmr {{ vms_sel: {:?}, vps_sel: {:?}, timcm_sel: {:?}, pgas_gain: {:?}, timpga_sel: {:?}, lock: {:?} }}",
+                "Tcmr {{ vms_sel: {:?}, vps_sel: {:?}, timcm_sel: {:?}, pgas_gain: {:?}, timpga_sel: {:?}, lock: {:?} }}",
                 self.vms_sel(),
                 self.vps_sel(),
                 self.timcm_sel(),
@@ -414,130 +414,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Calsel) -> u8 {
             Calsel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum ForceVp {
-        #[doc = "Do not force (normal operation)."]
-        DoNotForce = 0x0,
-        #[doc = "Force."]
-        Force = 0x01,
-    }
-    impl ForceVp {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> ForceVp {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for ForceVp {
-        #[inline(always)]
-        fn from(val: u8) -> ForceVp {
-            ForceVp::from_bits(val)
-        }
-    }
-    impl From<ForceVp> for u8 {
-        #[inline(always)]
-        fn from(val: ForceVp) -> u8 {
-            ForceVp::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Opahsm {
-        #[doc = "Normal speed."]
-        NormalSpeed = 0x0,
-        #[doc = "High speed."]
-        HighSpeed = 0x01,
-    }
-    impl Opahsm {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Opahsm {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Opahsm {
-        #[inline(always)]
-        fn from(val: u8) -> Opahsm {
-            Opahsm::from_bits(val)
-        }
-    }
-    impl From<Opahsm> for u8 {
-        #[inline(always)]
-        fn from(val: Opahsm) -> u8 {
-            Opahsm::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Opaintoen {
-        #[doc = "OPAMP_VOUT pin."]
-        OpampVout = 0x0,
-        #[doc = "ADC/COMP channel."]
-        AdcComp = 0x01,
-    }
-    impl Opaintoen {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Opaintoen {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Opaintoen {
-        #[inline(always)]
-        fn from(val: u8) -> Opaintoen {
-            Opaintoen::from_bits(val)
-        }
-    }
-    impl From<Opaintoen> for u8 {
-        #[inline(always)]
-        fn from(val: Opaintoen) -> u8 {
-            Opaintoen::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum OpampCsrLock {
-        #[doc = "OPAMP_CSR is read-write."]
-        ReadWrite = 0x0,
-        #[doc = "OPAMP_CSR is read-only."]
-        ReadOnly = 0x01,
-    }
-    impl OpampCsrLock {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> OpampCsrLock {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for OpampCsrLock {
-        #[inline(always)]
-        fn from(val: u8) -> OpampCsrLock {
-            OpampCsrLock::from_bits(val)
-        }
-    }
-    impl From<OpampCsrLock> for u8 {
-        #[inline(always)]
-        fn from(val: OpampCsrLock) -> u8 {
-            OpampCsrLock::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -820,7 +696,7 @@ and VM_SEL\\[1:0\\])."]
         #[doc = "Internal resistor divider middle point."]
         Pga = 0x02,
         #[doc = "Operational amplifier output."]
-        Follower = 0x03,
+        Output = 0x03,
     }
     impl VmSel {
         #[inline(always)]

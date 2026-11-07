@@ -2027,6 +2027,11 @@
         {
           "name": "PKA",
           "address": 1108090880,
+          "registers": {
+            "kind": "pka",
+            "version": "c5",
+            "block": "PKA"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": "HCLK2",
@@ -2082,6 +2087,11 @@
         {
           "name": "RAMCFG",
           "address": 1073897472,
+          "registers": {
+            "kind": "ramcfg",
+            "version": "c5",
+            "block": "RAMCFG"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": "HCLK1",
@@ -2839,6 +2849,11 @@
         {
           "name": "TAMP",
           "address": 1140882432,
+          "registers": {
+            "kind": "tamp",
+            "version": "c5",
+            "block": "TAMP"
+          },
           "pins": [
             {
               "pin": "PA0",

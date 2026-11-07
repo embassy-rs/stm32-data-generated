@@ -373,6 +373,7 @@ pub const LPDMA2: lpdma::Lpdma = unsafe { lpdma::Lpdma::from_ptr(0x4002_1000usiz
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000usize as _) };
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000usize as _) };
 pub const CORDIC: cordic::Cordic = unsafe { cordic::Cordic::from_ptr(0x4002_3800usize as _) };
+pub const RAMCFG: ramcfg::Ramcfg = unsafe { ramcfg::Ramcfg::from_ptr(0x4002_6000usize as _) };
 pub const RAMCFG_SRAM1: *mut () = 0x4002_6000usize as _;
 pub const RAMCFG_SRAM2: *mut () = 0x4002_6040usize as _;
 pub const ICACHE: icache::Icache = unsafe { icache::Icache::from_ptr(0x4003_0400usize as _) };
@@ -392,7 +393,7 @@ pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4400_2400usize as _) };
 pub const LPTIM1: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4400_4400usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4400_7800usize as _) };
-pub const TAMP: *mut () = 0x4400_7c00usize as _;
+pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4400_7c00usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4402_0800usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4402_0c00usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4402_2000usize as _) };
@@ -442,6 +443,8 @@ pub mod lpdma;
 pub mod lptim;
 #[path = "../../peripherals/pwr_c5.rs"]
 pub mod pwr;
+#[path = "../../peripherals/ramcfg_c5.rs"]
+pub mod ramcfg;
 #[path = "../../peripherals/rcc_c5.rs"]
 pub mod rcc;
 #[path = "../../peripherals/rng_v4.rs"]
@@ -452,6 +455,8 @@ pub mod rtc;
 pub mod spi;
 #[path = "../../peripherals/syscfg_c5.rs"]
 pub mod syscfg;
+#[path = "../../peripherals/tamp_c5.rs"]
+pub mod tamp;
 #[path = "../../peripherals/timer_v3.rs"]
 pub mod timer;
 #[path = "../../peripherals/uid_v1.rs"]

@@ -101,7 +101,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("opamp", &["c5", "v2", "v3", "v4", "v5"]),
     ("otfdec", &["v1"]),
     ("otg", &["v1"]),
-    ("pka", &["n6", "v1a", "v1b", "v1c"]),
+    ("pka", &["c5", "n6", "v1a", "v1b", "v1c"]),
     ("pssi", &["v1", "v1_h7rs"]),
     (
         "pwr",
@@ -113,7 +113,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ),
     ("quadspi", &["v1"]),
     ("radio", &["v1"]),
-    ("ramcfg", &["h5", "h5_ef", "u5", "wba"]),
+    ("ramcfg", &["c5", "h5", "h5_ef", "u5", "wba"]),
     (
         "rcc",
         &[
@@ -165,7 +165,10 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
             "l1", "l4", "l5", "n6", "u0", "u3", "u5", "wb", "wb0", "wba", "wl5", "wle",
         ],
     ),
-    ("tamp", &["g0", "g4", "h5", "h5_ef", "l5", "n6", "u5", "wba", "wl"]),
+    (
+        "tamp",
+        &["c5", "g0", "g4", "h5", "h5_ef", "l5", "n6", "u5", "wba", "wl"],
+    ),
     ("timer", &["l0", "v1", "v2", "v3"]),
     ("trng", &["v1"]),
     ("tsc", &["v1", "v2", "v3"]),

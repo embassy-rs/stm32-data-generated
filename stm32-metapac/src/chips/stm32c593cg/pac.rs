@@ -450,7 +450,7 @@ pub const LPDMA2: lpdma::Lpdma = unsafe { lpdma::Lpdma::from_ptr(0x4002_1000usiz
 pub const FLASH: flash::Flash = unsafe { flash::Flash::from_ptr(0x4002_2000usize as _) };
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x4002_3000usize as _) };
 pub const CORDIC: cordic::Cordic = unsafe { cordic::Cordic::from_ptr(0x4002_3800usize as _) };
-pub const RAMCFG: *mut () = 0x4002_6000usize as _;
+pub const RAMCFG: ramcfg::Ramcfg = unsafe { ramcfg::Ramcfg::from_ptr(0x4002_6000usize as _) };
 pub const RAMCFG_SRAM1: *mut () = 0x4002_6000usize as _;
 pub const RAMCFG_SRAM2: *mut () = 0x4002_6040usize as _;
 pub const ETH1: eth::Eth = unsafe { eth::Eth::from_ptr(0x4002_8000usize as _) };
@@ -471,12 +471,12 @@ pub const ADC3: adc::Adc = unsafe { adc::Adc::from_ptr(0x4202_d800usize as _) };
 pub const ADC3_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x4202_db00usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
-pub const PKA: *mut () = 0x420c_2000usize as _;
+pub const PKA: pka::Pka = unsafe { pka::Pka::from_ptr(0x420c_2000usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4400_0400usize as _) };
 pub const LPUART1: usart::Lpuart = unsafe { usart::Lpuart::from_ptr(0x4400_2400usize as _) };
 pub const LPTIM1: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4400_4400usize as _) };
 pub const RTC: rtc::Rtc = unsafe { rtc::Rtc::from_ptr(0x4400_7800usize as _) };
-pub const TAMP: *mut () = 0x4400_7c00usize as _;
+pub const TAMP: tamp::Tamp = unsafe { tamp::Tamp::from_ptr(0x4400_7c00usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4402_0800usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x4402_0c00usize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4402_2000usize as _) };
@@ -533,8 +533,12 @@ pub mod lpdma;
 pub mod lptim;
 #[path = "../../peripherals/octospi_v2.rs"]
 pub mod octospi;
+#[path = "../../peripherals/pka_c5.rs"]
+pub mod pka;
 #[path = "../../peripherals/pwr_c5.rs"]
 pub mod pwr;
+#[path = "../../peripherals/ramcfg_c5.rs"]
+pub mod ramcfg;
 #[path = "../../peripherals/rcc_c5.rs"]
 pub mod rcc;
 #[path = "../../peripherals/rng_v4.rs"]
@@ -545,6 +549,8 @@ pub mod rtc;
 pub mod spi;
 #[path = "../../peripherals/syscfg_c5.rs"]
 pub mod syscfg;
+#[path = "../../peripherals/tamp_c5.rs"]
+pub mod tamp;
 #[path = "../../peripherals/timer_v3.rs"]
 pub mod timer;
 #[path = "../../peripherals/uid_v1.rs"]

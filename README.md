@@ -85,14 +85,14 @@ The following table shows which STM32 peripheral versions are supported across d
 | [OPAMP](#opamp) | | c5 | | | | v2 | | | | v5 | ❌ | v4 | v4 | | ❌ | v3 | v3 | v3 | | | v3 | v3 | v3 | | | | |
 | [OTFDEC](#otfdec) | | | | | | | | | | | v1 | v1 | v1 | | | | | v1 | | | | | v1 | | | v1 | |
 | [OTG](#otg) | | | | v1 | v1 | | v1 | v1 | | | | v1 | v1 | | | v1 | v1 | | | v1 | | | v1 | | | v1 | |
-| [PKA](#pka) | | ❌ | | | | | | | | | ❌ | v1a | v1a | | | | v1c | v1c | | n6 | | v1b | v1b | v1c | v1c | v1a | v1c |
+| [PKA](#pka) | | c5 | | | | | | | | | ❌ | v1a | v1a | | | | v1c | v1c | | n6 | | v1b | v1b | v1c | v1c | v1a | v1c |
 | [PLAY](#play) | | | | | | | | | | | ❌ | ❌ | | | | | | | | | | | | | | | |
 | [POSENC](#posenc) | | | | | | | | | | | ❌ | | | | | | | | | | | | | | | | |
 | [PSSI](#pssi) | | | | | | | | | | | | v1 | v1, v1_h7rs | | | | v1 | | | v1 | | | v1 | | | | |
 | [PWR](#pwr) | c0 | c5 | f0, f0x0 | f1 | f2 | f3 | f4 | f7 | g0 | g4 | ❌ | h5, h50, h5_ef | h7rm0399, h7rm0433, h7rm0455, h7rm0468, h7rs | l0 | l1 | l4 | l4 | l5 | ❌ | n6 | u0 | u3 | u5 | wb, wb55 | wb0 | wba | wl5 |
 | [QUADSPI](#quadspi) | | | | | | | v1 | v1 | | v1 | | | v1 | | | v1 | | | v1 | | | | | v1 | | | |
 | [RADIO](#radio) | | | | | | | | | | | | | | | | | | | | | | | | | v1 | | |
-| [RAMCFG](#ramcfg) | | ❌ | | | | | | | | | ❌ | h5, h5_ef | | | | | | | | h5 | | u5 | u5 | | | wba | |
+| [RAMCFG](#ramcfg) | | c5, ❌ | | | | | | | | | ❌ | h5, h5_ef | | | | | | | | h5 | | u5 | u5 | | | wba | |
 | [RAMECC](#ramecc) | | | | | | | | | | | | | ❌ | | | | | | | | | | | | | | |
 | [RCC](#rcc) | c0, c0v2 | c5 | f0v1, f0v2, f0v3, f0v4 | f1, f100, f1cl | f2 | f37, f3v1, f3v2, f3v3 | f4, f410 | f7 | g0x0, g0x1 | g4 | g5 | h5, h50, h5_ef | h7, h7ab, h7rm0433, h7rm0468, h7rs | l0, l0_v2 | l1 | l4 | l4plus | l5 | mp1 | n6 | u0 | u3 | u5 | wb | wb0 | wba | wl5, wle |
 | [RIFSC](#rifsc) | | | | | | | | | | | | | | | | | | | | n6 | | | | | | | |
@@ -108,7 +108,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [SPI](#spi) | v3_i2s | v5_i2s | v3, v3_i2s | v1, v1_i2s | v2_i2s | v3, v3_i2s | v2_i2s | v3_i2s | v3_i2s | v3_i2s | v5_i2s | v5_i2s, v5_i2s_h5 | v4_i2s, v5_i2s | v2, v2_i2s | v2, v2_i2s | v3 | v3 | v3 | ❌ | v5 | v3 | v6 | v6 | v3 | v3 | v6 | v3_i2s |
 | [SWPMI](#swpmi) | | | | | | | | | | | | | ❌ | | | ❌ | | | | | | | | | | | |
 | [SYSCFG](#syscfg) | c0 | c5 | f0 | | f2 | f3 | f4 | f7 | g0 | g4 | ❌ | h5, h50, h5_ef | h7, h7od, h7rs | l0 | l1 | l4 | l4 | l5 | ❌ | n6 | u0 | u3 | u5 | wb | wb0 | wba | wl5, wle |
-| [TAMP](#tamp) | | ❌ | | | | | | | g0 | g4 | ❌ | h5, h5_ef | ❌ | | | | | l5 | ❌ | n6 | ❌ | l5 | u5 | | | wba, ❌ | wl |
+| [TAMP](#tamp) | | c5 | | | | | | | g0 | g4 | ❌ | h5, h5_ef | ❌ | | | | | l5 | ❌ | n6 | ❌ | l5 | u5 | | | wba, ❌ | wl |
 | [TIM](#tim) | | | | | | | | | | | ❌ | | | | | | | | ❌ | | | | | | | | |
 | [TIMER](#timer) | v3 | v3 | v1 | v1 | v1 | v1 | v1 | v1 | v3 | v2 | | v2 | v3 | l0 | v1 | v1 | v1 | v1 | | v2 | v2 | v2 | v2 | v3 | v3 | v2 | v3 |
 | [TRNG](#trng) | | | | | | | | | | | | | | | | | | | | | | | | | v1 | | |
@@ -791,11 +791,12 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
+- **c5**: STM32C5
 - **n6**: STM32N6
 - **v1a**: STM32H5, STM32H7, STM32WBA
 - **v1b**: STM32U3, STM32U5
 - **v1c**: STM32L4+, STM32L5, STM32WB, STM32WB0, STM32WL
-- **❌ Unsupported**: STM32C5, STM32G5
+- **❌ Unsupported**: STM32G5
 
 ### PLAY
 
@@ -870,6 +871,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
+- **c5**: STM32C5
 - **h5**: STM32H5, STM32N6
 - **h5_ef**: STM32H5
 - **u5**: STM32U3, STM32U5
@@ -1097,6 +1099,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
+- **c5**: STM32C5
 - **g0**: STM32G0
 - **g4**: STM32G4
 - **h5**: STM32H5
@@ -1106,7 +1109,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **u5**: STM32U5
 - **wba**: STM32WBA
 - **wl**: STM32WL
-- **❌ Unsupported**: STM32C5, STM32G5, STM32H7, STM32MP1, STM32U0, STM32WBA
+- **❌ Unsupported**: STM32G5, STM32H7, STM32MP1, STM32U0, STM32WBA
 
 ### TIM
 

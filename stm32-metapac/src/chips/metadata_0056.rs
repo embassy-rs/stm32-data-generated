@@ -1749,7 +1749,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "PKA",
         address: 0x420c2000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "pka",
+            version: "c5",
+            block: "PKA",
+            ir: &pka::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK2",
             kernel_clock: Clock("HCLK2"),
@@ -1810,7 +1815,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "RAMCFG",
         address: 0x40026000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "ramcfg",
+            version: "c5",
+            block: "RAMCFG",
+            ir: &ramcfg::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK1",
             kernel_clock: Clock("HCLK1"),
@@ -2585,7 +2595,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "TAMP",
         address: 0x44007c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "tamp",
+            version: "c5",
+            block: "TAMP",
+            ir: &tamp::REGISTERS,
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -6026,8 +6041,12 @@ pub mod lpdma;
 pub mod lptim;
 #[path = "../registers/octospi_v2.rs"]
 pub mod octospi;
+#[path = "../registers/pka_c5.rs"]
+pub mod pka;
 #[path = "../registers/pwr_c5.rs"]
 pub mod pwr;
+#[path = "../registers/ramcfg_c5.rs"]
+pub mod ramcfg;
 #[path = "../registers/rcc_c5.rs"]
 pub mod rcc;
 #[path = "../registers/rng_v4.rs"]
@@ -6038,6 +6057,8 @@ pub mod rtc;
 pub mod spi;
 #[path = "../registers/syscfg_c5.rs"]
 pub mod syscfg;
+#[path = "../registers/tamp_c5.rs"]
+pub mod tamp;
 #[path = "../registers/timer_v3.rs"]
 pub mod timer;
 #[path = "../registers/uid_v1.rs"]

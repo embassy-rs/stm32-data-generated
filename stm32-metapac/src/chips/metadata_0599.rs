@@ -1446,7 +1446,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x5c001000,
         registers: Some(PeripheralRegisters {
             kind: "dbgmcu",
-            version: "h7",
+            version: "h7rm0399",
             block: "DBGMCU",
             ir: &dbgmcu::REGISTERS,
         }),
@@ -12380,7 +12380,7 @@ pub mod crs;
 pub mod cryp;
 #[path = "../registers/dac_v4.rs"]
 pub mod dac;
-#[path = "../registers/dbgmcu_h7.rs"]
+#[path = "../registers/dbgmcu_h7rm0399.rs"]
 pub mod dbgmcu;
 #[path = "../registers/dcmi_v1.rs"]
 pub mod dcmi;

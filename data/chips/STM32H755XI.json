@@ -3327,7 +3327,7 @@
           "address": 1543507968,
           "registers": {
             "kind": "dbgmcu",
-            "version": "h7",
+            "version": "h7rm0399",
             "block": "DBGMCU"
           }
         },
@@ -15299,7 +15299,7 @@
           "address": 1543507968,
           "registers": {
             "kind": "dbgmcu",
-            "version": "h7",
+            "version": "h7rm0399",
             "block": "DBGMCU"
           }
         },

@@ -781,7 +781,7 @@ pub mod crs;
 pub mod cryp;
 #[path = "../../peripherals/dac_v4.rs"]
 pub mod dac;
-#[path = "../../peripherals/dbgmcu_h7.rs"]
+#[path = "../../peripherals/dbgmcu_h7rm0399.rs"]
 pub mod dbgmcu;
 #[path = "../../peripherals/dcmi_v1.rs"]
 pub mod dcmi;

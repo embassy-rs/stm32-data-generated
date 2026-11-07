@@ -5052,19 +5052,19 @@ pub mod regs {
         pub const fn set_uie(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "Capture/Compare x (x=1) interrupt enable"]
+        #[doc = "Capture/Compare x (x=1-2) interrupt enable"]
         #[must_use]
         #[inline(always)]
         pub const fn ccie(&self, n: usize) -> bool {
-            assert!(n < 1usize);
+            assert!(n < 2usize);
             let offs = 1usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
-        #[doc = "Capture/Compare x (x=1) interrupt enable"]
+        #[doc = "Capture/Compare x (x=1-2) interrupt enable"]
         #[inline(always)]
         pub const fn set_ccie(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
+            assert!(n < 2usize);
             let offs = 1usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
@@ -5168,6 +5168,7 @@ pub mod regs {
             f.debug_struct("Dier2chCmp")
                 .field("uie", &self.uie())
                 .field("ccie[0]", &self.ccie(0usize))
+                .field("ccie[1]", &self.ccie(1usize))
                 .field("comie", &self.comie())
                 .field("tie", &self.tie())
                 .field("bie", &self.bie())
@@ -5183,9 +5184,10 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Dier2chCmp {{ uie: {=bool:?}, ccie[0]: {=bool:?}, comie: {=bool:?}, tie: {=bool:?}, bie: {=bool:?}, ude: {=bool:?}, ccde[0]: {=bool:?}, comde: {=bool:?}, tde: {=bool:?} }}",
+                "Dier2chCmp {{ uie: {=bool:?}, ccie[0]: {=bool:?}, ccie[1]: {=bool:?}, comie: {=bool:?}, tie: {=bool:?}, bie: {=bool:?}, ude: {=bool:?}, ccde[0]: {=bool:?}, comde: {=bool:?}, tde: {=bool:?} }}",
                 self.uie(),
                 self.ccie(0usize),
+                self.ccie(1usize),
                 self.comie(),
                 self.tie(),
                 self.bie(),

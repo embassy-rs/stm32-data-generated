@@ -3169,10 +3169,10 @@ pub(crate) static REGISTERS: IR = IR {
                 },
                 Field {
                     name: "ccie",
-                    description: Some("Capture/Compare x (x=1) interrupt enable"),
+                    description: Some("Capture/Compare x (x=1-2) interrupt enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 1, stride: 1 })),
+                    array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
                     enumm: None,
                 },
                 Field {

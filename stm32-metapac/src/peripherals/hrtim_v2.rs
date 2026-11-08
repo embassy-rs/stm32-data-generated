@@ -421,16 +421,16 @@ pub mod regs {
         #[must_use]
         #[inline(always)]
         pub const fn adctc3(&self, n: usize) -> bool {
-            assert!(n < 5usize);
-            let offs = 11usize + ([0usize, 5usize, 10usize, 14usize, 18usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 11usize + ([0usize, 5usize, 10usize, 14usize, 18usize, 4usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "ADC trigger X on Timer Y Compare 3"]
         #[inline(always)]
         pub const fn set_adctc3(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
-            let offs = 11usize + ([0usize, 5usize, 10usize, 14usize, 18usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 11usize + ([0usize, 5usize, 10usize, 14usize, 18usize, 4usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "ADC trigger X on Timer Y Compare 3"]
@@ -453,16 +453,16 @@ pub mod regs {
         #[must_use]
         #[inline(always)]
         pub const fn adctper(&self, n: usize) -> bool {
-            assert!(n < 5usize);
-            let offs = 13usize + ([0usize, 5usize, 10usize, 14usize, 18usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 13usize + ([0usize, 5usize, 10usize, 14usize, 18usize, 11usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "ADC trigger X on Timer Y Period"]
         #[inline(always)]
         pub const fn set_adctper(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
-            let offs = 13usize + ([0usize, 5usize, 10usize, 14usize, 18usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 13usize + ([0usize, 5usize, 10usize, 14usize, 18usize, 11usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "ADC trigger X on Timer Y Reset"]
@@ -507,6 +507,7 @@ pub mod regs {
                 .field("adctc3[2]", &self.adctc3(2usize))
                 .field("adctc3[3]", &self.adctc3(3usize))
                 .field("adctc3[4]", &self.adctc3(4usize))
+                .field("adctc3[5]", &self.adctc3(5usize))
                 .field("adctc4[0]", &self.adctc4(0usize))
                 .field("adctc4[1]", &self.adctc4(1usize))
                 .field("adctc4[2]", &self.adctc4(2usize))
@@ -518,6 +519,7 @@ pub mod regs {
                 .field("adctper[2]", &self.adctper(2usize))
                 .field("adctper[3]", &self.adctper(3usize))
                 .field("adctper[4]", &self.adctper(4usize))
+                .field("adctper[5]", &self.adctper(5usize))
                 .field("adctrst[0]", &self.adctrst(0usize))
                 .field("adctrst[1]", &self.adctrst(1usize))
                 .field("adctrst[2]", &self.adctrst(2usize))
@@ -529,7 +531,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "HrtimAdc1r {{ adcmc[0]: {=bool:?}, adcmc[1]: {=bool:?}, adcmc[2]: {=bool:?}, adcmc[3]: {=bool:?}, adcmper: {=bool:?}, adceev[0]: {=bool:?}, adceev[1]: {=bool:?}, adceev[2]: {=bool:?}, adceev[3]: {=bool:?}, adceev[4]: {=bool:?}, adctc2[0]: {=bool:?}, adctc3[0]: {=bool:?}, adctc3[1]: {=bool:?}, adctc3[2]: {=bool:?}, adctc3[3]: {=bool:?}, adctc3[4]: {=bool:?}, adctc4[0]: {=bool:?}, adctc4[1]: {=bool:?}, adctc4[2]: {=bool:?}, adctc4[3]: {=bool:?}, adctc4[4]: {=bool:?}, adctc4[5]: {=bool:?}, adctper[0]: {=bool:?}, adctper[1]: {=bool:?}, adctper[2]: {=bool:?}, adctper[3]: {=bool:?}, adctper[4]: {=bool:?}, adctrst[0]: {=bool:?}, adctrst[1]: {=bool:?}, adctrst[2]: {=bool:?} }}",
+                "HrtimAdc1r {{ adcmc[0]: {=bool:?}, adcmc[1]: {=bool:?}, adcmc[2]: {=bool:?}, adcmc[3]: {=bool:?}, adcmper: {=bool:?}, adceev[0]: {=bool:?}, adceev[1]: {=bool:?}, adceev[2]: {=bool:?}, adceev[3]: {=bool:?}, adceev[4]: {=bool:?}, adctc2[0]: {=bool:?}, adctc3[0]: {=bool:?}, adctc3[1]: {=bool:?}, adctc3[2]: {=bool:?}, adctc3[3]: {=bool:?}, adctc3[4]: {=bool:?}, adctc3[5]: {=bool:?}, adctc4[0]: {=bool:?}, adctc4[1]: {=bool:?}, adctc4[2]: {=bool:?}, adctc4[3]: {=bool:?}, adctc4[4]: {=bool:?}, adctc4[5]: {=bool:?}, adctper[0]: {=bool:?}, adctper[1]: {=bool:?}, adctper[2]: {=bool:?}, adctper[3]: {=bool:?}, adctper[4]: {=bool:?}, adctper[5]: {=bool:?}, adctrst[0]: {=bool:?}, adctrst[1]: {=bool:?}, adctrst[2]: {=bool:?} }}",
                 self.adcmc(0usize),
                 self.adcmc(1usize),
                 self.adcmc(2usize),
@@ -546,6 +548,7 @@ pub mod regs {
                 self.adctc3(2usize),
                 self.adctc3(3usize),
                 self.adctc3(4usize),
+                self.adctc3(5usize),
                 self.adctc4(0usize),
                 self.adctc4(1usize),
                 self.adctc4(2usize),
@@ -557,6 +560,7 @@ pub mod regs {
                 self.adctper(2usize),
                 self.adctper(3usize),
                 self.adctper(4usize),
+                self.adctper(5usize),
                 self.adctrst(0usize),
                 self.adctrst(1usize),
                 self.adctrst(2usize)
@@ -632,16 +636,16 @@ pub mod regs {
         #[must_use]
         #[inline(always)]
         pub const fn adctc4(&self, n: usize) -> bool {
-            assert!(n < 5usize);
-            let offs = 12usize + ([0usize, 4usize, 8usize, 13usize, 18usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 12usize + ([0usize, 4usize, 8usize, 13usize, 18usize, 7usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "ADC trigger X on Timer Y Compare 3"]
         #[inline(always)]
         pub const fn set_adctc4(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
-            let offs = 12usize + ([0usize, 4usize, 8usize, 13usize, 18usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 12usize + ([0usize, 4usize, 8usize, 13usize, 18usize, 7usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "ADC trigger X on Timer Y Period"]
@@ -723,6 +727,7 @@ pub mod regs {
                 .field("adctc4[2]", &self.adctc4(2usize))
                 .field("adctc4[3]", &self.adctc4(3usize))
                 .field("adctc4[4]", &self.adctc4(4usize))
+                .field("adctc4[5]", &self.adctc4(5usize))
                 .field("adctper[0]", &self.adctper(0usize))
                 .field("adctper[1]", &self.adctper(1usize))
                 .field("adctper[2]", &self.adctper(2usize))
@@ -741,7 +746,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "HrtimAdc2r {{ adcmc[0]: {=bool:?}, adcmc[1]: {=bool:?}, adcmc[2]: {=bool:?}, adcmc[3]: {=bool:?}, adcmper: {=bool:?}, adceev[0]: {=bool:?}, adceev[1]: {=bool:?}, adceev[2]: {=bool:?}, adceev[3]: {=bool:?}, adceev[4]: {=bool:?}, adctc2[0]: {=bool:?}, adctc2[1]: {=bool:?}, adctc2[2]: {=bool:?}, adctc2[3]: {=bool:?}, adctc2[4]: {=bool:?}, adctc2[5]: {=bool:?}, adctc4[0]: {=bool:?}, adctc4[1]: {=bool:?}, adctc4[2]: {=bool:?}, adctc4[3]: {=bool:?}, adctc4[4]: {=bool:?}, adctper[0]: {=bool:?}, adctper[1]: {=bool:?}, adctper[2]: {=bool:?}, adctper[3]: {=bool:?}, adctper[4]: {=bool:?}, adctc3[0]: {=bool:?}, adctc3[1]: {=bool:?}, adctrst[0]: {=bool:?}, adctrst[1]: {=bool:?}, adctrst[2]: {=bool:?} }}",
+                "HrtimAdc2r {{ adcmc[0]: {=bool:?}, adcmc[1]: {=bool:?}, adcmc[2]: {=bool:?}, adcmc[3]: {=bool:?}, adcmper: {=bool:?}, adceev[0]: {=bool:?}, adceev[1]: {=bool:?}, adceev[2]: {=bool:?}, adceev[3]: {=bool:?}, adceev[4]: {=bool:?}, adctc2[0]: {=bool:?}, adctc2[1]: {=bool:?}, adctc2[2]: {=bool:?}, adctc2[3]: {=bool:?}, adctc2[4]: {=bool:?}, adctc2[5]: {=bool:?}, adctc4[0]: {=bool:?}, adctc4[1]: {=bool:?}, adctc4[2]: {=bool:?}, adctc4[3]: {=bool:?}, adctc4[4]: {=bool:?}, adctc4[5]: {=bool:?}, adctper[0]: {=bool:?}, adctper[1]: {=bool:?}, adctper[2]: {=bool:?}, adctper[3]: {=bool:?}, adctper[4]: {=bool:?}, adctc3[0]: {=bool:?}, adctc3[1]: {=bool:?}, adctrst[0]: {=bool:?}, adctrst[1]: {=bool:?}, adctrst[2]: {=bool:?} }}",
                 self.adcmc(0usize),
                 self.adcmc(1usize),
                 self.adcmc(2usize),
@@ -763,6 +768,7 @@ pub mod regs {
                 self.adctc4(2usize),
                 self.adctc4(3usize),
                 self.adctc4(4usize),
+                self.adctc4(5usize),
                 self.adctper(0usize),
                 self.adctper(1usize),
                 self.adctper(2usize),
@@ -1362,7 +1368,7 @@ pub mod regs {
             )
         }
     }
-    #[doc = "High Resolution Timer: Burst DMA Master timer update Register"]
+    #[doc = "High Resolution Timer: Burst DMA Timer X update Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct HrtimBdtupr(pub u32);
@@ -1455,6 +1461,162 @@ pub mod regs {
             let offs = 6usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
+        #[doc = "DTxR register update enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timdtr(&self) -> bool {
+            let val = (self.0 >> 10usize) & 0x01;
+            val != 0
+        }
+        #[doc = "DTxR register update enable"]
+        #[inline(always)]
+        pub const fn set_timdtr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 10usize)) | (((val as u32) & 0x01) << 10usize);
+        }
+        #[doc = "SET1xR register update enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timset1r(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SET1xR register update enable"]
+        #[inline(always)]
+        pub const fn set_timset1r(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
+        }
+        #[doc = "RST1xR register update enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timrst1r(&self) -> bool {
+            let val = (self.0 >> 12usize) & 0x01;
+            val != 0
+        }
+        #[doc = "RST1xR register update enable"]
+        #[inline(always)]
+        pub const fn set_timrst1r(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 12usize)) | (((val as u32) & 0x01) << 12usize);
+        }
+        #[doc = "SET2xR register update enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timset2r(&self) -> bool {
+            let val = (self.0 >> 13usize) & 0x01;
+            val != 0
+        }
+        #[doc = "SET2xR register update enable"]
+        #[inline(always)]
+        pub const fn set_timset2r(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 13usize)) | (((val as u32) & 0x01) << 13usize);
+        }
+        #[doc = "RST2xR register update enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timrst2r(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "RST2xR register update enable"]
+        #[inline(always)]
+        pub const fn set_timrst2r(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
+        #[doc = "EEFxR1 register update enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timeefr1(&self) -> bool {
+            let val = (self.0 >> 15usize) & 0x01;
+            val != 0
+        }
+        #[doc = "EEFxR1 register update enable"]
+        #[inline(always)]
+        pub const fn set_timeefr1(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 15usize)) | (((val as u32) & 0x01) << 15usize);
+        }
+        #[doc = "EEFxR2 register update enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timeefr2(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
+            val != 0
+        }
+        #[doc = "EEFxR2 register update enable"]
+        #[inline(always)]
+        pub const fn set_timeefr2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
+        }
+        #[doc = "RSTxR register update enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timrstr(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "RSTxR register update enable"]
+        #[inline(always)]
+        pub const fn set_timrstr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
+        #[doc = "CHPxR register update enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timchpr(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
+            val != 0
+        }
+        #[doc = "CHPxR register update enable"]
+        #[inline(always)]
+        pub const fn set_timchpr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
+        }
+        #[doc = "OUTxR register update enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timoutr(&self) -> bool {
+            let val = (self.0 >> 19usize) & 0x01;
+            val != 0
+        }
+        #[doc = "OUTxR register update enable"]
+        #[inline(always)]
+        pub const fn set_timoutr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
+        }
+        #[doc = "FLTxR register update enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timfltr(&self) -> bool {
+            let val = (self.0 >> 20usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FLTxR register update enable"]
+        #[inline(always)]
+        pub const fn set_timfltr(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
+        }
+        #[doc = "CR2 register update enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timcr2(&self) -> bool {
+            let val = (self.0 >> 21usize) & 0x01;
+            val != 0
+        }
+        #[doc = "CR2 register update enable"]
+        #[inline(always)]
+        pub const fn set_timcr2(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
+        }
+        #[doc = "EEFxR3 register update enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn timeefr3(&self) -> bool {
+            let val = (self.0 >> 22usize) & 0x01;
+            val != 0
+        }
+        #[doc = "EEFxR3 register update enable"]
+        #[inline(always)]
+        pub const fn set_timeefr3(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
+        }
     }
     impl Default for HrtimBdtupr {
         #[inline(always)]
@@ -1475,6 +1637,19 @@ pub mod regs {
                 .field("cmp[1]", &self.cmp(1usize))
                 .field("cmp[2]", &self.cmp(2usize))
                 .field("cmp[3]", &self.cmp(3usize))
+                .field("timdtr", &self.timdtr())
+                .field("timset1r", &self.timset1r())
+                .field("timrst1r", &self.timrst1r())
+                .field("timset2r", &self.timset2r())
+                .field("timrst2r", &self.timrst2r())
+                .field("timeefr1", &self.timeefr1())
+                .field("timeefr2", &self.timeefr2())
+                .field("timrstr", &self.timrstr())
+                .field("timchpr", &self.timchpr())
+                .field("timoutr", &self.timoutr())
+                .field("timfltr", &self.timfltr())
+                .field("timcr2", &self.timcr2())
+                .field("timeefr3", &self.timeefr3())
                 .finish()
         }
     }
@@ -1483,7 +1658,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "HrtimBdtupr {{ cr: {=bool:?}, icr: {=bool:?}, dier: {=bool:?}, cnt: {=bool:?}, per: {=bool:?}, rep: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?} }}",
+                "HrtimBdtupr {{ cr: {=bool:?}, icr: {=bool:?}, dier: {=bool:?}, cnt: {=bool:?}, per: {=bool:?}, rep: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?}, timdtr: {=bool:?}, timset1r: {=bool:?}, timrst1r: {=bool:?}, timset2r: {=bool:?}, timrst2r: {=bool:?}, timeefr1: {=bool:?}, timeefr2: {=bool:?}, timrstr: {=bool:?}, timchpr: {=bool:?}, timoutr: {=bool:?}, timfltr: {=bool:?}, timcr2: {=bool:?}, timeefr3: {=bool:?} }}",
                 self.cr(),
                 self.icr(),
                 self.dier(),
@@ -1493,7 +1668,20 @@ pub mod regs {
                 self.cmp(0usize),
                 self.cmp(1usize),
                 self.cmp(2usize),
-                self.cmp(3usize)
+                self.cmp(3usize),
+                self.timdtr(),
+                self.timset1r(),
+                self.timrst1r(),
+                self.timset2r(),
+                self.timrst2r(),
+                self.timeefr1(),
+                self.timeefr2(),
+                self.timrstr(),
+                self.timchpr(),
+                self.timoutr(),
+                self.timfltr(),
+                self.timcr2(),
+                self.timeefr3()
             )
         }
     }
@@ -1780,7 +1968,7 @@ pub mod regs {
         #[inline(always)]
         pub const fn trst(&self, n: usize) -> bool {
             assert!(n < 5usize);
-            let offs = 7usize + ([0usize, 4usize, 8usize, 12usize, 16usize][n] as usize);
+            let offs = 7usize + ([0usize, 4usize, 8usize, 12usize, 11usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
@@ -1788,23 +1976,23 @@ pub mod regs {
         #[inline(always)]
         pub const fn set_trst(&mut self, n: usize, val: bool) {
             assert!(n < 5usize);
-            let offs = 7usize + ([0usize, 4usize, 8usize, 12usize, 16usize][n] as usize);
+            let offs = 7usize + ([0usize, 4usize, 8usize, 12usize, 11usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Timer X repetition"]
         #[must_use]
         #[inline(always)]
         pub const fn trep(&self, n: usize) -> bool {
-            assert!(n < 5usize);
-            let offs = 8usize + ([0usize, 4usize, 8usize, 12usize, 16usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 8usize + ([0usize, 4usize, 8usize, 12usize, 16usize, 13usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "Timer X repetition"]
         #[inline(always)]
         pub const fn set_trep(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
-            let offs = 8usize + ([0usize, 4usize, 8usize, 12usize, 16usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 8usize + ([0usize, 4usize, 8usize, 12usize, 16usize, 13usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Timer X compare 1 event"]
@@ -1812,7 +2000,7 @@ pub mod regs {
         #[inline(always)]
         pub const fn tcmp1(&self, n: usize) -> bool {
             assert!(n < 5usize);
-            let offs = 9usize + ([0usize, 4usize, 8usize, 12usize, 16usize][n] as usize);
+            let offs = 9usize + ([0usize, 4usize, 8usize, 16usize, 14usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
@@ -1820,24 +2008,84 @@ pub mod regs {
         #[inline(always)]
         pub const fn set_tcmp1(&mut self, n: usize, val: bool) {
             assert!(n < 5usize);
-            let offs = 9usize + ([0usize, 4usize, 8usize, 12usize, 16usize][n] as usize);
+            let offs = 9usize + ([0usize, 4usize, 8usize, 16usize, 14usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Timer X compare 2 event"]
         #[must_use]
         #[inline(always)]
         pub const fn tcmp2(&self, n: usize) -> bool {
-            assert!(n < 5usize);
-            let offs = 10usize + ([0usize, 4usize, 8usize, 12usize, 16usize][n] as usize);
+            assert!(n < 4usize);
+            let offs = 10usize + ([0usize, 4usize, 12usize, 16usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "Timer X compare 2 event"]
         #[inline(always)]
         pub const fn set_tcmp2(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
-            let offs = 10usize + ([0usize, 4usize, 8usize, 12usize, 16usize][n] as usize);
+            assert!(n < 4usize);
+            let offs = 10usize + ([0usize, 4usize, 12usize, 16usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
+        }
+        #[doc = "Timer A period following external event 7"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn taeev7(&self) -> bool {
+            let val = (self.0 >> 27usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Timer A period following external event 7"]
+        #[inline(always)]
+        pub const fn set_taeev7(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val as u32) & 0x01) << 27usize);
+        }
+        #[doc = "Timer D period following external event 8"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tdeev8(&self) -> bool {
+            let val = (self.0 >> 28usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Timer D period following external event 8"]
+        #[inline(always)]
+        pub const fn set_tdeev8(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
+        }
+        #[doc = "External event 7 (TIMA filters applied)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn eev7(&self) -> bool {
+            let val = (self.0 >> 29usize) & 0x01;
+            val != 0
+        }
+        #[doc = "External event 7 (TIMA filters applied)"]
+        #[inline(always)]
+        pub const fn set_eev7(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
+        }
+        #[doc = "External event 8 (TIMD filters applied)"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn eev8(&self) -> bool {
+            let val = (self.0 >> 30usize) & 0x01;
+            val != 0
+        }
+        #[doc = "External event 8 (TIMD filters applied)"]
+        #[inline(always)]
+        pub const fn set_eev8(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
+        }
+        #[doc = "On-chip event"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ochpev(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "On-chip event"]
+        #[inline(always)]
+        pub const fn set_ochpev(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
     }
     impl Default for HrtimBmtrgr {
@@ -1866,6 +2114,7 @@ pub mod regs {
                 .field("trep[2]", &self.trep(2usize))
                 .field("trep[3]", &self.trep(3usize))
                 .field("trep[4]", &self.trep(4usize))
+                .field("trep[5]", &self.trep(5usize))
                 .field("tcmp1[0]", &self.tcmp1(0usize))
                 .field("tcmp1[1]", &self.tcmp1(1usize))
                 .field("tcmp1[2]", &self.tcmp1(2usize))
@@ -1875,7 +2124,11 @@ pub mod regs {
                 .field("tcmp2[1]", &self.tcmp2(1usize))
                 .field("tcmp2[2]", &self.tcmp2(2usize))
                 .field("tcmp2[3]", &self.tcmp2(3usize))
-                .field("tcmp2[4]", &self.tcmp2(4usize))
+                .field("taeev7", &self.taeev7())
+                .field("tdeev8", &self.tdeev8())
+                .field("eev7", &self.eev7())
+                .field("eev8", &self.eev8())
+                .field("ochpev", &self.ochpev())
                 .finish()
         }
     }
@@ -1884,7 +2137,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "HrtimBmtrgr {{ sw: {=bool:?}, mstrst: {=bool:?}, mstrep: {=bool:?}, mstcmp[0]: {=bool:?}, mstcmp[1]: {=bool:?}, mstcmp[2]: {=bool:?}, mstcmp[3]: {=bool:?}, trst[0]: {=bool:?}, trst[1]: {=bool:?}, trst[2]: {=bool:?}, trst[3]: {=bool:?}, trst[4]: {=bool:?}, trep[0]: {=bool:?}, trep[1]: {=bool:?}, trep[2]: {=bool:?}, trep[3]: {=bool:?}, trep[4]: {=bool:?}, tcmp1[0]: {=bool:?}, tcmp1[1]: {=bool:?}, tcmp1[2]: {=bool:?}, tcmp1[3]: {=bool:?}, tcmp1[4]: {=bool:?}, tcmp2[0]: {=bool:?}, tcmp2[1]: {=bool:?}, tcmp2[2]: {=bool:?}, tcmp2[3]: {=bool:?}, tcmp2[4]: {=bool:?} }}",
+                "HrtimBmtrgr {{ sw: {=bool:?}, mstrst: {=bool:?}, mstrep: {=bool:?}, mstcmp[0]: {=bool:?}, mstcmp[1]: {=bool:?}, mstcmp[2]: {=bool:?}, mstcmp[3]: {=bool:?}, trst[0]: {=bool:?}, trst[1]: {=bool:?}, trst[2]: {=bool:?}, trst[3]: {=bool:?}, trst[4]: {=bool:?}, trep[0]: {=bool:?}, trep[1]: {=bool:?}, trep[2]: {=bool:?}, trep[3]: {=bool:?}, trep[4]: {=bool:?}, trep[5]: {=bool:?}, tcmp1[0]: {=bool:?}, tcmp1[1]: {=bool:?}, tcmp1[2]: {=bool:?}, tcmp1[3]: {=bool:?}, tcmp1[4]: {=bool:?}, tcmp2[0]: {=bool:?}, tcmp2[1]: {=bool:?}, tcmp2[2]: {=bool:?}, tcmp2[3]: {=bool:?}, taeev7: {=bool:?}, tdeev8: {=bool:?}, eev7: {=bool:?}, eev8: {=bool:?}, ochpev: {=bool:?} }}",
                 self.sw(),
                 self.mstrst(),
                 self.mstrep(),
@@ -1902,6 +2155,7 @@ pub mod regs {
                 self.trep(2usize),
                 self.trep(3usize),
                 self.trep(4usize),
+                self.trep(5usize),
                 self.tcmp1(0usize),
                 self.tcmp1(1usize),
                 self.tcmp1(2usize),
@@ -1911,7 +2165,11 @@ pub mod regs {
                 self.tcmp2(1usize),
                 self.tcmp2(2usize),
                 self.tcmp2(3usize),
-                self.tcmp2(4usize)
+                self.taeev7(),
+                self.tdeev8(),
+                self.eev7(),
+                self.eev8(),
+                self.ochpev()
             )
         }
     }

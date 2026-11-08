@@ -214,8 +214,14 @@
         "name": "BDTUPR",
         "description": "High Resolution Timer: Burst DMA Timer X update Register",
         "array": {
-          "len": 5,
-          "stride": 4
+          "offsets": [
+            0,
+            4,
+            8,
+            12,
+            16,
+            24
+          ]
         },
         "byte_offset": 988,
         "fieldset": "HRTIM_BDTUPR"
@@ -946,7 +952,7 @@
         "bit_offset": 17,
         "bit_size": 1,
         "array": {
-          "len": 5,
+          "len": 6,
           "stride": 1
         }
       },
@@ -1076,7 +1082,7 @@
         "bit_offset": 1,
         "bit_size": 1,
         "array": {
-          "len": 5,
+          "len": 6,
           "stride": 1
         }
       },
@@ -1107,7 +1113,7 @@
         "bit_offset": 1,
         "bit_size": 1,
         "array": {
-          "len": 5,
+          "len": 6,
           "stride": 1
         }
       },
@@ -1123,7 +1129,7 @@
         "bit_offset": 9,
         "bit_size": 1,
         "array": {
-          "len": 5,
+          "len": 6,
           "stride": 1
         }
       }
@@ -1547,7 +1553,8 @@
             2,
             4,
             6,
-            8
+            8,
+            10
           ]
         }
       },
@@ -1562,7 +1569,8 @@
             2,
             4,
             6,
-            8
+            8,
+            10
           ]
         }
       }
@@ -1582,7 +1590,8 @@
             2,
             4,
             6,
-            8
+            8,
+            10
           ]
         }
       },
@@ -1597,7 +1606,8 @@
             2,
             4,
             6,
-            8
+            8,
+            10
           ]
         }
       }
@@ -2177,11 +2187,17 @@
       {
         "name": "TU",
         "description": "Timer X update",
-        "bit_offset": 19,
+        "bit_offset": 16,
         "bit_size": 1,
         "array": {
-          "len": 5,
-          "stride": 1
+          "offsets": [
+            3,
+            4,
+            5,
+            6,
+            7,
+            0
+          ]
         }
       },
       {

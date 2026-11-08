@@ -338,7 +338,9 @@ pub(crate) static REGISTERS: IR = IR {
                 BlockItem {
                     name: "bdtupr",
                     description: Some("High Resolution Timer: Burst DMA Timer X update Register"),
-                    array: Some(Array::Regular(RegularArray { len: 5, stride: 4 })),
+                    array: Some(Array::Cursed(CursedArray {
+                        offsets: &[0, 4, 8, 12, 16, 24],
+                    })),
                     byte_offset: 0x3dc,
                     inner: BlockItemInner::Register(Register {
                         access: Access::ReadWrite,
@@ -1213,7 +1215,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Timer X Burst Mode"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 5, stride: 1 })),
+                    array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
                     enumm: None,
                 },
                 Field {
@@ -1339,7 +1341,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Timer X Update Disable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 5, stride: 1 })),
+                    array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
                     enumm: None,
                 },
                 Field {
@@ -1371,7 +1373,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Timer X Software Update"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 5, stride: 1 })),
+                    array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
                     enumm: None,
                 },
                 Field {
@@ -1387,7 +1389,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Timer X Counter Software Reset"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 5, stride: 1 })),
+                    array: Some(Array::Regular(RegularArray { len: 6, stride: 1 })),
                     enumm: None,
                 },
             ],
@@ -1782,7 +1784,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray {
-                        offsets: &[0, 2, 4, 6, 8],
+                        offsets: &[0, 2, 4, 6, 8, 10],
                     })),
                     enumm: None,
                 },
@@ -1792,7 +1794,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray {
-                        offsets: &[0, 2, 4, 6, 8],
+                        offsets: &[0, 2, 4, 6, 8, 10],
                     })),
                     enumm: None,
                 },
@@ -1810,7 +1812,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray {
-                        offsets: &[0, 2, 4, 6, 8],
+                        offsets: &[0, 2, 4, 6, 8, 10],
                     })),
                     enumm: None,
                 },
@@ -1820,7 +1822,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
                     array: Some(Array::Cursed(CursedArray {
-                        offsets: &[0, 2, 4, 6, 8],
+                        offsets: &[0, 2, 4, 6, 8, 10],
                     })),
                     enumm: None,
                 },
@@ -2495,6 +2497,16 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some("Delcmp"),
                 },
                 Field {
+                    name: "tu",
+                    description: Some("Timer X update"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
+                    bit_size: 1,
+                    array: Some(Array::Cursed(CursedArray {
+                        offsets: &[3, 4, 5, 6, 7, 0],
+                    })),
+                    enumm: None,
+                },
+                Field {
                     name: "repu",
                     description: Some("Timer X Repetition update"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
@@ -2508,14 +2520,6 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
                     array: None,
-                    enumm: None,
-                },
-                Field {
-                    name: "tu",
-                    description: Some("Timer X update"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 5, stride: 1 })),
                     enumm: None,
                 },
                 Field {

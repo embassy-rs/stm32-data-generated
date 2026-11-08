@@ -187,8 +187,14 @@ Register"]
     #[doc = "High Resolution Timer: Burst DMA Timer X update Register"]
     #[inline(always)]
     pub const fn bdtupr(self, n: usize) -> crate::common::Reg<regs::HrtimBdtupr, crate::common::RW> {
-        assert!(n < 5usize);
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x03dcusize + n * 4usize) as _) }
+        assert!(n < 6usize);
+        unsafe {
+            crate::common::Reg::from_ptr(
+                self.ptr
+                    .wrapping_add(0x03dcusize + ([0usize, 4usize, 8usize, 12usize, 16usize, 24usize][n] as usize))
+                    as _,
+            )
+        }
     }
     #[doc = "High Resolution Timer: Burst DMA Data Register"]
     #[inline(always)]
@@ -1607,7 +1613,7 @@ pub mod regs {
         #[must_use]
         #[inline(always)]
         pub const fn tbm(&self, n: usize) -> bool {
-            assert!(n < 5usize);
+            assert!(n < 6usize);
             let offs = 17usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
             val != 0
@@ -1615,7 +1621,7 @@ pub mod regs {
         #[doc = "Timer X Burst Mode"]
         #[inline(always)]
         pub const fn set_tbm(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
+            assert!(n < 6usize);
             let offs = 17usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
@@ -1650,6 +1656,7 @@ pub mod regs {
                 .field("tbm[2]", &self.tbm(2usize))
                 .field("tbm[3]", &self.tbm(3usize))
                 .field("tbm[4]", &self.tbm(4usize))
+                .field("tbm[5]", &self.tbm(5usize))
                 .field("bmstat", &self.bmstat())
                 .finish()
         }
@@ -1659,7 +1666,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "HrtimBmcr {{ bme: {=bool:?}, bmom: {=bool:?}, bmclk: {=u8:?}, bmprsc: {=u8:?}, bmpren: {=bool:?}, mtbm: {=bool:?}, tbm[0]: {=bool:?}, tbm[1]: {=bool:?}, tbm[2]: {=bool:?}, tbm[3]: {=bool:?}, tbm[4]: {=bool:?}, bmstat: {=bool:?} }}",
+                "HrtimBmcr {{ bme: {=bool:?}, bmom: {=bool:?}, bmclk: {=u8:?}, bmprsc: {=u8:?}, bmpren: {=bool:?}, mtbm: {=bool:?}, tbm[0]: {=bool:?}, tbm[1]: {=bool:?}, tbm[2]: {=bool:?}, tbm[3]: {=bool:?}, tbm[4]: {=bool:?}, tbm[5]: {=bool:?}, bmstat: {=bool:?} }}",
                 self.bme(),
                 self.bmom(),
                 self.bmclk(),
@@ -1671,6 +1678,7 @@ pub mod regs {
                 self.tbm(2usize),
                 self.tbm(3usize),
                 self.tbm(4usize),
+                self.tbm(5usize),
                 self.bmstat()
             )
         }
@@ -1928,7 +1936,7 @@ pub mod regs {
         #[must_use]
         #[inline(always)]
         pub const fn tudis(&self, n: usize) -> bool {
-            assert!(n < 5usize);
+            assert!(n < 6usize);
             let offs = 1usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
             val != 0
@@ -1936,7 +1944,7 @@ pub mod regs {
         #[doc = "Timer X Update Disable"]
         #[inline(always)]
         pub const fn set_tudis(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
+            assert!(n < 6usize);
             let offs = 1usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
@@ -1972,6 +1980,7 @@ pub mod regs {
                 .field("tudis[2]", &self.tudis(2usize))
                 .field("tudis[3]", &self.tudis(3usize))
                 .field("tudis[4]", &self.tudis(4usize))
+                .field("tudis[5]", &self.tudis(5usize))
                 .field("adusrc[0]", &self.adusrc(0usize))
                 .field("adusrc[1]", &self.adusrc(1usize))
                 .field("adusrc[2]", &self.adusrc(2usize))
@@ -1984,13 +1993,14 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "HrtimCr1 {{ mudis: {=bool:?}, tudis[0]: {=bool:?}, tudis[1]: {=bool:?}, tudis[2]: {=bool:?}, tudis[3]: {=bool:?}, tudis[4]: {=bool:?}, adusrc[0]: {=u8:?}, adusrc[1]: {=u8:?}, adusrc[2]: {=u8:?}, adusrc[3]: {=u8:?} }}",
+                "HrtimCr1 {{ mudis: {=bool:?}, tudis[0]: {=bool:?}, tudis[1]: {=bool:?}, tudis[2]: {=bool:?}, tudis[3]: {=bool:?}, tudis[4]: {=bool:?}, tudis[5]: {=bool:?}, adusrc[0]: {=u8:?}, adusrc[1]: {=u8:?}, adusrc[2]: {=u8:?}, adusrc[3]: {=u8:?} }}",
                 self.mudis(),
                 self.tudis(0usize),
                 self.tudis(1usize),
                 self.tudis(2usize),
                 self.tudis(3usize),
                 self.tudis(4usize),
+                self.tudis(5usize),
                 self.adusrc(0usize),
                 self.adusrc(1usize),
                 self.adusrc(2usize),
@@ -2019,7 +2029,7 @@ pub mod regs {
         #[must_use]
         #[inline(always)]
         pub const fn tswu(&self, n: usize) -> bool {
-            assert!(n < 5usize);
+            assert!(n < 6usize);
             let offs = 1usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
             val != 0
@@ -2027,7 +2037,7 @@ pub mod regs {
         #[doc = "Timer X Software Update"]
         #[inline(always)]
         pub const fn set_tswu(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
+            assert!(n < 6usize);
             let offs = 1usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
@@ -2047,7 +2057,7 @@ pub mod regs {
         #[must_use]
         #[inline(always)]
         pub const fn trst(&self, n: usize) -> bool {
-            assert!(n < 5usize);
+            assert!(n < 6usize);
             let offs = 9usize + n * 1usize;
             let val = (self.0 >> offs) & 0x01;
             val != 0
@@ -2055,7 +2065,7 @@ pub mod regs {
         #[doc = "Timer X Counter Software Reset"]
         #[inline(always)]
         pub const fn set_trst(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
+            assert!(n < 6usize);
             let offs = 9usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
@@ -2075,12 +2085,14 @@ pub mod regs {
                 .field("tswu[2]", &self.tswu(2usize))
                 .field("tswu[3]", &self.tswu(3usize))
                 .field("tswu[4]", &self.tswu(4usize))
+                .field("tswu[5]", &self.tswu(5usize))
                 .field("mrst", &self.mrst())
                 .field("trst[0]", &self.trst(0usize))
                 .field("trst[1]", &self.trst(1usize))
                 .field("trst[2]", &self.trst(2usize))
                 .field("trst[3]", &self.trst(3usize))
                 .field("trst[4]", &self.trst(4usize))
+                .field("trst[5]", &self.trst(5usize))
                 .finish()
         }
     }
@@ -2089,19 +2101,21 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "HrtimCr2 {{ mswu: {=bool:?}, tswu[0]: {=bool:?}, tswu[1]: {=bool:?}, tswu[2]: {=bool:?}, tswu[3]: {=bool:?}, tswu[4]: {=bool:?}, mrst: {=bool:?}, trst[0]: {=bool:?}, trst[1]: {=bool:?}, trst[2]: {=bool:?}, trst[3]: {=bool:?}, trst[4]: {=bool:?} }}",
+                "HrtimCr2 {{ mswu: {=bool:?}, tswu[0]: {=bool:?}, tswu[1]: {=bool:?}, tswu[2]: {=bool:?}, tswu[3]: {=bool:?}, tswu[4]: {=bool:?}, tswu[5]: {=bool:?}, mrst: {=bool:?}, trst[0]: {=bool:?}, trst[1]: {=bool:?}, trst[2]: {=bool:?}, trst[3]: {=bool:?}, trst[4]: {=bool:?}, trst[5]: {=bool:?} }}",
                 self.mswu(),
                 self.tswu(0usize),
                 self.tswu(1usize),
                 self.tswu(2usize),
                 self.tswu(3usize),
                 self.tswu(4usize),
+                self.tswu(5usize),
                 self.mrst(),
                 self.trst(0usize),
                 self.trst(1usize),
                 self.trst(2usize),
                 self.trst(3usize),
-                self.trst(4usize)
+                self.trst(4usize),
+                self.trst(5usize)
             )
         }
     }
@@ -3049,32 +3063,32 @@ pub mod regs {
         #[must_use]
         #[inline(always)]
         pub const fn t1odis(&self, n: usize) -> bool {
-            assert!(n < 5usize);
-            let offs = 0usize + ([0usize, 2usize, 4usize, 6usize, 8usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 0usize + ([0usize, 2usize, 4usize, 6usize, 8usize, 10usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "Timer X Output Disable"]
         #[inline(always)]
         pub const fn set_t1odis(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
-            let offs = 0usize + ([0usize, 2usize, 4usize, 6usize, 8usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 0usize + ([0usize, 2usize, 4usize, 6usize, 8usize, 10usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Timer X Complementary Output Disable"]
         #[must_use]
         #[inline(always)]
         pub const fn t2odis(&self, n: usize) -> bool {
-            assert!(n < 5usize);
-            let offs = 1usize + ([0usize, 2usize, 4usize, 6usize, 8usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 1usize + ([0usize, 2usize, 4usize, 6usize, 8usize, 10usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "Timer X Complementary Output Disable"]
         #[inline(always)]
         pub const fn set_t2odis(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
-            let offs = 1usize + ([0usize, 2usize, 4usize, 6usize, 8usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 1usize + ([0usize, 2usize, 4usize, 6usize, 8usize, 10usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
@@ -3092,11 +3106,13 @@ pub mod regs {
                 .field("t1odis[2]", &self.t1odis(2usize))
                 .field("t1odis[3]", &self.t1odis(3usize))
                 .field("t1odis[4]", &self.t1odis(4usize))
+                .field("t1odis[5]", &self.t1odis(5usize))
                 .field("t2odis[0]", &self.t2odis(0usize))
                 .field("t2odis[1]", &self.t2odis(1usize))
                 .field("t2odis[2]", &self.t2odis(2usize))
                 .field("t2odis[3]", &self.t2odis(3usize))
                 .field("t2odis[4]", &self.t2odis(4usize))
+                .field("t2odis[5]", &self.t2odis(5usize))
                 .finish()
         }
     }
@@ -3105,17 +3121,19 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "HrtimOdisr {{ t1odis[0]: {=bool:?}, t1odis[1]: {=bool:?}, t1odis[2]: {=bool:?}, t1odis[3]: {=bool:?}, t1odis[4]: {=bool:?}, t2odis[0]: {=bool:?}, t2odis[1]: {=bool:?}, t2odis[2]: {=bool:?}, t2odis[3]: {=bool:?}, t2odis[4]: {=bool:?} }}",
+                "HrtimOdisr {{ t1odis[0]: {=bool:?}, t1odis[1]: {=bool:?}, t1odis[2]: {=bool:?}, t1odis[3]: {=bool:?}, t1odis[4]: {=bool:?}, t1odis[5]: {=bool:?}, t2odis[0]: {=bool:?}, t2odis[1]: {=bool:?}, t2odis[2]: {=bool:?}, t2odis[3]: {=bool:?}, t2odis[4]: {=bool:?}, t2odis[5]: {=bool:?} }}",
                 self.t1odis(0usize),
                 self.t1odis(1usize),
                 self.t1odis(2usize),
                 self.t1odis(3usize),
                 self.t1odis(4usize),
+                self.t1odis(5usize),
                 self.t2odis(0usize),
                 self.t2odis(1usize),
                 self.t2odis(2usize),
                 self.t2odis(3usize),
-                self.t2odis(4usize)
+                self.t2odis(4usize),
+                self.t2odis(5usize)
             )
         }
     }
@@ -3128,32 +3146,32 @@ pub mod regs {
         #[must_use]
         #[inline(always)]
         pub const fn t1odis(&self, n: usize) -> bool {
-            assert!(n < 5usize);
-            let offs = 0usize + ([0usize, 2usize, 4usize, 6usize, 8usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 0usize + ([0usize, 2usize, 4usize, 6usize, 8usize, 10usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "Timer X Output Disable Status"]
         #[inline(always)]
         pub const fn set_t1odis(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
-            let offs = 0usize + ([0usize, 2usize, 4usize, 6usize, 8usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 0usize + ([0usize, 2usize, 4usize, 6usize, 8usize, 10usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Timer X Complementary Output Disable Status"]
         #[must_use]
         #[inline(always)]
         pub const fn t2odis(&self, n: usize) -> bool {
-            assert!(n < 5usize);
-            let offs = 1usize + ([0usize, 2usize, 4usize, 6usize, 8usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 1usize + ([0usize, 2usize, 4usize, 6usize, 8usize, 10usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "Timer X Complementary Output Disable Status"]
         #[inline(always)]
         pub const fn set_t2odis(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
-            let offs = 1usize + ([0usize, 2usize, 4usize, 6usize, 8usize][n] as usize);
+            assert!(n < 6usize);
+            let offs = 1usize + ([0usize, 2usize, 4usize, 6usize, 8usize, 10usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
     }
@@ -3171,11 +3189,13 @@ pub mod regs {
                 .field("t1odis[2]", &self.t1odis(2usize))
                 .field("t1odis[3]", &self.t1odis(3usize))
                 .field("t1odis[4]", &self.t1odis(4usize))
+                .field("t1odis[5]", &self.t1odis(5usize))
                 .field("t2odis[0]", &self.t2odis(0usize))
                 .field("t2odis[1]", &self.t2odis(1usize))
                 .field("t2odis[2]", &self.t2odis(2usize))
                 .field("t2odis[3]", &self.t2odis(3usize))
                 .field("t2odis[4]", &self.t2odis(4usize))
+                .field("t2odis[5]", &self.t2odis(5usize))
                 .finish()
         }
     }
@@ -3184,17 +3204,19 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "HrtimOdsr {{ t1odis[0]: {=bool:?}, t1odis[1]: {=bool:?}, t1odis[2]: {=bool:?}, t1odis[3]: {=bool:?}, t1odis[4]: {=bool:?}, t2odis[0]: {=bool:?}, t2odis[1]: {=bool:?}, t2odis[2]: {=bool:?}, t2odis[3]: {=bool:?}, t2odis[4]: {=bool:?} }}",
+                "HrtimOdsr {{ t1odis[0]: {=bool:?}, t1odis[1]: {=bool:?}, t1odis[2]: {=bool:?}, t1odis[3]: {=bool:?}, t1odis[4]: {=bool:?}, t1odis[5]: {=bool:?}, t2odis[0]: {=bool:?}, t2odis[1]: {=bool:?}, t2odis[2]: {=bool:?}, t2odis[3]: {=bool:?}, t2odis[4]: {=bool:?}, t2odis[5]: {=bool:?} }}",
                 self.t1odis(0usize),
                 self.t1odis(1usize),
                 self.t1odis(2usize),
                 self.t1odis(3usize),
                 self.t1odis(4usize),
+                self.t1odis(5usize),
                 self.t2odis(0usize),
                 self.t2odis(1usize),
                 self.t2odis(2usize),
                 self.t2odis(3usize),
-                self.t2odis(4usize)
+                self.t2odis(4usize),
+                self.t2odis(5usize)
             )
         }
     }
@@ -4637,6 +4659,22 @@ pub mod regs {
         pub const fn set_delcmp4(&mut self, val: super::vals::Delcmp) {
             self.0 = (self.0 & !(0x03 << 14usize)) | (((val.to_bits() as u32) & 0x03) << 14usize);
         }
+        #[doc = "Timer X update"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn tu(&self, n: usize) -> bool {
+            assert!(n < 6usize);
+            let offs = 16usize + ([3usize, 4usize, 5usize, 6usize, 7usize, 0usize][n] as usize);
+            let val = (self.0 >> offs) & 0x01;
+            val != 0
+        }
+        #[doc = "Timer X update"]
+        #[inline(always)]
+        pub const fn set_tu(&mut self, n: usize, val: bool) {
+            assert!(n < 6usize);
+            let offs = 16usize + ([3usize, 4usize, 5usize, 6usize, 7usize, 0usize][n] as usize);
+            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
+        }
         #[doc = "Timer X Repetition update"]
         #[must_use]
         #[inline(always)]
@@ -4660,22 +4698,6 @@ pub mod regs {
         #[inline(always)]
         pub const fn set_rstu(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
-        }
-        #[doc = "Timer X update"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn tu(&self, n: usize) -> bool {
-            assert!(n < 5usize);
-            let offs = 19usize + n * 1usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer X update"]
-        #[inline(always)]
-        pub const fn set_tu(&mut self, n: usize, val: bool) {
-            assert!(n < 5usize);
-            let offs = 19usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Master Timer update"]
         #[must_use]
@@ -4744,13 +4766,14 @@ pub mod regs {
                 .field("syncstrt", &self.syncstrt())
                 .field("delcmp2", &self.delcmp2())
                 .field("delcmp4", &self.delcmp4())
-                .field("repu", &self.repu())
-                .field("rstu", &self.rstu())
                 .field("tu[0]", &self.tu(0usize))
                 .field("tu[1]", &self.tu(1usize))
                 .field("tu[2]", &self.tu(2usize))
                 .field("tu[3]", &self.tu(3usize))
                 .field("tu[4]", &self.tu(4usize))
+                .field("tu[5]", &self.tu(5usize))
+                .field("repu", &self.repu())
+                .field("rstu", &self.rstu())
                 .field("mstu", &self.mstu())
                 .field("dacsync", &self.dacsync())
                 .field("preen", &self.preen())
@@ -4763,7 +4786,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Timxcr {{ ckpsc: {=u8:?}, cont: {=bool:?}, retrig: {=bool:?}, half: {=bool:?}, pshpll: {=bool:?}, syncrst: {=bool:?}, syncstrt: {=bool:?}, delcmp2: {:?}, delcmp4: {:?}, repu: {=bool:?}, rstu: {=bool:?}, tu[0]: {=bool:?}, tu[1]: {=bool:?}, tu[2]: {=bool:?}, tu[3]: {=bool:?}, tu[4]: {=bool:?}, mstu: {=bool:?}, dacsync: {:?}, preen: {=bool:?}, updgat: {:?} }}",
+                "Timxcr {{ ckpsc: {=u8:?}, cont: {=bool:?}, retrig: {=bool:?}, half: {=bool:?}, pshpll: {=bool:?}, syncrst: {=bool:?}, syncstrt: {=bool:?}, delcmp2: {:?}, delcmp4: {:?}, tu[0]: {=bool:?}, tu[1]: {=bool:?}, tu[2]: {=bool:?}, tu[3]: {=bool:?}, tu[4]: {=bool:?}, tu[5]: {=bool:?}, repu: {=bool:?}, rstu: {=bool:?}, mstu: {=bool:?}, dacsync: {:?}, preen: {=bool:?}, updgat: {:?} }}",
                 self.ckpsc(),
                 self.cont(),
                 self.retrig(),
@@ -4773,13 +4796,14 @@ pub mod regs {
                 self.syncstrt(),
                 self.delcmp2(),
                 self.delcmp4(),
-                self.repu(),
-                self.rstu(),
                 self.tu(0usize),
                 self.tu(1usize),
                 self.tu(2usize),
                 self.tu(3usize),
                 self.tu(4usize),
+                self.tu(5usize),
+                self.repu(),
+                self.rstu(),
                 self.mstu(),
                 self.dacsync(),
                 self.preen(),

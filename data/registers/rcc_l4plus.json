@@ -2295,12 +2295,6 @@
         "description": "Low-power reset flag",
         "bit_offset": 31,
         "bit_size": 1
-      },
-      {
-        "name": "LPWRSTF",
-        "description": "Low-power reset flag",
-        "bit_offset": 31,
-        "bit_size": 1
       }
     ]
   },

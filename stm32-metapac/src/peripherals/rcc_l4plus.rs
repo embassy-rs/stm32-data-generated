@@ -5374,18 +5374,6 @@ pub mod regs {
         pub const fn set_lpwrrstf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
         }
-        #[doc = "Low-power reset flag"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn lpwrstf(&self) -> bool {
-            let val = (self.0 >> 31usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Low-power reset flag"]
-        #[inline(always)]
-        pub const fn set_lpwrstf(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
-        }
     }
     impl Default for Csr {
         #[inline(always)]
@@ -5409,7 +5397,6 @@ pub mod regs {
                 .field("iwdgrstf", &self.iwdgrstf())
                 .field("wwdgrstf", &self.wwdgrstf())
                 .field("lpwrrstf", &self.lpwrrstf())
-                .field("lpwrstf", &self.lpwrstf())
                 .finish()
         }
     }
@@ -5418,7 +5405,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Csr {{ lsion: {=bool:?}, lsirdy: {=bool:?}, lsiprediv: {=bool:?}, msisrange: {=u8:?}, rmvf: {=bool:?}, fwrstf: {=bool:?}, oblrstf: {=bool:?}, pinrstf: {=bool:?}, borrstf: {=bool:?}, sftrstf: {=bool:?}, iwdgrstf: {=bool:?}, wwdgrstf: {=bool:?}, lpwrrstf: {=bool:?}, lpwrstf: {=bool:?} }}",
+                "Csr {{ lsion: {=bool:?}, lsirdy: {=bool:?}, lsiprediv: {=bool:?}, msisrange: {=u8:?}, rmvf: {=bool:?}, fwrstf: {=bool:?}, oblrstf: {=bool:?}, pinrstf: {=bool:?}, borrstf: {=bool:?}, sftrstf: {=bool:?}, iwdgrstf: {=bool:?}, wwdgrstf: {=bool:?}, lpwrrstf: {=bool:?} }}",
                 self.lsion(),
                 self.lsirdy(),
                 self.lsiprediv(),
@@ -5431,8 +5418,7 @@ pub mod regs {
                 self.sftrstf(),
                 self.iwdgrstf(),
                 self.wwdgrstf(),
-                self.lpwrrstf(),
-                self.lpwrstf()
+                self.lpwrrstf()
             )
         }
     }

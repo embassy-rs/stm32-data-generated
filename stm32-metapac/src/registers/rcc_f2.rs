@@ -2271,7 +2271,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "padrstf",
+                    name: "pinrstf",
                     description: Some("PIN reset flag"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
@@ -2295,7 +2295,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "wdgrstf",
+                    name: "iwdgrstf",
                     description: Some("Independent watchdog reset flag"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 29 }),
                     bit_size: 1,

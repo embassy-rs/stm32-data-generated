@@ -8524,25 +8524,25 @@ pub mod regs {
         #[doc = "Independent Watchdog reset flag"]
         #[must_use]
         #[inline(always)]
-        pub const fn iwdg1rstf(&self) -> bool {
+        pub const fn iwdgrstf(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
             val != 0
         }
         #[doc = "Independent Watchdog reset flag"]
         #[inline(always)]
-        pub const fn set_iwdg1rstf(&mut self, val: bool) {
+        pub const fn set_iwdgrstf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[doc = "Window Watchdog reset flag"]
         #[must_use]
         #[inline(always)]
-        pub const fn wwdg1rstf(&self) -> bool {
+        pub const fn wwdgrstf(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
             val != 0
         }
         #[doc = "Window Watchdog reset flag"]
         #[inline(always)]
-        pub const fn set_wwdg1rstf(&mut self, val: bool) {
+        pub const fn set_wwdgrstf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "Reset due to illegal D1 DStandby or CPU CStop flag"]
@@ -8575,8 +8575,8 @@ pub mod regs {
                 .field("pinrstf", &self.pinrstf())
                 .field("porrstf", &self.porrstf())
                 .field("sftrstf", &self.sftrstf())
-                .field("iwdg1rstf", &self.iwdg1rstf())
-                .field("wwdg1rstf", &self.wwdg1rstf())
+                .field("iwdgrstf", &self.iwdgrstf())
+                .field("wwdgrstf", &self.wwdgrstf())
                 .field("lpwrrstf", &self.lpwrrstf())
                 .finish()
         }
@@ -8586,7 +8586,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Rsr {{ rmvf: {=bool:?}, cpurstf: {=bool:?}, d1rstf: {=bool:?}, d2rstf: {=bool:?}, borrstf: {=bool:?}, pinrstf: {=bool:?}, porrstf: {=bool:?}, sftrstf: {=bool:?}, iwdg1rstf: {=bool:?}, wwdg1rstf: {=bool:?}, lpwrrstf: {=bool:?} }}",
+                "Rsr {{ rmvf: {=bool:?}, cpurstf: {=bool:?}, d1rstf: {=bool:?}, d2rstf: {=bool:?}, borrstf: {=bool:?}, pinrstf: {=bool:?}, porrstf: {=bool:?}, sftrstf: {=bool:?}, iwdgrstf: {=bool:?}, wwdgrstf: {=bool:?}, lpwrrstf: {=bool:?} }}",
                 self.rmvf(),
                 self.cpurstf(),
                 self.d1rstf(),
@@ -8595,8 +8595,8 @@ pub mod regs {
                 self.pinrstf(),
                 self.porrstf(),
                 self.sftrstf(),
-                self.iwdg1rstf(),
-                self.wwdg1rstf(),
+                self.iwdgrstf(),
+                self.wwdgrstf(),
                 self.lpwrrstf()
             )
         }

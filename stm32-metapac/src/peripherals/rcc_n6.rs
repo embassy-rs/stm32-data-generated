@@ -25597,110 +25597,110 @@ pub mod regs {
         #[doc = "Remove reset flag."]
         #[must_use]
         #[inline(always)]
-        pub const fn rmvf(&self) -> super::vals::HwrsrRmvf {
+        pub const fn rmvf(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
-            super::vals::HwrsrRmvf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Remove reset flag."]
         #[inline(always)]
-        pub const fn set_rmvf(&mut self, val: super::vals::HwrsrRmvf) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+        pub const fn set_rmvf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "CPU lockup reset flag."]
         #[must_use]
         #[inline(always)]
-        pub const fn lckrstf(&self) -> super::vals::HwrsrLckrstf {
+        pub const fn lckrstf(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
-            super::vals::HwrsrLckrstf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "CPU lockup reset flag."]
         #[inline(always)]
-        pub const fn set_lckrstf(&mut self, val: super::vals::HwrsrLckrstf) {
-            self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+        pub const fn set_lckrstf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "BOR flag."]
         #[must_use]
         #[inline(always)]
-        pub const fn borrstf(&self) -> super::vals::HwrsrBorrstf {
+        pub const fn borrstf(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
-            super::vals::HwrsrBorrstf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "BOR flag."]
         #[inline(always)]
-        pub const fn set_borrstf(&mut self, val: super::vals::HwrsrBorrstf) {
-            self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+        pub const fn set_borrstf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "Pin reset flag (NRST)."]
         #[must_use]
         #[inline(always)]
-        pub const fn pinrstf(&self) -> super::vals::HwrsrPinrstf {
+        pub const fn pinrstf(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
-            super::vals::HwrsrPinrstf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Pin reset flag (NRST)."]
         #[inline(always)]
-        pub const fn set_pinrstf(&mut self, val: super::vals::HwrsrPinrstf) {
-            self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+        pub const fn set_pinrstf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "POR/PDR flag."]
         #[must_use]
         #[inline(always)]
-        pub const fn porrstf(&self) -> super::vals::HwrsrPorrstf {
+        pub const fn porrstf(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
-            super::vals::HwrsrPorrstf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "POR/PDR flag."]
         #[inline(always)]
-        pub const fn set_porrstf(&mut self, val: super::vals::HwrsrPorrstf) {
-            self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+        pub const fn set_porrstf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "Software system reset flag (1)."]
         #[must_use]
         #[inline(always)]
-        pub const fn sftrstf(&self) -> super::vals::HwrsrSftrstf {
+        pub const fn sftrstf(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
-            super::vals::HwrsrSftrstf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Software system reset flag (1)."]
         #[inline(always)]
-        pub const fn set_sftrstf(&mut self, val: super::vals::HwrsrSftrstf) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+        pub const fn set_sftrstf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "Independent Watchdog reset flag."]
         #[must_use]
         #[inline(always)]
-        pub const fn iwdgrstf(&self) -> super::vals::HwrsrIwdgrstf {
+        pub const fn iwdgrstf(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
-            super::vals::HwrsrIwdgrstf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Independent Watchdog reset flag."]
         #[inline(always)]
-        pub const fn set_iwdgrstf(&mut self, val: super::vals::HwrsrIwdgrstf) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+        pub const fn set_iwdgrstf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[doc = "Window watchdog reset flag."]
         #[must_use]
         #[inline(always)]
-        pub const fn wwdgrstf(&self) -> super::vals::HwrsrWwdgrstf {
+        pub const fn wwdgrstf(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
-            super::vals::HwrsrWwdgrstf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Window watchdog reset flag."]
         #[inline(always)]
-        pub const fn set_wwdgrstf(&mut self, val: super::vals::HwrsrWwdgrstf) {
-            self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+        pub const fn set_wwdgrstf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "Illegal Stop or Standby flag."]
         #[must_use]
         #[inline(always)]
-        pub const fn lpwrrstf(&self) -> super::vals::HwrsrLpwrrstf {
+        pub const fn lpwrrstf(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
-            super::vals::HwrsrLpwrrstf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Illegal Stop or Standby flag."]
         #[inline(always)]
-        pub const fn set_lpwrrstf(&mut self, val: super::vals::HwrsrLpwrrstf) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+        pub const fn set_lpwrrstf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
     }
     impl Default for Hwrsr {
@@ -25729,7 +25729,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Hwrsr {{ rmvf: {:?}, lckrstf: {:?}, borrstf: {:?}, pinrstf: {:?}, porrstf: {:?}, sftrstf: {:?}, iwdgrstf: {:?}, wwdgrstf: {:?}, lpwrrstf: {:?} }}",
+                "Hwrsr {{ rmvf: {=bool:?}, lckrstf: {=bool:?}, borrstf: {=bool:?}, pinrstf: {=bool:?}, porrstf: {=bool:?}, sftrstf: {=bool:?}, iwdgrstf: {=bool:?}, wwdgrstf: {=bool:?}, lpwrrstf: {=bool:?} }}",
                 self.rmvf(),
                 self.lckrstf(),
                 self.borrstf(),
@@ -35290,110 +35290,110 @@ pub mod regs {
         #[doc = "Remove reset flag."]
         #[must_use]
         #[inline(always)]
-        pub const fn rmvf(&self) -> super::vals::HwrsrRmvf {
+        pub const fn rmvf(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
-            super::vals::HwrsrRmvf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Remove reset flag."]
         #[inline(always)]
-        pub const fn set_rmvf(&mut self, val: super::vals::HwrsrRmvf) {
-            self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
+        pub const fn set_rmvf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "CPU lockup reset flag."]
         #[must_use]
         #[inline(always)]
-        pub const fn lckrstf(&self) -> super::vals::RsrLckrstf {
+        pub const fn lckrstf(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
-            super::vals::RsrLckrstf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "CPU lockup reset flag."]
         #[inline(always)]
-        pub const fn set_lckrstf(&mut self, val: super::vals::RsrLckrstf) {
-            self.0 = (self.0 & !(0x01 << 17usize)) | (((val.to_bits() as u32) & 0x01) << 17usize);
+        pub const fn set_lckrstf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "BOR flag."]
         #[must_use]
         #[inline(always)]
-        pub const fn borrstf(&self) -> super::vals::RsrBorrstf {
+        pub const fn borrstf(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
-            super::vals::RsrBorrstf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "BOR flag."]
         #[inline(always)]
-        pub const fn set_borrstf(&mut self, val: super::vals::RsrBorrstf) {
-            self.0 = (self.0 & !(0x01 << 21usize)) | (((val.to_bits() as u32) & 0x01) << 21usize);
+        pub const fn set_borrstf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "Pin reset flag (NRST)."]
         #[must_use]
         #[inline(always)]
-        pub const fn pinrstf(&self) -> super::vals::RsrPinrstf {
+        pub const fn pinrstf(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
-            super::vals::RsrPinrstf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Pin reset flag (NRST)."]
         #[inline(always)]
-        pub const fn set_pinrstf(&mut self, val: super::vals::RsrPinrstf) {
-            self.0 = (self.0 & !(0x01 << 22usize)) | (((val.to_bits() as u32) & 0x01) << 22usize);
+        pub const fn set_pinrstf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "POR/PDR flag."]
         #[must_use]
         #[inline(always)]
-        pub const fn porrstf(&self) -> super::vals::RsrPorrstf {
+        pub const fn porrstf(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
-            super::vals::RsrPorrstf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "POR/PDR flag."]
         #[inline(always)]
-        pub const fn set_porrstf(&mut self, val: super::vals::RsrPorrstf) {
-            self.0 = (self.0 & !(0x01 << 23usize)) | (((val.to_bits() as u32) & 0x01) << 23usize);
+        pub const fn set_porrstf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
         #[doc = "Software System reset flag (1)."]
         #[must_use]
         #[inline(always)]
-        pub const fn sftrstf(&self) -> super::vals::RsrSftrstf {
+        pub const fn sftrstf(&self) -> bool {
             let val = (self.0 >> 24usize) & 0x01;
-            super::vals::RsrSftrstf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Software System reset flag (1)."]
         #[inline(always)]
-        pub const fn set_sftrstf(&mut self, val: super::vals::RsrSftrstf) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val.to_bits() as u32) & 0x01) << 24usize);
+        pub const fn set_sftrstf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
         }
         #[doc = "Independent Watchdog reset flag."]
         #[must_use]
         #[inline(always)]
-        pub const fn iwdgrstf(&self) -> super::vals::RsrIwdgrstf {
+        pub const fn iwdgrstf(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
-            super::vals::RsrIwdgrstf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Independent Watchdog reset flag."]
         #[inline(always)]
-        pub const fn set_iwdgrstf(&mut self, val: super::vals::RsrIwdgrstf) {
-            self.0 = (self.0 & !(0x01 << 26usize)) | (((val.to_bits() as u32) & 0x01) << 26usize);
+        pub const fn set_iwdgrstf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[doc = "Window Watchdog reset flag."]
         #[must_use]
         #[inline(always)]
-        pub const fn wwdgrstf(&self) -> super::vals::RsrWwdgrstf {
+        pub const fn wwdgrstf(&self) -> bool {
             let val = (self.0 >> 28usize) & 0x01;
-            super::vals::RsrWwdgrstf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Window Watchdog reset flag."]
         #[inline(always)]
-        pub const fn set_wwdgrstf(&mut self, val: super::vals::RsrWwdgrstf) {
-            self.0 = (self.0 & !(0x01 << 28usize)) | (((val.to_bits() as u32) & 0x01) << 28usize);
+        pub const fn set_wwdgrstf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 28usize)) | (((val as u32) & 0x01) << 28usize);
         }
         #[doc = "Illegal Stop or Standby flag."]
         #[must_use]
         #[inline(always)]
-        pub const fn lpwrrstf(&self) -> super::vals::RsrLpwrrstf {
+        pub const fn lpwrrstf(&self) -> bool {
             let val = (self.0 >> 30usize) & 0x01;
-            super::vals::RsrLpwrrstf::from_bits(val as u8)
+            val != 0
         }
         #[doc = "Illegal Stop or Standby flag."]
         #[inline(always)]
-        pub const fn set_lpwrrstf(&mut self, val: super::vals::RsrLpwrrstf) {
-            self.0 = (self.0 & !(0x01 << 30usize)) | (((val.to_bits() as u32) & 0x01) << 30usize);
+        pub const fn set_lpwrrstf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 30usize)) | (((val as u32) & 0x01) << 30usize);
         }
     }
     impl Default for Rsr {
@@ -35422,7 +35422,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Rsr {{ rmvf: {:?}, lckrstf: {:?}, borrstf: {:?}, pinrstf: {:?}, porrstf: {:?}, sftrstf: {:?}, iwdgrstf: {:?}, wwdgrstf: {:?}, lpwrrstf: {:?} }}",
+                "Rsr {{ rmvf: {=bool:?}, lckrstf: {=bool:?}, borrstf: {=bool:?}, pinrstf: {=bool:?}, porrstf: {=bool:?}, sftrstf: {=bool:?}, iwdgrstf: {=bool:?}, wwdgrstf: {=bool:?}, lpwrrstf: {=bool:?} }}",
                 self.rmvf(),
                 self.lckrstf(),
                 self.borrstf(),
@@ -38929,285 +38929,6 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum HwrsrBorrstf {
-        #[doc = "no BOR occurred."]
-        NotOccurred = 0x0,
-        #[doc = "BOR occurred (default after power-on reset)."]
-        Occurred = 0x01,
-    }
-    impl HwrsrBorrstf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> HwrsrBorrstf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for HwrsrBorrstf {
-        #[inline(always)]
-        fn from(val: u8) -> HwrsrBorrstf {
-            HwrsrBorrstf::from_bits(val)
-        }
-    }
-    impl From<HwrsrBorrstf> for u8 {
-        #[inline(always)]
-        fn from(val: HwrsrBorrstf) -> u8 {
-            HwrsrBorrstf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum HwrsrIwdgrstf {
-        #[doc = "no Independent Watchdog Reset occurred (default after power-on reset)."]
-        NotOccurred = 0x0,
-        #[doc = "Independent Watchdog Reset occurred."]
-        Occurred = 0x01,
-    }
-    impl HwrsrIwdgrstf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> HwrsrIwdgrstf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for HwrsrIwdgrstf {
-        #[inline(always)]
-        fn from(val: u8) -> HwrsrIwdgrstf {
-            HwrsrIwdgrstf::from_bits(val)
-        }
-    }
-    impl From<HwrsrIwdgrstf> for u8 {
-        #[inline(always)]
-        fn from(val: HwrsrIwdgrstf) -> u8 {
-            HwrsrIwdgrstf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum HwrsrLckrstf {
-        #[doc = "No reset from CPU lockup occurred."]
-        NotOccurred = 0x0,
-        #[doc = "Reset from CPU lockup occurred."]
-        Occurred = 0x01,
-    }
-    impl HwrsrLckrstf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> HwrsrLckrstf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for HwrsrLckrstf {
-        #[inline(always)]
-        fn from(val: u8) -> HwrsrLckrstf {
-            HwrsrLckrstf::from_bits(val)
-        }
-    }
-    impl From<HwrsrLckrstf> for u8 {
-        #[inline(always)]
-        fn from(val: HwrsrLckrstf) -> u8 {
-            HwrsrLckrstf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum HwrsrLpwrrstf {
-        #[doc = "no illegal reset occurred (default after power-on reset)."]
-        NotOccurred = 0x0,
-        #[doc = "illegal Stop or Standby reset occurred."]
-        Occurred = 0x01,
-    }
-    impl HwrsrLpwrrstf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> HwrsrLpwrrstf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for HwrsrLpwrrstf {
-        #[inline(always)]
-        fn from(val: u8) -> HwrsrLpwrrstf {
-            HwrsrLpwrrstf::from_bits(val)
-        }
-    }
-    impl From<HwrsrLpwrrstf> for u8 {
-        #[inline(always)]
-        fn from(val: HwrsrLpwrrstf) -> u8 {
-            HwrsrLpwrrstf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum HwrsrPinrstf {
-        #[doc = "no reset from pin occurred."]
-        NotOccurred = 0x0,
-        #[doc = "Reset from Pin occurred (default after power-on reset)."]
-        Occurred = 0x01,
-    }
-    impl HwrsrPinrstf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> HwrsrPinrstf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for HwrsrPinrstf {
-        #[inline(always)]
-        fn from(val: u8) -> HwrsrPinrstf {
-            HwrsrPinrstf::from_bits(val)
-        }
-    }
-    impl From<HwrsrPinrstf> for u8 {
-        #[inline(always)]
-        fn from(val: HwrsrPinrstf) -> u8 {
-            HwrsrPinrstf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum HwrsrPorrstf {
-        #[doc = "no POR/PDR reset occurred."]
-        NotOccurred = 0x0,
-        #[doc = "POR/PDR reset occurred (default after power-on reset)."]
-        Occurred = 0x01,
-    }
-    impl HwrsrPorrstf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> HwrsrPorrstf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for HwrsrPorrstf {
-        #[inline(always)]
-        fn from(val: u8) -> HwrsrPorrstf {
-            HwrsrPorrstf::from_bits(val)
-        }
-    }
-    impl From<HwrsrPorrstf> for u8 {
-        #[inline(always)]
-        fn from(val: HwrsrPorrstf) -> u8 {
-            HwrsrPorrstf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum HwrsrRmvf {
-        #[doc = "clear of the reset flags not activated (default after power-on reset)."]
-        NoClear = 0x0,
-        #[doc = "clear the value of the reset flags."]
-        Clear = 0x01,
-    }
-    impl HwrsrRmvf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> HwrsrRmvf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for HwrsrRmvf {
-        #[inline(always)]
-        fn from(val: u8) -> HwrsrRmvf {
-            HwrsrRmvf::from_bits(val)
-        }
-    }
-    impl From<HwrsrRmvf> for u8 {
-        #[inline(always)]
-        fn from(val: HwrsrRmvf) -> u8 {
-            HwrsrRmvf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum HwrsrSftrstf {
-        #[doc = "no Software System reset occurred (default after power-on reset)."]
-        NotOccurred = 0x0,
-        #[doc = "a Software System reset has been generated by the CPU."]
-        Occurred = 0x01,
-    }
-    impl HwrsrSftrstf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> HwrsrSftrstf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for HwrsrSftrstf {
-        #[inline(always)]
-        fn from(val: u8) -> HwrsrSftrstf {
-            HwrsrSftrstf::from_bits(val)
-        }
-    }
-    impl From<HwrsrSftrstf> for u8 {
-        #[inline(always)]
-        fn from(val: HwrsrSftrstf) -> u8 {
-            HwrsrSftrstf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum HwrsrWwdgrstf {
-        #[doc = "no Window Watchdog Reset occurred from WWDG (default after power-on reset)."]
-        NotOccurred = 0x0,
-        #[doc = "Window Watchdog Reset occurred from WWDG."]
-        Occurred = 0x01,
-    }
-    impl HwrsrWwdgrstf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> HwrsrWwdgrstf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for HwrsrWwdgrstf {
-        #[inline(always)]
-        fn from(val: u8) -> HwrsrWwdgrstf {
-            HwrsrWwdgrstf::from_bits(val)
-        }
-    }
-    impl From<HwrsrWwdgrstf> for u8 {
-        #[inline(always)]
-        fn from(val: HwrsrWwdgrstf) -> u8 {
-            HwrsrWwdgrstf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2c1sel {
         #[doc = "pclk1 selected as reference clock."]
         Pclk1 = 0x0,
@@ -42255,254 +41976,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Pssisel) -> u8 {
             Pssisel::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum RsrBorrstf {
-        #[doc = "no BOR occurred."]
-        Absence = 0x0,
-        #[doc = "BOR occurred (default after power-on reset)."]
-        Occurred = 0x01,
-    }
-    impl RsrBorrstf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> RsrBorrstf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for RsrBorrstf {
-        #[inline(always)]
-        fn from(val: u8) -> RsrBorrstf {
-            RsrBorrstf::from_bits(val)
-        }
-    }
-    impl From<RsrBorrstf> for u8 {
-        #[inline(always)]
-        fn from(val: RsrBorrstf) -> u8 {
-            RsrBorrstf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum RsrIwdgrstf {
-        #[doc = "no Independent Watchdog reset occurred (default after power-on reset)."]
-        Absence = 0x0,
-        #[doc = "Independent Watchdog reset occurred."]
-        Occurred = 0x01,
-    }
-    impl RsrIwdgrstf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> RsrIwdgrstf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for RsrIwdgrstf {
-        #[inline(always)]
-        fn from(val: u8) -> RsrIwdgrstf {
-            RsrIwdgrstf::from_bits(val)
-        }
-    }
-    impl From<RsrIwdgrstf> for u8 {
-        #[inline(always)]
-        fn from(val: RsrIwdgrstf) -> u8 {
-            RsrIwdgrstf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum RsrLckrstf {
-        #[doc = "No reset from CPU lockup occurred."]
-        Absence = 0x0,
-        #[doc = "Reset from CPU lockup occurred."]
-        Occurred = 0x01,
-    }
-    impl RsrLckrstf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> RsrLckrstf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for RsrLckrstf {
-        #[inline(always)]
-        fn from(val: u8) -> RsrLckrstf {
-            RsrLckrstf::from_bits(val)
-        }
-    }
-    impl From<RsrLckrstf> for u8 {
-        #[inline(always)]
-        fn from(val: RsrLckrstf) -> u8 {
-            RsrLckrstf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum RsrLpwrrstf {
-        #[doc = "no illegal reset occurred (default after power-on reset)."]
-        Absence = 0x0,
-        #[doc = "illegal Stop or Standby reset occurred."]
-        Occurred = 0x01,
-    }
-    impl RsrLpwrrstf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> RsrLpwrrstf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for RsrLpwrrstf {
-        #[inline(always)]
-        fn from(val: u8) -> RsrLpwrrstf {
-            RsrLpwrrstf::from_bits(val)
-        }
-    }
-    impl From<RsrLpwrrstf> for u8 {
-        #[inline(always)]
-        fn from(val: RsrLpwrrstf) -> u8 {
-            RsrLpwrrstf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum RsrPinrstf {
-        #[doc = "no reset from Pin occurred."]
-        Absence = 0x0,
-        #[doc = "Reset from Pin occurred (default after power-on reset)."]
-        Occurred = 0x01,
-    }
-    impl RsrPinrstf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> RsrPinrstf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for RsrPinrstf {
-        #[inline(always)]
-        fn from(val: u8) -> RsrPinrstf {
-            RsrPinrstf::from_bits(val)
-        }
-    }
-    impl From<RsrPinrstf> for u8 {
-        #[inline(always)]
-        fn from(val: RsrPinrstf) -> u8 {
-            RsrPinrstf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum RsrPorrstf {
-        #[doc = "no POR/PDR reset occurred."]
-        Absence = 0x0,
-        #[doc = "POR/PDR reset occurred (default after power-on reset)."]
-        Occurred = 0x01,
-    }
-    impl RsrPorrstf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> RsrPorrstf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for RsrPorrstf {
-        #[inline(always)]
-        fn from(val: u8) -> RsrPorrstf {
-            RsrPorrstf::from_bits(val)
-        }
-    }
-    impl From<RsrPorrstf> for u8 {
-        #[inline(always)]
-        fn from(val: RsrPorrstf) -> u8 {
-            RsrPorrstf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum RsrSftrstf {
-        #[doc = "no Software System reset occurred (default after power-on reset)."]
-        Absence = 0x0,
-        #[doc = "a Software System reset has been generated by the CPU."]
-        Occurred = 0x01,
-    }
-    impl RsrSftrstf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> RsrSftrstf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for RsrSftrstf {
-        #[inline(always)]
-        fn from(val: u8) -> RsrSftrstf {
-            RsrSftrstf::from_bits(val)
-        }
-    }
-    impl From<RsrSftrstf> for u8 {
-        #[inline(always)]
-        fn from(val: RsrSftrstf) -> u8 {
-            RsrSftrstf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum RsrWwdgrstf {
-        #[doc = "no Window Watchdog reset occurred from WWDG (default after power-on reset)."]
-        Absence = 0x0,
-        #[doc = "Window Watchdog reset occurred from WWDG."]
-        Occurred = 0x01,
-    }
-    impl RsrWwdgrstf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> RsrWwdgrstf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for RsrWwdgrstf {
-        #[inline(always)]
-        fn from(val: u8) -> RsrWwdgrstf {
-            RsrWwdgrstf::from_bits(val)
-        }
-    }
-    impl From<RsrWwdgrstf> for u8 {
-        #[inline(always)]
-        fn from(val: RsrWwdgrstf) -> u8 {
-            RsrWwdgrstf::to_bits(val)
         }
     }
     #[repr(u8)]

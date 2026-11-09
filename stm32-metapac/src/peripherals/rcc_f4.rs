@@ -5246,13 +5246,13 @@ pub mod regs {
         #[doc = "PIN reset flag"]
         #[must_use]
         #[inline(always)]
-        pub const fn padrstf(&self) -> bool {
+        pub const fn pinrstf(&self) -> bool {
             let val = (self.0 >> 26usize) & 0x01;
             val != 0
         }
         #[doc = "PIN reset flag"]
         #[inline(always)]
-        pub const fn set_padrstf(&mut self, val: bool) {
+        pub const fn set_pinrstf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
         }
         #[doc = "POR/PDR reset flag"]
@@ -5282,13 +5282,13 @@ pub mod regs {
         #[doc = "Independent watchdog reset flag"]
         #[must_use]
         #[inline(always)]
-        pub const fn wdgrstf(&self) -> bool {
+        pub const fn iwdgrstf(&self) -> bool {
             let val = (self.0 >> 29usize) & 0x01;
             val != 0
         }
         #[doc = "Independent watchdog reset flag"]
         #[inline(always)]
-        pub const fn set_wdgrstf(&mut self, val: bool) {
+        pub const fn set_iwdgrstf(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 29usize)) | (((val as u32) & 0x01) << 29usize);
         }
         #[doc = "Window watchdog reset flag"]
@@ -5329,10 +5329,10 @@ pub mod regs {
                 .field("lsirdy", &self.lsirdy())
                 .field("rmvf", &self.rmvf())
                 .field("borrstf", &self.borrstf())
-                .field("padrstf", &self.padrstf())
+                .field("pinrstf", &self.pinrstf())
                 .field("porrstf", &self.porrstf())
                 .field("sftrstf", &self.sftrstf())
-                .field("wdgrstf", &self.wdgrstf())
+                .field("iwdgrstf", &self.iwdgrstf())
                 .field("wwdgrstf", &self.wwdgrstf())
                 .field("lpwrrstf", &self.lpwrrstf())
                 .finish()
@@ -5343,15 +5343,15 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Csr {{ lsion: {=bool:?}, lsirdy: {=bool:?}, rmvf: {=bool:?}, borrstf: {=bool:?}, padrstf: {=bool:?}, porrstf: {=bool:?}, sftrstf: {=bool:?}, wdgrstf: {=bool:?}, wwdgrstf: {=bool:?}, lpwrrstf: {=bool:?} }}",
+                "Csr {{ lsion: {=bool:?}, lsirdy: {=bool:?}, rmvf: {=bool:?}, borrstf: {=bool:?}, pinrstf: {=bool:?}, porrstf: {=bool:?}, sftrstf: {=bool:?}, iwdgrstf: {=bool:?}, wwdgrstf: {=bool:?}, lpwrrstf: {=bool:?} }}",
                 self.lsion(),
                 self.lsirdy(),
                 self.rmvf(),
                 self.borrstf(),
-                self.padrstf(),
+                self.pinrstf(),
                 self.porrstf(),
                 self.sftrstf(),
-                self.wdgrstf(),
+                self.iwdgrstf(),
                 self.wwdgrstf(),
                 self.lpwrrstf()
             )

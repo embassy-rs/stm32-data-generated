@@ -15327,7 +15327,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("HwrsrRmvf"),
+                    enumm: None,
                 },
                 Field {
                     name: "lckrstf",
@@ -15335,7 +15335,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("HwrsrLckrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "borrstf",
@@ -15343,7 +15343,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("HwrsrBorrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "pinrstf",
@@ -15351,7 +15351,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("HwrsrPinrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "porrstf",
@@ -15359,7 +15359,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("HwrsrPorrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "sftrstf",
@@ -15367,7 +15367,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("HwrsrSftrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "iwdgrstf",
@@ -15375,7 +15375,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("HwrsrIwdgrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "wwdgrstf",
@@ -15383,7 +15383,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("HwrsrWwdgrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "lpwrrstf",
@@ -15391,7 +15391,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("HwrsrLpwrrstf"),
+                    enumm: None,
                 },
             ],
         },
@@ -20773,7 +20773,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("HwrsrRmvf"),
+                    enumm: None,
                 },
                 Field {
                     name: "lckrstf",
@@ -20781,7 +20781,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("RsrLckrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "borrstf",
@@ -20789,7 +20789,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("RsrBorrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "pinrstf",
@@ -20797,7 +20797,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("RsrPinrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "porrstf",
@@ -20805,7 +20805,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("RsrPorrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "sftrstf",
@@ -20813,7 +20813,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("RsrSftrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "iwdgrstf",
@@ -20821,7 +20821,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 26 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("RsrIwdgrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "wwdgrstf",
@@ -20829,7 +20829,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 28 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("RsrWwdgrstf"),
+                    enumm: None,
                 },
                 Field {
                     name: "lpwrrstf",
@@ -20837,7 +20837,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
                     bit_size: 1,
                     array: None,
-                    enumm: Some("RsrLpwrrstf"),
+                    enumm: None,
                 },
             ],
         },
@@ -22907,159 +22907,6 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "Zero",
                     description: Some("bsec_hsi_cal[8:0] (default after reset)."),
                     value: 0,
-                },
-            ],
-        },
-        Enum {
-            name: "HwrsrBorrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NotOccurred",
-                    description: Some("no BOR occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Occurred",
-                    description: Some("BOR occurred (default after power-on reset)."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "HwrsrIwdgrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NotOccurred",
-                    description: Some("no Independent Watchdog Reset occurred (default after power-on reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Occurred",
-                    description: Some("Independent Watchdog Reset occurred."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "HwrsrLckrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NotOccurred",
-                    description: Some("No reset from CPU lockup occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Occurred",
-                    description: Some("Reset from CPU lockup occurred."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "HwrsrLpwrrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NotOccurred",
-                    description: Some("no illegal reset occurred (default after power-on reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Occurred",
-                    description: Some("illegal Stop or Standby reset occurred."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "HwrsrPinrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NotOccurred",
-                    description: Some("no reset from pin occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Occurred",
-                    description: Some("Reset from Pin occurred (default after power-on reset)."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "HwrsrPorrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NotOccurred",
-                    description: Some("no POR/PDR reset occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Occurred",
-                    description: Some("POR/PDR reset occurred (default after power-on reset)."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "HwrsrRmvf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Clear",
-                    description: Some("clear the value of the reset flags."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "NoClear",
-                    description: Some("clear of the reset flags not activated (default after power-on reset)."),
-                    value: 0,
-                },
-            ],
-        },
-        Enum {
-            name: "HwrsrSftrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NotOccurred",
-                    description: Some("no Software System reset occurred (default after power-on reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Occurred",
-                    description: Some("a Software System reset has been generated by the CPU."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "HwrsrWwdgrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "NotOccurred",
-                    description: Some("no Window Watchdog Reset occurred from WWDG (default after power-on reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Occurred",
-                    description: Some("Window Watchdog Reset occurred from WWDG."),
-                    value: 1,
                 },
             ],
         },
@@ -26307,142 +26154,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "Per",
                     description: Some("per_ck selected as reference clock."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "RsrBorrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Absence",
-                    description: Some("no BOR occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Occurred",
-                    description: Some("BOR occurred (default after power-on reset)."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "RsrIwdgrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Absence",
-                    description: Some("no Independent Watchdog reset occurred (default after power-on reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Occurred",
-                    description: Some("Independent Watchdog reset occurred."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "RsrLckrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Absence",
-                    description: Some("No reset from CPU lockup occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Occurred",
-                    description: Some("Reset from CPU lockup occurred."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "RsrLpwrrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Absence",
-                    description: Some("no illegal reset occurred (default after power-on reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Occurred",
-                    description: Some("illegal Stop or Standby reset occurred."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "RsrPinrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Absence",
-                    description: Some("no reset from Pin occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Occurred",
-                    description: Some("Reset from Pin occurred (default after power-on reset)."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "RsrPorrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Absence",
-                    description: Some("no POR/PDR reset occurred."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Occurred",
-                    description: Some("POR/PDR reset occurred (default after power-on reset)."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "RsrSftrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Absence",
-                    description: Some("no Software System reset occurred (default after power-on reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Occurred",
-                    description: Some("a Software System reset has been generated by the CPU."),
-                    value: 1,
-                },
-            ],
-        },
-        Enum {
-            name: "RsrWwdgrstf",
-            description: None,
-            bit_size: 1,
-            variants: &[
-                EnumVariant {
-                    name: "Absence",
-                    description: Some("no Window Watchdog reset occurred from WWDG (default after power-on reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Occurred",
-                    description: Some("Window Watchdog reset occurred from WWDG."),
                     value: 1,
                 },
             ],

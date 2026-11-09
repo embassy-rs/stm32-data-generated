@@ -3604,13 +3604,13 @@
         "bit_size": 1
       },
       {
-        "name": "IWDG1RSTF",
+        "name": "IWDGRSTF",
         "description": "Independent Watchdog reset flag",
         "bit_offset": 26,
         "bit_size": 1
       },
       {
-        "name": "WWDG1RSTF",
+        "name": "WWDGRSTF",
         "description": "Window Watchdog reset flag",
         "bit_offset": 28,
         "bit_size": 1

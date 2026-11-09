@@ -1125,7 +1125,184 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }),
         pins: &[],
         dma_channels: &[],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "GPDMA_TRG0",
+                source: "EXTI0_TRG",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG1",
+                source: "EXTI1_TRG",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG2",
+                source: "EXTI2_TRG",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG3",
+                source: "EXTI3_TRG",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG4",
+                source: "EXTI4_TRG",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG5",
+                source: "EXTI5_TRG",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG6",
+                source: "EXTI6_TRG",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG7",
+                source: "EXTI7_TRG",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG8",
+                source: "TAMP_TRG1",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG9",
+                source: "TAMP_TRG2",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG10",
+                source: "TAMP_TRG3",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG11",
+                source: "LPTIM1_CH1",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG12",
+                source: "LPTIM1_CH2",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG13",
+                source: "LPTIM2_CH1",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG14",
+                source: "LPTIM2_CH2",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG15",
+                source: "LPTIM4_OUT",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG16",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG18",
+                source: "RTC_ALRA_TRG",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG19",
+                source: "RTC_ALRB_TRG",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG20",
+                source: "RTC_WUT_TRG",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG22",
+                source: "GPDMA_CH0_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG23",
+                source: "GPDMA_CH1_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG24",
+                source: "GPDMA_CH2_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG25",
+                source: "GPDMA_CH3_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG26",
+                source: "GPDMA_CH4_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG27",
+                source: "GPDMA_CH5_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG28",
+                source: "GPDMA_CH6_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG29",
+                source: "GPDMA_CH7_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG30",
+                source: "GPDMA_CH8_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG31",
+                source: "GPDMA_CH9_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG32",
+                source: "GPDMA_CH10_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG33",
+                source: "GPDMA_CH11_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG34",
+                source: "GPDMA_CH12_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG35",
+                source: "GPDMA_CH13_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG36",
+                source: "GPDMA_CH14_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG37",
+                source: "GPDMA_CH15_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG38",
+                source: "LPDMA_CH0_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG39",
+                source: "LPDMA_CH1_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG40",
+                source: "LPDMA_CH2_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG41",
+                source: "LPDMA_CH3_TC",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG42",
+                source: "TIM2_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG43",
+                source: "TIM15_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG57",
+                source: "ADC4_AWD1",
+            },
+            PeripheralTrigger {
+                signal: "GPDMA_TRG58",
+                source: "ADC1_AWD1",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "CH0",
@@ -1982,7 +2159,132 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }),
         pins: &[],
         dma_channels: &[],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "LPDMA_TRG0",
+                source: "EXTI0_TRG",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG1",
+                source: "EXTI1_TRG",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG2",
+                source: "EXTI2_TRG",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG3",
+                source: "EXTI3_TRG",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG4",
+                source: "EXTI4_TRG",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG5",
+                source: "TAMP_TRG1",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG6",
+                source: "TAMP_TRG2",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG7",
+                source: "TAMP_TRG3",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG8",
+                source: "LPTIM1_CH1",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG9",
+                source: "LPTIM1_CH2",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG10",
+                source: "LPTIM3_CH1",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG11",
+                source: "LPTIM4_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG12",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG14",
+                source: "RTC_ALRA_TRG",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG15",
+                source: "RTC_ALRB_TRG",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG16",
+                source: "RTC_WUT_TRG",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG17",
+                source: "ADC4_AWD1",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG18",
+                source: "LPDMA_CH0_TC",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG19",
+                source: "LPDMA_CH1_TC",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG20",
+                source: "LPDMA_CH2_TC",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG21",
+                source: "LPDMA_CH3_TC",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG22",
+                source: "GPDMA_CH0_TC",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG23",
+                source: "GPDMA_CH1_TC",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG24",
+                source: "GPDMA_CH4_TC",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG25",
+                source: "GPDMA_CH5_TC",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG26",
+                source: "GPDMA_CH6_TC",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG27",
+                source: "GPDMA_CH7_TC",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG28",
+                source: "GPDMA_CH12_TC",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG29",
+                source: "GPDMA_CH13_TC",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG30",
+                source: "TIM2_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "LPDMA_TRG31",
+                source: "TIM15_TRGO",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "CH0",

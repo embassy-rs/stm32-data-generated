@@ -122,7 +122,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [USBRAM](#usbram) | 32_2048 | 32_2048 | 16x2_1024 | 16x1_512 | | 16x1_512, 16x2_1024 | | | 32_2048 | 16x2_1024 | ❌ | 32_2048 | | 16x2_1024 | 16x1_512 | 16x2_1024 | | 16x2_1024 | | | 32_1024 | 32_2048 | 32_2048 | 16x2_1024 | | 16x2_1024 | |
 | [VENC](#venc) | | | | | | | | | | | | | | | | | | | | v1 | | | | | | | |
 | [VREFBUF](#vrefbuf) | | | | | | | | | v1 | v2b | ❌ | v2a2 | v2a1 | | | v1 | v1 | v1 | ❌ | v1 | ❌ | v2a1 | v2a1 | v1 | | v2a1 | v1 |
-| [VREFINTCAL](#vrefintcal) | | | v1 | | | v1 | | v1 | v1 | v1 | | | | v1 | v1 | v1 | v1 | v1 | | | v1 | | | v1 | | v2 | v1 |
+| [VREFINTCAL](#vrefintcal) | v1 | v1 | v1 | | | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | | v1 | v1 | v1 | v1 | v1 | | v2 | v1 |
 | [WWDG](#wwdg) | v2 | v2 | v1 | v1 | v1 | v1 | v1 | v1 | v2 | v2 | ❌ | v2 | v2 | v1 | v1 | v1 | v1 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | | v2 | v2 |
 | [XSPI](#xspi) | | | | | | | | | | | | | v1 | | | | | | | v1 | | | | | | | |
 | [XSPIM](#xspim) | | | | | | | | | | | | | v1 | | | | | | | v1 | | | | | | | |
@@ -1219,7 +1219,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **v1**: STM32F0, STM32F3, STM32F7, STM32G0, STM32G4, STM32L0, STM32L1, STM32L4, STM32L4+, STM32L5, STM32U0, STM32WB, STM32WL
+- **v1**: STM32C0, STM32C5, STM32F0, STM32F3, STM32F4, STM32F7, STM32G0, STM32G4, STM32G5, STM32H5, STM32H7, STM32L0, STM32L1, STM32L4, STM32L4+, STM32L5, STM32N6, STM32U0, STM32U3, STM32U5, STM32WB, STM32WL
 - **v2**: STM32WBA
 
 ### WWDG

@@ -1938,7 +1938,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "VREFINTCAL",
-        address: 0xbf907a4,
+        address: 0xbf907a5,
         registers: Some(PeripheralRegisters {
             kind: "vrefintcal",
             version: "v2",

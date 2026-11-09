@@ -282,7 +282,7 @@ mod _vectors {
 }
 pub const DESIG: desig::Desig = unsafe { desig::Desig::from_ptr(0x0bf8_d500usize as _) };
 pub const UID: uid::Uid = unsafe { uid::Uid::from_ptr(0x0bf8_d700usize as _) };
-pub const VREFINTCAL: vrefintcal::Vrefintcal = unsafe { vrefintcal::Vrefintcal::from_ptr(0x0bf8_d7a4usize as _) };
+pub const VREFINTCAL: vrefintcal::Vrefintcal = unsafe { vrefintcal::Vrefintcal::from_ptr(0x0bf8_d7a5usize as _) };
 pub const TIM2: timer::TimGp32 = unsafe { timer::TimGp32::from_ptr(0x4000_0000usize as _) };
 pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4000_3000usize as _) };
 pub const I2C1: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_5400usize as _) };

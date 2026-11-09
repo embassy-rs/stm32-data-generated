@@ -3625,7 +3625,7 @@
         },
         {
           "name": "VREFINTCAL",
-          "address": 200935332,
+          "address": 200935333,
           "registers": {
             "kind": "vrefintcal",
             "version": "v2",

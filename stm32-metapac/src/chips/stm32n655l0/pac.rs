@@ -915,6 +915,7 @@ pub const IWDG: iwdg::Iwdg = unsafe { iwdg::Iwdg::from_ptr(0x4600_4800usize as _
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4600_8000usize as _) };
 pub const BSEC: bsec::Bsec = unsafe { bsec::Bsec::from_ptr(0x4600_9000usize as _) };
 pub const UID: uid::Uid = unsafe { uid::Uid::from_ptr(0x4600_9014usize as _) };
+pub const VREFINTCAL: vrefintcal::Vrefintcal = unsafe { vrefintcal::Vrefintcal::from_ptr(0x4600_91b8usize as _) };
 pub const DTS: dts::Dts = unsafe { dts::Dts::from_ptr(0x4600_a000usize as _) };
 pub const GPIOA: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4602_0000usize as _) };
 pub const GPIOB: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x4602_0400usize as _) };
@@ -1086,6 +1087,8 @@ pub mod usbphyc;
 pub mod venc;
 #[path = "../../peripherals/vrefbuf_v1.rs"]
 pub mod vrefbuf;
+#[path = "../../peripherals/vrefintcal_v1.rs"]
+pub mod vrefintcal;
 #[path = "../../peripherals/wwdg_v2.rs"]
 pub mod wwdg;
 #[path = "../../peripherals/xspi_v1.rs"]

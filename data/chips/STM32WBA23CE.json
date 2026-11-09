@@ -2105,7 +2105,7 @@
         },
         {
           "name": "VREFINTCAL",
-          "address": 200857508,
+          "address": 200857509,
           "registers": {
             "kind": "vrefintcal",
             "version": "v2",

@@ -846,7 +846,7 @@ pub const GPIOG: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x5802_1800usize as 
 pub const GPIOH: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x5802_1c00usize as _) };
 pub const GPIOI: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x5802_2000usize as _) };
 pub const RCC: rcc::Rcc = unsafe { rcc::Rcc::from_ptr(0x5802_4400usize as _) };
-pub const PWR: *mut () = 0x5802_4800usize as _;
+pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x5802_4800usize as _) };
 pub const CRC: crc::Crc = unsafe { crc::Crc::from_ptr(0x5802_4c00usize as _) };
 pub const RAMECC2: *mut () = 0x5802_7000usize as _;
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0x5c00_1000usize as _) };
@@ -887,7 +887,9 @@ pub mod hrtim;
 pub mod i2c;
 #[path = "../../peripherals/lptim_v1b_h7.rs"]
 pub mod lptim;
-#[path = "../../peripherals/rcc_h7.rs"]
+#[path = "../../peripherals/pwr_h7p.rs"]
+pub mod pwr;
+#[path = "../../peripherals/rcc_h7p.rs"]
 pub mod rcc;
 #[path = "../../peripherals/spi_v4_i2s.rs"]
 pub mod spi;

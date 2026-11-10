@@ -107,9 +107,9 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     (
         "pwr",
         &[
-            "c0", "c5", "f0", "f0x0", "f1", "f2", "f3", "f4", "f7", "g0", "g4", "h5", "h50", "h5_ef", "h7rm0399",
-            "h7rm0433", "h7rm0455", "h7rm0468", "h7rs", "l0", "l1", "l4", "l5", "n6", "u0", "u3", "u5", "wb", "wb0",
-            "wb55", "wba", "wl5",
+            "c0", "c5", "f0", "f0x0", "f1", "f2", "f3", "f4", "f7", "g0", "g4", "h5", "h50", "h5_ef", "h7p",
+            "h7rm0399", "h7rm0433", "h7rm0455", "h7rm0468", "h7rs", "l0", "l1", "l4", "l5", "n6", "u0", "u3", "u5",
+            "wb", "wb0", "wb55", "wba", "wl5",
         ],
     ),
     ("quadspi", &["v1"]),
@@ -119,9 +119,9 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
         "rcc",
         &[
             "c0", "c0v2", "c5", "f0v1", "f0v2", "f0v3", "f0v4", "f1", "f100", "f1cl", "f2", "f37", "f3v1", "f3v2",
-            "f3v3", "f4", "f410", "f7", "g0x0", "g0x1", "g4", "g5", "h5", "h50", "h5_ef", "h7", "h7ab", "h7rm0433",
-            "h7rm0468", "h7rs", "l0", "l0_v2", "l1", "l4", "l4plus", "l5", "mp1", "n6", "u0", "u3", "u5", "wb", "wb0",
-            "wba", "wl5", "wle",
+            "f3v3", "f4", "f410", "f7", "g0x0", "g0x1", "g4", "g5", "h5", "h50", "h5_ef", "h7", "h7ab", "h7p",
+            "h7rm0433", "h7rm0468", "h7rs", "l0", "l0_v2", "l1", "l4", "l4plus", "l5", "mp1", "n6", "u0", "u3", "u5",
+            "wb", "wb0", "wba", "wl5", "wle",
         ],
     ),
     ("rifsc", &["n6"]),

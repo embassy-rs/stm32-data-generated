@@ -1,4 +1,4 @@
-include!("../metadata_1023.rs");
+include!("../metadata_1039.rs");
 use crate::metadata::PeripheralRccKernelClock::{Clock, Mux};
 pub static METADATA: Metadata = Metadata {
     name: "STM32WBA54CE",

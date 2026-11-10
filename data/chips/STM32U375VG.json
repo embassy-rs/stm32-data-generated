@@ -5101,6 +5101,14 @@
             {
               "signal": "WKUP",
               "interrupt": "PWR_S"
+            },
+            {
+              "signal": "WKUP1_4",
+              "interrupt": "PWR_S"
+            },
+            {
+              "signal": "WKUP5_8",
+              "interrupt": "PWR_S"
             }
           ]
         },

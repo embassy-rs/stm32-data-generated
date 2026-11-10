@@ -4623,6 +4623,11 @@
         {
           "name": "PLAY1",
           "address": 1073812480,
+          "registers": {
+            "kind": "play",
+            "version": "v1",
+            "block": "PLAY"
+          },
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": {

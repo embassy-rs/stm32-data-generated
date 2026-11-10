@@ -86,7 +86,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [OTFDEC](#otfdec) | | | | | | | | | | | v1 | v1 | v1 | | | | | v1 | | | | | v1 | | | v1 | |
 | [OTG](#otg) | | | | v1 | v1 | | v1 | v1 | | | | v1 | v1 | | | v1 | v1 | | | v1 | | | v1 | | | v1 | |
 | [PKA](#pka) | | c5 | | | | | | | | | ❌ | v1a | v1a | | | | v1c | v1c | | n6 | | v1b | v1b | v1c | v1c | v1a | v1c |
-| [PLAY](#play) | | | | | | | | | | | ❌ | ❌ | | | | | | | | | | | | | | | |
+| [PLAY](#play) | | | | | | | | | | | v1 | ❌ | | | | | | | | | | | | | | | |
 | [POSENC](#posenc) | | | | | | | | | | | ❌ | | | | | | | | | | | | | | | | |
 | [PSSI](#pssi) | | | | | | | | | | | | v1 | v1, v1_h7rs | | | | v1 | | | v1 | | | v1 | | | | |
 | [PWR](#pwr) | c0 | c5 | f0, f0x0 | f1 | f2 | f3 | f4 | f7 | g0 | g4 | ❌ | h5, h50, h5_ef | h7rm0399, h7rm0433, h7rm0455, h7rm0468, h7rs | l0 | l1 | l4 | l4 | l5 | ❌ | n6 | u0 | u3 | u5 | wb, wb55 | wb0 | wba | wl5 |
@@ -803,7 +803,8 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **❌ Unsupported**: STM32G5, STM32H5
+- **v1**: STM32G5
+- **❌ Unsupported**: STM32H5
 
 ### POSENC
 

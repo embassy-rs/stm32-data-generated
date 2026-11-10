@@ -694,7 +694,7 @@ pub const FDCANRAM2: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(
 pub const FDCANRAM3: fdcanram::Fdcanram = unsafe { fdcanram::Fdcanram::from_ptr(0x4000_b2a0usize as _) };
 pub const UCPD1: *mut () = 0x4000_dc00usize as _;
 pub const HRTIM1: hrtim::Hrtim = unsafe { hrtim::Hrtim::from_ptr(0x4001_0000usize as _) };
-pub const PLAY1: *mut () = 0x4001_1400usize as _;
+pub const PLAY1: play::Play = unsafe { play::Play::from_ptr(0x4001_1400usize as _) };
 pub const TIM1: *mut () = 0x4001_2c00usize as _;
 pub const SPI1: spi::Spi = unsafe { spi::Spi::from_ptr(0x4001_3000usize as _) };
 pub const TIM8: *mut () = 0x4001_3400usize as _;
@@ -808,6 +808,8 @@ pub mod i2c;
 pub mod octospi;
 #[path = "../../peripherals/otfdec_v1.rs"]
 pub mod otfdec;
+#[path = "../../peripherals/play_v1.rs"]
+pub mod play;
 #[path = "../../peripherals/rcc_g5.rs"]
 pub mod rcc;
 #[path = "../../peripherals/spi_v5_i2s.rs"]

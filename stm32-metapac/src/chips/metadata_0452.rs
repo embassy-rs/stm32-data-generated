@@ -3845,7 +3845,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "PLAY1",
         address: 0x40011400,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "play",
+            version: "v1",
+            block: "PLAY",
+            ir: &play::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
             kernel_clock: Mux(PeripheralRccRegister {
@@ -10922,6 +10927,8 @@ pub mod gpio;
 pub mod i2c;
 #[path = "../registers/octospi_v2.rs"]
 pub mod octospi;
+#[path = "../registers/play_v1.rs"]
+pub mod play;
 #[path = "../registers/rcc_g5.rs"]
 pub mod rcc;
 #[path = "../registers/spi_v5_i2s.rs"]

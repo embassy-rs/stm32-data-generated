@@ -1206,7 +1206,56 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
         ],
         dma_channels: &[],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG0",
+                source: "LPTIM1_ETR",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG1",
+                source: "RTC_ALRA_TRG",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG2",
+                source: "RTC_ALRB_TRG",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG3",
+                source: "TAMP_TRG1",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG4",
+                source: "TAMP_TRG2",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG5",
+                source: "TAMP_TRG3",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG6",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG7",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN1_MUX0",
+                source: "LPTIM1_IN1",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN1_MUX1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN2_MUX0",
+                source: "LPTIM1_IN2",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN2_MUX1",
+                source: "COMP2_OUT",
+            },
+        ],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
             interrupt: "LPTIM1",
@@ -1256,7 +1305,56 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
         ],
         dma_channels: &[],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG0",
+                source: "LPTIM2_ETR",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG1",
+                source: "RTC_ALRA_TRG",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG2",
+                source: "RTC_ALRB_TRG",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG3",
+                source: "TAMP_TRG1",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG4",
+                source: "TAMP_TRG2",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG5",
+                source: "TAMP_TRG3",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG6",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG7",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN1_MUX0",
+                source: "LPTIM2_IN1",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN1_MUX1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN1_MUX2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN1_MUX3",
+                source: "COMP1_OUT_OR_COMP2_OUT",
+            },
+        ],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
             interrupt: "LPTIM2",
@@ -1306,7 +1404,36 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             },
         ],
         dma_channels: &[],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG0",
+                source: "LPTIM3_ETR",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG1",
+                source: "LPTIM1_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_EXT_TRG2",
+                source: "LPTIM2_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN1_MUX0",
+                source: "LPTIM3_IN1",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN1_MUX1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN1_MUX2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "LPTIM_IN1_MUX3",
+                source: "COMP1_OUT_OR_COMP2_OUT",
+            },
+        ],
         interrupts: &[PeripheralInterrupt {
             signal: "GLOBAL",
             interrupt: "LPTIM3",
@@ -2076,10 +2203,44 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(29),
             },
         ],
-        triggers: &[PeripheralTrigger {
-            signal: "TIMX_TI1_IN1",
-            source: "COMP1_OUT",
-        }],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_ITR_IN1",
+                source: "TIM2_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_ITR_IN3",
+                source: "TIM17_OC1",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_ETR_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_ETR_IN2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN2",
+                source: "COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK2_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK2_IN2",
+                source: "COMP2_OUT",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",
@@ -2166,7 +2327,28 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(36),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN1",
+                source: "LSI",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN2",
+                source: "LSE",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN3",
+                source: "RTC_WAKEUP",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN2",
+                source: "COMP2_OUT",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",
@@ -2265,7 +2447,28 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 request: Some(38),
             },
         ],
-        triggers: &[],
+        triggers: &[
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN1",
+                source: "MSI",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN2",
+                source: "HSE_DIV32",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_TI1_IN3",
+                source: "MCO",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_BRK_IN2",
+                source: "COMP2_OUT",
+            },
+        ],
         interrupts: &[
             PeripheralInterrupt {
                 signal: "BRK",
@@ -2430,6 +2633,18 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             PeripheralTrigger {
                 signal: "TIMX_TI4_IN3",
                 source: "COMP1_OUT_OR_COMP2_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_ITR_IN0",
+                source: "TIM1_TRGO",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_ETR_IN1",
+                source: "COMP1_OUT",
+            },
+            PeripheralTrigger {
+                signal: "TIMX_ETR_IN2",
+                source: "COMP2_OUT",
             },
         ],
         interrupts: &[

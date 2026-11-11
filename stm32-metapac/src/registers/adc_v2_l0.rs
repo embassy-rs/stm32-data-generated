@@ -350,7 +350,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 4,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Ovss"),
                 },
                 Field {
                     name: "tovs",
@@ -360,7 +360,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 1,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Tovs"),
                 },
                 Field {
                     name: "ckmode",
@@ -760,6 +760,58 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
+            name: "Ovss",
+            description: None,
+            bit_size: 4,
+            variants: &[
+                EnumVariant {
+                    name: "Shift0",
+                    description: Some("No shift"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Shift1",
+                    description: Some("Shift 1-bit"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Shift2",
+                    description: Some("Shift 2-bits"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Shift3",
+                    description: Some("Shift 3-bits"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "Shift4",
+                    description: Some("Shift 4-bits"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "Shift5",
+                    description: Some("Shift 5-bits"),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "Shift6",
+                    description: Some("Shift 6-bits"),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "Shift7",
+                    description: Some("Shift 7-bits"),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "Shift8",
+                    description: Some("Shift 8-bits"),
+                    value: 8,
+                },
+            ],
+        },
+        Enum {
             name: "Presc",
             description: None,
             bit_size: 4,
@@ -914,6 +966,25 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "Upward",
                     description: Some("Upward scan (from channel 0 to the highest channel)"),
                     value: 0,
+                },
+            ],
+        },
+        Enum {
+            name: "Tovs",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "Automatic",
+                    description: Some(
+                        "All oversampled conversions for a channel are done consecutively following a trigger",
+                    ),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Triggered",
+                    description: Some("Each oversampled conversion for a channel needs a new trigger"),
+                    value: 1,
                 },
             ],
         },

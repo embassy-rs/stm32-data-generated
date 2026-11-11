@@ -478,26 +478,26 @@ pub mod regs {
         #[doc = "Oversampling shift (number of bits to right-shift the accumulated result)"]
         #[must_use]
         #[inline(always)]
-        pub const fn ovss(&self) -> u8 {
+        pub const fn ovss(&self) -> super::vals::Ovss {
             let val = (self.0 >> 5usize) & 0x0f;
-            val as u8
+            super::vals::Ovss::from_bits(val as u8)
         }
         #[doc = "Oversampling shift (number of bits to right-shift the accumulated result)"]
         #[inline(always)]
-        pub const fn set_ovss(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x0f << 5usize)) | (((val as u32) & 0x0f) << 5usize);
+        pub const fn set_ovss(&mut self, val: super::vals::Ovss) {
+            self.0 = (self.0 & !(0x0f << 5usize)) | (((val.to_bits() as u32) & 0x0f) << 5usize);
         }
         #[doc = "Triggered oversampling (0: all oversampled conversions are run after a single trigger, 1: each oversampled conversion needs a trigger)"]
         #[must_use]
         #[inline(always)]
-        pub const fn tovs(&self) -> bool {
+        pub const fn tovs(&self) -> super::vals::Tovs {
             let val = (self.0 >> 9usize) & 0x01;
-            val != 0
+            super::vals::Tovs::from_bits(val as u8)
         }
         #[doc = "Triggered oversampling (0: all oversampled conversions are run after a single trigger, 1: each oversampled conversion needs a trigger)"]
         #[inline(always)]
-        pub const fn set_tovs(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        pub const fn set_tovs(&mut self, val: super::vals::Tovs) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val.to_bits() as u32) & 0x01) << 9usize);
         }
         #[doc = "ADC clock mode"]
         #[must_use]
@@ -534,7 +534,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Cfgr2 {{ ovse: {=bool:?}, ovsr: {:?}, ovss: {=u8:?}, tovs: {=bool:?}, ckmode: {:?} }}",
+                "Cfgr2 {{ ovse: {=bool:?}, ovsr: {:?}, ovss: {:?}, tovs: {:?}, ckmode: {:?} }}",
                 self.ovse(),
                 self.ovsr(),
                 self.ovss(),
@@ -1297,6 +1297,58 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Ovss {
+        #[doc = "No shift"]
+        Shift0 = 0x0,
+        #[doc = "Shift 1-bit"]
+        Shift1 = 0x01,
+        #[doc = "Shift 2-bits"]
+        Shift2 = 0x02,
+        #[doc = "Shift 3-bits"]
+        Shift3 = 0x03,
+        #[doc = "Shift 4-bits"]
+        Shift4 = 0x04,
+        #[doc = "Shift 5-bits"]
+        Shift5 = 0x05,
+        #[doc = "Shift 6-bits"]
+        Shift6 = 0x06,
+        #[doc = "Shift 7-bits"]
+        Shift7 = 0x07,
+        #[doc = "Shift 8-bits"]
+        Shift8 = 0x08,
+        _RESERVED_9 = 0x09,
+        _RESERVED_a = 0x0a,
+        _RESERVED_b = 0x0b,
+        _RESERVED_c = 0x0c,
+        _RESERVED_d = 0x0d,
+        _RESERVED_e = 0x0e,
+        _RESERVED_f = 0x0f,
+    }
+    impl Ovss {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Ovss {
+            unsafe { core::mem::transmute(val & 0x0f) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Ovss {
+        #[inline(always)]
+        fn from(val: u8) -> Ovss {
+            Ovss::from_bits(val)
+        }
+    }
+    impl From<Ovss> for u8 {
+        #[inline(always)]
+        fn from(val: Ovss) -> u8 {
+            Ovss::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Presc {
         #[doc = "Input ADC clock not divided"]
         Div1 = 0x0,
@@ -1456,6 +1508,37 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Scandir) -> u8 {
             Scandir::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Tovs {
+        #[doc = "All oversampled conversions for a channel are done consecutively following a trigger"]
+        Automatic = 0x0,
+        #[doc = "Each oversampled conversion for a channel needs a new trigger"]
+        Triggered = 0x01,
+    }
+    impl Tovs {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Tovs {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Tovs {
+        #[inline(always)]
+        fn from(val: u8) -> Tovs {
+            Tovs::from_bits(val)
+        }
+    }
+    impl From<Tovs> for u8 {
+        #[inline(always)]
+        fn from(val: Tovs) -> u8 {
+            Tovs::to_bits(val)
         }
     }
 }

@@ -5639,13 +5639,13 @@ pub mod regs {
         #[doc = "system clock switch status."]
         #[must_use]
         #[inline(always)]
-        pub const fn syssws(&self) -> super::vals::Syssws {
+        pub const fn syssws(&self) -> super::vals::Syssw {
             let val = (self.0 >> 3usize) & 0x03;
-            super::vals::Syssws::from_bits(val as u8)
+            super::vals::Syssw::from_bits(val as u8)
         }
         #[doc = "system clock switch status."]
         #[inline(always)]
-        pub const fn set_syssws(&mut self, val: super::vals::Syssws) {
+        pub const fn set_syssws(&mut self, val: super::vals::Syssw) {
             self.0 = (self.0 & !(0x03 << 3usize)) | (((val.to_bits() as u32) & 0x03) << 3usize);
         }
         #[doc = "HSE division factor for RTC clock."]
@@ -6695,15 +6695,15 @@ pub mod regs {
         #[doc = "PLL1 input frequency range."]
         #[must_use]
         #[inline(always)]
-        pub const fn pllrge(&self, n: usize) -> super::vals::Pll1rge {
+        pub const fn pllrge(&self, n: usize) -> super::vals::Pllrge {
             assert!(n < 1usize);
             let offs = 2usize + n * 0usize;
             let val = (self.0 >> offs) & 0x03;
-            super::vals::Pll1rge::from_bits(val as u8)
+            super::vals::Pllrge::from_bits(val as u8)
         }
         #[doc = "PLL1 input frequency range."]
         #[inline(always)]
-        pub const fn set_pllrge(&mut self, n: usize, val: super::vals::Pll1rge) {
+        pub const fn set_pllrge(&mut self, n: usize, val: super::vals::Pllrge) {
             assert!(n < 1usize);
             let offs = 2usize + n * 0usize;
             self.0 = (self.0 & !(0x03 << offs)) | (((val.to_bits() as u32) & 0x03) << offs);
@@ -6880,15 +6880,15 @@ pub mod regs {
         #[doc = "PLL1 DIVP division factor."]
         #[must_use]
         #[inline(always)]
-        pub const fn pllp(&self, n: usize) -> super::vals::Pllp {
+        pub const fn pllp(&self, n: usize) -> super::vals::Plldiv {
             assert!(n < 1usize);
             let offs = 9usize + n * 0usize;
             let val = (self.0 >> offs) & 0x7f;
-            super::vals::Pllp::from_bits(val as u8)
+            super::vals::Plldiv::from_bits(val as u8)
         }
         #[doc = "PLL1 DIVP division factor."]
         #[inline(always)]
-        pub const fn set_pllp(&mut self, n: usize, val: super::vals::Pllp) {
+        pub const fn set_pllp(&mut self, n: usize, val: super::vals::Plldiv) {
             assert!(n < 1usize);
             let offs = 9usize + n * 0usize;
             self.0 = (self.0 & !(0x7f << offs)) | (((val.to_bits() as u32) & 0x7f) << offs);
@@ -6896,15 +6896,15 @@ pub mod regs {
         #[doc = "PLL1 DIVQ division factor."]
         #[must_use]
         #[inline(always)]
-        pub const fn pllq(&self, n: usize) -> super::vals::Pllq {
+        pub const fn pllq(&self, n: usize) -> super::vals::Plldiv {
             assert!(n < 1usize);
             let offs = 16usize + n * 0usize;
             let val = (self.0 >> offs) & 0x7f;
-            super::vals::Pllq::from_bits(val as u8)
+            super::vals::Plldiv::from_bits(val as u8)
         }
         #[doc = "PLL1 DIVQ division factor."]
         #[inline(always)]
-        pub const fn set_pllq(&mut self, n: usize, val: super::vals::Pllq) {
+        pub const fn set_pllq(&mut self, n: usize, val: super::vals::Plldiv) {
             assert!(n < 1usize);
             let offs = 16usize + n * 0usize;
             self.0 = (self.0 & !(0x7f << offs)) | (((val.to_bits() as u32) & 0x7f) << offs);
@@ -6912,15 +6912,15 @@ pub mod regs {
         #[doc = "PLL1 DIVR division factor."]
         #[must_use]
         #[inline(always)]
-        pub const fn pllr(&self, n: usize) -> super::vals::Pllr {
+        pub const fn pllr(&self, n: usize) -> super::vals::Plldiv {
             assert!(n < 1usize);
             let offs = 24usize + n * 0usize;
             let val = (self.0 >> offs) & 0x7f;
-            super::vals::Pllr::from_bits(val as u8)
+            super::vals::Plldiv::from_bits(val as u8)
         }
         #[doc = "PLL1 DIVR division factor."]
         #[inline(always)]
-        pub const fn set_pllr(&mut self, n: usize, val: super::vals::Pllr) {
+        pub const fn set_pllr(&mut self, n: usize, val: super::vals::Plldiv) {
             assert!(n < 1usize);
             let offs = 24usize + n * 0usize;
             self.0 = (self.0 & !(0x7f << offs)) | (((val.to_bits() as u32) & 0x7f) << offs);
@@ -8376,36 +8376,158 @@ pub mod vals {
     #[repr(u8)]
     #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Pll1rge {
-        #[doc = "PLL1 input (ref1_ck) clock range frequency between 1 and 2MHz (default after reset)."]
-        Range1 = 0x0,
-        #[doc = "PLL1 input (ref1_ck) clock range frequency between 2 and 4MHz."]
-        Range2 = 0x01,
-        #[doc = "PLL1 input (ref1_ck) clock range frequency between 4 and 8MHz."]
-        Range4 = 0x02,
-        #[doc = "PLL1 input (ref1_ck) clock range frequency between 8 and 16MHz."]
-        Range8 = 0x03,
+    pub enum Plldiv {
+        _RESERVED_0 = 0x0,
+        #[doc = "pllx_p_ck=vco1_ck / 2 (default after reset)."]
+        Div2 = 0x01,
+        _RESERVED_2 = 0x02,
+        #[doc = "pllx_p_ck=vco1_ck / 4."]
+        Div4 = 0x03,
+        Div5 = 0x04,
+        Div6 = 0x05,
+        Div7 = 0x06,
+        Div8 = 0x07,
+        Div9 = 0x08,
+        Div10 = 0x09,
+        Div11 = 0x0a,
+        Div12 = 0x0b,
+        Div13 = 0x0c,
+        Div14 = 0x0d,
+        Div15 = 0x0e,
+        Div16 = 0x0f,
+        Div17 = 0x10,
+        Div18 = 0x11,
+        Div19 = 0x12,
+        Div20 = 0x13,
+        Div21 = 0x14,
+        Div22 = 0x15,
+        Div23 = 0x16,
+        Div24 = 0x17,
+        Div25 = 0x18,
+        Div26 = 0x19,
+        Div27 = 0x1a,
+        Div28 = 0x1b,
+        Div29 = 0x1c,
+        Div30 = 0x1d,
+        Div31 = 0x1e,
+        Div32 = 0x1f,
+        Div33 = 0x20,
+        Div34 = 0x21,
+        Div35 = 0x22,
+        Div36 = 0x23,
+        Div37 = 0x24,
+        Div38 = 0x25,
+        Div39 = 0x26,
+        Div40 = 0x27,
+        Div41 = 0x28,
+        Div42 = 0x29,
+        Div43 = 0x2a,
+        Div44 = 0x2b,
+        Div45 = 0x2c,
+        Div46 = 0x2d,
+        Div47 = 0x2e,
+        Div48 = 0x2f,
+        Div49 = 0x30,
+        Div50 = 0x31,
+        Div51 = 0x32,
+        Div52 = 0x33,
+        Div53 = 0x34,
+        Div54 = 0x35,
+        Div55 = 0x36,
+        Div56 = 0x37,
+        Div57 = 0x38,
+        Div58 = 0x39,
+        Div59 = 0x3a,
+        Div60 = 0x3b,
+        Div61 = 0x3c,
+        Div62 = 0x3d,
+        Div63 = 0x3e,
+        Div64 = 0x3f,
+        Div65 = 0x40,
+        Div66 = 0x41,
+        Div67 = 0x42,
+        Div68 = 0x43,
+        Div69 = 0x44,
+        Div70 = 0x45,
+        Div71 = 0x46,
+        Div72 = 0x47,
+        Div73 = 0x48,
+        Div74 = 0x49,
+        Div75 = 0x4a,
+        Div76 = 0x4b,
+        Div77 = 0x4c,
+        Div78 = 0x4d,
+        Div79 = 0x4e,
+        Div80 = 0x4f,
+        Div81 = 0x50,
+        Div82 = 0x51,
+        Div83 = 0x52,
+        Div84 = 0x53,
+        Div85 = 0x54,
+        Div86 = 0x55,
+        Div87 = 0x56,
+        Div88 = 0x57,
+        Div89 = 0x58,
+        Div90 = 0x59,
+        Div91 = 0x5a,
+        Div92 = 0x5b,
+        Div93 = 0x5c,
+        Div94 = 0x5d,
+        Div95 = 0x5e,
+        Div96 = 0x5f,
+        Div97 = 0x60,
+        Div98 = 0x61,
+        Div99 = 0x62,
+        Div100 = 0x63,
+        Div101 = 0x64,
+        Div102 = 0x65,
+        Div103 = 0x66,
+        Div104 = 0x67,
+        Div105 = 0x68,
+        Div106 = 0x69,
+        Div107 = 0x6a,
+        Div108 = 0x6b,
+        Div109 = 0x6c,
+        Div110 = 0x6d,
+        Div111 = 0x6e,
+        Div112 = 0x6f,
+        Div113 = 0x70,
+        Div114 = 0x71,
+        Div115 = 0x72,
+        Div116 = 0x73,
+        Div117 = 0x74,
+        Div118 = 0x75,
+        Div119 = 0x76,
+        Div120 = 0x77,
+        Div121 = 0x78,
+        Div122 = 0x79,
+        Div123 = 0x7a,
+        Div124 = 0x7b,
+        Div125 = 0x7c,
+        Div126 = 0x7d,
+        Div127 = 0x7e,
+        Div128 = 0x7f,
     }
-    impl Pll1rge {
+    impl Plldiv {
         #[inline(always)]
-        pub const fn from_bits(val: u8) -> Pll1rge {
-            unsafe { core::mem::transmute(val & 0x03) }
+        pub const fn from_bits(val: u8) -> Plldiv {
+            unsafe { core::mem::transmute(val & 0x7f) }
         }
         #[inline(always)]
         pub const fn to_bits(self) -> u8 {
             unsafe { core::mem::transmute(self) }
         }
     }
-    impl From<u8> for Pll1rge {
+    impl From<u8> for Plldiv {
         #[inline(always)]
-        fn from(val: u8) -> Pll1rge {
-            Pll1rge::from_bits(val)
+        fn from(val: u8) -> Plldiv {
+            Plldiv::from_bits(val)
         }
     }
-    impl From<Pll1rge> for u8 {
+    impl From<Plldiv> for u8 {
         #[inline(always)]
-        fn from(val: Pll1rge) -> u8 {
-            Pll1rge::to_bits(val)
+        fn from(val: Plldiv) -> u8 {
+            Plldiv::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -8565,184 +8687,39 @@ pub mod vals {
             Plln::to_bits(val)
         }
     }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Pllp(u8);
-    impl Pllp {
-        #[doc = "Not allowed."]
-        pub const NotAllowed0: Self = Self(0x0);
-        #[doc = "pll1_p_ck=vco1_ck / 2 (default after reset)."]
-        pub const Div2: Self = Self(0x01);
-        #[doc = "Not allowed."]
-        pub const NotAllowed1: Self = Self(0x02);
-        #[doc = "pll1_p_ck=vco1_ck / 4."]
-        pub const Div4: Self = Self(0x03);
-        #[doc = "pll1_p_ck=vco1_ck / 128."]
-        pub const Div128: Self = Self(0x7f);
+    #[repr(u8)]
+    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Pllrge {
+        #[doc = "PLL1 input (ref1_ck) clock range frequency between 1 and 2MHz (default after reset)."]
+        Range1 = 0x0,
+        #[doc = "PLL1 input (ref1_ck) clock range frequency between 2 and 4MHz."]
+        Range2 = 0x01,
+        #[doc = "PLL1 input (ref1_ck) clock range frequency between 4 and 8MHz."]
+        Range4 = 0x02,
+        #[doc = "PLL1 input (ref1_ck) clock range frequency between 8 and 16MHz."]
+        Range8 = 0x03,
     }
-    impl Pllp {
-        pub const fn from_bits(val: u8) -> Pllp {
-            Self(val & 0x7f)
+    impl Pllrge {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Pllrge {
+            unsafe { core::mem::transmute(val & 0x03) }
         }
+        #[inline(always)]
         pub const fn to_bits(self) -> u8 {
-            self.0
+            unsafe { core::mem::transmute(self) }
         }
     }
-    impl core::fmt::Debug for Pllp {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("NotAllowed0"),
-                0x01 => f.write_str("Div2"),
-                0x02 => f.write_str("NotAllowed1"),
-                0x03 => f.write_str("Div4"),
-                0x7f => f.write_str("Div128"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Pllp {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "NotAllowed0"),
-                0x01 => defmt::write!(f, "Div2"),
-                0x02 => defmt::write!(f, "NotAllowed1"),
-                0x03 => defmt::write!(f, "Div4"),
-                0x7f => defmt::write!(f, "Div128"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Pllp {
+    impl From<u8> for Pllrge {
         #[inline(always)]
-        fn from(val: u8) -> Pllp {
-            Pllp::from_bits(val)
+        fn from(val: u8) -> Pllrge {
+            Pllrge::from_bits(val)
         }
     }
-    impl From<Pllp> for u8 {
+    impl From<Pllrge> for u8 {
         #[inline(always)]
-        fn from(val: Pllp) -> u8 {
-            Pllp::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Pllq(u8);
-    impl Pllq {
-        #[doc = "pll1_q_ck=vco1_ck."]
-        pub const Div1: Self = Self(0x0);
-        #[doc = "pll1_q_ck=vco1_ck / 2 (default after reset)."]
-        pub const Div2: Self = Self(0x01);
-        #[doc = "pll1_q_ck=vco1_ck / 3."]
-        pub const Div3: Self = Self(0x02);
-        #[doc = "pll1_q_ck=vco1_ck / 4."]
-        pub const Div4: Self = Self(0x03);
-        #[doc = "pll1_q_ck=vco1_ck / 128."]
-        pub const Div128: Self = Self(0x7f);
-    }
-    impl Pllq {
-        pub const fn from_bits(val: u8) -> Pllq {
-            Self(val & 0x7f)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Pllq {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("Div1"),
-                0x01 => f.write_str("Div2"),
-                0x02 => f.write_str("Div3"),
-                0x03 => f.write_str("Div4"),
-                0x7f => f.write_str("Div128"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Pllq {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "Div1"),
-                0x01 => defmt::write!(f, "Div2"),
-                0x02 => defmt::write!(f, "Div3"),
-                0x03 => defmt::write!(f, "Div4"),
-                0x7f => defmt::write!(f, "Div128"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Pllq {
-        #[inline(always)]
-        fn from(val: u8) -> Pllq {
-            Pllq::from_bits(val)
-        }
-    }
-    impl From<Pllq> for u8 {
-        #[inline(always)]
-        fn from(val: Pllq) -> u8 {
-            Pllq::to_bits(val)
-        }
-    }
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Pllr(u8);
-    impl Pllr {
-        #[doc = "pll1_r_ck=vco1_ck / 1."]
-        pub const Div1: Self = Self(0x0);
-        #[doc = "pll1_r_ck=vco1_ck / 2 (default after reset)."]
-        pub const Div2: Self = Self(0x01);
-        #[doc = "pll1_r_ck=vco1_ck / 3."]
-        pub const Div3: Self = Self(0x02);
-        #[doc = "pll1_r_ck=vco1_ck / 4."]
-        pub const Div4: Self = Self(0x03);
-        #[doc = "pll1_r_ck=vco1_ck / 128."]
-        pub const Div128: Self = Self(0x7f);
-    }
-    impl Pllr {
-        pub const fn from_bits(val: u8) -> Pllr {
-            Self(val & 0x7f)
-        }
-        pub const fn to_bits(self) -> u8 {
-            self.0
-        }
-    }
-    impl core::fmt::Debug for Pllr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x0 => f.write_str("Div1"),
-                0x01 => f.write_str("Div2"),
-                0x02 => f.write_str("Div3"),
-                0x03 => f.write_str("Div4"),
-                0x7f => f.write_str("Div128"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Pllr {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x0 => defmt::write!(f, "Div1"),
-                0x01 => defmt::write!(f, "Div2"),
-                0x02 => defmt::write!(f, "Div3"),
-                0x03 => defmt::write!(f, "Div4"),
-                0x7f => defmt::write!(f, "Div128"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    impl From<u8> for Pllr {
-        #[inline(always)]
-        fn from(val: u8) -> Pllr {
-            Pllr::from_bits(val)
-        }
-    }
-    impl From<Pllr> for u8 {
-        #[inline(always)]
-        fn from(val: Pllr) -> u8 {
-            Pllr::to_bits(val)
+        fn from(val: Pllrge) -> u8 {
+            Pllrge::to_bits(val)
         }
     }
     #[repr(u8)]
@@ -8750,13 +8727,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllsrc {
         #[doc = "no clock sent to PLL1M divider and PLL1 (default after reset)."]
-        Disable0 = 0x0,
+        Disable = 0x0,
         #[doc = "HSI selected as PLL clock (hsi_ck)."]
         Hsi = 0x01,
         #[doc = "HSE selected as PLL clock (hse_ck)."]
         Hse = 0x02,
-        #[doc = "no clock sent to PLL1M divider and PLL1."]
-        Disable1 = 0x03,
+        _RESERVED_3 = 0x03,
     }
     impl Pllsrc {
         #[inline(always)]
@@ -8896,76 +8872,132 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rtcpre {
         #[doc = "no clock (default after reset)."]
-        Disable0 = 0x0,
-        #[doc = "no clock."]
-        Disable1 = 0x01,
+        Disabled = 0x0,
+        _RESERVED_1 = 0x01,
         #[doc = "HSE/2."]
-        HseDiv2 = 0x02,
+        Div2 = 0x02,
         #[doc = "HSE/3."]
-        HseDiv3 = 0x03,
+        Div3 = 0x03,
         #[doc = "HSE/4."]
-        HseDiv4 = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-        _RESERVED_8 = 0x08,
-        _RESERVED_9 = 0x09,
-        _RESERVED_a = 0x0a,
-        _RESERVED_b = 0x0b,
-        _RESERVED_c = 0x0c,
-        _RESERVED_d = 0x0d,
-        _RESERVED_e = 0x0e,
-        _RESERVED_f = 0x0f,
-        _RESERVED_10 = 0x10,
-        _RESERVED_11 = 0x11,
-        _RESERVED_12 = 0x12,
-        _RESERVED_13 = 0x13,
-        _RESERVED_14 = 0x14,
-        _RESERVED_15 = 0x15,
-        _RESERVED_16 = 0x16,
-        _RESERVED_17 = 0x17,
-        _RESERVED_18 = 0x18,
-        _RESERVED_19 = 0x19,
-        _RESERVED_1a = 0x1a,
-        _RESERVED_1b = 0x1b,
-        _RESERVED_1c = 0x1c,
-        _RESERVED_1d = 0x1d,
-        _RESERVED_1e = 0x1e,
-        _RESERVED_1f = 0x1f,
-        _RESERVED_20 = 0x20,
-        _RESERVED_21 = 0x21,
-        _RESERVED_22 = 0x22,
-        _RESERVED_23 = 0x23,
-        _RESERVED_24 = 0x24,
-        _RESERVED_25 = 0x25,
-        _RESERVED_26 = 0x26,
-        _RESERVED_27 = 0x27,
-        _RESERVED_28 = 0x28,
-        _RESERVED_29 = 0x29,
-        _RESERVED_2a = 0x2a,
-        _RESERVED_2b = 0x2b,
-        _RESERVED_2c = 0x2c,
-        _RESERVED_2d = 0x2d,
-        _RESERVED_2e = 0x2e,
-        _RESERVED_2f = 0x2f,
-        _RESERVED_30 = 0x30,
-        _RESERVED_31 = 0x31,
-        _RESERVED_32 = 0x32,
-        _RESERVED_33 = 0x33,
-        _RESERVED_34 = 0x34,
-        _RESERVED_35 = 0x35,
-        _RESERVED_36 = 0x36,
-        _RESERVED_37 = 0x37,
-        _RESERVED_38 = 0x38,
-        _RESERVED_39 = 0x39,
-        _RESERVED_3a = 0x3a,
-        _RESERVED_3b = 0x3b,
-        _RESERVED_3c = 0x3c,
-        _RESERVED_3d = 0x3d,
+        Div4 = 0x04,
+        #[doc = "HSE/5."]
+        Div5 = 0x05,
+        #[doc = "HSE/6."]
+        Div6 = 0x06,
+        #[doc = "HSE/7."]
+        Div7 = 0x07,
+        #[doc = "HSE/8."]
+        Div8 = 0x08,
+        #[doc = "HSE/9."]
+        Div9 = 0x09,
+        #[doc = "HSE/10."]
+        Div10 = 0x0a,
+        #[doc = "HSE/11."]
+        Div11 = 0x0b,
+        #[doc = "HSE/12."]
+        Div12 = 0x0c,
+        #[doc = "HSE/13."]
+        Div13 = 0x0d,
+        #[doc = "HSE/14."]
+        Div14 = 0x0e,
+        #[doc = "HSE/15."]
+        Div15 = 0x0f,
+        #[doc = "HSE/16."]
+        Div16 = 0x10,
+        #[doc = "HSE/17."]
+        Div17 = 0x11,
+        #[doc = "HSE/18."]
+        Div18 = 0x12,
+        #[doc = "HSE/19."]
+        Div19 = 0x13,
+        #[doc = "HSE/20."]
+        Div20 = 0x14,
+        #[doc = "HSE/21."]
+        Div21 = 0x15,
+        #[doc = "HSE/22."]
+        Div22 = 0x16,
+        #[doc = "HSE/23."]
+        Div23 = 0x17,
+        #[doc = "HSE/24."]
+        Div24 = 0x18,
+        #[doc = "HSE/25."]
+        Div25 = 0x19,
+        #[doc = "HSE/26."]
+        Div26 = 0x1a,
+        #[doc = "HSE/27."]
+        Div27 = 0x1b,
+        #[doc = "HSE/28."]
+        Div28 = 0x1c,
+        #[doc = "HSE/29."]
+        Div29 = 0x1d,
+        #[doc = "HSE/30."]
+        Div30 = 0x1e,
+        #[doc = "HSE/31."]
+        Div31 = 0x1f,
+        #[doc = "HSE/32."]
+        Div32 = 0x20,
+        #[doc = "HSE/33."]
+        Div33 = 0x21,
+        #[doc = "HSE/34."]
+        Div34 = 0x22,
+        #[doc = "HSE/35."]
+        Div35 = 0x23,
+        #[doc = "HSE/36."]
+        Div36 = 0x24,
+        #[doc = "HSE/37."]
+        Div37 = 0x25,
+        #[doc = "HSE/38."]
+        Div38 = 0x26,
+        #[doc = "HSE/39."]
+        Div39 = 0x27,
+        #[doc = "HSE/40."]
+        Div40 = 0x28,
+        #[doc = "HSE/41."]
+        Div41 = 0x29,
+        #[doc = "HSE/42."]
+        Div42 = 0x2a,
+        #[doc = "HSE/43."]
+        Div43 = 0x2b,
+        #[doc = "HSE/44."]
+        Div44 = 0x2c,
+        #[doc = "HSE/45."]
+        Div45 = 0x2d,
+        #[doc = "HSE/46."]
+        Div46 = 0x2e,
+        #[doc = "HSE/47."]
+        Div47 = 0x2f,
+        #[doc = "HSE/48."]
+        Div48 = 0x30,
+        #[doc = "HSE/49."]
+        Div49 = 0x31,
+        #[doc = "HSE/50."]
+        Div50 = 0x32,
+        #[doc = "HSE/51."]
+        Div51 = 0x33,
+        #[doc = "HSE/52."]
+        Div52 = 0x34,
+        #[doc = "HSE/53."]
+        Div53 = 0x35,
+        #[doc = "HSE/54."]
+        Div54 = 0x36,
+        #[doc = "HSE/55."]
+        Div55 = 0x37,
+        #[doc = "HSE/56."]
+        Div56 = 0x38,
+        #[doc = "HSE/57."]
+        Div57 = 0x39,
+        #[doc = "HSE/58."]
+        Div58 = 0x3a,
+        #[doc = "HSE/59."]
+        Div59 = 0x3b,
+        #[doc = "HSE/60."]
+        Div60 = 0x3c,
+        #[doc = "HSE/61."]
+        Div61 = 0x3d,
         #[doc = "HSE/62."]
-        HseDiv62 = 0x3e,
+        Div62 = 0x3e,
         #[doc = "HSE/63."]
-        HseDiv63 = 0x3f,
+        Div63 = 0x3f,
     }
     impl Rtcpre {
         #[inline(always)]
@@ -9178,40 +9210,6 @@ pub mod vals {
         #[inline(always)]
         fn from(val: Syssw) -> u8 {
             Syssw::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Syssws {
-        #[doc = "HSI used as system clock (hsi_ck) (default after reset)."]
-        Hsi = 0x0,
-        #[doc = "HSE used as system clock (hse_ck)."]
-        Hse = 0x01,
-        #[doc = "PLL1 used as system clock (pll1_p_ck)."]
-        Pll1P = 0x02,
-        _RESERVED_3 = 0x03,
-    }
-    impl Syssws {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Syssws {
-            unsafe { core::mem::transmute(val & 0x03) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Syssws {
-        #[inline(always)]
-        fn from(val: u8) -> Syssws {
-            Syssws::from_bits(val)
-        }
-    }
-    impl From<Syssws> for u8 {
-        #[inline(always)]
-        fn from(val: Syssws) -> u8 {
-            Syssws::to_bits(val)
         }
     }
     #[repr(u8)]

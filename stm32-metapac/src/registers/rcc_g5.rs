@@ -3370,7 +3370,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                     bit_size: 2,
                     array: None,
-                    enumm: Some("Syssws"),
+                    enumm: Some("Syssw"),
                 },
                 Field {
                     name: "rtcpre",
@@ -3896,7 +3896,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
                     array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
-                    enumm: Some("Pll1rge"),
+                    enumm: Some("Pllrge"),
                 },
                 Field {
                     name: "pllfracen",
@@ -3976,7 +3976,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 7,
                     array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
-                    enumm: Some("Pllp"),
+                    enumm: Some("Plldiv"),
                 },
                 Field {
                     name: "pllq",
@@ -3984,7 +3984,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 7,
                     array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
-                    enumm: Some("Pllq"),
+                    enumm: Some("Plldiv"),
                 },
                 Field {
                     name: "pllr",
@@ -3992,7 +3992,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 7,
                     array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
-                    enumm: Some("Pllr"),
+                    enumm: Some("Plldiv"),
                 },
             ],
         },
@@ -5014,31 +5014,639 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Pll1rge",
+            name: "Plldiv",
             description: None,
-            bit_size: 2,
+            bit_size: 7,
             variants: &[
                 EnumVariant {
-                    name: "Range1",
-                    description: Some(
-                        "PLL1 input (ref1_ck) clock range frequency between 1 and 2MHz (default after reset).",
-                    ),
-                    value: 0,
+                    name: "Div10",
+                    description: None,
+                    value: 9,
                 },
                 EnumVariant {
-                    name: "Range2",
-                    description: Some("PLL1 input (ref1_ck) clock range frequency between 2 and 4MHz."),
+                    name: "Div100",
+                    description: None,
+                    value: 99,
+                },
+                EnumVariant {
+                    name: "Div101",
+                    description: None,
+                    value: 100,
+                },
+                EnumVariant {
+                    name: "Div102",
+                    description: None,
+                    value: 101,
+                },
+                EnumVariant {
+                    name: "Div103",
+                    description: None,
+                    value: 102,
+                },
+                EnumVariant {
+                    name: "Div104",
+                    description: None,
+                    value: 103,
+                },
+                EnumVariant {
+                    name: "Div105",
+                    description: None,
+                    value: 104,
+                },
+                EnumVariant {
+                    name: "Div106",
+                    description: None,
+                    value: 105,
+                },
+                EnumVariant {
+                    name: "Div107",
+                    description: None,
+                    value: 106,
+                },
+                EnumVariant {
+                    name: "Div108",
+                    description: None,
+                    value: 107,
+                },
+                EnumVariant {
+                    name: "Div109",
+                    description: None,
+                    value: 108,
+                },
+                EnumVariant {
+                    name: "Div11",
+                    description: None,
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "Div110",
+                    description: None,
+                    value: 109,
+                },
+                EnumVariant {
+                    name: "Div111",
+                    description: None,
+                    value: 110,
+                },
+                EnumVariant {
+                    name: "Div112",
+                    description: None,
+                    value: 111,
+                },
+                EnumVariant {
+                    name: "Div113",
+                    description: None,
+                    value: 112,
+                },
+                EnumVariant {
+                    name: "Div114",
+                    description: None,
+                    value: 113,
+                },
+                EnumVariant {
+                    name: "Div115",
+                    description: None,
+                    value: 114,
+                },
+                EnumVariant {
+                    name: "Div116",
+                    description: None,
+                    value: 115,
+                },
+                EnumVariant {
+                    name: "Div117",
+                    description: None,
+                    value: 116,
+                },
+                EnumVariant {
+                    name: "Div118",
+                    description: None,
+                    value: 117,
+                },
+                EnumVariant {
+                    name: "Div119",
+                    description: None,
+                    value: 118,
+                },
+                EnumVariant {
+                    name: "Div12",
+                    description: None,
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "Div120",
+                    description: None,
+                    value: 119,
+                },
+                EnumVariant {
+                    name: "Div121",
+                    description: None,
+                    value: 120,
+                },
+                EnumVariant {
+                    name: "Div122",
+                    description: None,
+                    value: 121,
+                },
+                EnumVariant {
+                    name: "Div123",
+                    description: None,
+                    value: 122,
+                },
+                EnumVariant {
+                    name: "Div124",
+                    description: None,
+                    value: 123,
+                },
+                EnumVariant {
+                    name: "Div125",
+                    description: None,
+                    value: 124,
+                },
+                EnumVariant {
+                    name: "Div126",
+                    description: None,
+                    value: 125,
+                },
+                EnumVariant {
+                    name: "Div127",
+                    description: None,
+                    value: 126,
+                },
+                EnumVariant {
+                    name: "Div128",
+                    description: None,
+                    value: 127,
+                },
+                EnumVariant {
+                    name: "Div13",
+                    description: None,
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "Div14",
+                    description: None,
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "Div15",
+                    description: None,
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "Div16",
+                    description: None,
+                    value: 15,
+                },
+                EnumVariant {
+                    name: "Div17",
+                    description: None,
+                    value: 16,
+                },
+                EnumVariant {
+                    name: "Div18",
+                    description: None,
+                    value: 17,
+                },
+                EnumVariant {
+                    name: "Div19",
+                    description: None,
+                    value: 18,
+                },
+                EnumVariant {
+                    name: "Div2",
+                    description: Some("pllx_p_ck=vco1_ck / 2 (default after reset)."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Range4",
-                    description: Some("PLL1 input (ref1_ck) clock range frequency between 4 and 8MHz."),
-                    value: 2,
+                    name: "Div20",
+                    description: None,
+                    value: 19,
                 },
                 EnumVariant {
-                    name: "Range8",
-                    description: Some("PLL1 input (ref1_ck) clock range frequency between 8 and 16MHz."),
+                    name: "Div21",
+                    description: None,
+                    value: 20,
+                },
+                EnumVariant {
+                    name: "Div22",
+                    description: None,
+                    value: 21,
+                },
+                EnumVariant {
+                    name: "Div23",
+                    description: None,
+                    value: 22,
+                },
+                EnumVariant {
+                    name: "Div24",
+                    description: None,
+                    value: 23,
+                },
+                EnumVariant {
+                    name: "Div25",
+                    description: None,
+                    value: 24,
+                },
+                EnumVariant {
+                    name: "Div26",
+                    description: None,
+                    value: 25,
+                },
+                EnumVariant {
+                    name: "Div27",
+                    description: None,
+                    value: 26,
+                },
+                EnumVariant {
+                    name: "Div28",
+                    description: None,
+                    value: 27,
+                },
+                EnumVariant {
+                    name: "Div29",
+                    description: None,
+                    value: 28,
+                },
+                EnumVariant {
+                    name: "Div30",
+                    description: None,
+                    value: 29,
+                },
+                EnumVariant {
+                    name: "Div31",
+                    description: None,
+                    value: 30,
+                },
+                EnumVariant {
+                    name: "Div32",
+                    description: None,
+                    value: 31,
+                },
+                EnumVariant {
+                    name: "Div33",
+                    description: None,
+                    value: 32,
+                },
+                EnumVariant {
+                    name: "Div34",
+                    description: None,
+                    value: 33,
+                },
+                EnumVariant {
+                    name: "Div35",
+                    description: None,
+                    value: 34,
+                },
+                EnumVariant {
+                    name: "Div36",
+                    description: None,
+                    value: 35,
+                },
+                EnumVariant {
+                    name: "Div37",
+                    description: None,
+                    value: 36,
+                },
+                EnumVariant {
+                    name: "Div38",
+                    description: None,
+                    value: 37,
+                },
+                EnumVariant {
+                    name: "Div39",
+                    description: None,
+                    value: 38,
+                },
+                EnumVariant {
+                    name: "Div4",
+                    description: Some("pllx_p_ck=vco1_ck / 4."),
                     value: 3,
+                },
+                EnumVariant {
+                    name: "Div40",
+                    description: None,
+                    value: 39,
+                },
+                EnumVariant {
+                    name: "Div41",
+                    description: None,
+                    value: 40,
+                },
+                EnumVariant {
+                    name: "Div42",
+                    description: None,
+                    value: 41,
+                },
+                EnumVariant {
+                    name: "Div43",
+                    description: None,
+                    value: 42,
+                },
+                EnumVariant {
+                    name: "Div44",
+                    description: None,
+                    value: 43,
+                },
+                EnumVariant {
+                    name: "Div45",
+                    description: None,
+                    value: 44,
+                },
+                EnumVariant {
+                    name: "Div46",
+                    description: None,
+                    value: 45,
+                },
+                EnumVariant {
+                    name: "Div47",
+                    description: None,
+                    value: 46,
+                },
+                EnumVariant {
+                    name: "Div48",
+                    description: None,
+                    value: 47,
+                },
+                EnumVariant {
+                    name: "Div49",
+                    description: None,
+                    value: 48,
+                },
+                EnumVariant {
+                    name: "Div5",
+                    description: None,
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "Div50",
+                    description: None,
+                    value: 49,
+                },
+                EnumVariant {
+                    name: "Div51",
+                    description: None,
+                    value: 50,
+                },
+                EnumVariant {
+                    name: "Div52",
+                    description: None,
+                    value: 51,
+                },
+                EnumVariant {
+                    name: "Div53",
+                    description: None,
+                    value: 52,
+                },
+                EnumVariant {
+                    name: "Div54",
+                    description: None,
+                    value: 53,
+                },
+                EnumVariant {
+                    name: "Div55",
+                    description: None,
+                    value: 54,
+                },
+                EnumVariant {
+                    name: "Div56",
+                    description: None,
+                    value: 55,
+                },
+                EnumVariant {
+                    name: "Div57",
+                    description: None,
+                    value: 56,
+                },
+                EnumVariant {
+                    name: "Div58",
+                    description: None,
+                    value: 57,
+                },
+                EnumVariant {
+                    name: "Div59",
+                    description: None,
+                    value: 58,
+                },
+                EnumVariant {
+                    name: "Div6",
+                    description: None,
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "Div60",
+                    description: None,
+                    value: 59,
+                },
+                EnumVariant {
+                    name: "Div61",
+                    description: None,
+                    value: 60,
+                },
+                EnumVariant {
+                    name: "Div62",
+                    description: None,
+                    value: 61,
+                },
+                EnumVariant {
+                    name: "Div63",
+                    description: None,
+                    value: 62,
+                },
+                EnumVariant {
+                    name: "Div64",
+                    description: None,
+                    value: 63,
+                },
+                EnumVariant {
+                    name: "Div65",
+                    description: None,
+                    value: 64,
+                },
+                EnumVariant {
+                    name: "Div66",
+                    description: None,
+                    value: 65,
+                },
+                EnumVariant {
+                    name: "Div67",
+                    description: None,
+                    value: 66,
+                },
+                EnumVariant {
+                    name: "Div68",
+                    description: None,
+                    value: 67,
+                },
+                EnumVariant {
+                    name: "Div69",
+                    description: None,
+                    value: 68,
+                },
+                EnumVariant {
+                    name: "Div7",
+                    description: None,
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "Div70",
+                    description: None,
+                    value: 69,
+                },
+                EnumVariant {
+                    name: "Div71",
+                    description: None,
+                    value: 70,
+                },
+                EnumVariant {
+                    name: "Div72",
+                    description: None,
+                    value: 71,
+                },
+                EnumVariant {
+                    name: "Div73",
+                    description: None,
+                    value: 72,
+                },
+                EnumVariant {
+                    name: "Div74",
+                    description: None,
+                    value: 73,
+                },
+                EnumVariant {
+                    name: "Div75",
+                    description: None,
+                    value: 74,
+                },
+                EnumVariant {
+                    name: "Div76",
+                    description: None,
+                    value: 75,
+                },
+                EnumVariant {
+                    name: "Div77",
+                    description: None,
+                    value: 76,
+                },
+                EnumVariant {
+                    name: "Div78",
+                    description: None,
+                    value: 77,
+                },
+                EnumVariant {
+                    name: "Div79",
+                    description: None,
+                    value: 78,
+                },
+                EnumVariant {
+                    name: "Div8",
+                    description: None,
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "Div80",
+                    description: None,
+                    value: 79,
+                },
+                EnumVariant {
+                    name: "Div81",
+                    description: None,
+                    value: 80,
+                },
+                EnumVariant {
+                    name: "Div82",
+                    description: None,
+                    value: 81,
+                },
+                EnumVariant {
+                    name: "Div83",
+                    description: None,
+                    value: 82,
+                },
+                EnumVariant {
+                    name: "Div84",
+                    description: None,
+                    value: 83,
+                },
+                EnumVariant {
+                    name: "Div85",
+                    description: None,
+                    value: 84,
+                },
+                EnumVariant {
+                    name: "Div86",
+                    description: None,
+                    value: 85,
+                },
+                EnumVariant {
+                    name: "Div87",
+                    description: None,
+                    value: 86,
+                },
+                EnumVariant {
+                    name: "Div88",
+                    description: None,
+                    value: 87,
+                },
+                EnumVariant {
+                    name: "Div89",
+                    description: None,
+                    value: 88,
+                },
+                EnumVariant {
+                    name: "Div9",
+                    description: None,
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "Div90",
+                    description: None,
+                    value: 89,
+                },
+                EnumVariant {
+                    name: "Div91",
+                    description: None,
+                    value: 90,
+                },
+                EnumVariant {
+                    name: "Div92",
+                    description: None,
+                    value: 91,
+                },
+                EnumVariant {
+                    name: "Div93",
+                    description: None,
+                    value: 92,
+                },
+                EnumVariant {
+                    name: "Div94",
+                    description: None,
+                    value: 93,
+                },
+                EnumVariant {
+                    name: "Div95",
+                    description: None,
+                    value: 94,
+                },
+                EnumVariant {
+                    name: "Div96",
+                    description: None,
+                    value: 95,
+                },
+                EnumVariant {
+                    name: "Div97",
+                    description: None,
+                    value: 96,
+                },
+                EnumVariant {
+                    name: "Div98",
+                    description: None,
+                    value: 97,
+                },
+                EnumVariant {
+                    name: "Div99",
+                    description: None,
+                    value: 98,
                 },
             ],
         },
@@ -5112,97 +5720,30 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         Enum {
-            name: "Pllp",
+            name: "Pllrge",
             description: None,
-            bit_size: 7,
+            bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Div128",
-                    description: Some("pll1_p_ck=vco1_ck / 128."),
-                    value: 127,
-                },
-                EnumVariant {
-                    name: "Div2",
-                    description: Some("pll1_p_ck=vco1_ck / 2 (default after reset)."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Div4",
-                    description: Some("pll1_p_ck=vco1_ck / 4."),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "NotAllowed0",
-                    description: Some("Not allowed."),
+                    name: "Range1",
+                    description: Some(
+                        "PLL1 input (ref1_ck) clock range frequency between 1 and 2MHz (default after reset).",
+                    ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NotAllowed1",
-                    description: Some("Not allowed."),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Pllq",
-            description: None,
-            bit_size: 7,
-            variants: &[
-                EnumVariant {
-                    name: "Div1",
-                    description: Some("pll1_q_ck=vco1_ck."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Div128",
-                    description: Some("pll1_q_ck=vco1_ck / 128."),
-                    value: 127,
-                },
-                EnumVariant {
-                    name: "Div2",
-                    description: Some("pll1_q_ck=vco1_ck / 2 (default after reset)."),
+                    name: "Range2",
+                    description: Some("PLL1 input (ref1_ck) clock range frequency between 2 and 4MHz."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Div3",
-                    description: Some("pll1_q_ck=vco1_ck / 3."),
+                    name: "Range4",
+                    description: Some("PLL1 input (ref1_ck) clock range frequency between 4 and 8MHz."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "Div4",
-                    description: Some("pll1_q_ck=vco1_ck / 4."),
-                    value: 3,
-                },
-            ],
-        },
-        Enum {
-            name: "Pllr",
-            description: None,
-            bit_size: 7,
-            variants: &[
-                EnumVariant {
-                    name: "Div1",
-                    description: Some("pll1_r_ck=vco1_ck / 1."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Div128",
-                    description: Some("pll1_r_ck=vco1_ck / 128."),
-                    value: 127,
-                },
-                EnumVariant {
-                    name: "Div2",
-                    description: Some("pll1_r_ck=vco1_ck / 2 (default after reset)."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Div3",
-                    description: Some("pll1_r_ck=vco1_ck / 3."),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "Div4",
-                    description: Some("pll1_r_ck=vco1_ck / 4."),
+                    name: "Range8",
+                    description: Some("PLL1 input (ref1_ck) clock range frequency between 8 and 16MHz."),
                     value: 3,
                 },
             ],
@@ -5213,14 +5754,9 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Disable0",
+                    name: "Disable",
                     description: Some("no clock sent to PLL1M divider and PLL1 (default after reset)."),
                     value: 0,
-                },
-                EnumVariant {
-                    name: "Disable1",
-                    description: Some("no clock sent to PLL1M divider and PLL1."),
-                    value: 3,
                 },
                 EnumVariant {
                     name: "Hse",
@@ -5321,39 +5857,319 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 6,
             variants: &[
                 EnumVariant {
-                    name: "Disable0",
+                    name: "Disabled",
                     description: Some("no clock (default after reset)."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Disable1",
-                    description: Some("no clock."),
-                    value: 1,
+                    name: "Div10",
+                    description: Some("HSE/10."),
+                    value: 10,
                 },
                 EnumVariant {
-                    name: "HseDiv2",
+                    name: "Div11",
+                    description: Some("HSE/11."),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "Div12",
+                    description: Some("HSE/12."),
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "Div13",
+                    description: Some("HSE/13."),
+                    value: 13,
+                },
+                EnumVariant {
+                    name: "Div14",
+                    description: Some("HSE/14."),
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "Div15",
+                    description: Some("HSE/15."),
+                    value: 15,
+                },
+                EnumVariant {
+                    name: "Div16",
+                    description: Some("HSE/16."),
+                    value: 16,
+                },
+                EnumVariant {
+                    name: "Div17",
+                    description: Some("HSE/17."),
+                    value: 17,
+                },
+                EnumVariant {
+                    name: "Div18",
+                    description: Some("HSE/18."),
+                    value: 18,
+                },
+                EnumVariant {
+                    name: "Div19",
+                    description: Some("HSE/19."),
+                    value: 19,
+                },
+                EnumVariant {
+                    name: "Div2",
                     description: Some("HSE/2."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "HseDiv3",
+                    name: "Div20",
+                    description: Some("HSE/20."),
+                    value: 20,
+                },
+                EnumVariant {
+                    name: "Div21",
+                    description: Some("HSE/21."),
+                    value: 21,
+                },
+                EnumVariant {
+                    name: "Div22",
+                    description: Some("HSE/22."),
+                    value: 22,
+                },
+                EnumVariant {
+                    name: "Div23",
+                    description: Some("HSE/23."),
+                    value: 23,
+                },
+                EnumVariant {
+                    name: "Div24",
+                    description: Some("HSE/24."),
+                    value: 24,
+                },
+                EnumVariant {
+                    name: "Div25",
+                    description: Some("HSE/25."),
+                    value: 25,
+                },
+                EnumVariant {
+                    name: "Div26",
+                    description: Some("HSE/26."),
+                    value: 26,
+                },
+                EnumVariant {
+                    name: "Div27",
+                    description: Some("HSE/27."),
+                    value: 27,
+                },
+                EnumVariant {
+                    name: "Div28",
+                    description: Some("HSE/28."),
+                    value: 28,
+                },
+                EnumVariant {
+                    name: "Div29",
+                    description: Some("HSE/29."),
+                    value: 29,
+                },
+                EnumVariant {
+                    name: "Div3",
                     description: Some("HSE/3."),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "HseDiv4",
+                    name: "Div30",
+                    description: Some("HSE/30."),
+                    value: 30,
+                },
+                EnumVariant {
+                    name: "Div31",
+                    description: Some("HSE/31."),
+                    value: 31,
+                },
+                EnumVariant {
+                    name: "Div32",
+                    description: Some("HSE/32."),
+                    value: 32,
+                },
+                EnumVariant {
+                    name: "Div33",
+                    description: Some("HSE/33."),
+                    value: 33,
+                },
+                EnumVariant {
+                    name: "Div34",
+                    description: Some("HSE/34."),
+                    value: 34,
+                },
+                EnumVariant {
+                    name: "Div35",
+                    description: Some("HSE/35."),
+                    value: 35,
+                },
+                EnumVariant {
+                    name: "Div36",
+                    description: Some("HSE/36."),
+                    value: 36,
+                },
+                EnumVariant {
+                    name: "Div37",
+                    description: Some("HSE/37."),
+                    value: 37,
+                },
+                EnumVariant {
+                    name: "Div38",
+                    description: Some("HSE/38."),
+                    value: 38,
+                },
+                EnumVariant {
+                    name: "Div39",
+                    description: Some("HSE/39."),
+                    value: 39,
+                },
+                EnumVariant {
+                    name: "Div4",
                     description: Some("HSE/4."),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "HseDiv62",
+                    name: "Div40",
+                    description: Some("HSE/40."),
+                    value: 40,
+                },
+                EnumVariant {
+                    name: "Div41",
+                    description: Some("HSE/41."),
+                    value: 41,
+                },
+                EnumVariant {
+                    name: "Div42",
+                    description: Some("HSE/42."),
+                    value: 42,
+                },
+                EnumVariant {
+                    name: "Div43",
+                    description: Some("HSE/43."),
+                    value: 43,
+                },
+                EnumVariant {
+                    name: "Div44",
+                    description: Some("HSE/44."),
+                    value: 44,
+                },
+                EnumVariant {
+                    name: "Div45",
+                    description: Some("HSE/45."),
+                    value: 45,
+                },
+                EnumVariant {
+                    name: "Div46",
+                    description: Some("HSE/46."),
+                    value: 46,
+                },
+                EnumVariant {
+                    name: "Div47",
+                    description: Some("HSE/47."),
+                    value: 47,
+                },
+                EnumVariant {
+                    name: "Div48",
+                    description: Some("HSE/48."),
+                    value: 48,
+                },
+                EnumVariant {
+                    name: "Div49",
+                    description: Some("HSE/49."),
+                    value: 49,
+                },
+                EnumVariant {
+                    name: "Div5",
+                    description: Some("HSE/5."),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "Div50",
+                    description: Some("HSE/50."),
+                    value: 50,
+                },
+                EnumVariant {
+                    name: "Div51",
+                    description: Some("HSE/51."),
+                    value: 51,
+                },
+                EnumVariant {
+                    name: "Div52",
+                    description: Some("HSE/52."),
+                    value: 52,
+                },
+                EnumVariant {
+                    name: "Div53",
+                    description: Some("HSE/53."),
+                    value: 53,
+                },
+                EnumVariant {
+                    name: "Div54",
+                    description: Some("HSE/54."),
+                    value: 54,
+                },
+                EnumVariant {
+                    name: "Div55",
+                    description: Some("HSE/55."),
+                    value: 55,
+                },
+                EnumVariant {
+                    name: "Div56",
+                    description: Some("HSE/56."),
+                    value: 56,
+                },
+                EnumVariant {
+                    name: "Div57",
+                    description: Some("HSE/57."),
+                    value: 57,
+                },
+                EnumVariant {
+                    name: "Div58",
+                    description: Some("HSE/58."),
+                    value: 58,
+                },
+                EnumVariant {
+                    name: "Div59",
+                    description: Some("HSE/59."),
+                    value: 59,
+                },
+                EnumVariant {
+                    name: "Div6",
+                    description: Some("HSE/6."),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "Div60",
+                    description: Some("HSE/60."),
+                    value: 60,
+                },
+                EnumVariant {
+                    name: "Div61",
+                    description: Some("HSE/61."),
+                    value: 61,
+                },
+                EnumVariant {
+                    name: "Div62",
                     description: Some("HSE/62."),
                     value: 62,
                 },
                 EnumVariant {
-                    name: "HseDiv63",
+                    name: "Div63",
                     description: Some("HSE/63."),
                     value: 63,
+                },
+                EnumVariant {
+                    name: "Div7",
+                    description: Some("HSE/7."),
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "Div8",
+                    description: Some("HSE/8."),
+                    value: 8,
+                },
+                EnumVariant {
+                    name: "Div9",
+                    description: Some("HSE/9."),
+                    value: 9,
                 },
             ],
         },
@@ -5508,28 +6324,6 @@ pub(crate) static REGISTERS: IR = IR {
                 EnumVariant {
                     name: "Pll1P",
                     description: Some("PLL1_P"),
-                    value: 2,
-                },
-            ],
-        },
-        Enum {
-            name: "Syssws",
-            description: None,
-            bit_size: 2,
-            variants: &[
-                EnumVariant {
-                    name: "Hse",
-                    description: Some("HSE used as system clock (hse_ck)."),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Hsi",
-                    description: Some("HSI used as system clock (hsi_ck) (default after reset)."),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Pll1P",
-                    description: Some("PLL1 used as system clock (pll1_p_ck)."),
                     value: 2,
                 },
             ],

@@ -6679,130 +6679,98 @@ pub mod regs {
         #[doc = "PLL1M and PLLs clock source selection."]
         #[must_use]
         #[inline(always)]
-        pub const fn pllsrc(&self, n: usize) -> super::vals::Pllsrc {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x03;
+        pub const fn pllsrc(&self) -> super::vals::Pllsrc {
+            let val = (self.0 >> 0usize) & 0x03;
             super::vals::Pllsrc::from_bits(val as u8)
         }
         #[doc = "PLL1M and PLLs clock source selection."]
         #[inline(always)]
-        pub const fn set_pllsrc(&mut self, n: usize, val: super::vals::Pllsrc) {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            self.0 = (self.0 & !(0x03 << offs)) | (((val.to_bits() as u32) & 0x03) << offs);
+        pub const fn set_pllsrc(&mut self, val: super::vals::Pllsrc) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
         }
         #[doc = "PLL1 input frequency range."]
         #[must_use]
         #[inline(always)]
-        pub const fn pllrge(&self, n: usize) -> super::vals::Pllrge {
-            assert!(n < 1usize);
-            let offs = 2usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x03;
+        pub const fn pllrge(&self) -> super::vals::Pllrge {
+            let val = (self.0 >> 2usize) & 0x03;
             super::vals::Pllrge::from_bits(val as u8)
         }
         #[doc = "PLL1 input frequency range."]
         #[inline(always)]
-        pub const fn set_pllrge(&mut self, n: usize, val: super::vals::Pllrge) {
-            assert!(n < 1usize);
-            let offs = 2usize + n * 0usize;
-            self.0 = (self.0 & !(0x03 << offs)) | (((val.to_bits() as u32) & 0x03) << offs);
+        pub const fn set_pllrge(&mut self, val: super::vals::Pllrge) {
+            self.0 = (self.0 & !(0x03 << 2usize)) | (((val.to_bits() as u32) & 0x03) << 2usize);
         }
         #[doc = "PLL1 fractional latch enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn pllfracen(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 4usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
+        pub const fn pllfracen(&self) -> bool {
+            let val = (self.0 >> 4usize) & 0x01;
             val != 0
         }
         #[doc = "PLL1 fractional latch enable."]
         #[inline(always)]
-        pub const fn set_pllfracen(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 4usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
+        pub const fn set_pllfracen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 4usize)) | (((val as u32) & 0x01) << 4usize);
         }
         #[doc = "PLL1 VCO selection."]
         #[must_use]
         #[inline(always)]
-        pub const fn pllvcosel(&self, n: usize) -> super::vals::Pllvcosel {
-            assert!(n < 1usize);
-            let offs = 5usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
+        pub const fn pllvcosel(&self) -> super::vals::Pllvcosel {
+            let val = (self.0 >> 5usize) & 0x01;
             super::vals::Pllvcosel::from_bits(val as u8)
         }
         #[doc = "PLL1 VCO selection."]
         #[inline(always)]
-        pub const fn set_pllvcosel(&mut self, n: usize, val: super::vals::Pllvcosel) {
-            assert!(n < 1usize);
-            let offs = 5usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
+        pub const fn set_pllvcosel(&mut self, val: super::vals::Pllvcosel) {
+            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
         }
         #[doc = "Prescaler for PLL1."]
         #[must_use]
         #[inline(always)]
-        pub const fn pllm(&self, n: usize) -> super::vals::Pllm {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x3f;
+        pub const fn pllm(&self) -> super::vals::Pllm {
+            let val = (self.0 >> 8usize) & 0x3f;
             super::vals::Pllm::from_bits(val as u8)
         }
         #[doc = "Prescaler for PLL1."]
         #[inline(always)]
-        pub const fn set_pllm(&mut self, n: usize, val: super::vals::Pllm) {
-            assert!(n < 1usize);
-            let offs = 8usize + n * 0usize;
-            self.0 = (self.0 & !(0x3f << offs)) | (((val.to_bits() as u32) & 0x3f) << offs);
+        pub const fn set_pllm(&mut self, val: super::vals::Pllm) {
+            self.0 = (self.0 & !(0x3f << 8usize)) | (((val.to_bits() as u32) & 0x3f) << 8usize);
         }
         #[doc = "PLL1 DIVP divider output enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn pllpen(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 16usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
+        pub const fn pllpen(&self) -> bool {
+            let val = (self.0 >> 16usize) & 0x01;
             val != 0
         }
         #[doc = "PLL1 DIVP divider output enable."]
         #[inline(always)]
-        pub const fn set_pllpen(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 16usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
+        pub const fn set_pllpen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "PLL1 DIVQ divider output enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn pllqen(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 17usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
+        pub const fn pllqen(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
             val != 0
         }
         #[doc = "PLL1 DIVQ divider output enable."]
         #[inline(always)]
-        pub const fn set_pllqen(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 17usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
+        pub const fn set_pllqen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "PLL1 DIVR and ICLK1 divider output enable."]
         #[must_use]
         #[inline(always)]
-        pub const fn pllren(&self, n: usize) -> bool {
-            assert!(n < 1usize);
-            let offs = 18usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01;
+        pub const fn pllren(&self) -> bool {
+            let val = (self.0 >> 18usize) & 0x01;
             val != 0
         }
         #[doc = "PLL1 DIVR and ICLK1 divider output enable."]
         #[inline(always)]
-        pub const fn set_pllren(&mut self, n: usize, val: bool) {
-            assert!(n < 1usize);
-            let offs = 18usize + n * 0usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
+        pub const fn set_pllren(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "Intermediate clock 1 division."]
         #[must_use]
@@ -6826,14 +6794,14 @@ pub mod regs {
     impl core::fmt::Debug for Pll1cfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pll1cfgr")
-                .field("pllsrc[0]", &self.pllsrc(0usize))
-                .field("pllrge[0]", &self.pllrge(0usize))
-                .field("pllfracen[0]", &self.pllfracen(0usize))
-                .field("pllvcosel[0]", &self.pllvcosel(0usize))
-                .field("pllm[0]", &self.pllm(0usize))
-                .field("pllpen[0]", &self.pllpen(0usize))
-                .field("pllqen[0]", &self.pllqen(0usize))
-                .field("pllren[0]", &self.pllren(0usize))
+                .field("pllsrc", &self.pllsrc())
+                .field("pllrge", &self.pllrge())
+                .field("pllfracen", &self.pllfracen())
+                .field("pllvcosel", &self.pllvcosel())
+                .field("pllm", &self.pllm())
+                .field("pllpen", &self.pllpen())
+                .field("pllqen", &self.pllqen())
+                .field("pllren", &self.pllren())
                 .field("iclk1div", &self.iclk1div())
                 .finish()
         }
@@ -6843,15 +6811,15 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Pll1cfgr {{ pllsrc[0]: {:?}, pllrge[0]: {:?}, pllfracen[0]: {=bool:?}, pllvcosel[0]: {:?}, pllm[0]: {:?}, pllpen[0]: {=bool:?}, pllqen[0]: {=bool:?}, pllren[0]: {=bool:?}, iclk1div: {:?} }}",
-                self.pllsrc(0usize),
-                self.pllrge(0usize),
-                self.pllfracen(0usize),
-                self.pllvcosel(0usize),
-                self.pllm(0usize),
-                self.pllpen(0usize),
-                self.pllqen(0usize),
-                self.pllren(0usize),
+                "Pll1cfgr {{ pllsrc: {:?}, pllrge: {:?}, pllfracen: {=bool:?}, pllvcosel: {:?}, pllm: {:?}, pllpen: {=bool:?}, pllqen: {=bool:?}, pllren: {=bool:?}, iclk1div: {:?} }}",
+                self.pllsrc(),
+                self.pllrge(),
+                self.pllfracen(),
+                self.pllvcosel(),
+                self.pllm(),
+                self.pllpen(),
+                self.pllqen(),
+                self.pllren(),
                 self.iclk1div()
             )
         }
@@ -6864,66 +6832,50 @@ pub mod regs {
         #[doc = "Multiplication factor for PLL1VCO."]
         #[must_use]
         #[inline(always)]
-        pub const fn plln(&self, n: usize) -> super::vals::Plln {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x01ff;
+        pub const fn plln(&self) -> super::vals::Plln {
+            let val = (self.0 >> 0usize) & 0x01ff;
             super::vals::Plln::from_bits(val as u16)
         }
         #[doc = "Multiplication factor for PLL1VCO."]
         #[inline(always)]
-        pub const fn set_plln(&mut self, n: usize, val: super::vals::Plln) {
-            assert!(n < 1usize);
-            let offs = 0usize + n * 0usize;
-            self.0 = (self.0 & !(0x01ff << offs)) | (((val.to_bits() as u32) & 0x01ff) << offs);
+        pub const fn set_plln(&mut self, val: super::vals::Plln) {
+            self.0 = (self.0 & !(0x01ff << 0usize)) | (((val.to_bits() as u32) & 0x01ff) << 0usize);
         }
         #[doc = "PLL1 DIVP division factor."]
         #[must_use]
         #[inline(always)]
-        pub const fn pllp(&self, n: usize) -> super::vals::Plldiv {
-            assert!(n < 1usize);
-            let offs = 9usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x7f;
+        pub const fn pllp(&self) -> super::vals::Plldiv {
+            let val = (self.0 >> 9usize) & 0x7f;
             super::vals::Plldiv::from_bits(val as u8)
         }
         #[doc = "PLL1 DIVP division factor."]
         #[inline(always)]
-        pub const fn set_pllp(&mut self, n: usize, val: super::vals::Plldiv) {
-            assert!(n < 1usize);
-            let offs = 9usize + n * 0usize;
-            self.0 = (self.0 & !(0x7f << offs)) | (((val.to_bits() as u32) & 0x7f) << offs);
+        pub const fn set_pllp(&mut self, val: super::vals::Plldiv) {
+            self.0 = (self.0 & !(0x7f << 9usize)) | (((val.to_bits() as u32) & 0x7f) << 9usize);
         }
         #[doc = "PLL1 DIVQ division factor."]
         #[must_use]
         #[inline(always)]
-        pub const fn pllq(&self, n: usize) -> super::vals::Plldiv {
-            assert!(n < 1usize);
-            let offs = 16usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x7f;
+        pub const fn pllq(&self) -> super::vals::Plldiv {
+            let val = (self.0 >> 16usize) & 0x7f;
             super::vals::Plldiv::from_bits(val as u8)
         }
         #[doc = "PLL1 DIVQ division factor."]
         #[inline(always)]
-        pub const fn set_pllq(&mut self, n: usize, val: super::vals::Plldiv) {
-            assert!(n < 1usize);
-            let offs = 16usize + n * 0usize;
-            self.0 = (self.0 & !(0x7f << offs)) | (((val.to_bits() as u32) & 0x7f) << offs);
+        pub const fn set_pllq(&mut self, val: super::vals::Plldiv) {
+            self.0 = (self.0 & !(0x7f << 16usize)) | (((val.to_bits() as u32) & 0x7f) << 16usize);
         }
         #[doc = "PLL1 DIVR division factor."]
         #[must_use]
         #[inline(always)]
-        pub const fn pllr(&self, n: usize) -> super::vals::Plldiv {
-            assert!(n < 1usize);
-            let offs = 24usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x7f;
+        pub const fn pllr(&self) -> super::vals::Plldiv {
+            let val = (self.0 >> 24usize) & 0x7f;
             super::vals::Plldiv::from_bits(val as u8)
         }
         #[doc = "PLL1 DIVR division factor."]
         #[inline(always)]
-        pub const fn set_pllr(&mut self, n: usize, val: super::vals::Plldiv) {
-            assert!(n < 1usize);
-            let offs = 24usize + n * 0usize;
-            self.0 = (self.0 & !(0x7f << offs)) | (((val.to_bits() as u32) & 0x7f) << offs);
+        pub const fn set_pllr(&mut self, val: super::vals::Plldiv) {
+            self.0 = (self.0 & !(0x7f << 24usize)) | (((val.to_bits() as u32) & 0x7f) << 24usize);
         }
     }
     impl Default for Pll1divr {
@@ -6935,10 +6887,10 @@ pub mod regs {
     impl core::fmt::Debug for Pll1divr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pll1divr")
-                .field("plln[0]", &self.plln(0usize))
-                .field("pllp[0]", &self.pllp(0usize))
-                .field("pllq[0]", &self.pllq(0usize))
-                .field("pllr[0]", &self.pllr(0usize))
+                .field("plln", &self.plln())
+                .field("pllp", &self.pllp())
+                .field("pllq", &self.pllq())
+                .field("pllr", &self.pllr())
                 .finish()
         }
     }
@@ -6947,11 +6899,11 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Pll1divr {{ plln[0]: {:?}, pllp[0]: {:?}, pllq[0]: {:?}, pllr[0]: {:?} }}",
-                self.plln(0usize),
-                self.pllp(0usize),
-                self.pllq(0usize),
-                self.pllr(0usize)
+                "Pll1divr {{ plln: {:?}, pllp: {:?}, pllq: {:?}, pllr: {:?} }}",
+                self.plln(),
+                self.pllp(),
+                self.pllq(),
+                self.pllr()
             )
         }
     }
@@ -6963,18 +6915,14 @@ pub mod regs {
         #[doc = "Fractional part of the multiplication factor for PLL1 VCO."]
         #[must_use]
         #[inline(always)]
-        pub const fn pllfracn(&self, n: usize) -> u16 {
-            assert!(n < 1usize);
-            let offs = 3usize + n * 0usize;
-            let val = (self.0 >> offs) & 0x1fff;
+        pub const fn pllfracn(&self) -> u16 {
+            let val = (self.0 >> 3usize) & 0x1fff;
             val as u16
         }
         #[doc = "Fractional part of the multiplication factor for PLL1 VCO."]
         #[inline(always)]
-        pub const fn set_pllfracn(&mut self, n: usize, val: u16) {
-            assert!(n < 1usize);
-            let offs = 3usize + n * 0usize;
-            self.0 = (self.0 & !(0x1fff << offs)) | (((val as u32) & 0x1fff) << offs);
+        pub const fn set_pllfracn(&mut self, val: u16) {
+            self.0 = (self.0 & !(0x1fff << 3usize)) | (((val as u32) & 0x1fff) << 3usize);
         }
     }
     impl Default for Pll1fracr {
@@ -6985,15 +6933,13 @@ pub mod regs {
     }
     impl core::fmt::Debug for Pll1fracr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Pll1fracr")
-                .field("pllfracn[0]", &self.pllfracn(0usize))
-                .finish()
+            f.debug_struct("Pll1fracr").field("pllfracn", &self.pllfracn()).finish()
         }
     }
     #[cfg(feature = "defmt")]
     impl defmt::Format for Pll1fracr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Pll1fracr {{ pllfracn[0]: {=u16:?} }}", self.pllfracn(0usize))
+            defmt::write!(f, "Pll1fracr {{ pllfracn: {=u16:?} }}", self.pllfracn())
         }
     }
     #[doc = "RCC privilege configuration register."]

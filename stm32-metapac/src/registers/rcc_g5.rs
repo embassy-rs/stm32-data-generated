@@ -3887,7 +3887,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("PLL1M and PLLs clock source selection."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 2,
-                    array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
+                    array: None,
                     enumm: Some("Pllsrc"),
                 },
                 Field {
@@ -3895,7 +3895,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("PLL1 input frequency range."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 2 }),
                     bit_size: 2,
-                    array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
+                    array: None,
                     enumm: Some("Pllrge"),
                 },
                 Field {
@@ -3903,7 +3903,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("PLL1 fractional latch enable."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
+                    array: None,
                     enumm: None,
                 },
                 Field {
@@ -3911,7 +3911,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("PLL1 VCO selection."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
+                    array: None,
                     enumm: Some("Pllvcosel"),
                 },
                 Field {
@@ -3919,7 +3919,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Prescaler for PLL1."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                     bit_size: 6,
-                    array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
+                    array: None,
                     enumm: Some("Pllm"),
                 },
                 Field {
@@ -3927,7 +3927,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("PLL1 DIVP divider output enable."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
+                    array: None,
                     enumm: None,
                 },
                 Field {
@@ -3935,7 +3935,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("PLL1 DIVQ divider output enable."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
+                    array: None,
                     enumm: None,
                 },
                 Field {
@@ -3943,7 +3943,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("PLL1 DIVR and ICLK1 divider output enable."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
+                    array: None,
                     enumm: None,
                 },
                 Field {
@@ -3967,7 +3967,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Multiplication factor for PLL1VCO."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 9,
-                    array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
+                    array: None,
                     enumm: Some("Plln"),
                 },
                 Field {
@@ -3975,7 +3975,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("PLL1 DIVP division factor."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
                     bit_size: 7,
-                    array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
+                    array: None,
                     enumm: Some("Plldiv"),
                 },
                 Field {
@@ -3983,7 +3983,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("PLL1 DIVQ division factor."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 7,
-                    array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
+                    array: None,
                     enumm: Some("Plldiv"),
                 },
                 Field {
@@ -3991,7 +3991,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("PLL1 DIVR division factor."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
                     bit_size: 7,
-                    array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
+                    array: None,
                     enumm: Some("Plldiv"),
                 },
             ],
@@ -4006,7 +4006,7 @@ pub(crate) static REGISTERS: IR = IR {
                 description: Some("Fractional part of the multiplication factor for PLL1 VCO."),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
                 bit_size: 13,
-                array: Some(Array::Regular(RegularArray { len: 1, stride: 0 })),
+                array: None,
                 enumm: None,
             }],
         },

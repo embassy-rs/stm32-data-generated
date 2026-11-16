@@ -419,7 +419,7 @@
           ]
         },
         "byte_offset": 64,
-        "fieldset": "TIMXRSTR"
+        "fieldset": "TIMXSETR"
       },
       {
         "name": "EEF",
@@ -3376,76 +3376,24 @@
     "description": "High Resolution Timer: Output Disable Register",
     "fields": [
       {
-        "name": "TA1ODIS",
-        "description": "Timer A output 1 disable.",
+        "name": "T1ODIS",
+        "description": "Timer X output 1 disable.",
         "bit_offset": 0,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 6,
+          "stride": 2
+        }
       },
       {
-        "name": "TA2ODIS",
-        "description": "Timer A output 2 disable.",
+        "name": "T2ODIS",
+        "description": "Timer X output 2 disable.",
         "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "TB1ODIS",
-        "description": "Timer B output 1 disable.",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "TB2ODIS",
-        "description": "Timer B output 2 disable.",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "TC1ODIS",
-        "description": "Timer C output 1 disable.",
-        "bit_offset": 4,
-        "bit_size": 1
-      },
-      {
-        "name": "TC2ODIS",
-        "description": "Timer C output 2 disable.",
-        "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "TD1ODIS",
-        "description": "Timer D output 1 disable.",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
-        "name": "TD2ODIS",
-        "description": "Timer D output 2 disable.",
-        "bit_offset": 7,
-        "bit_size": 1
-      },
-      {
-        "name": "TE1ODIS",
-        "description": "Timer E output 1 disable.",
-        "bit_offset": 8,
-        "bit_size": 1
-      },
-      {
-        "name": "TE2ODIS",
-        "description": "Timer E output 2 disable.",
-        "bit_offset": 9,
-        "bit_size": 1
-      },
-      {
-        "name": "TF1ODIS",
-        "description": "Timer F output 1 disable.",
-        "bit_offset": 10,
-        "bit_size": 1
-      },
-      {
-        "name": "TF2ODIS",
-        "description": "Timer F output 2 disable.",
-        "bit_offset": 11,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 6,
+          "stride": 2
+        }
       }
     ]
   },
@@ -3453,76 +3401,24 @@
     "description": "High Resolution Timer: Output Disable Status Register",
     "fields": [
       {
-        "name": "TA1ODS",
-        "description": "Timer A output 1 disable status.",
+        "name": "T1ODS",
+        "description": "Timer X output 1 disable status.",
         "bit_offset": 0,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 6,
+          "stride": 2
+        }
       },
       {
-        "name": "TA2ODS",
-        "description": "Timer A output 2 disable status.",
+        "name": "T2ODS",
+        "description": "Timer X output 2 disable status.",
         "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "TB1ODS",
-        "description": "Timer B output 1 disable status.",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "TB2ODS",
-        "description": "Timer B output 2 disable status.",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "TC1ODS",
-        "description": "Timer C output 1 disable status.",
-        "bit_offset": 4,
-        "bit_size": 1
-      },
-      {
-        "name": "TC2ODS",
-        "description": "Timer C output 2 disable status.",
-        "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "TD1ODS",
-        "description": "Timer D output 1 disable status.",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
-        "name": "TD2ODS",
-        "description": "Timer D output 2 disable status.",
-        "bit_offset": 7,
-        "bit_size": 1
-      },
-      {
-        "name": "TE1ODS",
-        "description": "Timer E output 1 disable status.",
-        "bit_offset": 8,
-        "bit_size": 1
-      },
-      {
-        "name": "TE2ODS",
-        "description": "Timer E output 2 disable status.",
-        "bit_offset": 9,
-        "bit_size": 1
-      },
-      {
-        "name": "TF1ODS",
-        "description": "Timer F output 1 disable status.",
-        "bit_offset": 10,
-        "bit_size": 1
-      },
-      {
-        "name": "TF2ODS",
-        "description": "Timer F output 2 disable status.",
-        "bit_offset": 11,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 6,
+          "stride": 2
+        }
       }
     ]
   },
@@ -3530,76 +3426,24 @@
     "description": "High Resolution Timer: Output Enable Register",
     "fields": [
       {
-        "name": "TA1OEN",
-        "description": "Timer A output 1 enable.",
+        "name": "T1OEN",
+        "description": "Timer X output 1 enable.",
         "bit_offset": 0,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 6,
+          "stride": 2
+        }
       },
       {
-        "name": "TA2OEN",
-        "description": "Timer A output 2 enable.",
+        "name": "T2OEN",
+        "description": "Timer X output 2 enable.",
         "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "TB1OEN",
-        "description": "Timer B output 1 enable.",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "TB2OEN",
-        "description": "Timer B output 2 enable.",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "TC1OEN",
-        "description": "Timer C output 1 enable.",
-        "bit_offset": 4,
-        "bit_size": 1
-      },
-      {
-        "name": "TC2OEN",
-        "description": "Timer C output 2 enable.",
-        "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "TD1OEN",
-        "description": "Timer D output 1 enable.",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
-        "name": "TD2OEN",
-        "description": "Timer D output 2 enable.",
-        "bit_offset": 7,
-        "bit_size": 1
-      },
-      {
-        "name": "TE1OEN",
-        "description": "Timer E output 1 enable.",
-        "bit_offset": 8,
-        "bit_size": 1
-      },
-      {
-        "name": "TE2OEN",
-        "description": "Timer E output 2 enable.",
-        "bit_offset": 9,
-        "bit_size": 1
-      },
-      {
-        "name": "TF1OEN",
-        "description": "Timer F output 1 enable.",
-        "bit_offset": 10,
-        "bit_size": 1
-      },
-      {
-        "name": "TF2OEN",
-        "description": "Timer F output 2 enable.",
-        "bit_offset": 11,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 6,
+          "stride": 2
+        }
       }
     ]
   },
@@ -3653,19 +3497,19 @@
     "fields": [
       {
         "name": "CKPSC",
-        "description": "Clock prescaler.",
+        "description": "Master Clock prescaler",
         "bit_offset": 0,
         "bit_size": 3
       },
       {
         "name": "CONT",
-        "description": "Continuous mode.",
+        "description": "Master Continuous mode",
         "bit_offset": 3,
         "bit_size": 1
       },
       {
         "name": "RETRIG",
-        "description": "Re-triggerable mode.",
+        "description": "Master Re-triggerable mode",
         "bit_offset": 4,
         "bit_size": 1
       },
@@ -3683,101 +3527,75 @@
       },
       {
         "name": "SYNCIN",
-        "description": "Synchronization input.",
+        "description": "Synchronization input",
         "bit_offset": 8,
         "bit_size": 2,
         "enum": "SYNCIN"
       },
       {
         "name": "SYNCRSTM",
-        "description": "Synchronization resets master.",
+        "description": "Synchronization Resets Master",
         "bit_offset": 10,
         "bit_size": 1
       },
       {
         "name": "SYNCSTRTM",
-        "description": "Synchronization starts master.",
+        "description": "Synchronization Starts Master",
         "bit_offset": 11,
         "bit_size": 1
       },
       {
         "name": "SYNCOUT",
-        "description": "Synchronization output.",
+        "description": "Synchronization output",
         "bit_offset": 12,
         "bit_size": 2,
         "enum": "SYNCOUT"
       },
       {
         "name": "SYNCSRC",
-        "description": "Synchronization source.",
+        "description": "Synchronization source",
         "bit_offset": 14,
         "bit_size": 2,
         "enum": "SYNCSRC"
       },
       {
         "name": "MCEN",
-        "description": "Master timer counter enable.",
+        "description": "Master Timer Counter enable",
         "bit_offset": 16,
         "bit_size": 1
       },
       {
-        "name": "TACEN",
-        "description": "Timer A counter enable.",
+        "name": "TCEN",
+        "description": "Timer X counter enable",
         "bit_offset": 17,
-        "bit_size": 1
-      },
-      {
-        "name": "TBCEN",
-        "description": "Timer B counter enable.",
-        "bit_offset": 18,
-        "bit_size": 1
-      },
-      {
-        "name": "TCCEN",
-        "description": "Timer C counter enable.",
-        "bit_offset": 19,
-        "bit_size": 1
-      },
-      {
-        "name": "TDCEN",
-        "description": "Timer D counter enable.",
-        "bit_offset": 20,
-        "bit_size": 1
-      },
-      {
-        "name": "TECEN",
-        "description": "Timer E counter enable.",
-        "bit_offset": 21,
-        "bit_size": 1
-      },
-      {
-        "name": "TFCEN",
-        "description": "Timer F counter enable.",
-        "bit_offset": 22,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 6,
+          "stride": 1
+        }
       },
       {
         "name": "DACSYNC",
-        "description": "DAC synchronization.",
+        "description": "DAC Synchronization",
         "bit_offset": 25,
         "bit_size": 2,
         "enum": "DACSYNC"
       },
       {
         "name": "PREEN",
-        "description": "Preload enable.",
+        "description": "Preload enable",
         "bit_offset": 27,
         "bit_size": 1
       },
       {
         "name": "MREPU",
-        "description": "Master timer repetition update.",
+        "description": "Master Timer Repetition update",
         "bit_offset": 29,
         "bit_size": 1
       },
       {
         "name": "BRSTDMA",
-        "description": "Burst DMA update.",
+        "description": "Burst DMA Update",
         "bit_offset": 30,
         "bit_size": 2,
         "enum": "BRSTDMA"
@@ -3788,28 +3606,14 @@
     "description": "Master Timer DMA / Interrupt Enable Register",
     "fields": [
       {
-        "name": "MCMP1IE",
-        "description": "Master compare 1 interrupt enable.",
+        "name": "MCMPIE",
+        "description": "Master Compare X Interrupt Enable",
         "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "MCMP2IE",
-        "description": "Master compare 2 interrupt enable.",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "MCMP3IE",
-        "description": "Master compare 3 interrupt enable.",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "MCMP4IE",
-        "description": "Master compare 4 interrupt enable.",
-        "bit_offset": 3,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 4,
+          "stride": 1
+        }
       },
       {
         "name": "MREPIE",
@@ -3830,28 +3634,14 @@
         "bit_size": 1
       },
       {
-        "name": "MCMP1DE",
-        "description": "Master compare 1 DMA request enable.",
+        "name": "MCMPDE",
+        "description": "Master Compare X DMA request Enable",
         "bit_offset": 16,
-        "bit_size": 1
-      },
-      {
-        "name": "MCMP2DE",
-        "description": "Master compare 2 DMA request enable.",
-        "bit_offset": 17,
-        "bit_size": 1
-      },
-      {
-        "name": "MCMP3DE",
-        "description": "Master compare 3 DMA request enable.",
-        "bit_offset": 18,
-        "bit_size": 1
-      },
-      {
-        "name": "MCMP4DE",
-        "description": "Master compare 4 DMA request enable.",
-        "bit_offset": 19,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 4,
+          "stride": 1
+        }
       },
       {
         "name": "MREPDE",
@@ -3877,28 +3667,14 @@
     "description": "Master Timer Interrupt Clear Register",
     "fields": [
       {
-        "name": "MCMP1C",
-        "description": "Master compare 1 interrupt flag clear.",
+        "name": "MCMPC",
+        "description": "Master Compare X Interrupt flag clear",
         "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "MCMP2C",
-        "description": "Master compare 2 interrupt flag clear.",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "MCMP3C",
-        "description": "Master compare 3 interrupt flag clear.",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "MCMP4C",
-        "description": "Master compare 4 interrupt flag clear.",
-        "bit_offset": 3,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 4,
+          "stride": 1
+        }
       },
       {
         "name": "MREPC",
@@ -3924,28 +3700,14 @@
     "description": "Master Timer Interrupt Status Register",
     "fields": [
       {
-        "name": "MCMP1",
-        "description": "Master compare 1 interrupt flag.",
+        "name": "MCMP",
+        "description": "Master Compare X Interrupt Flag",
         "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "MCMP2",
-        "description": "Master compare 2 interrupt flag.",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "MCMP3",
-        "description": "Master compare 3 interrupt flag.",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "MCMP4",
-        "description": "Master compare 4 interrupt flag.",
-        "bit_offset": 3,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 4,
+          "stride": 1
+        }
       },
       {
         "name": "MREP",
@@ -4005,64 +3767,14 @@
         "bit_size": 1
       },
       {
-        "name": "EXEVACPT",
-        "description": "External event A capture.",
+        "name": "EXEVCPT",
+        "description": "External Event X Capture",
         "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "EXEVBCPT",
-        "description": "External event B capture.",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "EXEVCCPT",
-        "description": "External event C capture.",
-        "bit_offset": 4,
-        "bit_size": 1
-      },
-      {
-        "name": "EXEVDCPT",
-        "description": "External event D capture.",
-        "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "EXEVECPT",
-        "description": "External event E capture.",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
-        "name": "EXEVFCPT",
-        "description": "External event F capture.",
-        "bit_offset": 7,
-        "bit_size": 1
-      },
-      {
-        "name": "EXEVGCPT",
-        "description": "External event G capture.",
-        "bit_offset": 8,
-        "bit_size": 1
-      },
-      {
-        "name": "EXEVHCPT",
-        "description": "External event H capture.",
-        "bit_offset": 9,
-        "bit_size": 1
-      },
-      {
-        "name": "EXEVICPT",
-        "description": "External event I capture.",
-        "bit_offset": 10,
-        "bit_size": 1
-      },
-      {
-        "name": "EXEVJCPT",
-        "description": "External event J capture.",
-        "bit_offset": 11,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 10,
+          "stride": 1
+        }
       },
       {
         "name": "TWSET",
@@ -5698,58 +5410,94 @@
     "description": "Timerx Output Register",
     "fields": [
       {
-        "name": "POL1",
-        "description": "Output 1 polarity.",
+        "name": "POL",
+        "description": "Output X polarity",
         "bit_offset": 1,
         "bit_size": 1,
+        "array": {
+          "offsets": [
+            0,
+            16
+          ]
+        },
         "enum": "POL"
       },
       {
-        "name": "IDLEM1",
-        "description": "Output 1 Idle mode.",
+        "name": "IDLEM",
+        "description": "Output X Idle mode",
         "bit_offset": 2,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "offsets": [
+            0,
+            16
+          ]
+        }
       },
       {
-        "name": "IDLES1",
-        "description": "Output 1 Idle State.",
+        "name": "IDLES",
+        "description": "Output X Idle State",
         "bit_offset": 3,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "offsets": [
+            0,
+            16
+          ]
+        }
       },
       {
-        "name": "FAULT1",
-        "description": "Output 1 fault state.",
+        "name": "FAULT",
+        "description": "Output X Fault state",
         "bit_offset": 4,
         "bit_size": 2,
+        "array": {
+          "offsets": [
+            0,
+            16
+          ]
+        },
         "enum": "FAULT"
       },
       {
-        "name": "CHP1",
-        "description": "Output 1 chopper enable.",
+        "name": "CHP",
+        "description": "Output X Chopper enable",
         "bit_offset": 6,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "offsets": [
+            0,
+            16
+          ]
+        }
       },
       {
-        "name": "DIDL1",
-        "description": "Output 1 deadtime upon burst mode idle entry.",
+        "name": "DIDL",
+        "description": "Output X Deadtime upon burst mode Idle entry",
         "bit_offset": 7,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "offsets": [
+            0,
+            16
+          ]
+        }
       },
       {
         "name": "DTEN",
-        "description": "Deadtime enable.",
+        "description": "Deadtime enable",
         "bit_offset": 8,
         "bit_size": 1
       },
       {
         "name": "DLYPRTEN",
-        "description": "Delayed protection enable.",
+        "description": "Delayed Protection Enable",
         "bit_offset": 9,
         "bit_size": 1
       },
       {
         "name": "DLYPRT",
-        "description": "Delayed protection.",
+        "description": "Delayed Protection",
         "bit_offset": 10,
         "bit_size": 3,
         "enum": "DLYPRT"
@@ -5759,44 +5507,6 @@
         "description": "Balanced Idle Automatic Resume.",
         "bit_offset": 14,
         "bit_size": 1
-      },
-      {
-        "name": "POL2",
-        "description": "Output 2 polarity.",
-        "bit_offset": 17,
-        "bit_size": 1,
-        "enum": "POL"
-      },
-      {
-        "name": "IDLEM2",
-        "description": "Output 2 idle mode.",
-        "bit_offset": 18,
-        "bit_size": 1
-      },
-      {
-        "name": "IDLES2",
-        "description": "Output 2 idle state.",
-        "bit_offset": 19,
-        "bit_size": 1
-      },
-      {
-        "name": "FAULT2",
-        "description": "Output 2 fault state.",
-        "bit_offset": 20,
-        "bit_size": 2,
-        "enum": "FAULT"
-      },
-      {
-        "name": "CHP2",
-        "description": "Output 2 chopper enable.",
-        "bit_offset": 22,
-        "bit_size": 1
-      },
-      {
-        "name": "DIDL2",
-        "description": "Output 2 deadtime upon burst mode Idle entry.",
-        "bit_offset": 23,
-        "bit_size": 1
       }
     ]
   },
@@ -5805,18 +5515,18 @@
     "fields": [
       {
         "name": "PER",
-        "description": "Timer x period value.",
+        "description": "Timer X Period value",
         "bit_offset": 0,
         "bit_size": 16
       }
     ]
   },
   "fieldset/TIMXREP": {
-    "description": "Timerx Repetition Register",
+    "description": "Timer X Repetition Register",
     "fields": [
       {
         "name": "REP",
-        "description": "Timer x repetition period value.",
+        "description": "Timer X Repetition counter value",
         "bit_offset": 0,
         "bit_size": 8
       }
@@ -5826,588 +5536,165 @@
     "description": "Timerx Reset Register",
     "fields": [
       {
-        "name": "TIMFCMP1",
-        "description": "Timer F compare 1.",
+        "name": "TCMP1",
+        "description": "Timer X compare 1 event",
         "bit_offset": 0,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "offsets": [
+            19,
+            22,
+            25,
+            28,
+            0
+          ]
+        }
       },
       {
         "name": "UPDT",
-        "description": "Timer A update reset.",
+        "description": "Timer X Update reset",
         "bit_offset": 1,
         "bit_size": 1
       },
       {
         "name": "CMP2",
-        "description": "Timer A compare 2 reset.",
+        "description": "Timer X compare 2 reset",
         "bit_offset": 2,
         "bit_size": 1
       },
       {
         "name": "CMP4",
-        "description": "Timer A compare 4 reset.",
+        "description": "Timer X compare 4 reset",
         "bit_offset": 3,
         "bit_size": 1
       },
       {
         "name": "MSTPER",
-        "description": "Master timer period.",
+        "description": "Master timer Period",
         "bit_offset": 4,
         "bit_size": 1
       },
       {
-        "name": "MSTCMP1",
-        "description": "Master compare 1.",
+        "name": "MSTCMP",
+        "description": "Master compare X",
         "bit_offset": 5,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 4,
+          "stride": 1
+        }
       },
       {
-        "name": "MSTCMP2",
-        "description": "Master compare 2.",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
-        "name": "MSTCMP3",
-        "description": "Master compare 3.",
-        "bit_offset": 7,
-        "bit_size": 1
-      },
-      {
-        "name": "MSTCMP4",
-        "description": "Master compare 4.",
-        "bit_offset": 8,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTA",
-        "description": "External event A.",
+        "name": "EXTEVNT",
+        "description": "External Event X",
         "bit_offset": 9,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 10,
+          "stride": 1
+        }
       },
       {
-        "name": "EXTEVNTB",
-        "description": "External event B.",
-        "bit_offset": 10,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTC",
-        "description": "External event C.",
-        "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTD",
-        "description": "External event D.",
-        "bit_offset": 12,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTE",
-        "description": "External event E.",
-        "bit_offset": 13,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTF",
-        "description": "External event F.",
-        "bit_offset": 14,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTG",
-        "description": "External event G.",
-        "bit_offset": 15,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTH",
-        "description": "External event H.",
-        "bit_offset": 16,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTI",
-        "description": "External event I.",
-        "bit_offset": 17,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTJ",
-        "description": "External event J.",
-        "bit_offset": 18,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMCMP1",
-        "description": "Timer B compare 1.",
-        "bit_offset": 19,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMCMP2",
-        "description": "Timer B compare 2.",
+        "name": "TCMP2",
+        "description": "Timer X compare 2 event",
         "bit_offset": 20,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "offsets": [
+            0,
+            3,
+            6,
+            9,
+            11
+          ]
+        }
       },
       {
-        "name": "TIMCMP4",
-        "description": "Timer B compare 4.",
+        "name": "TCMP4",
+        "description": "Timer X compare 4 event",
         "bit_offset": 21,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMCCMP1",
-        "description": "Timer C compare 1.",
-        "bit_offset": 22,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMCCMP2",
-        "description": "Timer C compare 2.",
-        "bit_offset": 23,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMCCMP4",
-        "description": "Timer C compare 4.",
-        "bit_offset": 24,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMDCMP1",
-        "description": "Timer D compare 1.",
-        "bit_offset": 25,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMDCMP2",
-        "description": "Timer D compare 2.",
-        "bit_offset": 26,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMDCMP4",
-        "description": "Timer D compare 4.",
-        "bit_offset": 27,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMECMP1",
-        "description": "Timer E compare 1.",
-        "bit_offset": 28,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMECMP2",
-        "description": "Timer E compare 2.",
-        "bit_offset": 29,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMECMP4",
-        "description": "Timer E compare 4.",
-        "bit_offset": 30,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMFCMP2",
-        "description": "Timer F compare 2.",
-        "bit_offset": 31,
-        "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/TIMXRSTR": {
-    "description": "Timerx OutputX Reset Register",
-    "fields": [
-      {
-        "name": "SRT",
-        "description": "Software set trigger.",
-        "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
-        "name": "RESYNC",
-        "description": "Timer A resynchronization.",
-        "bit_offset": 1,
-        "bit_size": 1
-      },
-      {
-        "name": "PER",
-        "description": "Timer x period.",
-        "bit_offset": 2,
-        "bit_size": 1
-      },
-      {
-        "name": "CMP1",
-        "description": "Timer x compare 1.",
-        "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "CMP2",
-        "description": "Timer x compare 2.",
-        "bit_offset": 4,
-        "bit_size": 1
-      },
-      {
-        "name": "CMP3",
-        "description": "Timer x compare 3.",
-        "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "CMP4",
-        "description": "Timer x compare 4.",
-        "bit_offset": 6,
-        "bit_size": 1
-      },
-      {
-        "name": "MSTPER",
-        "description": "Master period.",
-        "bit_offset": 7,
-        "bit_size": 1
-      },
-      {
-        "name": "MSTCMP1",
-        "description": "Master compare 1.",
-        "bit_offset": 8,
-        "bit_size": 1
-      },
-      {
-        "name": "MSTCMP2",
-        "description": "Master compare 2.",
-        "bit_offset": 9,
-        "bit_size": 1
-      },
-      {
-        "name": "MSTCMP3",
-        "description": "Master compare 3.",
-        "bit_offset": 10,
-        "bit_size": 1
-      },
-      {
-        "name": "MSTCMP4",
-        "description": "Master compare 4.",
-        "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMEVNT1",
-        "description": "Timer event 1.",
-        "bit_offset": 12,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMEVNT2",
-        "description": "Timer event 2.",
-        "bit_offset": 13,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMEVNT3",
-        "description": "Timer event 3.",
-        "bit_offset": 14,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMEVNT4",
-        "description": "Timer event 4.",
-        "bit_offset": 15,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMEVNT5",
-        "description": "Timer event 5.",
-        "bit_offset": 16,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMEVNT6",
-        "description": "Timer event 6.",
-        "bit_offset": 17,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMEVNT7",
-        "description": "Timer event 7.",
-        "bit_offset": 18,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMEVNT8",
-        "description": "Timer event 8.",
-        "bit_offset": 19,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMEVNT9",
-        "description": "Timer event 9.",
-        "bit_offset": 20,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTA",
-        "description": "External event A.",
-        "bit_offset": 21,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTB",
-        "description": "External event B.",
-        "bit_offset": 22,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTC",
-        "description": "External event C.",
-        "bit_offset": 23,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTD",
-        "description": "External event D.",
-        "bit_offset": 24,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTE",
-        "description": "External event E.",
-        "bit_offset": 25,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTF",
-        "description": "External event F.",
-        "bit_offset": 26,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTG",
-        "description": "External event G.",
-        "bit_offset": 27,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTH",
-        "description": "External event H.",
-        "bit_offset": 28,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTI",
-        "description": "External event I.",
-        "bit_offset": 29,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTJ",
-        "description": "External event J.",
-        "bit_offset": 30,
-        "bit_size": 1
-      },
-      {
-        "name": "UPDATE",
-        "description": "Registers update (transfer from preload register to active register).",
-        "bit_offset": 31,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "offsets": [
+            0,
+            3,
+            6,
+            9
+          ]
+        }
       }
     ]
   },
   "fieldset/TIMXSETR": {
-    "description": "Timerx OutputX Set Register",
+    "description": "Timerx OutputX Set/Reset Register",
     "fields": [
       {
-        "name": "SST",
-        "description": "Software set trigger.",
+        "name": "ST",
+        "description": "Software trigger",
         "bit_offset": 0,
         "bit_size": 1
       },
       {
         "name": "RESYNC",
-        "description": "Timer A resynchronization.",
+        "description": "Timer X resynchronization",
         "bit_offset": 1,
         "bit_size": 1
       },
       {
         "name": "PER",
-        "description": "Timer x period.",
+        "description": "Timer X Period",
         "bit_offset": 2,
         "bit_size": 1
       },
       {
-        "name": "CMP1",
-        "description": "Timer x compare 1.",
+        "name": "CMP",
+        "description": "Timer X compare X",
         "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "CMP2",
-        "description": "Timer x compare 2.",
-        "bit_offset": 4,
-        "bit_size": 1
-      },
-      {
-        "name": "CMP3",
-        "description": "Timer x compare 3.",
-        "bit_offset": 5,
-        "bit_size": 1
-      },
-      {
-        "name": "CMP4",
-        "description": "Timer x compare 4.",
-        "bit_offset": 6,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 4,
+          "stride": 1
+        }
       },
       {
         "name": "MSTPER",
-        "description": "Master period.",
+        "description": "Master Period",
         "bit_offset": 7,
         "bit_size": 1
       },
       {
-        "name": "MSTCMP1",
-        "description": "Master compare 1.",
+        "name": "MSTCMP",
+        "description": "Master Compare X",
         "bit_offset": 8,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 4,
+          "stride": 1
+        }
       },
       {
-        "name": "MSTCMP2",
-        "description": "Master compare 2.",
-        "bit_offset": 9,
-        "bit_size": 1
-      },
-      {
-        "name": "MSTCMP3",
-        "description": "Master compare 3.",
-        "bit_offset": 10,
-        "bit_size": 1
-      },
-      {
-        "name": "MSTCMP4",
-        "description": "Master compare 4.",
-        "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMEVNT1",
-        "description": "Timer event 1.",
+        "name": "TIMEVNT",
+        "description": "Timer Event X",
         "bit_offset": 12,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 9,
+          "stride": 1
+        }
       },
       {
-        "name": "TIMEVNT2",
-        "description": "Timer event 2.",
-        "bit_offset": 13,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMEVNT3",
-        "description": "Timer event 3.",
-        "bit_offset": 14,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMEVNT4",
-        "description": "Timer event 4.",
-        "bit_offset": 15,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMEVNT5",
-        "description": "Timer event 5.",
-        "bit_offset": 16,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMEVNT6",
-        "description": "Timer event 6.",
-        "bit_offset": 17,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMEVNT7",
-        "description": "Timer event 7.",
-        "bit_offset": 18,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMEVNT8",
-        "description": "Timer event 8.",
-        "bit_offset": 19,
-        "bit_size": 1
-      },
-      {
-        "name": "TIMEVNT9",
-        "description": "Timer event 9.",
-        "bit_offset": 20,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTA",
-        "description": "External event A.",
+        "name": "EXTEVNT",
+        "description": "External Event X",
         "bit_offset": 21,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTB",
-        "description": "External event B.",
-        "bit_offset": 22,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTC",
-        "description": "External event C.",
-        "bit_offset": 23,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTD",
-        "description": "External event D.",
-        "bit_offset": 24,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTE",
-        "description": "External event E.",
-        "bit_offset": 25,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTF",
-        "description": "External event F.",
-        "bit_offset": 26,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTG",
-        "description": "External event G.",
-        "bit_offset": 27,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTH",
-        "description": "External event H.",
-        "bit_offset": 28,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTI",
-        "description": "External event I.",
-        "bit_offset": 29,
-        "bit_size": 1
-      },
-      {
-        "name": "EXTEVNTJ",
-        "description": "External event J.",
-        "bit_offset": 30,
-        "bit_size": 1
+        "bit_size": 1,
+        "array": {
+          "len": 10,
+          "stride": 1
+        }
       },
       {
         "name": "UPDATE",
-        "description": "Registers update (transfer from preload register to active register).",
+        "description": "Registers update (transfer preload to active)",
         "bit_offset": 31,
         "bit_size": 1
       }

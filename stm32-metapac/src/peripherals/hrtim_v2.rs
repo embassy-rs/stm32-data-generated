@@ -309,7 +309,7 @@ impl HrtimTim {
     }
     #[doc = "Timer X Output X Reset Register"]
     #[inline(always)]
-    pub const fn rstr(self, n: usize) -> crate::common::Reg<regs::Timxrstr, crate::common::RW> {
+    pub const fn rstr(self, n: usize) -> crate::common::Reg<regs::Timxsetr, crate::common::RW> {
         assert!(n < 2usize);
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x40usize + ([0usize, 8usize][n] as usize)) as _) }
     }
@@ -3665,14 +3665,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Mcr(pub u32);
     impl Mcr {
-        #[doc = "HRTIM Master Clock prescaler"]
+        #[doc = "Master Clock prescaler"]
         #[must_use]
         #[inline(always)]
         pub const fn ckpsc(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0x07;
             val as u8
         }
-        #[doc = "HRTIM Master Clock prescaler"]
+        #[doc = "Master Clock prescaler"]
         #[inline(always)]
         pub const fn set_ckpsc(&mut self, val: u8) {
             self.0 = (self.0 & !(0x07 << 0usize)) | (((val as u32) & 0x07) << 0usize);
@@ -3712,6 +3712,18 @@ pub mod regs {
         #[inline(always)]
         pub const fn set_half(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 5usize)) | (((val as u32) & 0x01) << 5usize);
+        }
+        #[doc = "Interleaved mode."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn intlvd(&self) -> u8 {
+            let val = (self.0 >> 6usize) & 0x03;
+            val as u8
+        }
+        #[doc = "Interleaved mode."]
+        #[inline(always)]
+        pub const fn set_intlvd(&mut self, val: u8) {
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val as u32) & 0x03) << 6usize);
         }
         #[doc = "Synchronization input"]
         #[must_use]
@@ -3773,14 +3785,14 @@ pub mod regs {
         pub const fn set_syncsrc(&mut self, val: super::vals::Syncsrc) {
             self.0 = (self.0 & !(0x03 << 14usize)) | (((val.to_bits() as u32) & 0x03) << 14usize);
         }
-        #[doc = "Master Counter enable"]
+        #[doc = "Master Timer Counter enable"]
         #[must_use]
         #[inline(always)]
         pub const fn mcen(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
             val != 0
         }
-        #[doc = "Master Counter enable"]
+        #[doc = "Master Timer Counter enable"]
         #[inline(always)]
         pub const fn set_mcen(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
@@ -3801,14 +3813,14 @@ pub mod regs {
             let offs = 17usize + n * 1usize;
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
-        #[doc = "AC Synchronization"]
+        #[doc = "DAC Synchronization"]
         #[must_use]
         #[inline(always)]
         pub const fn dacsync(&self) -> super::vals::Dacsync {
             let val = (self.0 >> 25usize) & 0x03;
             super::vals::Dacsync::from_bits(val as u8)
         }
-        #[doc = "AC Synchronization"]
+        #[doc = "DAC Synchronization"]
         #[inline(always)]
         pub const fn set_dacsync(&mut self, val: super::vals::Dacsync) {
             self.0 = (self.0 & !(0x03 << 25usize)) | (((val.to_bits() as u32) & 0x03) << 25usize);
@@ -3864,6 +3876,7 @@ pub mod regs {
                 .field("cont", &self.cont())
                 .field("retrig", &self.retrig())
                 .field("half", &self.half())
+                .field("intlvd", &self.intlvd())
                 .field("syncin", &self.syncin())
                 .field("syncrstm", &self.syncrstm())
                 .field("syncstrtm", &self.syncstrtm())
@@ -3888,11 +3901,12 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Mcr {{ ckpsc: {=u8:?}, cont: {=bool:?}, retrig: {=bool:?}, half: {=bool:?}, syncin: {:?}, syncrstm: {=bool:?}, syncstrtm: {=bool:?}, syncout: {:?}, syncsrc: {:?}, mcen: {=bool:?}, tcen[0]: {=bool:?}, tcen[1]: {=bool:?}, tcen[2]: {=bool:?}, tcen[3]: {=bool:?}, tcen[4]: {=bool:?}, tcen[5]: {=bool:?}, dacsync: {:?}, preen: {=bool:?}, mrepu: {=bool:?}, brstdma: {:?} }}",
+                "Mcr {{ ckpsc: {=u8:?}, cont: {=bool:?}, retrig: {=bool:?}, half: {=bool:?}, intlvd: {=u8:?}, syncin: {:?}, syncrstm: {=bool:?}, syncstrtm: {=bool:?}, syncout: {:?}, syncsrc: {:?}, mcen: {=bool:?}, tcen[0]: {=bool:?}, tcen[1]: {=bool:?}, tcen[2]: {=bool:?}, tcen[3]: {=bool:?}, tcen[4]: {=bool:?}, tcen[5]: {=bool:?}, dacsync: {:?}, preen: {=bool:?}, mrepu: {=bool:?}, brstdma: {:?} }}",
                 self.ckpsc(),
                 self.cont(),
                 self.retrig(),
                 self.half(),
+                self.intlvd(),
                 self.syncin(),
                 self.syncrstm(),
                 self.syncstrtm(),
@@ -6326,7 +6340,7 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Timxoutr(pub u32);
     impl Timxoutr {
-        #[doc = "Output 1 polarity"]
+        #[doc = "Output X polarity"]
         #[must_use]
         #[inline(always)]
         pub const fn pol(&self, n: usize) -> super::vals::Pol {
@@ -6335,7 +6349,7 @@ pub mod regs {
             let val = (self.0 >> offs) & 0x01;
             super::vals::Pol::from_bits(val as u8)
         }
-        #[doc = "Output 1 polarity"]
+        #[doc = "Output X polarity"]
         #[inline(always)]
         pub const fn set_pol(&mut self, n: usize, val: super::vals::Pol) {
             assert!(n < 2usize);
@@ -6458,6 +6472,18 @@ pub mod regs {
         pub const fn set_dlyprt(&mut self, val: super::vals::Dlyprt) {
             self.0 = (self.0 & !(0x07 << 10usize)) | (((val.to_bits() as u32) & 0x07) << 10usize);
         }
+        #[doc = "Balanced Idle Automatic Resume."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn biar(&self) -> bool {
+            let val = (self.0 >> 14usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Balanced Idle Automatic Resume."]
+        #[inline(always)]
+        pub const fn set_biar(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 14usize)) | (((val as u32) & 0x01) << 14usize);
+        }
     }
     impl Default for Timxoutr {
         #[inline(always)]
@@ -6484,6 +6510,7 @@ pub mod regs {
                 .field("dten", &self.dten())
                 .field("dlyprten", &self.dlyprten())
                 .field("dlyprt", &self.dlyprt())
+                .field("biar", &self.biar())
                 .finish()
         }
     }
@@ -6492,7 +6519,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Timxoutr {{ pol[0]: {:?}, pol[1]: {:?}, idlem[0]: {=bool:?}, idlem[1]: {=bool:?}, idles[0]: {=bool:?}, idles[1]: {=bool:?}, fault[0]: {:?}, fault[1]: {:?}, chp[0]: {=bool:?}, chp[1]: {=bool:?}, didl[0]: {=bool:?}, didl[1]: {=bool:?}, dten: {=bool:?}, dlyprten: {=bool:?}, dlyprt: {:?} }}",
+                "Timxoutr {{ pol[0]: {:?}, pol[1]: {:?}, idlem[0]: {=bool:?}, idlem[1]: {=bool:?}, idles[0]: {=bool:?}, idles[1]: {=bool:?}, fault[0]: {:?}, fault[1]: {:?}, chp[0]: {=bool:?}, chp[1]: {=bool:?}, didl[0]: {=bool:?}, didl[1]: {=bool:?}, dten: {=bool:?}, dlyprten: {=bool:?}, dlyprt: {:?}, biar: {=bool:?} }}",
                 self.pol(0usize),
                 self.pol(1usize),
                 self.idlem(0usize),
@@ -6507,7 +6534,8 @@ pub mod regs {
                 self.didl(1usize),
                 self.dten(),
                 self.dlyprten(),
-                self.dlyprt()
+                self.dlyprt(),
+                self.biar()
             )
         }
     }
@@ -6516,14 +6544,14 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Timxper(pub u32);
     impl Timxper {
-        #[doc = "Timerx Period value"]
+        #[doc = "Timer X Period value"]
         #[must_use]
         #[inline(always)]
         pub const fn per(&self) -> u16 {
             let val = (self.0 >> 0usize) & 0xffff;
             val as u16
         }
-        #[doc = "Timerx Period value"]
+        #[doc = "Timer X Period value"]
         #[inline(always)]
         pub const fn set_per(&mut self, val: u16) {
             self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
@@ -6547,19 +6575,19 @@ pub mod regs {
             defmt::write!(f, "Timxper {{ per: {=u16:?} }}", self.per())
         }
     }
-    #[doc = "Timerx Repetition Register"]
+    #[doc = "Timer X Repetition Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Timxrep(pub u32);
     impl Timxrep {
-        #[doc = "Timerx Repetition counter value"]
+        #[doc = "Timer X Repetition counter value"]
         #[must_use]
         #[inline(always)]
         pub const fn rep(&self) -> u8 {
             let val = (self.0 >> 0usize) & 0xff;
             val as u8
         }
-        #[doc = "Timerx Repetition counter value"]
+        #[doc = "Timer X Repetition counter value"]
         #[inline(always)]
         pub const fn set_rep(&mut self, val: u8) {
             self.0 = (self.0 & !(0xff << 0usize)) | (((val as u32) & 0xff) << 0usize);
@@ -6795,247 +6823,31 @@ pub mod regs {
             )
         }
     }
-    #[doc = "Timerx OutputX Reset Register"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Timxrstr(pub u32);
-    impl Timxrstr {
-        #[doc = "Software Reset trigger"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn srt(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Software Reset trigger"]
-        #[inline(always)]
-        pub const fn set_srt(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Timer X resynchronizaton"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn resync(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer X resynchronizaton"]
-        #[inline(always)]
-        pub const fn set_resync(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Timer X Period"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn per(&self) -> bool {
-            let val = (self.0 >> 2usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer X Period"]
-        #[inline(always)]
-        pub const fn set_per(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val as u32) & 0x01) << 2usize);
-        }
-        #[doc = "Timer X compare X"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn cmp(&self, n: usize) -> bool {
-            assert!(n < 4usize);
-            let offs = 3usize + n * 1usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer X compare X"]
-        #[inline(always)]
-        pub const fn set_cmp(&mut self, n: usize, val: bool) {
-            assert!(n < 4usize);
-            let offs = 3usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
-        #[doc = "Master Period"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn mstper(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Master Period"]
-        #[inline(always)]
-        pub const fn set_mstper(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Master Compare X"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn mstcmp(&self, n: usize) -> bool {
-            assert!(n < 4usize);
-            let offs = 8usize + n * 1usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "Master Compare X"]
-        #[inline(always)]
-        pub const fn set_mstcmp(&mut self, n: usize, val: bool) {
-            assert!(n < 4usize);
-            let offs = 8usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
-        #[doc = "Timer Event X"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn timevnt(&self, n: usize) -> bool {
-            assert!(n < 9usize);
-            let offs = 12usize + n * 1usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "Timer Event X"]
-        #[inline(always)]
-        pub const fn set_timevnt(&mut self, n: usize, val: bool) {
-            assert!(n < 9usize);
-            let offs = 12usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
-        #[doc = "External Event X"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn extevnt(&self, n: usize) -> bool {
-            assert!(n < 10usize);
-            let offs = 21usize + n * 1usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "External Event X"]
-        #[inline(always)]
-        pub const fn set_extevnt(&mut self, n: usize, val: bool) {
-            assert!(n < 10usize);
-            let offs = 21usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
-        #[doc = "Registers update (transfer preload to active)"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn update(&self) -> bool {
-            let val = (self.0 >> 31usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Registers update (transfer preload to active)"]
-        #[inline(always)]
-        pub const fn set_update(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
-        }
-    }
-    impl Default for Timxrstr {
-        #[inline(always)]
-        fn default() -> Timxrstr {
-            Timxrstr(0)
-        }
-    }
-    #[cfg(feature = "debug")]
-    impl core::fmt::Debug for Timxrstr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Timxrstr")
-                .field("srt", &self.srt())
-                .field("resync", &self.resync())
-                .field("per", &self.per())
-                .field("cmp[0]", &self.cmp(0usize))
-                .field("cmp[1]", &self.cmp(1usize))
-                .field("cmp[2]", &self.cmp(2usize))
-                .field("cmp[3]", &self.cmp(3usize))
-                .field("mstper", &self.mstper())
-                .field("mstcmp[0]", &self.mstcmp(0usize))
-                .field("mstcmp[1]", &self.mstcmp(1usize))
-                .field("mstcmp[2]", &self.mstcmp(2usize))
-                .field("mstcmp[3]", &self.mstcmp(3usize))
-                .field("timevnt[0]", &self.timevnt(0usize))
-                .field("timevnt[1]", &self.timevnt(1usize))
-                .field("timevnt[2]", &self.timevnt(2usize))
-                .field("timevnt[3]", &self.timevnt(3usize))
-                .field("timevnt[4]", &self.timevnt(4usize))
-                .field("timevnt[5]", &self.timevnt(5usize))
-                .field("timevnt[6]", &self.timevnt(6usize))
-                .field("timevnt[7]", &self.timevnt(7usize))
-                .field("timevnt[8]", &self.timevnt(8usize))
-                .field("extevnt[0]", &self.extevnt(0usize))
-                .field("extevnt[1]", &self.extevnt(1usize))
-                .field("extevnt[2]", &self.extevnt(2usize))
-                .field("extevnt[3]", &self.extevnt(3usize))
-                .field("extevnt[4]", &self.extevnt(4usize))
-                .field("extevnt[5]", &self.extevnt(5usize))
-                .field("extevnt[6]", &self.extevnt(6usize))
-                .field("extevnt[7]", &self.extevnt(7usize))
-                .field("extevnt[8]", &self.extevnt(8usize))
-                .field("extevnt[9]", &self.extevnt(9usize))
-                .field("update", &self.update())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Timxrstr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Timxrstr {{ srt: {=bool:?}, resync: {=bool:?}, per: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?}, mstper: {=bool:?}, mstcmp[0]: {=bool:?}, mstcmp[1]: {=bool:?}, mstcmp[2]: {=bool:?}, mstcmp[3]: {=bool:?}, timevnt[0]: {=bool:?}, timevnt[1]: {=bool:?}, timevnt[2]: {=bool:?}, timevnt[3]: {=bool:?}, timevnt[4]: {=bool:?}, timevnt[5]: {=bool:?}, timevnt[6]: {=bool:?}, timevnt[7]: {=bool:?}, timevnt[8]: {=bool:?}, extevnt[0]: {=bool:?}, extevnt[1]: {=bool:?}, extevnt[2]: {=bool:?}, extevnt[3]: {=bool:?}, extevnt[4]: {=bool:?}, extevnt[5]: {=bool:?}, extevnt[6]: {=bool:?}, extevnt[7]: {=bool:?}, extevnt[8]: {=bool:?}, extevnt[9]: {=bool:?}, update: {=bool:?} }}",
-                self.srt(),
-                self.resync(),
-                self.per(),
-                self.cmp(0usize),
-                self.cmp(1usize),
-                self.cmp(2usize),
-                self.cmp(3usize),
-                self.mstper(),
-                self.mstcmp(0usize),
-                self.mstcmp(1usize),
-                self.mstcmp(2usize),
-                self.mstcmp(3usize),
-                self.timevnt(0usize),
-                self.timevnt(1usize),
-                self.timevnt(2usize),
-                self.timevnt(3usize),
-                self.timevnt(4usize),
-                self.timevnt(5usize),
-                self.timevnt(6usize),
-                self.timevnt(7usize),
-                self.timevnt(8usize),
-                self.extevnt(0usize),
-                self.extevnt(1usize),
-                self.extevnt(2usize),
-                self.extevnt(3usize),
-                self.extevnt(4usize),
-                self.extevnt(5usize),
-                self.extevnt(6usize),
-                self.extevnt(7usize),
-                self.extevnt(8usize),
-                self.extevnt(9usize),
-                self.update()
-            )
-        }
-    }
-    #[doc = "Timerx OutputX Set Register"]
+    #[doc = "Timerx OutputX Set/Reset Register"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Timxsetr(pub u32);
     impl Timxsetr {
-        #[doc = "Software Set trigger"]
+        #[doc = "Software trigger"]
         #[must_use]
         #[inline(always)]
-        pub const fn sst(&self) -> bool {
+        pub const fn st(&self) -> bool {
             let val = (self.0 >> 0usize) & 0x01;
             val != 0
         }
-        #[doc = "Software Set trigger"]
+        #[doc = "Software trigger"]
         #[inline(always)]
-        pub const fn set_sst(&mut self, val: bool) {
+        pub const fn set_st(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "Timer X resynchronizaton"]
+        #[doc = "Timer X resynchronization"]
         #[must_use]
         #[inline(always)]
         pub const fn resync(&self) -> bool {
             let val = (self.0 >> 1usize) & 0x01;
             val != 0
         }
-        #[doc = "Timer X resynchronizaton"]
+        #[doc = "Timer X resynchronization"]
         #[inline(always)]
         pub const fn set_resync(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
@@ -7151,7 +6963,7 @@ pub mod regs {
     impl core::fmt::Debug for Timxsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxsetr")
-                .field("sst", &self.sst())
+                .field("st", &self.st())
                 .field("resync", &self.resync())
                 .field("per", &self.per())
                 .field("cmp[0]", &self.cmp(0usize))
@@ -7191,8 +7003,8 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Timxsetr {{ sst: {=bool:?}, resync: {=bool:?}, per: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?}, mstper: {=bool:?}, mstcmp[0]: {=bool:?}, mstcmp[1]: {=bool:?}, mstcmp[2]: {=bool:?}, mstcmp[3]: {=bool:?}, timevnt[0]: {=bool:?}, timevnt[1]: {=bool:?}, timevnt[2]: {=bool:?}, timevnt[3]: {=bool:?}, timevnt[4]: {=bool:?}, timevnt[5]: {=bool:?}, timevnt[6]: {=bool:?}, timevnt[7]: {=bool:?}, timevnt[8]: {=bool:?}, extevnt[0]: {=bool:?}, extevnt[1]: {=bool:?}, extevnt[2]: {=bool:?}, extevnt[3]: {=bool:?}, extevnt[4]: {=bool:?}, extevnt[5]: {=bool:?}, extevnt[6]: {=bool:?}, extevnt[7]: {=bool:?}, extevnt[8]: {=bool:?}, extevnt[9]: {=bool:?}, update: {=bool:?} }}",
-                self.sst(),
+                "Timxsetr {{ st: {=bool:?}, resync: {=bool:?}, per: {=bool:?}, cmp[0]: {=bool:?}, cmp[1]: {=bool:?}, cmp[2]: {=bool:?}, cmp[3]: {=bool:?}, mstper: {=bool:?}, mstcmp[0]: {=bool:?}, mstcmp[1]: {=bool:?}, mstcmp[2]: {=bool:?}, mstcmp[3]: {=bool:?}, timevnt[0]: {=bool:?}, timevnt[1]: {=bool:?}, timevnt[2]: {=bool:?}, timevnt[3]: {=bool:?}, timevnt[4]: {=bool:?}, timevnt[5]: {=bool:?}, timevnt[6]: {=bool:?}, timevnt[7]: {=bool:?}, timevnt[8]: {=bool:?}, extevnt[0]: {=bool:?}, extevnt[1]: {=bool:?}, extevnt[2]: {=bool:?}, extevnt[3]: {=bool:?}, extevnt[4]: {=bool:?}, extevnt[5]: {=bool:?}, extevnt[6]: {=bool:?}, extevnt[7]: {=bool:?}, extevnt[8]: {=bool:?}, extevnt[9]: {=bool:?}, update: {=bool:?} }}",
+                self.st(),
                 self.resync(),
                 self.per(),
                 self.cmp(0usize),

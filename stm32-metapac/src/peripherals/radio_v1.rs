@@ -304,6 +304,7 @@ pub mod regs {
             Aa0DigUsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Aa0DigUsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Aa0DigUsr").field("aa_7_0", &self.aa_7_0()).finish()
@@ -339,6 +340,7 @@ pub mod regs {
             Aa1DigUsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Aa1DigUsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Aa1DigUsr").field("aa_15_8", &self.aa_15_8()).finish()
@@ -374,6 +376,7 @@ pub mod regs {
             Aa2DigUsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Aa2DigUsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Aa2DigUsr").field("aa_23_16", &self.aa_23_16()).finish()
@@ -409,6 +412,7 @@ pub mod regs {
             Aa3DigUsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Aa3DigUsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Aa3DigUsr").field("aa_31_24", &self.aa_31_24()).finish()
@@ -456,6 +460,7 @@ pub mod regs {
             Afc1DigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Afc1DigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Afc1DigEng")
@@ -511,6 +516,7 @@ pub mod regs {
             Agc0DigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Agc0DigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Agc0DigEng")
@@ -578,6 +584,7 @@ pub mod regs {
             Agc10DigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Agc10DigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Agc10DigEng")
@@ -647,6 +654,7 @@ pub mod regs {
             Agc11DigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Agc11DigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Agc11DigEng")
@@ -716,6 +724,7 @@ pub mod regs {
             Agc12DigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Agc12DigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Agc12DigEng")
@@ -785,6 +794,7 @@ pub mod regs {
             Agc13DigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Agc13DigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Agc13DigEng")
@@ -854,6 +864,7 @@ pub mod regs {
             Agc14DigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Agc14DigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Agc14DigEng")
@@ -923,6 +934,7 @@ pub mod regs {
             Agc15DigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Agc15DigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Agc15DigEng")
@@ -992,6 +1004,7 @@ pub mod regs {
             Agc16DigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Agc16DigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Agc16DigEng")
@@ -1061,6 +1074,7 @@ pub mod regs {
             Agc17DigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Agc17DigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Agc17DigEng")
@@ -1130,6 +1144,7 @@ pub mod regs {
             Agc18DigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Agc18DigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Agc18DigEng")
@@ -1199,6 +1214,7 @@ pub mod regs {
             Agc19DigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Agc19DigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Agc19DigEng")
@@ -1268,6 +1284,7 @@ pub mod regs {
             Agc1DigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Agc1DigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Agc1DigEng")
@@ -1325,6 +1342,7 @@ pub mod regs {
             Agc2AnaTst(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Agc2AnaTst {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Agc2AnaTst")
@@ -1368,6 +1386,7 @@ pub mod regs {
             AgcDigOut(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for AgcDigOut {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("AgcDigOut")
@@ -1405,6 +1424,7 @@ pub mod regs {
             AgcHwTrimOut(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for AgcHwTrimOut {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("AgcHwTrimOut")
@@ -1446,6 +1466,7 @@ pub mod regs {
             Antsw0DigUsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Antsw0DigUsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Antsw0DigUsr")
@@ -1487,6 +1508,7 @@ pub mod regs {
             Antsw1DigUsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Antsw1DigUsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Antsw1DigUsr")
@@ -1528,6 +1550,7 @@ pub mod regs {
             Antsw2DigUsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Antsw2DigUsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Antsw2DigUsr")
@@ -1569,6 +1592,7 @@ pub mod regs {
             Antsw3DigUsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Antsw3DigUsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Antsw3DigUsr")
@@ -1622,6 +1646,7 @@ pub mod regs {
             Cbias0AnaEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cbias0AnaEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cbias0AnaEng")
@@ -1677,6 +1702,7 @@ pub mod regs {
             Cbias0HwTrimOut(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cbias0HwTrimOut {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cbias0HwTrimOut")
@@ -1720,6 +1746,7 @@ pub mod regs {
             Cbias1AnaEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cbias1AnaEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cbias1AnaEng")
@@ -1773,6 +1800,7 @@ pub mod regs {
             Cr0DigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr0DigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr0DigEng")
@@ -1828,6 +1856,7 @@ pub mod regs {
             Cr0Lr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr0Lr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr0Lr")
@@ -1871,6 +1900,7 @@ pub mod regs {
             DemModDigUsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DemModDigUsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DemModDigUsr")
@@ -1944,6 +1974,7 @@ pub mod regs {
             DemodDigOut(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DemodDigOut {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DemodDigOut")
@@ -2003,6 +2034,7 @@ pub mod regs {
             DemodIq2DigTst(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DemodIq2DigTst {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DemodIq2DigTst")
@@ -2108,6 +2140,7 @@ signal."]
             Dtb5DigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dtb5DigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dtb5DigEng")
@@ -2171,6 +2204,7 @@ signal."]
             FsmStatusDigOut(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for FsmStatusDigOut {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("FsmStatusDigOut")
@@ -2214,6 +2248,7 @@ signal."]
             LdoAnaEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for LdoAnaEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("LdoAnaEng")
@@ -2255,6 +2290,7 @@ signal."]
             LrAacThrDigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for LrAacThrDigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("LrAacThrDigEng")
@@ -2292,6 +2328,7 @@ signal."]
             LrPdThrDigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for LrPdThrDigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("LrPdThrDigEng")
@@ -2329,6 +2366,7 @@ signal."]
             LrRssiThrDigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for LrRssiThrDigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("LrRssiThrDigEng")
@@ -2366,6 +2404,7 @@ signal."]
             PhyctrlDigUsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for PhyctrlDigUsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("PhyctrlDigUsr")
@@ -2427,6 +2466,7 @@ signal."]
             RadioFsmUsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RadioFsmUsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RadioFsmUsr")
@@ -2472,6 +2512,7 @@ signal."]
             Rssi0DigOut(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rssi0DigOut {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rssi0DigOut")
@@ -2513,6 +2554,7 @@ signal."]
             Rssi1DigOut(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rssi1DigOut {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rssi1DigOut")
@@ -2590,6 +2632,7 @@ signal."]
             RxadcAnaUsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RxadcAnaUsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RxadcAnaUsr")
@@ -2649,6 +2692,7 @@ signal."]
             RxadcHwTrimOut(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RxadcHwTrimOut {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RxadcHwTrimOut")
@@ -2704,6 +2748,7 @@ signal."]
             Synthcal0DigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Synthcal0DigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Synthcal0DigEng")
@@ -2747,6 +2792,7 @@ signal."]
             Synthcal0DigOut(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Synthcal0DigOut {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Synthcal0DigOut")
@@ -2788,6 +2834,7 @@ signal."]
             Synthcal1DigOut(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Synthcal1DigOut {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Synthcal1DigOut")
@@ -2829,6 +2876,7 @@ signal."]
             Synthcal2DigOut(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Synthcal2DigOut {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Synthcal2DigOut")
@@ -2870,6 +2918,7 @@ signal."]
             Synthcal3DigOut(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Synthcal3DigOut {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Synthcal3DigOut")
@@ -2911,6 +2960,7 @@ signal."]
             Synthcal4DigOut(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Synthcal4DigOut {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Synthcal4DigOut")
@@ -2952,6 +3002,7 @@ signal."]
             Synthcal5DigOut(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Synthcal5DigOut {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Synthcal5DigOut")
@@ -3005,6 +3056,7 @@ signal."]
             VitConfDigEng(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for VitConfDigEng {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("VitConfDigEng")

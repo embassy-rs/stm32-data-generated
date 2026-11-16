@@ -146,6 +146,7 @@ pub mod regs {
             Cccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cccr")
@@ -253,6 +254,7 @@ pub mod regs {
             Cccsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cccsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cccsr")
@@ -340,6 +342,7 @@ pub mod regs {
             Ccvr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccvr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccvr")
@@ -447,6 +450,7 @@ pub mod regs {
             Cfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr1")
@@ -536,6 +540,7 @@ in the PWR register."]
             Cfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr2")
@@ -595,6 +600,7 @@ in the PWR register."]
             Cnslckr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cnslckr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cnslckr")
@@ -662,6 +668,7 @@ in the PWR register."]
             Cslockr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cslockr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cslockr")
@@ -707,6 +714,7 @@ in the PWR register."]
             Fpuimr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fpuimr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fpuimr").field("fpu_ie", &self.fpu_ie()).finish()
@@ -754,6 +762,7 @@ in the PWR register."]
             Mesr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mesr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mesr")
@@ -821,6 +830,7 @@ in the PWR register."]
             Otghsphycr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Otghsphycr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Otghsphycr")
@@ -890,6 +900,7 @@ in the PWR register."]
             Otghsphytuner2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Otghsphytuner2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Otghsphytuner2")
@@ -935,6 +946,7 @@ in the PWR register."]
             Rsscmdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rsscmdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rsscmdr").field("rsscmd", &self.rsscmd()).finish()
@@ -994,6 +1006,7 @@ in the PWR register."]
             Seccfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seccfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccfgr")
@@ -1018,7 +1031,8 @@ in the PWR register."]
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usbrefcksel {
         _RESERVED_0 = 0x0,

@@ -114,6 +114,7 @@ pub mod regs {
             Exti(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Exti {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exti")
@@ -165,6 +166,7 @@ pub mod regs {
             Lines(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lines {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lines")
@@ -268,6 +270,7 @@ pub mod regs {
             Lockr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lockr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lockr").field("lock", &self.lock()).finish()
@@ -307,6 +310,7 @@ pub mod regs {
             Priv(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Priv {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Priv")
@@ -414,6 +418,7 @@ pub mod regs {
             Sec(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sec {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sec")

@@ -386,6 +386,7 @@ pub mod regs {
             Ahb1enr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb1enr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb1enr")
@@ -469,6 +470,7 @@ pub mod regs {
             Ahb1lpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb1lpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb1lpenr")
@@ -552,6 +554,7 @@ pub mod regs {
             Ahb1rstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb1rstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb1rstr")
@@ -647,6 +650,7 @@ pub mod regs {
             Ahb2enr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb2enr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb2enr")
@@ -744,6 +748,7 @@ pub mod regs {
             Ahb2lpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb2lpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb2lpenr")
@@ -805,6 +810,7 @@ pub mod regs {
             Ahb2rstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb2rstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb2rstr")
@@ -932,6 +938,7 @@ pub mod regs {
             Ahb3enr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb3enr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb3enr")
@@ -1071,6 +1078,7 @@ pub mod regs {
             Ahb3lpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb3lpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb3lpenr")
@@ -1210,6 +1218,7 @@ pub mod regs {
             Ahb3rstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb3rstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb3rstr")
@@ -1385,6 +1394,7 @@ pub mod regs {
             Ahb4enr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb4enr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb4enr")
@@ -1566,6 +1576,7 @@ pub mod regs {
             Ahb4lpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb4lpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb4lpenr")
@@ -1735,6 +1746,7 @@ pub mod regs {
             Ahb4rstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb4rstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb4rstr")
@@ -1842,6 +1854,7 @@ pub mod regs {
             Ahb5enr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb5enr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb5enr")
@@ -2001,6 +2014,7 @@ low-power peripheral clock enable."]
             Ahb5lpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb5lpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb5lpenr")
@@ -2108,6 +2122,7 @@ low-power peripheral clock enable."]
             Ahb5rstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb5rstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb5rstr")
@@ -2445,6 +2460,7 @@ low-power peripheral clock enable."]
             Apb1enr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1enr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1enr1")
@@ -2558,6 +2574,7 @@ low-power peripheral clock enable."]
             Apb1enr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1enr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1enr2")
@@ -2891,6 +2908,7 @@ low-power peripheral clock enable."]
             Apb1lpenr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1lpenr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1lpenr1")
@@ -3004,6 +3022,7 @@ low-power peripheral clock enable."]
             Apb1lpenr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1lpenr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1lpenr2")
@@ -3325,6 +3344,7 @@ low-power peripheral clock enable."]
             Apb1rstr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1rstr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1rstr1")
@@ -3436,6 +3456,7 @@ low-power peripheral clock enable."]
             Apb1rstr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1rstr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1rstr2")
@@ -3661,6 +3682,7 @@ low-power peripheral clock enable."]
             Apb2enr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb2enr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb2enr")
@@ -3912,6 +3934,7 @@ low-power peripheral clock enable."]
             Apb2lpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb2lpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb2lpenr")
@@ -4163,6 +4186,7 @@ low-power peripheral clock enable."]
             Apb2rstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb2rstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb2rstr")
@@ -4390,6 +4414,7 @@ low-power peripheral clock enable."]
             Apb4enr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4enr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4enr")
@@ -4613,6 +4638,7 @@ low-power peripheral clock enable."]
             Apb4lpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4lpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4lpenr")
@@ -4824,6 +4850,7 @@ low-power peripheral clock enable."]
             Apb4rstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4rstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4rstr")
@@ -4913,6 +4940,7 @@ low-power peripheral clock enable."]
             Apbcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apbcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apbcfgr")
@@ -5078,6 +5106,7 @@ low-power peripheral clock enable."]
             Bdcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bdcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bdcr")
@@ -5139,6 +5168,7 @@ low-power peripheral clock enable."]
             Bmcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bmcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bmcfgr").field("bmpre", &self.bmpre()).finish()
@@ -5258,6 +5288,7 @@ low-power peripheral clock enable."]
             Ccipr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccipr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccipr1")
@@ -5373,6 +5404,7 @@ low-power peripheral clock enable."]
             Ccipr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccipr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccipr2")
@@ -5448,6 +5480,7 @@ low-power peripheral clock enable."]
             Ccipr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccipr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccipr3")
@@ -5589,6 +5622,7 @@ low-power peripheral clock enable."]
             Ccipr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccipr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccipr4")
@@ -5646,6 +5680,7 @@ low-power peripheral clock enable."]
             Cdcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cdcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cdcfgr").field("cpre", &self.cpre()).finish()
@@ -5777,6 +5812,7 @@ low-power peripheral clock enable."]
             Cfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr")
@@ -5954,6 +5990,7 @@ low-power peripheral clock enable."]
             Cicr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cicr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cicr")
@@ -6123,6 +6160,7 @@ low-power peripheral clock enable."]
             Cier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cier")
@@ -6302,6 +6340,7 @@ low-power peripheral clock enable."]
             Cifr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cifr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cifr")
@@ -6567,6 +6606,7 @@ low-power peripheral clock enable."]
             Ckgdisr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ckgdisr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ckgdisr")
@@ -6678,6 +6718,7 @@ low-power peripheral clock enable."]
             Ckprotr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ckprotr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ckprotr")
@@ -6965,6 +7006,7 @@ low-power peripheral clock enable."]
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -7046,6 +7088,7 @@ low-power peripheral clock enable."]
             Crrcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Crrcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Crrcr").field("hsi48cal", &self.hsi48cal()).finish()
@@ -7093,6 +7136,7 @@ low-power peripheral clock enable."]
             Csicfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csicfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csicfgr")
@@ -7148,6 +7192,7 @@ low-power peripheral clock enable."]
             Csr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csr")
@@ -7203,6 +7248,7 @@ low-power peripheral clock enable."]
             Hsicfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hsicfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hsicfgr")
@@ -7270,6 +7316,7 @@ low-power peripheral clock enable."]
             Pll1divr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll1divr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pll1divr1")
@@ -7315,6 +7362,7 @@ low-power peripheral clock enable."]
             Pll1divr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll1divr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pll1divr2").field("divs", &self.divs()).finish()
@@ -7350,6 +7398,7 @@ low-power peripheral clock enable."]
             Pll1fracr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll1fracr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pll1fracr").field("fracn", &self.fracn()).finish()
@@ -7433,6 +7482,7 @@ low-power peripheral clock enable."]
             Pll1sscgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll1sscgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pll1sscgr")
@@ -7518,6 +7568,7 @@ low-power peripheral clock enable."]
             Pll2divr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll2divr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pll2divr1")
@@ -7577,6 +7628,7 @@ low-power peripheral clock enable."]
             Pll2divr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll2divr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pll2divr2")
@@ -7615,6 +7667,7 @@ low-power peripheral clock enable."]
             Pll2fracr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll2fracr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pll2fracr").field("fracn", &self.fracn()).finish()
@@ -7698,6 +7751,7 @@ low-power peripheral clock enable."]
             Pll2sscgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll2sscgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pll2sscgr")
@@ -7783,6 +7837,7 @@ low-power peripheral clock enable."]
             Pll3divr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll3divr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pll3divr1")
@@ -7830,6 +7885,7 @@ low-power peripheral clock enable."]
             Pll3divr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll3divr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pll3divr2").field("divs", &self.divs()).finish()
@@ -7865,6 +7921,7 @@ low-power peripheral clock enable."]
             Pll3fracr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll3fracr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pll3fracr").field("fracn", &self.fracn()).finish()
@@ -7948,6 +8005,7 @@ low-power peripheral clock enable."]
             Pll3sscgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll3sscgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pll3sscgr")
@@ -8273,6 +8331,7 @@ low-power peripheral clock enable."]
             Pllcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pllcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pllcfgr")
@@ -8396,6 +8455,7 @@ low-power peripheral clock enable."]
             Pllckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pllckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pllckselr")
@@ -8539,6 +8599,7 @@ low-power peripheral clock enable."]
             Rsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rsr")
@@ -8575,7 +8636,8 @@ low-power peripheral clock enable."]
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adcsel {
         #[doc = "hclk3 selected as kernel peripheral clock (default after reset)."]
@@ -8617,7 +8679,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adf1sel {
         #[doc = "hclk1 selected as ADF kernel clock (default after reset)."]
@@ -8658,7 +8721,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckpersel {
         #[doc = "hsi_ker_ck selected as per_ck clock (default after reset)."]
@@ -8692,7 +8756,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpre {
         #[doc = "sys_ck not divided (default after reset)."]
@@ -8751,7 +8816,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dac1sel {
         #[doc = "hclk3 selected as kernel peripheral clock - synchronous mode (default after reset)."]
@@ -8794,7 +8860,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dac1shsel {
         #[doc = "lse_ck selected as rcc_dac_hold_ck."]
@@ -8825,7 +8892,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dac2sel {
         #[doc = "hclk3 selected as kernel peripheral clock - synchronous mode (default after reset)."]
@@ -8868,7 +8936,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dac3sel {
         #[doc = "hclk3 selected as kernel peripheral clock - synchronous mode (default after reset)."]
@@ -8911,7 +8980,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dac4sel {
         #[doc = "hclk3 selected as kernel peripheral clock - synchronous mode (default after reset)."]
@@ -8954,7 +9024,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Divm1 {
         #[doc = "prescaler disabled."]
@@ -9051,7 +9122,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Divm2 {
         #[doc = "prescaler disabled."]
@@ -9148,7 +9220,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Divm3 {
         #[doc = "prescaler disabled."]
@@ -9245,7 +9318,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Divt {
         #[doc = "pll2_t_ck = vco2_ck."]
@@ -9288,7 +9362,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fdcansel {
         #[doc = "hse_ker_ck selected as FDCAN kernel clock (default after reset)."]
@@ -9322,7 +9397,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fmcsel {
         #[doc = "hclk5 selected as kernel peripheral clock (default after reset)."]
@@ -9357,7 +9433,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fmcswp {
         #[doc = "The switch is in neutral mode and output clock is gated (default after reset)."]
@@ -9398,7 +9475,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsidiv {
         #[doc = "division by 1, hsi(_ker)_ck = 64 MHz (default after reset)."]
@@ -9433,7 +9511,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2c123sel {
         #[doc = "pclk1 selected as kernel clock (default after reset)."]
@@ -9468,7 +9547,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I3c1sel {
         #[doc = "pclk1 selected as kernel peripheral clock (default after reset)."]
@@ -9503,7 +9583,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lptim1sel {
         #[doc = "pclk1 selected as kernel peripheral clock (default after reset)."]
@@ -9544,7 +9625,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lptim23sel {
         #[doc = "pclk4 selected as kernel peripheral clock (default after reset)."]
@@ -9585,7 +9667,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lptim45sel {
         #[doc = "pclk4 selected as kernel peripheral clock (default after reset)."]
@@ -9626,7 +9709,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpuart1sel {
         #[doc = "pclk4 selected as kernel peripheral clock (default after reset)."]
@@ -9667,7 +9751,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsedrv {
         #[doc = "lowest drive."]
@@ -9702,7 +9787,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mco1pre {
         #[doc = "prescaler disabled (default after reset)."]
@@ -9751,7 +9837,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mco1sel {
         #[doc = "HSI clock selected (hsi_ck) (default after reset)."]
@@ -9791,7 +9878,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mco2pre {
         #[doc = "prescaler disabled (default after reset)."]
@@ -9840,7 +9928,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mco2sel {
         #[doc = "system clock selected (sys_ck) (default after reset)."]
@@ -9881,7 +9970,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Otgfssel {
         #[doc = "hsi48_ker_ck (default after reset)."]
@@ -9935,6 +10025,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll1divr1Divn {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -9993,6 +10084,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll1divr1Divp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -10053,6 +10145,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll1divr1Divq {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -10091,7 +10184,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pll1divr2Divs {
         #[doc = "pll1_s_ck = vco1_ck."]
@@ -10134,7 +10228,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pll1rge {
         #[doc = "PLL1 input (ref1_ck) clock range frequency between 1 and 2 MHz (default after reset)."]
@@ -10169,7 +10264,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pll1sscgrSpreadsel {
         #[doc = "Center-spread modulation selected (default after reset)."]
@@ -10200,7 +10296,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pll1vcosel {
         #[doc = "VCOH selected (default after reset)."]
@@ -10251,6 +10348,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll2divr1Divn {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -10309,6 +10407,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll2divr1Divp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -10369,6 +10468,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll2divr1Divq {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -10429,6 +10529,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll2divr1Divr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -10467,7 +10568,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pll2divr2Divs {
         #[doc = "pll2_s_ck = vco2_ck."]
@@ -10510,7 +10612,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pll2rge {
         #[doc = "PLL3 input (ref2_ck) clock range frequency between 1 and 2 MHz (default after reset)."]
@@ -10545,7 +10648,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pll2sscgrSpreadsel {
         #[doc = "Center-spread modulation selected (default after reset)."]
@@ -10576,7 +10680,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pll2vcosel {
         #[doc = "VCOH selected (default after reset)."]
@@ -10627,6 +10732,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll3divr1Divn {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -10685,6 +10791,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll3divr1Divp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -10745,6 +10852,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll3divr1Divq {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -10805,6 +10913,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pll3divr1Divr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -10843,7 +10952,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pll3divr2Divs {
         #[doc = "pll3_s_ck = vco3_ck."]
@@ -10886,7 +10996,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pll3rge {
         #[doc = "PLL3 input (ref3_ck) clock range frequency between 1 and 2 MHz (default after reset)."]
@@ -10921,7 +11032,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pll3sscgrSpreadsel {
         #[doc = "Center-spread modulation selected (default after reset)."]
@@ -10952,7 +11064,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pll3vcosel {
         #[doc = "VCOH selected (default after reset)."]
@@ -10983,7 +11096,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllsrc {
         #[doc = "HSI selected as PLL clock (hsi_ck) (default after reset)."]
@@ -11018,7 +11132,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ppre1 {
         #[doc = "rcc_pclk1 = sys_bus_ck (default after reset)."]
@@ -11061,7 +11176,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ppre2 {
         #[doc = "rcc_pclk2 = sys_bus_ck (default after reset)."]
@@ -11104,7 +11220,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ppre4 {
         #[doc = "rcc_pclk4 = sys_bus_ck (default after reset)."]
@@ -11147,7 +11264,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rtcsel {
         #[doc = "no clock (default after Backup domain reset)."]
@@ -11182,7 +11300,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdmmc1sel {
         #[doc = "pll2_s_ck selected as kernel peripheral clock (default after reset)."]
@@ -11213,7 +11332,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spi1sel {
         #[doc = "pll1_q_ck selected as SPI/I2S1 kernel clock (default after reset)."]
@@ -11253,7 +11373,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spi23sel {
         #[doc = "pll1_q_ck selected as kernel clock (default after reset)."]
@@ -11293,7 +11414,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spi45sel {
         #[doc = "pclk2 selected as kernel clock (default after reset)."]
@@ -11334,7 +11456,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spi6sel {
         #[doc = "pclk4 selected as kernel peripheral clock (default after reset)."]
@@ -11375,7 +11498,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sw {
         #[doc = "HSI selected as system clock (hsi_ck) (default after reset)."]
@@ -11410,7 +11534,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sws {
         #[doc = "HSI used as system clock (hsi_ck) (default after reset)."]
@@ -11445,7 +11570,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Uart234578sel {
         #[doc = "pclk1 selected as kernel clock (default after reset)."]
@@ -11486,7 +11612,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usart16910sel {
         #[doc = "pclk2 selected as kernel clock (default after reset)."]
@@ -11527,7 +11654,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Xspi1sel {
         #[doc = "hclk5 selected as kernel peripheral clock (default after reset)."]
@@ -11560,7 +11688,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Xspiswp {
         #[doc = "The switch is in neutral mode and output clock is gated (default after reset)."]

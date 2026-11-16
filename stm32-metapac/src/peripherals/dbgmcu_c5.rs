@@ -205,6 +205,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -436,6 +437,7 @@ pub mod regs {
             DbgmcuAhb1fzr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuAhb1fzr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuAhb1fzr")
@@ -639,6 +641,7 @@ pub mod regs {
             DbgmcuApb1lfzr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuApb1lfzr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuApb1lfzr")
@@ -750,6 +753,7 @@ pub mod regs {
             DbgmcuApb2fzr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuApb2fzr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuApb2fzr")
@@ -811,6 +815,7 @@ pub mod regs {
             DbgmcuApb3fzr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuApb3fzr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuApb3fzr")
@@ -854,6 +859,7 @@ pub mod regs {
             DbgmcuCidr0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuCidr0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuCidr0")
@@ -905,6 +911,7 @@ pub mod regs {
             DbgmcuCidr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuCidr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuCidr1")
@@ -948,6 +955,7 @@ pub mod regs {
             DbgmcuCidr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuCidr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuCidr2")
@@ -985,6 +993,7 @@ pub mod regs {
             DbgmcuCidr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuCidr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuCidr3")
@@ -1022,6 +1031,7 @@ pub mod regs {
             DbgmcuDbgAuthDevice(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuDbgAuthDevice {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuDbgAuthDevice")
@@ -1059,6 +1069,7 @@ pub mod regs {
             DbgmcuDbgAuthHost(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuDbgAuthHost {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuDbgAuthHost")
@@ -1096,6 +1107,7 @@ pub mod regs {
             DbgmcuDbgBskeyPwd(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuDbgBskeyPwd {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuDbgBskeyPwd")
@@ -1145,6 +1157,7 @@ pub mod regs {
             DbgmcuDbgValr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuDbgValr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuDbgValr")
@@ -1200,6 +1213,7 @@ pub mod regs {
             DbgmcuIdcode(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuIdcode {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuIdcode")
@@ -1243,6 +1257,7 @@ pub mod regs {
             DbgmcuPidr0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuPidr0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuPidr0").field("partnum", &self.partnum()).finish()
@@ -1290,6 +1305,7 @@ pub mod regs {
             DbgmcuPidr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuPidr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuPidr1")
@@ -1357,6 +1373,7 @@ pub mod regs {
             DbgmcuPidr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuPidr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuPidr2")
@@ -1414,6 +1431,7 @@ pub mod regs {
             DbgmcuPidr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuPidr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuPidr3")
@@ -1469,6 +1487,7 @@ pub mod regs {
             DbgmcuPidr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuPidr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuPidr4")
@@ -1524,6 +1543,7 @@ pub mod regs {
             DbgmcuSr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgmcuSr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgmcuSr")
@@ -1546,7 +1566,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Size {
         #[doc = "The register file occupies a single 4-Kbyte region."]
@@ -1590,7 +1611,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum TraceMode {
         #[doc = "Trace pins assigned for asynchronous mode (TRACESWO)."]

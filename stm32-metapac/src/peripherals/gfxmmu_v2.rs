@@ -100,6 +100,7 @@ pub mod regs {
             Bcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bcr")
@@ -150,6 +151,7 @@ pub mod regs {
             Ccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccr")
@@ -304,6 +306,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -369,6 +372,7 @@ pub mod regs {
             Dvr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dvr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dvr").field("dv", &self.dv()).finish()
@@ -420,6 +424,7 @@ pub mod regs {
             Fcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fcr")
@@ -469,6 +474,7 @@ pub mod regs {
             Luth(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Luth {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Luth").field("lo", &self.lo()).finish()
@@ -528,6 +534,7 @@ pub mod regs {
             Lutl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lutl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lutl")
@@ -589,6 +596,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -617,7 +625,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bm192 {
         #[doc = "256 blocks per line."]
@@ -648,7 +657,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Clb {
         #[doc = "Cache locked on buffer 0."]

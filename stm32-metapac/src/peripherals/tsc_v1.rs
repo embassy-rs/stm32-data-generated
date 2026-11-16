@@ -228,6 +228,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -303,6 +304,7 @@ pub mod regs {
             Icr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Icr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Icr")
@@ -358,6 +360,7 @@ pub mod regs {
             Ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ier")
@@ -677,6 +680,7 @@ pub mod regs {
             Ioascr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ioascr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ioascr")
@@ -1040,6 +1044,7 @@ pub mod regs {
             Ioccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ioccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ioccr")
@@ -1127,6 +1132,7 @@ pub mod regs {
             Iogcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Iogcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Iogcr").field("cnt", &self.cnt()).finish()
@@ -1342,6 +1348,7 @@ pub mod regs {
             Iogcsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Iogcsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Iogcsr")
@@ -1689,6 +1696,7 @@ pub mod regs {
             Iohcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Iohcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Iohcr")
@@ -2052,6 +2060,7 @@ pub mod regs {
             Ioscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ioscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ioscr")
@@ -2151,6 +2160,7 @@ pub mod regs {
             Isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Isr")

@@ -151,6 +151,7 @@ pub mod regs {
             C2cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for C2cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("C2cr1")
@@ -260,6 +261,7 @@ pub mod regs {
             C2cr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for C2cr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("C2cr3")
@@ -387,6 +389,7 @@ pub mod regs {
             Cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr1")
@@ -464,6 +467,7 @@ pub mod regs {
             Cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr2")
@@ -609,6 +613,7 @@ pub mod regs {
             Cr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr3")
@@ -722,6 +727,7 @@ pub mod regs {
             Cr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr4")
@@ -787,6 +793,7 @@ pub mod regs {
             Cr5(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr5 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr5")
@@ -938,6 +945,7 @@ pub mod regs {
             Extscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Extscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Extscr")
@@ -1001,6 +1009,7 @@ pub mod regs {
             Pcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pcr")
@@ -1072,6 +1081,7 @@ pub mod regs {
             Rsscmdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rsscmdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rsscmdr").field("rsscmd", &self.rsscmd()).finish()
@@ -1147,6 +1157,7 @@ pub mod regs {
             Scr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Scr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Scr")
@@ -1198,6 +1209,7 @@ pub mod regs {
             Seccfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seccfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccfgr").field("c2ewila", &self.c2ewila()).finish()
@@ -1285,6 +1297,7 @@ pub mod regs {
             Sr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr1")
@@ -1482,6 +1495,7 @@ pub mod regs {
             Sr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr2")
@@ -1547,6 +1561,7 @@ pub mod regs {
             Subghzspicr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Subghzspicr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Subghzspicr").field("nss", &self.nss()).finish()
@@ -1561,7 +1576,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cds {
         #[doc = "CPU is running or in sleep"]
@@ -1592,7 +1608,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fpdr {
         #[doc = "Flash memory in Idle mode when system is in LPRun mode"]
@@ -1623,7 +1640,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fpds {
         #[doc = "Flash memory in Idle mode when system is in LPSleep mode"]
@@ -1654,7 +1672,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpms {
         #[doc = "Stop 0 mode"]
@@ -1694,7 +1713,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpr {
         #[doc = "Voltage regulator in Main mode in Low-power run mode"]
@@ -1725,7 +1745,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pls {
         #[doc = "2.0V"]
@@ -1768,7 +1789,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Subghzspinsssel {
         #[doc = "sub-GHz SPI NSS signal driven from PWR_SUBGHZSPICR.NSS (RFBUSYMS functionality enabled)"]
@@ -1799,7 +1821,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vbrs {
         #[doc = "VBAT charging through a 5 kΩ resistor"]
@@ -1830,7 +1853,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vos {
         _RESERVED_0 = 0x0,
@@ -1863,7 +1887,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wp {
         #[doc = "Detection on high level (rising edge)"]

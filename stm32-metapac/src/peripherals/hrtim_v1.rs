@@ -457,6 +457,7 @@ pub mod regs {
             HrtimAdc1r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimAdc1r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimAdc1r")
@@ -672,6 +673,7 @@ pub mod regs {
             HrtimAdc2r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimAdc2r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimAdc2r")
@@ -775,6 +777,7 @@ pub mod regs {
             HrtimBdmadr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimBdmadr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimBdmadr").field("bdmadr", &self.bdmadr()).finish()
@@ -886,6 +889,7 @@ pub mod regs {
             HrtimBdmupr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimBdmupr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimBdmupr")
@@ -1021,6 +1025,7 @@ pub mod regs {
             HrtimBdtupr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimBdtupr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimBdtupr")
@@ -1080,6 +1085,7 @@ pub mod regs {
             HrtimBmcmpr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimBmcmpr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimBmcmpr").field("bmcmp", &self.bmcmp()).finish()
@@ -1201,6 +1207,7 @@ pub mod regs {
             HrtimBmcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimBmcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimBmcr")
@@ -1264,6 +1271,7 @@ pub mod regs {
             HrtimBmper(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimBmper {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimBmper").field("bmper", &self.bmper()).finish()
@@ -1403,6 +1411,7 @@ pub mod regs {
             HrtimBmtrgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimBmtrgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimBmtrgr")
@@ -1528,6 +1537,7 @@ pub mod regs {
             HrtimCr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimCr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimCr1")
@@ -1631,6 +1641,7 @@ pub mod regs {
             HrtimCr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimCr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimCr2")
@@ -1718,6 +1729,7 @@ pub mod regs {
             HrtimDllcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimDllcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimDllcr")
@@ -1815,6 +1827,7 @@ pub mod regs {
             HrtimEecr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimEecr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimEecr1")
@@ -1930,6 +1943,7 @@ pub mod regs {
             HrtimEecr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimEecr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimEecr2")
@@ -2015,6 +2029,7 @@ pub mod regs {
             HrtimEecr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimEecr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimEecr3")
@@ -2134,6 +2149,7 @@ pub mod regs {
             HrtimFltinr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimFltinr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimFltinr1")
@@ -2293,6 +2309,7 @@ pub mod regs {
             HrtimFltinr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimFltinr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimFltinr2")
@@ -2384,6 +2401,7 @@ pub mod regs {
             HrtimIcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimIcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimIcr")
@@ -2479,6 +2497,7 @@ pub mod regs {
             HrtimIer(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimIer {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimIer")
@@ -2574,6 +2593,7 @@ pub mod regs {
             HrtimIsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimIsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimIsr")
@@ -2649,6 +2669,7 @@ pub mod regs {
             HrtimOdisr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimOdisr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimOdisr")
@@ -2728,6 +2749,7 @@ pub mod regs {
             HrtimOdsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimOdsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimOdsr")
@@ -2807,6 +2829,7 @@ pub mod regs {
             HrtimOenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HrtimOenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HrtimOenr")
@@ -2866,6 +2889,7 @@ pub mod regs {
             Mcmp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mcmp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mcmp").field("mcmp", &self.mcmp()).finish()
@@ -2901,6 +2925,7 @@ pub mod regs {
             Mcntr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mcntr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mcntr").field("mcnt", &self.mcnt()).finish()
@@ -3108,6 +3133,7 @@ pub mod regs {
             Mcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mcr")
@@ -3277,6 +3303,7 @@ pub mod regs {
             Mdier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mdier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mdier")
@@ -3384,6 +3411,7 @@ pub mod regs {
             Micr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Micr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Micr")
@@ -3477,6 +3505,7 @@ pub mod regs {
             Misr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Misr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Misr")
@@ -3530,6 +3559,7 @@ pub mod regs {
             Mper(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mper {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mper").field("mper", &self.mper()).finish()
@@ -3565,6 +3595,7 @@ pub mod regs {
             Mrep(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mrep {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mrep").field("mrep", &self.mrep()).finish()
@@ -3788,6 +3819,7 @@ pub mod regs {
             Timxccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxccr")
@@ -3907,6 +3939,7 @@ pub mod regs {
             Timxchp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxchp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxchp")
@@ -3952,6 +3985,7 @@ pub mod regs {
             Timxcmp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxcmp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxcmp").field("cmp", &self.cmp()).finish()
@@ -3999,6 +4033,7 @@ pub mod regs {
             Timxcmpc(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxcmpc {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxcmpc")
@@ -4037,6 +4072,7 @@ pub mod regs {
             Timxcnt(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxcnt {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxcnt").field("cnt", &self.cnt()).finish()
@@ -4072,6 +4108,7 @@ pub mod regs {
             Timxcpt(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxcpt {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxcpt").field("cpt", &self.cpt()).finish()
@@ -4291,6 +4328,7 @@ pub mod regs {
             Timxcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxcr")
@@ -4582,6 +4620,7 @@ pub mod regs {
             Timxdier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxdier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxdier")
@@ -4773,6 +4812,7 @@ pub mod regs {
             Timxdt(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxdt {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxdt")
@@ -4850,6 +4890,7 @@ pub mod regs {
             Timxeef(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxeef {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxeef")
@@ -4925,6 +4966,7 @@ pub mod regs {
             Timxflt(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxflt {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxflt")
@@ -5076,6 +5118,7 @@ pub mod regs {
             Timxicr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxicr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxicr")
@@ -5299,6 +5342,7 @@ pub mod regs {
             Timxisr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxisr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxisr")
@@ -5498,6 +5542,7 @@ pub mod regs {
             Timxoutr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxoutr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxoutr")
@@ -5567,6 +5612,7 @@ pub mod regs {
             Timxper(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxper {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxper").field("per", &self.per()).finish()
@@ -5602,6 +5648,7 @@ pub mod regs {
             Timxrep(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxrep {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxrep").field("rep", &self.rep()).finish()
@@ -5745,6 +5792,7 @@ pub mod regs {
             Timxrst(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxrst {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxrst")
@@ -5956,6 +6004,7 @@ pub mod regs {
             Timxrstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxrstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxrstr")
@@ -6171,6 +6220,7 @@ pub mod regs {
             Timxsetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timxsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timxsetr")
@@ -6253,7 +6303,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Brstdma {
         #[doc = "Update done independently from the DMA burst transfer completion"]
@@ -6287,7 +6338,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cppstat {
         #[doc = "Signal applied on output 1 and output 2 forced inactive"]
@@ -6318,7 +6370,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dacsync {
         #[doc = "No DAC trigger generated"]
@@ -6353,7 +6406,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Delcmp {
         #[doc = "CMP register is always active (standard compare mode)"]
@@ -6388,7 +6442,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dlyprt {
         #[doc = "Output 1 delayed idle on external event 6"]
@@ -6431,7 +6486,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Eefltr {
         #[doc = "No filtering"]
@@ -6490,7 +6546,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fault {
         #[doc = "No action: the output is not affected by the fault input and stays in run mode"]
@@ -6525,7 +6582,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ippstat {
         #[doc = "Protection occurred when the output 1 was active and output 2 forced inactive"]
@@ -6556,7 +6614,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pol {
         #[doc = "Positive polarity (output active high)"]
@@ -6587,7 +6646,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdt {
         #[doc = "Positive deadtime (both outputs inactive during deadtime)"]
@@ -6618,7 +6678,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syncin {
         #[doc = "Disabled. HRTIM is not synchronized and runs in standalone mode"]
@@ -6652,7 +6713,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syncout {
         #[doc = "Disabled"]
@@ -6686,7 +6748,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syncsrc {
         #[doc = "Master timer Start"]
@@ -6721,7 +6784,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Updgat {
         #[doc = "Update occurs independently from the DMA burst transfer"]

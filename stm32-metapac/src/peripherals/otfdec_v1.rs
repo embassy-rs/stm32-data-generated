@@ -118,6 +118,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr").field("enc", &self.enc()).finish()
@@ -177,6 +178,7 @@ pub mod regs {
             Icr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Icr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Icr")
@@ -246,6 +248,7 @@ pub mod regs {
             Ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ier")
@@ -315,6 +318,7 @@ pub mod regs {
             Isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Isr")
@@ -360,6 +364,7 @@ pub mod regs {
             Privcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgr").field("priv_", &self.priv_()).finish()
@@ -455,6 +460,7 @@ pub mod regs {
             RegionCfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RegionCfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RegionCfgr")
@@ -485,7 +491,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Enc {
         #[doc = "OTFDEC working in decryption mode"]
@@ -516,7 +523,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         _RESERVED_0 = 0x0,

@@ -370,6 +370,7 @@ pub mod regs {
             Acr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Acr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Acr")
@@ -421,6 +422,7 @@ pub mod regs {
             Boot0r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Boot0r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Boot0r").field("add", &self.add()).finish()
@@ -456,6 +458,7 @@ pub mod regs {
             Boot1r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Boot1r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Boot1r").field("add", &self.add()).finish()
@@ -647,6 +650,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -762,6 +766,7 @@ pub mod regs {
             Ecccorr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ecccorr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ecccorr")
@@ -847,6 +852,7 @@ pub mod regs {
             Eccdetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Eccdetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Eccdetr")
@@ -896,6 +902,7 @@ bytes key."]
             Oem1keyr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Oem1keyr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Oem1keyr1").field("oem1key", &self.oem1key()).finish()
@@ -933,6 +940,7 @@ bytes key."]
             Oem1keyr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Oem1keyr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Oem1keyr2").field("oem1key", &self.oem1key()).finish()
@@ -970,6 +978,7 @@ bytes key."]
             Oem1keyr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Oem1keyr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Oem1keyr3").field("oem1key", &self.oem1key()).finish()
@@ -1007,6 +1016,7 @@ bytes key."]
             Oem1keyr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Oem1keyr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Oem1keyr4").field("oem1key", &self.oem1key()).finish()
@@ -1044,6 +1054,7 @@ bytes key."]
             Oem2keyr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Oem2keyr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Oem2keyr1").field("oem2key", &self.oem2key()).finish()
@@ -1081,6 +1092,7 @@ bytes key."]
             Oem2keyr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Oem2keyr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Oem2keyr2").field("oem2key", &self.oem2key()).finish()
@@ -1118,6 +1130,7 @@ bytes key."]
             Oem2keyr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Oem2keyr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Oem2keyr3").field("oem2key", &self.oem2key()).finish()
@@ -1155,6 +1168,7 @@ bytes key."]
             Oem2keyr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Oem2keyr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Oem2keyr4").field("oem2key", &self.oem2key()).finish()
@@ -1202,6 +1216,7 @@ bytes key."]
             Oemkeysr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Oemkeysr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Oemkeysr")
@@ -1281,6 +1296,7 @@ bytes key."]
             Opsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Opsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Opsr")
@@ -1556,6 +1572,7 @@ bytes key."]
             Optr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Optr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Optr")
@@ -1635,6 +1652,7 @@ bytes key."]
             Pdkey1r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pdkey1r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pdkey1r").field("key1", &self.key1()).finish()
@@ -1670,6 +1688,7 @@ bytes key."]
             Pdkey2r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pdkey2r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pdkey2r").field("key2", &self.key2()).finish()
@@ -2077,6 +2096,7 @@ bytes key."]
             Privbb1r1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privbb1r1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privbb1r1")
@@ -2552,6 +2572,7 @@ bytes key."]
             Privbb1r2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privbb1r2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privbb1r2")
@@ -3027,6 +3048,7 @@ bytes key."]
             Privbb1r3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privbb1r3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privbb1r3")
@@ -3502,6 +3524,7 @@ bytes key."]
             Privbb1r4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privbb1r4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privbb1r4")
@@ -3977,6 +4000,7 @@ bytes key."]
             Privbb2r1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privbb2r1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privbb2r1")
@@ -4452,6 +4476,7 @@ bytes key."]
             Privbb2r2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privbb2r2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privbb2r2")
@@ -4927,6 +4952,7 @@ bytes key."]
             Privbb2r3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privbb2r3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privbb2r3")
@@ -5402,6 +5428,7 @@ bytes key."]
             Privbb2r4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privbb2r4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privbb2r4")
@@ -5517,6 +5544,7 @@ bytes key."]
             Privcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgr")
@@ -5572,6 +5600,7 @@ bytes key."]
             Sboot0r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sboot0r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sboot0r")
@@ -5747,6 +5776,7 @@ bytes key."]
             Scr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Scr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Scr")
@@ -6182,6 +6212,7 @@ bytes key."]
             Secbb1r1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secbb1r1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secbb1r1")
@@ -6657,6 +6688,7 @@ bytes key."]
             Secbb1r2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secbb1r2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secbb1r2")
@@ -7132,6 +7164,7 @@ bytes key."]
             Secbb1r3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secbb1r3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secbb1r3")
@@ -7607,6 +7640,7 @@ bytes key."]
             Secbb1r4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secbb1r4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secbb1r4")
@@ -8082,6 +8116,7 @@ bytes key."]
             Secbb2r1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secbb2r1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secbb2r1")
@@ -8557,6 +8592,7 @@ bytes key."]
             Secbb2r2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secbb2r2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secbb2r2")
@@ -9032,6 +9068,7 @@ bytes key."]
             Secbb2r3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secbb2r3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secbb2r3")
@@ -9507,6 +9544,7 @@ bytes key."]
             Secbb2r4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secbb2r4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secbb2r4")
@@ -9622,6 +9660,7 @@ bytes key."]
             SechdpExTr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for SechdpExTr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SechdpExTr")
@@ -9701,6 +9740,7 @@ bytes key."]
             Sechdpcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sechdpcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sechdpcr")
@@ -9760,6 +9800,7 @@ bytes key."]
             Secwm1r1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secwm1r1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secwm1r1")
@@ -9815,6 +9856,7 @@ bytes key."]
             Secwm1r2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secwm1r2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secwm1r2")
@@ -9870,6 +9912,7 @@ bytes key."]
             Secwm2r1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secwm2r1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secwm2r1")
@@ -9925,6 +9968,7 @@ bytes key."]
             Secwm2r2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secwm2r2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secwm2r2")
@@ -10124,6 +10168,7 @@ bytes key."]
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -10287,6 +10332,7 @@ bytes key."]
             Ssr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ssr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ssr")
@@ -10368,6 +10414,7 @@ bytes key."]
             Wrp1ar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wrp1ar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wrp1ar")
@@ -10437,6 +10484,7 @@ bytes key."]
             Wrp1br(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wrp1br {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wrp1br")
@@ -10506,6 +10554,7 @@ bytes key."]
             Wrp2ar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wrp2ar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wrp2ar")
@@ -10575,6 +10624,7 @@ bytes key."]
             Wrp2br(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wrp2br {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wrp2br")
@@ -10599,7 +10649,8 @@ bytes key."]
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BorLev {
         #[doc = "BOR level 0 (reset level threshold around 1."]
@@ -10639,7 +10690,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CodeOp {
         #[doc = "No flash operation interrupted by previous reset."]
@@ -10699,6 +10751,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rdp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {

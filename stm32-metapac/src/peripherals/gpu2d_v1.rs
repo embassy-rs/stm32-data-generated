@@ -70,6 +70,7 @@ pub mod regs {
             Breakpoint(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Breakpoint {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Breakpoint").field("value", &self.value()).finish()
@@ -105,6 +106,7 @@ pub mod regs {
             Clid(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Clid {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Clid").field("id", &self.id()).finish()
@@ -140,6 +142,7 @@ pub mod regs {
             Itctrl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itctrl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itctrl").field("clc", &self.clc()).finish()
@@ -199,6 +202,7 @@ pub mod regs {
             SysInterrupt(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for SysInterrupt {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SysInterrupt")
@@ -280,6 +284,7 @@ pub mod regs {
             SysInterruptEnable(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for SysInterruptEnable {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SysInterruptEnable")

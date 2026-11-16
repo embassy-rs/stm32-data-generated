@@ -383,6 +383,7 @@ pub mod regs {
             Bchdsr0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bchdsr0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bchdsr0")
@@ -440,6 +441,7 @@ pub mod regs {
             Bchdsr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bchdsr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bchdsr1")
@@ -495,6 +497,7 @@ pub mod regs {
             Bchdsr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bchdsr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bchdsr2")
@@ -550,6 +553,7 @@ pub mod regs {
             Bchdsr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bchdsr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bchdsr3")
@@ -605,6 +609,7 @@ pub mod regs {
             Bchdsr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bchdsr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bchdsr4")
@@ -696,6 +701,7 @@ pub mod regs {
             Bchicr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bchicr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bchicr")
@@ -793,6 +799,7 @@ pub mod regs {
             Bchier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bchier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bchier")
@@ -890,6 +897,7 @@ pub mod regs {
             Bchisr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bchisr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bchisr")
@@ -939,6 +947,7 @@ pub mod regs {
             Bchpbr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bchpbr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bchpbr").field("bchpb", &self.bchpb()).finish()
@@ -1178,6 +1187,7 @@ pub mod regs {
             Bcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bcr")
@@ -1457,6 +1467,7 @@ pub mod regs {
             Bcr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bcr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bcr1")
@@ -1616,6 +1627,7 @@ pub mod regs {
             Btr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Btr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Btr")
@@ -1731,6 +1743,7 @@ pub mod regs {
             Bwtr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bwtr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bwtr")
@@ -1818,6 +1831,7 @@ pub mod regs {
             Csqar1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csqar1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csqar1")
@@ -1877,6 +1891,7 @@ pub mod regs {
             Csqar2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csqar2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csqar2")
@@ -1992,6 +2007,7 @@ pub mod regs {
             Csqcfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csqcfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csqcfgr1")
@@ -2105,6 +2121,7 @@ pub mod regs {
             Csqcfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csqcfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csqcfgr2")
@@ -2252,6 +2269,7 @@ pub mod regs {
             Csqcfgr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csqcfgr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csqcfgr3")
@@ -2309,6 +2327,7 @@ pub mod regs {
             Csqcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csqcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csqcr").field("csqstart", &self.csqstart()).finish()
@@ -2344,6 +2363,7 @@ pub mod regs {
             Csqemsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csqemsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csqemsr").field("sem", &self.sem()).finish()
@@ -2427,6 +2447,7 @@ pub mod regs {
             Csqicr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csqicr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csqicr")
@@ -2524,6 +2545,7 @@ pub mod regs {
             Csqier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csqier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csqier")
@@ -2621,6 +2643,7 @@ pub mod regs {
             Csqisr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csqisr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csqisr")
@@ -2694,6 +2717,7 @@ pub mod regs {
             NandIcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for NandIcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("NandIcr")
@@ -2763,6 +2787,7 @@ pub mod regs {
             NandIer(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for NandIer {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("NandIer")
@@ -2844,6 +2869,7 @@ pub mod regs {
             NandIsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for NandIsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("NandIsr")
@@ -2927,6 +2953,7 @@ pub mod regs {
             Patt(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Patt {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Patt")
@@ -3070,6 +3097,7 @@ pub mod regs {
             Pcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pcr")
@@ -3143,6 +3171,7 @@ pub mod regs {
             Pcscntr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pcscntr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pcscntr")
@@ -3228,6 +3257,7 @@ pub mod regs {
             Pmem(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pmem {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pmem")
@@ -3315,6 +3345,7 @@ pub mod regs {
             Sdcmr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sdcmr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sdcmr")
@@ -3460,6 +3491,7 @@ pub mod regs {
             Sdcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sdcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sdcr")
@@ -3541,6 +3573,7 @@ pub mod regs {
             Sdrtr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sdrtr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sdrtr")
@@ -3614,6 +3647,7 @@ pub mod regs {
             Sdsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sdsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sdsr")
@@ -3733,6 +3767,7 @@ pub mod regs {
             Sdtr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sdtr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sdtr")
@@ -3858,6 +3893,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -3890,7 +3926,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Accmod {
         #[doc = "Access mode A"]
@@ -3925,7 +3962,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cas {
         _RESERVED_0 = 0x0,
@@ -3959,7 +3997,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cburstrw {
         #[doc = "Write operations are always performed in Asynchronous mode."]
@@ -3990,7 +4029,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpsize {
         #[doc = "No burst split when crossing page boundary"]
@@ -4030,7 +4070,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Eccps {
         #[doc = "ECC page size 256 bytes"]
@@ -4071,7 +4112,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Normal Mode"]
@@ -4113,7 +4155,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Modes {
         #[doc = "Normal Mode"]
@@ -4147,7 +4190,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mtyp {
         #[doc = "SRAM memory type"]
@@ -4181,7 +4225,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mwid {
         #[doc = "Memory data bus width 8 bits"]
@@ -4215,7 +4260,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nb {
         #[doc = "Two internal Banks"]
@@ -4246,7 +4292,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nc {
         #[doc = "8 bits"]
@@ -4281,7 +4328,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nr {
         #[doc = "11 bits"]
@@ -4315,7 +4363,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ptyp {
         _RESERVED_0 = 0x0,
@@ -4345,7 +4394,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pwid {
         #[doc = "External memory device width 8 bits"]
@@ -4378,7 +4428,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rpipe {
         #[doc = "No clock cycle delay"]
@@ -4412,7 +4463,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdclk {
         #[doc = "SDCLK clock disabled"]
@@ -4446,7 +4498,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Waitcfg {
         #[doc = "NWAIT signal is active one data cycle before wait state"]
@@ -4477,7 +4530,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Waitpol {
         #[doc = "NWAIT active low"]

@@ -204,6 +204,7 @@ pub mod regs {
             Atcr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Atcr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Atcr1")
@@ -281,6 +282,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
             Atcr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Atcr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Atcr2")
@@ -360,6 +362,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
             Ator(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ator {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ator")
@@ -405,6 +408,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
             Atseedr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Atseedr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Atseedr").field("seed", &self.seed()).finish()
@@ -440,6 +444,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
             Bkpr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bkpr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bkpr").field("bkp", &self.bkp()).finish()
@@ -475,6 +480,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
             Countr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Countr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Countr").field("count", &self.count()).finish()
@@ -530,6 +536,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
             Cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr1")
@@ -671,6 +678,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
             Cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr2")
@@ -756,6 +764,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
             Cr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr3")
@@ -821,6 +830,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
             Ercfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ercfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ercfgr").field("ercfg0", &self.ercfg0()).finish()
@@ -892,6 +902,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
             Fltcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fltcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fltcr")
@@ -959,6 +970,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
             Ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ier")
@@ -1060,6 +1072,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
             Misr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Misr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Misr")
@@ -1177,6 +1190,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
             Privcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgr")
@@ -1244,6 +1258,7 @@ in the ATCR1, and so can also be read or. written through ATCR1."]
             Scr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Scr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Scr")
@@ -1377,6 +1392,7 @@ can be written only in privileged mode."]
             Seccfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seccfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccfgr")
@@ -1446,6 +1462,7 @@ can be written only in privileged mode."]
             Smisr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Smisr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Smisr")
@@ -1547,6 +1564,7 @@ can be written only in privileged mode."]
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -1607,7 +1625,8 @@ can be written only in privileged mode."]
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Atcksel {
         #[doc = "RTCCLK is selected"]
@@ -1646,7 +1665,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tampflt {
         #[doc = "Tamper event is activated on edge of INx input transitions to the active level (no internal pull-up on INx input)."]
@@ -1681,7 +1701,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tampfreq {
         #[doc = "RTCCLK / 32768 (1 Hz when RTCCLK = 32768 Hz)"]
@@ -1724,7 +1745,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tampprch {
         #[doc = "1 RTCCLK cycle"]
@@ -1759,7 +1781,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tamptrg {
         #[doc = "If TAMPFLT 00 Tamper 2 input staying low triggers a tamper detection event."]

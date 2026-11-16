@@ -218,6 +218,7 @@ bitfield setting."]
             Cfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr1")
@@ -309,6 +310,7 @@ bitfield setting."]
             Cfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr2")
@@ -392,6 +394,7 @@ bitfield setting."]
             Cfgr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr3")
@@ -635,6 +638,7 @@ bitfield must be set accordingly, too."]
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -852,6 +856,7 @@ bitfield must be set accordingly, too."]
             Icr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Icr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Icr")
@@ -1085,6 +1090,7 @@ bitfield must be set accordingly, too."]
             Imr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Imr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Imr")
@@ -1154,6 +1160,7 @@ bitfield must be set accordingly, too."]
             Ipid(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipid {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipid").field("ipid", &self.ipid()).finish()
@@ -1189,6 +1196,7 @@ bitfield must be set accordingly, too."]
             Ipver(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipver {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipver").field("ipver", &self.ipver()).finish()
@@ -1224,6 +1232,7 @@ bitfield must be set accordingly, too."]
             Mid(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mid {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mid").field("ipid", &self.ipid()).finish()
@@ -1259,6 +1268,7 @@ bitfield must be set accordingly, too."]
             RxOrdextr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RxOrdextr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RxOrdextr1").field("rxsopx1", &self.rxsopx1()).finish()
@@ -1294,6 +1304,7 @@ bitfield must be set accordingly, too."]
             RxOrdextr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RxOrdextr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RxOrdextr2").field("rxsopx2", &self.rxsopx2()).finish()
@@ -1352,6 +1363,7 @@ bitfield must be set accordingly, too."]
             RxOrdsetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RxOrdsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RxOrdsetr")
@@ -1396,6 +1408,7 @@ bitfield must be set accordingly, too."]
             RxPayszr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RxPayszr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RxPayszr").field("rxpaysz", &self.rxpaysz()).finish()
@@ -1430,6 +1443,7 @@ bitfield must be set accordingly, too."]
             Rxdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rxdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rxdr").field("rxdata", &self.rxdata()).finish()
@@ -1675,6 +1689,7 @@ bitfield value, which corresponds to a new Type-C event. It is cleared by settin
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -1750,6 +1765,7 @@ bitfield value, which corresponds to a new Type-C event. It is cleared by settin
             TxOrdsetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for TxOrdsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TxOrdsetr").field("txordset", &self.txordset()).finish()
@@ -1785,6 +1801,7 @@ bitfield value, which corresponds to a new Type-C event. It is cleared by settin
             TxPayszr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for TxPayszr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TxPayszr").field("txpaysz", &self.txpaysz()).finish()
@@ -1820,6 +1837,7 @@ bitfield value, which corresponds to a new Type-C event. It is cleared by settin
             Txdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Txdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txdr").field("txdata", &self.txdata()).finish()
@@ -1834,7 +1852,8 @@ bitfield value, which corresponds to a new Type-C event. It is cleared by settin
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Anamode {
         #[doc = "Source"]
@@ -1865,7 +1884,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ccenable {
         #[doc = "Disable both PHYs"]
@@ -1900,7 +1920,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Phyccsel {
         #[doc = "Use CC1 IO for Power Delivery communication"]
@@ -1931,7 +1952,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PscUsbpdclk {
         #[doc = "1 (bypass)"]
@@ -1971,7 +1993,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rxordset {
         #[doc = "SOP code detected in receiver"]
@@ -2014,7 +2037,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rxsopkinvalid {
         #[doc = "No K‑code corrupted"]
@@ -2054,7 +2078,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Txmode {
         #[doc = "Transmission of Tx packet previously defined in other registers"]
@@ -2088,7 +2113,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum TypecVstateCc {
         #[doc = "Lowest"]

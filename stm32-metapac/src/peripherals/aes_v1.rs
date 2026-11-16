@@ -185,6 +185,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -244,6 +245,7 @@ pub mod regs {
             Dinr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dinr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dinr").field("din", &self.din()).finish()
@@ -279,6 +281,7 @@ pub mod regs {
             Doutr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Doutr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Doutr").field("dout", &self.dout()).finish()
@@ -314,6 +317,7 @@ pub mod regs {
             Ivr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ivr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ivr").field("ivi", &self.ivi()).finish()
@@ -349,6 +353,7 @@ pub mod regs {
             Keyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Keyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Keyr").field("key", &self.key()).finish()
@@ -408,6 +413,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -432,7 +438,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Datatype {
         #[doc = "Word"]
@@ -467,7 +474,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Encryption"]

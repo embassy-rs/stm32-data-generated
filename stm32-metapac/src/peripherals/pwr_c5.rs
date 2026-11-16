@@ -107,6 +107,7 @@ pub mod regs {
             Ioretr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ioretr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ioretr")
@@ -246,6 +247,7 @@ pub mod regs {
             Pmcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pmcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pmcr")
@@ -315,6 +317,7 @@ pub mod regs {
             Pmsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pmsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pmsr")
@@ -358,6 +361,7 @@ pub mod regs {
             Privcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgr").field("priv_", &self.priv_()).finish()
@@ -393,6 +397,7 @@ pub mod regs {
             Rtccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rtccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rtccr").field("drtcp", &self.drtcp()).finish()
@@ -428,6 +433,7 @@ pub mod regs {
             Vmcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Vmcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Vmcr").field("pvde", &self.pvde()).finish()
@@ -463,6 +469,7 @@ pub mod regs {
             Vmsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Vmsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Vmsr").field("pvdo", &self.pvdo()).finish()
@@ -738,6 +745,7 @@ pub mod regs {
             Wucr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wucr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wucr")
@@ -891,6 +899,7 @@ pub mod regs {
             Wuscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wuscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wuscr")
@@ -1016,6 +1025,7 @@ pub mod regs {
             Wusr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wusr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wusr")
@@ -1048,7 +1058,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cssf {
         _RESERVED_0 = 0x0,
@@ -1078,7 +1089,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cwuf {
         _RESERVED_0 = 0x0,
@@ -1108,7 +1120,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Flps {
         #[doc = "Flash memory remains in normal mode when the system enters Stop mode (quickrestart time)."]
@@ -1139,7 +1152,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpms {
         #[doc = "Stop 0 mode when entering DeepSleep."]
@@ -1173,7 +1187,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pvdo {
         #[doc = "Vless thansub>DDless than/sub> is equal or higher than the PVD threshold."]
@@ -1204,7 +1219,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Reten {
         #[doc = "I/O retention mode is disabled."]
@@ -1235,7 +1251,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SramSo {
         #[doc = "RAM content is kept in Stop mode."]
@@ -1266,7 +1283,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wupen {
         #[doc = "An event on WUPx pin does not wake-up the system from Standby mode."]
@@ -1297,7 +1315,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wupp {
         #[doc = "Detection on high level (rising edge)."]
@@ -1328,7 +1347,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wuppupd {
         #[doc = "No pull-up."]

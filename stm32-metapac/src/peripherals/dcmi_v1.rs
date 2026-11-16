@@ -220,6 +220,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -293,6 +294,7 @@ pub mod regs {
             Cwsize(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cwsize {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cwsize")
@@ -348,6 +350,7 @@ pub mod regs {
             Cwstrt(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cwstrt {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cwstrt")
@@ -427,6 +430,7 @@ pub mod regs {
             Dr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dr")
@@ -510,6 +514,7 @@ pub mod regs {
             Escr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Escr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Escr")
@@ -593,6 +598,7 @@ pub mod regs {
             Esur(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Esur {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Esur")
@@ -688,6 +694,7 @@ pub mod regs {
             Icr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Icr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Icr")
@@ -785,6 +792,7 @@ pub mod regs {
             Ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ier")
@@ -882,6 +890,7 @@ pub mod regs {
             Mis(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mis {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mis")
@@ -979,6 +988,7 @@ pub mod regs {
             Ris(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ris {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ris")
@@ -1052,6 +1062,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")

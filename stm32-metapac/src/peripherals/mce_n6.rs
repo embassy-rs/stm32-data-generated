@@ -199,6 +199,7 @@ pub mod regs {
             Cc1cfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cc1cfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cc1cfgr")
@@ -250,6 +251,7 @@ pub mod regs {
             Cc1keyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cc1keyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cc1keyr").field("key", &self.key()).finish()
@@ -285,6 +287,7 @@ pub mod regs {
             Cc1nr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cc1nr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cc1nr").field("scnonce", &self.scnonce()).finish()
@@ -380,6 +383,7 @@ pub mod regs {
             Cc2cfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cc2cfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cc2cfgr")
@@ -431,6 +435,7 @@ pub mod regs {
             Cc2keyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cc2keyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cc2keyr").field("key", &self.key()).finish()
@@ -466,6 +471,7 @@ pub mod regs {
             Cc2nr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cc2nr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cc2nr").field("scnonce", &self.scnonce()).finish()
@@ -525,6 +531,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -570,6 +577,7 @@ pub mod regs {
             Eaddr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Eaddr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Eaddr").field("baddend", &self.baddend()).finish()
@@ -609,6 +617,7 @@ pub mod regs {
             Fmkeyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fmkeyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fmkeyr")
@@ -712,6 +721,7 @@ pub mod regs {
             Iacr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Iacr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Iacr").field("iaef", &self.iaef()).finish()
@@ -747,6 +757,7 @@ pub mod regs {
             Iaddr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Iaddr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Iaddr").field("iadd", &self.iadd()).finish()
@@ -782,6 +793,7 @@ pub mod regs {
             Iaier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Iaier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Iaier").field("iaeie", &self.iaeie()).finish()
@@ -817,6 +829,7 @@ pub mod regs {
             Iasr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Iasr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Iasr").field("iaef", &self.iaef()).finish()
@@ -856,6 +869,7 @@ pub mod regs {
             Mkeyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mkeyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mkeyr")
@@ -983,6 +997,7 @@ pub mod regs {
             Regcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Regcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Regcr")
@@ -1028,6 +1043,7 @@ pub mod regs {
             Saddr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Saddr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Saddr").field("baddstart", &self.baddstart()).finish()
@@ -1087,6 +1103,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")

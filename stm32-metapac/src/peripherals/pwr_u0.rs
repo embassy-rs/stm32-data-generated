@@ -212,6 +212,7 @@ pub mod regs {
             Cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr1")
@@ -325,6 +326,7 @@ pub mod regs {
             Cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr2")
@@ -484,6 +486,7 @@ pub mod regs {
             Cr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr3")
@@ -627,6 +630,7 @@ pub mod regs {
             Cr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr4")
@@ -894,6 +898,7 @@ when APC bit is set in PWR_CR3 register."]
             Pdcra(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pdcra {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pdcra")
@@ -1177,6 +1182,7 @@ when APC bit is set in PWR_CR3 register."]
             Pdcrb(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pdcrb {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pdcrb")
@@ -1460,6 +1466,7 @@ when APC bit is set in PWR_CR3 register."]
             Pdcrc(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pdcrc {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pdcrc")
@@ -1701,6 +1708,7 @@ when APC bit is set in PWR_CR3 register."]
             Pdcrd(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pdcrd {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pdcrd")
@@ -1810,6 +1818,7 @@ when APC bit is set in PWR_CR3 register."]
             Pdcre(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pdcre {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pdcre")
@@ -1901,6 +1910,7 @@ when APC bit is set in PWR_CR3 register."]
             Pdcrf(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pdcrf {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pdcrf")
@@ -2160,6 +2170,7 @@ when APC bit is set in PWR_CR3 register. If the corresponding PDy bit is also se
             Pucra(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pucra {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pucra")
@@ -2443,6 +2454,7 @@ when APC bit is set in PWR_CR3 register."]
             Pucrb(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pucrb {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pucrb")
@@ -2726,6 +2738,7 @@ when APC bit is set in PWR_CR3 register. If the corresponding PDy bit is also se
             Pucrc(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pucrc {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pucrc")
@@ -2967,6 +2980,7 @@ when APC bit is set in PWR_CR3 register. If the corresponding PDy bit is also se
             Pucrd(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pucrd {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pucrd")
@@ -3076,6 +3090,7 @@ when APC bit is set in PWR_CR3 register. If the corresponding PDy bit is also se
             Pucre(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pucre {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pucre")
@@ -3167,6 +3182,7 @@ when APC bit is set in PWR_CR3 register. If the corresponding PDy bit is also se
             Pucrf(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pucrf {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pucrf")
@@ -3286,6 +3302,7 @@ when APC bit is set in PWR_CR3 register. If the corresponding PDy bit is also se
             Scr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Scr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Scr")
@@ -3435,6 +3452,7 @@ when APC bit is set in PWR_CR3 register. If the corresponding PDy bit is also se
             Sr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr1")
@@ -3576,6 +3594,7 @@ when APC bit is set in PWR_CR3 register. If the corresponding PDy bit is also se
             Sr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr2")
@@ -3610,7 +3629,8 @@ when APC bit is set in PWR_CR3 register. If the corresponding PDy bit is also se
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpms {
         #[doc = "Stop 0 mode"]
@@ -3649,7 +3669,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pls {
         #[doc = "V<sub>PVD0</sub> around 2.01V"]
@@ -3692,7 +3713,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Stopf {
         #[doc = "The device did not enter any Stop mode."]
@@ -3731,7 +3753,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vos {
         _RESERVED_0 = 0x0,

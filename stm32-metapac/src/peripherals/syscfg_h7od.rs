@@ -178,6 +178,7 @@ pub mod regs {
             Cccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cccr")
@@ -252,6 +253,7 @@ pub mod regs {
             Cccsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cccsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cccsr")
@@ -311,6 +313,7 @@ pub mod regs {
             Ccvr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccvr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccvr")
@@ -353,6 +356,7 @@ pub mod regs {
             Exticr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Exticr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exticr")
@@ -400,6 +404,7 @@ pub mod regs {
             Pkgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pkgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pkgr").field("pkg", &self.pkg()).finish()
@@ -603,6 +608,7 @@ pub mod regs {
             Pmcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pmcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pmcr")
@@ -672,6 +678,7 @@ pub mod regs {
             Pwrcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pwrcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pwrcr").field("oden", &self.oden()).finish()
@@ -719,6 +726,7 @@ pub mod regs {
             Ur0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ur0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ur0")
@@ -769,6 +777,7 @@ pub mod regs {
             Ur10(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ur10 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ur10")
@@ -824,6 +833,7 @@ pub mod regs {
             Ur11(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ur11 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ur11")
@@ -867,6 +877,7 @@ pub mod regs {
             Ur12(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ur12 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ur12").field("secure", &self.secure()).finish()
@@ -914,6 +925,7 @@ pub mod regs {
             Ur13(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ur13 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ur13")
@@ -957,6 +969,7 @@ pub mod regs {
             Ur14(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ur14 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ur14").field("d1stprst", &self.d1stprst()).finish()
@@ -992,6 +1005,7 @@ pub mod regs {
             Ur15(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ur15 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ur15").field("fziwdgstb", &self.fziwdgstb()).finish()
@@ -1039,6 +1053,7 @@ pub mod regs {
             Ur16(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ur16 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ur16")
@@ -1082,6 +1097,7 @@ pub mod regs {
             Ur17(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ur17 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ur17").field("io_hslv", &self.io_hslv()).finish()
@@ -1129,6 +1145,7 @@ pub mod regs {
             Ur2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ur2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ur2")
@@ -1172,6 +1189,7 @@ pub mod regs {
             Ur3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ur3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ur3").field("boot_add1", &self.boot_add1()).finish()
@@ -1207,6 +1225,7 @@ pub mod regs {
             Ur4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ur4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ur4").field("mepad_1", &self.mepad_1()).finish()
@@ -1254,6 +1273,7 @@ pub mod regs {
             Ur5(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ur5 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ur5")
@@ -1309,6 +1329,7 @@ pub mod regs {
             Ur6(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ur6 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ur6")
@@ -1364,6 +1385,7 @@ pub mod regs {
             Ur7(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ur7 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ur7")
@@ -1419,6 +1441,7 @@ pub mod regs {
             Ur8(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ur8 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ur8")
@@ -1474,6 +1497,7 @@ pub mod regs {
             Ur9(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ur9 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ur9")
@@ -1496,7 +1520,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum EthSelPhy {
         #[doc = "GMII or MII"]

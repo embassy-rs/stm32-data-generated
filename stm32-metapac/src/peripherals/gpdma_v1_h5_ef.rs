@@ -227,6 +227,7 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else a user setting error is reported and no
             ChBr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for ChBr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("ChBr1")
@@ -294,6 +295,7 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else a user setting error is reported and no
             ChBr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for ChBr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("ChBr2")
@@ -485,6 +487,7 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else a user setting error is reported and no
             ChCr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for ChCr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("ChCr")
@@ -622,6 +625,7 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else a user setting error is reported and no
             ChFcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for ChFcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("ChFcr")
@@ -675,6 +679,7 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else a user setting error is reported and no
             ChLbar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for ChLbar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("ChLbar").field("lba", &self.lba()).finish()
@@ -810,6 +815,7 @@ is then restored to the programmed value after data transfer is completed and be
             ChLlr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for ChLlr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("ChLlr")
@@ -965,6 +971,7 @@ and CH\\[x\\].BR1.BRC\\[10:0\\], to know how many data have been transferred to 
             ChSr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for ChSr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("ChSr")
@@ -1190,6 +1197,7 @@ and address offset CH\\[x\\].TR3.DAO\\[2:0\\], versus DDW\\[1:0\\]). Otherwise a
             ChTr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for ChTr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("ChTr1")
@@ -1379,6 +1387,7 @@ or TRIGPOL\\[1:0\\], resets the monitoring, trashing the memorized hit of the fo
             ChTr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for ChTr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("ChTr2")
@@ -1458,6 +1467,7 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
             ChTr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for ChTr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("ChTr3")
@@ -1500,6 +1510,7 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
             Misr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Misr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Misr")
@@ -1575,6 +1586,7 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
             Privcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgr")
@@ -1650,6 +1662,7 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
             Rcfglockr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rcfglockr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rcfglockr")
@@ -1725,6 +1738,7 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
             Seccfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seccfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccfgr")
@@ -1775,7 +1789,8 @@ versus CH\\[x\\].TR1.DDW\\[1:0\\]). Else, a user setting error is reported and n
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ap {
         #[doc = "port 0 (AHB) allocated"]
@@ -1806,7 +1821,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Breq {
         #[doc = "the selected hardware request is driven by a peripheral with a hardware request/acknowledge protocol at a burst level."]
@@ -1837,7 +1853,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dec {
         #[doc = "The address is incremented by the programmed offset."]
@@ -1868,7 +1885,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dreq {
         #[doc = "selected hardware request driven by a source peripheral (request signal taken into account by the GPDMA transfer scheduler over the source/read port)"]
@@ -1899,7 +1917,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dw {
         #[doc = "byte"]
@@ -1933,7 +1952,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsm {
         #[doc = "channel executed for the full linked-list and completed at the end of the last LLI (CH\\[x\\].LLR = 0). The 16 low-significant bits of the link address are null (LA\\[15:0\\]
@@ -1967,7 +1987,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pam {
         #[doc = "If destination is wider: source data is transferred as right aligned, padded with 0s up to the destination data width If source is wider: source data is transferred as right aligned, left-truncated down to the destination data width"]
@@ -2001,7 +2022,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Prio {
         #[doc = "low priority, low weight"]
@@ -2036,7 +2058,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Swreq {
         #[doc = "no software request. The selected hardware request REQSEL\\[7:0\\]
@@ -2069,7 +2092,8 @@ is ignored."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tcem {
         #[doc = "at block level (when CH\\[x\\].BR1.BNDT\\[15:0\\]
@@ -2108,7 +2132,8 @@ to zero and clears all the CH\\[x\\].LLR update bits (UT1, UT2, UB1, USA, UDA an
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trigm {
         #[doc = "at block level: the first burst read of each block transfer is conditioned by one hit trigger (channel x = 12 to 15, for each block if a 2D/repeated block is configured with CH\\[x\\].BR1.BRC\\[10:0\\]
@@ -2144,7 +2169,8 @@ to zero and clears all the CH\\[x\\].LLR update bits (UT1, UT2, UB1, USA, UDA an
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trigpol {
         #[doc = "no trigger (masked trigger event)"]

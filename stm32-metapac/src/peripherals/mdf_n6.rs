@@ -163,6 +163,7 @@ pub mod regs {
             Bsmxcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bsmxcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bsmxcr")
@@ -326,6 +327,7 @@ pub mod regs {
             Ckgcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ckgcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ckgcr")
@@ -435,6 +437,7 @@ pub mod regs {
             Dfltcicr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dfltcicr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dfltcicr")
@@ -592,6 +595,7 @@ pub mod regs {
             Dfltcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dfltcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dfltcr")
@@ -651,6 +655,7 @@ pub mod regs {
             Dfltdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dfltdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dfltdr").field("dr", &self.dr()).finish()
@@ -782,6 +787,7 @@ pub mod regs {
             Dfltier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dfltier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dfltier")
@@ -851,6 +857,7 @@ pub mod regs {
             Dfltintr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dfltintr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dfltintr")
@@ -1026,6 +1033,7 @@ pub mod regs {
             Dfltisr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dfltisr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dfltisr")
@@ -1125,6 +1133,7 @@ pub mod regs {
             Dfltrsfr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dfltrsfr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dfltrsfr")
@@ -1184,6 +1193,7 @@ pub mod regs {
             Dlycr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dlycr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dlycr")
@@ -1239,6 +1249,7 @@ pub mod regs {
             Gcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Gcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Gcr")
@@ -1282,6 +1293,7 @@ pub mod regs {
             Oeccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Oeccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Oeccr").field("offset", &self.offset()).finish()
@@ -1377,6 +1389,7 @@ pub mod regs {
             Oldcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Oldcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Oldcr")
@@ -1428,6 +1441,7 @@ pub mod regs {
             Oldthhr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Oldthhr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Oldthhr").field("oldthh", &self.oldthh()).finish()
@@ -1463,6 +1477,7 @@ pub mod regs {
             Oldthlr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Oldthlr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Oldthlr").field("oldthl", &self.oldthl()).finish()
@@ -1534,6 +1549,7 @@ pub mod regs {
             Scdcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Scdcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Scdcr")
@@ -1629,6 +1645,7 @@ pub mod regs {
             Sitfcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sitfcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sitfcr")
@@ -1702,6 +1719,7 @@ pub mod regs {
             Snpsdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Snpsdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Snpsdr")
@@ -1727,7 +1745,8 @@ pub mod regs {
 pub mod vals {
     #[doc = "Auxiliary CIC order selection."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Acicn {
         #[doc = "FastSinc filter type."]
@@ -1763,7 +1782,8 @@ pub mod vals {
     }
     #[doc = "Digital filter trigger mode."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Acqmod {
         #[doc = "Asynchronous continuous acquisition mode."]
@@ -1805,7 +1825,8 @@ pub mod vals {
     }
     #[doc = "Bitstream selection. This bitfield is set and cleared by software. It is used to select the bitstream to be used by the DFLT0."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bssel {
         #[doc = "bsx_r provided to DFLTy (and SCDy)."]
@@ -1897,7 +1918,8 @@ pub mod vals {
     }
     #[doc = "CCK1 direction. This bit is set and reset by software. It is used to control the direction of the ADF_CCK1 pin."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cckdir {
         #[doc = "CCK is an input."]
@@ -1929,7 +1951,8 @@ pub mod vals {
     }
     #[doc = "Divider to control the CCK clock. This bit is set and reset by software. It is used to control the frequency of the bitstream clock on the CCK pin."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cckdiv {
         #[doc = "The ADF_CCK clock is adf_proc_ck."]
@@ -1989,7 +2012,8 @@ pub mod vals {
     }
     #[doc = "CIC filter mode selection."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cicmod {
         #[doc = "Split filters with main CIC in FastSinc mode."]
@@ -2031,7 +2055,8 @@ pub mod vals {
     }
     #[doc = "Clock generator mode. This bit is set and reset by software. It is used to define the way the clock generator is enabled. This bit must not be changed if the filter is enabled (DFTEN = 1)."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckgmod {
         #[doc = "The kernel clock is provided to the dividers as soon as CKGDEN is set to 1."]
@@ -2063,7 +2088,8 @@ pub mod vals {
     }
     #[doc = "Source data for the digital filter."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Datsrc {
         #[doc = "Stream coming from the BSMX selected"]
@@ -2098,7 +2124,8 @@ pub mod vals {
     }
     #[doc = "High-pass filter cut-off frequency. This bitfield is set and cleared by software. it is used to select the cut-off frequency of the high-pass filter. F PCM represents the sampling frequency at HPF input."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hpfc {
         #[doc = "Cut-off frequency = 0.000625 x FPCM."]
@@ -2134,7 +2161,8 @@ pub mod vals {
     }
     #[doc = "Integrator output division."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Intdiv {
         #[doc = "Integrator output divided by 128."]
@@ -2170,7 +2198,8 @@ pub mod vals {
     }
     #[doc = "Reshaper filter decimation ratio. This bitfield is set and cleared by software. It is used to select the decimation ratio of the reshaper filter."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rsfltd {
         #[doc = "Decimation ratio is 4 (default value)."]
@@ -2202,7 +2231,8 @@ pub mod vals {
     }
     #[doc = "RXFIFO threshold selection. This bitfield is set and cleared by software. It is used to select the RXFIFO threshold."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rxfifo {
         #[doc = "RXFIFO threshold event generated when the RXFIFO is not empty"]
@@ -2234,7 +2264,8 @@ pub mod vals {
     }
     #[doc = "Serial clock source. This bitfield is set and cleared by software. It is used to select the clock source of the serial interface."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Scksrc {
         #[doc = "Serial clock source is CCK0."]
@@ -2270,7 +2301,8 @@ pub mod vals {
     }
     #[doc = "Serial interface mode. This bitfield is set and cleared by software. It is used to select the serial interface mode."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sitfmod {
         #[doc = "LF_MASTER SPI mode."]
@@ -2306,7 +2338,8 @@ pub mod vals {
     }
     #[doc = "Snapshot data format."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Snpsfmt {
         #[doc = "23-bit data resolution without integrator counter."]
@@ -2338,7 +2371,8 @@ pub mod vals {
     }
     #[doc = "Out-of-limit threshold band mode."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Thinb {
         #[doc = "Event when signal is below low or above high threshold."]
@@ -2370,7 +2404,8 @@ pub mod vals {
     }
     #[doc = "CKGEN trigger sensitivity selection. This bit is set and cleared by software. It is used to select the trigger sensitivity of the trigger signals. This bit is not significant if the CKGMOD = 0."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trgsens {
         #[doc = "A rising edge event triggers the activation of CKGEN dividers."]
@@ -2402,7 +2437,8 @@ pub mod vals {
     }
     #[doc = "Digital filter trigger signal selection."]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trgsrc {
         #[doc = "TRGO is selected."]

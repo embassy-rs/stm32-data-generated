@@ -149,6 +149,7 @@ pub mod regs {
             Cfgcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgcr").field("unlock", &self.unlock()).finish()
@@ -208,6 +209,7 @@ pub mod regs {
             Filtcfg(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Filtcfg {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Filtcfg")
@@ -273,6 +275,7 @@ pub mod regs {
             Flclr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Flclr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Flclr")
@@ -396,6 +399,7 @@ pub mod regs {
             Flctl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Flctl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Flctl")
@@ -519,6 +523,7 @@ pub mod regs {
             Flier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Flier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Flier")
@@ -642,6 +647,7 @@ pub mod regs {
             Flset(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Flset {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Flset")
@@ -765,6 +771,7 @@ pub mod regs {
             Flstat(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Flstat {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Flstat")
@@ -880,6 +887,7 @@ pub mod regs {
             Icr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Icr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Icr")
@@ -935,6 +943,7 @@ pub mod regs {
             Ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ier")
@@ -1002,6 +1011,7 @@ pub mod regs {
             Isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Isr")
@@ -1047,6 +1057,7 @@ pub mod regs {
             Lecfg1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lecfg1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lecfg1").field("lut", &self.lut()).finish()
@@ -1098,6 +1109,7 @@ pub mod regs {
             Lecfg2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lecfg2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lecfg2")
@@ -1159,6 +1171,7 @@ pub mod regs {
             Msr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Msr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Msr")
@@ -1222,6 +1235,7 @@ pub mod regs {
             Osr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Osr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Osr")
@@ -1325,6 +1339,7 @@ pub mod regs {
             Outcfg(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Outcfg {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Outcfg").field("sel", &self.sel()).finish()
@@ -1360,6 +1375,7 @@ pub mod regs {
             Privcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgr").field("priv_", &self.priv_()).finish()
@@ -1395,6 +1411,7 @@ pub mod regs {
             Seccfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seccfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccfgr").field("sec", &self.sec()).finish()
@@ -1434,6 +1451,7 @@ pub mod regs {
             Swin(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Swin {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Swin")
@@ -1509,6 +1527,7 @@ pub mod regs {
             Swinclr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Swinclr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Swinclr")
@@ -1584,6 +1603,7 @@ pub mod regs {
             Swinset(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Swinset {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Swinset")
@@ -1634,7 +1654,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FiltcfgEdgedet {
         #[doc = "Edge detection is bypassed."]
@@ -1669,7 +1690,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FlagEdge {
         #[doc = "Is set by a falling edge on leouty."]

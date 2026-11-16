@@ -179,6 +179,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -226,6 +227,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             Defkey0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Defkey0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Defkey0").field("defkey0", &self.defkey0()).finish()
@@ -261,6 +263,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             Defkey1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Defkey1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Defkey1").field("defkey1", &self.defkey1()).finish()
@@ -296,6 +299,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             Defkey2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Defkey2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Defkey2").field("defkey2", &self.defkey2()).finish()
@@ -331,6 +335,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             Defkey3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Defkey3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Defkey3").field("defkey3", &self.defkey3()).finish()
@@ -390,6 +395,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             HealthCr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HealthCr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HealthCr")
@@ -447,6 +453,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             HealthOsc1Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HealthOsc1Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HealthOsc1Cr")
@@ -550,6 +557,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             HealthOsc1Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HealthOsc1Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HealthOsc1Sr")
@@ -613,6 +621,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             HealthOsc2Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HealthOsc2Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HealthOsc2Cr")
@@ -716,6 +725,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             HealthOsc2Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HealthOsc2Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HealthOsc2Sr")
@@ -779,6 +789,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             HealthOsc3Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HealthOsc3Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HealthOsc3Cr")
@@ -882,6 +893,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             HealthOsc3Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for HealthOsc3Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("HealthOsc3Sr")
@@ -945,6 +957,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             IrqCr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IrqCr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IrqCr")
@@ -1000,6 +1013,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             IrqSr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IrqSr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IrqSr")
@@ -1079,6 +1093,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             OscsCr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for OscsCr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("OscsCr")
@@ -1150,6 +1165,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             PostpCr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for PostpCr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("PostpCr")
@@ -1255,6 +1271,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             PostpSr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for PostpSr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("PostpSr")
@@ -1438,6 +1455,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -1501,6 +1519,7 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
             Val(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Val {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Val").field("rnd_val", &self.rnd_val()).finish()
@@ -1515,7 +1534,8 @@ control the sampling clock enable divider, dividing by a factor equal to CLKDIV\
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AesBusy {
         #[doc = "AES core is idle."]
@@ -1546,7 +1566,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AesInit {
         #[doc = "AES core is not initialized (no key or state set)."]
@@ -1577,7 +1598,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AesKeyLd {
         #[doc = "AES core is waiting for 128 random bits from the entropy sources for generating its key."]
@@ -1608,7 +1630,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AesReset {
         #[doc = "No effect."]
@@ -1639,7 +1662,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AllOscsDown {
         #[doc = "At least one oscillator is ON."]
@@ -1670,7 +1694,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum ClrRevclkFlag {
         #[doc = "no reset."]
@@ -1701,7 +1726,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum EntropyErr {
         #[doc = "No fault detected."]
@@ -1732,7 +1758,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FifoFull {
         #[doc = "FIFO is not full."]
@@ -1763,7 +1790,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RevealClkErr {
         #[doc = "Internal clock for RNG clock is present."]
@@ -1794,7 +1822,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum RstHealthFlags {
         #[doc = "no reset."]
@@ -1825,7 +1854,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum ValReady {
         #[doc = "No value is ready in FIFO."]

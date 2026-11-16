@@ -100,6 +100,7 @@ pub mod regs {
             CxCr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for CxCr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CxCr")
@@ -163,6 +164,7 @@ pub mod regs {
             CxMr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for CxMr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CxMr")
@@ -246,6 +248,7 @@ pub mod regs {
             CxScr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for CxScr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CxScr")
@@ -313,6 +316,7 @@ pub mod regs {
             CxTOySr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for CxTOySr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CxTOySr")

@@ -1171,6 +1171,7 @@ pub mod regs {
             Ahb1encr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb1encr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb1encr")
@@ -1226,6 +1227,7 @@ pub mod regs {
             Ahb1enr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb1enr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb1enr")
@@ -1281,6 +1283,7 @@ pub mod regs {
             Ahb1ensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb1ensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb1ensr")
@@ -1336,6 +1339,7 @@ pub mod regs {
             Ahb1lpencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb1lpencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb1lpencr")
@@ -1391,6 +1395,7 @@ pub mod regs {
             Ahb1lpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb1lpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb1lpenr")
@@ -1446,6 +1451,7 @@ pub mod regs {
             Ahb1lpensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb1lpensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb1lpensr")
@@ -1501,6 +1507,7 @@ pub mod regs {
             Ahb1rstcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb1rstcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb1rstcr")
@@ -1556,6 +1563,7 @@ pub mod regs {
             Ahb1rstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb1rstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb1rstr")
@@ -1611,6 +1619,7 @@ pub mod regs {
             Ahb1rstsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb1rstsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb1rstsr")
@@ -1678,6 +1687,7 @@ pub mod regs {
             Ahb2encr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb2encr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb2encr")
@@ -1747,6 +1757,7 @@ pub mod regs {
             Ahb2enr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb2enr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb2enr")
@@ -1816,6 +1827,7 @@ pub mod regs {
             Ahb2ensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb2ensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb2ensr")
@@ -1885,6 +1897,7 @@ pub mod regs {
             Ahb2lpencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb2lpencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb2lpencr")
@@ -1954,6 +1967,7 @@ pub mod regs {
             Ahb2lpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb2lpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb2lpenr")
@@ -2023,6 +2037,7 @@ pub mod regs {
             Ahb2lpensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb2lpensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb2lpensr")
@@ -2092,6 +2107,7 @@ pub mod regs {
             Ahb2rstcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb2rstcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb2rstcr")
@@ -2161,6 +2177,7 @@ pub mod regs {
             Ahb2rstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb2rstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb2rstr")
@@ -2230,6 +2247,7 @@ pub mod regs {
             Ahb2rstsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb2rstsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb2rstsr")
@@ -2359,6 +2377,7 @@ pub mod regs {
             Ahb3encr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb3encr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb3encr")
@@ -2498,6 +2517,7 @@ pub mod regs {
             Ahb3enr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb3enr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb3enr")
@@ -2637,6 +2657,7 @@ pub mod regs {
             Ahb3ensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb3ensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb3ensr")
@@ -2776,6 +2797,7 @@ pub mod regs {
             Ahb3lpencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb3lpencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb3lpencr")
@@ -2915,6 +2937,7 @@ pub mod regs {
             Ahb3lpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb3lpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb3lpenr")
@@ -3054,6 +3077,7 @@ pub mod regs {
             Ahb3lpensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb3lpensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb3lpensr")
@@ -3169,6 +3193,7 @@ pub mod regs {
             Ahb3rstcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb3rstcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb3rstcr")
@@ -3280,6 +3305,7 @@ pub mod regs {
             Ahb3rstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb3rstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb3rstr")
@@ -3391,6 +3417,7 @@ pub mod regs {
             Ahb3rstsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb3rstsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb3rstsr")
@@ -3598,6 +3625,7 @@ pub mod regs {
             Ahb4encr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb4encr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb4encr")
@@ -3821,6 +3849,7 @@ pub mod regs {
             Ahb4enr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb4enr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb4enr")
@@ -4044,6 +4073,7 @@ pub mod regs {
             Ahb4ensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb4ensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb4ensr")
@@ -4267,6 +4297,7 @@ pub mod regs {
             Ahb4lpencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb4lpencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb4lpencr")
@@ -4490,6 +4521,7 @@ pub mod regs {
             Ahb4lpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb4lpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb4lpenr")
@@ -4713,6 +4745,7 @@ pub mod regs {
             Ahb4lpensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb4lpensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb4lpensr")
@@ -4936,6 +4969,7 @@ pub mod regs {
             Ahb4rstcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb4rstcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb4rstcr")
@@ -5159,6 +5193,7 @@ pub mod regs {
             Ahb4rstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb4rstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb4rstr")
@@ -5382,6 +5417,7 @@ pub mod regs {
             Ahb4rstsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb4rstsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb4rstsr")
@@ -5761,6 +5797,7 @@ pub mod regs {
             Ahb5encr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb5encr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb5encr")
@@ -6166,6 +6203,7 @@ pub mod regs {
             Ahb5enr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb5enr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb5enr")
@@ -6571,6 +6609,7 @@ pub mod regs {
             Ahb5ensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb5ensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb5ensr")
@@ -6976,6 +7015,7 @@ pub mod regs {
             Ahb5lpencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb5lpencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb5lpencr")
@@ -7381,6 +7421,7 @@ pub mod regs {
             Ahb5lpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb5lpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb5lpenr")
@@ -7786,6 +7827,7 @@ pub mod regs {
             Ahb5lpensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb5lpensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb5lpensr")
@@ -8143,6 +8185,7 @@ pub mod regs {
             Ahb5rstcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb5rstcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb5rstcr")
@@ -8492,6 +8535,7 @@ pub mod regs {
             Ahb5rstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb5rstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb5rstr")
@@ -8841,6 +8885,7 @@ pub mod regs {
             Ahb5rstsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb5rstsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb5rstsr")
@@ -8950,6 +8995,7 @@ pub mod regs {
             Apb1hencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1hencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1hencr")
@@ -9019,6 +9065,7 @@ pub mod regs {
             Apb1henr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1henr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1henr")
@@ -9088,6 +9135,7 @@ pub mod regs {
             Apb1hensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1hensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1hensr")
@@ -9157,6 +9205,7 @@ pub mod regs {
             Apb1hlpencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1hlpencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1hlpencr")
@@ -9226,6 +9275,7 @@ pub mod regs {
             Apb1hlpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1hlpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1hlpenr")
@@ -9295,6 +9345,7 @@ pub mod regs {
             Apb1hlpensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1hlpensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1hlpensr")
@@ -9364,6 +9415,7 @@ pub mod regs {
             Apb1hrstcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1hrstcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1hrstcr")
@@ -9433,6 +9485,7 @@ pub mod regs {
             Apb1hrstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1hrstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1hrstr")
@@ -9502,6 +9555,7 @@ pub mod regs {
             Apb1hrstsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1hrstsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1hrstsr")
@@ -9847,6 +9901,7 @@ pub mod regs {
             Apb1lencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1lencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1lencr")
@@ -10250,6 +10305,7 @@ pub mod regs {
             Apb1lenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1lenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1lenr")
@@ -10655,6 +10711,7 @@ pub mod regs {
             Apb1lensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1lensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1lensr")
@@ -11060,6 +11117,7 @@ pub mod regs {
             Apb1llpencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1llpencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1llpencr")
@@ -11465,6 +11523,7 @@ pub mod regs {
             Apb1llpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1llpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1llpenr")
@@ -11870,6 +11929,7 @@ pub mod regs {
             Apb1llpensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1llpensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1llpensr")
@@ -12275,6 +12335,7 @@ pub mod regs {
             Apb1lrstcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1lrstcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1lrstcr")
@@ -12680,6 +12741,7 @@ pub mod regs {
             Apb1lrstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1lrstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1lrstr")
@@ -13085,6 +13147,7 @@ pub mod regs {
             Apb1lrstsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1lrstsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1lrstsr")
@@ -13358,6 +13421,7 @@ pub mod regs {
             Apb2encr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb2encr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb2encr")
@@ -13609,6 +13673,7 @@ pub mod regs {
             Apb2enr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb2enr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb2enr")
@@ -13860,6 +13925,7 @@ pub mod regs {
             Apb2ensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb2ensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb2ensr")
@@ -14111,6 +14177,7 @@ pub mod regs {
             Apb2lpencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb2lpencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb2lpencr")
@@ -14362,6 +14429,7 @@ pub mod regs {
             Apb2lpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb2lpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb2lpenr")
@@ -14613,6 +14681,7 @@ pub mod regs {
             Apb2lpensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb2lpensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb2lpensr")
@@ -14864,6 +14933,7 @@ pub mod regs {
             Apb2rstcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb2rstcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb2rstcr")
@@ -15115,6 +15185,7 @@ pub mod regs {
             Apb2rstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb2rstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb2rstr")
@@ -15366,6 +15437,7 @@ pub mod regs {
             Apb2rstsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb2rstsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb2rstsr")
@@ -15437,6 +15509,7 @@ pub mod regs {
             Apb3encr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb3encr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb3encr").field("dftenc", &self.dftenc()).finish()
@@ -15472,6 +15545,7 @@ pub mod regs {
             Apb3enr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb3enr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb3enr").field("dften", &self.dften()).finish()
@@ -15507,6 +15581,7 @@ pub mod regs {
             Apb3ensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb3ensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb3ensr").field("dftens", &self.dftens()).finish()
@@ -15542,6 +15617,7 @@ pub mod regs {
             Apb3lpencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb3lpencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb3lpencr")
@@ -15579,6 +15655,7 @@ pub mod regs {
             Apb3lpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb3lpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb3lpenr").field("dftlpen", &self.dftlpen()).finish()
@@ -15614,6 +15691,7 @@ pub mod regs {
             Apb3lpensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb3lpensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb3lpensr")
@@ -15687,6 +15765,7 @@ pub mod regs {
             Apb4hencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4hencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4hencr")
@@ -15770,6 +15849,7 @@ pub mod regs {
             Apb4henr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4henr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4henr")
@@ -15853,6 +15933,7 @@ pub mod regs {
             Apb4hensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4hensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4hensr")
@@ -15936,6 +16017,7 @@ pub mod regs {
             Apb4hlpencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4hlpencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4hlpencr")
@@ -16019,6 +16101,7 @@ pub mod regs {
             Apb4hlpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4hlpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4hlpenr")
@@ -16102,6 +16185,7 @@ pub mod regs {
             Apb4hlpensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4hlpensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4hlpensr")
@@ -16173,6 +16257,7 @@ pub mod regs {
             Apb4hrstcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4hrstcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4hrstcr")
@@ -16242,6 +16327,7 @@ pub mod regs {
             Apb4hrstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4hrstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4hrstr")
@@ -16311,6 +16397,7 @@ pub mod regs {
             Apb4hrstsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4hrstsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4hrstsr")
@@ -16500,6 +16587,7 @@ pub mod regs {
             Apb4lencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4lencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4lencr")
@@ -16709,6 +16797,7 @@ pub mod regs {
             Apb4lenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4lenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4lenr")
@@ -16918,6 +17007,7 @@ pub mod regs {
             Apb4lensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4lensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4lensr")
@@ -17139,6 +17229,7 @@ pub mod regs {
             Apb4llpencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4llpencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4llpencr")
@@ -17362,6 +17453,7 @@ pub mod regs {
             Apb4llpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4llpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4llpenr")
@@ -17585,6 +17677,7 @@ pub mod regs {
             Apb4llpensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4llpensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4llpensr")
@@ -17796,6 +17889,7 @@ pub mod regs {
             Apb4lrstcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4lrstcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4lrstcr")
@@ -18005,6 +18099,7 @@ pub mod regs {
             Apb4lrstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4lrstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4lrstr")
@@ -18214,6 +18309,7 @@ pub mod regs {
             Apb4lrstsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4lrstsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4lrstsr")
@@ -18327,6 +18423,7 @@ pub mod regs {
             Apb5encr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb5encr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5encr")
@@ -18424,6 +18521,7 @@ pub mod regs {
             Apb5enr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb5enr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5enr")
@@ -18521,6 +18619,7 @@ pub mod regs {
             Apb5ensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb5ensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5ensr")
@@ -18618,6 +18717,7 @@ pub mod regs {
             Apb5lpencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb5lpencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5lpencr")
@@ -18715,6 +18815,7 @@ pub mod regs {
             Apb5lpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb5lpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5lpenr")
@@ -18812,6 +18913,7 @@ pub mod regs {
             Apb5lpensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb5lpensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5lpensr")
@@ -18909,6 +19011,7 @@ pub mod regs {
             Apb5rstcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb5rstcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5rstcr")
@@ -19006,6 +19109,7 @@ pub mod regs {
             Apb5rstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb5rstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5rstr")
@@ -19103,6 +19207,7 @@ pub mod regs {
             Apb5rstsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb5rstsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5rstsr")
@@ -19152,6 +19257,7 @@ pub mod regs {
             Bdcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bdcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bdcr").field("vswrst", &self.vswrst()).finish()
@@ -19331,6 +19437,7 @@ pub mod regs {
             Busencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Busencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Busencr")
@@ -19540,6 +19647,7 @@ pub mod regs {
             Busenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Busenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Busenr")
@@ -19749,6 +19857,7 @@ pub mod regs {
             Busensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Busensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Busensr")
@@ -19958,6 +20067,7 @@ pub mod regs {
             Buslpencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Buslpencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Buslpencr")
@@ -20167,6 +20277,7 @@ pub mod regs {
             Buslpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Buslpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Buslpenr")
@@ -20376,6 +20487,7 @@ pub mod regs {
             Buslpensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Buslpensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Buslpensr")
@@ -20585,6 +20697,7 @@ pub mod regs {
             Busrstcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Busrstcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Busrstcr")
@@ -20794,6 +20907,7 @@ pub mod regs {
             Busrstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Busrstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Busrstr")
@@ -21003,6 +21117,7 @@ pub mod regs {
             Busrstsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Busrstsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Busrstsr")
@@ -21104,6 +21219,7 @@ pub mod regs {
             Ccipr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccipr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccipr1")
@@ -21199,6 +21315,7 @@ pub mod regs {
             Ccipr12(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccipr12 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccipr12")
@@ -21332,6 +21449,7 @@ pub mod regs {
             Ccipr13(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccipr13 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccipr13")
@@ -21411,6 +21529,7 @@ pub mod regs {
             Ccipr14(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccipr14 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccipr14")
@@ -21528,6 +21647,7 @@ pub mod regs {
             Ccipr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccipr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccipr2")
@@ -21605,6 +21725,7 @@ pub mod regs {
             Ccipr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccipr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccipr3")
@@ -21722,6 +21843,7 @@ pub mod regs {
             Ccipr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccipr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccipr4")
@@ -21823,6 +21945,7 @@ pub mod regs {
             Ccipr5(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccipr5 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccipr5")
@@ -21944,6 +22067,7 @@ pub mod regs {
             Ccipr6(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccipr6 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccipr6")
@@ -22057,6 +22181,7 @@ pub mod regs {
             Ccipr7(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccipr7 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccipr7")
@@ -22120,6 +22245,7 @@ pub mod regs {
             Ccipr8(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccipr8 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccipr8")
@@ -22235,6 +22361,7 @@ pub mod regs {
             Ccipr9(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccipr9 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccipr9")
@@ -22352,6 +22479,7 @@ pub mod regs {
             Ccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccr")
@@ -22457,6 +22585,7 @@ pub mod regs {
             Cfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr")
@@ -22566,6 +22695,7 @@ pub mod regs {
             Cfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr2")
@@ -22717,6 +22847,7 @@ pub mod regs {
             Cicr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cicr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cicr")
@@ -22880,6 +23011,7 @@ pub mod regs {
             Cier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cier")
@@ -23043,6 +23175,7 @@ pub mod regs {
             Cifr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cifr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cifr")
@@ -23142,6 +23275,7 @@ pub mod regs {
             Ckprotr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ckprotr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ckprotr")
@@ -23253,6 +23387,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -23374,6 +23509,7 @@ pub mod regs {
             Csr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csr")
@@ -23659,6 +23795,7 @@ pub mod regs {
             Divencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Divencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Divencr")
@@ -23966,6 +24103,7 @@ pub mod regs {
             Divenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Divenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Divenr")
@@ -24273,6 +24411,7 @@ pub mod regs {
             Divensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Divensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Divensr")
@@ -24580,6 +24719,7 @@ pub mod regs {
             Divlpencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Divlpencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Divlpencr")
@@ -24887,6 +25027,7 @@ pub mod regs {
             Divlpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Divlpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Divlpenr")
@@ -25194,6 +25335,7 @@ pub mod regs {
             Divlpensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Divlpensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Divlpensr")
@@ -25381,6 +25523,7 @@ pub mod regs {
             Hsecfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hsecfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hsecfgr")
@@ -25464,6 +25607,7 @@ pub mod regs {
             Hsicfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hsicfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hsicfgr")
@@ -25533,6 +25677,7 @@ pub mod regs {
             Hsimcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hsimcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hsimcr")
@@ -25578,6 +25723,7 @@ pub mod regs {
             Hsimsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hsimsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hsimsr").field("hsival", &self.hsival()).finish()
@@ -25709,6 +25855,7 @@ pub mod regs {
             Hwrsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hwrsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hwrsr")
@@ -25778,6 +25925,7 @@ pub mod regs {
             Iccfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Iccfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Iccfgr")
@@ -25864,6 +26012,7 @@ pub mod regs {
             Lockcfgr0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lockcfgr0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lockcfgr0")
@@ -25917,6 +26066,7 @@ pub mod regs {
             Lockcfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lockcfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lockcfgr1")
@@ -26192,6 +26342,7 @@ pub mod regs {
             Lockcfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lockcfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lockcfgr2")
@@ -26343,6 +26494,7 @@ pub mod regs {
             Lockcfgr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lockcfgr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lockcfgr3")
@@ -26552,6 +26704,7 @@ pub mod regs {
             Lockcfgr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lockcfgr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lockcfgr4")
@@ -26691,6 +26844,7 @@ pub mod regs {
             Lockcfgsr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lockcfgsr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lockcfgsr3")
@@ -26816,6 +26970,7 @@ pub mod regs {
             Lsecfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lsecfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lsecfgr")
@@ -27013,6 +27168,7 @@ pub mod regs {
             Memencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Memencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Memencr")
@@ -27222,6 +27378,7 @@ pub mod regs {
             Memenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Memenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Memenr")
@@ -27431,6 +27588,7 @@ pub mod regs {
             Memensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Memensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Memensr")
@@ -27640,6 +27798,7 @@ pub mod regs {
             Memlpencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Memlpencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Memlpencr")
@@ -27849,6 +28008,7 @@ pub mod regs {
             Memlpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Memlpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Memlpenr")
@@ -28058,6 +28218,7 @@ pub mod regs {
             Memlpensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Memlpensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Memlpensr")
@@ -28255,6 +28416,7 @@ pub mod regs {
             Memrstcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Memrstcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Memrstcr")
@@ -28450,6 +28612,7 @@ pub mod regs {
             Memrstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Memrstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Memrstr")
@@ -28645,6 +28808,7 @@ pub mod regs {
             Memrstsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Memrstsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Memrstsr")
@@ -28756,6 +28920,7 @@ pub mod regs {
             Miscencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Miscencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Miscencr")
@@ -28853,6 +29018,7 @@ pub mod regs {
             Miscenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Miscenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Miscenr")
@@ -28950,6 +29116,7 @@ pub mod regs {
             Miscensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Miscensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Miscensr")
@@ -29023,6 +29190,7 @@ pub mod regs {
             Misclpencr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Misclpencr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Misclpencr")
@@ -29092,6 +29260,7 @@ pub mod regs {
             Misclpenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Misclpenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Misclpenr")
@@ -29161,6 +29330,7 @@ pub mod regs {
             Misclpensr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Misclpensr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Misclpensr")
@@ -29254,6 +29424,7 @@ pub mod regs {
             Miscrstcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Miscrstcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Miscrstcr")
@@ -29351,6 +29522,7 @@ pub mod regs {
             Miscrstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Miscrstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Miscrstr")
@@ -29448,6 +29620,7 @@ pub mod regs {
             Miscrstsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Miscrstsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Miscrstsr")
@@ -29521,6 +29694,7 @@ pub mod regs {
             Msicfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Msicfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Msicfgr")
@@ -29602,6 +29776,7 @@ pub mod regs {
             Pllcfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pllcfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pllcfgr1")
@@ -29649,6 +29824,7 @@ pub mod regs {
             Pllcfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pllcfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pllcfgr2")
@@ -29794,6 +29970,7 @@ pub mod regs {
             Pllcfgr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pllcfgr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pllcfgr3")
@@ -29901,6 +30078,7 @@ pub mod regs {
             Privcfgcr0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgcr0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgcr0")
@@ -29954,6 +30132,7 @@ pub mod regs {
             Privcfgcr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgcr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgcr1")
@@ -30229,6 +30408,7 @@ pub mod regs {
             Privcfgcr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgcr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgcr2")
@@ -30380,6 +30560,7 @@ pub mod regs {
             Privcfgcr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgcr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgcr3")
@@ -30589,6 +30770,7 @@ pub mod regs {
             Privcfgcr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgcr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgcr4")
@@ -30704,6 +30886,7 @@ pub mod regs {
             Privcfgr0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgr0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgr0")
@@ -30757,6 +30940,7 @@ pub mod regs {
             Privcfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgr1")
@@ -31032,6 +31216,7 @@ pub mod regs {
             Privcfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgr2")
@@ -31183,6 +31368,7 @@ pub mod regs {
             Privcfgr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgr3")
@@ -31392,6 +31578,7 @@ pub mod regs {
             Privcfgr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgr4")
@@ -31507,6 +31694,7 @@ pub mod regs {
             Privcfgsr0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgsr0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgsr0")
@@ -31560,6 +31748,7 @@ pub mod regs {
             Privcfgsr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgsr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgsr1")
@@ -31835,6 +32024,7 @@ pub mod regs {
             Privcfgsr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgsr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgsr2")
@@ -31986,6 +32176,7 @@ pub mod regs {
             Privcfgsr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgsr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgsr3")
@@ -32195,6 +32386,7 @@ pub mod regs {
             Privcfgsr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgsr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgsr4")
@@ -32310,6 +32502,7 @@ pub mod regs {
             Pubcfgcr0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgcr0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgcr0")
@@ -32363,6 +32556,7 @@ pub mod regs {
             Pubcfgcr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgcr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgcr1")
@@ -32638,6 +32832,7 @@ pub mod regs {
             Pubcfgcr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgcr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgcr2")
@@ -32789,6 +32984,7 @@ pub mod regs {
             Pubcfgcr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgcr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgcr3")
@@ -32998,6 +33194,7 @@ pub mod regs {
             Pubcfgcr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgcr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgcr4")
@@ -33197,6 +33394,7 @@ pub mod regs {
             Pubcfgcr5(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgcr5 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgcr5")
@@ -33308,6 +33506,7 @@ pub mod regs {
             Pubcfgr0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgr0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgr0")
@@ -33361,6 +33560,7 @@ pub mod regs {
             Pubcfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgr1")
@@ -33636,6 +33836,7 @@ pub mod regs {
             Pubcfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgr2")
@@ -33787,6 +33988,7 @@ pub mod regs {
             Pubcfgr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgr3")
@@ -33996,6 +34198,7 @@ pub mod regs {
             Pubcfgr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgr4")
@@ -34195,6 +34398,7 @@ pub mod regs {
             Pubcfgr5(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgr5 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgr5")
@@ -34306,6 +34510,7 @@ pub mod regs {
             Pubcfgsr0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgsr0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgsr0")
@@ -34359,6 +34564,7 @@ pub mod regs {
             Pubcfgsr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgsr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgsr1")
@@ -34634,6 +34840,7 @@ pub mod regs {
             Pubcfgsr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgsr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgsr2")
@@ -34785,6 +34992,7 @@ pub mod regs {
             Pubcfgsr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgsr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgsr3")
@@ -34994,6 +35202,7 @@ pub mod regs {
             Pubcfgsr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgsr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgsr4")
@@ -35193,6 +35402,7 @@ pub mod regs {
             Pubcfgsr5(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pubcfgsr5 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pubcfgsr5")
@@ -35268,6 +35478,7 @@ pub mod regs {
             Rdcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rdcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rdcr")
@@ -35402,6 +35613,7 @@ pub mod regs {
             Rsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rsr")
@@ -35507,6 +35719,7 @@ pub mod regs {
             Seccfgr0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seccfgr0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccfgr0")
@@ -35560,6 +35773,7 @@ pub mod regs {
             Seccfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seccfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccfgr1")
@@ -35611,6 +35825,7 @@ pub mod regs {
             Seccfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seccfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccfgr2")
@@ -35762,6 +35977,7 @@ pub mod regs {
             Seccfgr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seccfgr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccfgr3")
@@ -35971,6 +36187,7 @@ pub mod regs {
             Seccfgr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seccfgr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccfgr4")
@@ -36110,6 +36327,7 @@ pub mod regs {
             Seccfgsr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seccfgsr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccfgsr3")
@@ -36227,6 +36445,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -36320,6 +36539,7 @@ pub mod regs {
             Stopccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Stopccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Stopccr")
@@ -36403,6 +36623,7 @@ pub mod regs {
             Stopcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Stopcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Stopcr")
@@ -36462,6 +36683,7 @@ pub mod regs {
             Stopcsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Stopcsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Stopcsr")
@@ -36484,7 +36706,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclknclock {
         #[doc = "ACLKNC configuration bits are accessible by non-lock software only (default after reset)."]
@@ -36515,7 +36738,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclkncpub {
         #[doc = "ACLKNC configuration bits are accessible by non-public software only (default after reset)."]
@@ -36546,7 +36770,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclkncpv {
         #[doc = "ACLKNC configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -36577,7 +36802,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclkncsec {
         #[doc = "ACLKNC configuration bits are accessible by non-secure software only (default after reset)."]
@@ -36608,7 +36834,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclknlock {
         #[doc = "ACLKN configuration bits are accessible by non-lock software only (default after reset)."]
@@ -36639,7 +36866,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclknpub {
         #[doc = "ACLKN configuration bits are accessible by non-public software only (default after reset)."]
@@ -36670,7 +36898,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclknpv {
         #[doc = "ACLKN configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -36701,7 +36930,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Aclknsec {
         #[doc = "ACLKN configuration bits are accessible by non-secure software only (default after reset)."]
@@ -36752,6 +36982,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adcpre {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -36788,7 +37019,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adcsel {
         #[doc = "hclk1 selected as reference clock."]
@@ -36831,7 +37063,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adfsel {
         #[doc = "hclk2 selected as reference clock."]
@@ -36874,7 +37107,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahblock {
         #[doc = "AHB1 configuration bits are accessible by non-lock software only (default after reset)."]
@@ -36905,7 +37139,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahbmlock {
         #[doc = "AHBM configuration bits are accessible by non-lock software only (default after reset)."]
@@ -36936,7 +37171,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahbmpub {
         #[doc = "AHBM configuration bits are accessible by non-public software only (default after reset)."]
@@ -36967,7 +37203,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahbmpv {
         #[doc = "AHBM configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -36998,7 +37235,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahbmsec {
         #[doc = "AHBM configuration bits are accessible by non-secure software only (default after reset)."]
@@ -37029,7 +37267,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahbpub {
         #[doc = "AHB1 configuration bits are accessible by non-public software only (default after reset)."]
@@ -37060,7 +37299,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahbpv {
         #[doc = "AHB1 configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -37091,7 +37331,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahbsec {
         #[doc = "AHB1 configuration bits are accessible by non-secure software only (default after reset)."]
@@ -37122,7 +37363,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ahbsrampub {
         #[doc = "AHBSRAM1 configuration bits are accessible by non-public software only (default after reset)."]
@@ -37153,7 +37395,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Apblock {
         #[doc = "APB1 configuration bits are accessible by non-lock software only (default after reset)."]
@@ -37184,7 +37427,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Apbpub {
         #[doc = "APB1 configuration bits are accessible by non-public software only (default after reset)."]
@@ -37215,7 +37459,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Apbpv {
         #[doc = "APB1 configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -37246,7 +37491,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Apbsec {
         #[doc = "APB1 configuration bits are accessible by non-secure software only (default after reset)."]
@@ -37277,7 +37523,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Axisrampub {
         #[doc = "AXISRAM1 configuration bits are accessible by non-public software only (default after reset)."]
@@ -37308,7 +37555,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bkpsrampub {
         #[doc = "BKPSRAM configuration bits are accessible by non-public software only (default after reset)."]
@@ -37339,7 +37587,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Buslock {
         #[doc = "BUS configuration bits are accessible by non-lock software only (default after reset)."]
@@ -37370,7 +37619,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Buspub {
         #[doc = "BUS configuration bits are accessible by non-public software only (default after reset)."]
@@ -37401,7 +37651,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Buspv {
         #[doc = "BUS configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -37432,7 +37683,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bussec {
         #[doc = "BUS configuration bits are accessible by non-secure software only (default after reset)."]
@@ -37463,7 +37715,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cpusw {
         #[doc = "hsi_ck selected as system clock (default after reset)."]
@@ -37498,7 +37751,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dcmippsel {
         #[doc = "pclk5 selected as reference clock."]
@@ -37533,7 +37787,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dftlock {
         #[doc = "DFT configuration bits are accessible by non-lock software only (default after reset)."]
@@ -37564,7 +37819,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dftpub {
         #[doc = "DFT configuration bits are accessible by non-public software only (default after reset)."]
@@ -37595,7 +37851,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dftpv {
         #[doc = "DFT configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -37626,7 +37883,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dftsec {
         #[doc = "DFT configuration bits are accessible by non-secure software only (default after reset)."]
@@ -37657,7 +37915,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dftsel {
         #[doc = "jtag_tck selected as reference clock (default after reset)."]
@@ -37688,7 +37947,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Eadly {
         #[doc = "sysrstn low pulse duration is guaranteed by the pulse stretcher of the PAD. The RPCTL is bypassed (default after reset)."]
@@ -37734,7 +37994,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ethclksel {
         #[doc = "hclke selected as reference clock."]
@@ -37769,7 +38030,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ethgtxclksel {
         #[doc = "MII."]
@@ -37800,7 +38062,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ethptpdiv {
         #[doc = "ck_ker_eth1ptp is divided by 1."]
@@ -37848,7 +38111,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ethptpsel {
         #[doc = "hclke selected as reference clock."]
@@ -37883,7 +38147,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ethpwrdownack {
         #[doc = "Power-down sequence start not yet acknowledged."]
@@ -37914,7 +38179,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fdcansel {
         #[doc = "pclk1 selected as reference clock."]
@@ -37949,7 +38215,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Flexrampub {
         #[doc = "FLEXRAM configuration bits are accessible by non-public software only (default after reset)."]
@@ -37980,7 +38247,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fmcsel {
         #[doc = "hclk5 selected as reference clock."]
@@ -38015,7 +38283,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fmcsels {
         #[doc = "hclk5 selected as FMC clock (default after reset)."]
@@ -38050,7 +38319,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hpre {
         #[doc = "sys_bus2_ck= sys_bus_ck."]
@@ -38093,7 +38363,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsecssbpre {
         #[doc = "HSI clock is divided by 1."]
@@ -38141,7 +38412,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsecssbyp {
         #[doc = "clock Security System Bypass of the HSE oscillator is OFF (default after reset)."]
@@ -38172,7 +38444,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsecssc {
         #[doc = "HSECSSF not modified (default after reset)."]
@@ -38203,7 +38476,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsecssd {
         #[doc = "No failure detected on the oscillator (default after reset)."]
@@ -38234,7 +38508,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsecssf {
         #[doc = "no clock ready interrupt caused by the HSE (default after reset)."]
@@ -38265,7 +38540,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsecssie {
         #[doc = "HSE CSS interrupt disabled."]
@@ -38296,7 +38572,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsecssra {
         #[doc = "Writing 0 has no effect (default after reset)."]
@@ -38327,7 +38604,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsediv2sel {
         #[doc = "HSE: hse_div2_osc_ck = hse_osc_ck (default after reset)."]
@@ -38358,7 +38636,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsedrv {
         #[doc = "Lowest drive (default after reset)."]
@@ -38393,7 +38672,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hseext {
         #[doc = "HSE in analog mode (default after reset)."]
@@ -38424,7 +38704,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hselock {
         #[doc = "HSE configuration bits are accessible by non-lock software only (default after reset)."]
@@ -38455,7 +38736,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsepub {
         #[doc = "HSE configuration bits are accessible by non-public software only (default after reset)."]
@@ -38486,7 +38768,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsepv {
         #[doc = "HSE configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -38517,7 +38800,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hserdyc {
         #[doc = "HSERDYF not modified (default after reset)."]
@@ -38548,7 +38832,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hserdyie {
         #[doc = "HSE ready interrupt disabled (default after reset)."]
@@ -38579,7 +38864,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsesec {
         #[doc = "HSE configuration bits are accessible by non-secure software only (default after reset)."]
@@ -38610,7 +38896,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsidiv {
         #[doc = "hsi_ck = hsi_osc_ck (default after reset)."]
@@ -38645,7 +38932,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsilock {
         #[doc = "HSI configuration bits are accessible by non-lock software only (default after reset)."]
@@ -38676,7 +38964,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsipub {
         #[doc = "HSI configuration bits are accessible by non-public software only (default after reset)."]
@@ -38707,7 +38996,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsipv {
         #[doc = "HSI configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -38738,7 +39028,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsirdyc {
         #[doc = "HSIRDYF not modified (default after reset)."]
@@ -38769,7 +39060,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsirdyf {
         #[doc = "no clock ready interrupt caused by the HSI (default after reset)."]
@@ -38800,7 +39092,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsirdyie {
         #[doc = "HSI ready interrupt disabled (default after reset)."]
@@ -38831,7 +39124,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hsisec {
         #[doc = "HSI configuration bits are accessible by non-secure software only (default after reset)."]
@@ -38889,6 +39183,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hsitrim {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -38927,7 +39222,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum I2c1sel {
         #[doc = "pclk1 selected as reference clock."]
@@ -38968,7 +39264,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Icint {
         #[doc = "IC = pllx_ck."]
@@ -39507,7 +39804,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Iclock {
         #[doc = "IC10 configuration bits are accessible by non-lock software only (default after reset)."]
@@ -39538,7 +39836,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Icpub {
         #[doc = "IC10 configuration bits are accessible by non-public software only (default after reset)."]
@@ -39569,7 +39868,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Icpv {
         #[doc = "IC10 configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -39600,7 +39900,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Icsel {
         #[doc = "pll1_ck is selected."]
@@ -39635,7 +39936,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Intlock {
         #[doc = "INT configuration bits are accessible by non-lock software only (default after reset)."]
@@ -39666,7 +39968,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Intpub {
         #[doc = "INT configuration bits are accessible by non-public software only (default after reset)."]
@@ -39697,7 +40000,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Intpv {
         #[doc = "INT configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -39728,7 +40032,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Intsec {
         #[doc = "INT configuration bits are accessible by non-secure software only (default after reset)."]
@@ -39759,7 +40064,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lptim1sel {
         #[doc = "pclk1 selected as reference clock."]
@@ -39800,7 +40106,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lptim2345sel {
         #[doc = "pclk1 selected as reference clock."]
@@ -39841,7 +40148,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpuartsel {
         #[doc = "pclk4 selected as reference clock."]
@@ -39883,7 +40191,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsecssc {
         #[doc = "LSECSSF not modified (default after reset)."]
@@ -39914,7 +40223,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsecssd {
         #[doc = "No failure detected on the oscillator (default after reset)."]
@@ -39945,7 +40255,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsecssf {
         #[doc = "no clock ready interrupt caused by the LSE (default after reset)."]
@@ -39976,7 +40287,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsecssie {
         #[doc = "LSE CSS interrupt disabled (default after reset)."]
@@ -40007,7 +40319,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsecssra {
         #[doc = "Writing 0 has no effect (default after reset)."]
@@ -40038,7 +40351,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsedrv {
         #[doc = "Lowest drive (default after reset)."]
@@ -40073,7 +40387,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lseext {
         #[doc = "LSE in analog mode (default after reset)."]
@@ -40104,7 +40419,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lselock {
         #[doc = "LSE configuration bits are accessible by non-lock software only (default after reset)."]
@@ -40135,7 +40451,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsepub {
         #[doc = "LSE configuration bits are accessible by non-public software only (default after reset)."]
@@ -40166,7 +40483,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsepv {
         #[doc = "LSE configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -40197,7 +40515,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lserdyc {
         #[doc = "LSERDYF not modified (default after reset)."]
@@ -40228,7 +40547,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lserdyie {
         #[doc = "LSE ready interrupt disabled (default after reset)."]
@@ -40259,7 +40579,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsesec {
         #[doc = "LSE configuration bits are accessible by non-secure software only (default after reset)."]
@@ -40290,7 +40611,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsilock {
         #[doc = "LSI configuration bits are accessible by non-lock software only (default after reset)."]
@@ -40321,7 +40643,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsipub {
         #[doc = "LSI configuration bits are accessible by non-public software only (default after reset)."]
@@ -40352,7 +40675,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsipv {
         #[doc = "LSI configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -40383,7 +40707,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsisec {
         #[doc = "LSI configuration bits are accessible by non-secure software only (default after reset)."]
@@ -40414,7 +40739,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ltdcsel {
         #[doc = "pclk5 selected as reference clock."]
@@ -40449,7 +40775,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mco1sel {
         #[doc = "hsi selected as reference clock (default after reset)."]
@@ -40492,7 +40819,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mco2sel {
         #[doc = "hsi selected as reference clock (default after reset)."]
@@ -40535,7 +40863,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mcopre {
         #[doc = "ck_icn_p_mce3 is divided by 1."]
@@ -40583,7 +40912,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Modlock {
         #[doc = "MOD configuration bits are accessible by non-lock software only (default after reset)."]
@@ -40614,7 +40944,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Modpub {
         #[doc = "MOD configuration bits are accessible by non-public software only (default after reset)."]
@@ -40645,7 +40976,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Modpv {
         #[doc = "MOD configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -40676,7 +41008,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Modsec {
         #[doc = "MOD configuration bits are accessible by non-secure software only (default after reset)."]
@@ -40707,7 +41040,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mrd {
         #[doc = "No extra delay added by the BOOTROM."]
@@ -40782,7 +41116,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msifreqsel {
         #[doc = "MSI oscillator frequency is 4 MHz (default after backup domain reset)."]
@@ -40813,7 +41148,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msilock {
         #[doc = "MSI configuration bits are accessible by non-lock software only (default after reset)."]
@@ -40844,7 +41180,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msipub {
         #[doc = "MSI configuration bits are accessible by non-public software only (default after reset)."]
@@ -40875,7 +41212,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msipv {
         #[doc = "MSI configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -40906,7 +41244,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msirdyc {
         #[doc = "MSIRDYF not modified (default after reset)."]
@@ -40937,7 +41276,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msirdyf {
         #[doc = "no clock ready interrupt caused by the MSI (default after reset)."]
@@ -40968,7 +41308,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msirdyie {
         #[doc = "MSI ready interrupt disabled (default after reset)."]
@@ -40999,7 +41340,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msisec {
         #[doc = "MSI configuration bits are accessible by non-secure software only (default after reset)."]
@@ -41030,7 +41372,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Noclock {
         #[doc = "NOC configuration bits are accessible by non-lock software only (default after reset)."]
@@ -41061,7 +41404,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nocpub {
         #[doc = "NOC configuration bits are accessible by non-public software only (default after reset)."]
@@ -41092,7 +41436,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nocpv {
         #[doc = "NOC configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -41123,7 +41468,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nocsec {
         #[doc = "NOC configuration bits are accessible by non-secure software only (default after reset)."]
@@ -41154,7 +41500,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Npucacherampub {
         #[doc = "NPUCACHERAM configuration bits are accessible by non-public software only (default after reset)."]
@@ -41185,7 +41532,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Otgphysel {
         #[doc = "hse_div2_ck selected as reference clock."]
@@ -41220,7 +41568,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Perlock {
         #[doc = "PER configuration bits are accessible by non-lock software only (default after reset)."]
@@ -41251,7 +41600,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Perpub {
         #[doc = "PER configuration bits are accessible by non-public software only (default after reset)."]
@@ -41282,7 +41632,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Perpv {
         #[doc = "PER configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -41313,7 +41664,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Persec {
         #[doc = "PER configuration bits are accessible by non-secure software only (default after reset)."]
@@ -41344,7 +41696,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Persel {
         #[doc = "hsi_ck selected as reference clock."]
@@ -41387,7 +41740,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Plldivm {
         _RESERVED_0 = 0x0,
@@ -41541,7 +41895,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Plllock {
         #[doc = "PLL1 configuration bits are accessible by non-lock software only (default after reset)."]
@@ -41572,7 +41927,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllmodsprdw {
         #[doc = "Center-spread modulation selected (default after reset)."]
@@ -41603,7 +41959,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllmodssdis {
         #[doc = "Modulation Spread-Spectrum is active (and Fractional Divide inactive)."]
@@ -41634,7 +41991,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllpdiv {
         _RESERVED_0 = 0x0,
@@ -41676,7 +42034,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllpub {
         #[doc = "PLL1 configuration bits are accessible by non-public software only (default after reset)."]
@@ -41707,7 +42066,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllpv {
         #[doc = "PLL1 configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -41738,7 +42098,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllrdyc {
         #[doc = "PLL1RDYF not modified (default after reset)."]
@@ -41769,7 +42130,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllrdyf {
         #[doc = "no clock ready interrupt caused by the PLL1 (default after reset)."]
@@ -41800,7 +42162,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllrdyie {
         #[doc = "PLL1 lock interrupt disabled (default after reset)."]
@@ -41831,7 +42194,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllsec {
         #[doc = "PLL1 configuration bits are accessible by non-secure software only (default after reset)."]
@@ -41862,7 +42226,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pllsel {
         #[doc = "hsi_ck selected as reference clock."]
@@ -41901,7 +42266,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ppre {
         #[doc = "rcc_pclk1 = sys_bus2_ck (default after reset)."]
@@ -41944,7 +42310,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pssisel {
         #[doc = "hclk5 selected as reference clock."]
@@ -41979,7 +42346,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rstlock {
         #[doc = "RST configuration bits are accessible by non-lock software only (default after reset)."]
@@ -42010,7 +42378,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rstpub {
         #[doc = "RST configuration bits are accessible by non-public software only (default after reset)."]
@@ -42041,7 +42410,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rstpv {
         #[doc = "RST configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -42072,7 +42442,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rstsec {
         #[doc = "RST configuration bits are accessible by non-secure software only (default after reset)."]
@@ -42103,7 +42474,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rtcpre {
         #[doc = "ck_icn_p_risaf is divided by 1."]
@@ -42199,7 +42571,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rtcsel {
         #[doc = "No clock used as RTC clock."]
@@ -42234,7 +42607,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Saisel {
         #[doc = "pclk2 selected as reference clock."]
@@ -42277,7 +42651,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdmmcsel {
         #[doc = "hclku selected as reference clock."]
@@ -42312,7 +42687,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spdifrxsel {
         #[doc = "pclk1 selected as reference clock."]
@@ -42354,7 +42730,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spisel1 {
         #[doc = "pclk2 selected as reference clock."]
@@ -42396,7 +42773,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spisel23 {
         #[doc = "pclk1 selected as reference clock."]
@@ -42438,7 +42816,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spisel45 {
         #[doc = "pclk2 selected as reference clock."]
@@ -42480,7 +42859,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spisel6 {
         #[doc = "pclk2 selected as reference clock."]
@@ -42522,7 +42902,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Stopwuck {
         #[doc = "HSI selected as wake up clock from system Stop (default after reset)."]
@@ -42553,7 +42934,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syslock {
         #[doc = "SYS configuration bits are accessible by non-lock software only (default after reset)."]
@@ -42584,7 +42966,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syspub {
         #[doc = "SYS configuration bits are accessible by non-public software only (default after reset)."]
@@ -42615,7 +42998,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syspv {
         #[doc = "SYS configuration bits are accessible by non-privilege software only (default after reset)."]
@@ -42646,7 +43030,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syssec {
         #[doc = "SYS configuration bits are accessible by non-secure software only (default after reset)."]
@@ -42677,7 +43062,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Syssw {
         #[doc = "hsi_ck selected as system clock (default after reset)."]
@@ -42712,7 +43098,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Timpre {
         #[doc = "timg_ck = sys_bus_ck (default after reset)."]
@@ -42746,7 +43133,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Uart16910sel {
         #[doc = "pclk2 selected as reference clock."]
@@ -42788,7 +43176,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Uart234578sel {
         #[doc = "pclk1 selected as reference clock."]
@@ -42830,7 +43219,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vencrampub {
         #[doc = "VENCRAM configuration bits are accessible by non-public software only (default after reset)."]
@@ -42861,7 +43251,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupf {
         #[doc = "no wakeup interrupt caused by the PWR (default after reset)."]
@@ -42892,7 +43283,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupfc {
         #[doc = "WKUPF not modified (default after reset)."]
@@ -42923,7 +43315,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupie {
         #[doc = "Wakeup interrupt disabled (default after reset)."]
@@ -42954,7 +43347,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Xspisels {
         #[doc = "hclk5 selected as XSPI1 clock (default after reset)."]

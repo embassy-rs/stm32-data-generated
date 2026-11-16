@@ -95,6 +95,7 @@ pub mod regs {
             Cmdreaddrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cmdreaddrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cmdreaddrr")
@@ -132,6 +133,7 @@ pub mod regs {
             Cmdrsaddrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cmdrsaddrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cmdrsaddrr")
@@ -313,6 +315,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -402,6 +405,7 @@ pub mod regs {
             Fcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fcr")
@@ -471,6 +475,7 @@ pub mod regs {
             Ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ier")
@@ -516,6 +521,7 @@ pub mod regs {
             Rmmonr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rmmonr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rmmonr").field("rmissmon", &self.rmissmon()).finish()
@@ -599,6 +605,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -648,6 +655,7 @@ pub mod regs {
             Wmmonr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wmmonr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wmmonr").field("wmissmon", &self.wmissmon()).finish()

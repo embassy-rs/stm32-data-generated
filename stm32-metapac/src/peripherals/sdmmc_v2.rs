@@ -151,6 +151,7 @@ pub mod regs {
             Acktimer(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Acktimer {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Acktimer").field("acktime", &self.acktime()).finish()
@@ -186,6 +187,7 @@ pub mod regs {
             Argr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Argr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Argr").field("cmdarg", &self.cmdarg()).finish()
@@ -305,6 +307,7 @@ pub mod regs {
             Clkcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Clkcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Clkcr")
@@ -480,6 +483,7 @@ pub mod regs {
             Cmdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cmdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cmdr")
@@ -541,6 +545,7 @@ pub mod regs {
             Dcntr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dcntr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dcntr").field("datacount", &self.datacount()).finish()
@@ -684,6 +689,7 @@ pub mod regs {
             Dctrl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dctrl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dctrl")
@@ -743,6 +749,7 @@ pub mod regs {
             Dlenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dlenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dlenr").field("datalength", &self.datalength()).finish()
@@ -778,6 +785,7 @@ pub mod regs {
             Dtimer(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dtimer {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dtimer").field("datatime", &self.datatime()).finish()
@@ -813,6 +821,7 @@ pub mod regs {
             Fifor(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fifor {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fifor").field("fifodata", &self.fifodata()).finish()
@@ -1076,6 +1085,7 @@ pub mod regs {
             Icr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Icr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Icr")
@@ -1155,6 +1165,7 @@ pub mod regs {
             Id(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Id {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Id").field("ip_id", &self.ip_id()).finish()
@@ -1192,6 +1203,7 @@ are always 0 and read only). This register can be written by firmware when DPSM 
             Idmabase0r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Idmabase0r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Idmabase0r")
@@ -1231,6 +1243,7 @@ are always 0 and read only). This register can be written by firmware when DPSM 
             Idmabase1r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Idmabase1r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Idmabase1r")
@@ -1268,6 +1281,7 @@ are always 0 and read only). This register can be written by firmware when DPSM 
             Idmabsizer(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Idmabsizer {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Idmabsizer")
@@ -1329,6 +1343,7 @@ are always 0 and read only). This register can be written by firmware when DPSM 
             Idmactrlr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Idmactrlr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Idmactrlr")
@@ -1638,6 +1653,7 @@ are always 0 and read only). This register can be written by firmware when DPSM 
             Maskr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Maskr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Maskr")
@@ -1759,6 +1775,7 @@ are always 0 and read only). This register can be written by firmware when DPSM 
             Power(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Power {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Power")
@@ -1806,6 +1823,7 @@ are always 0 and read only). This register can be written by firmware when DPSM 
             ResPxR(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for ResPxR {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("ResPxR")
@@ -1843,6 +1861,7 @@ are always 0 and read only). This register can be written by firmware when DPSM 
             Respcmdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Respcmdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Respcmdr").field("respcmd", &self.respcmd()).finish()
@@ -2214,6 +2233,7 @@ are always 0 and read only). This register can be written by firmware when DPSM 
             Star(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Star {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Star")
@@ -2323,6 +2343,7 @@ are always 0 and read only). This register can be written by firmware when DPSM 
             Ver(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ver {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ver")

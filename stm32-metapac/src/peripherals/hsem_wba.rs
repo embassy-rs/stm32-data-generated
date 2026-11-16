@@ -157,6 +157,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -208,6 +209,7 @@ pub mod regs {
             Icr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Icr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Icr")
@@ -283,6 +285,7 @@ pub mod regs {
             Ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ier")
@@ -358,6 +361,7 @@ pub mod regs {
             Isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Isr")
@@ -429,6 +433,7 @@ pub mod regs {
             Keyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Keyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Keyr").field("key", &self.key()).finish()
@@ -468,6 +473,7 @@ pub mod regs {
             Misr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Misr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Misr")
@@ -543,6 +549,7 @@ pub mod regs {
             Privcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgr")
@@ -662,6 +669,7 @@ pub mod regs {
             R(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for R {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("R")
@@ -759,6 +767,7 @@ pub mod regs {
             Rlr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rlr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rlr")
@@ -812,6 +821,7 @@ pub mod regs {
             Seccfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seccfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccfgr")
@@ -887,6 +897,7 @@ pub mod regs {
             Sicr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sicr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sicr")
@@ -962,6 +973,7 @@ pub mod regs {
             Sier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sier")
@@ -1037,6 +1049,7 @@ pub mod regs {
             Sisr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sisr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sisr")
@@ -1112,6 +1125,7 @@ pub mod regs {
             Smisr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Smisr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Smisr")

@@ -100,6 +100,7 @@ pub mod regs {
             Bcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bcr")
@@ -210,6 +211,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -279,6 +281,7 @@ pub mod regs {
             Dar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dar").field("da", &self.da()).finish()
@@ -314,6 +317,7 @@ pub mod regs {
             Dvr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dvr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dvr").field("dv", &self.dv()).finish()
@@ -365,6 +369,7 @@ pub mod regs {
             Fcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fcr")
@@ -414,6 +419,7 @@ pub mod regs {
             Luth(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Luth {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Luth").field("lo", &self.lo()).finish()
@@ -473,6 +479,7 @@ pub mod regs {
             Lutl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lutl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lutl")
@@ -534,6 +541,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")

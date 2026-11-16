@@ -169,6 +169,7 @@ with sign."]
             Comp1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Comp1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Comp1")
@@ -226,6 +227,7 @@ with sign."]
             Comp2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Comp2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Comp2")
@@ -283,6 +285,7 @@ with sign."]
             Comp3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Comp3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Comp3")
@@ -340,6 +343,7 @@ with sign."]
             Comp4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Comp4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Comp4")
@@ -587,6 +591,7 @@ with sign."]
             CompSel(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for CompSel {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CompSel")
@@ -842,6 +847,7 @@ with sign."]
             Conf(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Conf {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Conf")
@@ -997,6 +1003,7 @@ with sign."]
             Ctrl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ctrl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ctrl")
@@ -1146,6 +1153,7 @@ with sign."]
             DfConf(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DfConf {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DfConf")
@@ -1203,6 +1211,7 @@ with sign."]
             DfDataout(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DfDataout {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DfDataout").field("df_data", &self.df_data()).finish()
@@ -1250,6 +1259,7 @@ with sign."]
             DsConf(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DsConf {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DsConf")
@@ -1293,6 +1303,7 @@ with sign."]
             DsDataout(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DsDataout {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DsDataout").field("ds_data", &self.ds_data()).finish()
@@ -1472,6 +1483,7 @@ with sign."]
             IrqEnable(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IrqEnable {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IrqEnable")
@@ -1621,6 +1633,7 @@ with sign."]
             IrqStatus(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IrqStatus {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IrqStatus")
@@ -1688,6 +1701,7 @@ with sign."]
             OcmCtrl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for OcmCtrl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("OcmCtrl")
@@ -1743,6 +1757,7 @@ with sign."]
             PgaConf(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for PgaConf {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("PgaConf")
@@ -1894,6 +1909,7 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
             Seq1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seq1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seq1")
@@ -2057,6 +2073,7 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
             Seq2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seq2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seq2")
@@ -2220,6 +2237,7 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
             Switch(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Switch {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Switch")
@@ -2299,6 +2317,7 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
             TimerConf(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for TimerConf {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TimerConf")
@@ -2344,6 +2363,7 @@ to ADC differential input 1100: VBAT - Battery level detector 1101: Temperature 
             VersionId(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for VersionId {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("VersionId")
@@ -2397,6 +2417,7 @@ to ADC positive input Bit12: Not used Bit13: TEMP to ADC positive input Bit14: G
             WdConf(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for WdConf {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("WdConf").field("awd_chx", &self.awd_chx()).finish()
@@ -2444,6 +2465,7 @@ to ADC positive input Bit12: Not used Bit13: TEMP to ADC positive input Bit14: G
             WdTh(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for WdTh {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("WdTh")

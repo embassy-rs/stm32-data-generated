@@ -120,6 +120,7 @@ pub mod regs {
             Cmdreaddrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cmdreaddrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cmdreaddrr")
@@ -157,6 +158,7 @@ pub mod regs {
             Cmdrsaddrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cmdrsaddrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cmdrsaddrr")
@@ -398,6 +400,7 @@ pub mod regs {
             Cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr1")
@@ -485,6 +488,7 @@ pub mod regs {
             Cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr2")
@@ -528,6 +532,7 @@ pub mod regs {
             Evimonr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Evimonr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Evimonr").field("evimon", &self.evimon()).finish()
@@ -587,6 +592,7 @@ pub mod regs {
             Fcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fcr")
@@ -656,6 +662,7 @@ pub mod regs {
             Ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ier")
@@ -701,6 +708,7 @@ pub mod regs {
             Rammonr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rammonr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rammonr").field("rammon", &self.rammon()).finish()
@@ -736,6 +744,7 @@ pub mod regs {
             Rhmonr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rhmonr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rhmonr").field("rhitmon", &self.rhitmon()).finish()
@@ -771,6 +780,7 @@ pub mod regs {
             Rmmonr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rmmonr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rmmonr").field("rmissmon", &self.rmissmon()).finish()
@@ -854,6 +864,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -903,6 +914,7 @@ pub mod regs {
             Wammonr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wammonr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wammonr").field("wammon", &self.wammon()).finish()
@@ -938,6 +950,7 @@ pub mod regs {
             Whmonr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Whmonr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Whmonr").field("whitmon", &self.whitmon()).finish()
@@ -973,6 +986,7 @@ pub mod regs {
             Wmmonr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wmmonr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wmmonr").field("wmissmon", &self.wmissmon()).finish()
@@ -1008,6 +1022,7 @@ pub mod regs {
             Wtmonr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wtmonr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wtmonr").field("wtmon", &self.wtmon()).finish()

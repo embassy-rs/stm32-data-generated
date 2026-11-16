@@ -1165,6 +1165,7 @@ pub mod regs {
             RccAdcckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccAdcckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccAdcckselr").field("adcsrc", &self.adcsrc()).finish()
@@ -1260,6 +1261,7 @@ pub mod regs {
             RccAhb2rstclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccAhb2rstclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccAhb2rstclrr")
@@ -1371,6 +1373,7 @@ pub mod regs {
             RccAhb2rstsetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccAhb2rstsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccAhb2rstsetr")
@@ -1494,6 +1497,7 @@ pub mod regs {
             RccAhb3rstclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccAhb3rstclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccAhb3rstclrr")
@@ -1619,6 +1623,7 @@ pub mod regs {
             RccAhb3rstsetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccAhb3rstsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccAhb3rstsetr")
@@ -1792,6 +1797,7 @@ pub mod regs {
             RccAhb4rstclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccAhb4rstclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccAhb4rstclrr")
@@ -1973,6 +1979,7 @@ pub mod regs {
             RccAhb4rstsetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccAhb4rstsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccAhb4rstsetr")
@@ -2082,6 +2089,7 @@ pub mod regs {
             RccAhb5rstclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccAhb5rstclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccAhb5rstclrr")
@@ -2179,6 +2187,7 @@ pub mod regs {
             RccAhb5rstsetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccAhb5rstsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccAhb5rstsetr")
@@ -2300,6 +2309,7 @@ pub mod regs {
             RccAhb6rstclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccAhb6rstclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccAhb6rstclrr")
@@ -2437,6 +2447,7 @@ pub mod regs {
             RccAhb6rstsetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccAhb6rstsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccAhb6rstsetr")
@@ -2504,6 +2515,7 @@ pub mod regs {
             RccApb1divr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccApb1divr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccApb1divr")
@@ -2847,6 +2859,7 @@ pub mod regs {
             RccApb1rstclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccApb1rstclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccApb1rstclrr")
@@ -3238,6 +3251,7 @@ pub mod regs {
             RccApb1rstsetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccApb1rstsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccApb1rstsetr")
@@ -3341,6 +3355,7 @@ pub mod regs {
             RccApb2divr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccApb2divr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccApb2divr")
@@ -3540,6 +3555,7 @@ pub mod regs {
             RccApb2rstclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccApb2rstclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccApb2rstclrr")
@@ -3763,6 +3779,7 @@ pub mod regs {
             RccApb2rstsetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccApb2rstsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccApb2rstsetr")
@@ -3842,6 +3859,7 @@ pub mod regs {
             RccApb3divr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccApb3divr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccApb3divr")
@@ -3969,6 +3987,7 @@ pub mod regs {
             RccApb3rstclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccApb3rstclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccApb3rstclrr")
@@ -4108,6 +4127,7 @@ pub mod regs {
             RccApb3rstsetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccApb3rstsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccApb3rstsetr")
@@ -4175,6 +4195,7 @@ pub mod regs {
             RccApb4divr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccApb4divr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccApb4divr")
@@ -4254,6 +4275,7 @@ pub mod regs {
             RccApb4rstclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccApb4rstclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccApb4rstclrr")
@@ -4337,6 +4359,7 @@ pub mod regs {
             RccApb4rstsetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccApb4rstsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccApb4rstsetr")
@@ -4396,6 +4419,7 @@ pub mod regs {
             RccApb5divr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccApb5divr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccApb5divr")
@@ -4487,6 +4511,7 @@ pub mod regs {
             RccApb5rstclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccApb5rstclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccApb5rstclrr")
@@ -4584,6 +4609,7 @@ pub mod regs {
             RccApb5rstsetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccApb5rstsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccApb5rstsetr")
@@ -4645,6 +4671,7 @@ pub mod regs {
             RccAssckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccAssckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccAssckselr")
@@ -4700,6 +4727,7 @@ pub mod regs {
             RccAxidivr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccAxidivr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccAxidivr")
@@ -4851,6 +4879,7 @@ pub mod regs {
             RccBdcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccBdcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccBdcr")
@@ -5030,6 +5059,7 @@ pub mod regs {
             RccBrRstsclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccBrRstsclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccBrRstsclrr")
@@ -5091,6 +5121,7 @@ pub mod regs {
             RccCecckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccCecckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccCecckselr").field("cecsrc", &self.cecsrc()).finish()
@@ -5126,6 +5157,7 @@ pub mod regs {
             RccCperckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccCperckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccCperckselr")
@@ -5175,6 +5207,7 @@ pub mod regs {
             RccCsicfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccCsicfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccCsicfgr")
@@ -5254,6 +5287,7 @@ pub mod regs {
             RccDbgcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccDbgcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccDbgcfgr")
@@ -5565,6 +5599,7 @@ pub mod regs {
             RccDdritfcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccDdritfcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccDdritfcr")
@@ -5650,6 +5685,7 @@ pub mod regs {
             RccDsickselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccDsickselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccDsickselr").field("dsisrc", &self.dsisrc()).finish()
@@ -5697,6 +5733,7 @@ pub mod regs {
             RccEthckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccEthckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccEthckselr")
@@ -5740,6 +5777,7 @@ pub mod regs {
             RccFdcanckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccFdcanckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccFdcanckselr")
@@ -5777,6 +5815,7 @@ pub mod regs {
             RccFmcckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccFmcckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccFmcckselr").field("fmcsrc", &self.fmcsrc()).finish()
@@ -5836,6 +5875,7 @@ pub mod regs {
             RccHsicfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccHsicfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccHsicfgr")
@@ -5881,6 +5921,7 @@ pub mod regs {
             RccI2c12ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccI2c12ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccI2c12ckselr")
@@ -5918,6 +5959,7 @@ pub mod regs {
             RccI2c35ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccI2c35ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccI2c35ckselr")
@@ -5955,6 +5997,7 @@ pub mod regs {
             RccI2c46ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccI2c46ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccI2c46ckselr")
@@ -5992,6 +6035,7 @@ pub mod regs {
             RccIdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccIdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccIdr").field("id", &self.id()).finish()
@@ -6027,6 +6071,7 @@ pub mod regs {
             RccLptim1ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccLptim1ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccLptim1ckselr")
@@ -6064,6 +6109,7 @@ pub mod regs {
             RccLptim23ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccLptim23ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccLptim23ckselr")
@@ -6101,6 +6147,7 @@ pub mod regs {
             RccLptim45ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccLptim45ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccLptim45ckselr")
@@ -6198,6 +6245,7 @@ pub mod regs {
             RccMcAhb2enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb2enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb2enclrr")
@@ -6309,6 +6357,7 @@ pub mod regs {
             RccMcAhb2ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb2ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb2ensetr")
@@ -6420,6 +6469,7 @@ pub mod regs {
             RccMcAhb2lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb2lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb2lpenclrr")
@@ -6531,6 +6581,7 @@ pub mod regs {
             RccMcAhb2lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb2lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb2lpensetr")
@@ -6654,6 +6705,7 @@ pub mod regs {
             RccMcAhb3enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb3enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb3enclrr")
@@ -6779,6 +6831,7 @@ pub mod regs {
             RccMcAhb3ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb3ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb3ensetr")
@@ -6904,6 +6957,7 @@ pub mod regs {
             RccMcAhb3lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb3lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb3lpenclrr")
@@ -7029,6 +7083,7 @@ pub mod regs {
             RccMcAhb3lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb3lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb3lpensetr")
@@ -7202,6 +7257,7 @@ pub mod regs {
             RccMcAhb4enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb4enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb4enclrr")
@@ -7383,6 +7439,7 @@ pub mod regs {
             RccMcAhb4ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb4ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb4ensetr")
@@ -7564,6 +7621,7 @@ pub mod regs {
             RccMcAhb4lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb4lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb4lpenclrr")
@@ -7745,6 +7803,7 @@ pub mod regs {
             RccMcAhb4lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb4lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb4lpensetr")
@@ -7854,6 +7913,7 @@ pub mod regs {
             RccMcAhb5enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb5enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb5enclrr")
@@ -7951,6 +8011,7 @@ pub mod regs {
             RccMcAhb5ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb5ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb5ensetr")
@@ -8048,6 +8109,7 @@ pub mod regs {
             RccMcAhb5lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb5lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb5lpenclrr")
@@ -8145,6 +8207,7 @@ pub mod regs {
             RccMcAhb5lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb5lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb5lpensetr")
@@ -8326,6 +8389,7 @@ pub mod regs {
             RccMcAhb6enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb6enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb6enclrr")
@@ -8521,6 +8585,7 @@ pub mod regs {
             RccMcAhb6ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb6ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb6ensetr")
@@ -8728,6 +8793,7 @@ pub mod regs {
             RccMcAhb6lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb6lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb6lpenclrr")
@@ -8937,6 +9003,7 @@ pub mod regs {
             RccMcAhb6lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAhb6lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAhb6lpensetr")
@@ -9302,6 +9369,7 @@ pub mod regs {
             RccMcApb1enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb1enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb1enclrr")
@@ -9705,6 +9773,7 @@ pub mod regs {
             RccMcApb1ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb1ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb1ensetr")
@@ -10110,6 +10179,7 @@ pub mod regs {
             RccMcApb1lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb1lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb1lpenclrr")
@@ -10515,6 +10585,7 @@ pub mod regs {
             RccMcApb1lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb1lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb1lpensetr")
@@ -10776,6 +10847,7 @@ pub mod regs {
             RccMcApb2enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb2enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb2enclrr")
@@ -11013,6 +11085,7 @@ pub mod regs {
             RccMcApb2ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb2ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb2ensetr")
@@ -11250,6 +11323,7 @@ pub mod regs {
             RccMcApb2lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb2lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb2lpenclrr")
@@ -11487,6 +11561,7 @@ pub mod regs {
             RccMcApb2lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb2lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb2lpensetr")
@@ -11652,6 +11727,7 @@ pub mod regs {
             RccMcApb3enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb3enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb3enclrr")
@@ -11805,6 +11881,7 @@ pub mod regs {
             RccMcApb3ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb3ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb3ensetr")
@@ -11946,6 +12023,7 @@ pub mod regs {
             RccMcApb3lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb3lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb3lpenclrr")
@@ -12085,6 +12163,7 @@ pub mod regs {
             RccMcApb3lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb3lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb3lpensetr")
@@ -12188,6 +12267,7 @@ pub mod regs {
             RccMcApb4enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb4enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb4enclrr")
@@ -12285,6 +12365,7 @@ pub mod regs {
             RccMcApb4ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb4ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb4ensetr")
@@ -12394,6 +12475,7 @@ pub mod regs {
             RccMcApb4lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb4lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb4lpenclrr")
@@ -12505,6 +12587,7 @@ pub mod regs {
             RccMcApb4lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb4lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb4lpensetr")
@@ -12664,6 +12747,7 @@ pub mod regs {
             RccMcApb5enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb5enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb5enclrr")
@@ -12831,6 +12915,7 @@ pub mod regs {
             RccMcApb5ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb5ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb5ensetr")
@@ -13010,6 +13095,7 @@ pub mod regs {
             RccMcApb5lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb5lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb5lpenclrr")
@@ -13191,6 +13277,7 @@ pub mod regs {
             RccMcApb5lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcApb5lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcApb5lpensetr")
@@ -13252,6 +13339,7 @@ pub mod regs {
             RccMcAximenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAximenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAximenclrr")
@@ -13289,6 +13377,7 @@ pub mod regs {
             RccMcAximensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAximensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAximensetr")
@@ -13326,6 +13415,7 @@ pub mod regs {
             RccMcAximlpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAximlpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAximlpenclrr")
@@ -13363,6 +13453,7 @@ pub mod regs {
             RccMcAximlpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcAximlpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcAximlpensetr")
@@ -13488,6 +13579,7 @@ pub mod regs {
             RccMcCier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcCier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcCier")
@@ -13637,6 +13729,7 @@ pub mod regs {
             RccMcCifr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcCifr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcCifr")
@@ -13698,6 +13791,7 @@ pub mod regs {
             RccMcMlahbenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcMlahbenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcMlahbenclrr")
@@ -13735,6 +13829,7 @@ pub mod regs {
             RccMcMlahbensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcMlahbensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcMlahbensetr")
@@ -13808,6 +13903,7 @@ pub mod regs {
             RccMcMlahblpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcMlahblpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcMlahblpenclrr")
@@ -13891,6 +13987,7 @@ pub mod regs {
             RccMcMlahblpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcMlahblpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcMlahblpensetr")
@@ -14058,6 +14155,7 @@ pub mod regs {
             RccMcRstsclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcRstsclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcRstsclrr")
@@ -14143,6 +14241,7 @@ pub mod regs {
             RccMco1cfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMco1cfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMco1cfgr")
@@ -14212,6 +14311,7 @@ pub mod regs {
             RccMco2cfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMco2cfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMco2cfgr")
@@ -14269,6 +14369,7 @@ pub mod regs {
             RccMcudivr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMcudivr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMcudivr")
@@ -14372,6 +14473,7 @@ pub mod regs {
             RccMpAhb2enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb2enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb2enclrr")
@@ -14483,6 +14585,7 @@ pub mod regs {
             RccMpAhb2ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb2ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb2ensetr")
@@ -14594,6 +14697,7 @@ pub mod regs {
             RccMpAhb2lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb2lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb2lpenclrr")
@@ -14705,6 +14809,7 @@ pub mod regs {
             RccMpAhb2lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb2lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb2lpensetr")
@@ -14828,6 +14933,7 @@ pub mod regs {
             RccMpAhb3enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb3enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb3enclrr")
@@ -14953,6 +15059,7 @@ pub mod regs {
             RccMpAhb3ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb3ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb3ensetr")
@@ -15078,6 +15185,7 @@ pub mod regs {
             RccMpAhb3lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb3lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb3lpenclrr")
@@ -15203,6 +15311,7 @@ pub mod regs {
             RccMpAhb3lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb3lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb3lpensetr")
@@ -15376,6 +15485,7 @@ pub mod regs {
             RccMpAhb4enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb4enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb4enclrr")
@@ -15557,6 +15667,7 @@ pub mod regs {
             RccMpAhb4ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb4ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb4ensetr")
@@ -15738,6 +15849,7 @@ pub mod regs {
             RccMpAhb4lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb4lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb4lpenclrr")
@@ -15919,6 +16031,7 @@ pub mod regs {
             RccMpAhb4lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb4lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb4lpensetr")
@@ -16040,6 +16153,7 @@ pub mod regs {
             RccMpAhb5enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb5enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb5enclrr")
@@ -16151,6 +16265,7 @@ pub mod regs {
             RccMpAhb5ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb5ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb5ensetr")
@@ -16250,6 +16365,7 @@ pub mod regs {
             RccMpAhb5lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb5lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb5lpenclrr")
@@ -16347,6 +16463,7 @@ pub mod regs {
             RccMpAhb5lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb5lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb5lpensetr")
@@ -16528,6 +16645,7 @@ pub mod regs {
             RccMpAhb6enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb6enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb6enclrr")
@@ -16723,6 +16841,7 @@ pub mod regs {
             RccMpAhb6ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb6ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb6ensetr")
@@ -16930,6 +17049,7 @@ pub mod regs {
             RccMpAhb6lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb6lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb6lpenclrr")
@@ -17139,6 +17259,7 @@ pub mod regs {
             RccMpAhb6lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAhb6lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAhb6lpensetr")
@@ -17504,6 +17625,7 @@ pub mod regs {
             RccMpApb1enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb1enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb1enclrr")
@@ -17895,6 +18017,7 @@ pub mod regs {
             RccMpApb1ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb1ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb1ensetr")
@@ -18286,6 +18409,7 @@ pub mod regs {
             RccMpApb1lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb1lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb1lpenclrr")
@@ -18677,6 +18801,7 @@ pub mod regs {
             RccMpApb1lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb1lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb1lpensetr")
@@ -18936,6 +19061,7 @@ pub mod regs {
             RccMpApb2enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb2enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb2enclrr")
@@ -19173,6 +19299,7 @@ pub mod regs {
             RccMpApb2ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb2ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb2ensetr")
@@ -19410,6 +19537,7 @@ pub mod regs {
             RccMpApb2lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb2lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb2lpenclrr")
@@ -19647,6 +19775,7 @@ pub mod regs {
             RccMpApb2lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb2lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb2lpensetr")
@@ -19812,6 +19941,7 @@ pub mod regs {
             RccMpApb3enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb3enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb3enclrr")
@@ -19965,6 +20095,7 @@ pub mod regs {
             RccMpApb3ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb3ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb3ensetr")
@@ -20106,6 +20237,7 @@ pub mod regs {
             RccMpApb3lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb3lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb3lpenclrr")
@@ -20245,6 +20377,7 @@ pub mod regs {
             RccMpApb3lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb3lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb3lpensetr")
@@ -20360,6 +20493,7 @@ pub mod regs {
             RccMpApb4enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb4enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb4enclrr")
@@ -20471,6 +20605,7 @@ pub mod regs {
             RccMpApb4ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb4ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb4ensetr")
@@ -20594,6 +20729,7 @@ pub mod regs {
             RccMpApb4lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb4lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb4lpenclrr")
@@ -20719,6 +20855,7 @@ pub mod regs {
             RccMpApb4lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb4lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb4lpensetr")
@@ -20892,6 +21029,7 @@ pub mod regs {
             RccMpApb5enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb5enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb5enclrr")
@@ -21073,6 +21211,7 @@ pub mod regs {
             RccMpApb5ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb5ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb5ensetr")
@@ -21266,6 +21405,7 @@ pub mod regs {
             RccMpApb5lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb5lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb5lpenclrr")
@@ -21461,6 +21601,7 @@ pub mod regs {
             RccMpApb5lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpApb5lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpApb5lpensetr")
@@ -21536,6 +21677,7 @@ pub mod regs {
             RccMpAprstcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAprstcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAprstcr")
@@ -21579,6 +21721,7 @@ pub mod regs {
             RccMpAprstsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAprstsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAprstsr").field("rsttov", &self.rsttov()).finish()
@@ -21614,6 +21757,7 @@ pub mod regs {
             RccMpAximlpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAximlpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAximlpenclrr")
@@ -21651,6 +21795,7 @@ pub mod regs {
             RccMpAximlpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpAximlpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpAximlpensetr")
@@ -21700,6 +21845,7 @@ pub mod regs {
             RccMpBootcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpBootcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpBootcr")
@@ -21831,6 +21977,7 @@ pub mod regs {
             RccMpCier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpCier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpCier")
@@ -21980,6 +22127,7 @@ pub mod regs {
             RccMpCifr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpCifr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpCifr")
@@ -22041,6 +22189,7 @@ pub mod regs {
             RccMpGcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpGcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpGcr").field("boot_mcu", &self.boot_mcu()).finish()
@@ -22112,6 +22261,7 @@ pub mod regs {
             RccMpGrstcsetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpGrstcsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpGrstcsetr")
@@ -22171,6 +22321,7 @@ pub mod regs {
             RccMpIwdgfzclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpIwdgfzclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpIwdgfzclrr")
@@ -22226,6 +22377,7 @@ pub mod regs {
             RccMpIwdgfzsetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpIwdgfzsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpIwdgfzsetr")
@@ -22269,6 +22421,7 @@ pub mod regs {
             RccMpMlahbenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpMlahbenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpMlahbenclrr")
@@ -22306,6 +22459,7 @@ pub mod regs {
             RccMpMlahbensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpMlahbensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpMlahbensetr")
@@ -22379,6 +22533,7 @@ pub mod regs {
             RccMpMlahblpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpMlahblpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpMlahblpenclrr")
@@ -22462,6 +22617,7 @@ pub mod regs {
             RccMpMlahblpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpMlahblpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpMlahblpensetr")
@@ -22665,6 +22821,7 @@ pub mod regs {
             RccMpRstsclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpRstsclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpRstsclrr")
@@ -22888,6 +23045,7 @@ pub mod regs {
             RccMpRstssetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpRstssetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpRstssetr")
@@ -22967,6 +23125,7 @@ pub mod regs {
             RccMpSreqclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpSreqclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpSreqclrr")
@@ -23022,6 +23181,7 @@ pub mod regs {
             RccMpSreqsetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpSreqsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpSreqsetr")
@@ -23065,6 +23225,7 @@ pub mod regs {
             RccMpTzahb6enclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpTzahb6enclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpTzahb6enclrr")
@@ -23102,6 +23263,7 @@ pub mod regs {
             RccMpTzahb6ensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpTzahb6ensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpTzahb6ensetr")
@@ -23139,6 +23301,7 @@ pub mod regs {
             RccMpTzahb6lpenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpTzahb6lpenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpTzahb6lpenclrr")
@@ -23176,6 +23339,7 @@ pub mod regs {
             RccMpTzahb6lpensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpTzahb6lpensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpTzahb6lpensetr")
@@ -23225,6 +23389,7 @@ pub mod regs {
             RccMpckdivr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpckdivr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpckdivr")
@@ -23280,6 +23445,7 @@ pub mod regs {
             RccMpckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMpckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMpckselr")
@@ -23335,6 +23501,7 @@ pub mod regs {
             RccMssckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccMssckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccMssckselr")
@@ -23462,6 +23629,7 @@ pub mod regs {
             RccOcenclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccOcenclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccOcenclrr")
@@ -23613,6 +23781,7 @@ pub mod regs {
             RccOcensetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccOcensetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccOcensetr")
@@ -23742,6 +23911,7 @@ pub mod regs {
             RccOcrdyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccOcrdyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccOcrdyr")
@@ -23807,6 +23977,7 @@ pub mod regs {
             RccPll1cfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll1cfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll1cfgr1")
@@ -23874,6 +24045,7 @@ pub mod regs {
             RccPll1cfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll1cfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll1cfgr2")
@@ -23983,6 +24155,7 @@ pub mod regs {
             RccPll1cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll1cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll1cr")
@@ -24082,6 +24255,7 @@ pub mod regs {
             RccPll1csgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll1csgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll1csgr")
@@ -24143,6 +24317,7 @@ pub mod regs {
             RccPll1fracr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll1fracr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll1fracr")
@@ -24198,6 +24373,7 @@ pub mod regs {
             RccPll2cfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll2cfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll2cfgr1")
@@ -24265,6 +24441,7 @@ pub mod regs {
             RccPll2cfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll2cfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll2cfgr2")
@@ -24374,6 +24551,7 @@ pub mod regs {
             RccPll2cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll2cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll2cr")
@@ -24473,6 +24651,7 @@ pub mod regs {
             RccPll2csgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll2csgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll2csgr")
@@ -24534,6 +24713,7 @@ pub mod regs {
             RccPll2fracr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll2fracr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll2fracr")
@@ -24601,6 +24781,7 @@ pub mod regs {
             RccPll3cfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll3cfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll3cfgr1")
@@ -24670,6 +24851,7 @@ pub mod regs {
             RccPll3cfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll3cfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll3cfgr2")
@@ -24779,6 +24961,7 @@ pub mod regs {
             RccPll3cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll3cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll3cr")
@@ -24878,6 +25061,7 @@ pub mod regs {
             RccPll3csgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll3csgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll3csgr")
@@ -24939,6 +25123,7 @@ pub mod regs {
             RccPll3fracr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll3fracr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll3fracr")
@@ -25006,6 +25191,7 @@ pub mod regs {
             RccPll4cfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll4cfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll4cfgr1")
@@ -25075,6 +25261,7 @@ pub mod regs {
             RccPll4cfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll4cfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll4cfgr2")
@@ -25184,6 +25371,7 @@ pub mod regs {
             RccPll4cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll4cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll4cr")
@@ -25283,6 +25471,7 @@ pub mod regs {
             RccPll4csgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll4csgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll4csgr")
@@ -25344,6 +25533,7 @@ pub mod regs {
             RccPll4fracr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPll4fracr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPll4fracr")
@@ -25399,6 +25589,7 @@ pub mod regs {
             RccPwrlpdlycr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccPwrlpdlycr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccPwrlpdlycr")
@@ -25442,6 +25633,7 @@ pub mod regs {
             RccQspickselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccQspickselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccQspickselr")
@@ -25499,6 +25691,7 @@ pub mod regs {
             RccRck12selr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccRck12selr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccRck12selr")
@@ -25562,6 +25755,7 @@ pub mod regs {
             RccRck3selr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccRck3selr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccRck3selr")
@@ -25625,6 +25819,7 @@ pub mod regs {
             RccRck4selr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccRck4selr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccRck4selr")
@@ -25716,6 +25911,7 @@ pub mod regs {
             RccRdlsicr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccRdlsicr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccRdlsicr")
@@ -25765,6 +25961,7 @@ pub mod regs {
             RccRng1ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccRng1ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccRng1ckselr")
@@ -25802,6 +25999,7 @@ pub mod regs {
             RccRng2ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccRng2ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccRng2ckselr")
@@ -25839,6 +26037,7 @@ pub mod regs {
             RccRtcdivr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccRtcdivr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccRtcdivr").field("rtcdiv", &self.rtcdiv()).finish()
@@ -25874,6 +26073,7 @@ pub mod regs {
             RccSai1ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccSai1ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccSai1ckselr")
@@ -25911,6 +26111,7 @@ pub mod regs {
             RccSai2ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccSai2ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccSai2ckselr")
@@ -25948,6 +26149,7 @@ pub mod regs {
             RccSai3ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccSai3ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccSai3ckselr")
@@ -25985,6 +26187,7 @@ pub mod regs {
             RccSai4ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccSai4ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccSai4ckselr")
@@ -26022,6 +26225,7 @@ pub mod regs {
             RccSdmmc12ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccSdmmc12ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccSdmmc12ckselr")
@@ -26059,6 +26263,7 @@ pub mod regs {
             RccSdmmc3ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccSdmmc3ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccSdmmc3ckselr")
@@ -26096,6 +26301,7 @@ pub mod regs {
             RccSidr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccSidr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccSidr").field("sid", &self.sid()).finish()
@@ -26131,6 +26337,7 @@ pub mod regs {
             RccSpdifckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccSpdifckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccSpdifckselr")
@@ -26168,6 +26375,7 @@ pub mod regs {
             RccSpi2s1ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccSpi2s1ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccSpi2s1ckselr")
@@ -26205,6 +26413,7 @@ pub mod regs {
             RccSpi2s23ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccSpi2s23ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccSpi2s23ckselr")
@@ -26242,6 +26451,7 @@ pub mod regs {
             RccSpi45ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccSpi45ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccSpi45ckselr")
@@ -26279,6 +26489,7 @@ pub mod regs {
             RccSpi6ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccSpi6ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccSpi6ckselr")
@@ -26316,6 +26527,7 @@ pub mod regs {
             RccStgenckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccStgenckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccStgenckselr")
@@ -26365,6 +26577,7 @@ pub mod regs {
             RccTimg1prer(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccTimg1prer {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccTimg1prer")
@@ -26420,6 +26633,7 @@ pub mod regs {
             RccTimg2prer(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccTimg2prer {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccTimg2prer")
@@ -26463,6 +26677,7 @@ pub mod regs {
             RccTzahb6rstclrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccTzahb6rstclrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccTzahb6rstclrr")
@@ -26500,6 +26715,7 @@ pub mod regs {
             RccTzahb6rstsetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccTzahb6rstsetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccTzahb6rstsetr")
@@ -26549,6 +26765,7 @@ pub mod regs {
             RccTzcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccTzcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccTzcr")
@@ -26592,6 +26809,7 @@ pub mod regs {
             RccUart1ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccUart1ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccUart1ckselr")
@@ -26629,6 +26847,7 @@ pub mod regs {
             RccUart24ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccUart24ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccUart24ckselr")
@@ -26666,6 +26885,7 @@ pub mod regs {
             RccUart35ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccUart35ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccUart35ckselr")
@@ -26703,6 +26923,7 @@ pub mod regs {
             RccUart6ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccUart6ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccUart6ckselr")
@@ -26740,6 +26961,7 @@ pub mod regs {
             RccUart78ckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccUart78ckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccUart78ckselr")
@@ -26789,6 +27011,7 @@ pub mod regs {
             RccUsbckselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccUsbckselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccUsbckselr")
@@ -26844,6 +27067,7 @@ pub mod regs {
             RccVerr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RccVerr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RccVerr")

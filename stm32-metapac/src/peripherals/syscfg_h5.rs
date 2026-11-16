@@ -171,6 +171,7 @@ pub mod regs {
             Cccsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cccsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cccsr")
@@ -258,6 +259,7 @@ pub mod regs {
             Ccswcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccswcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccswcr")
@@ -341,6 +343,7 @@ pub mod regs {
             Ccvalr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccvalr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccvalr")
@@ -424,6 +427,7 @@ pub mod regs {
             Cfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr2")
@@ -483,6 +487,7 @@ pub mod regs {
             Cnslckr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cnslckr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cnslckr")
@@ -550,6 +555,7 @@ pub mod regs {
             Cslckr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cslckr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cslckr")
@@ -631,6 +637,7 @@ pub mod regs {
             Dbgcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dbgcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dbgcr")
@@ -678,6 +685,7 @@ pub mod regs {
             Dbglockr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dbglockr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dbglockr")
@@ -715,6 +723,7 @@ pub mod regs {
             Eccnmir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Eccnmir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Eccnmir")
@@ -752,6 +761,7 @@ pub mod regs {
             Epochselcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Epochselcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Epochselcr")
@@ -789,6 +799,7 @@ pub mod regs {
             Fpuimr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fpuimr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fpuimr").field("fpu_ie", &self.fpu_ie()).finish()
@@ -824,6 +835,7 @@ pub mod regs {
             Hdplcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hdplcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hdplcr").field("incr_hdpl", &self.incr_hdpl()).finish()
@@ -859,6 +871,7 @@ pub mod regs {
             Hdplsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hdplsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hdplsr").field("hdpl", &self.hdpl()).finish()
@@ -906,6 +919,7 @@ pub mod regs {
             Mesr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mesr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mesr")
@@ -949,6 +963,7 @@ pub mod regs {
             Nexthdplcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Nexthdplcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Nexthdplcr")
@@ -1058,6 +1073,7 @@ pub mod regs {
             Pmcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pmcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pmcr")
@@ -1111,6 +1127,7 @@ pub mod regs {
             Rsscmdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rsscmdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rsscmdr").field("rsscmd", &self.rsscmd()).finish()
@@ -1182,6 +1199,7 @@ pub mod regs {
             Seccfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seccfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccfgr")
@@ -1208,7 +1226,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cs {
         #[doc = "Code from the cell (available in the SBS_CCVR)"]
@@ -1257,6 +1276,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgAuthHdpl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -1305,6 +1325,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgcfgLock {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -1335,7 +1356,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum EpochSel {
         #[doc = "SEC_EPOCH counter input selected"]
@@ -1368,7 +1390,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum EthSelPhy {
         #[doc = "GMII or MII"]
@@ -1426,6 +1449,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hdpl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -1478,6 +1502,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IncrHdpl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -1510,7 +1535,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sec {
         #[doc = "SBS_CFGR2 register accessible through secure or non-secure transaction"]

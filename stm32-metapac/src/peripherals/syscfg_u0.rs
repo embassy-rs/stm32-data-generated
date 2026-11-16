@@ -374,6 +374,7 @@ pub mod regs {
             Cfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr1")
@@ -513,6 +514,7 @@ in the PWR_CR register."]
             Cfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr2")
@@ -566,6 +568,7 @@ in the PWR_CR register."]
             Itline0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline0").field("wwdg", &self.wwdg()).finish()
@@ -637,6 +640,7 @@ in the PWR_CR register."]
             Itline1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline1")
@@ -696,6 +700,7 @@ in the PWR_CR register."]
             Itline10(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline10 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline10")
@@ -847,6 +852,7 @@ in the PWR_CR register."]
             Itline11(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline11 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline11")
@@ -930,6 +936,7 @@ in the PWR_CR register."]
             Itline12(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline12 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline12")
@@ -1011,6 +1018,7 @@ in the PWR_CR register."]
             Itline13(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline13 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline13")
@@ -1094,6 +1102,7 @@ in the PWR_CR register."]
             Itline14(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline14 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline14")
@@ -1141,6 +1150,7 @@ in the PWR_CR register."]
             Itline15(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline15 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline15").field("tim2", &self.tim2()).finish()
@@ -1176,6 +1186,7 @@ in the PWR_CR register."]
             Itline16(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline16 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline16").field("tim3", &self.tim3()).finish()
@@ -1235,6 +1246,7 @@ in the PWR_CR register."]
             Itline17(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline17 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline17")
@@ -1292,6 +1304,7 @@ in the PWR_CR register."]
             Itline18(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline18 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline18")
@@ -1347,6 +1360,7 @@ in the PWR_CR register."]
             Itline19(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline19 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline19")
@@ -1402,6 +1416,7 @@ in the PWR_CR register."]
             Itline2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline2")
@@ -1445,6 +1460,7 @@ in the PWR_CR register."]
             Itline20(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline20 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline20").field("tim16", &self.tim16()).finish()
@@ -1492,6 +1508,7 @@ in the PWR_CR register."]
             Itline21(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline21 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline21")
@@ -1535,6 +1552,7 @@ in the PWR_CR register."]
             Itline22(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline22 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline22").field("lcd", &self.lcd()).finish()
@@ -1570,6 +1588,7 @@ in the PWR_CR register."]
             Itline23(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline23 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline23").field("i2c1", &self.i2c1()).finish()
@@ -1629,6 +1648,7 @@ in the PWR_CR register."]
             Itline24(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline24 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline24")
@@ -1674,6 +1694,7 @@ in the PWR_CR register."]
             Itline25(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline25 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline25").field("spi1", &self.spi1()).finish()
@@ -1721,6 +1742,7 @@ in the PWR_CR register."]
             Itline26(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline26 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline26")
@@ -1764,6 +1786,7 @@ in the PWR_CR register."]
             Itline27(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline27 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline27").field("usart1", &self.usart1()).finish()
@@ -1811,6 +1834,7 @@ in the PWR_CR register."]
             Itline28(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline28 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline28")
@@ -1866,6 +1890,7 @@ in the PWR_CR register."]
             Itline29(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline29 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline29")
@@ -1921,6 +1946,7 @@ in the PWR_CR register."]
             Itline3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline3")
@@ -1976,6 +2002,7 @@ in the PWR_CR register."]
             Itline30(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline30 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline30")
@@ -2031,6 +2058,7 @@ in the PWR_CR register."]
             Itline31(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline31 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline31")
@@ -2086,6 +2114,7 @@ in the PWR_CR register."]
             Itline4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline4")
@@ -2141,6 +2170,7 @@ in the PWR_CR register."]
             Itline5(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline5 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline5")
@@ -2196,6 +2226,7 @@ in the PWR_CR register."]
             Itline6(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline6 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline6")
@@ -2371,6 +2402,7 @@ in the PWR_CR register."]
             Itline7(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline7 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline7")
@@ -2434,6 +2466,7 @@ in the PWR_CR register."]
             Itline8(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline8 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline8").field("usb", &self.usb()).finish()
@@ -2469,6 +2502,7 @@ in the PWR_CR register."]
             Itline9(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline9 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline9").field("dma1_ch1", &self.dma1_ch1()).finish()
@@ -2516,6 +2550,7 @@ in the PWR_CR register."]
             Scsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Scsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Scsr")
@@ -2563,6 +2598,7 @@ Writing a wrong key reactivates the write protection."]
             Skr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Skr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Skr").field("key", &self.key()).finish()
@@ -2658,6 +2694,7 @@ Writing a wrong key reactivates the write protection."]
             Tsccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tsccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tsccr")
@@ -2688,7 +2725,8 @@ Writing a wrong key reactivates the write protection."]
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum IrMod {
         #[doc = "TIM16"]
@@ -2722,7 +2760,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MemMode {
         _RESERVED_0 = 0x0,

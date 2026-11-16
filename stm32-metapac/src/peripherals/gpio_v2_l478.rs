@@ -100,6 +100,7 @@ pub mod regs {
             Afr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Afr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Afr")
@@ -159,6 +160,7 @@ pub mod regs {
             Ascr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ascr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ascr")
@@ -250,6 +252,7 @@ pub mod regs {
             Bsrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bsrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bsrr")
@@ -357,6 +360,7 @@ pub mod regs {
             Idr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Idr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Idr")
@@ -444,6 +448,7 @@ pub mod regs {
             Lckr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lckr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lckr")
@@ -521,6 +526,7 @@ pub mod regs {
             Moder(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Moder {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Moder")
@@ -596,6 +602,7 @@ pub mod regs {
             Odr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Odr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Odr")
@@ -671,6 +678,7 @@ pub mod regs {
             Ospeedr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ospeedr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ospeedr")
@@ -746,6 +754,7 @@ pub mod regs {
             Otyper(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Otyper {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Otyper")
@@ -821,6 +830,7 @@ pub mod regs {
             Pupdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pupdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pupdr")
@@ -871,7 +881,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Idr {
         #[doc = "Input is logic low"]
@@ -902,7 +913,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Moder {
         #[doc = "Input mode (reset state)"]
@@ -937,7 +949,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Odr {
         #[doc = "Set output to logic low"]
@@ -968,7 +981,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ospeedr {
         #[doc = "Low speed"]
@@ -1003,7 +1017,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ot {
         #[doc = "Output push-pull (reset state)"]
@@ -1034,7 +1049,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pupdr {
         #[doc = "No pull-up, pull-down"]

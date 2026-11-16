@@ -144,6 +144,7 @@ pub mod regs {
             M1cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M1cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M1cr")
@@ -189,6 +190,7 @@ pub mod regs {
             M1erkeyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M1erkeyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M1erkeyr").field("erasekey", &self.erasekey()).finish()
@@ -248,6 +250,7 @@ pub mod regs {
             M1isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M1isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M1isr")
@@ -317,6 +320,7 @@ pub mod regs {
             M2cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2cr")
@@ -362,6 +366,7 @@ pub mod regs {
             M2dear(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2dear {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2dear").field("edea", &self.edea()).finish()
@@ -397,6 +402,7 @@ pub mod regs {
             M2ecckeyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2ecckeyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2ecckeyr").field("ecckey", &self.ecckey()).finish()
@@ -432,6 +438,7 @@ pub mod regs {
             M2erkeyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2erkeyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2erkeyr").field("erasekey", &self.erasekey()).finish()
@@ -479,6 +486,7 @@ pub mod regs {
             M2icr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2icr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2icr")
@@ -546,6 +554,7 @@ pub mod regs {
             M2ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2ier")
@@ -615,6 +624,7 @@ pub mod regs {
             M2isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2isr")
@@ -660,6 +670,7 @@ pub mod regs {
             M2sear(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2sear {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2sear").field("esea", &self.esea()).finish()
@@ -699,6 +710,7 @@ pub mod regs {
             M2wpr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2wpr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2wpr1")
@@ -806,6 +818,7 @@ pub mod regs {
             M2wpr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2wpr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2wpr2")
@@ -913,6 +926,7 @@ pub mod regs {
             M2wpr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2wpr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2wpr3")
@@ -1020,6 +1034,7 @@ pub mod regs {
             M2wpr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2wpr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2wpr4")

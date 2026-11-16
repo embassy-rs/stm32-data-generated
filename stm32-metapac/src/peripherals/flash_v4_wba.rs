@@ -289,6 +289,7 @@ pub mod regs {
             Acr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Acr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Acr")
@@ -342,6 +343,7 @@ pub mod regs {
             Bbr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bbr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bbr")
@@ -505,6 +507,7 @@ pub mod regs {
             Eccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Eccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Eccr")
@@ -562,6 +565,7 @@ pub mod regs {
             Nsbootadd0r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Nsbootadd0r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Nsbootadd0r")
@@ -605,6 +609,7 @@ pub mod regs {
             Nsbootadd1r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Nsbootadd1r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Nsbootadd1r")
@@ -798,6 +803,7 @@ pub mod regs {
             Nscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Nscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Nscr")
@@ -877,6 +883,7 @@ pub mod regs {
             Nscr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Nscr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Nscr2")
@@ -1071,6 +1078,7 @@ pub mod regs {
             Nssr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Nssr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Nssr")
@@ -1174,6 +1182,7 @@ pub mod regs {
             Opsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Opsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Opsr")
@@ -1437,6 +1446,7 @@ pub mod regs {
             Optr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Optr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Optr")
@@ -1526,6 +1536,7 @@ pub mod regs {
             Privcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgr")
@@ -1591,6 +1602,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             Secbootadd0r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secbootadd0r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secbootadd0r")
@@ -1778,6 +1790,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             Seccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccr")
@@ -1855,6 +1868,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             Seccr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seccr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccr2")
@@ -1905,6 +1919,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             Sechdpcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sechdpcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sechdpcr")
@@ -2044,6 +2059,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             Secsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secsr")
@@ -2113,6 +2129,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             Secwm1r1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secwm1r1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secwm1r1")
@@ -2168,6 +2185,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             Secwm1r2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secwm1r2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secwm1r2")
@@ -2223,6 +2241,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             Secwm2r1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secwm2r1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secwm2r1")
@@ -2278,6 +2297,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             Secwm2r2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secwm2r2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secwm2r2")
@@ -2345,6 +2365,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             Wrp1ar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wrp1ar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wrp1ar")
@@ -2414,6 +2435,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             Wrp1br(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wrp1br {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wrp1br")
@@ -2483,6 +2505,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             Wrp2ar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wrp2ar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wrp2ar")
@@ -2552,6 +2575,7 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
             Wrp2br(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wrp2br {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wrp2br")
@@ -2576,7 +2600,8 @@ The SECBOOTADD0 option bytes are selected following the BOOT0 pin or NSWBOOT0 st
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BorLev {
         #[doc = "BOR level 0 (reset level threshold around 1.7V)"]
@@ -2616,7 +2641,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CodeOp {
         #[doc = "No Flash operation interrupted by previous reset"]
@@ -2676,6 +2702,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rdp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {

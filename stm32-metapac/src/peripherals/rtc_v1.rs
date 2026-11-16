@@ -95,6 +95,7 @@ pub mod regs {
             Alrh(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Alrh {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Alrh").field("alrh", &self.alrh()).finish()
@@ -130,6 +131,7 @@ pub mod regs {
             Alrl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Alrl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Alrl").field("alrl", &self.alrl()).finish()
@@ -165,6 +167,7 @@ pub mod regs {
             Cnth(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cnth {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cnth").field("cnth", &self.cnth()).finish()
@@ -200,6 +203,7 @@ pub mod regs {
             Cntl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cntl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cntl").field("cntl", &self.cntl()).finish()
@@ -259,6 +263,7 @@ pub mod regs {
             Crh(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Crh {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Crh")
@@ -364,6 +369,7 @@ pub mod regs {
             Crl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Crl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Crl")
@@ -415,6 +421,7 @@ pub mod regs {
             Divh(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Divh {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Divh").field("divh", &self.divh()).finish()
@@ -450,6 +457,7 @@ pub mod regs {
             Divl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Divl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Divl").field("divl", &self.divl()).finish()
@@ -485,6 +493,7 @@ pub mod regs {
             Prlh(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Prlh {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Prlh").field("prlh", &self.prlh()).finish()
@@ -520,6 +529,7 @@ pub mod regs {
             Prll(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Prll {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Prll").field("prll", &self.prll()).finish()
@@ -534,7 +544,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rtoff {
         #[doc = "Last write operation on RTC registers is still ongoing"]

@@ -181,6 +181,7 @@ pub mod regs {
             Clrfr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Clrfr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Clrfr")
@@ -388,6 +389,7 @@ pub mod regs {
             Cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr1")
@@ -539,6 +541,7 @@ pub mod regs {
             Cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr2")
@@ -594,6 +597,7 @@ pub mod regs {
             Dr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dr").field("data", &self.data()).finish()
@@ -677,6 +681,7 @@ pub mod regs {
             Frcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Frcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Frcr")
@@ -738,6 +743,7 @@ pub mod regs {
             Gcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Gcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Gcr")
@@ -853,6 +859,7 @@ pub mod regs {
             Im(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Im {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Im")
@@ -934,6 +941,7 @@ pub mod regs {
             Pdmcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pdmcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pdmcr")
@@ -1001,6 +1009,7 @@ pub mod regs {
             Pdmdly(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pdmdly {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pdmdly")
@@ -1092,6 +1101,7 @@ pub mod regs {
             Slotr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Slotr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Slotr")
@@ -1223,6 +1233,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")

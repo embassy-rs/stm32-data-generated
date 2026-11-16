@@ -418,6 +418,7 @@ pub mod regs {
             C2imr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for C2imr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("C2imr1")
@@ -703,6 +704,7 @@ pub mod regs {
             C2imr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for C2imr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("C2imr2")
@@ -860,6 +862,7 @@ pub mod regs {
             Cfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr1")
@@ -963,6 +966,7 @@ pub mod regs {
             Cfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr2")
@@ -1016,6 +1020,7 @@ pub mod regs {
             Exticr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Exticr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exticr")
@@ -1207,6 +1212,7 @@ pub mod regs {
             Imr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Imr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Imr1")
@@ -1284,6 +1290,7 @@ pub mod regs {
             Imr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Imr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Imr2")
@@ -1327,6 +1334,7 @@ pub mod regs {
             Memrmp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Memrmp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Memrmp").field("mem_mode", &self.mem_mode()).finish()
@@ -1362,6 +1370,7 @@ pub mod regs {
             Rfdcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rfdcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rfdcr").field("rftbsel", &self.rftbsel()).finish()
@@ -1421,6 +1430,7 @@ pub mod regs {
             Scsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Scsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Scsr")
@@ -1466,6 +1476,7 @@ pub mod regs {
             Skr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Skr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Skr").field("key", &self.key()).finish()
@@ -1505,6 +1516,7 @@ pub mod regs {
             Swpr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Swpr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Swpr")

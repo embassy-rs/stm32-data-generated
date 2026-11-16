@@ -174,6 +174,7 @@ pub mod regs {
             Bndtr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bndtr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bndtr")
@@ -233,6 +234,7 @@ pub mod regs {
             Brur(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Brur {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Brur")
@@ -391,6 +393,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -452,6 +455,7 @@ pub mod regs {
             Dar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dar").field("dar", &self.dar()).finish()
@@ -547,6 +551,7 @@ pub mod regs {
             Esr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Esr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Esr")
@@ -602,6 +607,7 @@ pub mod regs {
             Gisr0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Gisr0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Gisr0")
@@ -721,6 +727,7 @@ pub mod regs {
             Ifcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ifcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ifcr")
@@ -830,6 +837,7 @@ pub mod regs {
             Isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Isr")
@@ -881,6 +889,7 @@ pub mod regs {
             Lar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lar").field("lar", &self.lar()).finish()
@@ -916,6 +925,7 @@ pub mod regs {
             Mar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mar").field("mar", &self.mar()).finish()
@@ -951,6 +961,7 @@ pub mod regs {
             Mdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mdr").field("mdr", &self.mdr()).finish()
@@ -986,6 +997,7 @@ pub mod regs {
             Sar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sar").field("sar", &self.sar()).finish()
@@ -1045,6 +1057,7 @@ pub mod regs {
             Tbr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tbr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tbr")
@@ -1250,6 +1263,7 @@ value. This bit is protected and can be written only if EN is 0."]
             Tcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tcr")
@@ -1296,7 +1310,8 @@ value. This bit is protected and can be written only if EN is 0."]
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Burst {
         #[doc = "Single transfer"]
@@ -1339,7 +1354,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bus {
         #[doc = "System/AXI bus"]
@@ -1370,7 +1386,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Incmode {
         #[doc = "Address pointer is fixed"]
@@ -1405,7 +1422,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pam {
         #[doc = "Right aligned, padded with 0s (default). If source data is larger than destination size, only LSB part of the source is written to the destination address. The reminder part is discarded"]
@@ -1439,7 +1457,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pl {
         #[doc = "Low"]
@@ -1474,7 +1493,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trgm {
         #[doc = "Each MDMA request (software or hardware) triggers a buffer transfer"]
@@ -1509,7 +1529,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Updatemode {
         #[doc = "Add"]
@@ -1540,7 +1561,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wordsize {
         #[doc = "Byte (8-bit)"]

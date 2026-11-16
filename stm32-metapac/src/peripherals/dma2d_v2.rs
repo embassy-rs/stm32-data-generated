@@ -157,6 +157,7 @@ pub mod regs {
             Amtcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Amtcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Amtcr")
@@ -195,6 +196,7 @@ pub mod regs {
             Bgcmar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bgcmar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bgcmar").field("ma", &self.ma()).finish()
@@ -254,6 +256,7 @@ pub mod regs {
             Bgcolr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bgcolr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bgcolr")
@@ -299,6 +302,7 @@ pub mod regs {
             Bgmar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bgmar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bgmar").field("ma", &self.ma()).finish()
@@ -334,6 +338,7 @@ pub mod regs {
             Bgor(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bgor {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bgor").field("lo", &self.lo()).finish()
@@ -455,6 +460,7 @@ pub mod regs {
             Bgpfccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bgpfccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bgpfccr")
@@ -630,6 +636,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -691,6 +698,7 @@ pub mod regs {
             Fgcmar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fgcmar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fgcmar").field("ma", &self.ma()).finish()
@@ -750,6 +758,7 @@ pub mod regs {
             Fgcolr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fgcolr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fgcolr")
@@ -795,6 +804,7 @@ pub mod regs {
             Fgmar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fgmar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fgmar").field("ma", &self.ma()).finish()
@@ -830,6 +840,7 @@ pub mod regs {
             Fgor(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fgor {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fgor").field("lo", &self.lo()).finish()
@@ -965,6 +976,7 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
             Fgpfccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fgpfccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fgpfccr")
@@ -1082,6 +1094,7 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
             Ifcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ifcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ifcr")
@@ -1193,6 +1206,7 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
             Isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Isr")
@@ -1244,6 +1258,7 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
             Lwr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lwr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lwr").field("lw", &self.lw()).finish()
@@ -1291,6 +1306,7 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
             Nlr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Nlr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Nlr")
@@ -1329,6 +1345,7 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
             Ocolr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ocolr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ocolr").field("color", &self.color()).finish()
@@ -1364,6 +1381,7 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
             Omar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Omar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Omar").field("ma", &self.ma()).finish()
@@ -1399,6 +1417,7 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
             Oor(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Oor {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Oor").field("lo", &self.lo()).finish()
@@ -1470,6 +1489,7 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
             Opfccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Opfccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Opfccr")
@@ -1496,7 +1516,8 @@ bits. These bits can only be written when data transfers are disabled. Once a tr
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Abort {
         _RESERVED_0 = 0x0,
@@ -1526,7 +1547,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BgpfccrAi {
         #[doc = "Regular alpha"]
@@ -1557,7 +1579,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BgpfccrAm {
         #[doc = "No modification of alpha channel"]
@@ -1591,7 +1614,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BgpfccrCcm {
         #[doc = "CLUT color format ARGB8888"]
@@ -1622,7 +1646,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BgpfccrCm {
         #[doc = "Color mode ARGB8888"]
@@ -1676,7 +1701,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BgpfccrRbs {
         #[doc = "No red blue swap (RGB or ARGB)"]
@@ -1707,7 +1733,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BgpfccrStart {
         _RESERVED_0 = 0x0,
@@ -1737,7 +1764,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Caecif {
         _RESERVED_0 = 0x0,
@@ -1767,7 +1795,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cceif {
         _RESERVED_0 = 0x0,
@@ -1797,7 +1826,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cctcif {
         _RESERVED_0 = 0x0,
@@ -1827,7 +1857,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CrStart {
         _RESERVED_0 = 0x0,
@@ -1857,7 +1888,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ctcif {
         _RESERVED_0 = 0x0,
@@ -1887,7 +1919,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cteif {
         _RESERVED_0 = 0x0,
@@ -1917,7 +1950,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ctwif {
         _RESERVED_0 = 0x0,
@@ -1947,7 +1981,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FgpfccrAi {
         #[doc = "Regular alpha"]
@@ -1978,7 +2013,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FgpfccrAm {
         #[doc = "No modification of alpha channel"]
@@ -2012,7 +2048,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FgpfccrCcm {
         #[doc = "CLUT color format ARGB8888"]
@@ -2043,7 +2080,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FgpfccrCm {
         #[doc = "Color mode ARGB8888"]
@@ -2098,7 +2136,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FgpfccrRbs {
         #[doc = "No red blue swap (RGB or ARGB)"]
@@ -2129,7 +2168,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FgpfccrStart {
         _RESERVED_0 = 0x0,
@@ -2159,7 +2199,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lom {
         #[doc = "Line offsets expressed in pixels"]
@@ -2190,7 +2231,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mode {
         #[doc = "Memory-to-memory (FG fetch only)"]
@@ -2231,7 +2273,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OpfccrAi {
         #[doc = "Regular alpha"]
@@ -2262,7 +2305,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OpfccrCm {
         #[doc = "ARGB8888"]
@@ -2302,7 +2346,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OpfccrRbs {
         #[doc = "No red blue swap (RGB or ARGB)"]
@@ -2333,7 +2378,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sb {
         #[doc = "Regular byte order"]

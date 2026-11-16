@@ -202,6 +202,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
             Bklockr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bklockr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bklockr")
@@ -257,6 +258,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
             Bootsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bootsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bootsr").field("initvtor", &self.initvtor()).finish()
@@ -424,6 +426,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
             Cccsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cccsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cccsr")
@@ -547,6 +550,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
             Ccswvalr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccswvalr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccswvalr")
@@ -658,6 +662,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
             Ccvalr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccvalr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccvalr")
@@ -733,6 +738,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
             Dbgcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dbgcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dbgcr")
@@ -778,6 +784,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
             Dbglockr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dbglockr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dbglockr")
@@ -819,6 +826,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
             Exticr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Exticr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exticr")
@@ -866,6 +874,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
             Fpuimr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fpuimr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fpuimr").field("fpu_ie", &self.fpu_ie()).finish()
@@ -901,6 +910,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
             Hdplcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hdplcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hdplcr").field("incr_hdpl", &self.incr_hdpl()).finish()
@@ -936,6 +946,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
             Hdplsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hdplsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hdplsr").field("hdpl", &self.hdpl()).finish()
@@ -971,6 +982,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
             Mesr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mesr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mesr").field("mef", &self.mef()).finish()
@@ -1090,6 +1102,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
             Pmcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pmcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pmcr")
@@ -1145,6 +1158,7 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
             Rsscmdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rsscmdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rsscmdr").field("rsscmd", &self.rsscmd()).finish()
@@ -1159,7 +1173,8 @@ bitfields in the PWR_CR1 register. Once set, this bit is cleared only by a syste
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AxiramWs {
         #[doc = "No wait state added when accessing any AXIRAM with ECC = 0."]
@@ -1208,6 +1223,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgAuthHdpl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -1256,6 +1272,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgcfgLock {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -1286,7 +1303,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum EthSelPhy {
         #[doc = "GMII or MII"]
@@ -1341,6 +1359,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hdpl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {

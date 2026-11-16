@@ -180,6 +180,7 @@ pub mod regs {
             Abr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Abr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Abr").field("alternate", &self.alternate()).finish()
@@ -217,6 +218,7 @@ is forced to 1. Writes to. this field are ignored when BUSY = 1 or when FMODE = 
             Ar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ar").field("address", &self.address()).finish()
@@ -396,6 +398,7 @@ is forced to 1. Writes to. this field are ignored when BUSY = 1 or when FMODE = 
             Ccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccr")
@@ -639,6 +642,7 @@ are wrongly updated while DMAEN = 1, the DMA request signal automatically goes t
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -772,6 +776,7 @@ for memories different from Micron. Others: Reserved"]
             Dcr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dcr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dcr1")
@@ -835,6 +840,7 @@ for memories different from Micron. Others: Reserved"]
             Dcr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dcr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dcr2")
@@ -878,6 +884,7 @@ for memories different from Micron. Others: Reserved"]
             Dcr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dcr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dcr3").field("csbound", &self.csbound()).finish()
@@ -913,6 +920,7 @@ for memories different from Micron. Others: Reserved"]
             Dcr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dcr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dcr4").field("refresh", &self.refresh()).finish()
@@ -950,6 +958,7 @@ is stuck at 1 in dual-memory configuration (DMM = 1) even when 0 is written to. 
             Dlr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dlr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dlr").field("dl", &self.dl()).finish()
@@ -987,6 +996,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Dr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dr").field("data", &self.data()).finish()
@@ -1058,6 +1068,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Fcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fcr")
@@ -1141,6 +1152,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Hlcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hlcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hlcr")
@@ -1188,6 +1200,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Ir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ir").field("instruction", &self.instruction()).finish()
@@ -1223,6 +1236,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Lptr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lptr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lptr").field("timeout", &self.timeout()).finish()
@@ -1258,6 +1272,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Pir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pir").field("interval", &self.interval()).finish()
@@ -1293,6 +1308,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Psmar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Psmar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Psmar").field("match_", &self.match_()).finish()
@@ -1328,6 +1344,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Psmkr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Psmkr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Psmkr").field("mask", &self.mask()).finish()
@@ -1435,6 +1452,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -1512,6 +1530,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Tcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tcr")
@@ -1557,6 +1576,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wabr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wabr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wabr").field("alternate", &self.alternate()).finish()
@@ -1724,6 +1744,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wccr")
@@ -1787,6 +1808,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wir").field("instruction", &self.instruction()).finish()
@@ -1822,6 +1844,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wpabr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wpabr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wpabr").field("alternate", &self.alternate()).finish()
@@ -1989,6 +2012,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wpccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wpccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wpccr")
@@ -2052,6 +2076,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wpir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wpir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wpir")
@@ -2113,6 +2138,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wptcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wptcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wptcr")
@@ -2158,6 +2184,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wtcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wtcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wtcr").field("dcyc", &self.dcyc()).finish()
@@ -2172,7 +2199,8 @@ and a half-word read must read DATA\\[15:0\\]."]
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FlashSelect {
         #[doc = "FLASH 1 selected (data exchanged over IO\\[3:0\\])"]
@@ -2203,7 +2231,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum FunctionalMode {
         #[doc = "Indirect-write mode"]
@@ -2238,7 +2267,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum LatencyMode {
         #[doc = "Variable initial latency"]
@@ -2269,7 +2299,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MatchMode {
         #[doc = "AND-match mode, SMF is set if all the unmasked bits received from the device match the corresponding bits in the match register."]
@@ -2300,7 +2331,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MemType {
         #[doc = "Micron mode, D0/D1 ordering in DTR 8-data-bit mode. Regular-command protocol in Single-, Dual-, Quad- and Octal-SPI modes."]
@@ -2341,7 +2373,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum PhaseMode {
         #[doc = "No alternate bytes"]
@@ -2381,7 +2414,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleShift {
         #[doc = "No shift"]
@@ -2412,7 +2446,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SizeInBits {
         #[doc = "8-bit alternate bytes"]
@@ -2447,7 +2482,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Threshold {
         #[doc = "FTF is set if there are one or more free bytes available to be written to in the FIFO in Indirect-write mode, or if there are one or more valid bytes can be read from the FIFO in Indirect-read mode."]

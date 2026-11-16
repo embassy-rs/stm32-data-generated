@@ -249,6 +249,7 @@ pub mod regs {
             Agates(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Agates {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Agates").field("gates", &self.gates()).finish()
@@ -284,6 +285,7 @@ pub mod regs {
             Bgates(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bgates {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bgates").field("gates", &self.gates()).finish()
@@ -319,6 +321,7 @@ pub mod regs {
             BusifCtrl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for BusifCtrl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("BusifCtrl").field("en", &self.en()).finish()
@@ -354,6 +357,7 @@ pub mod regs {
             BusifErr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for BusifErr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("BusifErr").field("err", &self.err()).finish()
@@ -401,6 +405,7 @@ pub mod regs {
             ClkctrlCtrl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for ClkctrlCtrl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("ClkctrlCtrl")
@@ -444,6 +449,7 @@ pub mod regs {
             EpochctrlAddr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for EpochctrlAddr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("EpochctrlAddr").field("addr", &self.addr()).finish()
@@ -479,6 +485,7 @@ pub mod regs {
             EpochctrlBc(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for EpochctrlBc {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("EpochctrlBc").field("count", &self.count()).finish()
@@ -562,6 +569,7 @@ pub mod regs {
             EpochctrlCtrl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for EpochctrlCtrl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("EpochctrlCtrl")
@@ -611,6 +619,7 @@ pub mod regs {
             EpochctrlIrq(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for EpochctrlIrq {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("EpochctrlIrq").field("irq", &self.irq()).finish()
@@ -646,6 +655,7 @@ pub mod regs {
             EpochctrlLabel(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for EpochctrlLabel {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("EpochctrlLabel").field("label", &self.label()).finish()
@@ -705,6 +715,7 @@ pub mod regs {
             IntctrlCtrl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IntctrlCtrl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IntctrlCtrl")
@@ -810,6 +821,7 @@ pub mod regs {
             Intstatus(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Intstatus {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Intstatus")
@@ -861,6 +873,7 @@ pub mod regs {
             StrengIrq(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for StrengIrq {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("StrengIrq").field("irq", &self.irq()).finish()

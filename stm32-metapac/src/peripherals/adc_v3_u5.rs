@@ -273,6 +273,7 @@ pub mod regs {
             Adc4Awd2cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adc4Awd2cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Adc4Awd2cr")
@@ -364,6 +365,7 @@ pub mod regs {
             Adc4Awd3cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adc4Awd3cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Adc4Awd3cr")
@@ -451,6 +453,7 @@ pub mod regs {
             Adc4Calfact(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adc4Calfact {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Adc4Calfact").field("calfact", &self.calfact()).finish()
@@ -546,6 +549,7 @@ pub mod regs {
             Adc4Ccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adc4Ccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Adc4Ccr")
@@ -765,6 +769,7 @@ pub mod regs {
             Adc4Cfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adc4Cfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Adc4Cfgr1")
@@ -882,6 +887,7 @@ pub mod regs {
             Adc4Cfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adc4Cfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Adc4Cfgr2")
@@ -935,6 +941,7 @@ pub mod regs {
             Adc4Chselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adc4Chselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Adc4Chselr")
@@ -1026,6 +1033,7 @@ pub mod regs {
             Adc4ChselrSq(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adc4ChselrSq {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Adc4ChselrSq")
@@ -1141,6 +1149,7 @@ pub mod regs {
             Adc4Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adc4Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Adc4Cr")
@@ -1192,6 +1201,7 @@ pub mod regs {
             Adc4Dr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adc4Dr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Adc4Dr").field("data", &self.data()).finish()
@@ -1315,6 +1325,7 @@ pub mod regs {
             Adc4Ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adc4Ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Adc4Ier")
@@ -1462,6 +1473,7 @@ pub mod regs {
             Adc4Isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adc4Isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Adc4Isr")
@@ -1521,6 +1533,7 @@ pub mod regs {
             Adc4Or(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adc4Or {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Adc4Or").field("chn21sel", &self.chn21sel()).finish()
@@ -1592,6 +1605,7 @@ pub mod regs {
             Adc4Pwrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adc4Pwrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Adc4Pwrr")
@@ -1661,6 +1675,7 @@ is only available when SMPSEL is present)"]
             Adc4Smpr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adc4Smpr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Adc4Smpr")
@@ -1764,6 +1779,7 @@ is only available when SMPSEL is present)"]
             Adc4Tr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adc4Tr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Adc4Tr")
@@ -1806,6 +1822,7 @@ is only available when SMPSEL is present)"]
             Awd2cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Awd2cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Awd2cr")
@@ -1889,6 +1906,7 @@ is only available when SMPSEL is present)"]
             Awd3cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Awd3cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Awd3cr")
@@ -2016,6 +2034,7 @@ is only available when SMPSEL is present)"]
             Calfact(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Calfact {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Calfact")
@@ -2065,6 +2084,7 @@ is only available when SMPSEL is present)"]
             Calfact2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Calfact2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Calfact2").field("calfact", &self.calfact()).finish()
@@ -2268,6 +2288,7 @@ is only available when SMPSEL is present)"]
             Cfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr")
@@ -2457,6 +2478,7 @@ is only available when SMPSEL is present)"]
             Cfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr2")
@@ -2638,6 +2660,7 @@ is only available when SMPSEL is present)"]
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -2703,6 +2726,7 @@ is only available when SMPSEL is present)"]
             Difsel(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Difsel {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Difsel")
@@ -2782,6 +2806,7 @@ is only available when SMPSEL is present)"]
             Dr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dr").field("rdata", &self.rdata()).finish()
@@ -2829,6 +2854,7 @@ is only available when SMPSEL is present)"]
             Gcomp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Gcomp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Gcomp")
@@ -2886,6 +2912,7 @@ only)"]
             Htr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Htr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Htr")
@@ -3053,6 +3080,7 @@ only)"]
             Ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ier")
@@ -3242,6 +3270,7 @@ only)"]
             Isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Isr")
@@ -3307,6 +3336,7 @@ only)"]
             Jdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Jdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Jdr").field("jdata", &self.jdata()).finish()
@@ -3382,6 +3412,7 @@ only)"]
             Jsqr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Jsqr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Jsqr")
@@ -3435,6 +3466,7 @@ only)"]
             Ltr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ltr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ltr").field("ltr", &self.ltr()).finish()
@@ -3518,6 +3550,7 @@ only)"]
             Ofr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ofr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ofr")
@@ -3571,6 +3604,7 @@ only)"]
             Pcsel(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pcsel {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pcsel")
@@ -3654,6 +3688,7 @@ only)"]
             Smpr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Smpr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Smpr")
@@ -3729,6 +3764,7 @@ only)"]
             Sqr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sqr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sqr1")
@@ -3782,6 +3818,7 @@ only)"]
             Sqr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sqr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sqr2")
@@ -3835,6 +3872,7 @@ only)"]
             Sqr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sqr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sqr3")
@@ -3888,6 +3926,7 @@ only)"]
             Sqr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sqr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sqr4")
@@ -3910,7 +3949,8 @@ only)"]
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc4Align {
         #[doc = "Right alignment"]
@@ -3941,7 +3981,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc4Dmacfg {
         #[doc = "DMA one shot mode selected"]
@@ -3972,7 +4013,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc4Exten {
         #[doc = "Hardware trigger detection disabled (conversions can be launched by software)"]
@@ -4007,7 +4049,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc4Ovsr {
         #[doc = "2x oversampling ratio"]
@@ -4050,7 +4093,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc4Presc {
         #[doc = "Input ADC clock not divided"]
@@ -4105,7 +4149,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc4Res {
         #[doc = "12-bit"]
@@ -4140,7 +4185,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc4SampleTime {
         #[doc = "1.5 ADC clock cycles"]
@@ -4183,7 +4229,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc4Scandir {
         #[doc = "Upward scan (from channel 0 to the highest channel)"]
@@ -4214,7 +4261,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dmngt {
         #[doc = "Regular conversion data stored in DR only"]
@@ -4249,7 +4297,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Exten {
         #[doc = "Hardware trigger detection disabled (conversions can be launched by software)"]
@@ -4284,7 +4333,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Res {
         #[doc = "14-bit"]
@@ -4319,7 +4369,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rovsm {
         #[doc = "Oversampling is temporarily stopped and continued after the injection sequence (intermediate results are kept)"]
@@ -4350,7 +4401,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "5 ADC clock cycles"]
@@ -4393,7 +4445,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Swtrig {
         #[doc = "Software trigger starts the conversion"]
@@ -4424,7 +4477,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trovs {
         #[doc = "All oversampled conversions for a channel are done consecutively after a trigger"]

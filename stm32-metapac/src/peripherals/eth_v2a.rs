@@ -1005,6 +1005,7 @@ pub mod regs {
             Dmaa4dacr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dmaa4dacr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dmaa4dacr")
@@ -1086,6 +1087,7 @@ pub mod regs {
             Dmaa4rxacr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dmaa4rxacr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dmaa4rxacr")
@@ -1157,6 +1159,7 @@ pub mod regs {
             Dmaa4txacr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dmaa4txacr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dmaa4txacr")
@@ -1250,6 +1253,7 @@ pub mod regs {
             DmacRxCr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DmacRxCr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DmacRxCr")
@@ -1299,6 +1303,7 @@ pub mod regs {
             DmacRxDlar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DmacRxDlar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DmacRxDlar").field("rdesla", &self.rdesla()).finish()
@@ -1334,6 +1339,7 @@ pub mod regs {
             DmacRxDtpr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DmacRxDtpr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DmacRxDtpr").field("rdt", &self.rdt()).finish()
@@ -1381,6 +1387,7 @@ pub mod regs {
             DmacRxIwtr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DmacRxIwtr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DmacRxIwtr")
@@ -1436,6 +1443,7 @@ pub mod regs {
             DmacRxRlr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DmacRxRlr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DmacRxRlr")
@@ -1563,6 +1571,7 @@ pub mod regs {
             DmacTxCr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DmacTxCr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DmacTxCr")
@@ -1618,6 +1627,7 @@ pub mod regs {
             DmacTxDlar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DmacTxDlar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DmacTxDlar").field("tdesla", &self.tdesla()).finish()
@@ -1653,6 +1663,7 @@ pub mod regs {
             DmacTxDtpr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DmacTxDtpr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DmacTxDtpr").field("tdt", &self.tdt()).finish()
@@ -1688,6 +1699,7 @@ pub mod regs {
             DmacTxRlr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DmacTxRlr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DmacTxRlr").field("tdrl", &self.tdrl()).finish()
@@ -1723,6 +1735,7 @@ pub mod regs {
             DmaccaRxBr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DmaccaRxBr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DmaccaRxBr")
@@ -1760,6 +1773,7 @@ pub mod regs {
             DmaccaRxDr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DmaccaRxDr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DmaccaRxDr")
@@ -1797,6 +1811,7 @@ pub mod regs {
             DmaccaTxBr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DmaccaTxBr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DmaccaTxBr")
@@ -1834,6 +1849,7 @@ pub mod regs {
             DmaccaTxDr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DmaccaTxDr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DmaccaTxDr")
@@ -1895,6 +1911,7 @@ pub mod regs {
             Dmaccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dmaccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dmaccr")
@@ -2084,6 +2101,7 @@ pub mod regs {
             Dmacier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dmacier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dmacier")
@@ -2161,6 +2179,7 @@ pub mod regs {
             Dmacmfcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dmacmfcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dmacmfcr")
@@ -2240,6 +2259,7 @@ pub mod regs {
             Dmacsfcsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dmacsfcsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dmacsfcsr")
@@ -2455,6 +2475,7 @@ pub mod regs {
             Dmacsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dmacsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dmacsr")
@@ -2568,6 +2589,7 @@ pub mod regs {
             Dmadsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dmadsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dmadsr")
@@ -2647,6 +2669,7 @@ pub mod regs {
             Dmaisr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dmaisr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dmaisr")
@@ -2694,6 +2717,7 @@ pub mod regs {
             Dmalpiei(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dmalpiei {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dmalpiei").field("lpiei", &self.lpiei()).finish()
@@ -2777,6 +2801,7 @@ pub mod regs {
             Dmamr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dmamr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dmamr")
@@ -2994,6 +3019,7 @@ pub mod regs {
             Dmasbmr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dmasbmr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dmasbmr")
@@ -3087,6 +3113,7 @@ pub mod regs {
             Dmatbsctrl0r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dmatbsctrl0r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dmatbsctrl0r")
@@ -3132,6 +3159,7 @@ pub mod regs {
             Mac1ustcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mac1ustcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mac1ustcr")
@@ -3217,6 +3245,7 @@ pub mod regs {
             MacIacr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MacIacr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MacIacr")
@@ -3278,6 +3307,7 @@ pub mod regs {
             MacRxFcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MacRxFcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MacRxFcr")
@@ -3388,6 +3418,7 @@ pub mod regs {
             MacRxTxSr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MacRxTxSr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MacRxTxSr")
@@ -3465,6 +3496,7 @@ pub mod regs {
             MacTmrqr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MacTmrqr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MacTmrqr")
@@ -3522,6 +3554,7 @@ pub mod regs {
             MacTxTssnr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MacTxTssnr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MacTxTssnr")
@@ -3565,6 +3598,7 @@ pub mod regs {
             MacTxTsssr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MacTxTsssr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MacTxTsssr").field("txtsshi", &self.txtsshi()).finish()
@@ -3624,6 +3658,7 @@ pub mod regs {
             Maca0hr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Maca0hr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Maca0hr")
@@ -3669,6 +3704,7 @@ pub mod regs {
             Maca0lr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Maca0lr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Maca0lr").field("addrlo", &self.addrlo()).finish()
@@ -3720,6 +3756,7 @@ pub mod regs {
             Macacr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macacr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macacr")
@@ -3817,6 +3854,7 @@ pub mod regs {
             Macahr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macahr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macahr")
@@ -3866,6 +3904,7 @@ pub mod regs {
             Macalr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macalr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macalr").field("addrlo", &self.addrlo()).finish()
@@ -3901,6 +3940,7 @@ pub mod regs {
             Macarpar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macarpar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macarpar").field("arppa", &self.arppa()).finish()
@@ -3936,6 +3976,7 @@ pub mod regs {
             Macatsnr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macatsnr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macatsnr").field("auxtslo", &self.auxtslo()).finish()
@@ -3971,6 +4012,7 @@ pub mod regs {
             Macatssr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macatssr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macatssr").field("auxtshi", &self.auxtshi()).finish()
@@ -4294,6 +4336,7 @@ pub mod regs {
             Maccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Maccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Maccr")
@@ -4395,6 +4438,7 @@ pub mod regs {
             Maccsrswcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Maccsrswcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Maccsrswcr")
@@ -4474,6 +4518,7 @@ pub mod regs {
             Macdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macdr")
@@ -4593,6 +4638,7 @@ pub mod regs {
             Macecr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macecr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macecr")
@@ -4718,6 +4764,7 @@ pub mod regs {
             Macfpecsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macfpecsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macfpecsr")
@@ -4771,6 +4818,7 @@ pub mod regs {
             Machtr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Machtr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Machtr").field("ht", &self.ht()).finish()
@@ -5034,6 +5082,7 @@ pub mod regs {
             Machwf0r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Machwf0r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Machwf0r")
@@ -5293,6 +5342,7 @@ pub mod regs {
             Machwf1r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Machwf1r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Machwf1r")
@@ -5448,6 +5498,7 @@ pub mod regs {
             Machwf2r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Machwf2r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Machwf2r")
@@ -5647,6 +5698,7 @@ pub mod regs {
             Machwf3r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Machwf3r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Machwf3r")
@@ -5808,6 +5860,7 @@ pub mod regs {
             Macier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macier")
@@ -6021,6 +6074,7 @@ pub mod regs {
             Macisr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macisr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macisr")
@@ -6136,6 +6190,7 @@ pub mod regs {
             Macivir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macivir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macivir")
@@ -6185,6 +6240,7 @@ pub mod regs {
             Macl3a00r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macl3a00r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macl3a00r").field("l3a00", &self.l3a00()).finish()
@@ -6220,6 +6276,7 @@ pub mod regs {
             Macl3a01r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macl3a01r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macl3a01r").field("l3a01", &self.l3a01()).finish()
@@ -6255,6 +6312,7 @@ pub mod regs {
             Macl3a10r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macl3a10r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macl3a10r").field("l3a10", &self.l3a10()).finish()
@@ -6290,6 +6348,7 @@ pub mod regs {
             Macl3a11r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macl3a11r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macl3a11r").field("l3a11", &self.l3a11()).finish()
@@ -6325,6 +6384,7 @@ pub mod regs {
             Macl3a20r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macl3a20r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macl3a20r").field("l3a20", &self.l3a20()).finish()
@@ -6360,6 +6420,7 @@ pub mod regs {
             Macl3a21r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macl3a21r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macl3a21r").field("l3a21", &self.l3a21()).finish()
@@ -6395,6 +6456,7 @@ pub mod regs {
             Macl3a30r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macl3a30r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macl3a30r").field("l3a30", &self.l3a30()).finish()
@@ -6430,6 +6492,7 @@ pub mod regs {
             Macl3a31r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macl3a31r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macl3a31r").field("l3a31", &self.l3a31()).finish()
@@ -6621,6 +6684,7 @@ pub mod regs {
             Macl3l4c0r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macl3l4c0r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macl3l4c0r")
@@ -6844,6 +6908,7 @@ pub mod regs {
             Macl3l4c1r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macl3l4c1r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macl3l4c1r")
@@ -6923,6 +6988,7 @@ pub mod regs {
             Macl4a0r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macl4a0r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macl4a0r")
@@ -6978,6 +7044,7 @@ pub mod regs {
             Macl4a1r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macl4a1r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macl4a1r")
@@ -7153,6 +7220,7 @@ pub mod regs {
             Maclcsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Maclcsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Maclcsr")
@@ -7216,6 +7284,7 @@ pub mod regs {
             Macletr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macletr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macletr").field("lpiet", &self.lpiet()).finish()
@@ -7275,6 +7344,7 @@ pub mod regs {
             Maclmir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Maclmir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Maclmir")
@@ -7332,6 +7402,7 @@ pub mod regs {
             Macltcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macltcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macltcr")
@@ -7478,6 +7549,7 @@ pub mod regs {
             Macmdioar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macmdioar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macmdioar")
@@ -7549,6 +7621,7 @@ pub mod regs {
             Macmdiodr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macmdiodr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macmdiodr")
@@ -7683,6 +7756,7 @@ pub mod regs {
             Macpcsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macpcsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macpcsr")
@@ -7896,6 +7970,7 @@ pub mod regs {
             Macpfr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macpfr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macpfr")
@@ -8011,6 +8086,7 @@ pub mod regs {
             Macphycsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macphycsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macphycsr")
@@ -8144,6 +8220,7 @@ pub mod regs {
             Macpocr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macpocr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macpocr")
@@ -8259,6 +8336,7 @@ pub mod regs {
             Macppscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macppscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macppscr")
@@ -8314,6 +8392,7 @@ pub mod regs {
             Macppsir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macppsir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macppsir").field("ppsint0", &self.ppsint0()).finish()
@@ -8361,6 +8440,7 @@ pub mod regs {
             Macppsttnr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macppsttnr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macppsttnr")
@@ -8404,6 +8484,7 @@ pub mod regs {
             Macppsttsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macppsttsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macppsttsr").field("tstrh0", &self.tstrh0()).finish()
@@ -8439,6 +8520,7 @@ pub mod regs {
             Macppswr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macppswr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macppswr")
@@ -8476,6 +8558,7 @@ pub mod regs {
             Macprstimr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macprstimr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macprstimr").field("mptn", &self.mptn()).finish()
@@ -8511,6 +8594,7 @@ pub mod regs {
             Macprstimur(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macprstimur {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macprstimur").field("mptu", &self.mptu()).finish()
@@ -8594,6 +8678,7 @@ pub mod regs {
             MacqTxFcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MacqTxFcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MacqTxFcr")
@@ -8643,6 +8728,7 @@ pub mod regs {
             Macrwkpfr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macrwkpfr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macrwkpfr")
@@ -8692,6 +8778,7 @@ pub mod regs {
             Macrxqc0r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macrxqc0r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macrxqc0r")
@@ -8891,6 +8978,7 @@ pub mod regs {
             Macrxqc1r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macrxqc1r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macrxqc1r")
@@ -8970,6 +9058,7 @@ pub mod regs {
             Macrxqc2r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macrxqc2r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macrxqc2r")
@@ -9073,6 +9162,7 @@ pub mod regs {
             Macrxqcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macrxqcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macrxqcr")
@@ -9124,6 +9214,7 @@ pub mod regs {
             Macspi0r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macspi0r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macspi0r").field("spi0", &self.spi0()).finish()
@@ -9159,6 +9250,7 @@ pub mod regs {
             Macspi1r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macspi1r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macspi1r").field("spi1", &self.spi1()).finish()
@@ -9194,6 +9286,7 @@ pub mod regs {
             Macspi2r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macspi2r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macspi2r").field("spi2", &self.spi2()).finish()
@@ -9229,6 +9322,7 @@ pub mod regs {
             Macssir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macssir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macssir").field("ssinc", &self.ssinc()).finish()
@@ -9264,6 +9358,7 @@ pub mod regs {
             Macstnr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macstnr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macstnr").field("tsss", &self.tsss()).finish()
@@ -9311,6 +9406,7 @@ pub mod regs {
             Macstnur(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macstnur {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macstnur")
@@ -9354,6 +9450,7 @@ pub mod regs {
             Macstsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macstsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macstsr").field("tss", &self.tss()).finish()
@@ -9389,6 +9486,7 @@ pub mod regs {
             Macstsur(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macstsur {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macstsur").field("tss", &self.tss()).finish()
@@ -9424,6 +9522,7 @@ pub mod regs {
             Mactsar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mactsar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mactsar").field("tsar", &self.tsar()).finish()
@@ -9675,6 +9774,7 @@ pub mod regs {
             Mactscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mactscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mactscr")
@@ -9752,6 +9852,7 @@ pub mod regs {
             Mactseacr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mactseacr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mactseacr").field("osteac", &self.osteac()).finish()
@@ -9787,6 +9888,7 @@ pub mod regs {
             Mactsecnr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mactsecnr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mactsecnr").field("tsec", &self.tsec()).finish()
@@ -9834,6 +9936,7 @@ pub mod regs {
             Mactselr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mactselr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mactselr")
@@ -9877,6 +9980,7 @@ pub mod regs {
             Mactsiacr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mactsiacr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mactsiacr").field("ostiac", &self.ostiac()).finish()
@@ -9912,6 +10016,7 @@ pub mod regs {
             Mactsicnr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mactsicnr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mactsicnr").field("tsic", &self.tsic()).finish()
@@ -9959,6 +10064,7 @@ pub mod regs {
             Mactsilr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mactsilr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mactsilr")
@@ -10094,6 +10200,7 @@ pub mod regs {
             Mactssr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mactssr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mactssr")
@@ -10153,6 +10260,7 @@ pub mod regs {
             Macvhtr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macvhtr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macvhtr").field("vlht", &self.vlht()).finish()
@@ -10284,6 +10392,7 @@ pub mod regs {
             Macvir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macvir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macvir")
@@ -10353,6 +10462,7 @@ pub mod regs {
             Macvr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macvr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macvr")
@@ -10564,6 +10674,7 @@ pub mod regs {
             Macvtcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macvtcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macvtcr")
@@ -10717,6 +10828,7 @@ pub mod regs {
             Macvtdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macvtdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macvtdr")
@@ -10784,6 +10896,7 @@ pub mod regs {
             Macwtr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Macwtr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Macwtr")
@@ -10894,6 +11007,7 @@ pub mod regs {
             MmcControl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MmcControl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MmcControl")
@@ -10983,6 +11097,7 @@ pub mod regs {
             MmcFpeRxImr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MmcFpeRxImr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MmcFpeRxImr")
@@ -11066,6 +11181,7 @@ pub mod regs {
             MmcFpeRxIsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MmcFpeRxIsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MmcFpeRxIsr")
@@ -11113,6 +11229,7 @@ pub mod regs {
             MmcFpeTxFcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MmcFpeTxFcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MmcFpeTxFcr").field("txffc", &self.txffc()).finish()
@@ -11160,6 +11277,7 @@ pub mod regs {
             MmcFpeTxImr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MmcFpeTxImr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MmcFpeTxImr")
@@ -11215,6 +11333,7 @@ pub mod regs {
             MmcFpeTxIsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MmcFpeTxIsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MmcFpeTxIsr")
@@ -11306,6 +11425,7 @@ pub mod regs {
             MmcRxInterrupt(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MmcRxInterrupt {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MmcRxInterrupt")
@@ -11403,6 +11523,7 @@ pub mod regs {
             MmcRxInterruptMask(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MmcRxInterruptMask {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MmcRxInterruptMask")
@@ -11452,6 +11573,7 @@ pub mod regs {
             MmcTxHrcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MmcTxHrcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MmcTxHrcr").field("txhrc", &self.txhrc()).finish()
@@ -11535,6 +11657,7 @@ pub mod regs {
             MmcTxInterrupt(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MmcTxInterrupt {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MmcTxInterrupt")
@@ -11632,6 +11755,7 @@ pub mod regs {
             MmcTxInterruptMask(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MmcTxInterruptMask {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MmcTxInterruptMask")
@@ -11693,6 +11817,7 @@ pub mod regs {
             MtlRxQcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MtlRxQcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MtlRxQcr")
@@ -11772,6 +11897,7 @@ pub mod regs {
             MtlRxQdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MtlRxQdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MtlRxQdr")
@@ -11855,6 +11981,7 @@ pub mod regs {
             MtlRxQmpocr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MtlRxQmpocr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MtlRxQmpocr")
@@ -11998,6 +12125,7 @@ pub mod regs {
             MtlRxQomr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MtlRxQomr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MtlRxQomr")
@@ -12079,6 +12207,7 @@ pub mod regs {
             MtlTxQ1ecr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MtlTxQ1ecr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MtlTxQ1ecr")
@@ -12124,6 +12253,7 @@ pub mod regs {
             MtlTxQ1hcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MtlTxQ1hcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MtlTxQ1hcr").field("hc", &self.hc()).finish()
@@ -12159,6 +12289,7 @@ pub mod regs {
             MtlTxQ1lcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MtlTxQ1lcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MtlTxQ1lcr").field("lc", &self.lc()).finish()
@@ -12194,6 +12325,7 @@ pub mod regs {
             MtlTxQ1sscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MtlTxQ1sscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MtlTxQ1sscr").field("ssc", &self.ssc()).finish()
@@ -12301,6 +12433,7 @@ pub mod regs {
             MtlTxQdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MtlTxQdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MtlTxQdr")
@@ -12354,6 +12487,7 @@ pub mod regs {
             MtlTxQesr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MtlTxQesr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MtlTxQesr").field("abs", &self.abs()).finish()
@@ -12437,6 +12571,7 @@ pub mod regs {
             MtlTxQomr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MtlTxQomr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MtlTxQomr")
@@ -12486,6 +12621,7 @@ pub mod regs {
             MtlTxQqwr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MtlTxQqwr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MtlTxQqwr").field("iscqw", &self.iscqw()).finish()
@@ -12533,6 +12669,7 @@ pub mod regs {
             MtlTxQur(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MtlTxQur {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MtlTxQur")
@@ -12660,6 +12797,7 @@ pub mod regs {
             Mtlestcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mtlestcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mtlestcr")
@@ -12715,6 +12853,7 @@ pub mod regs {
             Mtlestecr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mtlestecr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mtlestecr").field("ovhd", &self.ovhd()).finish()
@@ -12762,6 +12901,7 @@ pub mod regs {
             Mtlestfscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mtlestfscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mtlestfscr")
@@ -12805,6 +12945,7 @@ pub mod regs {
             Mtlestfser(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mtlestfser {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mtlestfser").field("feqn", &self.feqn()).finish()
@@ -12900,6 +13041,7 @@ pub mod regs {
             Mtlestgclcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mtlestgclcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mtlestgclcr")
@@ -12951,6 +13093,7 @@ pub mod regs {
             Mtlestgcldr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mtlestgcldr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mtlestgcldr").field("gcd", &self.gcd()).finish()
@@ -13034,6 +13177,7 @@ pub mod regs {
             Mtlestier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mtlestier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mtlestier")
@@ -13083,6 +13227,7 @@ pub mod regs {
             Mtlestscher(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mtlestscher {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mtlestscher").field("seqn", &self.seqn()).finish()
@@ -13202,6 +13347,7 @@ pub mod regs {
             Mtlestsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mtlestsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mtlestsr")
@@ -13269,6 +13415,7 @@ pub mod regs {
             Mtlfpear(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mtlfpear {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mtlfpear")
@@ -13336,6 +13483,7 @@ pub mod regs {
             Mtlfpecsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mtlfpecsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mtlfpecsr")
@@ -13397,6 +13545,7 @@ pub mod regs {
             Mtlisr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mtlisr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mtlisr")
@@ -13490,6 +13639,7 @@ pub mod regs {
             Mtlomr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mtlomr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mtlomr")
@@ -13599,6 +13749,7 @@ pub mod regs {
             Mtlqicsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mtlqicsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mtlqicsr")
@@ -13686,6 +13837,7 @@ pub mod regs {
             Mtlrxqdmamr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mtlrxqdmamr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mtlrxqdmamr")
@@ -13769,6 +13921,7 @@ pub mod regs {
             Mtltbscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mtltbscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mtltbscr")
@@ -13816,6 +13969,7 @@ pub mod regs {
             RxAlignmentErrorPackets(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RxAlignmentErrorPackets {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RxAlignmentErrorPackets")
@@ -13853,6 +14007,7 @@ pub mod regs {
             RxCrcErrorPackets(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RxCrcErrorPackets {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RxCrcErrorPackets")
@@ -13890,6 +14045,7 @@ pub mod regs {
             RxFpeFragCr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RxFpeFragCr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RxFpeFragCr").field("ffc", &self.ffc()).finish()
@@ -13925,6 +14081,7 @@ pub mod regs {
             RxLpiTranCntr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RxLpiTranCntr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RxLpiTranCntr")
@@ -13962,6 +14119,7 @@ pub mod regs {
             RxLpiUsecCntr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RxLpiUsecCntr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RxLpiUsecCntr")
@@ -13999,6 +14157,7 @@ pub mod regs {
             RxPacketAsmErr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RxPacketAsmErr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RxPacketAsmErr").field("paec", &self.paec()).finish()
@@ -14034,6 +14193,7 @@ pub mod regs {
             RxPacketAsmOkr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RxPacketAsmOkr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RxPacketAsmOkr").field("paoc", &self.paoc()).finish()
@@ -14069,6 +14229,7 @@ pub mod regs {
             RxPacketSmdErr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RxPacketSmdErr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RxPacketSmdErr").field("psec", &self.psec()).finish()
@@ -14104,6 +14265,7 @@ pub mod regs {
             RxUnicastPacketsGood(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RxUnicastPacketsGood {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RxUnicastPacketsGood")
@@ -14141,6 +14303,7 @@ pub mod regs {
             TxLpiTranCntr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for TxLpiTranCntr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TxLpiTranCntr")
@@ -14178,6 +14341,7 @@ pub mod regs {
             TxLpiUsecCntr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for TxLpiUsecCntr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TxLpiUsecCntr")
@@ -14215,6 +14379,7 @@ pub mod regs {
             TxMultipleCollisionGoodPackets(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for TxMultipleCollisionGoodPackets {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TxMultipleCollisionGoodPackets")
@@ -14256,6 +14421,7 @@ pub mod regs {
             TxPacketCountGood(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for TxPacketCountGood {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TxPacketCountGood")
@@ -14293,6 +14459,7 @@ pub mod regs {
             TxSingleCollisionGoodPackets(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for TxSingleCollisionGoodPackets {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TxSingleCollisionGoodPackets")

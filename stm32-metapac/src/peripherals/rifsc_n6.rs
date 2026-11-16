@@ -89,6 +89,7 @@ pub mod regs {
             Cfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr")
@@ -228,6 +229,7 @@ pub mod regs {
             RimcAttr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RimcAttr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RimcAttr")
@@ -287,6 +289,7 @@ pub mod regs {
             RimcCr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RimcCr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RimcCr")
@@ -330,6 +333,7 @@ pub mod regs {
             RiscCr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for RiscCr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("RiscCr").field("glock", &self.glock()).finish()

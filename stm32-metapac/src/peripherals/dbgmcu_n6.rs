@@ -114,6 +114,7 @@ pub mod regs {
             Ahb1fz1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb1fz1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb1fz1")
@@ -201,6 +202,7 @@ pub mod regs {
             Ahb5fz1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ahb5fz1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ahb5fz1")
@@ -274,6 +276,7 @@ pub mod regs {
             Apb1hfz1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1hfz1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1hfz1")
@@ -515,6 +518,7 @@ pub mod regs {
             Apb1lfz1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1lfz1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1lfz1")
@@ -662,6 +666,7 @@ pub mod regs {
             Apb2fz1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb2fz1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb2fz1")
@@ -787,6 +792,7 @@ pub mod regs {
             Apb4fz1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb4fz1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb4fz1")
@@ -840,6 +846,7 @@ pub mod regs {
             Apb5fz1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb5fz1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb5fz1")
@@ -949,6 +956,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -1014,6 +1022,7 @@ pub mod regs {
             DbgAuthAck(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgAuthAck {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgAuthAck")
@@ -1057,6 +1066,7 @@ pub mod regs {
             DbgAuthDev(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgAuthDev {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgAuthDev").field("message", &self.message()).finish()
@@ -1092,6 +1102,7 @@ pub mod regs {
             DbgAuthHost(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgAuthHost {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DbgAuthHost").field("message", &self.message()).finish()
@@ -1139,6 +1150,7 @@ pub mod regs {
             Idcode(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Idcode {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Idcode")
@@ -1218,6 +1230,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -1244,7 +1257,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ap0Enable {
         _RESERVED_0 = 0x0,
@@ -1274,7 +1288,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum ApPresent {
         _RESERVED_0 = 0x0,
@@ -1304,7 +1319,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dbtrgoen {
         #[doc = "DBTRGIO connected to DBTRGIN."]
@@ -1349,6 +1365,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DevId {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -1379,7 +1396,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum DeviceAck {
         #[doc = "Debugger has read DBG_AUTH_DEV."]
@@ -1410,7 +1428,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum HostAck {
         #[doc = "Processor has read DBG_AUTH_HOST."]

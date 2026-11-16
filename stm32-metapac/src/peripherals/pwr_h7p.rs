@@ -115,6 +115,7 @@ pub mod regs {
             Apcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apcr").field("apc", &self.apc()).finish()
@@ -246,6 +247,7 @@ pub mod regs {
             Cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr1")
@@ -375,6 +377,7 @@ pub mod regs {
             Csr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csr1")
@@ -488,6 +491,7 @@ pub mod regs {
             Csr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csr2")
@@ -575,6 +579,7 @@ pub mod regs {
             Csr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csr3")
@@ -634,6 +639,7 @@ pub mod regs {
             Csr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csr4")
@@ -876,6 +882,7 @@ pub mod regs {
             I3cpucr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for I3cpucr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("I3cpucr")
@@ -987,6 +994,7 @@ pub mod regs {
             Sr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr1")
@@ -1046,6 +1054,7 @@ pub mod regs {
             Ucpdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ucpdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ucpdr")
@@ -1173,6 +1182,7 @@ pub mod regs {
             Wkupcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wkupcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wkupcr")
@@ -1504,6 +1514,7 @@ pub mod regs {
             Wkupepr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wkupepr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wkupepr")
@@ -1675,6 +1686,7 @@ pub mod regs {
             Wkupfr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wkupfr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wkupfr")
@@ -1898,6 +1910,7 @@ pub mod regs {
             Xspipdcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Xspipdcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Xspipdcr")
@@ -2135,6 +2148,7 @@ pub mod regs {
             Xspipucr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Xspipucr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Xspipucr")
@@ -2183,7 +2197,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Actvos {
         _RESERVED_0 = 0x0,
@@ -2217,7 +2232,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Als {
         #[doc = "AVD level 1."]
@@ -2252,7 +2268,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pls {
         #[doc = "VDD less than PVD level 1."]
@@ -2295,7 +2312,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vos {
         _RESERVED_0 = 0x0,
@@ -2329,7 +2347,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkuppupd1 {
         #[doc = "No pull."]
@@ -2363,7 +2382,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkuppupd2 {
         #[doc = "No pull."]
@@ -2397,7 +2417,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkuppupd3 {
         #[doc = "No pull."]
@@ -2431,7 +2452,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkuppupd4 {
         #[doc = "No pull."]
@@ -2465,7 +2487,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkuppupd5 {
         #[doc = "No pull."]
@@ -2499,7 +2522,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkuppupd6 {
         #[doc = "No pull."]
@@ -2533,7 +2557,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkuppupd7 {
         #[doc = "No pull."]
@@ -2567,7 +2592,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkuppupd8 {
         #[doc = "No pull."]

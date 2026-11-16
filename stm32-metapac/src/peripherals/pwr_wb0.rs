@@ -213,6 +213,7 @@ pub mod regs {
             Cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr1")
@@ -366,6 +367,7 @@ Programmable Voltage Detector Level selection then PVDO=1)."]
             Cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr2")
@@ -603,6 +605,7 @@ Programmable Voltage Detector Level selection then PVDO=1)."]
             Cr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr3")
@@ -806,6 +809,7 @@ Programmable Voltage Detector Level selection then PVDO=1)."]
             Cr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr4")
@@ -969,6 +973,7 @@ Selection for SMPS PRECHARGE limit current."]
             Cr5(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr5 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr5")
@@ -1206,6 +1211,7 @@ Selection for SMPS PRECHARGE limit current."]
             Cr6(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr6 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr6")
@@ -1457,6 +1463,7 @@ Selection for SMPS PRECHARGE limit current."]
             Cr7(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr7 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr7")
@@ -1540,6 +1547,7 @@ Selection for SMPS PRECHARGE limit current."]
             Dbgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dbgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dbgr")
@@ -1595,6 +1603,7 @@ Selection for SMPS PRECHARGE limit current."]
             Extsrr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Extsrr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Extsrr")
@@ -1722,6 +1731,7 @@ Selection for SMPS PRECHARGE limit current."]
             IOxCfg(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IOxCfg {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IOxCfg")
@@ -1779,6 +1789,7 @@ pad when APC bit of PWRC CR3 is set."]
             Pdcra(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pdcra {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pdcra").field("pda", &self.pda()).finish()
@@ -1816,6 +1827,7 @@ pad when APC bit of PWRC CR3 is set."]
             Pdcrb(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pdcrb {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pdcrb").field("pdb", &self.pdb()).finish()
@@ -1855,6 +1867,7 @@ pad when APC bit of PWRC CR3 is set."]
             Pucra(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pucra {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pucra").field("pua", &self.pua()).finish()
@@ -1894,6 +1907,7 @@ pad when APC bit of PWRC CR3 is set."]
             Pucrb(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pucrb {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pucrb").field("pub_", &self.pub_()).finish()
@@ -2109,6 +2123,7 @@ pad when APC bit of PWRC CR3 is set."]
             Sr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr1")
@@ -2264,6 +2279,7 @@ pad when APC bit of PWRC CR3 is set."]
             Sr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr2")
@@ -2499,6 +2515,7 @@ pad when APC bit of PWRC CR3 is set."]
             Sr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr3")
@@ -2549,7 +2566,8 @@ pad when APC bit of PWRC CR3 is set."]
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Deepstopf {
         #[doc = "System has not been in DEEPSTOP mode."]
@@ -2580,7 +2598,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ensdnbor {
         #[doc = "the PD_ALL_SHUTDOWN signal is set during SHUTDOWN mode."]
@@ -2611,7 +2630,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpms {
         #[doc = "Deep Stop mode (default)."]
@@ -2659,6 +2679,7 @@ when APC bit of PWRC CR3 bit is set."]
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pda {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -2708,6 +2729,7 @@ when APC bit of PWRC CR3 bit is set."]
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pdb {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -2758,6 +2780,7 @@ is reset."]
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pua {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -2808,6 +2831,7 @@ is reset."]
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pub {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -2840,7 +2864,8 @@ is reset."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pvdls {
         #[doc = "2.05 V - Lowest level."]
@@ -2883,7 +2908,8 @@ is reset."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Reglps {
         #[doc = "LP regulator is not ready."]
@@ -2914,7 +2940,8 @@ is reset."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Regms {
         #[doc = "Main regulator is not ready."]
@@ -2945,7 +2972,8 @@ is reset."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rfphasef {
         #[doc = "RF IP does not require attention."]
@@ -2976,7 +3004,8 @@ is reset."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Selborh {
         #[doc = "BORH Level 1 (VBOR1): threshold level for above 2.0V voltage operation."]
@@ -3011,7 +3040,8 @@ is reset."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SmpsPrechCurSel {
         #[doc = "2.5mA."]
@@ -3046,7 +3076,8 @@ is reset."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smpsbomsel {
         #[doc = "BOM1."]
@@ -3081,7 +3112,8 @@ is reset."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smpsfbyp {
         #[doc = "no effect (by default)."]
@@ -3112,7 +3144,8 @@ is reset."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smpsfrdy {
         #[doc = "no effect (by default)."]
@@ -3143,7 +3176,8 @@ is reset."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smpslpopen {
         #[doc = "in Low Power mode, SMPS is in PRECHARGE, output is connected to VDDIO."]
@@ -3174,7 +3208,8 @@ is reset."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smpsrdy {
         #[doc = "SMPS regulator is not ready."]
@@ -3205,7 +3240,8 @@ is reset."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wuf {
         #[doc = "no effect."]
@@ -3236,7 +3272,8 @@ is reset."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wup {
         #[doc = "Detection on high level (rising edge)."]

@@ -102,6 +102,7 @@ pub mod regs {
             Flashsizer(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Flashsizer {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Flashsizer")
@@ -157,6 +158,7 @@ pub mod regs {
             Pkgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pkgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pkgr")
@@ -200,6 +202,7 @@ pub mod regs {
             Rcalr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rcalr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rcalr").field("r_cal", &self.r_cal()).finish()
@@ -271,6 +274,7 @@ pub mod regs {
             Rfgaincalr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rfgaincalr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rfgaincalr")
@@ -318,6 +322,7 @@ pub mod regs {
             Tscal1r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tscal1r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tscal1r").field("ts_cal1", &self.ts_cal1()).finish()
@@ -353,6 +358,7 @@ pub mod regs {
             Tscal2r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tscal2r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tscal2r").field("ts_cal2", &self.ts_cal2()).finish()
@@ -388,6 +394,7 @@ pub mod regs {
             Uid64r1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Uid64r1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Uid64r1").field("devnum", &self.devnum()).finish()
@@ -435,6 +442,7 @@ pub mod regs {
             Uid64r2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Uid64r2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Uid64r2")
@@ -509,6 +517,7 @@ pub mod regs {
             Vrefbufcalr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Vrefbufcalr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Vrefbufcalr")
@@ -552,6 +561,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Devid {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -585,7 +595,8 @@ pub mod vals {
     }
     #[doc = "Package encoding for STM32WBA devices"]
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pkg {
         _RESERVED_0 = 0x0,
@@ -667,6 +678,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Stid {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {

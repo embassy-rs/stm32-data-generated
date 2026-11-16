@@ -206,6 +206,7 @@ pub mod regs {
             Acr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Acr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Acr")
@@ -419,6 +420,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -570,6 +572,7 @@ pub mod regs {
             Eccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Eccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Eccr")
@@ -817,6 +820,7 @@ pub mod regs {
             Optr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Optr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Optr")
@@ -902,6 +906,7 @@ pub mod regs {
             Pcrop1er(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pcrop1er {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pcrop1er")
@@ -945,6 +950,7 @@ pub mod regs {
             Pcrop1sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pcrop1sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pcrop1sr")
@@ -994,6 +1000,7 @@ pub mod regs {
             Sec1r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sec1r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sec1r")
@@ -1169,6 +1176,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -1244,6 +1252,7 @@ pub mod regs {
             Wrp1ar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wrp1ar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wrp1ar")
@@ -1299,6 +1308,7 @@ pub mod regs {
             Wrp1br(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wrp1br {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wrp1br")
@@ -1321,7 +1331,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Latency {
         #[doc = "Zero wait states"]
@@ -1369,7 +1380,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum NrstMode {
         _RESERVED_0 = 0x0,
@@ -1421,6 +1433,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rdp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {

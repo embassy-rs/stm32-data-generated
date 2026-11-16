@@ -137,6 +137,7 @@ pub mod regs {
             Fcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fcr").field("cf", &self.cf()).finish()
@@ -170,6 +171,7 @@ pub mod regs {
             Ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ier").field("ie", &self.ie()).finish()
@@ -203,6 +205,7 @@ pub mod regs {
             Lckvtr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lckvtr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lckvtr").field("lcksb", &self.lcksb()).finish()
@@ -256,6 +259,7 @@ pub mod regs {
             MpcbbCr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for MpcbbCr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("MpcbbCr")
@@ -299,6 +303,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr").field("f", &self.f()).finish()
@@ -334,6 +339,7 @@ pub mod regs {
             TzscCr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for TzscCr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TzscCr").field("lck", &self.lck()).finish()
@@ -501,6 +507,7 @@ pub mod regs {
             TzscPrivcfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for TzscPrivcfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TzscPrivcfgr1")
@@ -708,6 +715,7 @@ pub mod regs {
             TzscPrivcfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for TzscPrivcfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TzscPrivcfgr2")
@@ -905,6 +913,7 @@ pub mod regs {
             TzscSeccfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for TzscSeccfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TzscSeccfgr1")
@@ -1112,6 +1121,7 @@ pub mod regs {
             TzscSeccfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for TzscSeccfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("TzscSeccfgr2")
@@ -1175,6 +1185,7 @@ pub mod regs {
             Vctr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Vctr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Vctr").field("b", &self.b()).finish()

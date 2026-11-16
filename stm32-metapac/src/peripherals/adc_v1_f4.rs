@@ -272,6 +272,7 @@ pub mod regs {
             Cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr1")
@@ -471,6 +472,7 @@ pub mod regs {
             Cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr2")
@@ -534,6 +536,7 @@ pub mod regs {
             Dr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dr").field("data", &self.data()).finish()
@@ -569,6 +572,7 @@ pub mod regs {
             Htr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Htr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Htr").field("ht", &self.ht()).finish()
@@ -604,6 +608,7 @@ pub mod regs {
             Jdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Jdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Jdr").field("jdata", &self.jdata()).finish()
@@ -639,6 +644,7 @@ pub mod regs {
             Jofr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Jofr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Jofr").field("joffset", &self.joffset()).finish()
@@ -690,6 +696,7 @@ pub mod regs {
             Jsqr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Jsqr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Jsqr")
@@ -739,6 +746,7 @@ pub mod regs {
             Ltr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ltr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ltr").field("lt", &self.lt()).finish()
@@ -778,6 +786,7 @@ pub mod regs {
             Smpr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Smpr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Smpr")
@@ -853,6 +862,7 @@ pub mod regs {
             Sqr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sqr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sqr1")
@@ -906,6 +916,7 @@ pub mod regs {
             Sqr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sqr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sqr2")
@@ -961,6 +972,7 @@ pub mod regs {
             Sqr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sqr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sqr3")
@@ -1072,6 +1084,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -1102,7 +1115,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Align {
         #[doc = "Right alignment"]
@@ -1133,7 +1147,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Exten {
         #[doc = "Hardware trigger detection disabled (conversions can be launched by software)"]
@@ -1168,7 +1183,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Res {
         #[doc = "12-bit"]
@@ -1203,7 +1219,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "3 ADC clock cycles"]

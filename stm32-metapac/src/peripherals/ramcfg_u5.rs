@@ -231,6 +231,7 @@ pub mod regs {
             Ram1cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram1cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram1cr")
@@ -278,6 +279,7 @@ pub mod regs {
             Ram1erkeyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram1erkeyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram1erkeyr")
@@ -339,6 +341,7 @@ pub mod regs {
             Ram1isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram1isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram1isr")
@@ -420,6 +423,7 @@ pub mod regs {
             Ram2cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram2cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram2cr")
@@ -467,6 +471,7 @@ pub mod regs {
             Ram2dear(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram2dear {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram2dear").field("edea", &self.edea()).finish()
@@ -502,6 +507,7 @@ pub mod regs {
             Ram2ecckeyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram2ecckeyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram2ecckeyr").field("ecckey", &self.ecckey()).finish()
@@ -537,6 +543,7 @@ pub mod regs {
             Ram2erkeyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram2erkeyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram2erkeyr")
@@ -586,6 +593,7 @@ pub mod regs {
             Ram2icr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram2icr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram2icr")
@@ -653,6 +661,7 @@ pub mod regs {
             Ram2ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram2ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram2ier")
@@ -722,6 +731,7 @@ pub mod regs {
             Ram2isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram2isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram2isr")
@@ -767,6 +777,7 @@ pub mod regs {
             Ram2sear(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram2sear {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram2sear").field("esea", &self.esea()).finish()
@@ -806,6 +817,7 @@ pub mod regs {
             Ram2wpr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram2wpr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram2wpr1")
@@ -913,6 +925,7 @@ pub mod regs {
             Ram2wpr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram2wpr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram2wpr2")
@@ -1052,6 +1065,7 @@ pub mod regs {
             Ram3cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram3cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram3cr")
@@ -1099,6 +1113,7 @@ pub mod regs {
             Ram3dear(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram3dear {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram3dear").field("edea", &self.edea()).finish()
@@ -1134,6 +1149,7 @@ pub mod regs {
             Ram3ecckeyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram3ecckeyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram3ecckeyr").field("ecckey", &self.ecckey()).finish()
@@ -1169,6 +1185,7 @@ pub mod regs {
             Ram3erkeyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram3erkeyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram3erkeyr")
@@ -1218,6 +1235,7 @@ pub mod regs {
             Ram3icr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram3icr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram3icr")
@@ -1285,6 +1303,7 @@ pub mod regs {
             Ram3ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram3ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram3ier")
@@ -1354,6 +1373,7 @@ pub mod regs {
             Ram3isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram3isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram3isr")
@@ -1399,6 +1419,7 @@ pub mod regs {
             Ram3sear(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram3sear {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram3sear").field("esea", &self.esea()).finish()
@@ -1470,6 +1491,7 @@ pub mod regs {
             Ram4cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram4cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram4cr")
@@ -1517,6 +1539,7 @@ pub mod regs {
             Ram4erkeyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram4erkeyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram4erkeyr")
@@ -1578,6 +1601,7 @@ pub mod regs {
             Ram4isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram4isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram4isr")
@@ -1659,6 +1683,7 @@ pub mod regs {
             Ram5cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram5cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram5cr")
@@ -1706,6 +1731,7 @@ pub mod regs {
             Ram5dear(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram5dear {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram5dear").field("edea", &self.edea()).finish()
@@ -1753,6 +1779,7 @@ pub mod regs {
             Ram5icr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram5icr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram5icr")
@@ -1820,6 +1847,7 @@ pub mod regs {
             Ram5ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram5ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram5ier")
@@ -1889,6 +1917,7 @@ pub mod regs {
             Ram5isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram5isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram5isr")
@@ -1934,6 +1963,7 @@ pub mod regs {
             Ram5sear(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ram5sear {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ram5sear").field("esea", &self.esea()).finish()

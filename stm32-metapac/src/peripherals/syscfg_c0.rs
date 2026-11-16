@@ -309,6 +309,7 @@ pub mod regs {
             Cfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr1")
@@ -374,6 +375,7 @@ pub mod regs {
             Cfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr2")
@@ -471,6 +473,7 @@ pub mod regs {
             Cfgr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr3")
@@ -522,6 +525,7 @@ pub mod regs {
             Itline0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline0").field("wwdg", &self.wwdg()).finish()
@@ -569,6 +573,7 @@ pub mod regs {
             Itline10(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline10 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline10")
@@ -612,6 +617,7 @@ pub mod regs {
             Itline11(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline11 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline11").field("dmamux", &self.dmamux()).finish()
@@ -647,6 +653,7 @@ pub mod regs {
             Itline12(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline12 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline12").field("adc", &self.adc()).finish()
@@ -718,6 +725,7 @@ pub mod regs {
             Itline13(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline13 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline13")
@@ -765,6 +773,7 @@ pub mod regs {
             Itline14(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline14 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline14").field("tim1_cc", &self.tim1_cc()).finish()
@@ -800,6 +809,7 @@ pub mod regs {
             Itline16(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline16 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline16").field("tim3", &self.tim3()).finish()
@@ -835,6 +845,7 @@ pub mod regs {
             Itline19(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline19 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline19").field("tim14", &self.tim14()).finish()
@@ -870,6 +881,7 @@ pub mod regs {
             Itline2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline2").field("rtc", &self.rtc()).finish()
@@ -905,6 +917,7 @@ pub mod regs {
             Itline21(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline21 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline21").field("tim16", &self.tim16()).finish()
@@ -940,6 +953,7 @@ pub mod regs {
             Itline22(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline22 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline22").field("tim17", &self.tim17()).finish()
@@ -975,6 +989,7 @@ pub mod regs {
             Itline23(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline23 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline23").field("i2c1", &self.i2c1()).finish()
@@ -1010,6 +1025,7 @@ pub mod regs {
             Itline25(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline25 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline25").field("spi1", &self.spi1()).finish()
@@ -1045,6 +1061,7 @@ pub mod regs {
             Itline27(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline27 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline27").field("usart1", &self.usart1()).finish()
@@ -1080,6 +1097,7 @@ pub mod regs {
             Itline28(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline28 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline28").field("usart2", &self.usart2()).finish()
@@ -1115,6 +1133,7 @@ pub mod regs {
             Itline3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline3").field("flash_itf", &self.flash_itf()).finish()
@@ -1150,6 +1169,7 @@ pub mod regs {
             Itline4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline4").field("rcc", &self.rcc()).finish()
@@ -1189,6 +1209,7 @@ pub mod regs {
             Itline5(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline5 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline5")
@@ -1236,6 +1257,7 @@ pub mod regs {
             Itline6(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline6 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline6")
@@ -1283,6 +1305,7 @@ pub mod regs {
             Itline7(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline7 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline7")
@@ -1346,6 +1369,7 @@ pub mod regs {
             Itline9(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Itline9 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Itline9").field("dma1_ch1", &self.dma1_ch1()).finish()
@@ -1360,7 +1384,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum IrMod {
         #[doc = "TIM16"]
@@ -1394,7 +1419,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MemMode {
         #[doc = "Main Flash memory mapped at address 0"]
@@ -1429,7 +1455,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pinmux0 {
         #[doc = "PB7"]
@@ -1462,7 +1489,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pinmux1 {
         #[doc = "PF2"]
@@ -1497,7 +1525,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pinmux2 {
         #[doc = "PA8"]
@@ -1530,7 +1559,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pinmux3 {
         #[doc = "PA14"]
@@ -1564,7 +1594,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pinmux4 {
         #[doc = "PA7"]
@@ -1597,7 +1628,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pinmux5 {
         #[doc = "PA3"]

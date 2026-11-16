@@ -110,6 +110,7 @@ pub mod regs {
             Abr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Abr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Abr").field("alternate", &self.alternate()).finish()
@@ -145,6 +146,7 @@ pub mod regs {
             Ar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ar").field("address", &self.address()).finish()
@@ -324,6 +326,7 @@ pub mod regs {
             Ccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccr")
@@ -569,6 +572,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -664,6 +668,7 @@ pub mod regs {
             Dcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dcr")
@@ -709,6 +714,7 @@ pub mod regs {
             Dlr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dlr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dlr").field("dl", &self.dl()).finish()
@@ -744,6 +750,7 @@ pub mod regs {
             Dr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dr").field("data", &self.data()).finish()
@@ -815,6 +822,7 @@ pub mod regs {
             Fcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fcr")
@@ -862,6 +870,7 @@ pub mod regs {
             Lptr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lptr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lptr").field("timeout", &self.timeout()).finish()
@@ -897,6 +906,7 @@ pub mod regs {
             Pir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pir").field("interval", &self.interval()).finish()
@@ -932,6 +942,7 @@ pub mod regs {
             Psmar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Psmar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Psmar").field("match_", &self.match_()).finish()
@@ -967,6 +978,7 @@ pub mod regs {
             Psmkr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Psmkr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Psmkr").field("mask", &self.mask()).finish()
@@ -1074,6 +1086,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")

@@ -1281,6 +1281,7 @@ pub mod regs {
             Cmcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cmcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cmcr")
@@ -1496,6 +1497,7 @@ pub mod regs {
             Cmfcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cmfcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cmfcr")
@@ -1565,6 +1567,7 @@ pub mod regs {
             Cmfrcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cmfrcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cmfrcr").field("frmcnt", &self.frmcnt()).finish()
@@ -1768,6 +1771,7 @@ pub mod regs {
             Cmier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cmier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cmier")
@@ -1957,6 +1961,7 @@ pub mod regs {
             Cmsr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cmsr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cmsr1")
@@ -2186,6 +2191,7 @@ pub mod regs {
             Cmsr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cmsr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cmsr2")
@@ -2267,6 +2273,7 @@ pub mod regs {
             Ipc1r1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipc1r1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipc1r1")
@@ -2324,6 +2331,7 @@ arbitration."]
             Ipc1r2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipc1r2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipc1r2")
@@ -2379,6 +2387,7 @@ arbitration."]
             Ipc1r3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipc1r3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipc1r3")
@@ -2434,6 +2443,7 @@ arbitration."]
             Ipc2r1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipc2r1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipc2r1")
@@ -2491,6 +2501,7 @@ arbitration."]
             Ipc2r2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipc2r2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipc2r2")
@@ -2546,6 +2557,7 @@ arbitration."]
             Ipc2r3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipc2r3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipc2r3")
@@ -2601,6 +2613,7 @@ arbitration."]
             Ipc3r1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipc3r1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipc3r1")
@@ -2658,6 +2671,7 @@ arbitration."]
             Ipc3r2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipc3r2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipc3r2")
@@ -2713,6 +2727,7 @@ arbitration."]
             Ipc3r3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipc3r3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipc3r3")
@@ -2768,6 +2783,7 @@ arbitration."]
             Ipc4r1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipc4r1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipc4r1")
@@ -2825,6 +2841,7 @@ arbitration."]
             Ipc4r2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipc4r2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipc4r2")
@@ -2880,6 +2897,7 @@ arbitration."]
             Ipc4r3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipc4r3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipc4r3")
@@ -2935,6 +2953,7 @@ arbitration."]
             Ipc5r1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipc5r1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipc5r1")
@@ -2992,6 +3011,7 @@ arbitration."]
             Ipc5r2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipc5r2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipc5r2")
@@ -3047,6 +3067,7 @@ arbitration."]
             Ipc5r3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipc5r3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipc5r3")
@@ -3102,6 +3123,7 @@ arbitration."]
             Ipgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipgr1")
@@ -3145,6 +3167,7 @@ arbitration."]
             Ipgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipgr2").field("pstart", &self.pstart()).finish()
@@ -3180,6 +3203,7 @@ arbitration."]
             Ipgr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipgr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipgr3").field("idle", &self.idle()).finish()
@@ -3251,6 +3275,7 @@ arbitration."]
             Ipgr8(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipgr8 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipgr8")
@@ -3322,6 +3347,7 @@ arbitration."]
             P0cfctcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0cfctcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0cfctcr")
@@ -3415,6 +3441,7 @@ arbitration."]
             P0cfscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0cfscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0cfscr")
@@ -3560,6 +3587,7 @@ arbitration."]
             P0cppcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0cppcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0cppcr")
@@ -3617,6 +3645,7 @@ arbitration."]
             P0cppm0ar1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0cppm0ar1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0cppm0ar1").field("m0a", &self.m0a()).finish()
@@ -3652,6 +3681,7 @@ arbitration."]
             P0cppm0ar2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0cppm0ar2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0cppm0ar2").field("m0a", &self.m0a()).finish()
@@ -3699,6 +3729,7 @@ arbitration."]
             P0cscstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0cscstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0cscstr")
@@ -3778,6 +3809,7 @@ arbitration."]
             P0cscszr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0cscszr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0cscszr")
@@ -3825,6 +3857,7 @@ arbitration."]
             P0dccntr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0dccntr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0dccntr").field("cnt", &self.cnt()).finish()
@@ -3872,6 +3905,7 @@ arbitration."]
             P0dclmtr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0dclmtr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0dclmtr")
@@ -3963,6 +3997,7 @@ arbitration."]
             P0fcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0fcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0fcr")
@@ -4036,6 +4071,7 @@ arbitration."]
             P0fctcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0fctcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0fctcr")
@@ -4129,6 +4165,7 @@ arbitration."]
             P0fscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0fscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0fscr")
@@ -4226,6 +4263,7 @@ arbitration."]
             P0ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0ier")
@@ -4371,6 +4409,7 @@ arbitration."]
             P0ppcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0ppcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0ppcr")
@@ -4428,6 +4467,7 @@ arbitration."]
             P0ppm0ar1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0ppm0ar1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0ppm0ar1").field("m0a", &self.m0a()).finish()
@@ -4463,6 +4503,7 @@ arbitration."]
             P0ppm0ar2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0ppm0ar2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0ppm0ar2").field("m0a", &self.m0a()).finish()
@@ -4510,6 +4551,7 @@ arbitration."]
             P0scstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0scstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0scstr")
@@ -4589,6 +4631,7 @@ arbitration."]
             P0scszr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0scszr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0scszr")
@@ -4720,6 +4763,7 @@ arbitration."]
             P0sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0sr")
@@ -4775,6 +4819,7 @@ arbitration."]
             P0stm0ar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P0stm0ar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P0stm0ar").field("m0a", &self.m0a()).finish()
@@ -4846,6 +4891,7 @@ arbitration."]
             P1blccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1blccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1blccr")
@@ -4905,6 +4951,7 @@ arbitration."]
             P1bprcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1bprcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1bprcr")
@@ -4948,6 +4995,7 @@ arbitration."]
             P1bprsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1bprsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1bprsr").field("badcnt", &self.badcnt()).finish()
@@ -5019,6 +5067,7 @@ arbitration."]
             P1cblccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cblccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cblccr")
@@ -5078,6 +5127,7 @@ arbitration."]
             P1cbprcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cbprcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cbprcr")
@@ -5133,6 +5183,7 @@ arbitration."]
             P1ccbr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ccbr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ccbr1")
@@ -5183,6 +5234,7 @@ arbitration."]
             P1ccbr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ccbr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ccbr2")
@@ -5233,6 +5285,7 @@ arbitration."]
             P1cccbr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cccbr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cccbr1")
@@ -5283,6 +5336,7 @@ arbitration."]
             P1cccbr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cccbr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cccbr2")
@@ -5345,6 +5399,7 @@ arbitration."]
             P1ccccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ccccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ccccr")
@@ -5402,6 +5457,7 @@ arbitration."]
             P1cccgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cccgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cccgr1")
@@ -5452,6 +5508,7 @@ arbitration."]
             P1cccgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cccgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cccgr2")
@@ -5514,6 +5571,7 @@ arbitration."]
             P1cccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cccr")
@@ -5571,6 +5629,7 @@ arbitration."]
             P1cccrr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cccrr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cccrr1")
@@ -5621,6 +5680,7 @@ arbitration."]
             P1cccrr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cccrr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cccrr2")
@@ -5671,6 +5731,7 @@ arbitration."]
             P1ccgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ccgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ccgr1")
@@ -5721,6 +5782,7 @@ arbitration."]
             P1ccgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ccgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ccgr2")
@@ -5855,6 +5917,7 @@ arbitration."]
             P1ccmricr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ccmricr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ccmricr")
@@ -5924,6 +5987,7 @@ arbitration."]
             P1ccrr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ccrr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ccrr1")
@@ -5974,6 +6038,7 @@ arbitration."]
             P1ccrr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ccrr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ccrr2")
@@ -6024,6 +6089,7 @@ arbitration."]
             P1ccrstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ccrstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ccrstr")
@@ -6091,6 +6157,7 @@ arbitration."]
             P1ccrszr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ccrszr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ccrszr")
@@ -6148,6 +6215,7 @@ arbitration."]
             P1cctcr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cctcr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cctcr1")
@@ -6227,6 +6295,7 @@ arbitration."]
             P1cctcr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cctcr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cctcr2")
@@ -6310,6 +6379,7 @@ arbitration."]
             P1cctcr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cctcr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cctcr3")
@@ -6381,6 +6451,7 @@ arbitration."]
             P1cdccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cdccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cdccr")
@@ -6450,6 +6521,7 @@ arbitration."]
             P1cdscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cdscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cdscr")
@@ -6507,6 +6579,7 @@ arbitration."]
             P1cdsrtior(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cdsrtior {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cdsrtior")
@@ -6562,6 +6635,7 @@ arbitration."]
             P1cdsszr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cdsszr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cdsszr")
@@ -6629,6 +6703,7 @@ arbitration."]
             P1cexcr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cexcr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cexcr1")
@@ -6710,6 +6785,7 @@ arbitration."]
             P1cexcr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cexcr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cexcr2")
@@ -6781,6 +6857,7 @@ arbitration."]
             P1cfctcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cfctcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cfctcr")
@@ -6910,6 +6987,7 @@ arbitration."]
             P1cfscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cfscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cfscr")
@@ -7061,6 +7139,7 @@ arbitration."]
             P1cmricr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cmricr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cmricr")
@@ -7178,6 +7257,7 @@ arbitration."]
             P1cppcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cppcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cppcr")
@@ -7229,6 +7309,7 @@ arbitration."]
             P1cppm0ar1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cppm0ar1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cppm0ar1").field("m0a", &self.m0a()).finish()
@@ -7264,6 +7345,7 @@ arbitration."]
             P1cppm0ar2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cppm0ar2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cppm0ar2").field("m0a", &self.m0a()).finish()
@@ -7299,6 +7381,7 @@ arbitration."]
             P1cppm0pr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cppm0pr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cppm0pr").field("pitch", &self.pitch()).finish()
@@ -7334,6 +7417,7 @@ arbitration."]
             P1cppm1ar1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cppm1ar1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cppm1ar1").field("m1a", &self.m1a()).finish()
@@ -7369,6 +7453,7 @@ arbitration."]
             P1cppm1ar2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cppm1ar2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cppm1ar2").field("m1a", &self.m1a()).finish()
@@ -7404,6 +7489,7 @@ arbitration."]
             P1cppm1pr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cppm1pr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cppm1pr").field("pitch", &self.pitch()).finish()
@@ -7439,6 +7525,7 @@ arbitration."]
             P1cppm2ar1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cppm2ar1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cppm2ar1").field("m2a", &self.m2a()).finish()
@@ -7474,6 +7561,7 @@ arbitration."]
             P1cppm2ar2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cppm2ar2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cppm2ar2").field("m2a", &self.m2a()).finish()
@@ -7557,6 +7645,7 @@ arbitration."]
             P1cri1cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cri1cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cri1cr1")
@@ -7618,6 +7707,7 @@ arbitration."]
             P1cri1cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cri1cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cri1cr2")
@@ -7709,6 +7799,7 @@ arbitration."]
             P1cri2cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cri2cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cri2cr1")
@@ -7770,6 +7861,7 @@ arbitration."]
             P1cri2cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cri2cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cri2cr2")
@@ -7861,6 +7953,7 @@ arbitration."]
             P1cri3cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cri3cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cri3cr1")
@@ -7922,6 +8015,7 @@ arbitration."]
             P1cri3cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cri3cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cri3cr2")
@@ -8013,6 +8107,7 @@ arbitration."]
             P1cri4cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cri4cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cri4cr1")
@@ -8074,6 +8169,7 @@ arbitration."]
             P1cri4cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cri4cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cri4cr2")
@@ -8165,6 +8261,7 @@ arbitration."]
             P1cri5cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cri5cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cri5cr1")
@@ -8226,6 +8323,7 @@ arbitration."]
             P1cri5cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cri5cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cri5cr2")
@@ -8317,6 +8415,7 @@ arbitration."]
             P1cri6cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cri6cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cri6cr1")
@@ -8378,6 +8477,7 @@ arbitration."]
             P1cri6cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cri6cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cri6cr2")
@@ -8469,6 +8569,7 @@ arbitration."]
             P1cri7cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cri7cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cri7cr1")
@@ -8530,6 +8631,7 @@ arbitration."]
             P1cri7cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cri7cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cri7cr2")
@@ -8621,6 +8723,7 @@ arbitration."]
             P1cri8cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cri8cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cri8cr1")
@@ -8682,6 +8785,7 @@ arbitration."]
             P1cri8cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cri8cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cri8cr2")
@@ -8737,6 +8841,7 @@ arbitration."]
             P1crstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1crstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1crstr")
@@ -8804,6 +8909,7 @@ arbitration."]
             P1crszr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1crszr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1crszr")
@@ -8897,6 +9003,7 @@ arbitration."]
             P1cst1cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cst1cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cst1cr")
@@ -8994,6 +9101,7 @@ arbitration."]
             P1cst2cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cst2cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cst2cr")
@@ -9091,6 +9199,7 @@ arbitration."]
             P1cst3cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cst3cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cst3cr")
@@ -9152,6 +9261,7 @@ arbitration."]
             P1cststr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cststr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cststr")
@@ -9219,6 +9329,7 @@ arbitration."]
             P1cstszr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1cstszr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1cstszr")
@@ -9276,6 +9387,7 @@ arbitration."]
             P1ctcr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ctcr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ctcr1")
@@ -9355,6 +9467,7 @@ arbitration."]
             P1ctcr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ctcr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ctcr2")
@@ -9438,6 +9551,7 @@ arbitration."]
             P1ctcr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ctcr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ctcr3")
@@ -9509,6 +9623,7 @@ arbitration."]
             P1dccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1dccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1dccr")
@@ -9578,6 +9693,7 @@ arbitration."]
             P1decr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1decr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1decr")
@@ -9683,6 +9799,7 @@ arbitration."]
             P1dmcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1dmcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1dmcr")
@@ -9758,6 +9875,7 @@ arbitration."]
             P1dscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1dscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1dscr")
@@ -9815,6 +9933,7 @@ arbitration."]
             P1dsrtior(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1dsrtior {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1dsrtior")
@@ -9870,6 +9989,7 @@ arbitration."]
             P1dsszr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1dsszr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1dsszr")
@@ -9937,6 +10057,7 @@ arbitration."]
             P1excr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1excr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1excr1")
@@ -10018,6 +10139,7 @@ arbitration."]
             P1excr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1excr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1excr2")
@@ -10101,6 +10223,7 @@ arbitration."]
             P1fcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1fcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1fcr")
@@ -10172,6 +10295,7 @@ arbitration."]
             P1fctcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1fctcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1fctcr")
@@ -10301,6 +10425,7 @@ arbitration."]
             P1fscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1fscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1fscr")
@@ -10356,6 +10481,7 @@ arbitration."]
             P1gmcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1gmcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1gmcr").field("enable", &self.enable()).finish()
@@ -10427,6 +10553,7 @@ arbitration."]
             P1ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ier")
@@ -10534,6 +10661,7 @@ arbitration."]
             P1ppcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ppcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ppcr")
@@ -10585,6 +10713,7 @@ arbitration."]
             P1ppm0ar1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ppm0ar1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ppm0ar1").field("m0a", &self.m0a()).finish()
@@ -10620,6 +10749,7 @@ arbitration."]
             P1ppm0ar2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ppm0ar2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ppm0ar2").field("m0a", &self.m0a()).finish()
@@ -10655,6 +10785,7 @@ arbitration."]
             P1ppm0pr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ppm0pr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ppm0pr").field("pitch", &self.pitch()).finish()
@@ -10690,6 +10821,7 @@ arbitration."]
             P1ppm1ar1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ppm1ar1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ppm1ar1").field("m1a", &self.m1a()).finish()
@@ -10725,6 +10857,7 @@ arbitration."]
             P1ppm1ar2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ppm1ar2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ppm1ar2").field("m1a", &self.m1a()).finish()
@@ -10760,6 +10893,7 @@ arbitration."]
             P1ppm1pr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ppm1pr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ppm1pr").field("pitch", &self.pitch()).finish()
@@ -10795,6 +10929,7 @@ arbitration."]
             P1ppm2ar1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ppm2ar1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ppm2ar1").field("m2a", &self.m2a()).finish()
@@ -10830,6 +10965,7 @@ arbitration."]
             P1ppm2ar2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ppm2ar2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ppm2ar2").field("m2a", &self.m2a()).finish()
@@ -10913,6 +11049,7 @@ arbitration."]
             P1ri1cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ri1cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ri1cr1")
@@ -10974,6 +11111,7 @@ arbitration."]
             P1ri1cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ri1cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ri1cr2")
@@ -11065,6 +11203,7 @@ arbitration."]
             P1ri2cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ri2cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ri2cr1")
@@ -11126,6 +11265,7 @@ arbitration."]
             P1ri2cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ri2cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ri2cr2")
@@ -11217,6 +11357,7 @@ arbitration."]
             P1ri3cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ri3cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ri3cr1")
@@ -11278,6 +11419,7 @@ arbitration."]
             P1ri3cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ri3cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ri3cr2")
@@ -11369,6 +11511,7 @@ arbitration."]
             P1ri4cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ri4cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ri4cr1")
@@ -11430,6 +11573,7 @@ arbitration."]
             P1ri4cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ri4cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ri4cr2")
@@ -11521,6 +11665,7 @@ arbitration."]
             P1ri5cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ri5cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ri5cr1")
@@ -11582,6 +11727,7 @@ arbitration."]
             P1ri5cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ri5cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ri5cr2")
@@ -11673,6 +11819,7 @@ arbitration."]
             P1ri6cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ri6cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ri6cr1")
@@ -11734,6 +11881,7 @@ arbitration."]
             P1ri6cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ri6cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ri6cr2")
@@ -11825,6 +11973,7 @@ arbitration."]
             P1ri7cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ri7cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ri7cr1")
@@ -11886,6 +12035,7 @@ arbitration."]
             P1ri7cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ri7cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ri7cr2")
@@ -11977,6 +12127,7 @@ arbitration."]
             P1ri8cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ri8cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ri8cr1")
@@ -12038,6 +12189,7 @@ arbitration."]
             P1ri8cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ri8cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ri8cr2")
@@ -12153,6 +12305,7 @@ arbitration."]
             P1sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1sr")
@@ -12230,6 +12383,7 @@ arbitration."]
             P1srcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1srcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1srcr")
@@ -12311,6 +12465,7 @@ arbitration."]
             P1st1cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1st1cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1st1cr")
@@ -12358,6 +12513,7 @@ arbitration."]
             P1st1sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1st1sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1st1sr").field("accu", &self.accu()).finish()
@@ -12429,6 +12585,7 @@ arbitration."]
             P1st2cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1st2cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1st2cr")
@@ -12476,6 +12633,7 @@ arbitration."]
             P1st2sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1st2sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1st2sr").field("accu", &self.accu()).finish()
@@ -12547,6 +12705,7 @@ arbitration."]
             P1st3cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1st3cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1st3cr")
@@ -12594,6 +12753,7 @@ arbitration."]
             P1st3sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1st3sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1st3sr").field("accu", &self.accu()).finish()
@@ -12629,6 +12789,7 @@ arbitration."]
             P1stm0ar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1stm0ar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1stm0ar").field("m0a", &self.m0a()).finish()
@@ -12664,6 +12825,7 @@ arbitration."]
             P1stm1ar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1stm1ar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1stm1ar").field("m1a", &self.m1a()).finish()
@@ -12699,6 +12861,7 @@ arbitration."]
             P1stm2ar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1stm2ar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1stm2ar").field("m2a", &self.m2a()).finish()
@@ -12746,6 +12909,7 @@ arbitration."]
             P1ststr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1ststr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1ststr")
@@ -12813,6 +12977,7 @@ arbitration."]
             P1stszr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1stszr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1stszr")
@@ -12870,6 +13035,7 @@ arbitration."]
             P1yuvbr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1yuvbr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1yuvbr1")
@@ -12920,6 +13086,7 @@ arbitration."]
             P1yuvbr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1yuvbr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1yuvbr2")
@@ -12982,6 +13149,7 @@ arbitration."]
             P1yuvcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1yuvcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1yuvcr")
@@ -13039,6 +13207,7 @@ arbitration."]
             P1yuvgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1yuvgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1yuvgr1")
@@ -13089,6 +13258,7 @@ arbitration."]
             P1yuvgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1yuvgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1yuvgr2")
@@ -13139,6 +13309,7 @@ arbitration."]
             P1yuvrr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1yuvrr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1yuvrr1")
@@ -13189,6 +13360,7 @@ arbitration."]
             P1yuvrr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P1yuvrr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P1yuvrr2")
@@ -13323,6 +13495,7 @@ arbitration."]
             P2ccmricr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ccmricr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ccmricr")
@@ -13392,6 +13565,7 @@ arbitration."]
             P2ccrstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ccrstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ccrstr")
@@ -13459,6 +13633,7 @@ arbitration."]
             P2ccrszr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ccrszr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ccrszr")
@@ -13528,6 +13703,7 @@ arbitration."]
             P2cdccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cdccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cdccr")
@@ -13597,6 +13773,7 @@ arbitration."]
             P2cdscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cdscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cdscr")
@@ -13654,6 +13831,7 @@ arbitration."]
             P2cdsrtior(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cdsrtior {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cdsrtior")
@@ -13709,6 +13887,7 @@ arbitration."]
             P2cdsszr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cdsszr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cdsszr")
@@ -13776,6 +13955,7 @@ arbitration."]
             P2cfctcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cfctcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cfctcr")
@@ -13869,6 +14049,7 @@ arbitration."]
             P2cfscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cfscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cfscr")
@@ -14014,6 +14195,7 @@ arbitration."]
             P2cmricr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cmricr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cmricr")
@@ -14131,6 +14313,7 @@ arbitration."]
             P2cppcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cppcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cppcr")
@@ -14182,6 +14365,7 @@ arbitration."]
             P2cppm0ar1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cppm0ar1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cppm0ar1").field("m0a", &self.m0a()).finish()
@@ -14217,6 +14401,7 @@ arbitration."]
             P2cppm0ar2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cppm0ar2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cppm0ar2").field("m0a", &self.m0a()).finish()
@@ -14300,6 +14485,7 @@ arbitration."]
             P2cri1cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cri1cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cri1cr1")
@@ -14361,6 +14547,7 @@ arbitration."]
             P2cri1cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cri1cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cri1cr2")
@@ -14452,6 +14639,7 @@ arbitration."]
             P2cri2cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cri2cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cri2cr1")
@@ -14513,6 +14701,7 @@ arbitration."]
             P2cri2cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cri2cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cri2cr2")
@@ -14604,6 +14793,7 @@ arbitration."]
             P2cri3cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cri3cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cri3cr1")
@@ -14665,6 +14855,7 @@ arbitration."]
             P2cri3cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cri3cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cri3cr2")
@@ -14756,6 +14947,7 @@ arbitration."]
             P2cri4cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cri4cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cri4cr1")
@@ -14817,6 +15009,7 @@ arbitration."]
             P2cri4cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cri4cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cri4cr2")
@@ -14908,6 +15101,7 @@ arbitration."]
             P2cri5cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cri5cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cri5cr1")
@@ -14969,6 +15163,7 @@ arbitration."]
             P2cri5cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cri5cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cri5cr2")
@@ -15060,6 +15255,7 @@ arbitration."]
             P2cri6cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cri6cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cri6cr1")
@@ -15121,6 +15317,7 @@ arbitration."]
             P2cri6cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cri6cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cri6cr2")
@@ -15212,6 +15409,7 @@ arbitration."]
             P2cri7cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cri7cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cri7cr1")
@@ -15273,6 +15471,7 @@ arbitration."]
             P2cri7cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cri7cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cri7cr2")
@@ -15364,6 +15563,7 @@ arbitration."]
             P2cri8cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cri8cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cri8cr1")
@@ -15425,6 +15625,7 @@ arbitration."]
             P2cri8cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2cri8cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2cri8cr2")
@@ -15480,6 +15681,7 @@ arbitration."]
             P2crstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2crstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2crstr")
@@ -15547,6 +15749,7 @@ arbitration."]
             P2crszr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2crszr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2crszr")
@@ -15616,6 +15819,7 @@ arbitration."]
             P2dccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2dccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2dccr")
@@ -15685,6 +15889,7 @@ arbitration."]
             P2dscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2dscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2dscr")
@@ -15742,6 +15947,7 @@ arbitration."]
             P2dsrtior(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2dsrtior {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2dsrtior")
@@ -15797,6 +16003,7 @@ arbitration."]
             P2dsszr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2dsszr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2dsszr")
@@ -15876,6 +16083,7 @@ arbitration."]
             P2fcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2fcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2fcr")
@@ -15947,6 +16155,7 @@ arbitration."]
             P2fctcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2fctcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2fctcr")
@@ -16040,6 +16249,7 @@ arbitration."]
             P2fscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2fscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2fscr")
@@ -16089,6 +16299,7 @@ arbitration."]
             P2gmcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2gmcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2gmcr").field("enable", &self.enable()).finish()
@@ -16160,6 +16371,7 @@ arbitration."]
             P2ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ier")
@@ -16267,6 +16479,7 @@ arbitration."]
             P2ppcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ppcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ppcr")
@@ -16318,6 +16531,7 @@ arbitration."]
             P2ppm0ar1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ppm0ar1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ppm0ar1").field("m0a", &self.m0a()).finish()
@@ -16353,6 +16567,7 @@ arbitration."]
             P2ppm0ar2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ppm0ar2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ppm0ar2").field("m0a", &self.m0a()).finish()
@@ -16388,6 +16603,7 @@ arbitration."]
             P2ppm0pr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ppm0pr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ppm0pr").field("pitch", &self.pitch()).finish()
@@ -16471,6 +16687,7 @@ arbitration."]
             P2ri1cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ri1cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ri1cr1")
@@ -16532,6 +16749,7 @@ arbitration."]
             P2ri1cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ri1cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ri1cr2")
@@ -16623,6 +16841,7 @@ arbitration."]
             P2ri2cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ri2cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ri2cr1")
@@ -16684,6 +16903,7 @@ arbitration."]
             P2ri2cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ri2cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ri2cr2")
@@ -16775,6 +16995,7 @@ arbitration."]
             P2ri3cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ri3cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ri3cr1")
@@ -16836,6 +17057,7 @@ arbitration."]
             P2ri3cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ri3cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ri3cr2")
@@ -16927,6 +17149,7 @@ arbitration."]
             P2ri4cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ri4cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ri4cr1")
@@ -16988,6 +17211,7 @@ arbitration."]
             P2ri4cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ri4cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ri4cr2")
@@ -17079,6 +17303,7 @@ arbitration."]
             P2ri5cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ri5cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ri5cr1")
@@ -17140,6 +17365,7 @@ arbitration."]
             P2ri5cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ri5cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ri5cr2")
@@ -17231,6 +17457,7 @@ arbitration."]
             P2ri6cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ri6cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ri6cr1")
@@ -17292,6 +17519,7 @@ arbitration."]
             P2ri6cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ri6cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ri6cr2")
@@ -17383,6 +17611,7 @@ arbitration."]
             P2ri7cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ri7cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ri7cr1")
@@ -17444,6 +17673,7 @@ arbitration."]
             P2ri7cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ri7cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ri7cr2")
@@ -17535,6 +17765,7 @@ arbitration."]
             P2ri8cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ri8cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ri8cr1")
@@ -17596,6 +17827,7 @@ arbitration."]
             P2ri8cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2ri8cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2ri8cr2")
@@ -17711,6 +17943,7 @@ arbitration."]
             P2sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2sr")
@@ -17764,6 +17997,7 @@ arbitration."]
             P2stm0ar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for P2stm0ar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("P2stm0ar").field("m0a", &self.m0a()).finish()
@@ -17895,6 +18129,7 @@ arbitration."]
             Prcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Prcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Prcr")
@@ -17988,6 +18223,7 @@ arbitration."]
             Prescr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Prescr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Prescr")
@@ -18071,6 +18307,7 @@ arbitration."]
             Presur(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Presur {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Presur")
@@ -18118,6 +18355,7 @@ arbitration."]
             Prfcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Prfcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Prfcr").field("cerrf", &self.cerrf()).finish()
@@ -18153,6 +18391,7 @@ arbitration."]
             Prier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Prier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Prier").field("errie", &self.errie()).finish()
@@ -18212,6 +18451,7 @@ arbitration."]
             Prsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Prsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Prsr")

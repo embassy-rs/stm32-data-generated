@@ -201,6 +201,7 @@ pub mod regs {
             Cfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr1")
@@ -310,6 +311,7 @@ pub mod regs {
             Cfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr2")
@@ -363,6 +365,7 @@ pub mod regs {
             Exticr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Exticr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exticr")
@@ -422,6 +425,7 @@ pub mod regs {
             Memrmp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Memrmp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Memrmp")
@@ -477,6 +481,7 @@ pub mod regs {
             Scsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Scsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Scsr")
@@ -520,6 +525,7 @@ pub mod regs {
             Skr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Skr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Skr").field("key", &self.key()).finish()
@@ -559,6 +565,7 @@ pub mod regs {
             Swpr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Swpr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Swpr")

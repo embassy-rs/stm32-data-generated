@@ -262,6 +262,7 @@ pub mod regs {
             CfgrDual(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for CfgrDual {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CfgrDual")
@@ -447,6 +448,7 @@ pub mod regs {
             CfgrSingle(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for CfgrSingle {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CfgrSingle")
@@ -512,6 +514,7 @@ pub mod regs {
             IcfrDual(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IcfrDual {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IcfrDual")
@@ -555,6 +558,7 @@ pub mod regs {
             IcfrSingle(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IcfrSingle {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IcfrSingle").field("ccif", &self.ccif()).finish()
@@ -610,6 +614,7 @@ pub mod regs {
             SrDual(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for SrDual {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SrDual")
@@ -669,6 +674,7 @@ pub mod regs {
             SrSingle(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for SrSingle {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SrSingle")
@@ -691,7 +697,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hyst {
         None = 0x0,
@@ -722,7 +729,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pwrmode {
         #[doc = "High speed and high power."]

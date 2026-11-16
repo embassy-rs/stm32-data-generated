@@ -494,6 +494,7 @@ pub mod regs {
             Acr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Acr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Acr")
@@ -551,6 +552,7 @@ pub mod regs {
             Bootr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bootr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bootr")
@@ -678,6 +680,7 @@ pub mod regs {
             Ecccorr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ecccorr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ecccorr")
@@ -805,6 +808,7 @@ pub mod regs {
             Eccdetr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Eccdetr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Eccdetr")
@@ -858,6 +862,7 @@ pub mod regs {
             Eccdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Eccdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Eccdr").field("data_ecc", &self.data_ecc()).finish()
@@ -905,6 +910,7 @@ pub mod regs {
             Edata1r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Edata1r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Edata1r")
@@ -960,6 +966,7 @@ pub mod regs {
             Edata2r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Edata2r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Edata2r")
@@ -1015,6 +1022,7 @@ pub mod regs {
             Hdp1r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hdp1r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hdp1r")
@@ -1070,6 +1078,7 @@ pub mod regs {
             Hdp2r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hdp2r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hdp2r")
@@ -1125,6 +1134,7 @@ pub mod regs {
             Hdpextr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hdpextr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hdpextr")
@@ -1180,6 +1190,7 @@ pub mod regs {
             Nsbootr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Nsbootr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Nsbootr")
@@ -1307,6 +1318,7 @@ pub mod regs {
             Nsccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Nsccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Nsccr")
@@ -1566,6 +1578,7 @@ pub mod regs {
             Nscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Nscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Nscr")
@@ -1641,6 +1654,7 @@ pub mod regs {
             Nsepochr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Nsepochr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Nsepochr").field("ns_epoch", &self.ns_epoch()).finish()
@@ -1724,6 +1738,7 @@ pub mod regs {
             Nsobkcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Nsobkcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Nsobkcfgr")
@@ -1905,6 +1920,7 @@ pub mod regs {
             Nssr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Nssr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Nssr")
@@ -2028,6 +2044,7 @@ pub mod regs {
             Opsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Opsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Opsr")
@@ -2103,6 +2120,7 @@ pub mod regs {
             Optcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Optcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Optcr")
@@ -2292,6 +2310,7 @@ pub mod regs {
             Optsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Optsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Optsr")
@@ -2441,6 +2460,7 @@ pub mod regs {
             Optsr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Optsr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Optsr2")
@@ -2500,6 +2520,7 @@ pub mod regs {
             Otpblr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Otpblr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Otpblr").field("lockbl", &self.lockbl()).finish()
@@ -2535,6 +2556,7 @@ pub mod regs {
             Privbb(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privbb {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privbb").field("privbb", &self.privbb()).finish()
@@ -2582,6 +2604,7 @@ pub mod regs {
             Privcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgr")
@@ -2625,6 +2648,7 @@ pub mod regs {
             Secbb(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secbb {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secbb").field("secbb", &self.secbb()).finish()
@@ -2672,6 +2696,7 @@ pub mod regs {
             Secbootr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secbootr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secbootr")
@@ -2787,6 +2812,7 @@ pub mod regs {
             Secccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secccr")
@@ -3044,6 +3070,7 @@ pub mod regs {
             Seccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Seccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Seccr")
@@ -3119,6 +3146,7 @@ pub mod regs {
             Secepochr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secepochr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secepochr")
@@ -3204,6 +3232,7 @@ pub mod regs {
             Secobkcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secobkcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secobkcfgr")
@@ -3373,6 +3402,7 @@ pub mod regs {
             Secsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secsr")
@@ -3446,6 +3476,7 @@ pub mod regs {
             Secwm(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Secwm {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Secwm")
@@ -3489,6 +3520,7 @@ pub mod regs {
             Wrp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wrp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wrp").field("wrpsg", &self.wrpsg()).finish()
@@ -3503,7 +3535,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bksel {
         #[doc = "Bank 1 is selected"]
@@ -3550,6 +3583,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for BootrSecbootLock {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -3582,7 +3616,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CodeOp {
         #[doc = "No flash operation on going during previous reset"]
@@ -3641,6 +3676,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for NsbootrNsbootLock {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -3673,7 +3709,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nspriv {
         #[doc = "access to non secure registers is always granted"]
@@ -3720,6 +3757,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for OptsrBootUbe {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -3752,7 +3790,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrBorLev {
         _RESERVED_0 = 0x0,
@@ -3785,7 +3824,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIwdgStdby {
         #[doc = "Independent watchdog frozen in Standby mode"]
@@ -3816,7 +3856,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIwdgStop {
         #[doc = "Independent watchdog frozen in system Stop mode"]
@@ -3847,7 +3888,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrIwdgSw {
         #[doc = "IWDG watchdog is controlled by hardware"]
@@ -3878,7 +3920,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrNrstStdby {
         #[doc = "a reset is generated when entering Standby mode on core domain"]
@@ -3909,7 +3952,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrNrstStop {
         #[doc = "a reset is generated when entering Stop mode on core domain"]
@@ -3956,6 +4000,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for OptsrTzen {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -3988,7 +4033,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum OptsrWwdgSw {
         #[doc = "WWDG watchdog is controlled by hardware"]
@@ -4035,6 +4081,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for PrivbbrPrivbb {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -4083,6 +4130,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for SecbbrSecbb {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -4131,6 +4179,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for SecbootrSecbootLock {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -4163,7 +4212,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Spriv {
         #[doc = "access to secure registers is always granted"]

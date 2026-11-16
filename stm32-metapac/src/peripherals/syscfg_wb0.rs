@@ -131,6 +131,7 @@ pub mod regs {
             BlerxtxDtr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for BlerxtxDtr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("BlerxtxDtr")
@@ -186,6 +187,7 @@ pub mod regs {
             BlerxtxIber(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for BlerxtxIber {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("BlerxtxIber")
@@ -241,6 +243,7 @@ pub mod regs {
             BlerxtxIer(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for BlerxtxIer {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("BlerxtxIer")
@@ -296,6 +299,7 @@ pub mod regs {
             BlerxtxIevr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for BlerxtxIevr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("BlerxtxIevr")
@@ -375,6 +379,7 @@ pub mod regs {
             BlerxtxIscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for BlerxtxIscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("BlerxtxIscr")
@@ -446,6 +451,7 @@ pub mod regs {
             DieId(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DieId {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DieId")
@@ -527,6 +533,7 @@ pub mod regs {
             I2cFmpCtrl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for I2cFmpCtrl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("I2cFmpCtrl")
@@ -898,6 +905,7 @@ pub mod regs {
             IoDtr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IoDtr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IoDtr")
@@ -1365,6 +1373,7 @@ pub mod regs {
             IoIber(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IoIber {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IoIber")
@@ -1840,6 +1849,7 @@ pub mod regs {
             IoIer(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IoIer {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IoIer")
@@ -2315,6 +2325,7 @@ pub mod regs {
             IoIevr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IoIevr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IoIevr")
@@ -2790,6 +2801,7 @@ pub mod regs {
             IoIscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IoIscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IoIscr")
@@ -2917,6 +2929,7 @@ pub mod regs {
             JtagId(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for JtagId {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("JtagId")
@@ -2986,6 +2999,7 @@ pub mod regs {
             PwrcIer(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for PwrcIer {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("PwrcIer")
@@ -3055,6 +3069,7 @@ pub mod regs {
             PwrcIscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for PwrcIscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("PwrcIscr")

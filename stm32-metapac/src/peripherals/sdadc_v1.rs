@@ -140,6 +140,7 @@ pub mod regs {
             Clrisr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Clrisr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Clrisr")
@@ -189,6 +190,7 @@ pub mod regs {
             Confchr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Confchr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Confchr1")
@@ -248,6 +250,7 @@ pub mod regs {
             Confchr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Confchr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Confchr2")
@@ -321,6 +324,7 @@ pub mod regs {
             Confr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Confr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Confr")
@@ -524,6 +528,7 @@ pub mod regs {
             Cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr1")
@@ -723,6 +728,7 @@ pub mod regs {
             Cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr2")
@@ -894,6 +900,7 @@ pub mod regs {
             Isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Isr")
@@ -953,6 +960,7 @@ pub mod regs {
             Jchgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Jchgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Jchgr").field("jchg", &self.jchg()).finish()
@@ -1000,6 +1008,7 @@ pub mod regs {
             Jdatar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Jdatar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Jdatar")
@@ -1043,6 +1052,7 @@ pub mod regs {
             Rdatar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rdatar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rdatar").field("rdata", &self.rdata()).finish()

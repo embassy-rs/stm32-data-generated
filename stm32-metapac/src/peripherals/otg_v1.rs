@@ -538,6 +538,7 @@ pub mod regs {
             Adpctl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Adpctl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Adpctl")
@@ -605,6 +606,7 @@ pub mod regs {
             Cid(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cid {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cid").field("product_id", &self.product_id()).finish()
@@ -652,6 +654,7 @@ pub mod regs {
             Daint(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Daint {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Daint")
@@ -707,6 +710,7 @@ pub mod regs {
             Daintmsk(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Daintmsk {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Daintmsk")
@@ -798,6 +802,7 @@ pub mod regs {
             Dcfg(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dcfg {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dcfg")
@@ -955,6 +960,7 @@ pub mod regs {
             Dctl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dctl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dctl")
@@ -1170,6 +1176,7 @@ pub mod regs {
             Diepctl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Diepctl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Diepctl")
@@ -1237,6 +1244,7 @@ pub mod regs {
             Diepempmsk(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Diepempmsk {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Diepempmsk")
@@ -1334,6 +1342,7 @@ pub mod regs {
             Diepint(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Diepint {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Diepint")
@@ -1445,6 +1454,7 @@ pub mod regs {
             Diepmsk(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Diepmsk {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Diepmsk")
@@ -1520,6 +1530,7 @@ pub mod regs {
             Dieptsiz(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dieptsiz {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dieptsiz")
@@ -1709,6 +1720,7 @@ pub mod regs {
             Doepctl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Doepctl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Doepctl")
@@ -1822,6 +1834,7 @@ pub mod regs {
             Doepint(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Doepint {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Doepint")
@@ -1907,6 +1920,7 @@ pub mod regs {
             Doepmsk(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Doepmsk {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Doepmsk")
@@ -1978,6 +1992,7 @@ pub mod regs {
             Doeptsiz(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Doeptsiz {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Doeptsiz")
@@ -2059,6 +2074,7 @@ pub mod regs {
             Dsts(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dsts {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dsts")
@@ -2106,6 +2122,7 @@ pub mod regs {
             Dtxfsts(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dtxfsts {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dtxfsts").field("ineptfsav", &self.ineptfsav()).finish()
@@ -2141,6 +2158,7 @@ pub mod regs {
             Dvbusdis(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dvbusdis {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dvbusdis").field("vbusdt", &self.vbusdt()).finish()
@@ -2176,6 +2194,7 @@ pub mod regs {
             Dvbuspulse(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dvbuspulse {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dvbuspulse").field("dvbusp", &self.dvbusp()).finish()
@@ -2211,6 +2230,7 @@ pub mod regs {
             Fifo(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fifo {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fifo").field("data", &self.data()).finish()
@@ -2258,6 +2278,7 @@ pub mod regs {
             Fsiz(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fsiz {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fsiz")
@@ -2344,6 +2365,7 @@ pub mod regs {
             Gahbcfg(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Gahbcfg {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Gahbcfg")
@@ -2441,6 +2463,7 @@ pub mod regs {
             GccfgV1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for GccfgV1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("GccfgV1")
@@ -2610,6 +2633,7 @@ pub mod regs {
             GccfgV2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for GccfgV2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("GccfgV2")
@@ -2827,6 +2851,7 @@ pub mod regs {
             GccfgV3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for GccfgV3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("GccfgV3")
@@ -2990,6 +3015,7 @@ pub mod regs {
             Gi2cctl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Gi2cctl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Gi2cctl")
@@ -3371,6 +3397,7 @@ pub mod regs {
             Gintmsk(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Gintmsk {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Gintmsk")
@@ -3778,6 +3805,7 @@ pub mod regs {
             Gintsts(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Gintsts {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Gintsts")
@@ -4039,6 +4067,7 @@ pub mod regs {
             Glpmcfg(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Glpmcfg {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Glpmcfg")
@@ -4300,6 +4329,7 @@ pub mod regs {
             Gotgctl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Gotgctl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Gotgctl")
@@ -4445,6 +4475,7 @@ pub mod regs {
             Gotgint(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Gotgint {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Gotgint")
@@ -4582,6 +4613,7 @@ pub mod regs {
             Grstctl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Grstctl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Grstctl")
@@ -4637,6 +4669,7 @@ pub mod regs {
             Grxfsiz(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Grxfsiz {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Grxfsiz").field("rxfd", &self.rxfd()).finish()
@@ -4732,6 +4765,7 @@ pub mod regs {
             Grxsts(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Grxsts {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Grxsts")
@@ -4987,6 +5021,7 @@ pub mod regs {
             Gusbcfg(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Gusbcfg {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Gusbcfg")
@@ -5062,6 +5097,7 @@ pub mod regs {
             Haint(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Haint {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Haint").field("haint", &self.haint()).finish()
@@ -5097,6 +5133,7 @@ pub mod regs {
             Haintmsk(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Haintmsk {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Haintmsk").field("haintm", &self.haintm()).finish()
@@ -5240,6 +5277,7 @@ pub mod regs {
             Hcchar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hcchar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hcchar")
@@ -5311,6 +5349,7 @@ pub mod regs {
             Hcdma(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hcdma {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hcdma")
@@ -5402,6 +5441,7 @@ pub mod regs {
             Hcfg(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hcfg {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hcfg")
@@ -5547,6 +5587,7 @@ pub mod regs {
             Hcint(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hcint {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hcint")
@@ -5712,6 +5753,7 @@ pub mod regs {
             Hcintmsk(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hcintmsk {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hcintmsk")
@@ -5831,6 +5873,7 @@ pub mod regs {
             Hctsiz(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hctsiz {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hctsiz")
@@ -5894,6 +5937,7 @@ pub mod regs {
             Hfir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hfir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hfir")
@@ -5949,6 +5993,7 @@ pub mod regs {
             Hfnum(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hfnum {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hfnum")
@@ -6016,6 +6061,7 @@ pub mod regs {
             Hnptxsts(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hnptxsts {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hnptxsts")
@@ -6205,6 +6251,7 @@ pub mod regs {
             Hprt(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hprt {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hprt")
@@ -6294,6 +6341,7 @@ pub mod regs {
             Hptxsts(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hptxsts {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hptxsts")
@@ -6363,6 +6411,7 @@ pub mod regs {
             Pcgcctl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pcgcctl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pcgcctl")
@@ -6387,7 +6436,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dpid {
         Data0 = 0x0,
@@ -6418,7 +6468,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dspd {
         #[doc = "High speed"]
@@ -6452,7 +6503,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Eptyp {
         Control = 0x0,
@@ -6483,7 +6535,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Frlistlen {
         #[doc = "Length = 8"]
@@ -6518,7 +6571,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pfivl {
         #[doc = "80% of the frame interval"]
@@ -6553,7 +6607,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pktstsd {
         _RESERVED_0 = 0x0,
@@ -6601,7 +6656,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pktstsh {
         _RESERVED_0 = 0x0,

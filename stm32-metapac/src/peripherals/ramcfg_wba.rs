@@ -112,6 +112,7 @@ pub mod regs {
             M1cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M1cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M1cr")
@@ -155,6 +156,7 @@ pub mod regs {
             M1erkeyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M1erkeyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M1erkeyr").field("erasekey", &self.erasekey()).finish()
@@ -190,6 +192,7 @@ pub mod regs {
             M1isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M1isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M1isr").field("srambusy", &self.srambusy()).finish()
@@ -249,6 +252,7 @@ pub mod regs {
             M2cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2cr")
@@ -294,6 +298,7 @@ pub mod regs {
             M2erkeyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2erkeyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2erkeyr").field("erasekey", &self.erasekey()).finish()
@@ -329,6 +334,7 @@ pub mod regs {
             M2icr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2icr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2icr").field("cped", &self.cped()).finish()
@@ -376,6 +382,7 @@ pub mod regs {
             M2ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2ier")
@@ -431,6 +438,7 @@ pub mod regs {
             M2isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2isr")
@@ -498,6 +506,7 @@ pub mod regs {
             M2pear(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2pear {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2pear")
@@ -547,6 +556,7 @@ pub mod regs {
             M2wpr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2wpr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2wpr1")
@@ -654,6 +664,7 @@ pub mod regs {
             M2wpr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for M2wpr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("M2wpr2")
@@ -736,7 +747,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Id {
         _RESERVED_0 = 0x0,

@@ -103,6 +103,7 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
             Ewcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ewcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ewcr")
@@ -148,6 +149,7 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
             Kr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Kr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Kr").field("key", &self.key()).finish()
@@ -183,6 +185,7 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
             Pr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pr").field("pr", &self.pr()).finish()
@@ -218,6 +221,7 @@ must be bigger than 1. An interrupt is generated only if EWIE = 1. The EWU bit i
             Rlr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rlr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rlr").field("rl", &self.rl()).finish()
@@ -303,6 +307,7 @@ and EWIE fields can be updated only when EWU bit is reset."]
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -352,6 +357,7 @@ and EWIE fields can be updated only when EWU bit is reset."]
             Winr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Winr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Winr").field("win", &self.win()).finish()
@@ -384,6 +390,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Key {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -418,7 +425,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pr {
         #[doc = "Divider /4"]

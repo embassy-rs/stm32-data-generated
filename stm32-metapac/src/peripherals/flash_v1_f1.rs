@@ -121,6 +121,7 @@ pub mod regs {
             Acr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Acr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Acr")
@@ -168,6 +169,7 @@ pub mod regs {
             Ar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ar").field("far", &self.far()).finish()
@@ -311,6 +313,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -442,6 +445,7 @@ pub mod regs {
             Obr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Obr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Obr")
@@ -531,6 +535,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -578,6 +583,7 @@ pub mod regs {
             Wrpr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wrpr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wrpr").field("wrp", &self.wrp()).finish()
@@ -592,7 +598,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Latency {
         #[doc = "Zero wait state, if 0 < SYSCLK≤ 24 MHz"]

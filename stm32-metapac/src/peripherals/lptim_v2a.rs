@@ -172,6 +172,7 @@ value."]
             Arr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Arr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Arr").field("arr", &self.arr()).finish()
@@ -291,6 +292,7 @@ value."]
             Ccmr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccmr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccmr")
@@ -354,6 +356,7 @@ value."]
             Ccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccr").field("ccr", &self.ccr()).finish()
@@ -533,6 +536,7 @@ value."]
             Cfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr")
@@ -618,6 +622,7 @@ value."]
             Cfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr2")
@@ -665,6 +670,7 @@ value."]
             Cnt(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cnt {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cnt").field("cnt", &self.cnt()).finish()
@@ -756,6 +762,7 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -941,6 +948,7 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
             DierAdv(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DierAdv {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DierAdv")
@@ -1114,6 +1122,7 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
             DierBasic(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DierBasic {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("DierBasic")
@@ -1303,6 +1312,7 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
             IcrAdv(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IcrAdv {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IcrAdv")
@@ -1486,6 +1496,7 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
             IcrBasic(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IcrBasic {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IcrBasic")
@@ -1677,6 +1688,7 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
             IsrAdv(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IsrAdv {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IsrAdv")
@@ -1860,6 +1872,7 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
             IsrBasic(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IsrBasic {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("IsrBasic")
@@ -1919,6 +1932,7 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
             Rcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rcr").field("rep", &self.rep()).finish()
@@ -1933,7 +1947,8 @@ different than ‘00’), setting this bit starts the timer in Continuous mode a
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CcpInput {
         Rising = 0x0,
@@ -1964,7 +1979,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CcpOutput {
         ActiveHigh = 0x0,
@@ -1995,7 +2011,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ccsel {
         #[doc = "channel is configured in output PWM mode"]
@@ -2026,7 +2043,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckpol {
         #[doc = "the rising edge is the active edge used for counting. If the LPTIM is configured in Encoder mode (ENC bit is set), the encoder sub-mode 1 is active."]
@@ -2060,7 +2078,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum ClockSource {
         #[doc = "clocked by internal clock source (APB clock or any of the embedded oscillators)"]
@@ -2091,7 +2110,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Filter {
         Count1 = 0x0,
@@ -2122,7 +2142,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Presc {
         Div1 = 0x0,
@@ -2157,7 +2178,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Trigen {
         #[doc = "software trigger (counting start is initiated by software)"]
@@ -2192,7 +2214,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wavpol {
         #[doc = "The LPTIM output reflects the compare results between LPTIM_ARR and LPTIM_CMP registers."]

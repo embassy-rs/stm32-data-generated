@@ -224,6 +224,7 @@ pub mod regs {
             Bcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bcr")
@@ -485,6 +486,7 @@ pub mod regs {
             Cevr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cevr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cevr")
@@ -792,6 +794,7 @@ pub mod regs {
             Cfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr")
@@ -941,6 +944,7 @@ and must be consistently programmed vs the maximum IBI payload data size which i
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -1028,6 +1032,7 @@ and must be consistently programmed vs the maximum IBI payload data size which i
             CrAlternate(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for CrAlternate {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("CrAlternate")
@@ -1087,6 +1092,7 @@ and must be consistently programmed vs the maximum IBI payload data size which i
             Crcapr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Crcapr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Crcapr")
@@ -1130,6 +1136,7 @@ and must be consistently programmed vs the maximum IBI payload data size which i
             Dcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dcr").field("dcr", &self.dcr()).finish()
@@ -1243,6 +1250,7 @@ or IBIDEN."]
             Devr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Devr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Devr")
@@ -1384,6 +1392,7 @@ dictates the reset action to be performed by the software if any. If RSTVAL=0: w
             Devr0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Devr0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Devr0")
@@ -1439,6 +1448,7 @@ dictates the reset action to be performed by the software if any. If RSTVAL=0: w
             Dr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dr").field("db", &self.db()).finish()
@@ -1478,6 +1488,7 @@ dictates the reset action to be performed by the software if any. If RSTVAL=0: w
             Dwr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dwr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dwr")
@@ -1559,6 +1570,7 @@ of the 48-bit provisioned ID."]
             Epidr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Epidr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Epidr")
@@ -1926,6 +1938,7 @@ dictates the reset action to be performed by the software if any. If RSTVAL=0: w
             Evr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Evr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Evr")
@@ -2021,6 +2034,7 @@ value. This bit is used to return the GETCAP3 byte in response to the GETCAPS CC
             Getcapr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Getcapr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Getcapr").field("cappend", &self.cappend()).finish()
@@ -2096,6 +2110,7 @@ bits."]
             Getmxdsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Getmxdsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Getmxdsr")
@@ -2149,6 +2164,7 @@ mandatory data byte)."]
             Ibidr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ibidr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ibidr")
@@ -2460,6 +2476,7 @@ mandatory data byte)."]
             Ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ier")
@@ -2557,6 +2574,7 @@ mandatory data byte)."]
             Maxrlr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Maxrlr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Maxrlr")
@@ -2595,6 +2613,7 @@ mandatory data byte)."]
             Maxwlr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Maxwlr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Maxwlr").field("ml", &self.ml()).finish()
@@ -2654,6 +2673,7 @@ mandatory data byte)."]
             Rmr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rmr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rmr")
@@ -2783,6 +2803,7 @@ mandatory data byte)."]
             Ser(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ser {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ser")
@@ -2876,6 +2897,7 @@ message."]
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -2935,6 +2957,7 @@ message."]
             Tgttdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tgttdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tgttdr")
@@ -3014,6 +3037,7 @@ message."]
             Timingr0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timingr0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timingr0")
@@ -3125,6 +3149,7 @@ x tI3CCLK for I3C stop timing: it must wait for time to be elapsed after that th
             Timingr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timingr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timingr1")
@@ -3220,6 +3245,7 @@ x tI3CCLK for I3C stop timing: it must wait for time to be elapsed after that th
             Timingr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Timingr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Timingr2")
@@ -3248,7 +3274,8 @@ x tI3CCLK for I3C stop timing: it must wait for time to be elapsed after that th
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ack {
         MustNacKed = 0x0,
@@ -3277,7 +3304,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Coderr {
         #[doc = "Transaction after sending CCC. Controller detected an illegally formatted CCC"]
@@ -3331,7 +3359,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Crinit {
         #[doc = "Once enabled by setting EN = 1, the peripheral initially acts as a target. I3C does not drive SCL line and does not enable SDA pull-up, until it eventually acquires the controller role."]
@@ -3362,7 +3391,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dir {
         Write = 0x0,
@@ -3391,7 +3421,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dis {
         #[doc = "write to DA\\[7:0\\]
@@ -3424,7 +3455,8 @@ and to IBIDEN is disabled/locked"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mend {
         #[doc = "this message from controller is followed by a repeated start (Sr), before another message must be emitted"]
@@ -3455,7 +3487,8 @@ and to IBIDEN is disabled/locked"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rnw {
         #[doc = "write message"]
@@ -3486,7 +3519,8 @@ and to IBIDEN is disabled/locked"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rstact {
         NoReset = 0x0,
@@ -3519,7 +3553,8 @@ and to IBIDEN is disabled/locked"]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Thres {
         #[doc = "TXFNFF is set when 1 byte must be written in TX-FIFO (in I3C_TDR)."]

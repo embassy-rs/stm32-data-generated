@@ -202,6 +202,7 @@ pub mod regs {
             Apcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apcr")
@@ -363,6 +364,7 @@ pub mod regs {
             Cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr1")
@@ -494,6 +496,7 @@ pub mod regs {
             Csr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csr1")
@@ -727,6 +730,7 @@ pub mod regs {
             Csr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csr2")
@@ -834,6 +838,7 @@ pub mod regs {
             Csr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csr3")
@@ -893,6 +898,7 @@ pub mod regs {
             Csr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csr4")
@@ -991,6 +997,7 @@ pub mod regs {
             Pdcrn(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pdcrn {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pdcrn")
@@ -1090,6 +1097,7 @@ pub mod regs {
             Pdcro(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pdcro {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pdcro")
@@ -1175,6 +1183,7 @@ pub mod regs {
             Pdcrp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pdcrp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pdcrp")
@@ -1246,6 +1255,7 @@ pub mod regs {
             Pdr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pdr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pdr1")
@@ -1315,6 +1325,7 @@ pub mod regs {
             Pucrn(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pucrn {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pucrn")
@@ -1384,6 +1395,7 @@ pub mod regs {
             Pucro(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pucro {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pucro")
@@ -1467,6 +1479,7 @@ bits. bits. Note: Since the PVD is disabled in Standby mode, this bit is equal t
             Sr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr1")
@@ -1526,6 +1539,7 @@ bits. bits. Note: Since the PVD is disabled in Standby mode, this bit is equal t
             Ucpdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ucpdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ucpdr")
@@ -1573,6 +1587,7 @@ bits. bits. Note: Since the PVD is disabled in Standby mode, this bit is equal t
             Wkupcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wkupcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wkupcr")
@@ -1656,6 +1671,7 @@ bits. bits. Note: Since the PVD is disabled in Standby mode, this bit is equal t
             Wkupepr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wkupepr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wkupepr")
@@ -1723,6 +1739,7 @@ bits. bits. Note: Since the PVD is disabled in Standby mode, this bit is equal t
             Wkupfr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wkupfr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wkupfr")
@@ -1749,7 +1766,8 @@ bits. bits. Note: Since the PVD is disabled in Standby mode, this bit is equal t
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Als {
         #[doc = "AVD level 1."]
@@ -1784,7 +1802,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Avdo {
         #[doc = "VDDA is equal or higher than the AVD threshold selected with the ALS\\[1:0\\]
@@ -1817,7 +1836,8 @@ bits."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pdds {
         #[doc = "Stop mode when device enters Deepsleep."]
@@ -1848,7 +1868,8 @@ bits."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pls {
         #[doc = "PVD level 1."]
@@ -1891,7 +1912,8 @@ bits."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pvdo {
         #[doc = "VDD or PVD_IN voltage is equal or higher than the PVD threshold selected through the."]
@@ -1922,7 +1944,8 @@ bits."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Rlpsn {
         #[doc = "RAM enters to low power mode when system enters to STOP."]
@@ -1953,7 +1976,8 @@ bits."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdlevel {
         Reset = 0x0,
@@ -1982,7 +2006,8 @@ bits."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Svos {
         #[doc = "SVOS Low."]
@@ -2013,7 +2038,8 @@ bits."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SyncAdc {
         #[doc = "SD_Converter clock free running."]
@@ -2044,7 +2070,8 @@ bits."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Unlocked {
         #[doc = "accessed locked: key was not written and after each register write access."]
@@ -2075,7 +2102,8 @@ bits."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vbrs {
         #[doc = "Charge VBAT through a 5 k resistor."]
@@ -2106,7 +2134,8 @@ bits."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Vos {
         #[doc = "VOS Low level (default)."]
@@ -2137,7 +2166,8 @@ bits."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkupp {
         #[doc = "Detection on high level (rising edge)."]
@@ -2168,7 +2198,8 @@ bits."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wkuppupd {
         #[doc = "No pull-up."]
@@ -2202,7 +2233,8 @@ bits."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Xspicap {
         #[doc = "XSPI Capacitor OFF (default) note: to confirm with analog design."]

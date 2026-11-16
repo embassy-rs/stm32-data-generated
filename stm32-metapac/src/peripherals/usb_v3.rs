@@ -182,6 +182,7 @@ pub mod regs {
             Bcdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Bcdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Bcdr")
@@ -239,6 +240,7 @@ pub mod regs {
             Btable(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Btable {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Btable").field("btable", &self.btable()).finish()
@@ -442,6 +444,7 @@ pub mod regs {
             Cntr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cntr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cntr")
@@ -523,6 +526,7 @@ pub mod regs {
             Daddr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Daddr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Daddr")
@@ -669,6 +673,7 @@ pub mod regs {
             Epr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Epr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Epr")
@@ -776,6 +781,7 @@ pub mod regs {
             Fnr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fnr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fnr")
@@ -945,6 +951,7 @@ pub mod regs {
             Istr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Istr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Istr")
@@ -1042,6 +1049,7 @@ pub mod regs {
             Lpmcsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lpmcsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lpmcsr")
@@ -1068,7 +1076,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Dir {
         #[doc = "data transmitted by the USB peripheral to the host PC"]
@@ -1099,7 +1108,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum EpType {
         #[doc = "Bulk endpoint"]
@@ -1134,7 +1144,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpmack {
         #[doc = "the valid LPM Token will be NYET"]
@@ -1165,7 +1176,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdet {
         #[doc = "CDP detected"]
@@ -1196,7 +1208,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Stat {
         #[doc = "all requests addressed to this endpoint are ignored"]

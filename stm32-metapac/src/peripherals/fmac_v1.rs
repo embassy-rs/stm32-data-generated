@@ -181,6 +181,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -286,6 +287,7 @@ pub mod regs {
             Param(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Param {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Param")
@@ -335,6 +337,7 @@ pub mod regs {
             Rdata(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rdata {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rdata").field("res", &self.res()).finish()
@@ -418,6 +421,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -467,6 +471,7 @@ pub mod regs {
             Wdata(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wdata {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wdata").field("wdata", &self.wdata()).finish()
@@ -526,6 +531,7 @@ pub mod regs {
             X1bufcfg(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for X1bufcfg {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("X1bufcfg")
@@ -583,6 +589,7 @@ pub mod regs {
             X2bufcfg(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for X2bufcfg {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("X2bufcfg")
@@ -650,6 +657,7 @@ pub mod regs {
             Ybufcfg(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ybufcfg {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ybufcfg")

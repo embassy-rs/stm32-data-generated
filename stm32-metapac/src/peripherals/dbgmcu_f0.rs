@@ -173,6 +173,7 @@ pub mod regs {
             Apb1Fz(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb1Fz {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb1Fz")
@@ -268,6 +269,7 @@ pub mod regs {
             Apb2Fz(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Apb2Fz {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Apb2Fz")
@@ -327,6 +329,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -394,6 +397,7 @@ pub mod regs {
             Idcode(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Idcode {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Idcode")

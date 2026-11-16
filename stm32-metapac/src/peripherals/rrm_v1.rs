@@ -140,6 +140,7 @@ pub mod regs {
             BleIrqEnable(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for BleIrqEnable {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("BleIrqEnable")
@@ -223,6 +224,7 @@ pub mod regs {
             BleIrqStatus(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for BleIrqStatus {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("BleIrqStatus")
@@ -282,6 +284,7 @@ pub mod regs {
             SemaIrqEnable(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for SemaIrqEnable {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SemaIrqEnable")
@@ -337,6 +340,7 @@ pub mod regs {
             SemaIrqStatus(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for SemaIrqStatus {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("SemaIrqStatus")
@@ -380,6 +384,7 @@ pub mod regs {
             UdraCtrl0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for UdraCtrl0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("UdraCtrl0")
@@ -441,6 +446,7 @@ pub mod regs {
             UdraIrqEnable(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for UdraIrqEnable {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("UdraIrqEnable")
@@ -510,6 +516,7 @@ pub mod regs {
             UdraIrqStatus(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for UdraIrqStatus {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("UdraIrqStatus")
@@ -555,6 +562,7 @@ pub mod regs {
             UdraRadioCfgPtr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for UdraRadioCfgPtr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("UdraRadioCfgPtr")
@@ -608,6 +616,7 @@ pub mod regs {
             VpCpuCmdBus(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for VpCpuCmdBus {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("VpCpuCmdBus")
@@ -687,6 +696,7 @@ pub mod regs {
             VpCpuIrqEnable(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for VpCpuIrqEnable {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("VpCpuIrqEnable")
@@ -782,6 +792,7 @@ pub mod regs {
             VpCpuIrqStatus(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for VpCpuIrqStatus {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("VpCpuIrqStatus")
@@ -843,6 +854,7 @@ pub mod regs {
             VpCpuSemaBus(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for VpCpuSemaBus {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("VpCpuSemaBus")

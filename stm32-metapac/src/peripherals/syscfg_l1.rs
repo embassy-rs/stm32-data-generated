@@ -65,6 +65,7 @@ pub mod regs {
             Exticr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Exticr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exticr")
@@ -124,6 +125,7 @@ pub mod regs {
             Memrmp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Memrmp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Memrmp")
@@ -179,6 +181,7 @@ pub mod regs {
             Pmc(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pmc {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pmc")

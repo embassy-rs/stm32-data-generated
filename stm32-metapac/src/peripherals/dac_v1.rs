@@ -194,6 +194,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -261,6 +262,7 @@ pub mod regs {
             Dhr12l(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dhr12l {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhr12l").field("dhr", &self.dhr()).finish()
@@ -300,6 +302,7 @@ pub mod regs {
             Dhr12ld(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dhr12ld {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhr12ld")
@@ -343,6 +346,7 @@ pub mod regs {
             Dhr12r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dhr12r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhr12r").field("dhr", &self.dhr()).finish()
@@ -382,6 +386,7 @@ pub mod regs {
             Dhr12rd(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dhr12rd {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhr12rd")
@@ -425,6 +430,7 @@ pub mod regs {
             Dhr8r(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dhr8r {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhr8r").field("dhr", &self.dhr()).finish()
@@ -464,6 +470,7 @@ pub mod regs {
             Dhr8rd(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dhr8rd {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dhr8rd")
@@ -507,6 +514,7 @@ pub mod regs {
             Dor(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dor {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dor").field("dor", &self.dor()).finish()
@@ -546,6 +554,7 @@ pub mod regs {
             Swtrigr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Swtrigr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Swtrigr")
@@ -568,7 +577,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wave {
         #[doc = "Wave generation disabled"]

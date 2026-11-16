@@ -152,6 +152,7 @@ in the ALRMSSR, and so can also be read or written through ALRMSSR."]
             Alrbinr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Alrbinr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Alrbinr").field("ss", &self.ss()).finish()
@@ -343,6 +344,7 @@ in the ALRMSSR, and so can also be read or written through ALRMSSR."]
             Alrmr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Alrmr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Alrmr")
@@ -436,6 +438,7 @@ in the ALRBINR, and so can also be read or written through ALRBINR."]
             Alrmssr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Alrmssr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Alrmssr")
@@ -533,6 +536,7 @@ are stuck at 00 when CALW8 = 1."]
             Calr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Calr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Calr")
@@ -894,6 +898,7 @@ are stuck at 00 when CALW8 = 1."]
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -1063,6 +1068,7 @@ are stuck at 00 when CALW8 = 1."]
             Dr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dr")
@@ -1212,6 +1218,7 @@ are stuck at 00 when CALW8 = 1."]
             Icsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Icsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Icsr")
@@ -1333,6 +1340,7 @@ are stuck at 00 when CALW8 = 1."]
             Misr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Misr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Misr")
@@ -1398,6 +1406,7 @@ are stuck at 00 when CALW8 = 1."]
             Prer(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Prer {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Prer")
@@ -1505,6 +1514,7 @@ are stuck at 00 when CALW8 = 1."]
             Privcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Privcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Privcfgr")
@@ -1622,6 +1632,7 @@ are stuck at 00 when CALW8 = 1."]
             Scr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Scr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Scr")
@@ -1689,6 +1700,7 @@ must be written with 0. Note: Writing to SUBFS causes RSF to be cleared. Softwar
             Shiftr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Shiftr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Shiftr")
@@ -1796,6 +1808,7 @@ must be written with 0. Note: Writing to SUBFS causes RSF to be cleared. Softwar
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -1861,6 +1874,7 @@ is the value in the synchronous prescaler counter. The fraction of a second is g
             Ssr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ssr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ssr").field("ss", &self.ss()).finish()
@@ -1968,6 +1982,7 @@ is the value in the synchronous prescaler counter. The fraction of a second is g
             Tr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tr")
@@ -2069,6 +2084,7 @@ is the value in the synchronous prescaler counter. The fraction of a second is g
             Tsdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tsdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tsdr")
@@ -2120,6 +2136,7 @@ is the value of the synchronous prescaler counter when the timestamp event occur
             Tsssr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tsssr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tsssr").field("ss", &self.ss()).finish()
@@ -2227,6 +2244,7 @@ is the value of the synchronous prescaler counter when the timestamp event occur
             Tstr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tstr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tstr")
@@ -2280,6 +2298,7 @@ is the value of the synchronous prescaler counter when the timestamp event occur
             Wpr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wpr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wpr").field("key", &self.key()).finish()
@@ -2345,6 +2364,7 @@ is different from 0x0000, WUTF is set by hardware when the auto-reload down-coun
             Wutr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wutr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wutr")
@@ -2367,7 +2387,8 @@ is different from 0x0000, WUTF is set by hardware when the auto-reload down-coun
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Alrf {
         _RESERVED_0 = 0x0,
@@ -2397,7 +2418,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Alrfclr {
         #[doc = "Alarm x event generates a trigger event and ALRxF must be cleared by software to allow next alarm event."]
@@ -2428,7 +2450,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Alrmf {
         _RESERVED_0 = 0x0,
@@ -2458,7 +2481,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AlrmrMsk {
         #[doc = "Alarm set if the date/day match"]
@@ -2489,7 +2513,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AlrmrPm {
         #[doc = "AM or 24-hour format"]
@@ -2520,7 +2545,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AlrmrWdsel {
         #[doc = "DU\\[3:0\\]
@@ -2554,7 +2580,8 @@ is dont care."]
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum AlrmssrSsclr {
         #[doc = "The synchronous binary counter (SS\\[31:0\\]
@@ -2588,7 +2615,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ampm {
         #[doc = "AM or 24-hour format"]
@@ -2619,7 +2647,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bcdu {
         #[doc = "1s calendar increment is generated each time SS\\[7:0\\]
@@ -2670,7 +2699,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Bin {
         #[doc = "Free running BCD calendar mode (Binary mode disabled)"]
@@ -2705,7 +2735,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calp {
         #[doc = "No RTCCLK pulses are added"]
@@ -2736,7 +2767,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calrf {
         _RESERVED_0 = 0x0,
@@ -2766,7 +2798,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calw16 {
         _RESERVED_0 = 0x0,
@@ -2796,7 +2829,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calw8 {
         _RESERVED_0 = 0x0,
@@ -2826,7 +2860,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cosel {
         #[doc = "Calibration output is 512 Hz (with default prescaler setting)"]
@@ -2857,7 +2892,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fmt {
         #[doc = "24 hour/day format"]
@@ -2888,7 +2924,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Itsf {
         _RESERVED_0 = 0x0,
@@ -2918,7 +2955,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Itsmf {
         _RESERVED_0 = 0x0,
@@ -2966,6 +3004,7 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Key {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -3000,7 +3039,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lpcal {
         #[doc = "Calibration window is 220 RTCCLK, which is a high-consumption mode. This mode should be set only when less than 32s calibration window is required"]
@@ -3031,7 +3071,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Osel {
         #[doc = "Output disabled"]
@@ -3066,7 +3107,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pol {
         #[doc = "The pin is high when ALRAF/ALRBF/WUTF is asserted (depending on OSEL\\[1:0\\]), or when a TAMPxF/ITAMPxF is asserted (if TAMPOE = 1)."]
@@ -3097,7 +3139,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Priv {
         #[doc = "Alarm and SSR underflow configuration and interrupt clear can be written when the APB access is privileged or non-privileged."]
@@ -3128,7 +3171,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Recalpf {
         _RESERVED_0 = 0x0,
@@ -3158,7 +3202,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ssruf {
         _RESERVED_0 = 0x0,
@@ -3188,7 +3233,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ssrumf {
         _RESERVED_0 = 0x0,
@@ -3218,7 +3264,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum TampalrmType {
         #[doc = "TAMPALRM is push-pull output"]
@@ -3249,7 +3296,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tsedge {
         #[doc = "RTC_TS input rising edge generates a time-stamp event"]
@@ -3280,7 +3328,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tsf {
         _RESERVED_0 = 0x0,
@@ -3310,7 +3359,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tsmf {
         _RESERVED_0 = 0x0,
@@ -3340,7 +3390,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tsovf {
         _RESERVED_0 = 0x0,
@@ -3370,7 +3421,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tsovmf {
         _RESERVED_0 = 0x0,
@@ -3400,7 +3452,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wucksel {
         #[doc = "RTC/16 clock is selected"]
@@ -3441,7 +3494,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wutf {
         _RESERVED_0 = 0x0,
@@ -3471,7 +3525,8 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRBINR â
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wutmf {
         _RESERVED_0 = 0x0,

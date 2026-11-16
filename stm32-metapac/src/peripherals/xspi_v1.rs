@@ -200,6 +200,7 @@ pub mod regs {
             Abr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Abr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Abr").field("alternate", &self.alternate()).finish()
@@ -237,6 +238,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
             Ar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ar").field("address", &self.address()).finish()
@@ -296,6 +298,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
             Calfcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Calfcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Calfcr")
@@ -353,6 +356,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
             Calmr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Calmr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Calmr")
@@ -408,6 +412,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
             Calsir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Calsir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Calsir")
@@ -463,6 +468,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
             Calsor(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Calsor {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Calsor")
@@ -638,6 +644,7 @@ is forced to 0. Writes to this field are ignored when BUSY = 1 or when FMODE = 1
             Ccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccr")
@@ -891,6 +898,7 @@ are wrongly updated while DMAEN = 1, the DMA request signal automatically goes t
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -1014,6 +1022,7 @@ for memories different from Micron. Others: Reserved"]
             Dcr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dcr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dcr1")
@@ -1075,6 +1084,7 @@ for memories different from Micron. Others: Reserved"]
             Dcr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dcr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dcr2")
@@ -1130,6 +1140,7 @@ for memories different from Micron. Others: Reserved"]
             Dcr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dcr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dcr3")
@@ -1173,6 +1184,7 @@ for memories different from Micron. Others: Reserved"]
             Dcr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dcr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dcr4").field("refresh", &self.refresh()).finish()
@@ -1208,6 +1220,7 @@ for memories different from Micron. Others: Reserved"]
             Dlr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dlr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dlr").field("dl", &self.dl()).finish()
@@ -1245,6 +1258,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Dr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dr").field("data", &self.data()).finish()
@@ -1316,6 +1330,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Fcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fcr")
@@ -1399,6 +1414,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Hlcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hlcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hlcr")
@@ -1446,6 +1462,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Ir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ir").field("instruction", &self.instruction()).finish()
@@ -1481,6 +1498,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Lptr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lptr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lptr").field("timeout", &self.timeout()).finish()
@@ -1516,6 +1534,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Pir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pir").field("interval", &self.interval()).finish()
@@ -1551,6 +1570,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Psmar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Psmar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Psmar").field("match_", &self.match_()).finish()
@@ -1586,6 +1606,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Psmkr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Psmkr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Psmkr").field("mask", &self.mask()).finish()
@@ -1693,6 +1714,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -1770,6 +1792,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Tcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tcr")
@@ -1815,6 +1838,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wabr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wabr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wabr").field("alternate", &self.alternate()).finish()
@@ -1982,6 +2006,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wccr")
@@ -2045,6 +2070,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wir").field("instruction", &self.instruction()).finish()
@@ -2080,6 +2106,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wpabr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wpabr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wpabr").field("alternate", &self.alternate()).finish()
@@ -2247,6 +2274,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wpccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wpccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wpccr")
@@ -2310,6 +2338,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wpir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wpir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wpir")
@@ -2371,6 +2400,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wptcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wptcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wptcr")
@@ -2416,6 +2446,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wtcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wtcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wtcr").field("dcyc", &self.dcyc()).finish()
@@ -2430,7 +2461,8 @@ and a half-word read must read DATA\\[15:0\\]."]
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Apms {
         #[doc = "Automatic status-polling mode is stopped only by abort or by disabling the XSPI."]
@@ -2461,7 +2493,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CcrAbmode {
         #[doc = "no alternate bytes"]
@@ -2500,7 +2533,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CcrAbsize {
         #[doc = "8-bit alternate bytes"]
@@ -2535,7 +2569,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CcrAdmode {
         #[doc = "no address"]
@@ -2575,7 +2610,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CcrAdsize {
         #[doc = "8-bit address"]
@@ -2610,7 +2646,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CcrDmode {
         #[doc = "no data"]
@@ -2651,7 +2688,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CcrImode {
         #[doc = "no instruction"]
@@ -2691,7 +2729,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CcrIsize {
         #[doc = "8-bit instruction"]
@@ -2726,7 +2765,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Ckmode {
         #[doc = "CLK must stay low while NCS is high (chip-select released), referred to as clock mode 0."]
@@ -2757,7 +2797,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Csbound {
         #[doc = "NCS boundary disabled"]
@@ -2817,7 +2858,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Csht {
         #[doc = "NCS stays high for at least 1 cycle between external device commands."]
@@ -2911,7 +2953,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cssel {
         #[doc = "NCS1 active"]
@@ -2942,7 +2985,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fmode {
         #[doc = "indirect-write mode"]
@@ -2977,7 +3021,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fthres {
         #[doc = "FTF is set if there are one or more free bytes available to be written to in the FIFO"]
@@ -3071,7 +3116,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lm {
         #[doc = "Variable initial latency"]
@@ -3118,6 +3164,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mask {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -3164,6 +3211,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Maxtran {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -3194,7 +3242,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msel {
         #[doc = "data exchanged over IO\\[3:0\\]"]
@@ -3229,7 +3278,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Mtyp {
         #[doc = "Micron mode, D0/D1 ordering in DTR 8-data-bit mode. Regular-command protocol in single-, dual-, quad-, and octal-SPI modes."]
@@ -3270,7 +3320,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pmm {
         #[doc = "AND-match mode, SMF is set if all the unmasked bits received from the device match the corresponding bits in the match register."]
@@ -3315,6 +3366,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Refresh {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -3345,7 +3397,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WccrAbmode {
         #[doc = "no alternate bytes"]
@@ -3385,7 +3438,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WccrDmode {
         #[doc = "no data"]
@@ -3427,7 +3481,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WpccrAbmode {
         #[doc = "no alternate bytes"]
@@ -3469,7 +3524,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum WpccrDmode {
         #[doc = "no data"]
@@ -3509,7 +3565,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wrapsize {
         #[doc = "wrapped reads are not supported by the memory."]
@@ -3549,7 +3606,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wzl {
         #[doc = "latency on write accesses"]

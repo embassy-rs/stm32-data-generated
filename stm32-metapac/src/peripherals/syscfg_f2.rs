@@ -78,6 +78,7 @@ pub mod regs {
             Cmpcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cmpcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cmpcr")
@@ -125,6 +126,7 @@ pub mod regs {
             Exticr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Exticr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exticr")
@@ -172,6 +174,7 @@ pub mod regs {
             Memrmp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Memrmp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Memrmp").field("mem_mode", &self.mem_mode()).finish()
@@ -207,6 +210,7 @@ pub mod regs {
             Pmc(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pmc {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pmc")
@@ -223,7 +227,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum MemMode {
         #[doc = "Main Flash memory mapped at 0x0000_0000"]

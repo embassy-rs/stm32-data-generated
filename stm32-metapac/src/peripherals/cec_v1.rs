@@ -116,6 +116,7 @@ pub mod regs {
             Cfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr")
@@ -247,6 +248,7 @@ pub mod regs {
             Csr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Csr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Csr")
@@ -374,6 +376,7 @@ pub mod regs {
             Esr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Esr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Esr")
@@ -427,6 +430,7 @@ pub mod regs {
             Oar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Oar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Oar").field("oa", &self.oa()).finish()
@@ -462,6 +466,7 @@ pub mod regs {
             Pres(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pres {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pres").field("presc", &self.presc()).finish()
@@ -497,6 +502,7 @@ pub mod regs {
             Rxd(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rxd {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rxd").field("rxd", &self.rxd()).finish()
@@ -532,6 +538,7 @@ pub mod regs {
             Txd(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Txd {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txd").field("txd", &self.txd()).finish()

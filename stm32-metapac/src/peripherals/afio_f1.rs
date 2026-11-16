@@ -90,6 +90,7 @@ pub mod regs {
             Evcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Evcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Evcr")
@@ -139,6 +140,7 @@ pub mod regs {
             Exticr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Exticr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exticr")
@@ -450,6 +452,7 @@ pub mod regs {
             Mapr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mapr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mapr")
@@ -691,6 +694,7 @@ pub mod regs {
             Mapr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Mapr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Mapr2")
@@ -737,7 +741,8 @@ pub mod regs {
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SwjCfg {
         #[doc = "Full SWJ (JTAG-DP + SW-DP) (Reset state)"]

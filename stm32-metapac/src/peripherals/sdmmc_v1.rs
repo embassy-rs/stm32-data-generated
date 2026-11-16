@@ -121,6 +121,7 @@ pub mod regs {
             Argr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Argr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Argr").field("cmdarg", &self.cmdarg()).finish()
@@ -228,6 +229,7 @@ pub mod regs {
             Clkcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Clkcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Clkcr")
@@ -341,6 +343,7 @@ pub mod regs {
             Cmdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cmdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cmdr")
@@ -392,6 +395,7 @@ pub mod regs {
             Dcntr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dcntr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dcntr").field("datacount", &self.datacount()).finish()
@@ -523,6 +527,7 @@ pub mod regs {
             Dctrl(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dctrl {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dctrl")
@@ -580,6 +585,7 @@ pub mod regs {
             Dlenr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dlenr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dlenr").field("datalength", &self.datalength()).finish()
@@ -615,6 +621,7 @@ pub mod regs {
             Dtimer(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dtimer {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dtimer").field("datatime", &self.datatime()).finish()
@@ -650,6 +657,7 @@ pub mod regs {
             Fifocnt(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fifocnt {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fifocnt").field("fifocount", &self.fifocount()).finish()
@@ -685,6 +693,7 @@ pub mod regs {
             Fifor(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fifor {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fifor").field("fifo_data", &self.fifo_data()).finish()
@@ -852,6 +861,7 @@ pub mod regs {
             Icr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Icr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Icr")
@@ -1179,6 +1189,7 @@ pub mod regs {
             Maskr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Maskr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Maskr")
@@ -1264,6 +1275,7 @@ pub mod regs {
             Power(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Power {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Power").field("pwrctrl", &self.pwrctrl()).finish()
@@ -1299,6 +1311,7 @@ pub mod regs {
             ResPxR(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for ResPxR {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("ResPxR")
@@ -1336,6 +1349,7 @@ pub mod regs {
             Respcmdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Respcmdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Respcmdr").field("respcmd", &self.respcmd()).finish()
@@ -1635,6 +1649,7 @@ pub mod regs {
             Star(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Star {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Star")

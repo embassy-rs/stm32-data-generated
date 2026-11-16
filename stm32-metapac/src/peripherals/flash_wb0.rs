@@ -127,6 +127,7 @@ pub mod regs {
             Address(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Address {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Address")
@@ -170,6 +171,7 @@ pub mod regs {
             Command(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Command {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Command").field("command", &self.command()).finish()
@@ -229,6 +231,7 @@ pub mod regs {
             Config(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Config {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Config")
@@ -274,6 +277,7 @@ pub mod regs {
             Data0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Data0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Data0").field("data0", &self.data0()).finish()
@@ -309,6 +313,7 @@ pub mod regs {
             Data1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Data1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Data1").field("data1", &self.data1()).finish()
@@ -344,6 +349,7 @@ pub mod regs {
             Data2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Data2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Data2").field("data2", &self.data2()).finish()
@@ -379,6 +385,7 @@ pub mod regs {
             Data3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Data3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Data3").field("data3", &self.data3()).finish()
@@ -474,6 +481,7 @@ pub mod regs {
             Irqmask(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Irqmask {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Irqmask")
@@ -585,6 +593,7 @@ pub mod regs {
             Irqraw(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Irqraw {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Irqraw")
@@ -696,6 +705,7 @@ pub mod regs {
             Irqstat(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Irqstat {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Irqstat")
@@ -747,6 +757,7 @@ pub mod regs {
             Lfsrval(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lfsrval {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lfsrval").field("lfsrval", &self.lfsrval()).finish()
@@ -796,6 +807,7 @@ content."]
             Pageprot0(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pageprot0 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pageprot0")
@@ -855,6 +867,7 @@ content."]
             Pageprot1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pageprot1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pageprot1")
@@ -946,6 +959,7 @@ content."]
             Size(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Size {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Size")

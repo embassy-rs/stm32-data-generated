@@ -205,6 +205,7 @@ pub mod regs {
             Acr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Acr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Acr")
@@ -260,6 +261,7 @@ pub mod regs {
             Boot4Cur(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Boot4Cur {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Boot4Cur")
@@ -315,6 +317,7 @@ pub mod regs {
             Boot4Prg(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Boot4Prg {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Boot4Prg")
@@ -370,6 +373,7 @@ pub mod regs {
             BootCurr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for BootCurr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("BootCurr")
@@ -425,6 +429,7 @@ pub mod regs {
             BootPrgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for BootPrgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("BootPrgr")
@@ -600,6 +605,7 @@ pub mod regs {
             Ccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccr")
@@ -903,6 +909,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -1068,6 +1075,7 @@ pub mod regs {
             Crccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Crccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Crccr")
@@ -1123,6 +1131,7 @@ pub mod regs {
             Crcdatar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Crcdatar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Crcdatar").field("crc_data", &self.crc_data()).finish()
@@ -1158,6 +1167,7 @@ pub mod regs {
             Crceaddr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Crceaddr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Crceaddr")
@@ -1195,6 +1205,7 @@ pub mod regs {
             Crcsaddr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Crcsaddr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Crcsaddr")
@@ -1232,6 +1243,7 @@ pub mod regs {
             Far(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Far {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Far")
@@ -1269,6 +1281,7 @@ pub mod regs {
             Optccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Optccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Optccr")
@@ -1354,6 +1367,7 @@ pub mod regs {
             Optcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Optcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Optcr")
@@ -1595,6 +1609,7 @@ pub mod regs {
             OptsrCur(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for OptsrCur {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("OptsrCur")
@@ -1836,6 +1851,7 @@ pub mod regs {
             OptsrPrg(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for OptsrPrg {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("OptsrPrg")
@@ -1929,6 +1945,7 @@ pub mod regs {
             PrarCur(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for PrarCur {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("PrarCur")
@@ -1998,6 +2015,7 @@ pub mod regs {
             PrarPrg(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for PrarPrg {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("PrarPrg")
@@ -2067,6 +2085,7 @@ pub mod regs {
             ScarCur(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for ScarCur {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("ScarCur")
@@ -2136,6 +2155,7 @@ pub mod regs {
             ScarPrg(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for ScarPrg {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("ScarPrg")
@@ -2361,6 +2381,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -2432,6 +2453,7 @@ pub mod regs {
             WpsnCurr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for WpsnCurr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("WpsnCurr").field("wrp_sn", &self.wrp_sn()).finish()
@@ -2467,6 +2489,7 @@ pub mod regs {
             WpsnPrgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for WpsnPrgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("WpsnPrgr").field("wrp_sn", &self.wrp_sn()).finish()

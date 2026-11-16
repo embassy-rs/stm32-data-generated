@@ -179,6 +179,7 @@ pub mod regs {
             ApUnlock(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for ApUnlock {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("ApUnlock")
@@ -264,6 +265,7 @@ pub mod regs {
             Dbgcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dbgcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dbgcr")
@@ -313,6 +315,7 @@ pub mod regs {
             EpochSelr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for EpochSelr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("EpochSelr")
@@ -350,6 +353,7 @@ pub mod regs {
             Fvr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fvr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fvr").field("fv", &self.fv()).finish()
@@ -385,6 +389,7 @@ pub mod regs {
             Glockr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Glockr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Glockr").field("glock", &self.glock()).finish()
@@ -420,6 +425,7 @@ pub mod regs {
             Hdplcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hdplcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hdplcr").field("incr_hdpl", &self.incr_hdpl()).finish()
@@ -455,6 +461,7 @@ pub mod regs {
             Hdplsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hdplsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hdplsr").field("hdpl", &self.hdpl()).finish()
@@ -494,6 +501,7 @@ pub mod regs {
             Lockr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lockr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lockr")
@@ -597,6 +605,7 @@ pub mod regs {
             Nextlr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Nextlr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Nextlr").field("nextl", &self.nextl()).finish()
@@ -668,6 +677,7 @@ pub mod regs {
             Otpcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Otpcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Otpcr")
@@ -763,6 +773,7 @@ pub mod regs {
             Otpsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Otpsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Otpsr")
@@ -816,6 +827,7 @@ pub mod regs {
             Sfsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sfsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sfsr")
@@ -943,6 +955,7 @@ pub mod regs {
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -988,6 +1001,7 @@ pub mod regs {
             Unmapr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Unmapr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Unmapr").field("unmap", &self.unmap()).finish()
@@ -1027,6 +1041,7 @@ pub mod regs {
             Vldr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Vldr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Vldr")
@@ -1130,6 +1145,7 @@ pub mod regs {
             Wdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wdr").field("wdata", &self.wdata()).finish()

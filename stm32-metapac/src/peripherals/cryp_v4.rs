@@ -285,6 +285,7 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -358,6 +359,7 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
             Dmacr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dmacr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dmacr")
@@ -413,6 +415,7 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
             Imscr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Imscr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Imscr")
@@ -468,6 +471,7 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
             Misr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Misr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Misr")
@@ -523,6 +527,7 @@ different from zero. Others: Reserved Attempts to write the bitfield are ignored
             Risr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Risr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Risr")
@@ -642,6 +647,7 @@ is different from zero, the BUSY flag is automatically set by CRYP. When the key
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -674,7 +680,8 @@ is different from zero, the BUSY flag is automatically set by CRYP. When the key
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Kmod {
         #[doc = "Normal-key mode. Key registers are freely usable."]

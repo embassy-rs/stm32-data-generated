@@ -378,6 +378,7 @@ pub mod regs {
             Cccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cccr")
@@ -449,6 +450,7 @@ of CCCR register are set to 1"]
             Ckdiv(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ckdiv {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ckdiv").field("pdiv", &self.pdiv()).finish()
@@ -544,6 +546,7 @@ of CCCR register are set to 1"]
             Crel(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Crel {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Crel")
@@ -643,6 +646,7 @@ of CCCR register are set to 1"]
             Dbtp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dbtp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dbtp")
@@ -728,6 +732,7 @@ of CCCR register are set to 1"]
             Ecr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ecr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ecr")
@@ -775,6 +780,7 @@ of CCCR register are set to 1"]
             Endn(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Endn {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Endn").field("etv", &self.etv()).finish()
@@ -852,6 +858,7 @@ of CCCR register are set to 1"]
             Hpms(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hpms {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hpms")
@@ -1151,6 +1158,7 @@ of CCCR register are set to 1"]
             Ie(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ie {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ie")
@@ -1250,6 +1258,7 @@ of CCCR register are set to 1"]
             Ile(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ile {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ile")
@@ -1357,6 +1366,7 @@ of CCCR register are set to 1"]
             Ils(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ils {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ils")
@@ -1662,6 +1672,7 @@ of CCCR register are set to 1"]
             Ir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ir")
@@ -1797,6 +1808,7 @@ of CCCR register are set to 1"]
             Nbtp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Nbtp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Nbtp")
@@ -1964,6 +1976,7 @@ of CCCR register are set to 1"]
             Psr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Psr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Psr")
@@ -2041,6 +2054,7 @@ of FDCAN_CCCR register are set to 1"]
             Rwd(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rwd {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rwd")
@@ -2081,6 +2095,7 @@ to FAI + 1 and update the FIFO X fill level RXFS\\[FFL\\]"]
             Rxfa(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rxfa {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rxfa").field("fai", &self.fai()).finish()
@@ -2166,6 +2181,7 @@ is reset, this bit is also reset"]
             Rxfs(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rxfs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rxfs")
@@ -2331,6 +2347,7 @@ of CCCR register are set to 1."]
             Rxgfc(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rxgfc {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rxgfc")
@@ -2406,6 +2423,7 @@ of CCCR register are set to 1"]
             Tdcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tdcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tdcr")
@@ -2468,6 +2486,7 @@ of CCCR register are set to 1"]
             Test(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Test {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Test")
@@ -2547,6 +2566,7 @@ of CCCR register are set to 1"]
             Tocc(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tocc {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tocc")
@@ -2594,6 +2614,7 @@ depending on the configuration of TSCC.TCP. When decremented to 0, interrupt fla
             Tocv(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tocv {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tocv").field("toc", &self.toc()).finish()
@@ -2649,6 +2670,7 @@ of CCCR register are set to 1"]
             Tscc(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tscc {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tscc")
@@ -2691,6 +2713,7 @@ depending on the configuration of TSCC\\[TCP\\]. A wrap around sets interrupt fl
             Tscv(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tscv {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tscv").field("tsc", &self.tsc()).finish()
@@ -2730,6 +2753,7 @@ depending on the configuration of TSCC\\[TCP\\]. A wrap around sets interrupt fl
             Txbar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Txbar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txbar")
@@ -2779,6 +2803,7 @@ of CCCR register are set to 1"]
             Txbc(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Txbc {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txbc").field("tfqm", &self.tfqm()).finish()
@@ -2818,6 +2843,7 @@ of CCCR register are set to 1"]
             Txbcf(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Txbcf {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txbcf")
@@ -2867,6 +2893,7 @@ of CCCR register are set to 1"]
             Txbcie(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Txbcie {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txbcie")
@@ -2916,6 +2943,7 @@ of CCCR register are set to 1"]
             Txbcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Txbcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txbcr")
@@ -2965,6 +2993,7 @@ of CCCR register are set to 1"]
             Txbrp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Txbrp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txbrp")
@@ -3014,6 +3043,7 @@ of CCCR register are set to 1"]
             Txbtie(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Txbtie {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txbtie")
@@ -3063,6 +3093,7 @@ of CCCR register are set to 1"]
             Txbto(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Txbto {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txbto")
@@ -3110,6 +3141,7 @@ to EFAI + 1 and updates the FIFO 0 fill level TXEFS\\[EFFL\\]"]
             Txefa(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Txefa {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txefa").field("efai", &self.efai()).finish()
@@ -3195,6 +3227,7 @@ is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIF
             Txefs(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Txefs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txefs")
@@ -3282,6 +3315,7 @@ is reset, this bit is also reset. 0 No Tx event FIFO element lost 1 Tx event FIF
             Txfqs(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Txfqs {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Txfqs")
@@ -3333,6 +3367,7 @@ of CCCR register are set to 1"]
             Xidam(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Xidam {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Xidam").field("eidm", &self.eidm()).finish()
@@ -3347,7 +3382,8 @@ of CCCR register are set to 1"]
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Act {
         #[doc = "Synchronizing: node is synchronizing on CAN communication."]
@@ -3382,7 +3418,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Anfe {
         #[doc = "Accept in Rx FIFO 0"]
@@ -3416,7 +3453,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Anfs {
         #[doc = "Accept in Rx FIFO 0"]
@@ -3450,7 +3488,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lec {
         #[doc = "No Error: No error occurred since LEC has been reset by successful reception or transmission."]
@@ -3493,7 +3532,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msi {
         #[doc = "No FIFO selected"]
@@ -3528,7 +3568,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pdiv {
         #[doc = "Divide by 1"]
@@ -3587,7 +3628,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tfqm {
         #[doc = "Tx FIFO operation"]
@@ -3618,7 +3660,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tos {
         #[doc = "Continuous operation"]
@@ -3653,7 +3696,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tss {
         #[doc = "Timestamp counter value always 0x0000"]
@@ -3687,7 +3731,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Tx {
         #[doc = "Reset value, FDCANx_TX TX is controlled by the CAN core, updated at the end of the CAN bit time"]

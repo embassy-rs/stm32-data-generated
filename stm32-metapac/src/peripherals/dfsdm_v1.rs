@@ -694,6 +694,7 @@ bit in the DFSDM_FLTxAWSR register."]
             Awcfr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Awcfr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Awcfr")
@@ -754,6 +755,7 @@ are not taken into comparison in this case."]
             Awhtr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Awhtr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Awhtr")
@@ -814,6 +816,7 @@ are not taken into comparison in this case."]
             Awltr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Awltr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Awltr")
@@ -897,6 +900,7 @@ are not taken into comparison in this case."]
             Awscdr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Awscdr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Awscdr")
@@ -959,6 +963,7 @@ bit in the DFSDM_FLTxAWCFR register."]
             Awsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Awsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Awsr")
@@ -1136,6 +1141,7 @@ part is read as next sample). 2: Dual: input data in DFSDM_CHyDATINR register ar
             Cfgr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr1")
@@ -1209,6 +1215,7 @@ part is read as next sample). 2: Dual: input data in DFSDM_CHyDATINR register ar
             Cfgr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cfgr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cfgr2")
@@ -1263,6 +1270,7 @@ part is read as next sample). 2: Dual: input data in DFSDM_CHyDATINR register ar
             Cnvtimr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cnvtimr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cnvtimr").field("cnvcnt", &self.cnvcnt()).finish()
@@ -1459,6 +1467,7 @@ part is read as next sample). 2: Dual: input data in DFSDM_CHyDATINR register ar
             Cr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr1")
@@ -1633,6 +1642,7 @@ in DFSDM_FLTxISR. Note: CKABIE is present only in DFSDM_FLT0CR2 register (filter
             Cr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr2")
@@ -1716,6 +1726,7 @@ is in the16-bit signed format."]
             Datinr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Datinr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Datinr")
@@ -1764,6 +1775,7 @@ is not zero. 0-63: Defines the number of serial input samples that will be skipp
             Dlyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dlyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dlyr").field("plsskp", &self.plsskp()).finish()
@@ -1812,6 +1824,7 @@ bits are reset to value (0x800000) by reading of this register."]
             Exmax(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Exmax {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exmax")
@@ -1868,6 +1881,7 @@ bits are reset to value (0x7FFFFF) by reading of this register."]
             Exmin(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Exmin {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Exmin")
@@ -1936,6 +1950,7 @@ bits are reset to value (0x7FFFFF) by reading of this register."]
             Fcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fcr")
@@ -1993,6 +2008,7 @@ bits are reset to value (0x7FFFFF) by reading of this register."]
             Hwcfgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hwcfgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hwcfgr")
@@ -2074,6 +2090,7 @@ is present only in DFSDM_FLT0ICR register (filter x=0)."]
             Icr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Icr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Icr")
@@ -2123,6 +2140,7 @@ is present only in DFSDM_FLT0ICR register (filter x=0)."]
             Ipidr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ipidr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ipidr").field("id", &self.id()).finish()
@@ -2269,6 +2287,7 @@ is present only in DFSDM_FLT0ISR register (filter x=0)."]
             Isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Isr")
@@ -2325,6 +2344,7 @@ is present only in DFSDM_FLT0ISR register (filter x=0)."]
             Jchgr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Jchgr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Jchgr").field("jchg", &self.jchg()).finish()
@@ -2375,6 +2395,7 @@ holds the data that corresponds to the channel indicated by JDATACH\\[2:0\\]."]
             Jdatar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Jdatar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Jdatar")
@@ -2449,6 +2470,7 @@ was delayed due to an injected channel trigger during the conversion."]
             Rdatar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rdatar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rdatar")
@@ -2494,6 +2516,7 @@ was delayed due to an injected channel trigger during the conversion."]
             Sidr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sidr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sidr").field("sid", &self.sid()).finish()
@@ -2541,6 +2564,7 @@ was delayed due to an injected channel trigger during the conversion."]
             Verr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Verr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Verr")
@@ -2584,6 +2608,7 @@ was delayed due to an injected channel trigger during the conversion."]
             Wdatr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wdatr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wdatr").field("wdata", &self.wdata()).finish()

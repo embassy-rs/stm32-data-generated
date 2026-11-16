@@ -196,6 +196,7 @@ pub mod regs {
             Abr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Abr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Abr").field("alternate", &self.alternate()).finish()
@@ -232,6 +233,7 @@ is forced to 1. Writes to this field are ignored when BUSY├é┬á=├é┬á1
             Ar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ar").field("address", &self.address()).finish()
@@ -291,6 +293,7 @@ is forced to 1. Writes to this field are ignored when BUSY├é┬á=├é┬á1
             Calfcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Calfcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Calfcr")
@@ -348,6 +351,7 @@ is forced to 1. Writes to this field are ignored when BUSY├é┬á=├é┬á1
             Calmr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Calmr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Calmr")
@@ -403,6 +407,7 @@ is forced to 1. Writes to this field are ignored when BUSY├é┬á=├é┬á1
             Calsir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Calsir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Calsir")
@@ -458,6 +463,7 @@ is forced to 1. Writes to this field are ignored when BUSY├é┬á=├é┬á1
             Calsor(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Calsor {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Calsor")
@@ -645,6 +651,7 @@ is forced to 1. Writes to this field are ignored when BUSY├é┬á=├é┬á1
             Ccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccr")
@@ -904,6 +911,7 @@ These bits are ignored when in dual-octal configuration (data on 8 bits and DMM�
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -1041,6 +1049,7 @@ for memories different from Micron. Others: Reserved."]
             Dcr1(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dcr1 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dcr1")
@@ -1104,6 +1113,7 @@ for memories different from Micron. Others: Reserved."]
             Dcr2(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dcr2 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dcr2")
@@ -1159,6 +1169,7 @@ for memories different from Micron. Others: Reserved."]
             Dcr3(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dcr3 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dcr3")
@@ -1202,6 +1213,7 @@ for memories different from Micron. Others: Reserved."]
             Dcr4(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dcr4 {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dcr4").field("refresh", &self.refresh()).finish()
@@ -1239,6 +1251,7 @@ is stuck at 1 in Dual-memory mode (DMM├é┬á=├é┬á1) even when 0 is wri
             Dlr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dlr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dlr").field("dl", &self.dl()).finish()
@@ -1275,6 +1288,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Dr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Dr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Dr").field("data", &self.data()).finish()
@@ -1345,6 +1359,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Fcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fcr")
@@ -1428,6 +1443,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Hlcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hlcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hlcr")
@@ -1475,6 +1491,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Ir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ir").field("instruction", &self.instruction()).finish()
@@ -1510,6 +1527,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Lptr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Lptr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Lptr").field("timeout", &self.timeout()).finish()
@@ -1545,6 +1563,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Pir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Pir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Pir").field("interval", &self.interval()).finish()
@@ -1580,6 +1599,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Psmar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Psmar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Psmar").field("match_", &self.match_()).finish()
@@ -1615,6 +1635,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Psmkr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Psmkr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Psmkr").field("mask", &self.mask()).finish()
@@ -1721,6 +1742,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -1798,6 +1820,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Tcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Tcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Tcr")
@@ -1843,6 +1866,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wabr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wabr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wabr").field("alternate", &self.alternate()).finish()
@@ -2010,6 +2034,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wccr")
@@ -2073,6 +2098,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wir").field("instruction", &self.instruction()).finish()
@@ -2108,6 +2134,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wpabr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wpabr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wpabr").field("alternate", &self.alternate()).finish()
@@ -2275,6 +2302,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wpccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wpccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wpccr")
@@ -2338,6 +2366,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wpir(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wpir {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wpir")
@@ -2399,6 +2428,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wptcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wptcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wptcr")
@@ -2444,6 +2474,7 @@ and a half-word read must read DATA\\[15:0\\]."]
             Wtcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wtcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wtcr").field("dcyc", &self.dcyc()).finish()

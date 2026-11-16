@@ -238,6 +238,7 @@ pub mod regs {
             Acr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Acr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Acr")
@@ -389,6 +390,7 @@ pub mod regs {
             Cr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Cr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Cr")
@@ -532,6 +534,7 @@ pub mod regs {
             Crccr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Crccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Crccr")
@@ -587,6 +590,7 @@ pub mod regs {
             Crcdatar(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Crcdatar {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Crcdatar").field("crc_data", &self.crc_data()).finish()
@@ -624,6 +628,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Crceaddr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Crceaddr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Crceaddr")
@@ -663,6 +668,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Crcsaddr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Crcsaddr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Crcsaddr")
@@ -700,6 +706,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Eccdfaddr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Eccdfaddr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Eccdfaddr").field("ded_fadd", &self.ded_fadd()).finish()
@@ -735,6 +742,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Eccsfaddr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Eccsfaddr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Eccsfaddr").field("sec_fadd", &self.sec_fadd()).finish()
@@ -770,6 +778,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Epochsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Epochsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Epochsr").field("epoch", &self.epoch()).finish()
@@ -805,6 +814,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Epochsrp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Epochsrp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Epochsrp").field("epoch", &self.epoch()).finish()
@@ -840,6 +850,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Fcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Fcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Fcr").field("rcheckf", &self.rcheckf()).finish()
@@ -887,6 +898,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Hdpsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hdpsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hdpsr")
@@ -942,6 +954,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Hdpsrp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Hdpsrp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Hdpsrp")
@@ -1105,6 +1118,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Icr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Icr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Icr")
@@ -1286,6 +1300,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Ier(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Ier {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ier")
@@ -1467,6 +1482,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Isr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Isr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Isr")
@@ -1528,6 +1544,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Nvsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Nvsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Nvsr").field("nvstate", &self.nvstate()).finish()
@@ -1563,6 +1580,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Nvsrp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Nvsrp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Nvsrp").field("nvstate", &self.nvstate()).finish()
@@ -1646,6 +1664,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Obkcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Obkcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Obkcr")
@@ -1803,6 +1822,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Obw1sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Obw1sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Obw1sr")
@@ -1958,6 +1978,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Obw1srp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Obw1srp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Obw1srp")
@@ -2051,6 +2072,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Obw2sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Obw2sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Obw2sr")
@@ -2134,6 +2156,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Obw2srp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Obw2srp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Obw2srp")
@@ -2229,6 +2252,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Optcr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Optcr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Optcr")
@@ -2302,6 +2326,7 @@ of the address are set by hardware to 0 (minimum burst size= 64 bytes). The addr
             Opticr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Opticr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Opticr")
@@ -2375,6 +2400,7 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
             Optisr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Optisr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Optisr")
@@ -2420,6 +2446,7 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
             Optkeyr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Optkeyr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Optkeyr").field("ocukey", &self.ocukey()).finish()
@@ -2459,6 +2486,7 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
             Otplsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Otplsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Otplsr").field("otpl", &self.otpl()).finish()
@@ -2494,6 +2522,7 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
             Otplsrp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Otplsrp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Otplsrp").field("otpl", &self.otpl()).finish()
@@ -2553,6 +2582,7 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
             Rotsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rotsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rotsr")
@@ -2622,6 +2652,7 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
             Rotsrp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Rotsrp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Rotsrp")
@@ -2751,6 +2782,7 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
             Sr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Sr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sr")
@@ -2806,6 +2838,7 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
             Wrpsr(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wrpsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wrpsr").field("wrps", &self.wrps()).finish()
@@ -2841,6 +2874,7 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
             Wrpsrp(0)
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for Wrpsrp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Wrpsrp").field("wrps", &self.wrps()).finish()
@@ -2855,7 +2889,8 @@ and KEYSIZE bit in SAES_CR register. It also happen when an ECC dual error detec
 }
 pub mod vals {
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum BorLev {
         #[doc = "BOR OFF, POR/PDR reset threshold level is applied."]
@@ -2890,7 +2925,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum CrcBurst {
         #[doc = "every burst has a size of 4 Flash words (64 Bytes)."]
@@ -2945,6 +2981,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for DbgAuth {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -2995,6 +3032,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for IrotSelect {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -3025,7 +3063,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Nextkl {
         #[doc = "OBKINDEX represents the index of the option byte key stored for the hide protection level indicated in SBS_HDPLSR."]
@@ -3074,6 +3113,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for NvsrNvstate {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -3122,6 +3162,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for NvsrpNvstate {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
@@ -3154,7 +3195,8 @@ pub mod vals {
         }
     }
     #[repr(u8)]
-    #[derive(Copy, Clone, Debug, Eq, PartialEq, Ord, PartialOrd)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Obksize {
         #[doc = "Key size is 32 bits."]
@@ -3203,6 +3245,7 @@ pub mod vals {
             self.0
         }
     }
+    #[cfg(feature = "debug")]
     impl core::fmt::Debug for OemProvd {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {

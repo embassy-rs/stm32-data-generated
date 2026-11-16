@@ -304,6 +304,11 @@ impl EthernetMac {
     pub const fn macmdiodr(self) -> crate::common::Reg<regs::Macmdiodr, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0204usize) as _) }
     }
+    #[doc = "ARP address register"]
+    #[inline(always)]
+    pub const fn macarpar(self) -> crate::common::Reg<regs::Macarpar, crate::common::RW> {
+        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0210usize) as _) }
+    }
     #[doc = "Address 0 high register"]
     #[inline(always)]
     pub const fn maca0hr(self) -> crate::common::Reg<regs::Maca0hr, crate::common::RW> {
@@ -466,11 +471,6 @@ impl EthernetMac {
     #[inline(always)]
     pub const fn macl3a31r(self) -> crate::common::Reg<regs::Macl3a31r, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x094cusize) as _) }
-    }
-    #[doc = "ARP address register"]
-    #[inline(always)]
-    pub const fn macarpar(self) -> crate::common::Reg<regs::Macarpar, crate::common::RW> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0ae0usize) as _) }
     }
     #[doc = "Timestamp control Register"]
     #[inline(always)]

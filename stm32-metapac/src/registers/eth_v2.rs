@@ -560,6 +560,17 @@ pub(crate) static REGISTERS: IR = IR {
                     }),
                 },
                 BlockItem {
+                    name: "macarpar",
+                    description: Some("ARP address register"),
+                    array: None,
+                    byte_offset: 0x210,
+                    inner: BlockItemInner::Register(Register {
+                        access: Access::ReadWrite,
+                        bit_size: 32,
+                        fieldset: Some("Macarpar"),
+                    }),
+                },
+                BlockItem {
                     name: "maca0hr",
                     description: Some("Address 0 high register"),
                     array: None,
@@ -898,17 +909,6 @@ pub(crate) static REGISTERS: IR = IR {
                         access: Access::ReadWrite,
                         bit_size: 32,
                         fieldset: Some("Macl3a31r"),
-                    }),
-                },
-                BlockItem {
-                    name: "macarpar",
-                    description: Some("ARP address register"),
-                    array: None,
-                    byte_offset: 0xae0,
-                    inner: BlockItemInner::Register(Register {
-                        access: Access::ReadWrite,
-                        bit_size: 32,
-                        fieldset: Some("Macarpar"),
                     }),
                 },
                 BlockItem {

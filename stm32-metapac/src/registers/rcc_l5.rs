@@ -2877,7 +2877,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Lptimsel"),
                 },
                 Field {
                     name: "lptim2sel",
@@ -2885,7 +2885,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Lptimsel"),
                 },
                 Field {
                     name: "lptim3sel",
@@ -2893,7 +2893,7 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 2,
                     array: None,
-                    enumm: None,
+                    enumm: Some("Lptimsel"),
                 },
                 Field {
                     name: "fdcansel",
@@ -4115,6 +4115,33 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "Div8",
                     description: Some("SYSCLK divided by 8"),
                     value: 10,
+                },
+            ],
+        },
+        Enum {
+            name: "Lptimsel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Hsi",
+                    description: Some("HSI16 clock selected"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Lse",
+                    description: Some("LSE clock selected"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "Lsi",
+                    description: Some("LSI clock selected"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Pclk1",
+                    description: Some("PCLK1 clock selected"),
+                    value: 0,
                 },
             ],
         },

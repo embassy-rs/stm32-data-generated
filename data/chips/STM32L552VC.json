@@ -2757,7 +2757,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR",
+              "field": "LPTIM1SEL"
+            },
             "enable": {
               "register": "APB1ENR1",
               "field": "LPTIM1EN"
@@ -2832,7 +2835,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR",
+              "field": "LPTIM2SEL"
+            },
             "enable": {
               "register": "APB1ENR2",
               "field": "LPTIM2EN"
@@ -2907,7 +2913,10 @@
           },
           "rcc": {
             "bus_clock": "PCLK1",
-            "kernel_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CCIPR",
+              "field": "LPTIM3SEL"
+            },
             "enable": {
               "register": "APB1ENR2",
               "field": "LPTIM3EN"

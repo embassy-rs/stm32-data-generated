@@ -375,7 +375,7 @@ pub(crate) static REGISTERS: IR = IR {
             fields: &[Field {
                 name: "r1mode",
                 description: Some("Main regular range 1 mode"),
-                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
                 bit_size: 1,
                 array: None,
                 enumm: None,

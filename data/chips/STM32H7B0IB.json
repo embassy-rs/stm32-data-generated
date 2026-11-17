@@ -3457,14 +3457,14 @@
             "block": "CRC"
           },
           "rcc": {
-            "bus_clock": "HCLK4",
-            "kernel_clock": "HCLK4",
+            "bus_clock": "HCLK1",
+            "kernel_clock": "HCLK1",
             "enable": {
-              "register": "AHB4ENR",
+              "register": "AHB1ENR",
               "field": "CRCEN"
             },
             "reset": {
-              "register": "AHB4RSTR",
+              "register": "AHB1RSTR",
               "field": "CRCRST"
             }
           }
@@ -6053,14 +6053,14 @@
           "name": "HSEM",
           "address": 1208092672,
           "rcc": {
-            "bus_clock": "HCLK4",
-            "kernel_clock": "HCLK4",
+            "bus_clock": "HCLK2",
+            "kernel_clock": "HCLK2",
             "enable": {
-              "register": "AHB4ENR",
+              "register": "AHB2ENR",
               "field": "HSEMEN"
             },
             "reset": {
-              "register": "AHB4RSTR",
+              "register": "AHB2RSTR",
               "field": "HSEMRST"
             }
           },
@@ -8328,7 +8328,7 @@
           "address": 1476411392,
           "registers": {
             "kind": "rtc",
-            "version": "v2_h7",
+            "version": "v3_h7ab",
             "block": "RTC"
           },
           "rcc": {

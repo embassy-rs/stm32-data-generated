@@ -821,7 +821,7 @@ pub mod pwr;
 pub mod rcc;
 #[path = "../../peripherals/rng_v2.rs"]
 pub mod rng;
-#[path = "../../peripherals/rtc_v2_h7.rs"]
+#[path = "../../peripherals/rtc_v3_h7ab.rs"]
 pub mod rtc;
 #[path = "../../peripherals/sai_v4_4pdm.rs"]
 pub mod sai;

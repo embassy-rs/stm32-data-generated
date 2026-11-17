@@ -572,13 +572,13 @@ pub mod regs {
         #[must_use]
         #[inline(always)]
         pub const fn r1mode(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
+            let val = (self.0 >> 8usize) & 0x01;
             val != 0
         }
         #[doc = "Main regular range 1 mode"]
         #[inline(always)]
         pub const fn set_r1mode(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
+            self.0 = (self.0 & !(0x01 << 8usize)) | (((val as u32) & 0x01) << 8usize);
         }
     }
     impl Default for Cr5 {

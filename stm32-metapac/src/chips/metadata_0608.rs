@@ -888,14 +888,14 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             ir: &crc::REGISTERS,
         }),
         rcc: Some(PeripheralRcc {
-            bus_clock: "HCLK4",
-            kernel_clock: Clock("HCLK4"),
+            bus_clock: "HCLK1",
+            kernel_clock: Clock("HCLK1"),
             enable: Some(PeripheralRccRegister {
-                register: "AHB4ENR",
+                register: "AHB1ENR",
                 field: "CRCEN",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB4RSTR",
+                register: "AHB1RSTR",
                 field: "CRCRST",
             }),
             stop_mode: StopMode::Stop1,
@@ -3714,14 +3714,14 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x48020800,
         registers: None,
         rcc: Some(PeripheralRcc {
-            bus_clock: "HCLK4",
-            kernel_clock: Clock("HCLK4"),
+            bus_clock: "HCLK2",
+            kernel_clock: Clock("HCLK2"),
             enable: Some(PeripheralRccRegister {
-                register: "AHB4ENR",
+                register: "AHB2ENR",
                 field: "HSEMEN",
             }),
             reset: Some(PeripheralRccRegister {
-                register: "AHB4RSTR",
+                register: "AHB2RSTR",
                 field: "HSEMRST",
             }),
             stop_mode: StopMode::Stop1,
@@ -6340,7 +6340,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0x58004000,
         registers: Some(PeripheralRegisters {
             kind: "rtc",
-            version: "v2_h7",
+            version: "v3_h7ab",
             block: "RTC",
             ir: &rtc::REGISTERS,
         }),
@@ -12840,7 +12840,7 @@ pub mod pwr;
 pub mod rcc;
 #[path = "../registers/rng_v2.rs"]
 pub mod rng;
-#[path = "../registers/rtc_v2_h7.rs"]
+#[path = "../registers/rtc_v3_h7ab.rs"]
 pub mod rtc;
 #[path = "../registers/sai_v4_4pdm.rs"]
 pub mod sai;

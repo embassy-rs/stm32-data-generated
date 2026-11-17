@@ -342,6 +342,12 @@
         "bit_size": 1
       },
       {
+        "name": "CRCEN",
+        "description": "CRC peripheral clock enable",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
         "name": "ARTEN",
         "description": "ART Clock Enable",
         "bit_offset": 14,
@@ -410,6 +416,12 @@
         "name": "ADC12LPEN",
         "description": "ADC1/2 Peripheral Clocks Enable During CSleep Mode",
         "bit_offset": 5,
+        "bit_size": 1
+      },
+      {
+        "name": "CRCLPEN",
+        "description": "CRC peripheral clock enable during CSleep mode",
+        "bit_offset": 9,
         "bit_size": 1
       },
       {
@@ -484,6 +496,12 @@
         "bit_size": 1
       },
       {
+        "name": "CRCRST",
+        "description": "CRC block reset",
+        "bit_offset": 9,
+        "bit_size": 1
+      },
+      {
         "name": "ARTRST",
         "description": "ART block reset",
         "bit_offset": 14,
@@ -516,6 +534,12 @@
         "name": "DCMIEN",
         "description": "DCMI peripheral clock",
         "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "HSEMEN",
+        "description": "HSEM peripheral clock enable",
+        "bit_offset": 2,
         "bit_size": 1
       },
       {
@@ -658,6 +682,12 @@
         "name": "DCMIRST",
         "description": "DCMI block reset",
         "bit_offset": 0,
+        "bit_size": 1
+      },
+      {
+        "name": "HSEMRST",
+        "description": "HSEM block reset",
+        "bit_offset": 2,
         "bit_size": 1
       },
       {
@@ -1029,12 +1059,6 @@
         "bit_size": 1
       },
       {
-        "name": "CRCEN",
-        "description": "CRC peripheral clock enable",
-        "bit_offset": 19,
-        "bit_size": 1
-      },
-      {
         "name": "BDMA2EN",
         "description": "BDMA2 and DMAMUX2 Clock Enable",
         "bit_offset": 21,
@@ -1050,12 +1074,6 @@
         "name": "ADC3EN",
         "description": "ADC3 Peripheral Clocks Enable",
         "bit_offset": 24,
-        "bit_size": 1
-      },
-      {
-        "name": "HSEMEN",
-        "description": "HSEM peripheral clock enable",
-        "bit_offset": 25,
         "bit_size": 1
       },
       {
@@ -1133,12 +1151,6 @@
         "name": "GPIOKLPEN",
         "description": "GPIO peripheral clock enable during CSleep mode",
         "bit_offset": 10,
-        "bit_size": 1
-      },
-      {
-        "name": "CRCLPEN",
-        "description": "CRC peripheral clock enable during CSleep mode",
-        "bit_offset": 19,
         "bit_size": 1
       },
       {
@@ -1243,12 +1255,6 @@
         "bit_size": 1
       },
       {
-        "name": "CRCRST",
-        "description": "CRC block reset",
-        "bit_offset": 19,
-        "bit_size": 1
-      },
-      {
         "name": "BDMA2RST",
         "description": "BDMA2 block reset",
         "bit_offset": 21,
@@ -1264,12 +1270,6 @@
         "name": "ADC3RST",
         "description": "ADC3 block reset",
         "bit_offset": 24,
-        "bit_size": 1
-      },
-      {
-        "name": "HSEMRST",
-        "description": "HSEM block reset",
-        "bit_offset": 25,
         "bit_size": 1
       }
     ]

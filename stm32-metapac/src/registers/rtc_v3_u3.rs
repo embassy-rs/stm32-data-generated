@@ -1866,6 +1866,18 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
+                    name: "ClockSpare",
+                    description: Some("ck_spre (usually 1 Hz) clock is selected."),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "ClockSpareWithOffset",
+                    description: Some(
+                        "ck_spre (usually 1 Hz) clock is selected and 2^16 is added to the WUT counter value.",
+                    ),
+                    value: 6,
+                },
+                EnumVariant {
                     name: "Div16",
                     description: Some("RTC/16 clock is selected."),
                     value: 0,

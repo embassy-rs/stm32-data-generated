@@ -3317,9 +3317,11 @@ in SSR) is running from 0xFFFFFFFF to ALRBBINR."]
         Div4 = 0x02,
         #[doc = "RTC/2 clock is selected."]
         Div2 = 0x03,
-        _RESERVED_4 = 0x04,
+        #[doc = "ck_spre (usually 1 Hz) clock is selected."]
+        ClockSpare = 0x04,
         _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
+        #[doc = "ck_spre (usually 1 Hz) clock is selected and 2^16 is added to the WUT counter value."]
+        ClockSpareWithOffset = 0x06,
         _RESERVED_7 = 0x07,
     }
     impl Wucksel {

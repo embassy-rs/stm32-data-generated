@@ -7197,11 +7197,18 @@ pub(crate) static REGISTERS: IR = IR {
             name: "Stopwuck",
             description: None,
             bit_size: 1,
-            variants: &[EnumVariant {
-                name: "Csi",
-                description: Some("CSI selected as wakeup clock from system Stop"),
-                value: 1,
-            }],
+            variants: &[
+                EnumVariant {
+                    name: "Csi",
+                    description: Some("CSI selected as wakeup clock from system Stop"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Hsi",
+                    description: Some("HSI selected as wakeup clock from system Stop (default after reset)"),
+                    value: 0,
+                },
+            ],
         },
         Enum {
             name: "Sw",

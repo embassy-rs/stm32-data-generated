@@ -10867,7 +10867,8 @@ pub mod vals {
     #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Stopwuck {
-        _RESERVED_0 = 0x0,
+        #[doc = "HSI selected as wakeup clock from system Stop (default after reset)"]
+        Hsi = 0x0,
         #[doc = "CSI selected as wakeup clock from system Stop"]
         Csi = 0x01,
     }

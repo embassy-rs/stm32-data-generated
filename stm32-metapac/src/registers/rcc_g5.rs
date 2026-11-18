@@ -4809,7 +4809,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Highest",
+                    name: "High",
                     description: Some("highest drive."),
                     value: 3,
                 },

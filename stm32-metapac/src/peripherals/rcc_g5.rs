@@ -8166,7 +8166,7 @@ pub mod vals {
         #[doc = "medium-high drive."]
         MediumHigh = 0x02,
         #[doc = "highest drive."]
-        Highest = 0x03,
+        High = 0x03,
     }
     impl Lsedrv {
         #[inline(always)]

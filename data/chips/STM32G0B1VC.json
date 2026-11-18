@@ -2245,6 +2245,18 @@
             "kind": "dbgmcu",
             "version": "g0",
             "block": "DBGMCU"
+          },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": "PCLK1",
+            "enable": {
+              "register": "APBENR1",
+              "field": "DBGEN"
+            },
+            "reset": {
+              "register": "APBRSTR1",
+              "field": "DBGRST"
+            }
           }
         },
         {
@@ -3663,7 +3675,27 @@
           ],
           "interrupts": [
             {
+              "signal": "ALARM",
+              "interrupt": "RTC_TAMP"
+            },
+            {
+              "signal": "SSRU",
+              "interrupt": "RTC_TAMP"
+            },
+            {
+              "signal": "STAMP",
+              "interrupt": "RTC_TAMP"
+            },
+            {
               "signal": "TAMP",
+              "interrupt": "RTC_TAMP"
+            },
+            {
+              "signal": "TIMESTAMP",
+              "interrupt": "RTC_TAMP"
+            },
+            {
+              "signal": "WKUP",
               "interrupt": "RTC_TAMP"
             }
           ]
@@ -4299,7 +4331,13 @@
             "kind": "tamp",
             "version": "g0",
             "block": "TAMP"
-          }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "RTC_TAMP"
+            }
+          ]
         },
         {
           "name": "TIM1",

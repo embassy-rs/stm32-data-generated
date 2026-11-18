@@ -191,7 +191,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             block: "DBGMCU",
             ir: &dbgmcu::REGISTERS,
         }),
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            bus_clock: "PCLK1",
+            kernel_clock: Clock("PCLK1"),
+            enable: Some(PeripheralRccRegister {
+                register: "APBENR1",
+                field: "DBGEN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "APBRSTR1",
+                field: "DBGRST",
+            }),
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[],
         dma_channels: &[],
         triggers: &[],

@@ -2416,10 +2416,32 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         ],
         dma_channels: &[],
         triggers: &[],
-        interrupts: &[PeripheralInterrupt {
-            signal: "TAMP",
-            interrupt: "RTC_TAMP",
-        }],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "ALARM",
+                interrupt: "RTC_TAMP",
+            },
+            PeripheralInterrupt {
+                signal: "SSRU",
+                interrupt: "RTC_TAMP",
+            },
+            PeripheralInterrupt {
+                signal: "STAMP",
+                interrupt: "RTC_TAMP",
+            },
+            PeripheralInterrupt {
+                signal: "TAMP",
+                interrupt: "RTC_TAMP",
+            },
+            PeripheralInterrupt {
+                signal: "TIMESTAMP",
+                interrupt: "RTC_TAMP",
+            },
+            PeripheralInterrupt {
+                signal: "WKUP",
+                interrupt: "RTC_TAMP",
+            },
+        ],
         afio: None,
     },
     Peripheral {
@@ -2761,7 +2783,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         ],
         dma_channels: &[],
         triggers: &[],
-        interrupts: &[],
+        interrupts: &[PeripheralInterrupt {
+            signal: "GLOBAL",
+            interrupt: "RTC_TAMP",
+        }],
         afio: None,
     },
     Peripheral {

@@ -2705,7 +2705,27 @@
           ],
           "interrupts": [
             {
+              "signal": "ALARM",
+              "interrupt": "RTC_TAMP"
+            },
+            {
+              "signal": "SSRU",
+              "interrupt": "RTC_TAMP"
+            },
+            {
+              "signal": "STAMP",
+              "interrupt": "RTC_TAMP"
+            },
+            {
               "signal": "TAMP",
+              "interrupt": "RTC_TAMP"
+            },
+            {
+              "signal": "TIMESTAMP",
+              "interrupt": "RTC_TAMP"
+            },
+            {
+              "signal": "WKUP",
               "interrupt": "RTC_TAMP"
             }
           ]
@@ -3008,6 +3028,12 @@
             {
               "pin": "PC13",
               "signal": "IN1"
+            }
+          ],
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "RTC_TAMP"
             }
           ]
         },

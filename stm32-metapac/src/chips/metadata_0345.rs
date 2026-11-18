@@ -209,7 +209,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             block: "DBGMCU",
             ir: &dbgmcu::REGISTERS,
         }),
-        rcc: None,
+        rcc: Some(PeripheralRcc {
+            bus_clock: "PCLK1",
+            kernel_clock: Clock("PCLK1"),
+            enable: Some(PeripheralRccRegister {
+                register: "APBENR1",
+                field: "DBGEN",
+            }),
+            reset: Some(PeripheralRccRegister {
+                register: "APBRSTR1",
+                field: "DBGRST",
+            }),
+            stop_mode: StopMode::Stop1,
+        }),
         pins: &[],
         dma_channels: &[],
         triggers: &[],
@@ -1025,10 +1037,32 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }],
         dma_channels: &[],
         triggers: &[],
-        interrupts: &[PeripheralInterrupt {
-            signal: "TAMP",
-            interrupt: "RTC_TAMP",
-        }],
+        interrupts: &[
+            PeripheralInterrupt {
+                signal: "ALARM",
+                interrupt: "RTC_TAMP",
+            },
+            PeripheralInterrupt {
+                signal: "SSRU",
+                interrupt: "RTC_TAMP",
+            },
+            PeripheralInterrupt {
+                signal: "STAMP",
+                interrupt: "RTC_TAMP",
+            },
+            PeripheralInterrupt {
+                signal: "TAMP",
+                interrupt: "RTC_TAMP",
+            },
+            PeripheralInterrupt {
+                signal: "TIMESTAMP",
+                interrupt: "RTC_TAMP",
+            },
+            PeripheralInterrupt {
+                signal: "WKUP",
+                interrupt: "RTC_TAMP",
+            },
+        ],
         afio: None,
     },
     Peripheral {
@@ -1280,7 +1314,10 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         pins: &[],
         dma_channels: &[],
         triggers: &[],
-        interrupts: &[],
+        interrupts: &[PeripheralInterrupt {
+            signal: "GLOBAL",
+            interrupt: "RTC_TAMP",
+        }],
         afio: None,
     },
     Peripheral {

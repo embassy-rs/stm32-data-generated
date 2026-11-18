@@ -310,6 +310,18 @@
             "kind": "dbgmcu",
             "version": "c0",
             "block": "DBGMCU"
+          },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": "PCLK1",
+            "enable": {
+              "register": "APBENR1",
+              "field": "DBGEN"
+            },
+            "reset": {
+              "register": "APBRSTR1",
+              "field": "DBGRST"
+            }
           }
         },
         {

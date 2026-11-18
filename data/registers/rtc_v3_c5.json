@@ -446,12 +446,6 @@
         "bit_size": 1
       },
       {
-        "name": "ITSE",
-        "description": "Timestamp on internal event enable",
-        "bit_offset": 24,
-        "bit_size": 1
-      },
-      {
         "name": "TAMPTS",
         "description": "Activate timestamp on tamper detection event",
         "bit_offset": 25,
@@ -462,6 +456,17 @@
         "description": "Tamper detection output enable on TAMPALRM",
         "bit_offset": 26,
         "bit_size": 1
+      },
+      {
+        "name": "ALRFCLR",
+        "description": "Alarm flag automatic clear",
+        "bit_offset": 27,
+        "bit_size": 1,
+        "array": {
+          "len": 2,
+          "stride": 1
+        },
+        "enum": "ALRFCLR"
       },
       {
         "name": "TAMPALRM_PU",
@@ -534,16 +539,6 @@
   "fieldset/ICSR": {
     "description": "Initialization control and status register",
     "fields": [
-      {
-        "name": "ALRWF",
-        "description": "Alarm write enabled",
-        "bit_offset": 0,
-        "bit_size": 1,
-        "array": {
-          "len": 2,
-          "stride": 1
-        }
-      },
       {
         "name": "WUTWF",
         "description": "Wakeup timer write enabled",
@@ -637,13 +632,6 @@
         "bit_offset": 4,
         "bit_size": 1,
         "enum": "TSOVMF"
-      },
-      {
-        "name": "ITSMF",
-        "description": "Internal timestamp masked flag",
-        "bit_offset": 5,
-        "bit_size": 1,
-        "enum": "ITSMF"
       },
       {
         "name": "SSRUMF",
@@ -754,13 +742,6 @@
         "enum": "CALRF"
       },
       {
-        "name": "CITSF",
-        "description": "Clear internal timestamp flag",
-        "bit_offset": 5,
-        "bit_size": 1,
-        "enum": "CALRF"
-      },
-      {
         "name": "CSSRUF",
         "description": "Clear SSR underflow flag",
         "bit_offset": 6,
@@ -820,13 +801,6 @@
         "bit_offset": 4,
         "bit_size": 1,
         "enum": "TSOVF"
-      },
-      {
-        "name": "ITSF",
-        "description": "Internal timestamp flag",
-        "bit_offset": 5,
-        "bit_size": 1,
-        "enum": "ITSF"
       },
       {
         "name": "SSRUF",
@@ -1024,6 +998,21 @@
       {
         "name": "Match",
         "description": "This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm A register (RTC_ALRMAR)",
+        "value": 1
+      }
+    ]
+  },
+  "enum/ALRFCLR": {
+    "bit_size": 1,
+    "variants": [
+      {
+        "name": "Manual",
+        "description": "Alarm x event generates a trigger event and ALRxF must be cleared by software to allow next alarm event.",
+        "value": 0
+      },
+      {
+        "name": "Automatic",
+        "description": "Alarm x event generates a trigger event. ALRxF is automatically cleared by hardware after 1 ck_apre cycle.",
         "value": 1
       }
     ]
@@ -1254,26 +1243,6 @@
       {
         "name": "AmPm",
         "description": "AM/PM hour format",
-        "value": 1
-      }
-    ]
-  },
-  "enum/ITSF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "TimestampEvent",
-        "description": "This flag is set by hardware when a timestamp on the internal event occurs",
-        "value": 1
-      }
-    ]
-  },
-  "enum/ITSMF": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "TimestampEvent",
-        "description": "This flag is set by hardware when a timestamp on the internal event occurs",
         "value": 1
       }
     ]

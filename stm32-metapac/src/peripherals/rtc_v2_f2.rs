@@ -1010,13 +1010,13 @@ pub mod regs {
         #[must_use]
         #[inline(always)]
         pub const fn prediv_s(&self) -> u16 {
-            let val = (self.0 >> 0usize) & 0x7fff;
+            let val = (self.0 >> 0usize) & 0x1fff;
             val as u16
         }
         #[doc = "Synchronous prescaler factor"]
         #[inline(always)]
         pub const fn set_prediv_s(&mut self, val: u16) {
-            self.0 = (self.0 & !(0x7fff << 0usize)) | (((val as u32) & 0x7fff) << 0usize);
+            self.0 = (self.0 & !(0x1fff << 0usize)) | (((val as u32) & 0x1fff) << 0usize);
         }
         #[doc = "Asynchronous prescaler factor"]
         #[must_use]

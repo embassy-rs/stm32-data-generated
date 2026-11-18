@@ -358,13 +358,13 @@ pub mod regs {
         #[must_use]
         #[inline(always)]
         pub const fn maskss(&self) -> u8 {
-            let val = (self.0 >> 24usize) & 0x3f;
+            let val = (self.0 >> 24usize) & 0x0f;
             val as u8
         }
         #[doc = "Mask the most-significant bits starting at this bit"]
         #[inline(always)]
         pub const fn set_maskss(&mut self, val: u8) {
-            self.0 = (self.0 & !(0x3f << 24usize)) | (((val as u32) & 0x3f) << 24usize);
+            self.0 = (self.0 & !(0x0f << 24usize)) | (((val as u32) & 0x0f) << 24usize);
         }
     }
     impl Default for Alrmssr {
@@ -1551,14 +1551,14 @@ pub mod regs {
         #[doc = "Synchronous binary counter"]
         #[must_use]
         #[inline(always)]
-        pub const fn ss(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
+        pub const fn ss(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
         }
         #[doc = "Synchronous binary counter"]
         #[inline(always)]
-        pub const fn set_ss(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        pub const fn set_ss(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
     impl Default for Ssr {
@@ -1576,7 +1576,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Ssr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Ssr {{ ss: {=u32:?} }}", self.ss())
+            defmt::write!(f, "Ssr {{ ss: {=u16:?} }}", self.ss())
         }
     }
     #[doc = "Time register"]
@@ -1811,14 +1811,14 @@ pub mod regs {
         #[doc = "Sub second value"]
         #[must_use]
         #[inline(always)]
-        pub const fn ss(&self) -> u32 {
-            let val = (self.0 >> 0usize) & 0xffff_ffff;
-            val as u32
+        pub const fn ss(&self) -> u16 {
+            let val = (self.0 >> 0usize) & 0xffff;
+            val as u16
         }
         #[doc = "Sub second value"]
         #[inline(always)]
-        pub const fn set_ss(&mut self, val: u32) {
-            self.0 = (self.0 & !(0xffff_ffff << 0usize)) | (((val as u32) & 0xffff_ffff) << 0usize);
+        pub const fn set_ss(&mut self, val: u16) {
+            self.0 = (self.0 & !(0xffff << 0usize)) | (((val as u32) & 0xffff) << 0usize);
         }
     }
     impl Default for Tsssr {
@@ -1836,7 +1836,7 @@ pub mod regs {
     #[cfg(feature = "defmt")]
     impl defmt::Format for Tsssr {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Tsssr {{ ss: {=u32:?} }}", self.ss())
+            defmt::write!(f, "Tsssr {{ ss: {=u16:?} }}", self.ss())
         }
     }
     #[doc = "Timestamp time register"]

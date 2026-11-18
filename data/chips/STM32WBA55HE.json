@@ -1773,7 +1773,7 @@
           "address": 1174435840,
           "registers": {
             "kind": "rtc",
-            "version": "v3_u5",
+            "version": "v3_wba",
             "block": "RTC"
           },
           "rcc": {

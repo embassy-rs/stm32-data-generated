@@ -3535,7 +3535,7 @@
           "address": 1140881408,
           "registers": {
             "kind": "rtc",
-            "version": "v3_u5",
+            "version": "v3_h5",
             "block": "RTC"
           },
           "rcc": {

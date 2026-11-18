@@ -1119,6 +1119,18 @@ pub mod regs {
         pub const fn set_recalpf(&mut self, val: super::vals::Recalpf) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val.to_bits() as u32) & 0x01) << 16usize);
         }
+        #[doc = "Internal time-stamp flag"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn itsf(&self) -> bool {
+            let val = (self.0 >> 17usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Internal time-stamp flag"]
+        #[inline(always)]
+        pub const fn set_itsf(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
+        }
     }
     impl Default for Isr {
         #[inline(always)]
@@ -1147,6 +1159,7 @@ pub mod regs {
                 .field("tampf[1]", &self.tampf(1usize))
                 .field("tampf[2]", &self.tampf(2usize))
                 .field("recalpf", &self.recalpf())
+                .field("itsf", &self.itsf())
                 .finish()
         }
     }
@@ -1155,7 +1168,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Isr {{ alrwf[0]: {=bool:?}, alrwf[1]: {=bool:?}, wutwf: {=bool:?}, shpf: {=bool:?}, inits: {=bool:?}, rsf: {=bool:?}, initf: {=bool:?}, init: {=bool:?}, alrf[0]: {=bool:?}, alrf[1]: {=bool:?}, wutf: {=bool:?}, tsf: {=bool:?}, tsovf: {=bool:?}, tampf[0]: {=bool:?}, tampf[1]: {=bool:?}, tampf[2]: {=bool:?}, recalpf: {:?} }}",
+                "Isr {{ alrwf[0]: {=bool:?}, alrwf[1]: {=bool:?}, wutwf: {=bool:?}, shpf: {=bool:?}, inits: {=bool:?}, rsf: {=bool:?}, initf: {=bool:?}, init: {=bool:?}, alrf[0]: {=bool:?}, alrf[1]: {=bool:?}, wutf: {=bool:?}, tsf: {=bool:?}, tsovf: {=bool:?}, tampf[0]: {=bool:?}, tampf[1]: {=bool:?}, tampf[2]: {=bool:?}, recalpf: {:?}, itsf: {=bool:?} }}",
                 self.alrwf(0usize),
                 self.alrwf(1usize),
                 self.wutwf(),
@@ -1172,7 +1185,8 @@ pub mod regs {
                 self.tampf(0usize),
                 self.tampf(1usize),
                 self.tampf(2usize),
-                self.recalpf()
+                self.recalpf(),
+                self.itsf()
             )
         }
     }

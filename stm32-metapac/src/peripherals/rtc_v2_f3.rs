@@ -1314,32 +1314,32 @@ pub mod regs {
         #[must_use]
         #[inline(always)]
         pub const fn tampe(&self, n: usize) -> bool {
-            assert!(n < 2usize);
-            let offs = 0usize + ([0usize, 3usize][n] as usize);
+            assert!(n < 3usize);
+            let offs = 0usize + ([0usize, 3usize, 5usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             val != 0
         }
         #[doc = "Tamper detection enable"]
         #[inline(always)]
         pub const fn set_tampe(&mut self, n: usize, val: bool) {
-            assert!(n < 2usize);
-            let offs = 0usize + ([0usize, 3usize][n] as usize);
+            assert!(n < 3usize);
+            let offs = 0usize + ([0usize, 3usize, 5usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
         }
         #[doc = "Active level for tamper"]
         #[must_use]
         #[inline(always)]
         pub const fn tamptrg(&self, n: usize) -> super::vals::Tamptrg {
-            assert!(n < 2usize);
-            let offs = 1usize + ([0usize, 3usize][n] as usize);
+            assert!(n < 3usize);
+            let offs = 1usize + ([0usize, 3usize, 5usize][n] as usize);
             let val = (self.0 >> offs) & 0x01;
             super::vals::Tamptrg::from_bits(val as u8)
         }
         #[doc = "Active level for tamper"]
         #[inline(always)]
         pub const fn set_tamptrg(&mut self, n: usize, val: super::vals::Tamptrg) {
-            assert!(n < 2usize);
-            let offs = 1usize + ([0usize, 3usize][n] as usize);
+            assert!(n < 3usize);
+            let offs = 1usize + ([0usize, 3usize, 5usize][n] as usize);
             self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
         }
         #[doc = "Tamper interrupt enable"]
@@ -1499,8 +1499,10 @@ pub mod regs {
             f.debug_struct("Tafcr")
                 .field("tampe[0]", &self.tampe(0usize))
                 .field("tampe[1]", &self.tampe(1usize))
+                .field("tampe[2]", &self.tampe(2usize))
                 .field("tamptrg[0]", &self.tamptrg(0usize))
                 .field("tamptrg[1]", &self.tamptrg(1usize))
+                .field("tamptrg[2]", &self.tamptrg(2usize))
                 .field("tampie", &self.tampie())
                 .field("tampts", &self.tampts())
                 .field("tampfreq", &self.tampfreq())
@@ -1521,11 +1523,13 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Tafcr {{ tampe[0]: {=bool:?}, tampe[1]: {=bool:?}, tamptrg[0]: {:?}, tamptrg[1]: {:?}, tampie: {=bool:?}, tampts: {=bool:?}, tampfreq: {:?}, tampflt: {:?}, tampprch: {:?}, tamppudis: {=bool:?}, pc13value: {:?}, pc13mode: {:?}, pc14value: {:?}, pc14mode: {:?}, pc15value: {:?}, pc15mode: {:?} }}",
+                "Tafcr {{ tampe[0]: {=bool:?}, tampe[1]: {=bool:?}, tampe[2]: {=bool:?}, tamptrg[0]: {:?}, tamptrg[1]: {:?}, tamptrg[2]: {:?}, tampie: {=bool:?}, tampts: {=bool:?}, tampfreq: {:?}, tampflt: {:?}, tampprch: {:?}, tamppudis: {=bool:?}, pc13value: {:?}, pc13mode: {:?}, pc14value: {:?}, pc14mode: {:?}, pc15value: {:?}, pc15mode: {:?} }}",
                 self.tampe(0usize),
                 self.tampe(1usize),
+                self.tampe(2usize),
                 self.tamptrg(0usize),
                 self.tamptrg(1usize),
+                self.tamptrg(2usize),
                 self.tampie(),
                 self.tampts(),
                 self.tampfreq(),

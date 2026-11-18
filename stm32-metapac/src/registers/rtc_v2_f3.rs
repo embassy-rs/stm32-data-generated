@@ -795,7 +795,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Tamper detection enable"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
                     bit_size: 1,
-                    array: Some(Array::Cursed(CursedArray { offsets: &[0, 3] })),
+                    array: Some(Array::Cursed(CursedArray { offsets: &[0, 3, 5] })),
                     enumm: None,
                 },
                 Field {
@@ -803,7 +803,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Active level for tamper"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 1 }),
                     bit_size: 1,
-                    array: Some(Array::Cursed(CursedArray { offsets: &[0, 3] })),
+                    array: Some(Array::Cursed(CursedArray { offsets: &[0, 3, 5] })),
                     enumm: Some("Tamptrg"),
                 },
                 Field {

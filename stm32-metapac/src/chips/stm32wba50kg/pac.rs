@@ -358,7 +358,7 @@ pub mod ramcfg;
 pub mod rcc;
 #[path = "../../peripherals/rng_v3.rs"]
 pub mod rng;
-#[path = "../../peripherals/rtc_v3_u5.rs"]
+#[path = "../../peripherals/rtc_v3_wba.rs"]
 pub mod rtc;
 #[path = "../../peripherals/spi_v6.rs"]
 pub mod spi;

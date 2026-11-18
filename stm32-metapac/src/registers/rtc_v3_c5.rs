@@ -602,14 +602,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "itse",
-                    description: Some("Timestamp on internal event enable"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 24 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: None,
-                },
-                Field {
                     name: "tampts",
                     description: Some("Activate timestamp on tamper detection event"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 25 }),
@@ -624,6 +616,14 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: None,
+                },
+                Field {
+                    name: "alrfclr",
+                    description: Some("Alarm flag automatic clear"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 27 }),
+                    bit_size: 1,
+                    array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
+                    enumm: Some("Alrfclr"),
                 },
                 Field {
                     name: "tampalrm_pu",
@@ -721,14 +721,6 @@ pub(crate) static REGISTERS: IR = IR {
             description: Some("Initialization control and status register"),
             bit_size: 32,
             fields: &[
-                Field {
-                    name: "alrwf",
-                    description: Some("Alarm write enabled"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                    bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
-                    enumm: None,
-                },
                 Field {
                     name: "wutwf",
                     description: Some("Wakeup timer write enabled"),
@@ -840,14 +832,6 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: Some("Tsovmf"),
-                },
-                Field {
-                    name: "itsmf",
-                    description: Some("Internal timestamp masked flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Itsmf"),
                 },
                 Field {
                     name: "ssrumf",
@@ -988,14 +972,6 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: Some("Calrf"),
                 },
                 Field {
-                    name: "citsf",
-                    description: Some("Clear internal timestamp flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Calrf"),
-                },
-                Field {
                     name: "cssruf",
                     description: Some("Clear SSR underflow flag"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 6 }),
@@ -1066,14 +1042,6 @@ pub(crate) static REGISTERS: IR = IR {
                     bit_size: 1,
                     array: None,
                     enumm: Some("Tsovf"),
-                },
-                Field {
-                    name: "itsf",
-                    description: Some("Internal timestamp flag"),
-                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 5 }),
-                    bit_size: 1,
-                    array: None,
-                    enumm: Some("Itsf"),
                 },
                 Field {
                     name: "ssruf",
@@ -1342,6 +1310,27 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         Enum {
+            name: "Alrfclr",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "Automatic",
+                    description: Some(
+                        "Alarm x event generates a trigger event. ALRxF is automatically cleared by hardware after 1 ck_apre cycle.",
+                    ),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Manual",
+                    description: Some(
+                        "Alarm x event generates a trigger event and ALRxF must be cleared by software to allow next alarm event.",
+                    ),
+                    value: 0,
+                },
+            ],
+        },
+        Enum {
             name: "Alrmf",
             description: None,
             bit_size: 1,
@@ -1598,26 +1587,6 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
             ],
-        },
-        Enum {
-            name: "Itsf",
-            description: None,
-            bit_size: 1,
-            variants: &[EnumVariant {
-                name: "TimestampEvent",
-                description: Some("This flag is set by hardware when a timestamp on the internal event occurs"),
-                value: 1,
-            }],
-        },
-        Enum {
-            name: "Itsmf",
-            description: None,
-            bit_size: 1,
-            variants: &[EnumVariant {
-                name: "TimestampEvent",
-                description: Some("This flag is set by hardware when a timestamp on the internal event occurs"),
-                value: 1,
-            }],
         },
         Enum {
             name: "Key",

@@ -947,7 +947,7 @@ pub mod ramcfg;
 pub mod rcc;
 #[path = "../../peripherals/rng_v3_h5_ef.rs"]
 pub mod rng;
-#[path = "../../peripherals/rtc_v3_u5.rs"]
+#[path = "../../peripherals/rtc_v3_h5.rs"]
 pub mod rtc;
 #[path = "../../peripherals/saes_v1a.rs"]
 pub mod saes;

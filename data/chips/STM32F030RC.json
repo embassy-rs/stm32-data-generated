@@ -1328,7 +1328,7 @@
           "address": 1073752064,
           "registers": {
             "kind": "rtc",
-            "version": "v2_f0",
+            "version": "v2_f0_x0",
             "block": "RTC"
           },
           "pins": [

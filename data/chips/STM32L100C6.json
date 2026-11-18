@@ -1510,7 +1510,7 @@
           "address": 1073752064,
           "registers": {
             "kind": "rtc",
-            "version": "v2_l1",
+            "version": "v2_l1_cat1",
             "block": "RTC"
           },
           "pins": [

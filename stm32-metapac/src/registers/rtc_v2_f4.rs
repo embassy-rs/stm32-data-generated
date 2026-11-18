@@ -752,7 +752,7 @@ pub(crate) static REGISTERS: IR = IR {
                     description: Some("Tamper detection flag"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
                     bit_size: 1,
-                    array: Some(Array::Regular(RegularArray { len: 3, stride: 1 })),
+                    array: Some(Array::Regular(RegularArray { len: 2, stride: 1 })),
                     enumm: None,
                 },
                 Field {

@@ -237,7 +237,7 @@
         "name": "MASKSS",
         "description": "Mask the most-significant bits starting at this bit",
         "bit_offset": 24,
-        "bit_size": 6
+        "bit_size": 4
       }
     ]
   },
@@ -712,7 +712,7 @@
         "name": "SS",
         "description": "Synchronous binary counter",
         "bit_offset": 0,
-        "bit_size": 32
+        "bit_size": 16
       }
     ]
   },
@@ -806,7 +806,7 @@
         "name": "SS",
         "description": "Sub second value",
         "bit_offset": 0,
-        "bit_size": 32
+        "bit_size": 16
       }
     ]
   },

@@ -605,7 +605,8 @@
         "array": {
           "offsets": [
             0,
-            3
+            3,
+            5
           ]
         }
       },
@@ -617,7 +618,8 @@
         "array": {
           "offsets": [
             0,
-            3
+            3,
+            5
           ]
         },
         "enum": "TAMPTRG"

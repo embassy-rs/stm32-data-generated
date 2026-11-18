@@ -1064,7 +1064,7 @@
           "address": 1073752064,
           "registers": {
             "kind": "rtc",
-            "version": "v3_base",
+            "version": "v3_g0",
             "block": "RTC"
           },
           "rcc": {

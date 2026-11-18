@@ -624,7 +624,7 @@ pub(crate) static REGISTERS: IR = IR {
                     name: "prediv_s",
                     description: Some("Synchronous prescaler factor"),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
-                    bit_size: 15,
+                    bit_size: 13,
                     array: None,
                     enumm: None,
                 },

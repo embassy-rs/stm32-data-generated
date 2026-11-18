@@ -739,6 +739,14 @@ pub(crate) static REGISTERS: IR = IR {
                     array: None,
                     enumm: Some("Recalpf"),
                 },
+                Field {
+                    name: "itsf",
+                    description: Some("Internal time-stamp flag"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
             ],
         },
         FieldSet {

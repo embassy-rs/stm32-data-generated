@@ -923,7 +923,7 @@
           "address": 1073758208,
           "registers": {
             "kind": "rtc",
-            "version": "v3_base",
+            "version": "v2_wb0",
             "block": "RTC"
           },
           "rcc": {

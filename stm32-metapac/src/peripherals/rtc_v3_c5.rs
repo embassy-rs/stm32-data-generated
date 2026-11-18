@@ -793,18 +793,6 @@ pub mod regs {
         pub const fn set_coe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
-        #[doc = "Timestamp on internal event enable"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn itse(&self) -> bool {
-            let val = (self.0 >> 24usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Timestamp on internal event enable"]
-        #[inline(always)]
-        pub const fn set_itse(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 24usize)) | (((val as u32) & 0x01) << 24usize);
-        }
         #[doc = "Activate timestamp on tamper detection event"]
         #[must_use]
         #[inline(always)]
@@ -828,6 +816,22 @@ pub mod regs {
         #[inline(always)]
         pub const fn set_tampoe(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 26usize)) | (((val as u32) & 0x01) << 26usize);
+        }
+        #[doc = "Alarm flag automatic clear"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn alrfclr(&self, n: usize) -> super::vals::Alrfclr {
+            assert!(n < 2usize);
+            let offs = 27usize + n * 1usize;
+            let val = (self.0 >> offs) & 0x01;
+            super::vals::Alrfclr::from_bits(val as u8)
+        }
+        #[doc = "Alarm flag automatic clear"]
+        #[inline(always)]
+        pub const fn set_alrfclr(&mut self, n: usize, val: super::vals::Alrfclr) {
+            assert!(n < 2usize);
+            let offs = 27usize + n * 1usize;
+            self.0 = (self.0 & !(0x01 << offs)) | (((val.to_bits() as u32) & 0x01) << offs);
         }
         #[doc = "TAMPALRM pull-up enable"]
         #[must_use]
@@ -897,9 +901,10 @@ pub mod regs {
                 .field("pol", &self.pol())
                 .field("osel", &self.osel())
                 .field("coe", &self.coe())
-                .field("itse", &self.itse())
                 .field("tampts", &self.tampts())
                 .field("tampoe", &self.tampoe())
+                .field("alrfclr[0]", &self.alrfclr(0usize))
+                .field("alrfclr[1]", &self.alrfclr(1usize))
                 .field("tampalrm_pu", &self.tampalrm_pu())
                 .field("tampalrm_type", &self.tampalrm_type())
                 .field("out2en", &self.out2en())
@@ -911,7 +916,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Cr {{ wucksel: {:?}, tsedge: {:?}, refckon: {=bool:?}, bypshad: {=bool:?}, fmt: {:?}, ssruie: {=bool:?}, alre[0]: {=bool:?}, alre[1]: {=bool:?}, wute: {=bool:?}, tse: {=bool:?}, alrie[0]: {=bool:?}, alrie[1]: {=bool:?}, wutie: {=bool:?}, tsie: {=bool:?}, add1h: {=bool:?}, sub1h: {=bool:?}, bkp: {=bool:?}, cosel: {:?}, pol: {:?}, osel: {:?}, coe: {=bool:?}, itse: {=bool:?}, tampts: {=bool:?}, tampoe: {=bool:?}, tampalrm_pu: {=bool:?}, tampalrm_type: {:?}, out2en: {=bool:?} }}",
+                "Cr {{ wucksel: {:?}, tsedge: {:?}, refckon: {=bool:?}, bypshad: {=bool:?}, fmt: {:?}, ssruie: {=bool:?}, alre[0]: {=bool:?}, alre[1]: {=bool:?}, wute: {=bool:?}, tse: {=bool:?}, alrie[0]: {=bool:?}, alrie[1]: {=bool:?}, wutie: {=bool:?}, tsie: {=bool:?}, add1h: {=bool:?}, sub1h: {=bool:?}, bkp: {=bool:?}, cosel: {:?}, pol: {:?}, osel: {:?}, coe: {=bool:?}, tampts: {=bool:?}, tampoe: {=bool:?}, alrfclr[0]: {:?}, alrfclr[1]: {:?}, tampalrm_pu: {=bool:?}, tampalrm_type: {:?}, out2en: {=bool:?} }}",
                 self.wucksel(),
                 self.tsedge(),
                 self.refckon(),
@@ -933,9 +938,10 @@ pub mod regs {
                 self.pol(),
                 self.osel(),
                 self.coe(),
-                self.itse(),
                 self.tampts(),
                 self.tampoe(),
+                self.alrfclr(0usize),
+                self.alrfclr(1usize),
                 self.tampalrm_pu(),
                 self.tampalrm_type(),
                 self.out2en()
@@ -1073,22 +1079,6 @@ pub mod regs {
     #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Icsr(pub u32);
     impl Icsr {
-        #[doc = "Alarm write enabled"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn alrwf(&self, n: usize) -> bool {
-            assert!(n < 2usize);
-            let offs = 0usize + n * 1usize;
-            let val = (self.0 >> offs) & 0x01;
-            val != 0
-        }
-        #[doc = "Alarm write enabled"]
-        #[inline(always)]
-        pub const fn set_alrwf(&mut self, n: usize, val: bool) {
-            assert!(n < 2usize);
-            let offs = 0usize + n * 1usize;
-            self.0 = (self.0 & !(0x01 << offs)) | (((val as u32) & 0x01) << offs);
-        }
         #[doc = "Wakeup timer write enabled"]
         #[must_use]
         #[inline(always)]
@@ -1208,8 +1198,6 @@ pub mod regs {
     impl core::fmt::Debug for Icsr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Icsr")
-                .field("alrwf[0]", &self.alrwf(0usize))
-                .field("alrwf[1]", &self.alrwf(1usize))
                 .field("wutwf", &self.wutwf())
                 .field("shpf", &self.shpf())
                 .field("inits", &self.inits())
@@ -1227,9 +1215,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Icsr {{ alrwf[0]: {=bool:?}, alrwf[1]: {=bool:?}, wutwf: {=bool:?}, shpf: {=bool:?}, inits: {=bool:?}, rsf: {=bool:?}, initf: {=bool:?}, init: {=bool:?}, bin: {:?}, bcdu: {:?}, recalpf: {:?} }}",
-                self.alrwf(0usize),
-                self.alrwf(1usize),
+                "Icsr {{ wutwf: {=bool:?}, shpf: {=bool:?}, inits: {=bool:?}, rsf: {=bool:?}, initf: {=bool:?}, init: {=bool:?}, bin: {:?}, bcdu: {:?}, recalpf: {:?} }}",
                 self.wutwf(),
                 self.shpf(),
                 self.inits(),
@@ -1299,18 +1285,6 @@ pub mod regs {
         pub const fn set_tsovmf(&mut self, val: super::vals::Tsovmf) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
-        #[doc = "Internal timestamp masked flag"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn itsmf(&self) -> super::vals::Itsmf {
-            let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Itsmf::from_bits(val as u8)
-        }
-        #[doc = "Internal timestamp masked flag"]
-        #[inline(always)]
-        pub const fn set_itsmf(&mut self, val: super::vals::Itsmf) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
-        }
         #[doc = "SSR underflow masked flag"]
         #[must_use]
         #[inline(always)]
@@ -1339,7 +1313,6 @@ pub mod regs {
                 .field("wutmf", &self.wutmf())
                 .field("tsmf", &self.tsmf())
                 .field("tsovmf", &self.tsovmf())
-                .field("itsmf", &self.itsmf())
                 .field("ssrumf", &self.ssrumf())
                 .finish()
         }
@@ -1349,13 +1322,12 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Misr {{ alrmf[0]: {:?}, alrmf[1]: {:?}, wutmf: {:?}, tsmf: {:?}, tsovmf: {:?}, itsmf: {:?}, ssrumf: {:?} }}",
+                "Misr {{ alrmf[0]: {:?}, alrmf[1]: {:?}, wutmf: {:?}, tsmf: {:?}, tsovmf: {:?}, ssrumf: {:?} }}",
                 self.alrmf(0usize),
                 self.alrmf(1usize),
                 self.wutmf(),
                 self.tsmf(),
                 self.tsovmf(),
-                self.itsmf(),
                 self.ssrumf()
             )
         }
@@ -1599,18 +1571,6 @@ pub mod regs {
         pub const fn set_ctsovf(&mut self, val: super::vals::Calrf) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
-        #[doc = "Clear internal timestamp flag"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn citsf(&self) -> super::vals::Calrf {
-            let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Calrf::from_bits(val as u8)
-        }
-        #[doc = "Clear internal timestamp flag"]
-        #[inline(always)]
-        pub const fn set_citsf(&mut self, val: super::vals::Calrf) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
-        }
         #[doc = "Clear SSR underflow flag"]
         #[must_use]
         #[inline(always)]
@@ -1639,7 +1599,6 @@ pub mod regs {
                 .field("cwutf", &self.cwutf())
                 .field("ctsf", &self.ctsf())
                 .field("ctsovf", &self.ctsovf())
-                .field("citsf", &self.citsf())
                 .field("cssruf", &self.cssruf())
                 .finish()
         }
@@ -1649,13 +1608,12 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Scr {{ calrf[0]: {:?}, calrf[1]: {:?}, cwutf: {:?}, ctsf: {:?}, ctsovf: {:?}, citsf: {:?}, cssruf: {:?} }}",
+                "Scr {{ calrf[0]: {:?}, calrf[1]: {:?}, cwutf: {:?}, ctsf: {:?}, ctsovf: {:?}, cssruf: {:?} }}",
                 self.calrf(0usize),
                 self.calrf(1usize),
                 self.cwutf(),
                 self.ctsf(),
                 self.ctsovf(),
-                self.citsf(),
                 self.cssruf()
             )
         }
@@ -1773,18 +1731,6 @@ pub mod regs {
         pub const fn set_tsovf(&mut self, val: super::vals::Tsovf) {
             self.0 = (self.0 & !(0x01 << 4usize)) | (((val.to_bits() as u32) & 0x01) << 4usize);
         }
-        #[doc = "Internal timestamp flag"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn itsf(&self) -> super::vals::Itsf {
-            let val = (self.0 >> 5usize) & 0x01;
-            super::vals::Itsf::from_bits(val as u8)
-        }
-        #[doc = "Internal timestamp flag"]
-        #[inline(always)]
-        pub const fn set_itsf(&mut self, val: super::vals::Itsf) {
-            self.0 = (self.0 & !(0x01 << 5usize)) | (((val.to_bits() as u32) & 0x01) << 5usize);
-        }
         #[doc = "SSR underflow flag"]
         #[must_use]
         #[inline(always)]
@@ -1813,7 +1759,6 @@ pub mod regs {
                 .field("wutf", &self.wutf())
                 .field("tsf", &self.tsf())
                 .field("tsovf", &self.tsovf())
-                .field("itsf", &self.itsf())
                 .field("ssruf", &self.ssruf())
                 .finish()
         }
@@ -1823,13 +1768,12 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Sr {{ alrf[0]: {:?}, alrf[1]: {:?}, wutf: {:?}, tsf: {:?}, tsovf: {:?}, itsf: {:?}, ssruf: {:?} }}",
+                "Sr {{ alrf[0]: {:?}, alrf[1]: {:?}, wutf: {:?}, tsf: {:?}, tsovf: {:?}, ssruf: {:?} }}",
                 self.alrf(0usize),
                 self.alrf(1usize),
                 self.wutf(),
                 self.tsf(),
                 self.tsovf(),
-                self.itsf(),
                 self.ssruf()
             )
         }
@@ -2385,6 +2329,38 @@ pub mod vals {
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
     #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Alrfclr {
+        #[doc = "Alarm x event generates a trigger event and ALRxF must be cleared by software to allow next alarm event."]
+        Manual = 0x0,
+        #[doc = "Alarm x event generates a trigger event. ALRxF is automatically cleared by hardware after 1 ck_apre cycle."]
+        Automatic = 0x01,
+    }
+    impl Alrfclr {
+        #[inline(always)]
+        pub const fn from_bits(val: u8) -> Alrfclr {
+            unsafe { core::mem::transmute(val & 0x01) }
+        }
+        #[inline(always)]
+        pub const fn to_bits(self) -> u8 {
+            unsafe { core::mem::transmute(self) }
+        }
+    }
+    impl From<u8> for Alrfclr {
+        #[inline(always)]
+        fn from(val: u8) -> Alrfclr {
+            Alrfclr::from_bits(val)
+        }
+    }
+    impl From<Alrfclr> for u8 {
+        #[inline(always)]
+        fn from(val: Alrfclr) -> u8 {
+            Alrfclr::to_bits(val)
+        }
+    }
+    #[repr(u8)]
+    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
+    #[cfg_attr(feature = "debug", derive(Debug))]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Alrmf {
         _RESERVED_0 = 0x0,
         #[doc = "This flag is set by hardware when the time/date registers (RTC_TR and RTC_DR) match the Alarm A register (RTC_ALRMAR)"]
@@ -2845,68 +2821,6 @@ value and is automatically reloaded with 0xFFFF FFFF when reaching RTC_ALRMABINR
         #[inline(always)]
         fn from(val: Fmt) -> u8 {
             Fmt::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "debug", derive(Debug))]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Itsf {
-        _RESERVED_0 = 0x0,
-        #[doc = "This flag is set by hardware when a timestamp on the internal event occurs"]
-        TimestampEvent = 0x01,
-    }
-    impl Itsf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Itsf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Itsf {
-        #[inline(always)]
-        fn from(val: u8) -> Itsf {
-            Itsf::from_bits(val)
-        }
-    }
-    impl From<Itsf> for u8 {
-        #[inline(always)]
-        fn from(val: Itsf) -> u8 {
-            Itsf::to_bits(val)
-        }
-    }
-    #[repr(u8)]
-    #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    #[cfg_attr(feature = "debug", derive(Debug))]
-    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
-    pub enum Itsmf {
-        _RESERVED_0 = 0x0,
-        #[doc = "This flag is set by hardware when a timestamp on the internal event occurs"]
-        TimestampEvent = 0x01,
-    }
-    impl Itsmf {
-        #[inline(always)]
-        pub const fn from_bits(val: u8) -> Itsmf {
-            unsafe { core::mem::transmute(val & 0x01) }
-        }
-        #[inline(always)]
-        pub const fn to_bits(self) -> u8 {
-            unsafe { core::mem::transmute(self) }
-        }
-    }
-    impl From<u8> for Itsmf {
-        #[inline(always)]
-        fn from(val: u8) -> Itsmf {
-            Itsmf::from_bits(val)
-        }
-    }
-    impl From<Itsmf> for u8 {
-        #[inline(always)]
-        fn from(val: Itsmf) -> u8 {
-            Itsmf::to_bits(val)
         }
     }
     #[repr(transparent)]

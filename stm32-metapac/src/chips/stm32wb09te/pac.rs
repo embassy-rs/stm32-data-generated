@@ -184,7 +184,7 @@ pub mod radio;
 pub mod rcc;
 #[path = "../../peripherals/rrm_v1.rs"]
 pub mod rrm;
-#[path = "../../peripherals/rtc_v3_base.rs"]
+#[path = "../../peripherals/rtc_v2_wb0.rs"]
 pub mod rtc;
 #[path = "../../peripherals/spi_v3.rs"]
 pub mod spi;

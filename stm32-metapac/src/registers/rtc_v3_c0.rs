@@ -1234,19 +1234,9 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "AlarmB",
-                    description: Some("Alarm B output enabled"),
-                    value: 2,
-                },
-                EnumVariant {
                     name: "Disabled",
                     description: Some("Output disabled"),
                     value: 0,
-                },
-                EnumVariant {
-                    name: "Wakeup",
-                    description: Some("Wakeup output enabled"),
-                    value: 3,
                 },
             ],
         },

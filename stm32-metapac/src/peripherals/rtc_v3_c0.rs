@@ -2254,10 +2254,8 @@ is don’t care."]
         Disabled = 0x0,
         #[doc = "Alarm A output enabled"]
         AlarmA = 0x01,
-        #[doc = "Alarm B output enabled"]
-        AlarmB = 0x02,
-        #[doc = "Wakeup output enabled"]
-        Wakeup = 0x03,
+        _RESERVED_2 = 0x02,
+        _RESERVED_3 = 0x03,
     }
     impl Osel {
         #[inline(always)]

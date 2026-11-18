@@ -565,7 +565,7 @@
         "bit_offset": 13,
         "bit_size": 1,
         "array": {
-          "len": 3,
+          "len": 2,
           "stride": 1
         }
       },

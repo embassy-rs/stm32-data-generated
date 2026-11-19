@@ -985,42 +985,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "Cycles15",
-                    description: Some("1.5 ADC clock cycles"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Cycles1815",
+                    name: "Cycles181_5",
                     description: Some("181.5 ADC clock cycles"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "Cycles195",
+                    name: "Cycles19_5",
                     description: Some("19.5 ADC clock cycles"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "Cycles25",
+                    name: "Cycles1_5",
+                    description: Some("1.5 ADC clock cycles"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Cycles2_5",
                     description: Some("2.5 ADC clock cycles"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Cycles45",
+                    name: "Cycles4_5",
                     description: Some("4.5 ADC clock cycles"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "Cycles6015",
+                    name: "Cycles601_5",
                     description: Some("601.5 ADC clock cycles"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "Cycles615",
+                    name: "Cycles61_5",
                     description: Some("61.5 ADC clock cycles"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "Cycles75",
+                    name: "Cycles7_5",
                     description: Some("7.5 ADC clock cycles"),
                     value: 3,
                 },

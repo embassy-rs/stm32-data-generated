@@ -639,42 +639,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "Cycles135",
+                    name: "Cycles13_5",
                     description: Some("13.5 ADC clock cycles"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "Cycles15",
+                    name: "Cycles1_5",
                     description: Some("1.5 ADC clock cycles"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Cycles2395",
+                    name: "Cycles239_5",
                     description: Some("239.5 ADC clock cycles"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "Cycles285",
+                    name: "Cycles28_5",
                     description: Some("28.5 ADC clock cycles"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "Cycles415",
+                    name: "Cycles41_5",
                     description: Some("41.5 ADC clock cycles"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "Cycles555",
+                    name: "Cycles55_5",
                     description: Some("55.5 ADC clock cycles"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "Cycles715",
+                    name: "Cycles71_5",
                     description: Some("71.5 ADC clock cycles"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "Cycles75",
+                    name: "Cycles7_5",
                     description: Some("7.5 ADC clock cycles"),
                     value: 1,
                 },

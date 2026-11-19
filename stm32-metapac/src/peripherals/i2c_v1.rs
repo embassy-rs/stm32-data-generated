@@ -1166,9 +1166,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Duty {
         #[doc = "Duty cycle t_low/t_high = 2/1"]
-        Duty21 = 0x0,
+        Duty2_1 = 0x0,
         #[doc = "Duty cycle t_low/t_high = 16/9"]
-        Duty169 = 0x01,
+        Duty16_9 = 0x01,
     }
     impl Duty {
         #[inline(always)]

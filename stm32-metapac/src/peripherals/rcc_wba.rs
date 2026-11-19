@@ -6128,13 +6128,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Lsetrim {
         #[doc = "current source resistance 5/4 x R"]
-        R54 = 0x0,
+        R5_4 = 0x0,
         #[doc = "current source resistance R"]
         R = 0x01,
         #[doc = "current source resistance 3/4 x R"]
-        R34 = 0x02,
+        R3_4 = 0x02,
         #[doc = "current source resistance 2/3 x R"]
-        R23 = 0x03,
+        R2_3 = 0x03,
     }
     impl Lsetrim {
         #[inline(always)]

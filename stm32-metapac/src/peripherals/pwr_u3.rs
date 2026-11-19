@@ -5839,7 +5839,7 @@ pub mod vals {
         #[doc = "Charge VBAT through a 5 k ohm resistor."]
         Charge5k = 0x0,
         #[doc = "Charge VBAT through a 1.5 k ohm resistor."]
-        Charge15k = 0x01,
+        Charge1_5k = 0x01,
     }
     impl Vbrs {
         #[inline(always)]

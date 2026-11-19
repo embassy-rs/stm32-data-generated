@@ -7190,7 +7190,7 @@ pub mod vals {
         #[doc = "Output 2 delayed idle on external event 6"]
         Output2Ee6 = 0x01,
         #[doc = "Output 1 and 2 delayed idle on external event 6"]
-        Output12Ee6 = 0x02,
+        Output1_2Ee6 = 0x02,
         #[doc = "Balanced idle on external event 6"]
         BalancedEe6 = 0x03,
         #[doc = "Output 1 delayed idle on external event 7"]
@@ -7198,7 +7198,7 @@ pub mod vals {
         #[doc = "Output 2 delayed idle on external event 7"]
         Output2Ee7 = 0x05,
         #[doc = "Output 1 and 2 delayed idle on external event 7"]
-        Output12Ee7 = 0x06,
+        Output1_2Ee7 = 0x06,
         #[doc = "Balanced idle on external event 7"]
         BalancedEe7 = 0x07,
     }

@@ -375,7 +375,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calsel {
         #[doc = "VREFOPAMP = 3.3% VDDA"]
-        Percent33 = 0x0,
+        Percent3_3 = 0x0,
         #[doc = "VREFOPAMP = 10% VDDA"]
         Percent10 = 0x01,
         #[doc = "VREFOPAMP = 50% VDDA"]

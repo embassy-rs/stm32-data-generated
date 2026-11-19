@@ -1622,7 +1622,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
-                    name: "NoisePlus156",
+                    name: "NoisePlus15_6",
                     description: Some("Threshold is 15.6 dB higher than ANLVL"),
                     value: 4,
                 },
@@ -1632,37 +1632,37 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 5,
                 },
                 EnumVariant {
-                    name: "NoisePlus216",
+                    name: "NoisePlus21_6",
                     description: Some("Threshold is 21.6 dB higher than ANLVL"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "NoisePlus241",
+                    name: "NoisePlus24_1",
                     description: Some("Threshold is 24.1 dB higher than ANLVL"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "NoisePlus276",
+                    name: "NoisePlus27_6",
                     description: Some("Threshold is 27.6 dB higher than ANLVL"),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "NoisePlus301",
+                    name: "NoisePlus30_1",
                     description: Some("Threshold is 30.1 dB higher than ANLVL"),
                     value: 9,
                 },
                 EnumVariant {
-                    name: "NoisePlus35",
+                    name: "NoisePlus3_5",
                     description: Some("Threshold is 3.5 dB higher than ANLVL"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "NoisePlus60",
+                    name: "NoisePlus6_0",
                     description: Some("Threshold is 6.0 dB higher than ANLVL"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "NoisePlus95",
+                    name: "NoisePlus9_5",
                     description: Some("Threshold is 9.5 dB higher than ANLVL"),
                     value: 2,
                 },

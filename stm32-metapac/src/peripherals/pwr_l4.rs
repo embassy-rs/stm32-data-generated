@@ -1046,19 +1046,19 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pls {
         #[doc = "2.0V"]
-        V20 = 0x0,
+        V2_0 = 0x0,
         #[doc = "2.2V"]
-        V22 = 0x01,
+        V2_2 = 0x01,
         #[doc = "2.4V"]
-        V24 = 0x02,
+        V2_4 = 0x02,
         #[doc = "2.5V"]
-        V25 = 0x03,
+        V2_5 = 0x03,
         #[doc = "2.6V"]
-        V26 = 0x04,
+        V2_6 = 0x04,
         #[doc = "2.8V"]
-        V28 = 0x05,
+        V2_8 = 0x05,
         #[doc = "2.9V"]
-        V29 = 0x06,
+        V2_9 = 0x06,
         #[doc = "External input analog voltage PVD_IN (compared internally to VREFINT)"]
         External = 0x07,
     }

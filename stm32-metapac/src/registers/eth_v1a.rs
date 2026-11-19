@@ -2639,27 +2639,27 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "Cr100150",
+                    name: "Cr100_150",
                     description: Some("100-150 MHz HCLK/62"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Cr150168",
+                    name: "Cr150_168",
                     description: Some("150-168MHz HCLK/102"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "Cr2035",
+                    name: "Cr20_35",
                     description: Some("20-35MHz HCLK/16"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "Cr3560",
+                    name: "Cr35_60",
                     description: Some("35-60MHz HCLK/16"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "Cr60100",
+                    name: "Cr60_100",
                     description: Some("60-100MHz HCLK/42"),
                     value: 0,
                 },

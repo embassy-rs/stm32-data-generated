@@ -1209,42 +1209,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "Cycles125",
+                    name: "Cycles12_5",
                     description: Some("12.5 ADC clock cycles"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "Cycles15015",
+                    name: "Cycles1501_5",
                     description: Some("1501.5 ADC clock cycles"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "Cycles245",
-                    description: Some("24.5 ADC clock cycles"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "Cycles2475",
+                    name: "Cycles247_5",
                     description: Some("247.5 ADC clock cycles"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "Cycles25",
+                    name: "Cycles24_5",
+                    description: Some("24.5 ADC clock cycles"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "Cycles2_5",
                     description: Some("2.5 ADC clock cycles"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Cycles35",
+                    name: "Cycles3_5",
                     description: Some("3.5 ADC clock cycles"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Cycles475",
+                    name: "Cycles47_5",
                     description: Some("47.5 ADC clock cycles"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "Cycles75",
+                    name: "Cycles7_5",
                     description: Some("7.5 ADC clock cycles"),
                     value: 2,
                 },

@@ -10870,21 +10870,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pr {
         #[doc = "The priority ratio is 1:1."]
-        Ratio11 = 0x0,
+        Ratio1_1 = 0x0,
         #[doc = "The priority ratio is 2:1."]
-        Ratio21 = 0x01,
+        Ratio2_1 = 0x01,
         #[doc = "The priority ratio is 3:1."]
-        Ratio31 = 0x02,
+        Ratio3_1 = 0x02,
         #[doc = "The priority ratio is 4:1."]
-        Ratio41 = 0x03,
+        Ratio4_1 = 0x03,
         #[doc = "The priority ratio is 5:1."]
-        Ratio51 = 0x04,
+        Ratio5_1 = 0x04,
         #[doc = "The priority ratio is 6:1."]
-        Ratio61 = 0x05,
+        Ratio6_1 = 0x05,
         #[doc = "The priority ratio is 7:1."]
-        Ratio71 = 0x06,
+        Ratio7_1 = 0x06,
         #[doc = "The priority ratio is 8:1."]
-        Ratio81 = 0x07,
+        Ratio8_1 = 0x07,
     }
     impl Pr {
         #[inline(always)]

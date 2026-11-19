@@ -1792,37 +1792,37 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 7,
                 },
                 EnumVariant {
-                    name: "V205",
+                    name: "V2_05",
                     description: Some("2.05 V - Lowest level."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "V220",
+                    name: "V2_20",
                     description: Some("2.20 V."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "V236",
+                    name: "V2_36",
                     description: Some("2.36 V."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "V252",
+                    name: "V2_52",
                     description: Some("2.52 V."),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "V264",
+                    name: "V2_64",
                     description: Some("2.64 V."),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "V281",
+                    name: "V2_81",
                     description: Some("2.81 V."),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "V291",
+                    name: "V2_91",
                     description: Some("2.91 V - Highest level."),
                     value: 6,
                 },
@@ -1922,7 +1922,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
-                    name: "Ma25",
+                    name: "Ma2_5",
                     description: Some("2.5mA."),
                     value: 0,
                 },

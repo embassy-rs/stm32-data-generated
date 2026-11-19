@@ -1604,7 +1604,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 4,
                 },
                 EnumVariant {
-                    name: "Mul65",
+                    name: "Mul6_5",
                     description: Some("PLL input clock x6.5"),
                     value: 13,
                 },
@@ -1855,7 +1855,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Div15",
+                    name: "Div1_5",
                     description: Some("PLL clock is divided by 1.5"),
                     value: 0,
                 },

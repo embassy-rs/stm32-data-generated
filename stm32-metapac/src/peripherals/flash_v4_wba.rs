@@ -2688,7 +2688,7 @@ pub mod vals {
     pub struct Rdp(u8);
     impl Rdp {
         #[doc = "Level 0.5 (readout protection not active, only non-secure debug access is possible). Only available when TrustZone is active (TZEN=1)"]
-        pub const Level05: Self = Self(0x55);
+        pub const Level0_5: Self = Self(0x55);
         #[doc = "Level 0 (readout protection not active)"]
         pub const Level0: Self = Self(0xaa);
         #[doc = "Level 2 (chip readout protection active)"]
@@ -2706,7 +2706,7 @@ pub mod vals {
     impl core::fmt::Debug for Rdp {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             match self.0 {
-                0x55 => f.write_str("Level05"),
+                0x55 => f.write_str("Level0_5"),
                 0xaa => f.write_str("Level0"),
                 0xcc => f.write_str("Level2"),
                 other => core::write!(f, "0x{:02X}", other),
@@ -2717,7 +2717,7 @@ pub mod vals {
     impl defmt::Format for Rdp {
         fn format(&self, f: defmt::Formatter) {
             match self.0 {
-                0x55 => defmt::write!(f, "Level05"),
+                0x55 => defmt::write!(f, "Level0_5"),
                 0xaa => defmt::write!(f, "Level0"),
                 0xcc => defmt::write!(f, "Level2"),
                 other => defmt::write!(f, "0x{:02X}", other),

@@ -233,7 +233,7 @@ pub(crate) static REGISTERS: IR = IR {
         bit_size: 3,
         variants: &[
             EnumVariant {
-                name: "Mhz192",
+                name: "Mhz19_2",
                 description: Some("19.2 MHz PHY reference clock"),
                 value: 0,
             },

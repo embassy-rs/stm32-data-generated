@@ -2367,21 +2367,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Gmc {
         #[doc = "max 0.18 mA/V."]
-        _018mAPerVolt = 0x0,
+        _0_18mAPerVolt = 0x0,
         #[doc = "max 0.57 mA/V."]
-        _057mAPerVolt = 0x01,
+        _0_57mAPerVolt = 0x01,
         #[doc = "max 0.78 mA/V."]
-        _078mAPerVolt = 0x02,
+        _0_78mAPerVolt = 0x02,
         #[doc = "max 1.13 mA/V (Default)."]
-        _113mAPerVolt = 0x03,
+        _1_13mAPerVolt = 0x03,
         #[doc = "max 1.61 mA/V."]
-        _161mAPerVolt = 0x04,
+        _1_61mAPerVolt = 0x04,
         #[doc = "max 1.65 mA/V."]
-        _165mAPerVolt = 0x05,
+        _1_65mAPerVolt = 0x05,
         #[doc = "max 2.12 mA/V."]
-        _212mAPerVolt = 0x06,
+        _2_12mAPerVolt = 0x06,
         #[doc = "max 2.84 mA/V."]
-        _284mAPerVolt = 0x07,
+        _2_84mAPerVolt = 0x07,
     }
     impl Gmc {
         #[inline(always)]
@@ -2558,9 +2558,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Satrg {
         #[doc = "the bias current is confronted to a reference current with a ratio of 1/2."]
-        Ratio12 = 0x0,
+        Ratio1_2 = 0x0,
         #[doc = "the bias current is confronted to a reference current with a ratio of 3/4."]
-        Ratio34 = 0x01,
+        Ratio3_4 = 0x01,
     }
     impl Satrg {
         #[inline(always)]

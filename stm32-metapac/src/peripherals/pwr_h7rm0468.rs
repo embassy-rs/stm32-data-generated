@@ -1047,9 +1047,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdlevel {
         Reset = 0x0,
-        V18 = 0x01,
-        V25 = 0x02,
-        V25Alt = 0x03,
+        V1_8 = 0x01,
+        V2_5 = 0x02,
+        V2_5Alt = 0x03,
     }
     impl Sdlevel {
         #[inline(always)]

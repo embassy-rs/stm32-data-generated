@@ -1846,7 +1846,7 @@ pub mod vals {
         #[doc = "Charge VBAT through a 5 kΩ resistor."]
         R5kOhm = 0x0,
         #[doc = "Charge VBAT through a 1.5 kΩ resistor."]
-        R15kOhm = 0x01,
+        R1_5kOhm = 0x01,
     }
     impl Vbrs {
         #[inline(always)]

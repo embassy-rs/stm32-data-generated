@@ -157,7 +157,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem00"),
+                    fieldset: Some("Qmem0_0"),
                 }),
             },
             BlockItem {
@@ -168,7 +168,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem01"),
+                    fieldset: Some("Qmem0_1"),
                 }),
             },
             BlockItem {
@@ -179,7 +179,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem02"),
+                    fieldset: Some("Qmem0_2"),
                 }),
             },
             BlockItem {
@@ -190,7 +190,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem03"),
+                    fieldset: Some("Qmem0_3"),
                 }),
             },
             BlockItem {
@@ -201,7 +201,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem04"),
+                    fieldset: Some("Qmem0_4"),
                 }),
             },
             BlockItem {
@@ -212,7 +212,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem05"),
+                    fieldset: Some("Qmem0_5"),
                 }),
             },
             BlockItem {
@@ -223,7 +223,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem06"),
+                    fieldset: Some("Qmem0_6"),
                 }),
             },
             BlockItem {
@@ -234,7 +234,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem07"),
+                    fieldset: Some("Qmem0_7"),
                 }),
             },
             BlockItem {
@@ -245,7 +245,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem08"),
+                    fieldset: Some("Qmem0_8"),
                 }),
             },
             BlockItem {
@@ -256,7 +256,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem09"),
+                    fieldset: Some("Qmem0_9"),
                 }),
             },
             BlockItem {
@@ -267,7 +267,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem010"),
+                    fieldset: Some("Qmem0_10"),
                 }),
             },
             BlockItem {
@@ -278,7 +278,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem011"),
+                    fieldset: Some("Qmem0_11"),
                 }),
             },
             BlockItem {
@@ -289,7 +289,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem012"),
+                    fieldset: Some("Qmem0_12"),
                 }),
             },
             BlockItem {
@@ -300,7 +300,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem013"),
+                    fieldset: Some("Qmem0_13"),
                 }),
             },
             BlockItem {
@@ -311,7 +311,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem014"),
+                    fieldset: Some("Qmem0_14"),
                 }),
             },
             BlockItem {
@@ -322,7 +322,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem015"),
+                    fieldset: Some("Qmem0_15"),
                 }),
             },
             BlockItem {
@@ -333,7 +333,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem10"),
+                    fieldset: Some("Qmem1_0"),
                 }),
             },
             BlockItem {
@@ -344,7 +344,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem11"),
+                    fieldset: Some("Qmem1_1"),
                 }),
             },
             BlockItem {
@@ -355,7 +355,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem12"),
+                    fieldset: Some("Qmem1_2"),
                 }),
             },
             BlockItem {
@@ -366,7 +366,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem13"),
+                    fieldset: Some("Qmem1_3"),
                 }),
             },
             BlockItem {
@@ -377,7 +377,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem14"),
+                    fieldset: Some("Qmem1_4"),
                 }),
             },
             BlockItem {
@@ -388,7 +388,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem15"),
+                    fieldset: Some("Qmem1_5"),
                 }),
             },
             BlockItem {
@@ -399,7 +399,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem16"),
+                    fieldset: Some("Qmem1_6"),
                 }),
             },
             BlockItem {
@@ -410,7 +410,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem17"),
+                    fieldset: Some("Qmem1_7"),
                 }),
             },
             BlockItem {
@@ -421,7 +421,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem18"),
+                    fieldset: Some("Qmem1_8"),
                 }),
             },
             BlockItem {
@@ -432,7 +432,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem19"),
+                    fieldset: Some("Qmem1_9"),
                 }),
             },
             BlockItem {
@@ -443,7 +443,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem110"),
+                    fieldset: Some("Qmem1_10"),
                 }),
             },
             BlockItem {
@@ -454,7 +454,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem111"),
+                    fieldset: Some("Qmem1_11"),
                 }),
             },
             BlockItem {
@@ -465,7 +465,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem112"),
+                    fieldset: Some("Qmem1_12"),
                 }),
             },
             BlockItem {
@@ -476,7 +476,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem113"),
+                    fieldset: Some("Qmem1_13"),
                 }),
             },
             BlockItem {
@@ -487,7 +487,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem114"),
+                    fieldset: Some("Qmem1_14"),
                 }),
             },
             BlockItem {
@@ -498,7 +498,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem115"),
+                    fieldset: Some("Qmem1_15"),
                 }),
             },
             BlockItem {
@@ -509,7 +509,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem20"),
+                    fieldset: Some("Qmem2_0"),
                 }),
             },
             BlockItem {
@@ -520,7 +520,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem21"),
+                    fieldset: Some("Qmem2_1"),
                 }),
             },
             BlockItem {
@@ -531,7 +531,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem22"),
+                    fieldset: Some("Qmem2_2"),
                 }),
             },
             BlockItem {
@@ -542,7 +542,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem23"),
+                    fieldset: Some("Qmem2_3"),
                 }),
             },
             BlockItem {
@@ -553,7 +553,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem24"),
+                    fieldset: Some("Qmem2_4"),
                 }),
             },
             BlockItem {
@@ -564,7 +564,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem25"),
+                    fieldset: Some("Qmem2_5"),
                 }),
             },
             BlockItem {
@@ -575,7 +575,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem26"),
+                    fieldset: Some("Qmem2_6"),
                 }),
             },
             BlockItem {
@@ -586,7 +586,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem27"),
+                    fieldset: Some("Qmem2_7"),
                 }),
             },
             BlockItem {
@@ -597,7 +597,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem28"),
+                    fieldset: Some("Qmem2_8"),
                 }),
             },
             BlockItem {
@@ -608,7 +608,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem29"),
+                    fieldset: Some("Qmem2_9"),
                 }),
             },
             BlockItem {
@@ -619,7 +619,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem210"),
+                    fieldset: Some("Qmem2_10"),
                 }),
             },
             BlockItem {
@@ -630,7 +630,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem211"),
+                    fieldset: Some("Qmem2_11"),
                 }),
             },
             BlockItem {
@@ -641,7 +641,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem212"),
+                    fieldset: Some("Qmem2_12"),
                 }),
             },
             BlockItem {
@@ -652,7 +652,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem213"),
+                    fieldset: Some("Qmem2_13"),
                 }),
             },
             BlockItem {
@@ -663,7 +663,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem214"),
+                    fieldset: Some("Qmem2_14"),
                 }),
             },
             BlockItem {
@@ -674,7 +674,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem215"),
+                    fieldset: Some("Qmem2_15"),
                 }),
             },
             BlockItem {
@@ -685,7 +685,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem30"),
+                    fieldset: Some("Qmem3_0"),
                 }),
             },
             BlockItem {
@@ -696,7 +696,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem31"),
+                    fieldset: Some("Qmem3_1"),
                 }),
             },
             BlockItem {
@@ -707,7 +707,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem32"),
+                    fieldset: Some("Qmem3_2"),
                 }),
             },
             BlockItem {
@@ -718,7 +718,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem33"),
+                    fieldset: Some("Qmem3_3"),
                 }),
             },
             BlockItem {
@@ -729,7 +729,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem34"),
+                    fieldset: Some("Qmem3_4"),
                 }),
             },
             BlockItem {
@@ -740,7 +740,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem35"),
+                    fieldset: Some("Qmem3_5"),
                 }),
             },
             BlockItem {
@@ -751,7 +751,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem36"),
+                    fieldset: Some("Qmem3_6"),
                 }),
             },
             BlockItem {
@@ -762,7 +762,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem37"),
+                    fieldset: Some("Qmem3_7"),
                 }),
             },
             BlockItem {
@@ -773,7 +773,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem38"),
+                    fieldset: Some("Qmem3_8"),
                 }),
             },
             BlockItem {
@@ -784,7 +784,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem39"),
+                    fieldset: Some("Qmem3_9"),
                 }),
             },
             BlockItem {
@@ -795,7 +795,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem310"),
+                    fieldset: Some("Qmem3_10"),
                 }),
             },
             BlockItem {
@@ -806,7 +806,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem311"),
+                    fieldset: Some("Qmem3_11"),
                 }),
             },
             BlockItem {
@@ -817,7 +817,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem312"),
+                    fieldset: Some("Qmem3_12"),
                 }),
             },
             BlockItem {
@@ -828,7 +828,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem313"),
+                    fieldset: Some("Qmem3_13"),
                 }),
             },
             BlockItem {
@@ -839,7 +839,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem314"),
+                    fieldset: Some("Qmem3_14"),
                 }),
             },
             BlockItem {
@@ -850,7 +850,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("Qmem315"),
+                    fieldset: Some("Qmem3_15"),
                 }),
             },
             BlockItem {
@@ -3446,7 +3446,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc00"),
+                    fieldset: Some("HuffencAc0_0"),
                 }),
             },
             BlockItem {
@@ -3457,7 +3457,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc01"),
+                    fieldset: Some("HuffencAc0_1"),
                 }),
             },
             BlockItem {
@@ -3468,7 +3468,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc02"),
+                    fieldset: Some("HuffencAc0_2"),
                 }),
             },
             BlockItem {
@@ -3479,7 +3479,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc03"),
+                    fieldset: Some("HuffencAc0_3"),
                 }),
             },
             BlockItem {
@@ -3490,7 +3490,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc04"),
+                    fieldset: Some("HuffencAc0_4"),
                 }),
             },
             BlockItem {
@@ -3501,7 +3501,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc05"),
+                    fieldset: Some("HuffencAc0_5"),
                 }),
             },
             BlockItem {
@@ -3512,7 +3512,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc06"),
+                    fieldset: Some("HuffencAc0_6"),
                 }),
             },
             BlockItem {
@@ -3523,7 +3523,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc07"),
+                    fieldset: Some("HuffencAc0_7"),
                 }),
             },
             BlockItem {
@@ -3534,7 +3534,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc08"),
+                    fieldset: Some("HuffencAc0_8"),
                 }),
             },
             BlockItem {
@@ -3545,7 +3545,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc09"),
+                    fieldset: Some("HuffencAc0_9"),
                 }),
             },
             BlockItem {
@@ -3556,7 +3556,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc010"),
+                    fieldset: Some("HuffencAc0_10"),
                 }),
             },
             BlockItem {
@@ -3567,7 +3567,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc011"),
+                    fieldset: Some("HuffencAc0_11"),
                 }),
             },
             BlockItem {
@@ -3578,7 +3578,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc012"),
+                    fieldset: Some("HuffencAc0_12"),
                 }),
             },
             BlockItem {
@@ -3589,7 +3589,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc013"),
+                    fieldset: Some("HuffencAc0_13"),
                 }),
             },
             BlockItem {
@@ -3600,7 +3600,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc014"),
+                    fieldset: Some("HuffencAc0_14"),
                 }),
             },
             BlockItem {
@@ -3611,7 +3611,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc015"),
+                    fieldset: Some("HuffencAc0_15"),
                 }),
             },
             BlockItem {
@@ -3622,7 +3622,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc016"),
+                    fieldset: Some("HuffencAc0_16"),
                 }),
             },
             BlockItem {
@@ -3633,7 +3633,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc017"),
+                    fieldset: Some("HuffencAc0_17"),
                 }),
             },
             BlockItem {
@@ -3644,7 +3644,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc018"),
+                    fieldset: Some("HuffencAc0_18"),
                 }),
             },
             BlockItem {
@@ -3655,7 +3655,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc019"),
+                    fieldset: Some("HuffencAc0_19"),
                 }),
             },
             BlockItem {
@@ -3666,7 +3666,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc020"),
+                    fieldset: Some("HuffencAc0_20"),
                 }),
             },
             BlockItem {
@@ -3677,7 +3677,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc021"),
+                    fieldset: Some("HuffencAc0_21"),
                 }),
             },
             BlockItem {
@@ -3688,7 +3688,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc022"),
+                    fieldset: Some("HuffencAc0_22"),
                 }),
             },
             BlockItem {
@@ -3699,7 +3699,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc023"),
+                    fieldset: Some("HuffencAc0_23"),
                 }),
             },
             BlockItem {
@@ -3710,7 +3710,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc024"),
+                    fieldset: Some("HuffencAc0_24"),
                 }),
             },
             BlockItem {
@@ -3721,7 +3721,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc025"),
+                    fieldset: Some("HuffencAc0_25"),
                 }),
             },
             BlockItem {
@@ -3732,7 +3732,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc026"),
+                    fieldset: Some("HuffencAc0_26"),
                 }),
             },
             BlockItem {
@@ -3743,7 +3743,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc027"),
+                    fieldset: Some("HuffencAc0_27"),
                 }),
             },
             BlockItem {
@@ -3754,7 +3754,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc028"),
+                    fieldset: Some("HuffencAc0_28"),
                 }),
             },
             BlockItem {
@@ -3765,7 +3765,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc029"),
+                    fieldset: Some("HuffencAc0_29"),
                 }),
             },
             BlockItem {
@@ -3776,7 +3776,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc030"),
+                    fieldset: Some("HuffencAc0_30"),
                 }),
             },
             BlockItem {
@@ -3787,7 +3787,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc031"),
+                    fieldset: Some("HuffencAc0_31"),
                 }),
             },
             BlockItem {
@@ -3798,7 +3798,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc032"),
+                    fieldset: Some("HuffencAc0_32"),
                 }),
             },
             BlockItem {
@@ -3809,7 +3809,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc033"),
+                    fieldset: Some("HuffencAc0_33"),
                 }),
             },
             BlockItem {
@@ -3820,7 +3820,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc034"),
+                    fieldset: Some("HuffencAc0_34"),
                 }),
             },
             BlockItem {
@@ -3831,7 +3831,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc035"),
+                    fieldset: Some("HuffencAc0_35"),
                 }),
             },
             BlockItem {
@@ -3842,7 +3842,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc036"),
+                    fieldset: Some("HuffencAc0_36"),
                 }),
             },
             BlockItem {
@@ -3853,7 +3853,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc037"),
+                    fieldset: Some("HuffencAc0_37"),
                 }),
             },
             BlockItem {
@@ -3864,7 +3864,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc038"),
+                    fieldset: Some("HuffencAc0_38"),
                 }),
             },
             BlockItem {
@@ -3875,7 +3875,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc039"),
+                    fieldset: Some("HuffencAc0_39"),
                 }),
             },
             BlockItem {
@@ -3886,7 +3886,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc040"),
+                    fieldset: Some("HuffencAc0_40"),
                 }),
             },
             BlockItem {
@@ -3897,7 +3897,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc041"),
+                    fieldset: Some("HuffencAc0_41"),
                 }),
             },
             BlockItem {
@@ -3908,7 +3908,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc042"),
+                    fieldset: Some("HuffencAc0_42"),
                 }),
             },
             BlockItem {
@@ -3919,7 +3919,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc043"),
+                    fieldset: Some("HuffencAc0_43"),
                 }),
             },
             BlockItem {
@@ -3930,7 +3930,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc044"),
+                    fieldset: Some("HuffencAc0_44"),
                 }),
             },
             BlockItem {
@@ -3941,7 +3941,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc045"),
+                    fieldset: Some("HuffencAc0_45"),
                 }),
             },
             BlockItem {
@@ -3952,7 +3952,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc046"),
+                    fieldset: Some("HuffencAc0_46"),
                 }),
             },
             BlockItem {
@@ -3963,7 +3963,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc047"),
+                    fieldset: Some("HuffencAc0_47"),
                 }),
             },
             BlockItem {
@@ -3974,7 +3974,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc048"),
+                    fieldset: Some("HuffencAc0_48"),
                 }),
             },
             BlockItem {
@@ -3985,7 +3985,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc049"),
+                    fieldset: Some("HuffencAc0_49"),
                 }),
             },
             BlockItem {
@@ -3996,7 +3996,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc050"),
+                    fieldset: Some("HuffencAc0_50"),
                 }),
             },
             BlockItem {
@@ -4007,7 +4007,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc051"),
+                    fieldset: Some("HuffencAc0_51"),
                 }),
             },
             BlockItem {
@@ -4018,7 +4018,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc052"),
+                    fieldset: Some("HuffencAc0_52"),
                 }),
             },
             BlockItem {
@@ -4029,7 +4029,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc053"),
+                    fieldset: Some("HuffencAc0_53"),
                 }),
             },
             BlockItem {
@@ -4040,7 +4040,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc054"),
+                    fieldset: Some("HuffencAc0_54"),
                 }),
             },
             BlockItem {
@@ -4051,7 +4051,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc055"),
+                    fieldset: Some("HuffencAc0_55"),
                 }),
             },
             BlockItem {
@@ -4062,7 +4062,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc056"),
+                    fieldset: Some("HuffencAc0_56"),
                 }),
             },
             BlockItem {
@@ -4073,7 +4073,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc057"),
+                    fieldset: Some("HuffencAc0_57"),
                 }),
             },
             BlockItem {
@@ -4084,7 +4084,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc058"),
+                    fieldset: Some("HuffencAc0_58"),
                 }),
             },
             BlockItem {
@@ -4095,7 +4095,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc059"),
+                    fieldset: Some("HuffencAc0_59"),
                 }),
             },
             BlockItem {
@@ -4106,7 +4106,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc060"),
+                    fieldset: Some("HuffencAc0_60"),
                 }),
             },
             BlockItem {
@@ -4117,7 +4117,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc061"),
+                    fieldset: Some("HuffencAc0_61"),
                 }),
             },
             BlockItem {
@@ -4128,7 +4128,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc062"),
+                    fieldset: Some("HuffencAc0_62"),
                 }),
             },
             BlockItem {
@@ -4139,7 +4139,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc063"),
+                    fieldset: Some("HuffencAc0_63"),
                 }),
             },
             BlockItem {
@@ -4150,7 +4150,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc064"),
+                    fieldset: Some("HuffencAc0_64"),
                 }),
             },
             BlockItem {
@@ -4161,7 +4161,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc065"),
+                    fieldset: Some("HuffencAc0_65"),
                 }),
             },
             BlockItem {
@@ -4172,7 +4172,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc066"),
+                    fieldset: Some("HuffencAc0_66"),
                 }),
             },
             BlockItem {
@@ -4183,7 +4183,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc067"),
+                    fieldset: Some("HuffencAc0_67"),
                 }),
             },
             BlockItem {
@@ -4194,7 +4194,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc068"),
+                    fieldset: Some("HuffencAc0_68"),
                 }),
             },
             BlockItem {
@@ -4205,7 +4205,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc069"),
+                    fieldset: Some("HuffencAc0_69"),
                 }),
             },
             BlockItem {
@@ -4216,7 +4216,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc070"),
+                    fieldset: Some("HuffencAc0_70"),
                 }),
             },
             BlockItem {
@@ -4227,7 +4227,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc071"),
+                    fieldset: Some("HuffencAc0_71"),
                 }),
             },
             BlockItem {
@@ -4238,7 +4238,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc072"),
+                    fieldset: Some("HuffencAc0_72"),
                 }),
             },
             BlockItem {
@@ -4249,7 +4249,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc073"),
+                    fieldset: Some("HuffencAc0_73"),
                 }),
             },
             BlockItem {
@@ -4260,7 +4260,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc074"),
+                    fieldset: Some("HuffencAc0_74"),
                 }),
             },
             BlockItem {
@@ -4271,7 +4271,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc075"),
+                    fieldset: Some("HuffencAc0_75"),
                 }),
             },
             BlockItem {
@@ -4282,7 +4282,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc076"),
+                    fieldset: Some("HuffencAc0_76"),
                 }),
             },
             BlockItem {
@@ -4293,7 +4293,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc077"),
+                    fieldset: Some("HuffencAc0_77"),
                 }),
             },
             BlockItem {
@@ -4304,7 +4304,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc078"),
+                    fieldset: Some("HuffencAc0_78"),
                 }),
             },
             BlockItem {
@@ -4315,7 +4315,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc079"),
+                    fieldset: Some("HuffencAc0_79"),
                 }),
             },
             BlockItem {
@@ -4326,7 +4326,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc080"),
+                    fieldset: Some("HuffencAc0_80"),
                 }),
             },
             BlockItem {
@@ -4337,7 +4337,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc081"),
+                    fieldset: Some("HuffencAc0_81"),
                 }),
             },
             BlockItem {
@@ -4348,7 +4348,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc082"),
+                    fieldset: Some("HuffencAc0_82"),
                 }),
             },
             BlockItem {
@@ -4359,7 +4359,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc083"),
+                    fieldset: Some("HuffencAc0_83"),
                 }),
             },
             BlockItem {
@@ -4370,7 +4370,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc084"),
+                    fieldset: Some("HuffencAc0_84"),
                 }),
             },
             BlockItem {
@@ -4381,7 +4381,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc085"),
+                    fieldset: Some("HuffencAc0_85"),
                 }),
             },
             BlockItem {
@@ -4392,7 +4392,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc086"),
+                    fieldset: Some("HuffencAc0_86"),
                 }),
             },
             BlockItem {
@@ -4403,7 +4403,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc087"),
+                    fieldset: Some("HuffencAc0_87"),
                 }),
             },
             BlockItem {
@@ -4414,7 +4414,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc10"),
+                    fieldset: Some("HuffencAc1_0"),
                 }),
             },
             BlockItem {
@@ -4425,7 +4425,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc11"),
+                    fieldset: Some("HuffencAc1_1"),
                 }),
             },
             BlockItem {
@@ -4436,7 +4436,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc12"),
+                    fieldset: Some("HuffencAc1_2"),
                 }),
             },
             BlockItem {
@@ -4447,7 +4447,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc13"),
+                    fieldset: Some("HuffencAc1_3"),
                 }),
             },
             BlockItem {
@@ -4458,7 +4458,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc14"),
+                    fieldset: Some("HuffencAc1_4"),
                 }),
             },
             BlockItem {
@@ -4469,7 +4469,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc15"),
+                    fieldset: Some("HuffencAc1_5"),
                 }),
             },
             BlockItem {
@@ -4480,7 +4480,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc16"),
+                    fieldset: Some("HuffencAc1_6"),
                 }),
             },
             BlockItem {
@@ -4491,7 +4491,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc17"),
+                    fieldset: Some("HuffencAc1_7"),
                 }),
             },
             BlockItem {
@@ -4502,7 +4502,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc18"),
+                    fieldset: Some("HuffencAc1_8"),
                 }),
             },
             BlockItem {
@@ -4513,7 +4513,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc19"),
+                    fieldset: Some("HuffencAc1_9"),
                 }),
             },
             BlockItem {
@@ -4524,7 +4524,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc110"),
+                    fieldset: Some("HuffencAc1_10"),
                 }),
             },
             BlockItem {
@@ -4535,7 +4535,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc111"),
+                    fieldset: Some("HuffencAc1_11"),
                 }),
             },
             BlockItem {
@@ -4546,7 +4546,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc112"),
+                    fieldset: Some("HuffencAc1_12"),
                 }),
             },
             BlockItem {
@@ -4557,7 +4557,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc113"),
+                    fieldset: Some("HuffencAc1_13"),
                 }),
             },
             BlockItem {
@@ -4568,7 +4568,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc114"),
+                    fieldset: Some("HuffencAc1_14"),
                 }),
             },
             BlockItem {
@@ -4579,7 +4579,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc115"),
+                    fieldset: Some("HuffencAc1_15"),
                 }),
             },
             BlockItem {
@@ -4590,7 +4590,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc116"),
+                    fieldset: Some("HuffencAc1_16"),
                 }),
             },
             BlockItem {
@@ -4601,7 +4601,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc117"),
+                    fieldset: Some("HuffencAc1_17"),
                 }),
             },
             BlockItem {
@@ -4612,7 +4612,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc118"),
+                    fieldset: Some("HuffencAc1_18"),
                 }),
             },
             BlockItem {
@@ -4623,7 +4623,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc119"),
+                    fieldset: Some("HuffencAc1_19"),
                 }),
             },
             BlockItem {
@@ -4634,7 +4634,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc120"),
+                    fieldset: Some("HuffencAc1_20"),
                 }),
             },
             BlockItem {
@@ -4645,7 +4645,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc121"),
+                    fieldset: Some("HuffencAc1_21"),
                 }),
             },
             BlockItem {
@@ -4656,7 +4656,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc122"),
+                    fieldset: Some("HuffencAc1_22"),
                 }),
             },
             BlockItem {
@@ -4667,7 +4667,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc123"),
+                    fieldset: Some("HuffencAc1_23"),
                 }),
             },
             BlockItem {
@@ -4678,7 +4678,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc124"),
+                    fieldset: Some("HuffencAc1_24"),
                 }),
             },
             BlockItem {
@@ -4689,7 +4689,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc125"),
+                    fieldset: Some("HuffencAc1_25"),
                 }),
             },
             BlockItem {
@@ -4700,7 +4700,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc126"),
+                    fieldset: Some("HuffencAc1_26"),
                 }),
             },
             BlockItem {
@@ -4711,7 +4711,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc127"),
+                    fieldset: Some("HuffencAc1_27"),
                 }),
             },
             BlockItem {
@@ -4722,7 +4722,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc128"),
+                    fieldset: Some("HuffencAc1_28"),
                 }),
             },
             BlockItem {
@@ -4733,7 +4733,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc129"),
+                    fieldset: Some("HuffencAc1_29"),
                 }),
             },
             BlockItem {
@@ -4744,7 +4744,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc130"),
+                    fieldset: Some("HuffencAc1_30"),
                 }),
             },
             BlockItem {
@@ -4755,7 +4755,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc131"),
+                    fieldset: Some("HuffencAc1_31"),
                 }),
             },
             BlockItem {
@@ -4766,7 +4766,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc132"),
+                    fieldset: Some("HuffencAc1_32"),
                 }),
             },
             BlockItem {
@@ -4777,7 +4777,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc133"),
+                    fieldset: Some("HuffencAc1_33"),
                 }),
             },
             BlockItem {
@@ -4788,7 +4788,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc134"),
+                    fieldset: Some("HuffencAc1_34"),
                 }),
             },
             BlockItem {
@@ -4799,7 +4799,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc135"),
+                    fieldset: Some("HuffencAc1_35"),
                 }),
             },
             BlockItem {
@@ -4810,7 +4810,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc136"),
+                    fieldset: Some("HuffencAc1_36"),
                 }),
             },
             BlockItem {
@@ -4821,7 +4821,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc137"),
+                    fieldset: Some("HuffencAc1_37"),
                 }),
             },
             BlockItem {
@@ -4832,7 +4832,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc138"),
+                    fieldset: Some("HuffencAc1_38"),
                 }),
             },
             BlockItem {
@@ -4843,7 +4843,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc139"),
+                    fieldset: Some("HuffencAc1_39"),
                 }),
             },
             BlockItem {
@@ -4854,7 +4854,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc140"),
+                    fieldset: Some("HuffencAc1_40"),
                 }),
             },
             BlockItem {
@@ -4865,7 +4865,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc141"),
+                    fieldset: Some("HuffencAc1_41"),
                 }),
             },
             BlockItem {
@@ -4876,7 +4876,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc142"),
+                    fieldset: Some("HuffencAc1_42"),
                 }),
             },
             BlockItem {
@@ -4887,7 +4887,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc143"),
+                    fieldset: Some("HuffencAc1_43"),
                 }),
             },
             BlockItem {
@@ -4898,7 +4898,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc144"),
+                    fieldset: Some("HuffencAc1_44"),
                 }),
             },
             BlockItem {
@@ -4909,7 +4909,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc145"),
+                    fieldset: Some("HuffencAc1_45"),
                 }),
             },
             BlockItem {
@@ -4920,7 +4920,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc146"),
+                    fieldset: Some("HuffencAc1_46"),
                 }),
             },
             BlockItem {
@@ -4931,7 +4931,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc147"),
+                    fieldset: Some("HuffencAc1_47"),
                 }),
             },
             BlockItem {
@@ -4942,7 +4942,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc148"),
+                    fieldset: Some("HuffencAc1_48"),
                 }),
             },
             BlockItem {
@@ -4953,7 +4953,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc149"),
+                    fieldset: Some("HuffencAc1_49"),
                 }),
             },
             BlockItem {
@@ -4964,7 +4964,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc150"),
+                    fieldset: Some("HuffencAc1_50"),
                 }),
             },
             BlockItem {
@@ -4975,7 +4975,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc151"),
+                    fieldset: Some("HuffencAc1_51"),
                 }),
             },
             BlockItem {
@@ -4986,7 +4986,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc152"),
+                    fieldset: Some("HuffencAc1_52"),
                 }),
             },
             BlockItem {
@@ -4997,7 +4997,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc153"),
+                    fieldset: Some("HuffencAc1_53"),
                 }),
             },
             BlockItem {
@@ -5008,7 +5008,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc154"),
+                    fieldset: Some("HuffencAc1_54"),
                 }),
             },
             BlockItem {
@@ -5019,7 +5019,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc155"),
+                    fieldset: Some("HuffencAc1_55"),
                 }),
             },
             BlockItem {
@@ -5030,7 +5030,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc156"),
+                    fieldset: Some("HuffencAc1_56"),
                 }),
             },
             BlockItem {
@@ -5041,7 +5041,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc157"),
+                    fieldset: Some("HuffencAc1_57"),
                 }),
             },
             BlockItem {
@@ -5052,7 +5052,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc158"),
+                    fieldset: Some("HuffencAc1_58"),
                 }),
             },
             BlockItem {
@@ -5063,7 +5063,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc159"),
+                    fieldset: Some("HuffencAc1_59"),
                 }),
             },
             BlockItem {
@@ -5074,7 +5074,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc160"),
+                    fieldset: Some("HuffencAc1_60"),
                 }),
             },
             BlockItem {
@@ -5085,7 +5085,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc161"),
+                    fieldset: Some("HuffencAc1_61"),
                 }),
             },
             BlockItem {
@@ -5096,7 +5096,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc162"),
+                    fieldset: Some("HuffencAc1_62"),
                 }),
             },
             BlockItem {
@@ -5107,7 +5107,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc163"),
+                    fieldset: Some("HuffencAc1_63"),
                 }),
             },
             BlockItem {
@@ -5118,7 +5118,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc164"),
+                    fieldset: Some("HuffencAc1_64"),
                 }),
             },
             BlockItem {
@@ -5129,7 +5129,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc165"),
+                    fieldset: Some("HuffencAc1_65"),
                 }),
             },
             BlockItem {
@@ -5140,7 +5140,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc166"),
+                    fieldset: Some("HuffencAc1_66"),
                 }),
             },
             BlockItem {
@@ -5151,7 +5151,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc167"),
+                    fieldset: Some("HuffencAc1_67"),
                 }),
             },
             BlockItem {
@@ -5162,7 +5162,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc168"),
+                    fieldset: Some("HuffencAc1_68"),
                 }),
             },
             BlockItem {
@@ -5173,7 +5173,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc169"),
+                    fieldset: Some("HuffencAc1_69"),
                 }),
             },
             BlockItem {
@@ -5184,7 +5184,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc170"),
+                    fieldset: Some("HuffencAc1_70"),
                 }),
             },
             BlockItem {
@@ -5195,7 +5195,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc171"),
+                    fieldset: Some("HuffencAc1_71"),
                 }),
             },
             BlockItem {
@@ -5206,7 +5206,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc172"),
+                    fieldset: Some("HuffencAc1_72"),
                 }),
             },
             BlockItem {
@@ -5217,7 +5217,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc173"),
+                    fieldset: Some("HuffencAc1_73"),
                 }),
             },
             BlockItem {
@@ -5228,7 +5228,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc174"),
+                    fieldset: Some("HuffencAc1_74"),
                 }),
             },
             BlockItem {
@@ -5239,7 +5239,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc175"),
+                    fieldset: Some("HuffencAc1_75"),
                 }),
             },
             BlockItem {
@@ -5250,7 +5250,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc176"),
+                    fieldset: Some("HuffencAc1_76"),
                 }),
             },
             BlockItem {
@@ -5261,7 +5261,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc177"),
+                    fieldset: Some("HuffencAc1_77"),
                 }),
             },
             BlockItem {
@@ -5272,7 +5272,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc178"),
+                    fieldset: Some("HuffencAc1_78"),
                 }),
             },
             BlockItem {
@@ -5283,7 +5283,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc179"),
+                    fieldset: Some("HuffencAc1_79"),
                 }),
             },
             BlockItem {
@@ -5294,7 +5294,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc180"),
+                    fieldset: Some("HuffencAc1_80"),
                 }),
             },
             BlockItem {
@@ -5305,7 +5305,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc181"),
+                    fieldset: Some("HuffencAc1_81"),
                 }),
             },
             BlockItem {
@@ -5316,7 +5316,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc182"),
+                    fieldset: Some("HuffencAc1_82"),
                 }),
             },
             BlockItem {
@@ -5327,7 +5327,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc183"),
+                    fieldset: Some("HuffencAc1_83"),
                 }),
             },
             BlockItem {
@@ -5338,7 +5338,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc184"),
+                    fieldset: Some("HuffencAc1_84"),
                 }),
             },
             BlockItem {
@@ -5349,7 +5349,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc185"),
+                    fieldset: Some("HuffencAc1_85"),
                 }),
             },
             BlockItem {
@@ -5360,7 +5360,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc186"),
+                    fieldset: Some("HuffencAc1_86"),
                 }),
             },
             BlockItem {
@@ -5371,7 +5371,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencAc187"),
+                    fieldset: Some("HuffencAc1_87"),
                 }),
             },
             BlockItem {
@@ -5382,7 +5382,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencDc00"),
+                    fieldset: Some("HuffencDc0_0"),
                 }),
             },
             BlockItem {
@@ -5393,7 +5393,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencDc01"),
+                    fieldset: Some("HuffencDc0_1"),
                 }),
             },
             BlockItem {
@@ -5404,7 +5404,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencDc02"),
+                    fieldset: Some("HuffencDc0_2"),
                 }),
             },
             BlockItem {
@@ -5415,7 +5415,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencDc03"),
+                    fieldset: Some("HuffencDc0_3"),
                 }),
             },
             BlockItem {
@@ -5426,7 +5426,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencDc04"),
+                    fieldset: Some("HuffencDc0_4"),
                 }),
             },
             BlockItem {
@@ -5437,7 +5437,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencDc05"),
+                    fieldset: Some("HuffencDc0_5"),
                 }),
             },
             BlockItem {
@@ -5448,7 +5448,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencDc06"),
+                    fieldset: Some("HuffencDc0_6"),
                 }),
             },
             BlockItem {
@@ -5459,7 +5459,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencDc07"),
+                    fieldset: Some("HuffencDc0_7"),
                 }),
             },
             BlockItem {
@@ -5470,7 +5470,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencDc10"),
+                    fieldset: Some("HuffencDc1_0"),
                 }),
             },
             BlockItem {
@@ -5481,7 +5481,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencDc11"),
+                    fieldset: Some("HuffencDc1_1"),
                 }),
             },
             BlockItem {
@@ -5492,7 +5492,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencDc12"),
+                    fieldset: Some("HuffencDc1_2"),
                 }),
             },
             BlockItem {
@@ -5503,7 +5503,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencDc13"),
+                    fieldset: Some("HuffencDc1_3"),
                 }),
             },
             BlockItem {
@@ -5514,7 +5514,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencDc14"),
+                    fieldset: Some("HuffencDc1_4"),
                 }),
             },
             BlockItem {
@@ -5525,7 +5525,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencDc15"),
+                    fieldset: Some("HuffencDc1_5"),
                 }),
             },
             BlockItem {
@@ -5536,7 +5536,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencDc16"),
+                    fieldset: Some("HuffencDc1_6"),
                 }),
             },
             BlockItem {
@@ -5547,7 +5547,7 @@ pub(crate) static REGISTERS: IR = IR {
                 inner: BlockItemInner::Register(Register {
                     access: Access::ReadWrite,
                     bit_size: 32,
-                    fieldset: Some("HuffencDc17"),
+                    fieldset: Some("HuffencDc1_7"),
                 }),
             },
         ],
@@ -7764,7 +7764,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "HuffencAc00",
+            name: "HuffencAc0_0",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -7778,7 +7778,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc01",
+            name: "HuffencAc0_1",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -7792,7 +7792,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc010",
+            name: "HuffencAc0_10",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -7806,7 +7806,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc011",
+            name: "HuffencAc0_11",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -7820,7 +7820,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc012",
+            name: "HuffencAc0_12",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -7834,7 +7834,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc013",
+            name: "HuffencAc0_13",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -7848,7 +7848,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc014",
+            name: "HuffencAc0_14",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -7862,7 +7862,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc015",
+            name: "HuffencAc0_15",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -7876,7 +7876,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc016",
+            name: "HuffencAc0_16",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -7890,7 +7890,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc017",
+            name: "HuffencAc0_17",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -7904,7 +7904,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc018",
+            name: "HuffencAc0_18",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -7918,7 +7918,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc019",
+            name: "HuffencAc0_19",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -7932,7 +7932,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc02",
+            name: "HuffencAc0_2",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -7946,7 +7946,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc020",
+            name: "HuffencAc0_20",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -7960,7 +7960,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc021",
+            name: "HuffencAc0_21",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -7974,7 +7974,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc022",
+            name: "HuffencAc0_22",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -7988,7 +7988,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc023",
+            name: "HuffencAc0_23",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8002,7 +8002,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc024",
+            name: "HuffencAc0_24",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8016,7 +8016,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc025",
+            name: "HuffencAc0_25",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8030,7 +8030,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc026",
+            name: "HuffencAc0_26",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8044,7 +8044,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc027",
+            name: "HuffencAc0_27",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8058,7 +8058,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc028",
+            name: "HuffencAc0_28",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8072,7 +8072,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc029",
+            name: "HuffencAc0_29",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8086,7 +8086,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc03",
+            name: "HuffencAc0_3",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8100,7 +8100,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc030",
+            name: "HuffencAc0_30",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8114,7 +8114,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc031",
+            name: "HuffencAc0_31",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8128,7 +8128,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc032",
+            name: "HuffencAc0_32",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8142,7 +8142,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc033",
+            name: "HuffencAc0_33",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8156,7 +8156,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc034",
+            name: "HuffencAc0_34",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8170,7 +8170,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc035",
+            name: "HuffencAc0_35",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8184,7 +8184,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc036",
+            name: "HuffencAc0_36",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8198,7 +8198,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc037",
+            name: "HuffencAc0_37",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8212,7 +8212,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc038",
+            name: "HuffencAc0_38",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8226,7 +8226,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc039",
+            name: "HuffencAc0_39",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8240,7 +8240,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc04",
+            name: "HuffencAc0_4",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8254,7 +8254,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc040",
+            name: "HuffencAc0_40",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8268,7 +8268,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc041",
+            name: "HuffencAc0_41",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8282,7 +8282,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc042",
+            name: "HuffencAc0_42",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8296,7 +8296,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc043",
+            name: "HuffencAc0_43",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8310,7 +8310,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc044",
+            name: "HuffencAc0_44",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8324,7 +8324,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc045",
+            name: "HuffencAc0_45",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8338,7 +8338,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc046",
+            name: "HuffencAc0_46",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8352,7 +8352,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc047",
+            name: "HuffencAc0_47",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8366,7 +8366,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc048",
+            name: "HuffencAc0_48",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8380,7 +8380,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc049",
+            name: "HuffencAc0_49",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8394,7 +8394,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc05",
+            name: "HuffencAc0_5",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8408,7 +8408,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc050",
+            name: "HuffencAc0_50",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8422,7 +8422,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc051",
+            name: "HuffencAc0_51",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8436,7 +8436,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc052",
+            name: "HuffencAc0_52",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8450,7 +8450,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc053",
+            name: "HuffencAc0_53",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8464,7 +8464,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc054",
+            name: "HuffencAc0_54",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8478,7 +8478,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc055",
+            name: "HuffencAc0_55",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8492,7 +8492,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc056",
+            name: "HuffencAc0_56",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8506,7 +8506,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc057",
+            name: "HuffencAc0_57",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8520,7 +8520,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc058",
+            name: "HuffencAc0_58",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8534,7 +8534,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc059",
+            name: "HuffencAc0_59",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8548,7 +8548,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc06",
+            name: "HuffencAc0_6",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8562,7 +8562,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc060",
+            name: "HuffencAc0_60",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8576,7 +8576,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc061",
+            name: "HuffencAc0_61",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8590,7 +8590,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc062",
+            name: "HuffencAc0_62",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8604,7 +8604,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc063",
+            name: "HuffencAc0_63",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8618,7 +8618,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc064",
+            name: "HuffencAc0_64",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8632,7 +8632,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc065",
+            name: "HuffencAc0_65",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8646,7 +8646,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc066",
+            name: "HuffencAc0_66",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8660,7 +8660,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc067",
+            name: "HuffencAc0_67",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8674,7 +8674,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc068",
+            name: "HuffencAc0_68",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8688,7 +8688,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc069",
+            name: "HuffencAc0_69",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8702,7 +8702,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc07",
+            name: "HuffencAc0_7",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8716,7 +8716,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc070",
+            name: "HuffencAc0_70",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8730,7 +8730,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc071",
+            name: "HuffencAc0_71",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8744,7 +8744,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc072",
+            name: "HuffencAc0_72",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8758,7 +8758,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc073",
+            name: "HuffencAc0_73",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8772,7 +8772,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc074",
+            name: "HuffencAc0_74",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8786,7 +8786,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc075",
+            name: "HuffencAc0_75",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8800,7 +8800,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc076",
+            name: "HuffencAc0_76",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8814,7 +8814,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc077",
+            name: "HuffencAc0_77",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8828,7 +8828,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc078",
+            name: "HuffencAc0_78",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8842,7 +8842,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc079",
+            name: "HuffencAc0_79",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8856,7 +8856,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc08",
+            name: "HuffencAc0_8",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8870,7 +8870,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc080",
+            name: "HuffencAc0_80",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8884,7 +8884,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc081",
+            name: "HuffencAc0_81",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8898,7 +8898,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc082",
+            name: "HuffencAc0_82",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8912,7 +8912,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc083",
+            name: "HuffencAc0_83",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8926,7 +8926,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc084",
+            name: "HuffencAc0_84",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8940,7 +8940,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc085",
+            name: "HuffencAc0_85",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8954,7 +8954,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc086",
+            name: "HuffencAc0_86",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8968,7 +8968,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc087",
+            name: "HuffencAc0_87",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8982,7 +8982,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc09",
+            name: "HuffencAc0_9",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 0"),
             bit_size: 32,
@@ -8996,7 +8996,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc10",
+            name: "HuffencAc1_0",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9010,7 +9010,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc11",
+            name: "HuffencAc1_1",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9024,7 +9024,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc110",
+            name: "HuffencAc1_10",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9038,7 +9038,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc111",
+            name: "HuffencAc1_11",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9052,7 +9052,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc112",
+            name: "HuffencAc1_12",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9066,7 +9066,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc113",
+            name: "HuffencAc1_13",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9080,7 +9080,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc114",
+            name: "HuffencAc1_14",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9094,7 +9094,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc115",
+            name: "HuffencAc1_15",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9108,7 +9108,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc116",
+            name: "HuffencAc1_16",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9122,7 +9122,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc117",
+            name: "HuffencAc1_17",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9136,7 +9136,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc118",
+            name: "HuffencAc1_18",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9150,7 +9150,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc119",
+            name: "HuffencAc1_19",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9164,7 +9164,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc12",
+            name: "HuffencAc1_2",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9178,7 +9178,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc120",
+            name: "HuffencAc1_20",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9192,7 +9192,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc121",
+            name: "HuffencAc1_21",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9206,7 +9206,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc122",
+            name: "HuffencAc1_22",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9220,7 +9220,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc123",
+            name: "HuffencAc1_23",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9234,7 +9234,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc124",
+            name: "HuffencAc1_24",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9248,7 +9248,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc125",
+            name: "HuffencAc1_25",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9262,7 +9262,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc126",
+            name: "HuffencAc1_26",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9276,7 +9276,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc127",
+            name: "HuffencAc1_27",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9290,7 +9290,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc128",
+            name: "HuffencAc1_28",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9304,7 +9304,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc129",
+            name: "HuffencAc1_29",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9318,7 +9318,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc13",
+            name: "HuffencAc1_3",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9332,7 +9332,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc130",
+            name: "HuffencAc1_30",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9346,7 +9346,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc131",
+            name: "HuffencAc1_31",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9360,7 +9360,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc132",
+            name: "HuffencAc1_32",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9374,7 +9374,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc133",
+            name: "HuffencAc1_33",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9388,7 +9388,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc134",
+            name: "HuffencAc1_34",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9402,7 +9402,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc135",
+            name: "HuffencAc1_35",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9416,7 +9416,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc136",
+            name: "HuffencAc1_36",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9430,7 +9430,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc137",
+            name: "HuffencAc1_37",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9444,7 +9444,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc138",
+            name: "HuffencAc1_38",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9458,7 +9458,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc139",
+            name: "HuffencAc1_39",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9472,7 +9472,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc14",
+            name: "HuffencAc1_4",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9486,7 +9486,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc140",
+            name: "HuffencAc1_40",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9500,7 +9500,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc141",
+            name: "HuffencAc1_41",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9514,7 +9514,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc142",
+            name: "HuffencAc1_42",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9528,7 +9528,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc143",
+            name: "HuffencAc1_43",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9542,7 +9542,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc144",
+            name: "HuffencAc1_44",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9556,7 +9556,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc145",
+            name: "HuffencAc1_45",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9570,7 +9570,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc146",
+            name: "HuffencAc1_46",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9584,7 +9584,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc147",
+            name: "HuffencAc1_47",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9598,7 +9598,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc148",
+            name: "HuffencAc1_48",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9612,7 +9612,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc149",
+            name: "HuffencAc1_49",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9626,7 +9626,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc15",
+            name: "HuffencAc1_5",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9640,7 +9640,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc150",
+            name: "HuffencAc1_50",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9654,7 +9654,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc151",
+            name: "HuffencAc1_51",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9668,7 +9668,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc152",
+            name: "HuffencAc1_52",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9682,7 +9682,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc153",
+            name: "HuffencAc1_53",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9696,7 +9696,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc154",
+            name: "HuffencAc1_54",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9710,7 +9710,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc155",
+            name: "HuffencAc1_55",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9724,7 +9724,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc156",
+            name: "HuffencAc1_56",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9738,7 +9738,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc157",
+            name: "HuffencAc1_57",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9752,7 +9752,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc158",
+            name: "HuffencAc1_58",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9766,7 +9766,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc159",
+            name: "HuffencAc1_59",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9780,7 +9780,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc16",
+            name: "HuffencAc1_6",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9794,7 +9794,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc160",
+            name: "HuffencAc1_60",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9808,7 +9808,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc161",
+            name: "HuffencAc1_61",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9822,7 +9822,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc162",
+            name: "HuffencAc1_62",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9836,7 +9836,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc163",
+            name: "HuffencAc1_63",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9850,7 +9850,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc164",
+            name: "HuffencAc1_64",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9864,7 +9864,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc165",
+            name: "HuffencAc1_65",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9878,7 +9878,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc166",
+            name: "HuffencAc1_66",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9892,7 +9892,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc167",
+            name: "HuffencAc1_67",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9906,7 +9906,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc168",
+            name: "HuffencAc1_68",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9920,7 +9920,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc169",
+            name: "HuffencAc1_69",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9934,7 +9934,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc17",
+            name: "HuffencAc1_7",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9948,7 +9948,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc170",
+            name: "HuffencAc1_70",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9962,7 +9962,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc171",
+            name: "HuffencAc1_71",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9976,7 +9976,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc172",
+            name: "HuffencAc1_72",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -9990,7 +9990,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc173",
+            name: "HuffencAc1_73",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -10004,7 +10004,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc174",
+            name: "HuffencAc1_74",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -10018,7 +10018,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc175",
+            name: "HuffencAc1_75",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -10032,7 +10032,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc176",
+            name: "HuffencAc1_76",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -10046,7 +10046,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc177",
+            name: "HuffencAc1_77",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -10060,7 +10060,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc178",
+            name: "HuffencAc1_78",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -10074,7 +10074,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc179",
+            name: "HuffencAc1_79",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -10088,7 +10088,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc18",
+            name: "HuffencAc1_8",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -10102,7 +10102,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc180",
+            name: "HuffencAc1_80",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -10116,7 +10116,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc181",
+            name: "HuffencAc1_81",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -10130,7 +10130,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc182",
+            name: "HuffencAc1_82",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -10144,7 +10144,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc183",
+            name: "HuffencAc1_83",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -10158,7 +10158,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc184",
+            name: "HuffencAc1_84",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -10172,7 +10172,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc185",
+            name: "HuffencAc1_85",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -10186,7 +10186,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc186",
+            name: "HuffencAc1_86",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -10200,7 +10200,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc187",
+            name: "HuffencAc1_87",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -10214,7 +10214,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencAc19",
+            name: "HuffencAc1_9",
             extends: None,
             description: Some("JPEG encoder, AC Huffman table 1"),
             bit_size: 32,
@@ -10228,7 +10228,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencDc00",
+            name: "HuffencDc0_0",
             extends: None,
             description: Some("JPEG encoder, DC Huffman table 0"),
             bit_size: 32,
@@ -10242,7 +10242,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencDc01",
+            name: "HuffencDc0_1",
             extends: None,
             description: Some("JPEG encoder, DC Huffman table 0"),
             bit_size: 32,
@@ -10256,7 +10256,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencDc02",
+            name: "HuffencDc0_2",
             extends: None,
             description: Some("JPEG encoder, DC Huffman table 0"),
             bit_size: 32,
@@ -10270,7 +10270,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencDc03",
+            name: "HuffencDc0_3",
             extends: None,
             description: Some("JPEG encoder, DC Huffman table 0"),
             bit_size: 32,
@@ -10284,7 +10284,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencDc04",
+            name: "HuffencDc0_4",
             extends: None,
             description: Some("JPEG encoder, DC Huffman table 0"),
             bit_size: 32,
@@ -10298,7 +10298,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencDc05",
+            name: "HuffencDc0_5",
             extends: None,
             description: Some("JPEG encoder, DC Huffman table 0"),
             bit_size: 32,
@@ -10312,7 +10312,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencDc06",
+            name: "HuffencDc0_6",
             extends: None,
             description: Some("JPEG encoder, DC Huffman table 0"),
             bit_size: 32,
@@ -10326,7 +10326,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencDc07",
+            name: "HuffencDc0_7",
             extends: None,
             description: Some("JPEG encoder, DC Huffman table 0"),
             bit_size: 32,
@@ -10340,7 +10340,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencDc10",
+            name: "HuffencDc1_0",
             extends: None,
             description: Some("JPEG encoder, DC Huffman table 1"),
             bit_size: 32,
@@ -10354,7 +10354,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencDc11",
+            name: "HuffencDc1_1",
             extends: None,
             description: Some("JPEG encoder, DC Huffman table 1"),
             bit_size: 32,
@@ -10368,7 +10368,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencDc12",
+            name: "HuffencDc1_2",
             extends: None,
             description: Some("JPEG encoder, DC Huffman table 1"),
             bit_size: 32,
@@ -10382,7 +10382,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencDc13",
+            name: "HuffencDc1_3",
             extends: None,
             description: Some("JPEG encoder, DC Huffman table 1"),
             bit_size: 32,
@@ -10396,7 +10396,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencDc14",
+            name: "HuffencDc1_4",
             extends: None,
             description: Some("JPEG encoder, DC Huffman table 1"),
             bit_size: 32,
@@ -10410,7 +10410,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencDc15",
+            name: "HuffencDc1_5",
             extends: None,
             description: Some("JPEG encoder, DC Huffman table 1"),
             bit_size: 32,
@@ -10424,7 +10424,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencDc16",
+            name: "HuffencDc1_6",
             extends: None,
             description: Some("JPEG encoder, DC Huffman table 1"),
             bit_size: 32,
@@ -10438,7 +10438,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "HuffencDc17",
+            name: "HuffencDc1_7",
             extends: None,
             description: Some("JPEG encoder, DC Huffman table 1"),
             bit_size: 32,
@@ -12386,7 +12386,7 @@ pub(crate) static REGISTERS: IR = IR {
             ],
         },
         FieldSet {
-            name: "Qmem00",
+            name: "Qmem0_0",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12400,7 +12400,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem01",
+            name: "Qmem0_1",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12414,7 +12414,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem010",
+            name: "Qmem0_10",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12428,7 +12428,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem011",
+            name: "Qmem0_11",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12442,7 +12442,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem012",
+            name: "Qmem0_12",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12456,7 +12456,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem013",
+            name: "Qmem0_13",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12470,7 +12470,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem014",
+            name: "Qmem0_14",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12484,7 +12484,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem015",
+            name: "Qmem0_15",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12498,7 +12498,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem02",
+            name: "Qmem0_2",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12512,7 +12512,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem03",
+            name: "Qmem0_3",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12526,7 +12526,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem04",
+            name: "Qmem0_4",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12540,7 +12540,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem05",
+            name: "Qmem0_5",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12554,7 +12554,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem06",
+            name: "Qmem0_6",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12568,7 +12568,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem07",
+            name: "Qmem0_7",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12582,7 +12582,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem08",
+            name: "Qmem0_8",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12596,7 +12596,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem09",
+            name: "Qmem0_9",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12610,7 +12610,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem10",
+            name: "Qmem1_0",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12624,7 +12624,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem11",
+            name: "Qmem1_1",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12638,7 +12638,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem110",
+            name: "Qmem1_10",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12652,7 +12652,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem111",
+            name: "Qmem1_11",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12666,7 +12666,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem112",
+            name: "Qmem1_12",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12680,7 +12680,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem113",
+            name: "Qmem1_13",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12694,7 +12694,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem114",
+            name: "Qmem1_14",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12708,7 +12708,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem115",
+            name: "Qmem1_15",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12722,7 +12722,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem12",
+            name: "Qmem1_2",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12736,7 +12736,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem13",
+            name: "Qmem1_3",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12750,7 +12750,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem14",
+            name: "Qmem1_4",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12764,7 +12764,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem15",
+            name: "Qmem1_5",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12778,7 +12778,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem16",
+            name: "Qmem1_6",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12792,7 +12792,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem17",
+            name: "Qmem1_7",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12806,7 +12806,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem18",
+            name: "Qmem1_8",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12820,7 +12820,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem19",
+            name: "Qmem1_9",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12834,7 +12834,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem20",
+            name: "Qmem2_0",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12848,7 +12848,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem21",
+            name: "Qmem2_1",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12862,7 +12862,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem210",
+            name: "Qmem2_10",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12876,7 +12876,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem211",
+            name: "Qmem2_11",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12890,7 +12890,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem212",
+            name: "Qmem2_12",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12904,7 +12904,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem213",
+            name: "Qmem2_13",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12918,7 +12918,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem214",
+            name: "Qmem2_14",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12932,7 +12932,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem215",
+            name: "Qmem2_15",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12946,7 +12946,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem22",
+            name: "Qmem2_2",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12960,7 +12960,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem23",
+            name: "Qmem2_3",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12974,7 +12974,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem24",
+            name: "Qmem2_4",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -12988,7 +12988,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem25",
+            name: "Qmem2_5",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13002,7 +13002,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem26",
+            name: "Qmem2_6",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13016,7 +13016,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem27",
+            name: "Qmem2_7",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13030,7 +13030,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem28",
+            name: "Qmem2_8",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13044,7 +13044,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem29",
+            name: "Qmem2_9",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13058,7 +13058,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem30",
+            name: "Qmem3_0",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13072,7 +13072,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem31",
+            name: "Qmem3_1",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13086,7 +13086,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem310",
+            name: "Qmem3_10",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13100,7 +13100,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem311",
+            name: "Qmem3_11",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13114,7 +13114,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem312",
+            name: "Qmem3_12",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13128,7 +13128,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem313",
+            name: "Qmem3_13",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13142,7 +13142,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem314",
+            name: "Qmem3_14",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13156,7 +13156,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem315",
+            name: "Qmem3_15",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13170,7 +13170,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem32",
+            name: "Qmem3_2",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13184,7 +13184,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem33",
+            name: "Qmem3_3",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13198,7 +13198,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem34",
+            name: "Qmem3_4",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13212,7 +13212,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem35",
+            name: "Qmem3_5",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13226,7 +13226,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem36",
+            name: "Qmem3_6",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13240,7 +13240,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem37",
+            name: "Qmem3_7",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13254,7 +13254,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem38",
+            name: "Qmem3_8",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,
@@ -13268,7 +13268,7 @@ pub(crate) static REGISTERS: IR = IR {
             }],
         },
         FieldSet {
-            name: "Qmem39",
+            name: "Qmem3_9",
             extends: None,
             description: Some("JPEG quantization tables"),
             bit_size: 32,

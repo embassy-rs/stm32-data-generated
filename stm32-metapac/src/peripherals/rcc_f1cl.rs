@@ -2673,7 +2673,7 @@ pub mod vals {
         _RESERVED_b = 0x0b,
         _RESERVED_c = 0x0c,
         #[doc = "PLL input clock x6.5"]
-        Mul65 = 0x0d,
+        Mul6_5 = 0x0d,
         _RESERVED_e = 0x0e,
         _RESERVED_f = 0x0f,
     }
@@ -2973,7 +2973,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usbpre {
         #[doc = "PLL clock is divided by 1.5"]
-        Div15 = 0x0,
+        Div1_5 = 0x0,
         #[doc = "PLL clock is not divided"]
         Div1 = 0x01,
     }

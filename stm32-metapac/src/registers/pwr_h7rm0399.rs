@@ -642,17 +642,17 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "V18",
+                    name: "V1_8",
                     description: None,
                     value: 1,
                 },
                 EnumVariant {
-                    name: "V25",
+                    name: "V2_5",
                     description: None,
                     value: 2,
                 },
                 EnumVariant {
-                    name: "V25Alt",
+                    name: "V2_5Alt",
                     description: None,
                     value: 3,
                 },

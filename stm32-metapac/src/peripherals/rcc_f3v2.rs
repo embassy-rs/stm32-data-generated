@@ -3765,7 +3765,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Usbpre {
         #[doc = "PLL clock is divided by 1.5"]
-        Div15 = 0x0,
+        Div1_5 = 0x0,
         #[doc = "PLL clock is not divided"]
         Div1 = 0x01,
     }

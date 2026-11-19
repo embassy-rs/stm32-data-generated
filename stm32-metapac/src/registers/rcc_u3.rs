@@ -4770,17 +4770,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Range512mhz",
+                    name: "Range5_12mhz",
                     description: Some("Range 5 around 12 MHz (reset value)."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Range66mhz",
+                    name: "Range6_6mhz",
                     description: Some("Range 6 around 6 MHz."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "Range73mhz",
+                    name: "Range7_3mhz",
                     description: Some("Range 7 around 3 MHz."),
                     value: 3,
                 },
@@ -4792,12 +4792,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "Msirc096mhz",
+                    name: "Msirc0_96mhz",
                     description: Some("MSIRC0 (96 MHz) is selected as source to generate MSIK."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Msirc124mhz",
+                    name: "Msirc1_24mhz",
                     description: Some("MSIRC1 (24 MHz) is selected as source to generate MSIK."),
                     value: 1,
                 },
@@ -4870,17 +4870,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Range512mhz",
+                    name: "Range5_12mhz",
                     description: Some("Range 5 around 12 MHz (reset value)."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Range66mhz",
+                    name: "Range6_6mhz",
                     description: Some("Range 6 around 6 MHz."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "Range73mhz",
+                    name: "Range7_3mhz",
                     description: Some("Range 7 around 3 MHz."),
                     value: 3,
                 },
@@ -4892,12 +4892,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "Msirc096mhz",
+                    name: "Msirc0_96mhz",
                     description: Some("MSIRC0 (96 MHz) is selected as source to generate MSIS."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Msirc124mhz",
+                    name: "Msirc1_24mhz",
                     description: Some("MSIRC1 (24 MHz) is selected as source to generate MSIS."),
                     value: 1,
                 },

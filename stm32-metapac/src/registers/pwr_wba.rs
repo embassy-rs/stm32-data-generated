@@ -1293,12 +1293,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Wkup10",
+                    name: "Wkup1_0",
                     description: Some("WKUP1_0"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Wkup11",
+                    name: "Wkup1_1",
                     description: Some("WKUP1_1"),
                     value: 1,
                 },
@@ -1310,12 +1310,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Wkup20",
+                    name: "Wkup2_0",
                     description: Some("WKUP2_0"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Wkup21",
+                    name: "Wkup2_1",
                     description: Some("WKUP2_1"),
                     value: 1,
                 },
@@ -1327,12 +1327,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Wkup31",
+                    name: "Wkup3_1",
                     description: Some("WKUP3_1"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Wkup32",
+                    name: "Wkup3_2",
                     description: Some("WKUP3_2"),
                     value: 2,
                 },
@@ -1344,12 +1344,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Wkup40",
+                    name: "Wkup4_0",
                     description: Some("WKUP4_0"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Wkup41",
+                    name: "Wkup4_1",
                     description: Some("WKUP4_1"),
                     value: 1,
                 },
@@ -1361,12 +1361,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Wkup51",
+                    name: "Wkup5_1",
                     description: Some("WKUP5_1"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Wkup52",
+                    name: "Wkup5_2",
                     description: Some("WKUP5_2"),
                     value: 2,
                 },
@@ -1378,17 +1378,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Wkup60",
+                    name: "Wkup6_0",
                     description: Some("WKUP6_0"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Wkup61",
+                    name: "Wkup6_1",
                     description: Some("WKUP6_1"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Wkup63",
+                    name: "Wkup6_3",
                     description: Some("WKUP6_3 (internal source, does not generate a WKUP interrupt)"),
                     value: 3,
                 },
@@ -1400,17 +1400,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Wkup70",
+                    name: "Wkup7_0",
                     description: Some("WKUP7_0"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Wkup71",
+                    name: "Wkup7_1",
                     description: Some("WKUP7_1"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Wkup73",
+                    name: "Wkup7_3",
                     description: Some("WKUP7_3 (internal source, does not generate a WKUP interrupt)"),
                     value: 3,
                 },
@@ -1422,17 +1422,17 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Wkup81",
+                    name: "Wkup8_1",
                     description: Some("WKUP8_1"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Wkup82",
+                    name: "Wkup8_2",
                     description: Some("WKUP8_2"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "Wkup83",
+                    name: "Wkup8_3",
                     description: Some("WKUP8_3 (internal source, does not generate a WKUP interrupt)"),
                     value: 3,
                 },

@@ -2177,42 +2177,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "Cycles125",
+                    name: "Cycles12_5",
                     description: Some("12.5 ADC clock cycles"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "Cycles15",
-                    description: Some("1.5 ADC clock cycles"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Cycles195",
+                    name: "Cycles19_5",
                     description: Some("19.5 ADC clock cycles"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "Cycles35",
-                    description: Some("3.5 ADC clock cycles"),
-                    value: 1,
+                    name: "Cycles1_5",
+                    description: Some("1.5 ADC clock cycles"),
+                    value: 0,
                 },
                 EnumVariant {
-                    name: "Cycles395",
+                    name: "Cycles39_5",
                     description: Some("39.5 ADC clock cycles"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "Cycles75",
-                    description: Some("7.5 ADC clock cycles"),
-                    value: 2,
+                    name: "Cycles3_5",
+                    description: Some("3.5 ADC clock cycles"),
+                    value: 1,
                 },
                 EnumVariant {
-                    name: "Cycles795",
+                    name: "Cycles79_5",
                     description: Some("79.5 ADC clock cycles"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "Cycles8145",
+                    name: "Cycles7_5",
+                    description: Some("7.5 ADC clock cycles"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Cycles814_5",
                     description: Some("814.5 ADC clock cycles"),
                     value: 7,
                 },

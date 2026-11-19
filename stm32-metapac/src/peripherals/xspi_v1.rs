@@ -3247,13 +3247,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msel {
         #[doc = "data exchanged over IO\\[3:0\\]"]
-        Io30 = 0x0,
+        Io3_0 = 0x0,
         #[doc = "data exchanged over IO\\[7:4\\]"]
-        Io74 = 0x01,
+        Io7_4 = 0x01,
         #[doc = "data exchanged over IO\\[11:8\\]"]
-        Io118 = 0x02,
+        Io11_8 = 0x02,
         #[doc = "data exchanged over IO\\[15:12\\]"]
-        Io1512 = 0x03,
+        Io15_12 = 0x03,
     }
     impl Msel {
         #[inline(always)]

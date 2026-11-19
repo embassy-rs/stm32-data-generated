@@ -2273,9 +2273,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wusel1 {
         #[doc = "WKUP1_0"]
-        Wkup10 = 0x0,
+        Wkup1_0 = 0x0,
         #[doc = "WKUP1_1"]
-        Wkup11 = 0x01,
+        Wkup1_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -2307,9 +2307,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wusel2 {
         #[doc = "WKUP2_0"]
-        Wkup20 = 0x0,
+        Wkup2_0 = 0x0,
         #[doc = "WKUP2_1"]
-        Wkup21 = 0x01,
+        Wkup2_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -2342,9 +2342,9 @@ pub mod vals {
     pub enum Wusel3 {
         _RESERVED_0 = 0x0,
         #[doc = "WKUP3_1"]
-        Wkup31 = 0x01,
+        Wkup3_1 = 0x01,
         #[doc = "WKUP3_2"]
-        Wkup32 = 0x02,
+        Wkup3_2 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Wusel3 {
@@ -2375,9 +2375,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wusel4 {
         #[doc = "WKUP4_0"]
-        Wkup40 = 0x0,
+        Wkup4_0 = 0x0,
         #[doc = "WKUP4_1"]
-        Wkup41 = 0x01,
+        Wkup4_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
     }
@@ -2410,9 +2410,9 @@ pub mod vals {
     pub enum Wusel5 {
         _RESERVED_0 = 0x0,
         #[doc = "WKUP5_1"]
-        Wkup51 = 0x01,
+        Wkup5_1 = 0x01,
         #[doc = "WKUP5_2"]
-        Wkup52 = 0x02,
+        Wkup5_2 = 0x02,
         _RESERVED_3 = 0x03,
     }
     impl Wusel5 {
@@ -2443,12 +2443,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wusel6 {
         #[doc = "WKUP6_0"]
-        Wkup60 = 0x0,
+        Wkup6_0 = 0x0,
         #[doc = "WKUP6_1"]
-        Wkup61 = 0x01,
+        Wkup6_1 = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "WKUP6_3 (internal source, does not generate a WKUP interrupt)"]
-        Wkup63 = 0x03,
+        Wkup6_3 = 0x03,
     }
     impl Wusel6 {
         #[inline(always)]
@@ -2478,12 +2478,12 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Wusel7 {
         #[doc = "WKUP7_0"]
-        Wkup70 = 0x0,
+        Wkup7_0 = 0x0,
         #[doc = "WKUP7_1"]
-        Wkup71 = 0x01,
+        Wkup7_1 = 0x01,
         _RESERVED_2 = 0x02,
         #[doc = "WKUP7_3 (internal source, does not generate a WKUP interrupt)"]
-        Wkup73 = 0x03,
+        Wkup7_3 = 0x03,
     }
     impl Wusel7 {
         #[inline(always)]
@@ -2514,11 +2514,11 @@ pub mod vals {
     pub enum Wusel8 {
         _RESERVED_0 = 0x0,
         #[doc = "WKUP8_1"]
-        Wkup81 = 0x01,
+        Wkup8_1 = 0x01,
         #[doc = "WKUP8_2"]
-        Wkup82 = 0x02,
+        Wkup8_2 = 0x02,
         #[doc = "WKUP8_3 (internal source, does not generate a WKUP interrupt)"]
-        Wkup83 = 0x03,
+        Wkup8_3 = 0x03,
     }
     impl Wusel8 {
         #[inline(always)]

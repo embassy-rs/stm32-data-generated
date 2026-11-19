@@ -6156,7 +6156,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 170,
                 },
                 EnumVariant {
-                    name: "Level05",
+                    name: "Level0_5",
                     description: Some(
                         "Level 0.5 (readout protection not active, only non-secure debug access is possible). Only available when TrustZone is active (TZEN=1)",
                     ),

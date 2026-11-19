@@ -21,7 +21,7 @@ impl Tim1ch {
     }
     #[doc = "control register 1"]
     #[inline(always)]
-    pub const fn cr1(self) -> crate::common::Reg<regs::Cr11ch, crate::common::RW> {
+    pub const fn cr1(self) -> crate::common::Reg<regs::Cr1_1ch, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "DMA/Interrupt enable register"]
@@ -101,12 +101,12 @@ impl Tim2ch {
     }
     #[doc = "control register 1"]
     #[inline(always)]
-    pub const fn cr1(self) -> crate::common::Reg<regs::Cr11ch, crate::common::RW> {
+    pub const fn cr1(self) -> crate::common::Reg<regs::Cr1_1ch, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
     }
     #[doc = "control register 2"]
     #[inline(always)]
-    pub const fn cr2(self) -> crate::common::Reg<regs::Cr22ch, crate::common::RW> {
+    pub const fn cr2(self) -> crate::common::Reg<regs::Cr2_2ch, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x04usize) as _) }
     }
     #[doc = "slave mode control register"]
@@ -1342,132 +1342,6 @@ pub mod regs {
     #[doc = "control register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Cr11ch(pub u32);
-    impl Cr11ch {
-        #[doc = "Counter enable"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn cen(&self) -> bool {
-            let val = (self.0 >> 0usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Counter enable"]
-        #[inline(always)]
-        pub const fn set_cen(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
-        }
-        #[doc = "Update disable"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn udis(&self) -> bool {
-            let val = (self.0 >> 1usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Update disable"]
-        #[inline(always)]
-        pub const fn set_udis(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
-        }
-        #[doc = "Update request source"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn urs(&self) -> super::vals::Urs {
-            let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Urs::from_bits(val as u8)
-        }
-        #[doc = "Update request source"]
-        #[inline(always)]
-        pub const fn set_urs(&mut self, val: super::vals::Urs) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
-        }
-        #[doc = "One-pulse mode enbaled"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn opm(&self) -> bool {
-            let val = (self.0 >> 3usize) & 0x01;
-            val != 0
-        }
-        #[doc = "One-pulse mode enbaled"]
-        #[inline(always)]
-        pub const fn set_opm(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
-        }
-        #[doc = "Auto-reload preload enable"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn arpe(&self) -> bool {
-            let val = (self.0 >> 7usize) & 0x01;
-            val != 0
-        }
-        #[doc = "Auto-reload preload enable"]
-        #[inline(always)]
-        pub const fn set_arpe(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
-        }
-        #[doc = "Clock division"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn ckd(&self) -> super::vals::Ckd {
-            let val = (self.0 >> 8usize) & 0x03;
-            super::vals::Ckd::from_bits(val as u8)
-        }
-        #[doc = "Clock division"]
-        #[inline(always)]
-        pub const fn set_ckd(&mut self, val: super::vals::Ckd) {
-            self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
-        }
-        #[doc = "UIF status bit remapping enable"]
-        #[must_use]
-        #[inline(always)]
-        pub const fn uifremap(&self) -> bool {
-            let val = (self.0 >> 11usize) & 0x01;
-            val != 0
-        }
-        #[doc = "UIF status bit remapping enable"]
-        #[inline(always)]
-        pub const fn set_uifremap(&mut self, val: bool) {
-            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
-        }
-    }
-    impl Default for Cr11ch {
-        #[inline(always)]
-        fn default() -> Cr11ch {
-            Cr11ch(0)
-        }
-    }
-    #[cfg(feature = "debug")]
-    impl core::fmt::Debug for Cr11ch {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Cr11ch")
-                .field("cen", &self.cen())
-                .field("udis", &self.udis())
-                .field("urs", &self.urs())
-                .field("opm", &self.opm())
-                .field("arpe", &self.arpe())
-                .field("ckd", &self.ckd())
-                .field("uifremap", &self.uifremap())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Cr11ch {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Cr11ch {{ cen: {=bool:?}, udis: {=bool:?}, urs: {:?}, opm: {=bool:?}, arpe: {=bool:?}, ckd: {:?}, uifremap: {=bool:?} }}",
-                self.cen(),
-                self.udis(),
-                self.urs(),
-                self.opm(),
-                self.arpe(),
-                self.ckd(),
-                self.uifremap()
-            )
-        }
-    }
-    #[doc = "control register 1"]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
     pub struct Cr1Core(pub u32);
     impl Cr1Core {
         #[doc = "Counter enable"]
@@ -1731,55 +1605,130 @@ pub mod regs {
             )
         }
     }
-    #[doc = "control register 2"]
+    #[doc = "control register 1"]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Cr22ch(pub u32);
-    impl Cr22ch {
-        #[doc = "Master mode selection"]
+    pub struct Cr1_1ch(pub u32);
+    impl Cr1_1ch {
+        #[doc = "Counter enable"]
         #[must_use]
         #[inline(always)]
-        pub const fn mms(&self) -> super::vals::Mms {
-            let val = (self.0 >> 4usize) & 0x07;
-            super::vals::Mms::from_bits(val as u8)
+        pub const fn cen(&self) -> bool {
+            let val = (self.0 >> 0usize) & 0x01;
+            val != 0
         }
-        #[doc = "Master mode selection"]
+        #[doc = "Counter enable"]
         #[inline(always)]
-        pub const fn set_mms(&mut self, val: super::vals::Mms) {
-            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
+        pub const fn set_cen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 0usize)) | (((val as u32) & 0x01) << 0usize);
         }
-        #[doc = "TI1 selection"]
+        #[doc = "Update disable"]
         #[must_use]
         #[inline(always)]
-        pub const fn ti1s(&self) -> super::vals::Ti1s {
+        pub const fn udis(&self) -> bool {
+            let val = (self.0 >> 1usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Update disable"]
+        #[inline(always)]
+        pub const fn set_udis(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 1usize)) | (((val as u32) & 0x01) << 1usize);
+        }
+        #[doc = "Update request source"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn urs(&self) -> super::vals::Urs {
+            let val = (self.0 >> 2usize) & 0x01;
+            super::vals::Urs::from_bits(val as u8)
+        }
+        #[doc = "Update request source"]
+        #[inline(always)]
+        pub const fn set_urs(&mut self, val: super::vals::Urs) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        }
+        #[doc = "One-pulse mode enbaled"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn opm(&self) -> bool {
+            let val = (self.0 >> 3usize) & 0x01;
+            val != 0
+        }
+        #[doc = "One-pulse mode enbaled"]
+        #[inline(always)]
+        pub const fn set_opm(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 3usize)) | (((val as u32) & 0x01) << 3usize);
+        }
+        #[doc = "Auto-reload preload enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn arpe(&self) -> bool {
             let val = (self.0 >> 7usize) & 0x01;
-            super::vals::Ti1s::from_bits(val as u8)
+            val != 0
         }
-        #[doc = "TI1 selection"]
+        #[doc = "Auto-reload preload enable"]
         #[inline(always)]
-        pub const fn set_ti1s(&mut self, val: super::vals::Ti1s) {
-            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        pub const fn set_arpe(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val as u32) & 0x01) << 7usize);
+        }
+        #[doc = "Clock division"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ckd(&self) -> super::vals::Ckd {
+            let val = (self.0 >> 8usize) & 0x03;
+            super::vals::Ckd::from_bits(val as u8)
+        }
+        #[doc = "Clock division"]
+        #[inline(always)]
+        pub const fn set_ckd(&mut self, val: super::vals::Ckd) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
+        }
+        #[doc = "UIF status bit remapping enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn uifremap(&self) -> bool {
+            let val = (self.0 >> 11usize) & 0x01;
+            val != 0
+        }
+        #[doc = "UIF status bit remapping enable"]
+        #[inline(always)]
+        pub const fn set_uifremap(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 11usize)) | (((val as u32) & 0x01) << 11usize);
         }
     }
-    impl Default for Cr22ch {
+    impl Default for Cr1_1ch {
         #[inline(always)]
-        fn default() -> Cr22ch {
-            Cr22ch(0)
+        fn default() -> Cr1_1ch {
+            Cr1_1ch(0)
         }
     }
     #[cfg(feature = "debug")]
-    impl core::fmt::Debug for Cr22ch {
+    impl core::fmt::Debug for Cr1_1ch {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Cr22ch")
-                .field("mms", &self.mms())
-                .field("ti1s", &self.ti1s())
+            f.debug_struct("Cr1_1ch")
+                .field("cen", &self.cen())
+                .field("udis", &self.udis())
+                .field("urs", &self.urs())
+                .field("opm", &self.opm())
+                .field("arpe", &self.arpe())
+                .field("ckd", &self.ckd())
+                .field("uifremap", &self.uifremap())
                 .finish()
         }
     }
     #[cfg(feature = "defmt")]
-    impl defmt::Format for Cr22ch {
+    impl defmt::Format for Cr1_1ch {
         fn format(&self, f: defmt::Formatter) {
-            defmt::write!(f, "Cr22ch {{ mms: {:?}, ti1s: {:?} }}", self.mms(), self.ti1s())
+            defmt::write!(
+                f,
+                "Cr1_1ch {{ cen: {=bool:?}, udis: {=bool:?}, urs: {:?}, opm: {=bool:?}, arpe: {=bool:?}, ckd: {:?}, uifremap: {=bool:?} }}",
+                self.cen(),
+                self.udis(),
+                self.urs(),
+                self.opm(),
+                self.arpe(),
+                self.ckd(),
+                self.uifremap()
+            )
         }
     }
     #[doc = "control register 2"]
@@ -1886,6 +1835,57 @@ pub mod regs {
                 self.mms(),
                 self.ti1s()
             )
+        }
+    }
+    #[doc = "control register 2"]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Cr2_2ch(pub u32);
+    impl Cr2_2ch {
+        #[doc = "Master mode selection"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn mms(&self) -> super::vals::Mms {
+            let val = (self.0 >> 4usize) & 0x07;
+            super::vals::Mms::from_bits(val as u8)
+        }
+        #[doc = "Master mode selection"]
+        #[inline(always)]
+        pub const fn set_mms(&mut self, val: super::vals::Mms) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
+        }
+        #[doc = "TI1 selection"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ti1s(&self) -> super::vals::Ti1s {
+            let val = (self.0 >> 7usize) & 0x01;
+            super::vals::Ti1s::from_bits(val as u8)
+        }
+        #[doc = "TI1 selection"]
+        #[inline(always)]
+        pub const fn set_ti1s(&mut self, val: super::vals::Ti1s) {
+            self.0 = (self.0 & !(0x01 << 7usize)) | (((val.to_bits() as u32) & 0x01) << 7usize);
+        }
+    }
+    impl Default for Cr2_2ch {
+        #[inline(always)]
+        fn default() -> Cr2_2ch {
+            Cr2_2ch(0)
+        }
+    }
+    #[cfg(feature = "debug")]
+    impl core::fmt::Debug for Cr2_2ch {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Cr2_2ch")
+                .field("mms", &self.mms())
+                .field("ti1s", &self.ti1s())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Cr2_2ch {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(f, "Cr2_2ch {{ mms: {:?}, ti1s: {:?} }}", self.mms(), self.ti1s())
         }
     }
     #[doc = "DMA control register"]

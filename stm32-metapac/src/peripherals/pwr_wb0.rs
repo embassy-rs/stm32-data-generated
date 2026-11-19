@@ -2869,19 +2869,19 @@ is reset."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pvdls {
         #[doc = "2.05 V - Lowest level."]
-        V205 = 0x0,
+        V2_05 = 0x0,
         #[doc = "2.20 V."]
-        V220 = 0x01,
+        V2_20 = 0x01,
         #[doc = "2.36 V."]
-        V236 = 0x02,
+        V2_36 = 0x02,
         #[doc = "2.52 V."]
-        V252 = 0x03,
+        V2_52 = 0x03,
         #[doc = "2.64 V."]
-        V264 = 0x04,
+        V2_64 = 0x04,
         #[doc = "2.81 V."]
-        V281 = 0x05,
+        V2_81 = 0x05,
         #[doc = "2.91 V - Highest level."]
-        V291 = 0x06,
+        V2_91 = 0x06,
         #[doc = "External input analog voltage (compare internally to VBGP; When external input <VBGP."]
         External = 0x07,
     }
@@ -3045,7 +3045,7 @@ is reset."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SmpsPrechCurSel {
         #[doc = "2.5mA."]
-        Ma25 = 0x0,
+        Ma2_5 = 0x0,
         #[doc = "5mA."]
         Ma5 = 0x01,
         #[doc = "10mA."]

@@ -1134,21 +1134,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "1.5 ADC clock cycles"]
-        Cycles15 = 0x0,
+        Cycles1_5 = 0x0,
         #[doc = "7.5 ADC clock cycles"]
-        Cycles75 = 0x01,
+        Cycles7_5 = 0x01,
         #[doc = "13.5 ADC clock cycles"]
-        Cycles135 = 0x02,
+        Cycles13_5 = 0x02,
         #[doc = "28.5 ADC clock cycles"]
-        Cycles285 = 0x03,
+        Cycles28_5 = 0x03,
         #[doc = "41.5 ADC clock cycles"]
-        Cycles415 = 0x04,
+        Cycles41_5 = 0x04,
         #[doc = "55.5 ADC clock cycles"]
-        Cycles555 = 0x05,
+        Cycles55_5 = 0x05,
         #[doc = "71.5 ADC clock cycles"]
-        Cycles715 = 0x06,
+        Cycles71_5 = 0x06,
         #[doc = "239.5 ADC clock cycles"]
-        Cycles2395 = 0x07,
+        Cycles239_5 = 0x07,
     }
     impl SampleTime {
         #[inline(always)]

@@ -2146,21 +2146,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "2.5 ADC clock cycles"]
-        Cycles25 = 0x0,
+        Cycles2_5 = 0x0,
         #[doc = "6.5 ADC clock cycles"]
-        Cycles65 = 0x01,
+        Cycles6_5 = 0x01,
         #[doc = "12.5 ADC clock cycles"]
-        Cycles125 = 0x02,
+        Cycles12_5 = 0x02,
         #[doc = "24.5 ADC clock cycles"]
-        Cycles245 = 0x03,
+        Cycles24_5 = 0x03,
         #[doc = "47.5 ADC clock cycles"]
-        Cycles475 = 0x04,
+        Cycles47_5 = 0x04,
         #[doc = "92.5 ADC clock cycles"]
-        Cycles925 = 0x05,
+        Cycles92_5 = 0x05,
         #[doc = "247.5 ADC clock cycles"]
-        Cycles2475 = 0x06,
+        Cycles247_5 = 0x06,
         #[doc = "640.5 ADC clock cycles"]
-        Cycles6405 = 0x07,
+        Cycles640_5 = 0x07,
     }
     impl SampleTime {
         #[inline(always)]
@@ -2190,9 +2190,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Smpplus {
         #[doc = "SMP = 000 selects 2.5 ADC clock cycles"]
-        Cycles25 = 0x0,
+        Cycles2_5 = 0x0,
         #[doc = "SMP = 000 selects 3.5 ADC clock cycles"]
-        Cycles35 = 0x01,
+        Cycles3_5 = 0x01,
     }
     impl Smpplus {
         #[inline(always)]

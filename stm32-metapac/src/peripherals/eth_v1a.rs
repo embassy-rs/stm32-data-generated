@@ -4515,15 +4515,15 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Cr {
         #[doc = "60-100MHz HCLK/42"]
-        Cr60100 = 0x0,
+        Cr60_100 = 0x0,
         #[doc = "100-150 MHz HCLK/62"]
-        Cr100150 = 0x01,
+        Cr100_150 = 0x01,
         #[doc = "20-35MHz HCLK/16"]
-        Cr2035 = 0x02,
+        Cr20_35 = 0x02,
         #[doc = "35-60MHz HCLK/16"]
-        Cr3560 = 0x03,
+        Cr35_60 = 0x03,
         #[doc = "150-168MHz HCLK/102"]
-        Cr150168 = 0x04,
+        Cr150_168 = 0x04,
         _RESERVED_5 = 0x05,
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,

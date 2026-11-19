@@ -3511,7 +3511,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Div15",
+                    name: "Div1_5",
                     description: Some("HSI clock divided by 1.5"),
                     value: 2,
                 },
@@ -3521,7 +3521,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
-                    name: "Div25",
+                    name: "Div2_5",
                     description: Some("HSI clock divided by 2.5"),
                     value: 4,
                 },
@@ -3531,7 +3531,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 5,
                 },
                 EnumVariant {
-                    name: "Div35",
+                    name: "Div3_5",
                     description: Some("HSI clock divided by 3.5"),
                     value: 6,
                 },
@@ -3541,7 +3541,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 7,
                 },
                 EnumVariant {
-                    name: "Div45",
+                    name: "Div4_5",
                     description: Some("HSI clock divided by 4.5"),
                     value: 8,
                 },
@@ -3551,7 +3551,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 9,
                 },
                 EnumVariant {
-                    name: "Div55",
+                    name: "Div5_5",
                     description: Some("HSI clock divided by 5.5"),
                     value: 10,
                 },
@@ -3561,7 +3561,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 11,
                 },
                 EnumVariant {
-                    name: "Div65",
+                    name: "Div6_5",
                     description: Some("HSI clock divided by 6.5"),
                     value: 12,
                 },
@@ -3571,7 +3571,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 13,
                 },
                 EnumVariant {
-                    name: "Div75",
+                    name: "Div7_5",
                     description: Some("HSI clock divided by 7.5"),
                     value: 14,
                 },
@@ -3918,7 +3918,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Div15",
+                    name: "Div1_5",
                     description: Some("PSI clock divided by 1.5"),
                     value: 2,
                 },
@@ -3928,7 +3928,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
-                    name: "Div25",
+                    name: "Div2_5",
                     description: Some("PSI clock divided by 2.5"),
                     value: 4,
                 },
@@ -3938,7 +3938,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 5,
                 },
                 EnumVariant {
-                    name: "Div35",
+                    name: "Div3_5",
                     description: Some("PSI clock divided by 3.5"),
                     value: 6,
                 },
@@ -3948,7 +3948,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 7,
                 },
                 EnumVariant {
-                    name: "Div45",
+                    name: "Div4_5",
                     description: Some("PSI clock divided by 4.5"),
                     value: 8,
                 },
@@ -3958,7 +3958,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 9,
                 },
                 EnumVariant {
-                    name: "Div55",
+                    name: "Div5_5",
                     description: Some("PSI clock divided by 5.5"),
                     value: 10,
                 },
@@ -3968,7 +3968,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 11,
                 },
                 EnumVariant {
-                    name: "Div65",
+                    name: "Div6_5",
                     description: Some("PSI clock divided by 6.5"),
                     value: 12,
                 },
@@ -3978,7 +3978,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 13,
                 },
                 EnumVariant {
-                    name: "Div75",
+                    name: "Div7_5",
                     description: Some("PSI clock divided by 7.5"),
                     value: 14,
                 },
@@ -4010,7 +4010,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 4,
                 },
                 EnumVariant {
-                    name: "F32768kHz",
+                    name: "F32_768kHz",
                     description: Some("32.768 kHz"),
                     value: 0,
                 },

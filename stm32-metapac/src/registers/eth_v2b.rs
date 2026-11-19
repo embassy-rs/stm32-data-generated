@@ -6302,42 +6302,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "Ratio11",
+                    name: "Ratio1_1",
                     description: Some("The priority ratio is 1:1."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Ratio21",
+                    name: "Ratio2_1",
                     description: Some("The priority ratio is 2:1."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Ratio31",
+                    name: "Ratio3_1",
                     description: Some("The priority ratio is 3:1."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "Ratio41",
+                    name: "Ratio4_1",
                     description: Some("The priority ratio is 4:1."),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "Ratio51",
+                    name: "Ratio5_1",
                     description: Some("The priority ratio is 5:1."),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "Ratio61",
+                    name: "Ratio6_1",
                     description: Some("The priority ratio is 6:1."),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "Ratio71",
+                    name: "Ratio7_1",
                     description: Some("The priority ratio is 7:1."),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "Ratio81",
+                    name: "Ratio8_1",
                     description: Some("The priority ratio is 8:1."),
                     value: 7,
                 },

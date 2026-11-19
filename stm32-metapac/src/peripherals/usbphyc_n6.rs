@@ -408,7 +408,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Fsel {
         #[doc = "19.2 MHz PHY reference clock"]
-        Mhz192 = 0x0,
+        Mhz19_2 = 0x0,
         #[doc = "20 MHz PHY reference clock (default after reset)"]
         Mhz20 = 0x01,
         #[doc = "24 MHz PHY reference clock"]

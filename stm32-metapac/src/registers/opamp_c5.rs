@@ -228,7 +228,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Percent33",
+                    name: "Percent3_3",
                     description: Some("0."),
                     value: 0,
                 },

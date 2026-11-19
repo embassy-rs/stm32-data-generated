@@ -1981,7 +1981,7 @@ bits."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Sdlevel {
         Reset = 0x0,
-        V18 = 0x01,
+        V1_8 = 0x01,
     }
     impl Sdlevel {
         #[inline(always)]
@@ -2109,7 +2109,7 @@ bits."]
         #[doc = "Charge VBAT through a 5 k resistor."]
         Ohm5k = 0x0,
         #[doc = "Charge VBAT through a 1.5 k resistor."]
-        Ohm15k = 0x01,
+        Ohm1_5k = 0x01,
     }
     impl Vbrs {
         #[inline(always)]

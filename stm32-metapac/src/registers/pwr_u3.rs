@@ -3918,7 +3918,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "Charge15k",
+                    name: "Charge1_5k",
                     description: Some("Charge VBAT through a 1.5 k ohm resistor."),
                     value: 1,
                 },

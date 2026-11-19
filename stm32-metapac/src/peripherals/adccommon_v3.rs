@@ -689,9 +689,9 @@ pub mod vals {
         Disabled = 0x0,
         _RESERVED_1 = 0x01,
         #[doc = "MDMA mode enabled for 12 and 10-bit resolution"]
-        Bits1210 = 0x02,
+        Bits12_10 = 0x02,
         #[doc = "MDMA mode enabled for 8 and 6-bit resolution"]
-        Bits86 = 0x03,
+        Bits8_6 = 0x03,
     }
     impl Mdma {
         #[inline(always)]

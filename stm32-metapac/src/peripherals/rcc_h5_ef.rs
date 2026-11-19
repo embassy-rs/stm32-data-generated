@@ -9524,7 +9524,7 @@ pub mod vals {
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
         #[doc = "The kernel clock frequency is 19."]
-        Mhz192 = 0x08,
+        Mhz19_2 = 0x08,
         #[doc = "The kernel clock frequency is 20 MHz."]
         Mhz20 = 0x09,
         #[doc = "The kernel clock frequency is 24 MHz (default after reset)."]

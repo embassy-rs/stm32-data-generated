@@ -4077,17 +4077,17 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "R23",
+                    name: "R2_3",
                     description: Some("current source resistance 2/3 x R"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "R34",
+                    name: "R3_4",
                     description: Some("current source resistance 3/4 x R"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "R54",
+                    name: "R5_4",
                     description: Some("current source resistance 5/4 x R"),
                     value: 0,
                 },

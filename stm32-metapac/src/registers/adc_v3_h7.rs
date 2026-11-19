@@ -2013,42 +2013,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "Cycles125",
+                    name: "Cycles12_5",
                     description: Some("12.5 ADC clock cycles"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "Cycles245",
-                    description: Some("24.5 ADC clock cycles"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "Cycles2475",
+                    name: "Cycles247_5",
                     description: Some("247.5 ADC clock cycles"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "Cycles25",
+                    name: "Cycles24_5",
+                    description: Some("24.5 ADC clock cycles"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "Cycles2_5",
                     description: Some("2.5 ADC clock cycles"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Cycles475",
+                    name: "Cycles47_5",
                     description: Some("47.5 ADC clock cycles"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "Cycles6405",
+                    name: "Cycles640_5",
                     description: Some("640.5 ADC clock cycles"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "Cycles65",
+                    name: "Cycles6_5",
                     description: Some("6.5 ADC clock cycles"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Cycles925",
+                    name: "Cycles92_5",
                     description: Some("92.5 ADC clock cycles"),
                     value: 5,
                 },
@@ -2060,7 +2060,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Lt125",
+                    name: "Lt12_5",
                     description: Some("6.25 MHz < ADC clock <= 12.5 MHz"),
                     value: 1,
                 },
@@ -2075,7 +2075,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
-                    name: "Lt625",
+                    name: "Lt6_25",
                     description: Some("ADC clock <= 6.25 MHz"),
                     value: 0,
                 },
@@ -2204,42 +2204,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "Cycles15",
-                    description: Some("1.5 ADC clock cycles"),
-                    value: 0,
-                },
-                EnumVariant {
-                    name: "Cycles165",
+                    name: "Cycles16_5",
                     description: Some("16.5 ADC clock cycles"),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "Cycles25",
+                    name: "Cycles1_5",
+                    description: Some("1.5 ADC clock cycles"),
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Cycles2_5",
                     description: Some("2.5 ADC clock cycles"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Cycles325",
+                    name: "Cycles32_5",
                     description: Some("32.5 ADC clock cycles"),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "Cycles3875",
+                    name: "Cycles387_5",
                     description: Some("387.5 ADC clock cycles"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "Cycles645",
+                    name: "Cycles64_5",
                     description: Some("64.5 ADC clock cycles"),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "Cycles8105",
+                    name: "Cycles810_5",
                     description: Some("810.5 ADC clock cycles"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "Cycles85",
+                    name: "Cycles8_5",
                     description: Some("8.5 ADC clock cycles"),
                     value: 2,
                 },

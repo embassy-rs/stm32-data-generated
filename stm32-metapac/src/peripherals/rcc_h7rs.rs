@@ -10794,7 +10794,7 @@ pub mod vals {
         _RESERVED_6 = 0x06,
         _RESERVED_7 = 0x07,
         #[doc = "The kernel clock frequency provided to the USBPHYC is 19.2 MHz."]
-        Mhz192 = 0x08,
+        Mhz19_2 = 0x08,
         #[doc = "The kernel clock frequency provided to the USBPHYC is 20MHz."]
         Mhz20 = 0x09,
         #[doc = "The kernel clock frequency provided to the USBPHYC is 24 MHz (default after reset)."]

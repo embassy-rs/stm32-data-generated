@@ -3834,21 +3834,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Adc3SampleTime {
         #[doc = "2.5 ADC clock cycles"]
-        Cycles25 = 0x0,
+        Cycles2_5 = 0x0,
         #[doc = "6.5 ADC clock cycles"]
-        Cycles65 = 0x01,
+        Cycles6_5 = 0x01,
         #[doc = "12.5 ADC clock cycles"]
-        Cycles125 = 0x02,
+        Cycles12_5 = 0x02,
         #[doc = "24.5 ADC clock cycles"]
-        Cycles245 = 0x03,
+        Cycles24_5 = 0x03,
         #[doc = "47.5 ADC clock cycles"]
-        Cycles475 = 0x04,
+        Cycles47_5 = 0x04,
         #[doc = "92.5 ADC clock cycles"]
-        Cycles925 = 0x05,
+        Cycles92_5 = 0x05,
         #[doc = "247.5 ADC clock cycles"]
-        Cycles2475 = 0x06,
+        Cycles247_5 = 0x06,
         #[doc = "640.5 ADC clock cycles"]
-        Cycles6405 = 0x07,
+        Cycles640_5 = 0x07,
     }
     impl Adc3SampleTime {
         #[inline(always)]
@@ -3878,9 +3878,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Boost {
         #[doc = "ADC clock <= 6.25 MHz"]
-        Lt625 = 0x0,
+        Lt6_25 = 0x0,
         #[doc = "6.25 MHz < ADC clock <= 12.5 MHz"]
-        Lt125 = 0x01,
+        Lt12_5 = 0x01,
         #[doc = "12.5 MHz < ADC clock <= 25 MHz"]
         Lt25 = 0x02,
         #[doc = "25 MHz < ADC clock <= 50 MHz"]
@@ -4061,21 +4061,21 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum SampleTime {
         #[doc = "1.5 ADC clock cycles"]
-        Cycles15 = 0x0,
+        Cycles1_5 = 0x0,
         #[doc = "2.5 ADC clock cycles"]
-        Cycles25 = 0x01,
+        Cycles2_5 = 0x01,
         #[doc = "8.5 ADC clock cycles"]
-        Cycles85 = 0x02,
+        Cycles8_5 = 0x02,
         #[doc = "16.5 ADC clock cycles"]
-        Cycles165 = 0x03,
+        Cycles16_5 = 0x03,
         #[doc = "32.5 ADC clock cycles"]
-        Cycles325 = 0x04,
+        Cycles32_5 = 0x04,
         #[doc = "64.5 ADC clock cycles"]
-        Cycles645 = 0x05,
+        Cycles64_5 = 0x05,
         #[doc = "387.5 ADC clock cycles"]
-        Cycles3875 = 0x06,
+        Cycles387_5 = 0x06,
         #[doc = "810.5 ADC clock cycles"]
-        Cycles8105 = 0x07,
+        Cycles810_5 = 0x07,
     }
     impl SampleTime {
         #[inline(always)]

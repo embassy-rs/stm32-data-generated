@@ -5885,7 +5885,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
-                    name: "Mhz192",
+                    name: "Mhz19_2",
                     description: Some("The kernel clock frequency is 19."),
                     value: 8,
                 },

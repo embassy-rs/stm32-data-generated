@@ -8026,11 +8026,11 @@ pub mod vals {
     pub enum Msikdivs {
         _RESERVED_0 = 0x0,
         #[doc = "Range 5 around 12 MHz (reset value)."]
-        Range512mhz = 0x01,
+        Range5_12mhz = 0x01,
         #[doc = "Range 6 around 6 MHz."]
-        Range66mhz = 0x02,
+        Range6_6mhz = 0x02,
         #[doc = "Range 7 around 3 MHz."]
-        Range73mhz = 0x03,
+        Range7_3mhz = 0x03,
     }
     impl Msikdivs {
         #[inline(always)]
@@ -8060,9 +8060,9 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msiksel {
         #[doc = "MSIRC0 (96 MHz) is selected as source to generate MSIK."]
-        Msirc096mhz = 0x0,
+        Msirc0_96mhz = 0x0,
         #[doc = "MSIRC1 (24 MHz) is selected as source to generate MSIK."]
-        Msirc124mhz = 0x01,
+        Msirc1_24mhz = 0x01,
     }
     impl Msiksel {
         #[inline(always)]
@@ -8197,11 +8197,11 @@ in RCC_ICSCR1."]
     pub enum Msisdivs {
         _RESERVED_0 = 0x0,
         #[doc = "Range 5 around 12 MHz (reset value)."]
-        Range512mhz = 0x01,
+        Range5_12mhz = 0x01,
         #[doc = "Range 6 around 6 MHz."]
-        Range66mhz = 0x02,
+        Range6_6mhz = 0x02,
         #[doc = "Range 7 around 3 MHz."]
-        Range73mhz = 0x03,
+        Range7_3mhz = 0x03,
     }
     impl Msisdivs {
         #[inline(always)]
@@ -8231,9 +8231,9 @@ in RCC_ICSCR1."]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Msissel {
         #[doc = "MSIRC0 (96 MHz) is selected as source to generate MSIS."]
-        Msirc096mhz = 0x0,
+        Msirc0_96mhz = 0x0,
         #[doc = "MSIRC1 (24 MHz) is selected as source to generate MSIS."]
-        Msirc124mhz = 0x01,
+        Msirc1_24mhz = 0x01,
     }
     impl Msissel {
         #[inline(always)]

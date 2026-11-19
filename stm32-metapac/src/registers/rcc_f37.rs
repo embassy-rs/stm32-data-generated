@@ -2348,7 +2348,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Div15",
+                    name: "Div1_5",
                     description: Some("PLL clock is divided by 1.5"),
                     value: 0,
                 },

@@ -6154,11 +6154,6 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 15,
                 },
                 EnumVariant {
-                    name: "Range1024mhz",
-                    description: Some("range 10 around 1.024 MHz"),
-                    value: 10,
-                },
-                EnumVariant {
                     name: "Range12mhz",
                     description: Some("range 3 around 12 MHz"),
                     value: 3,
@@ -6169,19 +6164,24 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 14,
                 },
                 EnumVariant {
-                    name: "Range133mhz",
+                    name: "Range16mhz",
+                    description: Some("range 2 around 16 MHz"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Range1_024mhz",
+                    description: Some("range 10 around 1.024 MHz"),
+                    value: 10,
+                },
+                EnumVariant {
+                    name: "Range1_33mhz",
                     description: Some("range 6 around 1.33 MHz"),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "Range1536mhz",
+                    name: "Range1_536mhz",
                     description: Some("range 9 around 1.536 MHz"),
                     value: 9,
-                },
-                EnumVariant {
-                    name: "Range16mhz",
-                    description: Some("range 2 around 16 MHz"),
-                    value: 2,
                 },
                 EnumVariant {
                     name: "Range1mhz",
@@ -6204,7 +6204,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 5,
                 },
                 EnumVariant {
-                    name: "Range3072mhz",
+                    name: "Range3_072mhz",
                     description: Some("range 8 around 3.072 MHz"),
                     value: 8,
                 },
@@ -6253,7 +6253,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "Range15mhz",
+                    name: "Range1_5mhz",
                     description: Some("range 6 around 1.5 MHz"),
                     value: 6,
                 },
@@ -6268,7 +6268,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 5,
                 },
                 EnumVariant {
-                    name: "Range3072mhz",
+                    name: "Range3_072mhz",
                     description: Some("range 8 around 3.072 MHz"),
                     value: 8,
                 },

@@ -1464,42 +1464,42 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 3,
             variants: &[
                 EnumVariant {
-                    name: "_018mAPerVolt",
+                    name: "_0_18mAPerVolt",
                     description: Some("max 0.18 mA/V."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "_057mAPerVolt",
+                    name: "_0_57mAPerVolt",
                     description: Some("max 0.57 mA/V."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "_078mAPerVolt",
+                    name: "_0_78mAPerVolt",
                     description: Some("max 0.78 mA/V."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "_113mAPerVolt",
+                    name: "_1_13mAPerVolt",
                     description: Some("max 1.13 mA/V (Default)."),
                     value: 3,
                 },
                 EnumVariant {
-                    name: "_161mAPerVolt",
+                    name: "_1_61mAPerVolt",
                     description: Some("max 1.61 mA/V."),
                     value: 4,
                 },
                 EnumVariant {
-                    name: "_165mAPerVolt",
+                    name: "_1_65mAPerVolt",
                     description: Some("max 1.65 mA/V."),
                     value: 5,
                 },
                 EnumVariant {
-                    name: "_212mAPerVolt",
+                    name: "_2_12mAPerVolt",
                     description: Some("max 2.12 mA/V."),
                     value: 6,
                 },
                 EnumVariant {
-                    name: "_284mAPerVolt",
+                    name: "_2_84mAPerVolt",
                     description: Some("max 2.84 mA/V."),
                     value: 7,
                 },
@@ -1626,12 +1626,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "Ratio12",
+                    name: "Ratio1_2",
                     description: Some("the bias current is confronted to a reference current with a ratio of 1/2."),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Ratio34",
+                    name: "Ratio3_4",
                     description: Some("the bias current is confronted to a reference current with a ratio of 3/4."),
                     value: 1,
                 },

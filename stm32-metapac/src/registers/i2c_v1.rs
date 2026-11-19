@@ -731,12 +731,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 1,
             variants: &[
                 EnumVariant {
-                    name: "Duty169",
+                    name: "Duty16_9",
                     description: Some("Duty cycle t_low/t_high = 16/9"),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Duty21",
+                    name: "Duty2_1",
                     description: Some("Duty cycle t_low/t_high = 2/1"),
                     value: 0,
                 },

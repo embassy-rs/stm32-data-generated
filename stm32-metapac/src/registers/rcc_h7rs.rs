@@ -9414,7 +9414,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 3,
                 },
                 EnumVariant {
-                    name: "Mhz192",
+                    name: "Mhz19_2",
                     description: Some("The kernel clock frequency provided to the USBPHYC is 19.2 MHz."),
                     value: 8,
                 },

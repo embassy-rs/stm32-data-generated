@@ -389,7 +389,7 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Calsel {
         #[doc = "0."]
-        Percent33 = 0x0,
+        Percent3_3 = 0x0,
         #[doc = "0."]
         Percent10 = 0x01,
         #[doc = "0."]

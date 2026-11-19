@@ -3624,17 +3624,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "RANGE5_12MHZ",
+        "name": "Range5",
         "description": "Range 5 around 12 MHz (reset value).",
         "value": 1
       },
       {
-        "name": "RANGE6_6MHZ",
+        "name": "Range6",
         "description": "Range 6 around 6 MHz.",
         "value": 2
       },
       {
-        "name": "RANGE7_3MHZ",
+        "name": "Range7",
         "description": "Range 7 around 3 MHz.",
         "value": 3
       }
@@ -3644,12 +3644,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "MSIRC0_96MHZ",
+        "name": "Msirc0",
         "description": "MSIRC0 (96 MHz) is selected as source to generate MSIK.",
         "value": 0
       },
       {
-        "name": "MSIRC1_24MHZ",
+        "name": "Msirc1",
         "description": "MSIRC1 (24 MHz) is selected as source to generate MSIK.",
         "value": 1
       }
@@ -3714,17 +3714,17 @@
     "bit_size": 2,
     "variants": [
       {
-        "name": "RANGE5_12MHZ",
+        "name": "Range5",
         "description": "Range 5 around 12 MHz (reset value).",
         "value": 1
       },
       {
-        "name": "RANGE6_6MHZ",
+        "name": "Range6",
         "description": "Range 6 around 6 MHz.",
         "value": 2
       },
       {
-        "name": "RANGE7_3MHZ",
+        "name": "Range7",
         "description": "Range 7 around 3 MHz.",
         "value": 3
       }
@@ -3734,12 +3734,12 @@
     "bit_size": 1,
     "variants": [
       {
-        "name": "MSIRC0_96MHZ",
+        "name": "Msirc0",
         "description": "MSIRC0 (96 MHz) is selected as source to generate MSIS.",
         "value": 0
       },
       {
-        "name": "MSIRC1_24MHZ",
+        "name": "Msirc1",
         "description": "MSIRC1 (24 MHz) is selected as source to generate MSIS.",
         "value": 1
       }

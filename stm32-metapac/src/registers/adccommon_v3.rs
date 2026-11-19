@@ -397,12 +397,12 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Bits12_10",
+                    name: "Bits12and10",
                     description: Some("MDMA mode enabled for 12 and 10-bit resolution"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "Bits8_6",
+                    name: "Bits8and6",
                     description: Some("MDMA mode enabled for 8 and 6-bit resolution"),
                     value: 3,
                 },

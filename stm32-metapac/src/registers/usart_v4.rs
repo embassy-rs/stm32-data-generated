@@ -1586,7 +1586,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Stop0p5",
+                    name: "Stop0_5",
                     description: Some("0.5 stop bits"),
                     value: 1,
                 },
@@ -1596,7 +1596,7 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Stop1p5",
+                    name: "Stop1_5",
                     description: Some("1.5 stop bits"),
                     value: 3,
                 },

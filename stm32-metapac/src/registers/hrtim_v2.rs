@@ -3651,12 +3651,12 @@ pub(crate) static REGISTERS: IR = IR {
                     value: 4,
                 },
                 EnumVariant {
-                    name: "Output1_2Ee6",
+                    name: "Output1and2Ee6",
                     description: Some("Output 1 and 2 delayed idle on external event 6"),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "Output1_2Ee7",
+                    name: "Output1and2Ee7",
                     description: Some("Output 1 and 2 delayed idle on external event 7"),
                     value: 6,
                 },

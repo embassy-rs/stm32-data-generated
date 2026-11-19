@@ -10233,13 +10233,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pll1rge {
         #[doc = "PLL1 input (ref1_ck) clock range frequency between 1 and 2 MHz (default after reset)."]
-        Range1_2Mhz = 0x0,
+        Range1 = 0x0,
         #[doc = "PLL1 input (ref1_ck) clock range frequency between 2 and 4 MHz."]
-        Range2_4Mhz = 0x01,
+        Range2 = 0x01,
         #[doc = "PLL1 input (ref1_ck) clock range frequency between 4 and 8 MHz."]
-        Range4_8Mhz = 0x02,
+        Range4 = 0x02,
         #[doc = "PLL1 input (ref1_ck) clock range frequency between 8 and 16 MHz."]
-        Range8_16Mhz = 0x03,
+        Range8 = 0x03,
     }
     impl Pll1rge {
         #[inline(always)]
@@ -10617,13 +10617,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pll2rge {
         #[doc = "PLL3 input (ref2_ck) clock range frequency between 1 and 2 MHz (default after reset)."]
-        Range1_2Mhz = 0x0,
+        Range1 = 0x0,
         #[doc = "PLL3 input (ref2_ck) clock range frequency between 2 and 4 MHz."]
-        Range2_4Mhz = 0x01,
+        Range2 = 0x01,
         #[doc = "PLL3 input (ref2_ck) clock range frequency between 4 and 8 MHz."]
-        Range4_8Mhz = 0x02,
+        Range4 = 0x02,
         #[doc = "PLL3 input (ref2_ck) clock range frequency between 8 and 16 MHz."]
-        Range8_16Mhz = 0x03,
+        Range8 = 0x03,
     }
     impl Pll2rge {
         #[inline(always)]
@@ -11001,13 +11001,13 @@ pub mod vals {
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Pll3rge {
         #[doc = "PLL3 input (ref3_ck) clock range frequency between 1 and 2 MHz (default after reset)."]
-        Range1_2Mhz = 0x0,
+        Range1 = 0x0,
         #[doc = "PLL3 input (ref3_ck) clock range frequency between 2 and 4 MHz."]
-        Range2_4Mhz = 0x01,
+        Range2 = 0x01,
         #[doc = "PLL3 input (ref3_ck) clock range frequency between 4 and 8 MHz."]
-        Range4_8Mhz = 0x02,
+        Range4 = 0x02,
         #[doc = "PLL3 input (ref3_ck) clock range frequency between 8 and 16 MHz."]
-        Range8_16Mhz = 0x03,
+        Range8 = 0x03,
     }
     impl Pll3rge {
         #[inline(always)]

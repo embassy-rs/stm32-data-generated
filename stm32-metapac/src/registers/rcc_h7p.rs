@@ -6164,24 +6164,24 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Range1_2Mhz",
+                    name: "Range1",
                     description: Some(
                         "PLL1 input (ref1_ck) clock range frequency between 1 and 2 MHz (default after reset).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Range2_4Mhz",
+                    name: "Range2",
                     description: Some("PLL1 input (ref1_ck) clock range frequency between 2 and 4 MHz."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Range4_8Mhz",
+                    name: "Range4",
                     description: Some("PLL1 input (ref1_ck) clock range frequency between 4 and 8 MHz."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "Range8_16Mhz",
+                    name: "Range8",
                     description: Some("PLL1 input (ref1_ck) clock range frequency between 8 and 16 MHz."),
                     value: 3,
                 },
@@ -6397,24 +6397,24 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Range1_2Mhz",
+                    name: "Range1",
                     description: Some(
                         "PLL3 input (ref2_ck) clock range frequency between 1 and 2 MHz (default after reset).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Range2_4Mhz",
+                    name: "Range2",
                     description: Some("PLL3 input (ref2_ck) clock range frequency between 2 and 4 MHz."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Range4_8Mhz",
+                    name: "Range4",
                     description: Some("PLL3 input (ref2_ck) clock range frequency between 4 and 8 MHz."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "Range8_16Mhz",
+                    name: "Range8",
                     description: Some("PLL3 input (ref2_ck) clock range frequency between 8 and 16 MHz."),
                     value: 3,
                 },
@@ -6630,24 +6630,24 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Range1_2Mhz",
+                    name: "Range1",
                     description: Some(
                         "PLL3 input (ref3_ck) clock range frequency between 1 and 2 MHz (default after reset).",
                     ),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Range2_4Mhz",
+                    name: "Range2",
                     description: Some("PLL3 input (ref3_ck) clock range frequency between 2 and 4 MHz."),
                     value: 1,
                 },
                 EnumVariant {
-                    name: "Range4_8Mhz",
+                    name: "Range4",
                     description: Some("PLL3 input (ref3_ck) clock range frequency between 4 and 8 MHz."),
                     value: 2,
                 },
                 EnumVariant {
-                    name: "Range8_16Mhz",
+                    name: "Range8",
                     description: Some("PLL3 input (ref3_ck) clock range frequency between 8 and 16 MHz."),
                     value: 3,
                 },

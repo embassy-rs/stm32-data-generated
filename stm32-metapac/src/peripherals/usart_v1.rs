@@ -1398,11 +1398,11 @@ pub mod vals {
         #[doc = "1 stop bit"]
         Stop1 = 0x0,
         #[doc = "0.5 stop bits"]
-        Stop0p5 = 0x01,
+        Stop0_5 = 0x01,
         #[doc = "2 stop bits"]
         Stop2 = 0x02,
         #[doc = "1.5 stop bits"]
-        Stop1p5 = 0x03,
+        Stop1_5 = 0x03,
     }
     impl Stop {
         #[inline(always)]

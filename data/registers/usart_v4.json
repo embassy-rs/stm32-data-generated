@@ -1198,7 +1198,7 @@
         "value": 0
       },
       {
-        "name": "Stop0p5",
+        "name": "Stop0_5",
         "description": "0.5 stop bits",
         "value": 1
       },
@@ -1208,7 +1208,7 @@
         "value": 2
       },
       {
-        "name": "Stop1p5",
+        "name": "Stop1_5",
         "description": "1.5 stop bits",
         "value": 3
       }

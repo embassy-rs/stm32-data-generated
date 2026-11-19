@@ -211,79 +211,79 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 4,
             variants: &[
                 EnumVariant {
-                    name: "Div2_1",
-                    description: Some("Divide RNG clock by 2^1"),
-                    value: 1,
-                },
-                EnumVariant {
-                    name: "Div2_10",
+                    name: "Div1024",
                     description: Some("Divide RNG clock by 2^10"),
                     value: 10,
                 },
                 EnumVariant {
-                    name: "Div2_11",
-                    description: Some("Divide RNG clock by 2^11"),
-                    value: 11,
-                },
-                EnumVariant {
-                    name: "Div2_12",
-                    description: Some("Divide RNG clock by 2^12"),
-                    value: 12,
-                },
-                EnumVariant {
-                    name: "Div2_13",
-                    description: Some("Divide RNG clock by 2^13"),
-                    value: 13,
-                },
-                EnumVariant {
-                    name: "Div2_14",
-                    description: Some("Divide RNG clock by 2^14"),
-                    value: 14,
-                },
-                EnumVariant {
-                    name: "Div2_15",
-                    description: Some("Divide RNG clock by 2^15"),
-                    value: 15,
-                },
-                EnumVariant {
-                    name: "Div2_2",
-                    description: Some("Divide RNG clock by 2^2"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "Div2_3",
-                    description: Some("Divide RNG clock by 2^3"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "Div2_4",
-                    description: Some("Divide RNG clock by 2^4"),
-                    value: 4,
-                },
-                EnumVariant {
-                    name: "Div2_5",
-                    description: Some("Divide RNG clock by 2^5"),
-                    value: 5,
-                },
-                EnumVariant {
-                    name: "Div2_6",
-                    description: Some("Divide RNG clock by 2^6"),
-                    value: 6,
-                },
-                EnumVariant {
-                    name: "Div2_7",
+                    name: "Div128",
                     description: Some("Divide RNG clock by 2^7"),
                     value: 7,
                 },
                 EnumVariant {
-                    name: "Div2_8",
+                    name: "Div16",
+                    description: Some("Divide RNG clock by 2^4"),
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "Div16384",
+                    description: Some("Divide RNG clock by 2^14"),
+                    value: 14,
+                },
+                EnumVariant {
+                    name: "Div2",
+                    description: Some("Divide RNG clock by 2^1"),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Div2048",
+                    description: Some("Divide RNG clock by 2^11"),
+                    value: 11,
+                },
+                EnumVariant {
+                    name: "Div256",
                     description: Some("Divide RNG clock by 2^8"),
                     value: 8,
                 },
                 EnumVariant {
-                    name: "Div2_9",
+                    name: "Div32",
+                    description: Some("Divide RNG clock by 2^5"),
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "Div32768",
+                    description: Some("Divide RNG clock by 2^15"),
+                    value: 15,
+                },
+                EnumVariant {
+                    name: "Div4",
+                    description: Some("Divide RNG clock by 2^2"),
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Div4096",
+                    description: Some("Divide RNG clock by 2^12"),
+                    value: 12,
+                },
+                EnumVariant {
+                    name: "Div512",
                     description: Some("Divide RNG clock by 2^9"),
                     value: 9,
+                },
+                EnumVariant {
+                    name: "Div64",
+                    description: Some("Divide RNG clock by 2^6"),
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "Div8",
+                    description: Some("Divide RNG clock by 2^3"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "Div8192",
+                    description: Some("Divide RNG clock by 2^13"),
+                    value: 13,
                 },
                 EnumVariant {
                     name: "NoDiv",

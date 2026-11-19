@@ -1979,24 +1979,24 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 2,
             variants: &[
                 EnumVariant {
-                    name: "Io11_8",
-                    description: Some("data exchanged over IO[11:8]"),
-                    value: 2,
-                },
-                EnumVariant {
-                    name: "Io15_12",
-                    description: Some("data exchanged over IO[15:12]"),
-                    value: 3,
-                },
-                EnumVariant {
-                    name: "Io3_0",
+                    name: "Io0to3",
                     description: Some("data exchanged over IO[3:0]"),
                     value: 0,
                 },
                 EnumVariant {
-                    name: "Io7_4",
+                    name: "Io12to15",
+                    description: Some("data exchanged over IO[15:12]"),
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "Io4to7",
                     description: Some("data exchanged over IO[7:4]"),
                     value: 1,
+                },
+                EnumVariant {
+                    name: "Io8to11",
+                    description: Some("data exchanged over IO[11:8]"),
+                    value: 2,
                 },
             ],
         },

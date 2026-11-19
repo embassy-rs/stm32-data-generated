@@ -193,12 +193,6 @@
         "fieldset": "APB4RSTR"
       },
       {
-        "name": "GCR",
-        "description": "Global Control Register",
-        "byte_offset": 160,
-        "fieldset": "GCR"
-      },
-      {
         "name": "D3AMR",
         "description": "RCC D3 Autonomous mode Register",
         "byte_offset": 168,
@@ -348,30 +342,6 @@
         "bit_size": 1
       },
       {
-        "name": "ARTEN",
-        "description": "ART Clock Enable",
-        "bit_offset": 14,
-        "bit_size": 1
-      },
-      {
-        "name": "ETHEN",
-        "description": "Ethernet MAC bus interface Clock Enable",
-        "bit_offset": 15,
-        "bit_size": 1
-      },
-      {
-        "name": "ETHTXEN",
-        "description": "Ethernet Transmission Clock Enable",
-        "bit_offset": 16,
-        "bit_size": 1
-      },
-      {
-        "name": "ETHRXEN",
-        "description": "Ethernet Reception Clock Enable",
-        "bit_offset": 17,
-        "bit_size": 1
-      },
-      {
         "name": "USB_OTG_HSEN",
         "description": "USB_OTG_HS Peripheral Clocks Enable",
         "bit_offset": 25,
@@ -425,30 +395,6 @@
         "bit_size": 1
       },
       {
-        "name": "ARTLPEN",
-        "description": "ART Clock Enable During CSleep Mode",
-        "bit_offset": 14,
-        "bit_size": 1
-      },
-      {
-        "name": "ETHLPEN",
-        "description": "Ethernet MAC bus interface Clock Enable During CSleep Mode",
-        "bit_offset": 15,
-        "bit_size": 1
-      },
-      {
-        "name": "ETHTXLPEN",
-        "description": "Ethernet Transmission Clock Enable During CSleep Mode",
-        "bit_offset": 16,
-        "bit_size": 1
-      },
-      {
-        "name": "ETHRXLPEN",
-        "description": "Ethernet Reception Clock Enable During CSleep Mode",
-        "bit_offset": 17,
-        "bit_size": 1
-      },
-      {
         "name": "USB_OTG_HSLPEN",
         "description": "USB_OTG_HS peripheral clock enable during CSleep mode",
         "bit_offset": 25,
@@ -499,18 +445,6 @@
         "name": "CRCRST",
         "description": "CRC block reset",
         "bit_offset": 9,
-        "bit_size": 1
-      },
-      {
-        "name": "ARTRST",
-        "description": "ART block reset",
-        "bit_offset": 14,
-        "bit_size": 1
-      },
-      {
-        "name": "ETHRST",
-        "description": "ETH block reset",
-        "bit_offset": 15,
         "bit_size": 1
       },
       {
@@ -573,18 +507,6 @@
         "bit_size": 1
       },
       {
-        "name": "FMACEN",
-        "description": "FMAC enable",
-        "bit_offset": 16,
-        "bit_size": 1
-      },
-      {
-        "name": "CORDICEN",
-        "description": "CORDIC enable",
-        "bit_offset": 17,
-        "bit_size": 1
-      },
-      {
         "name": "SRAM1EN",
         "description": "SRAM1 block enable",
         "bit_offset": 29,
@@ -594,12 +516,6 @@
         "name": "SRAM2EN",
         "description": "SRAM2 block enable",
         "bit_offset": 30,
-        "bit_size": 1
-      },
-      {
-        "name": "SRAM3EN",
-        "description": "SRAM3 block enable",
-        "bit_offset": 31,
         "bit_size": 1
       }
     ]
@@ -644,18 +560,6 @@
         "bit_size": 1
       },
       {
-        "name": "FMACLPEN",
-        "description": "FMAC enable during CSleep Mode",
-        "bit_offset": 16,
-        "bit_size": 1
-      },
-      {
-        "name": "CORDICLPEN",
-        "description": "CORDIC enable during CSleep Mode",
-        "bit_offset": 17,
-        "bit_size": 1
-      },
-      {
         "name": "SRAM1LPEN",
         "description": "SRAM1 Clock Enable During CSleep Mode",
         "bit_offset": 29,
@@ -665,12 +569,6 @@
         "name": "SRAM2LPEN",
         "description": "SRAM2 Clock Enable During CSleep Mode",
         "bit_offset": 30,
-        "bit_size": 1
-      },
-      {
-        "name": "SRAM3LPEN",
-        "description": "SRAM3 Clock Enable During CSleep Mode",
-        "bit_offset": 31,
         "bit_size": 1
       }
     ]
@@ -718,18 +616,6 @@
         "name": "BDMA1RST",
         "description": "BDMA1 block reset",
         "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
-        "name": "FMACRST",
-        "description": "FMAC reset",
-        "bit_offset": 16,
-        "bit_size": 1
-      },
-      {
-        "name": "CORDICRST",
-        "description": "CORDIC reset",
-        "bit_offset": 17,
         "bit_size": 1
       }
     ]
@@ -795,30 +681,6 @@
         "name": "OTFD2EN",
         "description": "OTFDEC2 enable",
         "bit_offset": 23,
-        "bit_size": 1
-      },
-      {
-        "name": "DTCM1EN",
-        "description": "D1 DTCM1 block enable",
-        "bit_offset": 28,
-        "bit_size": 1
-      },
-      {
-        "name": "DTCM2EN",
-        "description": "D1 DTCM2 block enable",
-        "bit_offset": 29,
-        "bit_size": 1
-      },
-      {
-        "name": "ITCM1EN",
-        "description": "D1 ITCM block enable",
-        "bit_offset": 30,
-        "bit_size": 1
-      },
-      {
-        "name": "AXISRAMEN",
-        "description": "AXISRAM block enable",
-        "bit_offset": 31,
         "bit_size": 1
       }
     ]
@@ -980,12 +842,6 @@
         "description": "OTFDEC2 reset",
         "bit_offset": 23,
         "bit_size": 1
-      },
-      {
-        "name": "CPURST",
-        "description": "CPU reset",
-        "bit_offset": 31,
-        "bit_size": 1
       }
     ]
   },
@@ -1062,18 +918,6 @@
         "name": "BDMA2EN",
         "description": "BDMA2 and DMAMUX2 Clock Enable",
         "bit_offset": 21,
-        "bit_size": 1
-      },
-      {
-        "name": "BDMAEN",
-        "description": "BDMA and DMAMUX2 Clock Enable",
-        "bit_offset": 21,
-        "bit_size": 1
-      },
-      {
-        "name": "ADC3EN",
-        "description": "ADC3 Peripheral Clocks Enable",
-        "bit_offset": 24,
         "bit_size": 1
       },
       {
@@ -1157,18 +1001,6 @@
         "name": "BDMA2LPEN",
         "description": "BDMA2 Clock Enable During CSleep Mode",
         "bit_offset": 21,
-        "bit_size": 1
-      },
-      {
-        "name": "BDMALPEN",
-        "description": "BDMA Clock Enable During CSleep Mode",
-        "bit_offset": 21,
-        "bit_size": 1
-      },
-      {
-        "name": "ADC3LPEN",
-        "description": "ADC3 Peripheral Clocks Enable During CSleep Mode",
-        "bit_offset": 24,
         "bit_size": 1
       },
       {
@@ -1259,18 +1091,6 @@
         "description": "BDMA2 block reset",
         "bit_offset": 21,
         "bit_size": 1
-      },
-      {
-        "name": "BDMARST",
-        "description": "BDMA block reset",
-        "bit_offset": 21,
-        "bit_size": 1
-      },
-      {
-        "name": "ADC3RST",
-        "description": "ADC3 block reset",
-        "bit_offset": 24,
-        "bit_size": 1
       }
     ]
   },
@@ -1305,18 +1125,6 @@
         "name": "FDCANEN",
         "description": "FDCAN Peripheral Clocks Enable",
         "bit_offset": 8,
-        "bit_size": 1
-      },
-      {
-        "name": "TIM23EN",
-        "description": "TIM23 block enable",
-        "bit_offset": 24,
-        "bit_size": 1
-      },
-      {
-        "name": "TIM24EN",
-        "description": "TIM24 block enable",
-        "bit_offset": 25,
         "bit_size": 1
       }
     ]
@@ -1353,18 +1161,6 @@
         "description": "FDCAN Peripheral Clocks Enable During CSleep Mode",
         "bit_offset": 8,
         "bit_size": 1
-      },
-      {
-        "name": "TIM23LPEN",
-        "description": "TIM23 block enable during CSleep Mode",
-        "bit_offset": 24,
-        "bit_size": 1
-      },
-      {
-        "name": "TIM24LPEN",
-        "description": "TIM24 block enable during CSleep Mode",
-        "bit_offset": 25,
-        "bit_size": 1
       }
     ]
   },
@@ -1399,18 +1195,6 @@
         "name": "FDCANRST",
         "description": "FDCAN block reset",
         "bit_offset": 8,
-        "bit_size": 1
-      },
-      {
-        "name": "TIM23RST",
-        "description": "TIM23 block reset",
-        "bit_offset": 24,
-        "bit_size": 1
-      },
-      {
-        "name": "TIM24RST",
-        "description": "TIM24 block reset",
-        "bit_offset": 25,
         "bit_size": 1
       }
     ]
@@ -1479,12 +1263,6 @@
         "bit_size": 1
       },
       {
-        "name": "WWDG2EN",
-        "description": "WWDG2 peripheral clock enable",
-        "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
         "name": "SPI2EN",
         "description": "SPI2 Peripheral Clocks Enable",
         "bit_offset": 14,
@@ -1542,12 +1320,6 @@
         "name": "I2C3EN",
         "description": "I2C3 Peripheral Clocks Enable",
         "bit_offset": 23,
-        "bit_size": 1
-      },
-      {
-        "name": "I2C5EN",
-        "description": "I2C5 Peripheral Clocks\r Enable",
-        "bit_offset": 25,
         "bit_size": 1
       },
       {
@@ -1640,12 +1412,6 @@
         "bit_size": 1
       },
       {
-        "name": "WWDG2LPEN",
-        "description": "WWDG2 peripheral Clocks Enable During CSleep Mode",
-        "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
         "name": "SPI2LPEN",
         "description": "SPI2 Peripheral Clocks Enable During CSleep Mode",
         "bit_offset": 14,
@@ -1703,12 +1469,6 @@
         "name": "I2C3LPEN",
         "description": "I2C3 Peripheral Clocks Enable During CSleep Mode",
         "bit_offset": 23,
-        "bit_size": 1
-      },
-      {
-        "name": "I2C5LPEN",
-        "description": "I2C5 block enable during CSleep Mode",
-        "bit_offset": 25,
         "bit_size": 1
       },
       {
@@ -1858,12 +1618,6 @@
         "name": "I2C3RST",
         "description": "I2C3 block reset",
         "bit_offset": 23,
-        "bit_size": 1
-      },
-      {
-        "name": "I2C5RST",
-        "description": "I2C5 block reset",
-        "bit_offset": 25,
         "bit_size": 1
       },
       {
@@ -2158,12 +1912,6 @@
         "bit_size": 1
       },
       {
-        "name": "HRTIMRST",
-        "description": "HRTIM block reset",
-        "bit_offset": 29,
-        "bit_size": 1
-      },
-      {
         "name": "DFSDM1RST",
         "description": "DFSDM1 block reset",
         "bit_offset": 30,
@@ -2178,12 +1926,6 @@
         "name": "LTDCEN",
         "description": "LTDC peripheral clock enable",
         "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "DSIEN",
-        "description": "DSI Peripheral clocks enable",
-        "bit_offset": 4,
         "bit_size": 1
       },
       {
@@ -2204,12 +1946,6 @@
         "bit_size": 1
       },
       {
-        "name": "DSILPEN",
-        "description": "DSI Peripheral Clock Enable During CSleep Mode",
-        "bit_offset": 4,
-        "bit_size": 1
-      },
-      {
         "name": "WWDG1LPEN",
         "description": "WWDG1 Clock Enable During CSleep Mode",
         "bit_offset": 6,
@@ -2224,12 +1960,6 @@
         "name": "LTDCRST",
         "description": "LTDC block reset",
         "bit_offset": 3,
-        "bit_size": 1
-      },
-      {
-        "name": "DSIRST",
-        "description": "DSI block reset",
-        "bit_offset": 4,
         "bit_size": 1
       }
     ]
@@ -2274,18 +2004,6 @@
         "bit_size": 1
       },
       {
-        "name": "LPTIM4EN",
-        "description": "LPTIM4 Peripheral Clocks Enable",
-        "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
-        "name": "LPTIM5EN",
-        "description": "LPTIM5 Peripheral Clocks Enable",
-        "bit_offset": 12,
-        "bit_size": 1
-      },
-      {
         "name": "DAC2EN",
         "description": "DAC2 (containing one converter) peripheral clock enable",
         "bit_offset": 13,
@@ -2307,12 +2025,6 @@
         "name": "RTCAPBEN",
         "description": "RTC APB Clock Enable",
         "bit_offset": 16,
-        "bit_size": 1
-      },
-      {
-        "name": "SAI4EN",
-        "description": "SAI4 Peripheral Clocks Enable",
-        "bit_offset": 21,
         "bit_size": 1
       },
       {
@@ -2369,18 +2081,6 @@
         "bit_size": 1
       },
       {
-        "name": "LPTIM4LPEN",
-        "description": "LPTIM4 Peripheral Clocks Enable During CSleep Mode",
-        "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
-        "name": "LPTIM5LPEN",
-        "description": "LPTIM5 Peripheral Clocks Enable During CSleep Mode",
-        "bit_offset": 12,
-        "bit_size": 1
-      },
-      {
         "name": "DAC2LPEN",
         "description": "DAC2 (containing one converter) peripheral clock enable during CSleep mode",
         "bit_offset": 13,
@@ -2402,12 +2102,6 @@
         "name": "RTCAPBLPEN",
         "description": "RTC APB Clock Enable During CSleep Mode",
         "bit_offset": 16,
-        "bit_size": 1
-      },
-      {
-        "name": "SAI4LPEN",
-        "description": "SAI4 Peripheral Clocks Enable During CSleep Mode",
-        "bit_offset": 21,
         "bit_size": 1
       },
       {
@@ -2464,18 +2158,6 @@
         "bit_size": 1
       },
       {
-        "name": "LPTIM4RST",
-        "description": "LPTIM4 block reset",
-        "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
-        "name": "LPTIM5RST",
-        "description": "LPTIM5 block reset",
-        "bit_offset": 12,
-        "bit_size": 1
-      },
-      {
         "name": "DAC2RST",
         "description": "DAC2 (containing one converter) reset",
         "bit_offset": 13,
@@ -2491,12 +2173,6 @@
         "name": "VREFRST",
         "description": "VREF block reset",
         "bit_offset": 15,
-        "bit_size": 1
-      },
-      {
-        "name": "SAI4RST",
-        "description": "SAI4 block reset",
-        "bit_offset": 21,
         "bit_size": 1
       },
       {
@@ -2610,13 +2286,6 @@
         "description": "HSE division factor for RTC clock",
         "bit_offset": 8,
         "bit_size": 6
-      },
-      {
-        "name": "HRTIMSEL",
-        "description": "High Resolution Timer clock prescaler selection",
-        "bit_offset": 14,
-        "bit_size": 1,
-        "enum": "HRTIMSEL"
       },
       {
         "name": "TIMPRE",
@@ -3215,12 +2884,6 @@
         "bit_size": 1
       },
       {
-        "name": "BDMAAMEN",
-        "description": "BDMA and DMAMUX Autonomous mode enable",
-        "bit_offset": 0,
-        "bit_size": 1
-      },
-      {
         "name": "LPUART1AMEN",
         "description": "LPUART1 Autonomous mode enable",
         "bit_offset": 3,
@@ -3251,18 +2914,6 @@
         "bit_size": 1
       },
       {
-        "name": "LPTIM4AMEN",
-        "description": "LPTIM4 Autonomous mode enable",
-        "bit_offset": 11,
-        "bit_size": 1
-      },
-      {
-        "name": "LPTIM5AMEN",
-        "description": "LPTIM5 Autonomous mode enable",
-        "bit_offset": 12,
-        "bit_size": 1
-      },
-      {
         "name": "DAC2AMEN",
         "description": "DAC2 (containing one converter) Autonomous mode enable",
         "bit_offset": 13,
@@ -3284,24 +2935,6 @@
         "name": "RTCAMEN",
         "description": "RTC Autonomous mode enable",
         "bit_offset": 16,
-        "bit_size": 1
-      },
-      {
-        "name": "CRCAMEN",
-        "description": "CRC Autonomous mode enable",
-        "bit_offset": 19,
-        "bit_size": 1
-      },
-      {
-        "name": "SAI4AMEN",
-        "description": "SAI4 Autonomous mode enable",
-        "bit_offset": 21,
-        "bit_size": 1
-      },
-      {
-        "name": "ADC3AMEN",
-        "description": "ADC3 Autonomous mode enable",
-        "bit_offset": 24,
         "bit_size": 1
       },
       {
@@ -3387,17 +3020,6 @@
         "bit_offset": 4,
         "bit_size": 3,
         "enum": "PPRE"
-      }
-    ]
-  },
-  "fieldset/GCR": {
-    "description": "Global Control Register",
-    "fields": [
-      {
-        "name": "WW1RSC",
-        "description": "WWDG1 reset scope control",
-        "bit_offset": 0,
-        "bit_size": 1
       }
     ]
   },
@@ -3562,21 +3184,9 @@
         "bit_size": 1
       },
       {
-        "name": "CPURSTF",
-        "description": "CPU reset flag",
-        "bit_offset": 17,
-        "bit_size": 1
-      },
-      {
         "name": "D1RSTF",
         "description": "D1 domain power switch reset flag",
         "bit_offset": 19,
-        "bit_size": 1
-      },
-      {
-        "name": "D2RSTF",
-        "description": "D2 domain power switch reset flag",
-        "bit_offset": 20,
         "bit_size": 1
       },
       {
@@ -3785,21 +3395,6 @@
         "name": "Div512",
         "description": "sys_ck divided by 512",
         "value": 15
-      }
-    ]
-  },
-  "enum/HRTIMSEL": {
-    "bit_size": 1,
-    "variants": [
-      {
-        "name": "TIMY_KER",
-        "description": "The HRTIM prescaler clock source is the same as other timers (rcc_timy_ker_ck)",
-        "value": 0
-      },
-      {
-        "name": "C_CK",
-        "description": "The HRTIM prescaler clock source is the CPU clock (c_ck)",
-        "value": 1
       }
     ]
   },

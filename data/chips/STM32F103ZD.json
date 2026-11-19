@@ -2025,7 +2025,13 @@
           },
           "rcc": {
             "bus_clock": "PCLK2",
-            "kernel_clock": "PCLK2",
+            "kernel_clock": {
+              "clock": "PCLK2",
+              "prescaler": {
+                "register": "CFGR",
+                "field": "ADCPRE"
+              }
+            },
             "enable": {
               "register": "APB2ENR",
               "field": "ADC1EN"
@@ -2194,7 +2200,13 @@
           },
           "rcc": {
             "bus_clock": "PCLK2",
-            "kernel_clock": "PCLK2",
+            "kernel_clock": {
+              "clock": "PCLK2",
+              "prescaler": {
+                "register": "CFGR",
+                "field": "ADCPRE"
+              }
+            },
             "enable": {
               "register": "APB2ENR",
               "field": "ADC2EN"
@@ -2353,7 +2365,13 @@
           },
           "rcc": {
             "bus_clock": "PCLK2",
-            "kernel_clock": "PCLK2",
+            "kernel_clock": {
+              "clock": "PCLK2",
+              "prescaler": {
+                "register": "CFGR",
+                "field": "ADCPRE"
+              }
+            },
             "enable": {
               "register": "APB2ENR",
               "field": "ADC3EN"

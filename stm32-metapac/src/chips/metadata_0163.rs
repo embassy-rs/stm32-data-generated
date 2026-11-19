@@ -11,7 +11,15 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
-            kernel_clock: Clock("PCLK2"),
+            kernel_clock: Mux(PeripheralRccMux {
+                clock: Some("PCLK2"),
+                register: None,
+                field: None,
+                prescaler: Some(PeripheralRccRegister {
+                    register: "CFGR",
+                    field: "ADCPRE",
+                }),
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB2ENR",
                 field: "ADC1EN",
@@ -206,7 +214,15 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
-            kernel_clock: Clock("PCLK2"),
+            kernel_clock: Mux(PeripheralRccMux {
+                clock: Some("PCLK2"),
+                register: None,
+                field: None,
+                prescaler: Some(PeripheralRccRegister {
+                    register: "CFGR",
+                    field: "ADCPRE",
+                }),
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB2ENR",
                 field: "ADC2EN",
@@ -383,7 +399,15 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK2",
-            kernel_clock: Clock("PCLK2"),
+            kernel_clock: Mux(PeripheralRccMux {
+                clock: Some("PCLK2"),
+                register: None,
+                field: None,
+                prescaler: Some(PeripheralRccRegister {
+                    register: "CFGR",
+                    field: "ADCPRE",
+                }),
+            }),
             enable: Some(PeripheralRccRegister {
                 register: "APB2ENR",
                 field: "ADC3EN",

@@ -79,6 +79,18 @@ pub mod regs {
         pub const fn set_inpsel(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 7usize)) | (((val as u32) & 0x03) << 7usize);
         }
+        #[doc = "Window mode selection bit (COMP2 only)."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn winmode(&self) -> bool {
+            let val = (self.0 >> 9usize) & 0x01;
+            val != 0
+        }
+        #[doc = "Window mode selection bit (COMP2 only)."]
+        #[inline(always)]
+        pub const fn set_winmode(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 9usize)) | (((val as u32) & 0x01) << 9usize);
+        }
         #[doc = "Polarity selection bit."]
         #[must_use]
         #[inline(always)]
@@ -190,6 +202,7 @@ pub mod regs {
                 .field("pwrmode", &self.pwrmode())
                 .field("inmsel", &self.inmsel())
                 .field("inpsel", &self.inpsel())
+                .field("winmode", &self.winmode())
                 .field("polarity", &self.polarity())
                 .field("hyst", &self.hyst())
                 .field("blanking", &self.blanking())
@@ -206,11 +219,12 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Csr {{ en: {=bool:?}, pwrmode: {:?}, inmsel: {=u8:?}, inpsel: {=u8:?}, polarity: {:?}, hyst: {:?}, blanking: {:?}, brgen: {=bool:?}, scalen: {=bool:?}, inmesel: {=u8:?}, value: {=bool:?}, lock: {=bool:?} }}",
+                "Csr {{ en: {=bool:?}, pwrmode: {:?}, inmsel: {=u8:?}, inpsel: {=u8:?}, winmode: {=bool:?}, polarity: {:?}, hyst: {:?}, blanking: {:?}, brgen: {=bool:?}, scalen: {=bool:?}, inmesel: {=u8:?}, value: {=bool:?}, lock: {=bool:?} }}",
                 self.en(),
                 self.pwrmode(),
                 self.inmsel(),
                 self.inpsel(),
+                self.winmode(),
                 self.polarity(),
                 self.hyst(),
                 self.blanking(),

@@ -153,7 +153,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "COMP1",
         address: 0x40007c00,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "comp",
+            version: "l1",
+            block: "COMP",
+            ir: &comp::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Clock("PCLK1"),
@@ -290,8 +295,13 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     },
     Peripheral {
         name: "COMP2",
-        address: 0x40007c01,
-        registers: None,
+        address: 0x40007c00,
+        registers: Some(PeripheralRegisters {
+            kind: "comp",
+            version: "l1",
+            block: "COMP",
+            ir: &comp::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "PCLK1",
             kernel_clock: Clock("PCLK1"),
@@ -3282,6 +3292,8 @@ pub(crate) static PINS: &[Pin] = &[
 pub mod adc;
 #[path = "../registers/bdma_v1.rs"]
 pub mod bdma;
+#[path = "../registers/comp_l1.rs"]
+pub mod comp;
 #[path = "../registers/crc_v1.rs"]
 pub mod crc;
 #[path = "../registers/dac_v2.rs"]

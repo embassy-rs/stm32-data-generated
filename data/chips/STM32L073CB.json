@@ -1076,6 +1076,19 @@
         {
           "name": "COMP1",
           "address": 1073807384,
+          "registers": {
+            "kind": "comp",
+            "version": "l0",
+            "block": "COMP1"
+          },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": "PCLK2",
+            "enable": {
+              "register": "APB2ENR",
+              "field": "SYSCFGEN"
+            }
+          },
           "pins": [
             {
               "pin": "PA0",
@@ -1119,6 +1132,19 @@
         {
           "name": "COMP2",
           "address": 1073807388,
+          "registers": {
+            "kind": "comp",
+            "version": "l0",
+            "block": "COMP2"
+          },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": "PCLK2",
+            "enable": {
+              "register": "APB2ENR",
+              "field": "SYSCFGEN"
+            }
+          },
           "pins": [
             {
               "pin": "PA12",

@@ -339,13 +339,13 @@ pub const CAN: can::Can = unsafe { can::Can::from_ptr(0x4000_6400usize as _) };
 pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4000_7000usize as _) };
 pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4000_7400usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000usize as _) };
-pub const COMP1: *mut () = 0x4001_001cusize as _;
-pub const COMP2: *mut () = 0x4001_0020usize as _;
-pub const COMP3: *mut () = 0x4001_0024usize as _;
-pub const COMP4: *mut () = 0x4001_0028usize as _;
-pub const COMP5: *mut () = 0x4001_002cusize as _;
-pub const COMP6: *mut () = 0x4001_0030usize as _;
-pub const COMP7: *mut () = 0x4001_0034usize as _;
+pub const COMP1: comp::Comp = unsafe { comp::Comp::from_ptr(0x4001_001cusize as _) };
+pub const COMP2: comp::Comp = unsafe { comp::Comp::from_ptr(0x4001_0020usize as _) };
+pub const COMP3: comp::Comp = unsafe { comp::Comp::from_ptr(0x4001_0024usize as _) };
+pub const COMP4: comp::Comp = unsafe { comp::Comp::from_ptr(0x4001_0028usize as _) };
+pub const COMP5: comp::Comp = unsafe { comp::Comp::from_ptr(0x4001_002cusize as _) };
+pub const COMP6: comp::Comp = unsafe { comp::Comp::from_ptr(0x4001_0030usize as _) };
+pub const COMP7: comp::Comp = unsafe { comp::Comp::from_ptr(0x4001_0034usize as _) };
 pub const OPAMP1: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4001_0038usize as _) };
 pub const OPAMP2: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4001_003cusize as _) };
 pub const OPAMP3: opamp::Opamp = unsafe { opamp::Opamp::from_ptr(0x4001_0040usize as _) };
@@ -392,6 +392,8 @@ pub mod adccommon;
 pub mod bdma;
 #[path = "../../peripherals/can_bxcan.rs"]
 pub mod can;
+#[path = "../../peripherals/comp_f3_v2.rs"]
+pub mod comp;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/dac_v2.rs"]

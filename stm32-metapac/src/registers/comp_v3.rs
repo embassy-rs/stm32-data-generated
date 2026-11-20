@@ -56,6 +56,14 @@ pub(crate) static REGISTERS: IR = IR {
                 enumm: None,
             },
             Field {
+                name: "winmode",
+                description: Some("Window mode selection bit (COMP2 only)."),
+                bit_offset: BitOffset::Regular(RegularBitOffset { offset: 9 }),
+                bit_size: 1,
+                array: None,
+                enumm: None,
+            },
+            Field {
                 name: "polarity",
                 description: Some("Polarity selection bit."),
                 bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),

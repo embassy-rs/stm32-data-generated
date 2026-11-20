@@ -177,8 +177,8 @@ pub const PWR: pwr::Pwr = unsafe { pwr::Pwr::from_ptr(0x4000_7000usize as _) };
 pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4000_7400usize as _) };
 pub const CEC: cec::Cec = unsafe { cec::Cec::from_ptr(0x4000_7800usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000usize as _) };
-pub const COMP1: *mut () = 0x4001_001cusize as _;
-pub const COMP2: *mut () = 0x4001_001eusize as _;
+pub const COMP1: comp::Comp = unsafe { comp::Comp::from_ptr(0x4001_001cusize as _) };
+pub const COMP2: comp::Comp = unsafe { comp::Comp::from_ptr(0x4001_001eusize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4001_0400usize as _) };
 pub const USART6: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_1400usize as _) };
 pub const USART7: usart::Usart = unsafe { usart::Usart::from_ptr(0x4001_1800usize as _) };
@@ -219,6 +219,8 @@ pub mod bdma;
 pub mod can;
 #[path = "../../peripherals/cec_v2.rs"]
 pub mod cec;
+#[path = "../../peripherals/comp_f3_v1.rs"]
+pub mod comp;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]

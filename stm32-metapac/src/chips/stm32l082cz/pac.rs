@@ -178,8 +178,8 @@ pub const DAC1: dac::Dac = unsafe { dac::Dac::from_ptr(0x4000_7400usize as _) };
 pub const I2C3: i2c::I2c = unsafe { i2c::I2c::from_ptr(0x4000_7800usize as _) };
 pub const LPTIM1: lptim::Lptim = unsafe { lptim::Lptim::from_ptr(0x4000_7c00usize as _) };
 pub const SYSCFG: syscfg::Syscfg = unsafe { syscfg::Syscfg::from_ptr(0x4001_0000usize as _) };
-pub const COMP1: *mut () = 0x4001_0018usize as _;
-pub const COMP2: *mut () = 0x4001_001cusize as _;
+pub const COMP1: comp::Comp1 = unsafe { comp::Comp1::from_ptr(0x4001_0018usize as _) };
+pub const COMP2: comp::Comp2 = unsafe { comp::Comp2::from_ptr(0x4001_001cusize as _) };
 pub const EXTI: exti::Exti = unsafe { exti::Exti::from_ptr(0x4001_0400usize as _) };
 pub const TIM21: timer::Tim2ch = unsafe { timer::Tim2ch::from_ptr(0x4001_0800usize as _) };
 pub const TIM22: timer::Tim2ch = unsafe { timer::Tim2ch::from_ptr(0x4001_1400usize as _) };
@@ -214,6 +214,8 @@ pub mod adc;
 pub mod aes;
 #[path = "../../peripherals/bdma_v2.rs"]
 pub mod bdma;
+#[path = "../../peripherals/comp_l0.rs"]
+pub mod comp;
 #[path = "../../peripherals/crc_v3.rs"]
 pub mod crc;
 #[path = "../../peripherals/crs_v1.rs"]

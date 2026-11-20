@@ -1,0 +1,331 @@
+
+use crate::metadata::ir::*;
+pub(crate) static REGISTERS: IR = IR {
+    blocks: &[
+        Block {
+            name: "Comp1",
+            extends: None,
+            description: Some("Comparator 1."),
+            items: &[BlockItem {
+                name: "csr",
+                description: Some("COMP1 control and status register."),
+                array: None,
+                byte_offset: 0x0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Csr1"),
+                }),
+            }],
+        },
+        Block {
+            name: "Comp2",
+            extends: None,
+            description: Some("Comparator 2."),
+            items: &[BlockItem {
+                name: "csr",
+                description: Some("COMP2 control and status register."),
+                array: None,
+                byte_offset: 0x0,
+                inner: BlockItemInner::Register(Register {
+                    access: Access::ReadWrite,
+                    bit_size: 32,
+                    fieldset: Some("Csr2"),
+                }),
+            }],
+        },
+    ],
+    fieldsets: &[
+        FieldSet {
+            name: "Csr1",
+            extends: None,
+            description: Some("COMP1 control and status register."),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "en",
+                    description: Some("COMP1 enable bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "innsel",
+                    description: Some("COMP1 input minus selection."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    bit_size: 2,
+                    array: None,
+                    enumm: Some("Comp1Innsel"),
+                },
+                Field {
+                    name: "wm",
+                    description: Some("COMP1 window mode selection bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lptimin1",
+                    description: Some("COMP1 LPTIM1 input 1 propagation bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "polarity",
+                    description: Some("COMP1 output polarity selection bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some("Polarity"),
+                },
+                Field {
+                    name: "value",
+                    description: Some("COMP1 output status bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lock",
+                    description: Some("COMP1_CSR register lock bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+        FieldSet {
+            name: "Csr2",
+            extends: None,
+            description: Some("COMP2 control and status register."),
+            bit_size: 32,
+            fields: &[
+                Field {
+                    name: "en",
+                    description: Some("COMP2 enable bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 0 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "speed",
+                    description: Some("COMP2 power mode selection bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 3 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some("Speed"),
+                },
+                Field {
+                    name: "innsel",
+                    description: Some("COMP2 input minus selection."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 4 }),
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some("Comp2Innsel"),
+                },
+                Field {
+                    name: "inpsel",
+                    description: Some("COMP2 input plus selection."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 8 }),
+                    bit_size: 3,
+                    array: None,
+                    enumm: Some("Comp2Inpsel"),
+                },
+                Field {
+                    name: "lptimin2",
+                    description: Some("COMP2 LPTIM1 input 2 propagation bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 12 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lptimin1",
+                    description: Some("COMP2 LPTIM1 input 1 propagation bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 13 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "polarity",
+                    description: Some("COMP2 output polarity selection bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 15 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: Some("Polarity"),
+                },
+                Field {
+                    name: "value",
+                    description: Some("COMP2 output status bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 30 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+                Field {
+                    name: "lock",
+                    description: Some("COMP2_CSR register lock bit."),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
+            ],
+        },
+    ],
+    enums: &[
+        Enum {
+            name: "Comp1Innsel",
+            description: None,
+            bit_size: 2,
+            variants: &[
+                EnumVariant {
+                    name: "Pa0",
+                    description: None,
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Pa4",
+                    description: None,
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Pa5",
+                    description: None,
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "Vrefint",
+                    description: None,
+                    value: 0,
+                },
+            ],
+        },
+        Enum {
+            name: "Comp2Innsel",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "HalfVrefint",
+                    description: None,
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "Pa2",
+                    description: None,
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Pa4",
+                    description: None,
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Pa5",
+                    description: None,
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "Pb3",
+                    description: None,
+                    value: 7,
+                },
+                EnumVariant {
+                    name: "QuarterVrefint",
+                    description: None,
+                    value: 4,
+                },
+                EnumVariant {
+                    name: "ThreeQuarterVrefint",
+                    description: None,
+                    value: 6,
+                },
+                EnumVariant {
+                    name: "Vrefint",
+                    description: None,
+                    value: 0,
+                },
+            ],
+        },
+        Enum {
+            name: "Comp2Inpsel",
+            description: None,
+            bit_size: 3,
+            variants: &[
+                EnumVariant {
+                    name: "Pa3",
+                    description: None,
+                    value: 0,
+                },
+                EnumVariant {
+                    name: "Pa7",
+                    description: None,
+                    value: 5,
+                },
+                EnumVariant {
+                    name: "Pb4",
+                    description: None,
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Pb5",
+                    description: None,
+                    value: 2,
+                },
+                EnumVariant {
+                    name: "Pb6",
+                    description: None,
+                    value: 3,
+                },
+                EnumVariant {
+                    name: "Pb7",
+                    description: None,
+                    value: 4,
+                },
+            ],
+        },
+        Enum {
+            name: "Polarity",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "Inverted",
+                    description: Some("Output is inverted."),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "NotInverted",
+                    description: Some("Output is not inverted."),
+                    value: 0,
+                },
+            ],
+        },
+        Enum {
+            name: "Speed",
+            description: None,
+            bit_size: 1,
+            variants: &[
+                EnumVariant {
+                    name: "Fast",
+                    description: Some("Fast speed."),
+                    value: 1,
+                },
+                EnumVariant {
+                    name: "Slow",
+                    description: Some("Slow speed."),
+                    value: 0,
+                },
+            ],
+        },
+    ],
+};

@@ -12,7 +12,7 @@ pub(crate) static REGISTERS: IR = IR {
             byte_offset: 0x0,
             inner: BlockItemInner::Register(Register {
                 access: Access::ReadWrite,
-                bit_size: 32,
+                bit_size: 16,
                 fieldset: Some("Csr"),
             }),
         }],
@@ -21,7 +21,7 @@ pub(crate) static REGISTERS: IR = IR {
         name: "Csr",
         extends: None,
         description: Some("control and status register."),
-        bit_size: 32,
+        bit_size: 16,
         fields: &[
             Field {
                 name: "en",

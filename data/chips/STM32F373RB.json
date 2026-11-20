@@ -913,6 +913,14 @@
             "version": "f3_v1",
             "block": "COMP"
           },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": "PCLK2",
+            "enable": {
+              "register": "APB2ENR",
+              "field": "SYSCFGEN"
+            }
+          },
           "pins": [
             {
               "pin": "PA0",
@@ -957,6 +965,14 @@
             "kind": "comp",
             "version": "f3_v1",
             "block": "COMP"
+          },
+          "rcc": {
+            "bus_clock": "PCLK2",
+            "kernel_clock": "PCLK2",
+            "enable": {
+              "register": "APB2ENR",
+              "field": "SYSCFGEN"
+            }
           },
           "pins": [
             {

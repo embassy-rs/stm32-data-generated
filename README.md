@@ -10,26 +10,26 @@ The following table shows which STM32 peripheral versions are supported across d
 
 | Peripheral | C0 | C5 | F0 | F1 | F2 | F3 | F4 | F7 | G0 | G4 | G5 | H5 | H7 | H7P | L0 | L1 | L4 | L4+ | L5 | MP1 | N6 | U0 | U3 | U5 | WB | WB0 | WBA | WL |
 |------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
-| [ADC](#adc) | v2_g0, ❌ | v3_c5 | v2_f0, ❌ | v1_f1, ❌ | v1_f4 | v1_f1, v3_f3, ❌ | v1_f4 | v1_f4 | v2_g0, ❌ | v3_g4 | ❌ | v3_g4 | v3_g4, v3_h7 | ❌ | v2_l0, ❌ | v1_l1, ❌ | v3_l4 | v3_l4 | v3_l4 | ❌ | v3_n6 | v2_g0, ❌ | v3_u3 | v3_u5, ❌ | v2_wb1, v3_l4, ❌ | wb0 | v2_wba, ❌ | v2_g0, ❌ |
-| [ADCCOMMON](#adccommon) | | v4 | | | v2 | v3 | v2 | v2 | | v3 | | v3 | v3, v4 | v4 | | | v3 | v3 | v3 | | v4 | | v4 | v4 | v3 | | | |
+| [ADC](#adc) | v2_g0, ❌ | v3_c5 | v2_f0, ❌ | v1_f1, ❌ | v1_f4 | v1_f1, v3_f3, ❌ | v1_f4 | v1_f4 | v2_g0, ❌ | v3_g4 | v3_g5 | v3_g4 | v3_g4, v3_h7 | ❌ | v2_l0, ❌ | v1_l1, ❌ | v3_l4 | v3_l4 | v3_l4 | ❌ | v3_n6 | v2_g0, ❌ | v3_u3 | v3_u5, ❌ | v2_wb1, v3_l4, ❌ | wb0 | v2_wba, ❌ | v2_g0, ❌ |
+| [ADCCOMMON](#adccommon) | | v4 | | | v2 | v3 | v2 | v2 | | v3 | v4 | v3 | v3, v4 | v4 | | | v3 | v3 | v3 | | v4 | | v4 | v4 | v3 | | | |
 | [ADF](#adf) | | | | | | | | | | | | ❌ | ❌ | ❌ | | | | | | | v1 | | v1 | v1 | | | | |
-| [AES](#aes) | | v3b | | | | | v1 | f7 | v2 | v2 | ❌ | v3b | | | v1 | v1 | v1 | v1 | v2 | | | v2 | v3a | v3a | v2, ❌ | | v3b | v2 |
+| [AES](#aes) | | v3b | | | | | v1 | f7 | v2 | v2 | v3b | v3b | | | v1 | v1 | v1 | v1 | v2 | | | v2 | v3a | v3a | v2, ❌ | | v3b | v2 |
 | [AFIO](#afio) | | | | f1 | | | | | | | | | | | | | | | | | | | | | | | | |
 | [BDMA](#bdma) | v1 | | v1, v2 | v1 | | v1 | | | v1 | v1 | | v1 | v1 | | v2 | v1 | v2 | v1 | v1 | v1 | | v1 | | | v1 | v1 | | v1 |
 | [BKP](#bkp) | | | | v1 | | | | | | | | | | | | | | | | | | | | | | | | |
 | [BSEC](#bsec) | | | | | | | | | | | | | | | | | | | | v2 | v2 | | | | | | | |
 | [CACHEAXI](#cacheaxi) | | | | | | | | | | | | | | | | | | | | | n6 | | | | | | | |
-| [CAN](#can) | fdcan_v1 | fdcan_v1 | bxcan | bxcan | bxcan | bxcan | bxcan | bxcan | fdcan_v1 | fdcan_v1 | | fdcan_v1 | fdcan_v1, fdcan_v2 | | | | bxcan | bxcan | fdcan_v1 | fdcan_v2 | fdcan_v2 | | fdcan_v1 | fdcan_v1 | | | | |
-| [CCB](#ccb) | | v2 | | | | | | | | | ❌ | ❌ | | | | | | | | | | | v1 | | | | | |
+| [CAN](#can) | fdcan_v1 | fdcan_v1 | bxcan | bxcan | bxcan | bxcan | bxcan | bxcan | fdcan_v1 | fdcan_v1 | fdcan_v1 | fdcan_v1 | fdcan_v1, fdcan_v2 | | | | bxcan | bxcan | fdcan_v1 | fdcan_v2 | fdcan_v2 | | fdcan_v1 | fdcan_v1 | | | | |
+| [CCB](#ccb) | | v2 | | | | | | | | | v2 | ❌ | | | | | | | | | | | v1 | | | | | |
 | [CEC](#cec) | | | v2 | v1 | | v2 | v2 | v2 | v2 | | | v2 | v2 | | | | | | | v2 | | | | | | | | |
-| [COMP](#comp) | | c5 | f3_v1 | | | f3_v1, f3_v2 | | | v1 | v2 | ❌ | h5 | h7_a, h7_b | ❌ | l0 | l1 | v3 | v3 | v3 | | | u0 | u3 | u5 | v3 | | u5 | v3 |
+| [COMP](#comp) | | c5 | f3_v1 | | | f3_v1, f3_v2 | | | v1 | v2 | g5 | h5 | h7_a, h7_b | ❌ | l0 | l1 | v3 | v3 | v3 | | | u0 | u3 | u5 | v3 | | u5 | v3 |
 | [CORDIC](#cordic) | | v1 | | | | | | | | v1 | v1 | v1 | v1 | v1 | | | | | | | | | | v1 | | | | |
-| [CRC](#crc) | v3 | v3 | v2, v3 | v1 | v1 | v3 | v1 | v3 | v3 | v3 | ❌ | v3, v3_h5_ef | v3 | v3 | v3 | v1 | v3 | v3 | v3 | ❌ | v3 | v3 | v3 | v3 | v3 | v3 | v3 | v3 |
-| [CRS](#crs) | v1 | v1 | v1 | | | | | | v1 | v1 | ❌ | v1 | v1 | v1 | v1 | | v1 | v1 | v1 | | | v1 | v1 | v1 | v1 | | | |
+| [CRC](#crc) | v3 | v3 | v2, v3 | v1 | v1 | v3 | v1 | v3 | v3 | v3 | v3_h5_ef | v3, v3_h5_ef | v3 | v3 | v3 | v1 | v3 | v3 | v3 | ❌ | v3 | v3 | v3 | v3 | v3 | v3 | v3 | v3 |
+| [CRS](#crs) | v1 | v1 | v1 | | | | | | v1 | v1 | v1 | v1 | v1 | v1 | v1 | | v1 | v1 | v1 | | | v1 | v1 | v1 | v1 | | | |
 | [CRYP](#cryp) | | | | | v1 | | v1, v2 | v2 | | | | | v3, v4 | | | | | | | v2 | v2 | | | | | | | |
 | [CSI](#csi) | | | | | | | | | | | | | | | | | | | | | v1 | | | | | | | |
-| [DAC](#dac) | | v8, v9 | v2 | v1, v2 | v2 | v2 | v2 | v2 | v4 | v7 | ❌ | v6 | v4 | ❌ | v2 | v2 | v3 | v5 | v5 | ❌ | | v4 | v6 | v6 | | | | v4 |
-| [DBGMCU](#dbgmcu) | c0 | c5 | f0 | f1 | f2 | f3 | f4 | f7 | g0 | g4 | ❌ | h5, h5_ef | h7, h7rm0399 | h7 | l0 | l1 | l4 | l4 | l5 | ❌ | n6 | u0 | u3 | u5 | wb | | wba | wl |
+| [DAC](#dac) | | v8, v9 | v2 | v1, v2 | v2 | v2 | v2 | v2 | v4 | v7 | g5 | v6 | v4 | ❌ | v2 | v2 | v3 | v5 | v5 | ❌ | | v4 | v6 | v6 | | | | v4 |
+| [DBGMCU](#dbgmcu) | c0 | c5 | f0 | f1 | f2 | f3 | f4 | f7 | g0 | g4 | g5 | h5, h5_ef | h7, h7rm0399 | h7 | l0 | l1 | l4 | l4 | l5 | ❌ | n6 | u0 | u3 | u5 | wb | | wba | wl |
 | [DCACHE](#dcache) | | | | | | | | | | | v1 | v1 | | | | | | | | | | | | v1 | | | | |
 | [DCMI](#dcmi) | | | | | v1 | | v1 | v1 | | | | v1 | v1 | | | | v1 | v1 | | v1 | v1 | | | v1 | | | | |
 | [DCMIPP](#dcmipp) | | | | | | | | | | | | | ❌ | | | | | | | | v2 | | | | | | | |
@@ -44,10 +44,10 @@ The following table shows which STM32 peripheral versions are supported across d
 | [DTS](#dts) | | | | | | | | | | | v1 | v1 | v1 | v1 | | | | | | v1 | v1 | | | | | | | |
 | [ETH](#eth) | | v2b | | v1a | v1b | | v1b | v1c | | | | v2 | v2 | | | | | | | | v2a | | | | | | | |
 | [EXTI](#exti) | c0 | u5 | v1 | v1 | v1 | v1 | v1 | v1 | g0 | v1 | u5 | h5, h50, h5_ef | h7, h7rm0399 | h7 | v1 | v1 | v1 | v1 | l5 | v1 | n6 | u0 | u3 | u5 | w | | l5 | w, wle |
-| [FDCAN](#fdcan) | | | | | | | | | | | ❌ | | | ❌ | | | | | | | | | | | | | | |
+| [FDCAN](#fdcan) | | | | | | | | | | | | | | ❌ | | | | | | | | | | | | | | |
 | [FDCANRAM](#fdcanram) | v1 | v1 | | | | | | | v1 | v1 | v1 | v1 | v1, v2 | v2 | | | | | v1 | v1 | v2 | | v1 | v1 | | | | |
-| [FLASH](#flash) | v4_c0 | v5_c5 | v1_f0 | v1_f1, v1_f1xl | v2_f2 | v1_f3 | v2_f4 | v2_f7 | v4_g0x0, v4_g0x1 | v4_g4c2, v4_g4c3, v4_g4c4 | ❌ | v5_h5, v5_h50, v5_h5_ef | v5_h7, v5_h7ab, v5_h7rs | v5_h7 | v3_l0 | v3_l1 | v4_l4 | v4_l4p | v4_l5 | | | v4_u0 | v4_u3 | v4_u5 | v4_wb | wb0 | v4_wba | v4_wl |
-| [FMAC](#fmac) | | | | | | | | | | v1 | ❌ | v1 | v1 | ❌ | | | | | | | | | | v1 | | | | |
+| [FLASH](#flash) | v4_c0 | v5_c5 | v1_f0 | v1_f1, v1_f1xl | v2_f2 | v1_f3 | v2_f4 | v2_f7 | v4_g0x0, v4_g0x1 | v4_g4c2, v4_g4c3, v4_g4c4 | v5_g5 | v5_h5, v5_h50, v5_h5_ef | v5_h7, v5_h7ab, v5_h7rs | v5_h7 | v3_l0 | v3_l1 | v4_l4 | v4_l4p | v4_l5 | | | v4_u0 | v4_u3 | v4_u5 | v4_wb | wb0 | v4_wba | v4_wl |
+| [FMAC](#fmac) | | | | | | | | | | v1 | v1 | v1 | v1 | ❌ | | | | | | | | | | v1 | | | | |
 | [FMC](#fmc) | | | | | | | v1x3, v2x1 | v2x1 | | | | v4 | v3x1 | v3x1 | | | | | | mp1 | n6 | | | | | | | |
 | [FMPI2C](#fmpi2c) | | | | | | | v2 | | | | | | | | | | | | | | | | | | | | | |
 | [FSMC](#fsmc) | | | | v1x0, v1x3 | v1x3 | v2x3 | v1x0, v1x3 | | | v4x1 | | | | | | v1x0 | v3x1 | v3x2, v4x1 | v4x1 | | | | | v5x1 | | | | |
@@ -57,23 +57,23 @@ The following table shows which STM32 peripheral versions are supported across d
 | [GPIO](#gpio) | v2 | v2 | v2 | v1 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2, v2_l478 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | v2 |
 | [GPU](#gpu) | | | | | | | | | | | | | | | | | | | | ❌ | | | | | | | | |
 | [GPU2D](#gpu2d) | | | | | | | | | | | | | v1 | | | | | | | | v1 | | | v1 | | | | |
-| [GTZC](#gtzc) | | | | | | | | | | | ❌ | h503, v1, v1_h5_ef, ❌ | | | | | | | l5 | | | | v1 | v1 | | | wba | ❌ |
-| [HASH](#hash) | | c5 | | | v1 | | v1, v2 | v2 | | | ❌ | v3 | v2, v3 | ❌ | | | v2 | v2 | v2 | ❌ | v3 | | v3 | v4 | | | v4 | |
+| [GTZC](#gtzc) | | | | | | | | | | | v1 | h503, v1, v1_h5_ef, ❌ | | | | | | | l5 | | | | v1 | v1 | | | wba | ❌ |
+| [HASH](#hash) | | c5 | | | v1 | | v1, v2 | v2 | | | v3 | v3 | v2, v3 | ❌ | | | v2 | v2 | v2 | ❌ | v3 | | v3 | v4 | | | v4 | |
 | [HDP](#hdp) | | | | | | | | | | | | | | | | | | | | ❌ | | | | | | | | |
 | [HRTIM](#hrtim) | | | | | | v1 | | | | v2 | g5 | | v1 | v1 | | | | | | | | | | | | | | |
 | [HSEM](#hsem) | | | | | | | | | | | | | v1, v2, ❌ | | | | | | | ❌ | | | | | v1 | | wba | v3, v4 |
 | [HSP](#hsp) | | | | | | | | | | | | | | ❌ | | | | | | | | | v1 | | | | | |
 | [HSPI](#hspi) | | | | | | | | | | | | | | | | | | | | | | | | v1 | | | | |
 | [I2C](#i2c) | v2 | v3 | v2 | v1 | v1 | v2 | v1 | v2 | v2 | v2 | v3 | v2 | v2, v3 | v3 | v2 | v1 | v2 | v2 | v2 | ❌ | v3 | v2 | v2 | v2 | v2 | v1 | v2 | v2 |
-| [I3C](#i3c) | | v1 | | | | | | | | | ❌ | v1 | v1 | ❌ | | | | | | | v1 | | v1 | | | | | |
-| [ICACHE](#icache) | | v1_4crr, v1_4crr_nomstsel | | | | | | | | | ❌ | v1_0crr, v1_4crr, ❌ | | | | | | | v1_4crr | | v1_0crr | | v1_3crr | v1_3crr | | | v1_4crr | |
+| [I3C](#i3c) | | v1 | | | | | | | | | v1 | v1 | v1 | ❌ | | | | | | | v1 | | v1 | | | | | |
+| [ICACHE](#icache) | | v1_4crr, v1_4crr_nomstsel | | | | | | | | | v1_4crr | v1_0crr, v1_4crr, ❌ | | | | | | | v1_4crr | | v1_0crr | | v1_3crr | v1_3crr | | | v1_4crr | |
 | [IPCC](#ipcc) | | | | | | | | | | | | | | | | | | | | ❌ | | | | | v1 | | | v1 |
-| [IWDG](#iwdg) | v2 | c5 | v2 | v1 | v1 | v2 | v1 | v2 | v2 | v2 | ❌ | v3 | v2, v3 | ❌ | v2 | v1 | v2 | v2 | v2 | v2 | v3 | v3 | v3 | v3 | v2 | v2 | v3 | v2 |
+| [IWDG](#iwdg) | v2 | c5 | v2 | v1 | v1 | v2 | v1 | v2 | v2 | v2 | c5 | v3 | v2, v3 | ❌ | v2 | v1 | v2 | v2 | v2 | v2 | v3 | v3 | v3 | v3 | v2 | v2 | v3 | v2 |
 | [JPEG](#jpeg) | | | | | | | | v1 | | | | v1 | v1 | | | | | | | | v1 | | | v1 | | | | |
 | [LCD](#lcd) | | | | | | | | | | | | | | | v2 | v1 | v2 | | | | | v2 | ❌ | | v2 | | | |
 | [LPDMA](#lpdma) | | v1 | | | | | | | | | | | | | | | | | | | | | | v1 | | | v1 | |
 | [LPGPIO](#lpgpio) | | | | | | | | | | | | | | | | | | | | | | | | v1 | | | | |
-| [LPTIM](#lptim) | | v2a | | | | | v1a | v1a | v1b | v1b_g4 | ❌ | v2a | v1b_h7 | v1b_h7 | v1 | | v1a, v1c | v1b, v1c | v1c | ❌ | n6 | v2b | v2a | v2a | v1b | | v2a | v1c |
+| [LPTIM](#lptim) | | v2a | | | | | v1a | v1a | v1b | v1b_g4 | n6 | v2a | v1b_h7 | v1b_h7 | v1 | | v1a, v1c | v1b, v1c | v1c | ❌ | n6 | v2b | v2a | v2a | v1b | | v2a | v1c |
 | [LPUART](#lpuart) | | | | | | | | | | | | | | ❌ | | | | | | | | | | | | | | |
 | [LTDC](#ltdc) | | | | | | | v1 | v1 | | | | v1 | v1 | | | | | v1, ❌ | | ❌ | v1_3 | | | v1 | | | | |
 | [MCE](#mce) | | | | | | | | | | | | | ❌ | | | | | | | | n6 | | | | | | | |
@@ -83,48 +83,48 @@ The following table shows which STM32 peripheral versions are supported across d
 | [NPU](#npu) | | | | | | | | | | | | | | ❌ | | | | | | | v1 | | | | | | | |
 | [OCTOSPI](#octospi) | | v2 | | | | | | | | | v2 | v2 | v1 | | | | | v1 | v2 | | | | v2 | v1 | | | v2 | |
 | [OCTOSPIM](#octospim) | | | | | | | | | | | | v1 | v1 | | | | | v1 | | | | | | v1 | | | | |
-| [OPAMP](#opamp) | | c5 | | | | v2 | | | | v5 | ❌ | v4 | v4 | | | ❌ | v3 | v3 | v3 | | | v3 | v3 | v3 | | | | |
+| [OPAMP](#opamp) | | c5 | | | | v2 | | | | v5 | c5 | v4 | v4 | | | ❌ | v3 | v3 | v3 | | | v3 | v3 | v3 | | | | |
 | [OTFDEC](#otfdec) | | | | | | | | | | | v1 | v1 | v1 | | | | | | v1 | | | | | v1 | | | v1 | |
 | [OTG](#otg) | | | | v1 | v1 | | v1 | v1 | | | | v1 | v1 | | | | v1 | v1 | | | v1 | | | v1 | | | v1 | |
-| [PKA](#pka) | | c5 | | | | | | | | | ❌ | v1a | v1a | | | | | v1c | v1c | | n6 | | v1b | v1b | v1c | v1c | v1a | v1c |
+| [PKA](#pka) | | c5 | | | | | | | | | c5 | v1a | v1a | | | | | v1c | v1c | | n6 | | v1b | v1b | v1c | v1c | v1a | v1c |
 | [PLAY](#play) | | | | | | | | | | | v1 | ❌ | | | | | | | | | | | | | | | | |
-| [POSENC](#posenc) | | | | | | | | | | | ❌ | | | | | | | | | | | | | | | | | |
+| [POSENC](#posenc) | | | | | | | | | | | v1 | | | | | | | | | | | | | | | | | |
 | [PSSI](#pssi) | | | | | | | | | | | | v1 | v1, v1_h7rs | | | | | v1 | | | v1 | | | v1 | | | | |
 | [PWR](#pwr) | c0 | c5 | f0, f0x0 | f1 | f2 | f3 | f4 | f7 | g0 | g4 | g5 | h5, h50, h5_ef | h7rm0399, h7rm0433, h7rm0455, h7rm0468, h7rs | h7p | l0 | l1 | l4 | l4 | l5 | ❌ | n6 | u0 | u3 | u5 | wb, wb55 | wb0 | wba | wl5 |
 | [QUADSPI](#quadspi) | | | | | | | v1 | v1 | | v1 | | | v1 | | | | v1 | | | v1 | | | | | v1 | | | |
 | [RADIO](#radio) | | | | | | | | | | | | | | | | | | | | | | | | | | v1 | | |
-| [RAMCFG](#ramcfg) | | c5, ❌ | | | | | | | | | ❌ | h5, h5_ef | | | | | | | | | h5 | | u5 | u5 | | | wba | |
+| [RAMCFG](#ramcfg) | | c5, ❌ | | | | | | | | | g5, ❌ | h5, h5_ef | | | | | | | | | h5 | | u5 | u5 | | | wba | |
 | [RAMECC](#ramecc) | | | | | | | | | | | | | ❌ | ❌ | | | | | | | | | | | | | | |
 | [RCC](#rcc) | c0, c0v2 | c5 | f0v1, f0v2, f0v3, f0v4 | f1, f100, f1cl | f2 | f37, f3v1, f3v2, f3v3 | f4, f410 | f7 | g0x0, g0x1 | g4 | g5 | h5, h50, h5_ef | h7, h7ab, h7rm0433, h7rm0468, h7rs | h7p | l0, l0_v2 | l1 | l4 | l4plus | l5 | mp1 | n6 | u0 | u3 | u5 | wb | wb0 | wba | wl5, wle |
 | [RIFSC](#rifsc) | | | | | | | | | | | | | | | | | | | | | n6 | | | | | | | |
 | [RISAF](#risaf) | | | | | | | | | | | | | | | | | | | | | n6 | | | | | | | |
-| [RNG](#rng) | | v4 | | | v1 | | v1 | v1 | v1 | v1 | ❌ | v3, v3_h5_ef | v1, v2, v3 | ❌ | v1 | | v1 | v1, v2 | v2 | ❌ | v3 | v3 | v3 | v3 | v1 | v1 | v1, v3, wba6 | v2 |
+| [RNG](#rng) | | v4 | | | v1 | | v1 | v1 | v1 | v1 | v4 | v3, v3_h5_ef | v1, v2, v3 | ❌ | v1 | | v1 | v1, v2 | v2 | ❌ | v3 | v3 | v3 | v3 | v1 | v1 | v1, v3, wba6 | v2 |
 | [RRM](#rrm) | | | | | | | | | | | | | | | | | | | | | | | | | | v1 | | |
-| [RTC](#rtc) | v3_c0 | v3_c5 | v2_f0, v2_f0_nowut, v2_f0_x0, v2_f0_x0_nowut | v1 | v2_f2 | v2_f3 | v2_f4 | v2_f7 | v3_g0 | v3_g0 | ❌ | v3_h5, v3_h503 | v2_h7, v3_h7ab, v3_h7rs | ❌ | v2_l0 | v2_l1, v2_l1_cat1 | v2_l4, v3_l4 | v2_l4, v3_base | v3_l5 | ❌ | v3_u5 | v3_u0 | v3_u3 | v3_u5 | v2_wb | v2_wb0 | v3_wba | v3_base |
-| [SAES](#saes) | | v1a | | | | | | | | | ❌ | v1a | ❌ | | | | | | | | n6 | | v1b | v1b | | | v1a | |
+| [RTC](#rtc) | v3_c0 | v3_c5 | v2_f0, v2_f0_nowut, v2_f0_x0, v2_f0_x0_nowut | v1 | v2_f2 | v2_f3 | v2_f4 | v2_f7 | v3_g0 | v3_g0 | v3_u3 | v3_h5, v3_h503 | v2_h7, v3_h7ab, v3_h7rs | ❌ | v2_l0 | v2_l1, v2_l1_cat1 | v2_l4, v3_l4 | v2_l4, v3_base | v3_l5 | ❌ | v3_u5 | v3_u0 | v3_u3 | v3_u5 | v2_wb | v2_wb0 | v3_wba | v3_base |
+| [SAES](#saes) | | v1a | | | | | | | | | n6 | v1a | ❌ | | | | | | | | n6 | | v1b | v1b | | | v1a | |
 | [SAI](#sai) | | | | | | | v1, v2 | v2 | | v4_4pdm | | v4_2pdm | v3_4pdm, v4_4pdm | | | | v2 | v1 | v3_2pdm | ❌ | n6 | | v3_2pdm | v4_2pdm | v1_4pdm | | v4_2pdm | |
 | [SDADC](#sdadc) | | | | | | v1, ❌ | | | | | | | | | | | | | | | | | | | | | | |
 | [SDMMC](#sdmmc) | | | | v1 | v1 | | v1 | v1 | | | | v2 | v2 | ❌ | | v1 | v1 | v2 | v2 | ❌ | v3 | | v2 | v2 | | | | |
 | [SPDIFRX](#spdifrx) | | | | | | | v1 | v1 | | | | | h7 | | | | | | | ❌ | n6 | | | | | | | |
 | [SPI](#spi) | v3_i2s | v5_i2s | v3, v3_i2s | v1, v1_i2s | v2_i2s | v3, v3_i2s | v2_i2s | v3_i2s | v3_i2s | v3_i2s | v5_i2s | v5_i2s, v5_i2s_h5 | v4_i2s, v5_i2s | v4_i2s | v2, v2_i2s | v2, v2_i2s | v3 | v3 | v3 | ❌ | v5 | v3 | v6 | v6 | v3 | v3 | v6 | v3_i2s |
 | [SWPMI](#swpmi) | | | | | | | | | | | | | ❌ | | | | ❌ | | | | | | | | | | | |
-| [SYSCFG](#syscfg) | c0 | c5 | f0 | | f2 | f3 | f4 | f7 | g0 | g4 | ❌ | h5, h50, h5_ef | h7, h7od, h7rs | h7 | l0 | l1 | l4 | l4 | l5 | ❌ | n6 | u0 | u3 | u5 | wb | wb0 | wba | wl5, wle |
-| [TAMP](#tamp) | | c5 | | | | | | | g0 | g4 | ❌ | h5, h5_ef | ❌ | ❌ | | | | | l5 | ❌ | n6 | ❌ | l5 | u5 | | | wba, ❌ | wl |
-| [TIM](#tim) | | | | | | | | | | | ❌ | | | ❌ | | | | | | ❌ | | | | | | | | |
+| [SYSCFG](#syscfg) | c0 | c5 | f0 | | f2 | f3 | f4 | f7 | g0 | g4 | g5 | h5, h50, h5_ef | h7, h7od, h7rs | h7 | l0 | l1 | l4 | l4 | l5 | ❌ | n6 | u0 | u3 | u5 | wb | wb0 | wba | wl5, wle |
+| [TAMP](#tamp) | | c5 | | | | | | | g0 | g4 | n6 | h5, h5_ef | ❌ | ❌ | | | | | l5 | ❌ | n6 | ❌ | l5 | u5 | | | wba, ❌ | wl |
+| [TIM](#tim) | | | | | | | | | | | | | | ❌ | | | | | | ❌ | | | | | | | | |
 | [TIMER](#timer) | v3 | v3 | v1 | v1 | v1 | v1 | v1 | v1 | v3 | v2 | v2 | v2 | v3 | v3 | l0 | v1 | v1 | v1 | v1 | | v2 | v2 | v2 | v2 | v3 | v3 | v2 | v3 |
 | [TRNG](#trng) | | | | | | | | | | | | | | | | | | | | | | | | | | v1 | | |
 | [TSC](#tsc) | | | v1 | | | v1, ❌ | | | | | | | | | v3 | | v3 | v3 | v3 | | | v2 | v1 | v3 | v2 | | v1 | |
 | [TSCAL](#tscal) | v1 | | v1 | | | v1 | v1 | v1 | v1 | v1 | | v1 | v1 | | v1 | v1 | v1 | v1 | v1 | | | v1 | | v1 | v1 | | v1 | v1 |
-| [UCPD](#ucpd) | | | | | | | | | v1 | v1 | ❌ | h5 | v1 | ❌ | | | | | v1 | | v1 | | | v1 | | | | |
+| [UCPD](#ucpd) | | | | | | | | | v1 | v1 | h5 | h5 | v1 | ❌ | | | | | v1 | | v1 | | | v1 | | | | |
 | [UID](#uid) | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | l0 | l0 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | | v1 | v1 |
 | [USART](#usart) | v4 | v4 | v3 | v1, ❌ | v2, ❌ | v3 | v2 | v3 | v4 | v4 | v4 | v4 | v4 | ❌ | v3 | v2, ❌ | v3 | v4 | v4 | ❌ | v4 | v4 | v4 | v4 | v4 | v4 | v4 | v4 |
-| [USB](#usb) | v4 | v4 | v3 | v1 | | v1, v2 | | | v4 | v3 | ❌ | v4 | | | v3 | v1 | v3 | | v3 | ❌ | | v4 | v4 | v4 | v3 | | v3 | |
+| [USB](#usb) | v4 | v4 | v3 | v1 | | v1, v2 | | | v4 | v3 | v4 | v4 | | | v3 | v1 | v3 | | v3 | ❌ | | v4 | v4 | v4 | v3 | | v3 | |
 | [USBPHYC](#usbphyc) | | | | | | | | | | | | | | | | | | | | | n6 | | | | | | | |
-| [USBRAM](#usbram) | 32_2048 | 32_2048 | 16x2_1024 | 16x1_512 | | 16x1_512, 16x2_1024 | | | 32_2048 | 16x2_1024 | ❌ | 32_2048 | | | 16x2_1024 | 16x1_512 | 16x2_1024 | | 16x2_1024 | | | 32_1024 | 32_2048 | 32_2048 | 16x2_1024 | | 16x2_1024 | |
+| [USBRAM](#usbram) | 32_2048 | 32_2048 | 16x2_1024 | 16x1_512 | | 16x1_512, 16x2_1024 | | | 32_2048 | 16x2_1024 | 32_2048 | 32_2048 | | | 16x2_1024 | 16x1_512 | 16x2_1024 | | 16x2_1024 | | | 32_1024 | 32_2048 | 32_2048 | 16x2_1024 | | 16x2_1024 | |
 | [VENC](#venc) | | | | | | | | | | | | | | | | | | | | | v1 | | | | | | | |
-| [VREFBUF](#vrefbuf) | | | | | | | | | v1 | v2b | ❌ | v2a2 | v2a1 | v2a1 | | | v1 | v1 | v1 | ❌ | v1 | ❌ | v2a1 | v2a1 | v1 | | v2a1 | v1 |
+| [VREFBUF](#vrefbuf) | | | | | | | | | v1 | v2b | v2a2 | v2a2 | v2a1 | v2a1 | | | v1 | v1 | v1 | ❌ | v1 | ❌ | v2a1 | v2a1 | v1 | | v2a1 | v1 |
 | [VREFINTCAL](#vrefintcal) | v1 | v1 | v1 | | | v1 | v1 | v1 | v1 | v1 | v1 | v1 | v1 | | v1 | v1 | v1 | v1 | v1 | | v1 | v1 | v1 | v1 | v1 | | v2 | v1 |
-| [WWDG](#wwdg) | v2 | v2 | v1 | v1 | v1 | v1 | v1 | v1 | v2 | v2 | ❌ | v2 | v2 | ❌ | v1 | v1 | v1 | v1 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | | v2 | v2 |
+| [WWDG](#wwdg) | v2 | v2 | v1 | v1 | v1 | v1 | v1 | v1 | v2 | v2 | v2 | v2 | v2 | ❌ | v1 | v1 | v1 | v1 | v2 | v2 | v2 | v2 | v2 | v2 | v2 | | v2 | v2 |
 | [XSPI](#xspi) | | | | | | | | | | | | | v1 | ❌ | | | | | | | v1 | | | | | | | |
 | [XSPIM](#xspim) | | | | | | | | | | | | | v1 | | | | | | | | v1 | | | | | | | |
 
@@ -145,13 +145,14 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v3_c5**: STM32C5
 - **v3_f3**: STM32F3
 - **v3_g4**: STM32G4, STM32H5, STM32H7
+- **v3_g5**: STM32G5
 - **v3_h7**: STM32H7
 - **v3_l4**: STM32L4, STM32L4+, STM32L5, STM32WB
 - **v3_n6**: STM32N6
 - **v3_u3**: STM32U3
 - **v3_u5**: STM32U5
 - **wb0**: STM32WB0
-- **❌ Unsupported**: STM32C0, STM32F0, STM32F1, STM32F3, STM32G0, STM32G5, STM32H7P, STM32L0, STM32L1, STM32MP1, STM32U0, STM32U5, STM32WB, STM32WBA, STM32WL
+- **❌ Unsupported**: STM32C0, STM32F0, STM32F1, STM32F3, STM32G0, STM32H7P, STM32L0, STM32L1, STM32MP1, STM32U0, STM32U5, STM32WB, STM32WBA, STM32WL
 
 ### ADCCOMMON
 
@@ -159,7 +160,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 - **v2**: STM32F2, STM32F4, STM32F7
 - **v3**: STM32F3, STM32G4, STM32H5, STM32H7, STM32L4, STM32L4+, STM32L5, STM32WB
-- **v4**: STM32C5, STM32H7, STM32H7P, STM32N6, STM32U3, STM32U5
+- **v4**: STM32C5, STM32G5, STM32H7, STM32H7P, STM32N6, STM32U3, STM32U5
 
 ### ADF
 
@@ -176,8 +177,8 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v1**: STM32F4, STM32L0, STM32L1, STM32L4, STM32L4+
 - **v2**: STM32G0, STM32G4, STM32L5, STM32U0, STM32WB, STM32WL
 - **v3a**: STM32U3, STM32U5
-- **v3b**: STM32C5, STM32H5, STM32WBA
-- **❌ Unsupported**: STM32G5, STM32WB
+- **v3b**: STM32C5, STM32G5, STM32H5, STM32WBA
+- **❌ Unsupported**: STM32WB
 
 ### AFIO
 
@@ -215,7 +216,7 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **bxcan**: STM32F0, STM32F1, STM32F2, STM32F3, STM32F4, STM32F7, STM32L4, STM32L4+
-- **fdcan_v1**: STM32C0, STM32C5, STM32G0, STM32G4, STM32H5, STM32H7, STM32L5, STM32U3, STM32U5
+- **fdcan_v1**: STM32C0, STM32C5, STM32G0, STM32G4, STM32G5, STM32H5, STM32H7, STM32L5, STM32U3, STM32U5
 - **fdcan_v2**: STM32H7, STM32MP1, STM32N6
 
 ### CCB
@@ -223,8 +224,8 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **v1**: STM32U3
-- **v2**: STM32C5
-- **❌ Unsupported**: STM32G5, STM32H5
+- **v2**: STM32C5, STM32G5
+- **❌ Unsupported**: STM32H5
 
 ### CEC
 
@@ -240,6 +241,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **c5**: STM32C5
 - **f3_v1**: STM32F0, STM32F3
 - **f3_v2**: STM32F3
+- **g5**: STM32G5
 - **h5**: STM32H5
 - **h7_a**: STM32H7
 - **h7_b**: STM32H7
@@ -251,7 +253,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v1**: STM32G0
 - **v2**: STM32G4
 - **v3**: STM32L4, STM32L4+, STM32L5, STM32WB, STM32WL
-- **❌ Unsupported**: STM32G5, STM32H7P
+- **❌ Unsupported**: STM32H7P
 
 ### CORDIC
 
@@ -266,15 +268,14 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v1**: STM32F1, STM32F2, STM32F4, STM32L1
 - **v2**: STM32F0
 - **v3**: STM32C0, STM32C5, STM32F0, STM32F3, STM32F7, STM32G0, STM32G4, STM32H5, STM32H7, STM32H7P, STM32L0, STM32L4, STM32L4+, STM32L5, STM32N6, STM32U0, STM32U3, STM32U5, STM32WB, STM32WB0, STM32WBA, STM32WL
-- **v3_h5_ef**: STM32H5
-- **❌ Unsupported**: STM32G5, STM32MP1
+- **v3_h5_ef**: STM32G5, STM32H5
+- **❌ Unsupported**: STM32MP1
 
 ### CRS
 
 **Versions by family:**
 
-- **v1**: STM32C0, STM32C5, STM32F0, STM32G0, STM32G4, STM32H5, STM32H7, STM32H7P, STM32L0, STM32L4, STM32L4+, STM32L5, STM32U0, STM32U3, STM32U5, STM32WB
-- **❌ Unsupported**: STM32G5
+- **v1**: STM32C0, STM32C5, STM32F0, STM32G0, STM32G4, STM32G5, STM32H5, STM32H7, STM32H7P, STM32L0, STM32L4, STM32L4+, STM32L5, STM32U0, STM32U3, STM32U5, STM32WB
 
 ### CRYP
 
@@ -295,6 +296,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
+- **g5**: STM32G5
 - **v1**: STM32F1
 - **v2**: STM32F0, STM32F1, STM32F2, STM32F3, STM32F4, STM32F7, STM32L0, STM32L1
 - **v3**: STM32L4
@@ -304,7 +306,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v7**: STM32G4
 - **v8**: STM32C5
 - **v9**: STM32C5
-- **❌ Unsupported**: STM32G5, STM32H7P, STM32MP1
+- **❌ Unsupported**: STM32H7P, STM32MP1
 
 ### DBGMCU
 
@@ -320,6 +322,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **f7**: STM32F7
 - **g0**: STM32G0
 - **g4**: STM32G4
+- **g5**: STM32G5
 - **h5**: STM32H5
 - **h5_ef**: STM32H5
 - **h7**: STM32H7, STM32H7P
@@ -335,7 +338,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **wb**: STM32WB
 - **wba**: STM32WBA
 - **wl**: STM32WL
-- **❌ Unsupported**: STM32G5, STM32MP1
+- **❌ Unsupported**: STM32MP1
 
 ### DCACHE
 
@@ -449,7 +452,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **❌ Unsupported**: STM32G5, STM32H7P
+- **❌ Unsupported**: STM32H7P
 
 ### FDCANRAM
 
@@ -487,6 +490,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v4_wba**: STM32WBA
 - **v4_wl**: STM32WL
 - **v5_c5**: STM32C5
+- **v5_g5**: STM32G5
 - **v5_h5**: STM32H5
 - **v5_h50**: STM32H5
 - **v5_h5_ef**: STM32H5
@@ -494,14 +498,13 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v5_h7ab**: STM32H7
 - **v5_h7rs**: STM32H7
 - **wb0**: STM32WB0
-- **❌ Unsupported**: STM32G5
 
 ### FMAC
 
 **Versions by family:**
 
-- **v1**: STM32G4, STM32H5, STM32H7, STM32U5
-- **❌ Unsupported**: STM32G5, STM32H7P
+- **v1**: STM32G4, STM32G5, STM32H5, STM32H7, STM32U5
+- **❌ Unsupported**: STM32H7P
 
 ### FMC
 
@@ -581,10 +584,10 @@ The following table shows which STM32 peripheral versions are supported across d
 
 - **h503**: STM32H5
 - **l5**: STM32L5
-- **v1**: STM32H5, STM32U3, STM32U5
+- **v1**: STM32G5, STM32H5, STM32U3, STM32U5
 - **v1_h5_ef**: STM32H5
 - **wba**: STM32WBA
-- **❌ Unsupported**: STM32G5, STM32H5, STM32WL
+- **❌ Unsupported**: STM32H5, STM32WL
 
 ### HASH
 
@@ -593,9 +596,9 @@ The following table shows which STM32 peripheral versions are supported across d
 - **c5**: STM32C5
 - **v1**: STM32F2, STM32F4
 - **v2**: STM32F4, STM32F7, STM32H7, STM32L4, STM32L4+, STM32L5
-- **v3**: STM32H5, STM32H7, STM32N6, STM32U3
+- **v3**: STM32G5, STM32H5, STM32H7, STM32N6, STM32U3
 - **v4**: STM32U5, STM32WBA
-- **❌ Unsupported**: STM32G5, STM32H7P, STM32MP1
+- **❌ Unsupported**: STM32H7P, STM32MP1
 
 ### HDP
 
@@ -648,8 +651,8 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **v1**: STM32C5, STM32H5, STM32H7, STM32N6, STM32U3
-- **❌ Unsupported**: STM32G5, STM32H7P
+- **v1**: STM32C5, STM32G5, STM32H5, STM32H7, STM32N6, STM32U3
+- **❌ Unsupported**: STM32H7P
 
 ### ICACHE
 
@@ -657,9 +660,9 @@ The following table shows which STM32 peripheral versions are supported across d
 
 - **v1_0crr**: STM32H5, STM32N6
 - **v1_3crr**: STM32U3, STM32U5
-- **v1_4crr**: STM32C5, STM32H5, STM32L5, STM32WBA
+- **v1_4crr**: STM32C5, STM32G5, STM32H5, STM32L5, STM32WBA
 - **v1_4crr_nomstsel**: STM32C5
-- **❌ Unsupported**: STM32G5, STM32H5
+- **❌ Unsupported**: STM32H5
 
 ### IPCC
 
@@ -672,11 +675,11 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **c5**: STM32C5
+- **c5**: STM32C5, STM32G5
 - **v1**: STM32F1, STM32F2, STM32F4, STM32L1
 - **v2**: STM32C0, STM32F0, STM32F3, STM32F7, STM32G0, STM32G4, STM32H7, STM32L0, STM32L4, STM32L4+, STM32L5, STM32MP1, STM32WB, STM32WB0, STM32WL
 - **v3**: STM32H5, STM32H7, STM32N6, STM32U0, STM32U3, STM32U5, STM32WBA
-- **❌ Unsupported**: STM32G5, STM32H7P
+- **❌ Unsupported**: STM32H7P
 
 ### JPEG
 
@@ -708,7 +711,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **n6**: STM32N6
+- **n6**: STM32G5, STM32N6
 - **v1**: STM32L0
 - **v1a**: STM32F4, STM32F7, STM32L4
 - **v1b**: STM32G0, STM32L4+, STM32WB
@@ -717,7 +720,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v1c**: STM32L4, STM32L4+, STM32L5, STM32WL
 - **v2a**: STM32C5, STM32H5, STM32U3, STM32U5, STM32WBA
 - **v2b**: STM32U0
-- **❌ Unsupported**: STM32G5, STM32MP1
+- **❌ Unsupported**: STM32MP1
 
 ### LPUART
 
@@ -785,12 +788,12 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **c5**: STM32C5
+- **c5**: STM32C5, STM32G5
 - **v2**: STM32F3
 - **v3**: STM32L4, STM32L4+, STM32L5, STM32U0, STM32U3, STM32U5
 - **v4**: STM32H5, STM32H7
 - **v5**: STM32G4
-- **❌ Unsupported**: STM32G5, STM32L1
+- **❌ Unsupported**: STM32L1
 
 ### OTFDEC
 
@@ -808,12 +811,11 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **c5**: STM32C5
+- **c5**: STM32C5, STM32G5
 - **n6**: STM32N6
 - **v1a**: STM32H5, STM32H7, STM32WBA
 - **v1b**: STM32U3, STM32U5
 - **v1c**: STM32L4+, STM32L5, STM32WB, STM32WB0, STM32WL
-- **❌ Unsupported**: STM32G5
 
 ### PLAY
 
@@ -826,7 +828,7 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **❌ Unsupported**: STM32G5
+- **v1**: STM32G5
 
 ### PSSI
 
@@ -892,6 +894,7 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **c5**: STM32C5
+- **g5**: STM32G5
 - **h5**: STM32H5, STM32N6
 - **h5_ef**: STM32H5
 - **u5**: STM32U3, STM32U5
@@ -976,9 +979,9 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v2**: STM32H7, STM32L4+, STM32L5, STM32WL
 - **v3**: STM32H5, STM32H7, STM32N6, STM32U0, STM32U3, STM32U5, STM32WBA
 - **v3_h5_ef**: STM32H5
-- **v4**: STM32C5
+- **v4**: STM32C5, STM32G5
 - **wba6**: STM32WBA
-- **❌ Unsupported**: STM32G5, STM32H7P, STM32MP1
+- **❌ Unsupported**: STM32H7P, STM32MP1
 
 ### RRM
 
@@ -1017,19 +1020,19 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v3_l4**: STM32L4
 - **v3_l5**: STM32L5
 - **v3_u0**: STM32U0
-- **v3_u3**: STM32U3
+- **v3_u3**: STM32G5, STM32U3
 - **v3_u5**: STM32N6, STM32U5
 - **v3_wba**: STM32WBA
-- **❌ Unsupported**: STM32G5, STM32H7P, STM32MP1
+- **❌ Unsupported**: STM32H7P, STM32MP1
 
 ### SAES
 
 **Versions by family:**
 
-- **n6**: STM32N6
+- **n6**: STM32G5, STM32N6
 - **v1a**: STM32C5, STM32H5, STM32WBA
 - **v1b**: STM32U3, STM32U5
-- **❌ Unsupported**: STM32G5, STM32H7
+- **❌ Unsupported**: STM32H7
 
 ### SAI
 
@@ -1106,6 +1109,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **f7**: STM32F7
 - **g0**: STM32G0
 - **g4**: STM32G4
+- **g5**: STM32G5
 - **h5**: STM32H5
 - **h50**: STM32H5
 - **h5_ef**: STM32H5
@@ -1125,7 +1129,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **wba**: STM32WBA
 - **wl5**: STM32WL
 - **wle**: STM32WL
-- **❌ Unsupported**: STM32G5, STM32MP1
+- **❌ Unsupported**: STM32MP1
 
 ### TAMP
 
@@ -1137,17 +1141,17 @@ The following table shows which STM32 peripheral versions are supported across d
 - **h5**: STM32H5
 - **h5_ef**: STM32H5
 - **l5**: STM32L5, STM32U3
-- **n6**: STM32N6
+- **n6**: STM32G5, STM32N6
 - **u5**: STM32U5
 - **wba**: STM32WBA
 - **wl**: STM32WL
-- **❌ Unsupported**: STM32G5, STM32H7, STM32H7P, STM32MP1, STM32U0, STM32WBA
+- **❌ Unsupported**: STM32H7, STM32H7P, STM32MP1, STM32U0, STM32WBA
 
 ### TIM
 
 **Versions by family:**
 
-- **❌ Unsupported**: STM32G5, STM32H7P, STM32MP1
+- **❌ Unsupported**: STM32H7P, STM32MP1
 
 ### TIMER
 
@@ -1183,9 +1187,9 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
-- **h5**: STM32H5
+- **h5**: STM32G5, STM32H5
 - **v1**: STM32G0, STM32G4, STM32H7, STM32L5, STM32N6, STM32U5
-- **❌ Unsupported**: STM32G5, STM32H7P
+- **❌ Unsupported**: STM32H7P
 
 ### UID
 
@@ -1211,8 +1215,8 @@ The following table shows which STM32 peripheral versions are supported across d
 - **v1**: STM32F1, STM32F3, STM32L1
 - **v2**: STM32F3
 - **v3**: STM32F0, STM32G4, STM32L0, STM32L4, STM32L5, STM32WB, STM32WBA
-- **v4**: STM32C0, STM32C5, STM32G0, STM32H5, STM32U0, STM32U3, STM32U5
-- **❌ Unsupported**: STM32G5, STM32MP1
+- **v4**: STM32C0, STM32C5, STM32G0, STM32G5, STM32H5, STM32U0, STM32U3, STM32U5
+- **❌ Unsupported**: STM32MP1
 
 ### USBPHYC
 
@@ -1227,8 +1231,7 @@ The following table shows which STM32 peripheral versions are supported across d
 - **16x1_512**: STM32F1, STM32F3, STM32L1
 - **16x2_1024**: STM32F0, STM32F3, STM32G4, STM32L0, STM32L4, STM32L5, STM32WB, STM32WBA
 - **32_1024**: STM32U0
-- **32_2048**: STM32C0, STM32C5, STM32G0, STM32H5, STM32U3, STM32U5
-- **❌ Unsupported**: STM32G5
+- **32_2048**: STM32C0, STM32C5, STM32G0, STM32G5, STM32H5, STM32U3, STM32U5
 
 ### VENC
 
@@ -1242,9 +1245,9 @@ The following table shows which STM32 peripheral versions are supported across d
 
 - **v1**: STM32G0, STM32L4, STM32L4+, STM32L5, STM32N6, STM32WB, STM32WL
 - **v2a1**: STM32H7, STM32H7P, STM32U3, STM32U5, STM32WBA
-- **v2a2**: STM32H5
+- **v2a2**: STM32G5, STM32H5
 - **v2b**: STM32G4
-- **❌ Unsupported**: STM32G5, STM32MP1, STM32U0
+- **❌ Unsupported**: STM32MP1, STM32U0
 
 ### VREFINTCAL
 
@@ -1258,8 +1261,8 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **v1**: STM32F0, STM32F1, STM32F2, STM32F3, STM32F4, STM32F7, STM32L0, STM32L1, STM32L4, STM32L4+
-- **v2**: STM32C0, STM32C5, STM32G0, STM32G4, STM32H5, STM32H7, STM32L5, STM32MP1, STM32N6, STM32U0, STM32U3, STM32U5, STM32WB, STM32WBA, STM32WL
-- **❌ Unsupported**: STM32G5, STM32H7P
+- **v2**: STM32C0, STM32C5, STM32G0, STM32G4, STM32G5, STM32H5, STM32H7, STM32L5, STM32MP1, STM32N6, STM32U0, STM32U3, STM32U5, STM32WB, STM32WBA, STM32WL
+- **❌ Unsupported**: STM32H7P
 
 ### XSPI
 

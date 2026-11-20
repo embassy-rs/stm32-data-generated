@@ -1383,6 +1383,11 @@
         {
           "name": "ADC1",
           "address": 1107427328,
+          "registers": {
+            "kind": "adc",
+            "version": "v3_g5",
+            "block": "ADC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -1501,11 +1506,21 @@
         },
         {
           "name": "ADC12_COMMON",
-          "address": 1107428096
+          "address": 1107428096,
+          "registers": {
+            "kind": "adccommon",
+            "version": "v4",
+            "block": "ADC_COMMON"
+          }
         },
         {
           "name": "ADC2",
           "address": 1107427584,
+          "registers": {
+            "kind": "adc",
+            "version": "v3_g5",
+            "block": "ADC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -1625,6 +1640,11 @@
         {
           "name": "ADC3",
           "address": 1107428352,
+          "registers": {
+            "kind": "adc",
+            "version": "v3_g5",
+            "block": "ADC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -1691,11 +1711,21 @@
         },
         {
           "name": "ADC3_COMMON",
-          "address": 1107429120
+          "address": 1107429120,
+          "registers": {
+            "kind": "adccommon",
+            "version": "v4",
+            "block": "ADC_COMMON"
+          }
         },
         {
           "name": "AES",
           "address": 1174429696,
+          "registers": {
+            "kind": "aes",
+            "version": "v3b",
+            "block": "AES"
+          },
           "rcc": {
             "bus_clock": "HCLK4",
             "kernel_clock": "HCLK4",
@@ -1740,6 +1770,11 @@
         {
           "name": "CCB",
           "address": 1174461440,
+          "registers": {
+            "kind": "ccb",
+            "version": "v2",
+            "block": "CCB"
+          },
           "rcc": {
             "bus_clock": "HCLK4",
             "kernel_clock": "HCLK4",
@@ -1756,6 +1791,11 @@
         {
           "name": "COMP1",
           "address": 1140884480,
+          "registers": {
+            "kind": "comp",
+            "version": "g5",
+            "block": "COMP"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3",
@@ -1811,6 +1851,11 @@
         {
           "name": "COMP2",
           "address": 1140885504,
+          "registers": {
+            "kind": "comp",
+            "version": "g5",
+            "block": "COMP"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3",
@@ -1866,6 +1911,11 @@
         {
           "name": "COMP3",
           "address": 1140886528,
+          "registers": {
+            "kind": "comp",
+            "version": "g5",
+            "block": "COMP"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3",
@@ -1908,6 +1958,11 @@
         {
           "name": "COMP4",
           "address": 1140887552,
+          "registers": {
+            "kind": "comp",
+            "version": "g5",
+            "block": "COMP"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3",
@@ -1955,6 +2010,11 @@
         {
           "name": "COMP5",
           "address": 1140888576,
+          "registers": {
+            "kind": "comp",
+            "version": "g5",
+            "block": "COMP"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3",
@@ -1997,6 +2057,11 @@
         {
           "name": "COMP6",
           "address": 1140889600,
+          "registers": {
+            "kind": "comp",
+            "version": "g5",
+            "block": "COMP"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3",
@@ -2034,6 +2099,11 @@
         {
           "name": "COMP7",
           "address": 1140890624,
+          "registers": {
+            "kind": "comp",
+            "version": "g5",
+            "block": "COMP"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3",
@@ -2071,6 +2141,11 @@
         {
           "name": "COMP8",
           "address": 1140891648,
+          "registers": {
+            "kind": "comp",
+            "version": "g5",
+            "block": "COMP"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3",
@@ -2153,6 +2228,11 @@
         {
           "name": "CRC",
           "address": 1073885184,
+          "registers": {
+            "kind": "crc",
+            "version": "v3_h5_ef",
+            "block": "CRC"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": "HCLK1",
@@ -2169,6 +2249,11 @@
         {
           "name": "CRS",
           "address": 1073766400,
+          "registers": {
+            "kind": "crs",
+            "version": "v1",
+            "block": "CRS"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": "PCLK1",
@@ -2197,6 +2282,11 @@
         {
           "name": "DAC1",
           "address": 1107432448,
+          "registers": {
+            "kind": "dac",
+            "version": "g5",
+            "block": "DAC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -2240,6 +2330,11 @@
         {
           "name": "DAC10",
           "address": 1107441664,
+          "registers": {
+            "kind": "dac",
+            "version": "g5",
+            "block": "DAC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -2277,6 +2372,11 @@
         {
           "name": "DAC2",
           "address": 1107433472,
+          "registers": {
+            "kind": "dac",
+            "version": "g5",
+            "block": "DAC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -2320,6 +2420,11 @@
         {
           "name": "DAC5",
           "address": 1107436544,
+          "registers": {
+            "kind": "dac",
+            "version": "g5",
+            "block": "DAC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -2357,6 +2462,11 @@
         {
           "name": "DAC6",
           "address": 1107437568,
+          "registers": {
+            "kind": "dac",
+            "version": "g5",
+            "block": "DAC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -2394,6 +2504,11 @@
         {
           "name": "DAC7",
           "address": 1107438592,
+          "registers": {
+            "kind": "dac",
+            "version": "g5",
+            "block": "DAC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -2431,6 +2546,11 @@
         {
           "name": "DAC8",
           "address": 1107439616,
+          "registers": {
+            "kind": "dac",
+            "version": "g5",
+            "block": "DAC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -2468,6 +2588,11 @@
         {
           "name": "DAC9",
           "address": 1107440640,
+          "registers": {
+            "kind": "dac",
+            "version": "g5",
+            "block": "DAC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
@@ -2504,7 +2629,12 @@
         },
         {
           "name": "DBGMCU",
-          "address": 1141006336
+          "address": 1141006336,
+          "registers": {
+            "kind": "dbgmcu",
+            "version": "g5",
+            "block": "DBGMCU"
+          }
         },
         {
           "name": "DCACHE",
@@ -2634,6 +2764,11 @@
         {
           "name": "FDCAN1",
           "address": 1073782784,
+          "registers": {
+            "kind": "can",
+            "version": "fdcan_v1",
+            "block": "FDCAN"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -2705,6 +2840,11 @@
         {
           "name": "FDCAN2",
           "address": 1073783808,
+          "registers": {
+            "kind": "can",
+            "version": "fdcan_v1",
+            "block": "FDCAN"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -2764,6 +2904,11 @@
         {
           "name": "FDCAN3",
           "address": 1073784832,
+          "registers": {
+            "kind": "can",
+            "version": "fdcan_v1",
+            "block": "FDCAN"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -2849,6 +2994,11 @@
         {
           "name": "FLASH",
           "address": 1073881088,
+          "registers": {
+            "kind": "flash",
+            "version": "v5_g5",
+            "block": "FLASH"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": "HCLK1",
@@ -2867,6 +3017,11 @@
         {
           "name": "FMAC1",
           "address": 1073888256,
+          "registers": {
+            "kind": "fmac",
+            "version": "v1",
+            "block": "FMAC"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": "HCLK1",
@@ -2911,6 +3066,11 @@
         {
           "name": "FMAC2",
           "address": 1107444736,
+          "registers": {
+            "kind": "fmac",
+            "version": "v1",
+            "block": "FMAC"
+          },
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": "HCLK2",
@@ -3232,19 +3392,39 @@
         },
         {
           "name": "GTZC1_MPCBB1",
-          "address": 1073949696
+          "address": 1073949696,
+          "registers": {
+            "kind": "gtzc",
+            "version": "v1",
+            "block": "MPCBB"
+          }
         },
         {
           "name": "GTZC1_MPCBB2",
-          "address": 1073950720
+          "address": 1073950720,
+          "registers": {
+            "kind": "gtzc",
+            "version": "v1",
+            "block": "MPCBB"
+          }
         },
         {
           "name": "GTZC1_MPCBB3",
-          "address": 1073951744
+          "address": 1073951744,
+          "registers": {
+            "kind": "gtzc",
+            "version": "v1",
+            "block": "MPCBB"
+          }
         },
         {
           "name": "HASH",
           "address": 1174430720,
+          "registers": {
+            "kind": "hash",
+            "version": "v3",
+            "block": "HASH"
+          },
           "rcc": {
             "bus_clock": "HCLK4",
             "kernel_clock": "HCLK4",
@@ -3917,6 +4097,11 @@
         {
           "name": "I3C1",
           "address": 1073765376,
+          "registers": {
+            "kind": "i3c",
+            "version": "v1",
+            "block": "I3C"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -4022,6 +4207,11 @@
         {
           "name": "ICACHE",
           "address": 1073939456,
+          "registers": {
+            "kind": "icache",
+            "version": "v1_4crr",
+            "block": "ICACHE"
+          },
           "interrupts": [
             {
               "signal": "GLOBAL",
@@ -4032,6 +4222,11 @@
         {
           "name": "IWDG",
           "address": 1073755136,
+          "registers": {
+            "kind": "iwdg",
+            "version": "c5",
+            "block": "IWDG"
+          },
           "interrupts": [
             {
               "signal": "GLOBAL",
@@ -4042,6 +4237,11 @@
         {
           "name": "LPTIM1",
           "address": 1140868096,
+          "registers": {
+            "kind": "lptim",
+            "version": "n6",
+            "block": "LPTIM"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": {
@@ -4246,6 +4446,11 @@
         {
           "name": "OPAMP1",
           "address": 1140874240,
+          "registers": {
+            "kind": "opamp",
+            "version": "c5",
+            "block": "OPAMP"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3",
@@ -4284,6 +4489,11 @@
         {
           "name": "OPAMP2",
           "address": 1140875264,
+          "registers": {
+            "kind": "opamp",
+            "version": "c5",
+            "block": "OPAMP"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3",
@@ -4322,6 +4532,11 @@
         {
           "name": "OPAMP3",
           "address": 1140876288,
+          "registers": {
+            "kind": "opamp",
+            "version": "c5",
+            "block": "OPAMP"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3",
@@ -4391,6 +4606,11 @@
         {
           "name": "PKA",
           "address": 1174437888,
+          "registers": {
+            "kind": "pka",
+            "version": "c5",
+            "block": "PKA"
+          },
           "rcc": {
             "bus_clock": "HCLK4",
             "kernel_clock": "HCLK4",
@@ -4480,6 +4700,11 @@
         {
           "name": "POSENC1",
           "address": 1140930560,
+          "registers": {
+            "kind": "posenc",
+            "version": "v1",
+            "block": "POSENC"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": {
@@ -4575,6 +4800,11 @@
         {
           "name": "POSENC2",
           "address": 1140946944,
+          "registers": {
+            "kind": "posenc",
+            "version": "v1",
+            "block": "POSENC"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": {
@@ -4665,6 +4895,11 @@
         {
           "name": "RAMCFG",
           "address": 1073897472,
+          "registers": {
+            "kind": "ramcfg",
+            "version": "g5",
+            "block": "RAMCFG"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": "HCLK1",
@@ -4760,6 +4995,11 @@
         {
           "name": "RNG",
           "address": 1174431744,
+          "registers": {
+            "kind": "rng",
+            "version": "v4",
+            "block": "RNG"
+          },
           "rcc": {
             "bus_clock": "HCLK4",
             "kernel_clock": "HCLK4",
@@ -4782,6 +5022,11 @@
         {
           "name": "RTC",
           "address": 1140881408,
+          "registers": {
+            "kind": "rtc",
+            "version": "v3_u3",
+            "block": "RTC"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3",
@@ -4841,6 +5086,11 @@
         {
           "name": "SAES",
           "address": 1174432768,
+          "registers": {
+            "kind": "saes",
+            "version": "n6",
+            "block": "SAES"
+          },
           "rcc": {
             "bus_clock": "HCLK4",
             "kernel_clock": "HCLK4",
@@ -5246,6 +5496,11 @@
         {
           "name": "SYSCFG",
           "address": 1140851712,
+          "registers": {
+            "kind": "syscfg",
+            "version": "g5",
+            "block": "SYSCFG"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3",
@@ -5258,6 +5513,11 @@
         {
           "name": "TAMP",
           "address": 1140882432,
+          "registers": {
+            "kind": "tamp",
+            "version": "n6",
+            "block": "TAMP"
+          },
           "pins": [
             {
               "pin": "PA0",
@@ -6590,6 +6850,11 @@
         {
           "name": "TIM26",
           "address": 1140853760,
+          "registers": {
+            "kind": "timer",
+            "version": "v2",
+            "block": "TIM_BASIC"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3_TIM",
@@ -6652,6 +6917,11 @@
         {
           "name": "TIM27",
           "address": 1140854784,
+          "registers": {
+            "kind": "timer",
+            "version": "v2",
+            "block": "TIM_BASIC"
+          },
           "rcc": {
             "bus_clock": "PCLK3",
             "kernel_clock": "PCLK3_TIM",
@@ -7935,6 +8205,11 @@
         {
           "name": "UCPD1",
           "address": 1073798144,
+          "registers": {
+            "kind": "ucpd",
+            "version": "h5",
+            "block": "UCPD"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
@@ -8320,6 +8595,11 @@
         {
           "name": "USB",
           "address": 1073831936,
+          "registers": {
+            "kind": "usb",
+            "version": "v4",
+            "block": "USB"
+          },
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": {
@@ -8374,11 +8654,21 @@
         },
         {
           "name": "USBRAM",
-          "address": 1073832960
+          "address": 1073832960,
+          "registers": {
+            "kind": "usbram",
+            "version": "32_2048",
+            "block": "USBRAM"
+          }
         },
         {
           "name": "VREFBUF",
-          "address": 1140880384
+          "address": 1140880384,
+          "registers": {
+            "kind": "vrefbuf",
+            "version": "v2a2",
+            "block": "VREFBUF"
+          }
         },
         {
           "name": "VREFINTCAL",
@@ -8392,6 +8682,11 @@
         {
           "name": "WWDG",
           "address": 1073754112,
+          "registers": {
+            "kind": "wwdg",
+            "version": "v2",
+            "block": "WWDG"
+          },
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": "PCLK1",

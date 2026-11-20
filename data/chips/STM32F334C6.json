@@ -1979,7 +1979,7 @@
           "address": 1073819648,
           "registers": {
             "kind": "spi",
-            "version": "v3_i2s",
+            "version": "v3",
             "block": "SPI"
           },
           "rcc": {

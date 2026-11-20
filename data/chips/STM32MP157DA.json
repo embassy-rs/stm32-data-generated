@@ -9857,6 +9857,11 @@
         {
           "name": "FMC",
           "address": 1476403200,
+          "registers": {
+            "kind": "fmc",
+            "version": "mp1",
+            "block": "FMC"
+          },
           "pins": [
             {
               "pin": "PB7",
@@ -18519,6 +18524,11 @@
         {
           "name": "FMC",
           "address": 1476403200,
+          "registers": {
+            "kind": "fmc",
+            "version": "mp1",
+            "block": "FMC"
+          },
           "pins": [
             {
               "pin": "PB7",

@@ -555,7 +555,7 @@ pub const ADC12_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::fr
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x420c_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x420c_0800usize as _) };
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x420c_8000usize as _) };
-pub const FMC: *mut () = 0x4402_0000usize as _;
+pub const FMC: fsmc::Fsmc = unsafe { fsmc::Fsmc::from_ptr(0x4402_0000usize as _) };
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0x4402_1000usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_4000usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
@@ -593,6 +593,8 @@ pub mod exti;
 pub mod fdcanram;
 #[path = "../../peripherals/flash_v4_l5.rs"]
 pub mod flash;
+#[path = "../../peripherals/fsmc_v4x1.rs"]
+pub mod fsmc;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
 #[path = "../../peripherals/gtzc_l5.rs"]

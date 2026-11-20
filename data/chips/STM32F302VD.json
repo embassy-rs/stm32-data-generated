@@ -2317,6 +2317,11 @@
         {
           "name": "FMC",
           "address": 2684354560,
+          "registers": {
+            "kind": "fsmc",
+            "version": "v2x3",
+            "block": "FSMC"
+          },
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": "HCLK1",

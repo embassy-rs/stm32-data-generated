@@ -412,7 +412,7 @@ pub const ADC12_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::fr
 pub const ADC3: adc::Adc = unsafe { adc::Adc::from_ptr(0x5000_0400usize as _) };
 pub const ADC4: adc::Adc = unsafe { adc::Adc::from_ptr(0x5000_0500usize as _) };
 pub const ADC34_COMMON: adccommon::AdcCommon = unsafe { adccommon::AdcCommon::from_ptr(0x5000_0700usize as _) };
-pub const FMC: *mut () = 0xa000_0000usize as _;
+pub const FMC: fsmc::Fsmc = unsafe { fsmc::Fsmc::from_ptr(0xa000_0000usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_2000usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
 #[cfg(feature = "rt")]
@@ -441,6 +441,8 @@ pub mod dbgmcu;
 pub mod exti;
 #[path = "../../peripherals/flash_v1_f3.rs"]
 pub mod flash;
+#[path = "../../peripherals/fsmc_v2x3.rs"]
+pub mod fsmc;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
 #[path = "../../peripherals/i2c_v2.rs"]

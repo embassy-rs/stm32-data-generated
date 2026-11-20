@@ -496,7 +496,7 @@ pub const DCMI: dcmi::Dcmi = unsafe { dcmi::Dcmi::from_ptr(0x5005_0000usize as _
 pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x5006_0000usize as _) };
 pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x5006_0400usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x5006_0800usize as _) };
-pub const FMC: *mut () = 0xa000_0000usize as _;
+pub const FMC: fsmc::Fsmc = unsafe { fsmc::Fsmc::from_ptr(0xa000_0000usize as _) };
 pub const QUADSPI: quadspi::Quadspi = unsafe { quadspi::Quadspi::from_ptr(0xa000_1000usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_2000usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
@@ -536,6 +536,8 @@ pub mod dma2d;
 pub mod exti;
 #[path = "../../peripherals/flash_v4_l4.rs"]
 pub mod flash;
+#[path = "../../peripherals/fsmc_v3x1.rs"]
+pub mod fsmc;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
 #[path = "../../peripherals/hash_v2.rs"]

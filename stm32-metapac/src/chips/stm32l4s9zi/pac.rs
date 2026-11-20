@@ -498,7 +498,7 @@ pub const HASH: hash::Hash = unsafe { hash::Hash::from_ptr(0x5006_0400usize as _
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x5006_0800usize as _) };
 pub const OCTOSPIM: octospim::Octospim = unsafe { octospim::Octospim::from_ptr(0x5006_1c00usize as _) };
 pub const SDMMC1: sdmmc::Sdmmc = unsafe { sdmmc::Sdmmc::from_ptr(0x5006_2400usize as _) };
-pub const FMC: *mut () = 0xa000_0000usize as _;
+pub const FMC: fsmc::Fsmc = unsafe { fsmc::Fsmc::from_ptr(0xa000_0000usize as _) };
 pub const OCTOSPI1: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0xa000_1000usize as _) };
 pub const OCTOSPI2: octospi::Octospi = unsafe { octospi::Octospi::from_ptr(0xa000_1400usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_2000usize as _) };
@@ -543,6 +543,8 @@ pub mod dsihost;
 pub mod exti;
 #[path = "../../peripherals/flash_v4_l4p.rs"]
 pub mod flash;
+#[path = "../../peripherals/fsmc_v3x2.rs"]
+pub mod fsmc;
 #[path = "../../peripherals/gfxmmu_v1.rs"]
 pub mod gfxmmu;
 #[path = "../../peripherals/gpio_v2.rs"]

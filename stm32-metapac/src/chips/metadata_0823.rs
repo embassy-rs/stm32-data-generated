@@ -1676,7 +1676,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "FMC",
         address: 0xa0000000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "fsmc",
+            version: "v3x1",
+            block: "FSMC",
+            ir: &fsmc::REGISTERS,
+        }),
         rcc: Some(PeripheralRcc {
             bus_clock: "HCLK3",
             kernel_clock: Clock("HCLK3"),
@@ -7856,6 +7861,8 @@ pub mod dfsdm;
 pub mod exti;
 #[path = "../registers/flash_v4_l4.rs"]
 pub mod flash;
+#[path = "../registers/fsmc_v3x1.rs"]
+pub mod fsmc;
 #[path = "../registers/gpio_v2_l478.rs"]
 pub mod gpio;
 #[path = "../registers/i2c_v2.rs"]

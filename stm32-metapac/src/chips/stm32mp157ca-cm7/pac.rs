@@ -702,7 +702,7 @@ pub const HASH1: *mut () = 0x5400_2000usize as _;
 pub const RNG1: *mut () = 0x5400_3000usize as _;
 pub const GPIOZ: gpio::Gpio = unsafe { gpio::Gpio::from_ptr(0x5400_4000usize as _) };
 pub const MDMA: *mut () = 0x5800_0000usize as _;
-pub const FMC: *mut () = 0x5800_2000usize as _;
+pub const FMC: fmc::Fmc = unsafe { fmc::Fmc::from_ptr(0x5800_2000usize as _) };
 pub const QUADSPI: quadspi::Quadspi = unsafe { quadspi::Quadspi::from_ptr(0x5800_3000usize as _) };
 pub const SDMMC1: *mut () = 0x5800_5000usize as _;
 pub const SDMMC2: *mut () = 0x5800_7000usize as _;
@@ -749,6 +749,8 @@ pub mod dts;
 pub mod exti;
 #[path = "../../peripherals/fdcanram_v1.rs"]
 pub mod fdcanram;
+#[path = "../../peripherals/fmc_mp1.rs"]
+pub mod fmc;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
 #[path = "../../peripherals/iwdg_v2.rs"]

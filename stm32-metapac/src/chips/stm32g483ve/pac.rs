@@ -539,7 +539,7 @@ pub const DAC3: dac::Dac = unsafe { dac::Dac::from_ptr(0x5000_1000usize as _) };
 pub const DAC4: dac::Dac = unsafe { dac::Dac::from_ptr(0x5000_1400usize as _) };
 pub const AES: aes::Aes = unsafe { aes::Aes::from_ptr(0x5006_0000usize as _) };
 pub const RNG: rng::Rng = unsafe { rng::Rng::from_ptr(0x5006_0800usize as _) };
-pub const FMC: *mut () = 0xa000_0000usize as _;
+pub const FMC: fsmc::Fsmc = unsafe { fsmc::Fsmc::from_ptr(0xa000_0000usize as _) };
 pub const QUADSPI1: quadspi::Quadspi = unsafe { quadspi::Quadspi::from_ptr(0xa000_1000usize as _) };
 pub const DBGMCU: dbgmcu::Dbgmcu = unsafe { dbgmcu::Dbgmcu::from_ptr(0xe004_2000usize as _) };
 #[doc = r" Number available in the NVIC for configuring priority"]
@@ -581,6 +581,8 @@ pub mod fdcanram;
 pub mod flash;
 #[path = "../../peripherals/fmac_v1.rs"]
 pub mod fmac;
+#[path = "../../peripherals/fsmc_v4x1.rs"]
+pub mod fsmc;
 #[path = "../../peripherals/gpio_v2.rs"]
 pub mod gpio;
 #[path = "../../peripherals/i2c_v2.rs"]

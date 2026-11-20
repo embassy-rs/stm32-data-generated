@@ -48,9 +48,9 @@ The following table shows which STM32 peripheral versions are supported across d
 | [FDCANRAM](#fdcanram) | v1 | v1 | | | | | | | v1 | v1 | v1 | v1 | v1, v2 | v2 | | | | | v1 | v1 | v2 | | v1 | v1 | | | | |
 | [FLASH](#flash) | v4_c0 | v5_c5 | v1_f0 | v1_f1, v1_f1xl | v2_f2 | v1_f3 | v2_f4 | v2_f7 | v4_g0x0, v4_g0x1 | v4_g4c2, v4_g4c3, v4_g4c4 | ❌ | v5_h5, v5_h50, v5_h5_ef | v5_h7, v5_h7ab, v5_h7rs | v5_h7 | v3_l0 | v3_l1 | v4_l4 | v4_l4p | v4_l5 | | | v4_u0 | v4_u3 | v4_u5 | v4_wb | wb0 | v4_wba | v4_wl |
 | [FMAC](#fmac) | | | | | | | | | | v1 | ❌ | v1 | v1 | ❌ | | | | | | | | | | v1 | | | | |
-| [FMC](#fmc) | | | | | | ❌ | v1x3, v2x1, ❌ | v2x1 | | ❌ | | v4 | v3x1 | v3x1 | | | ❌ | ❌ | ❌ | ❌ | n6 | | | | | | | |
+| [FMC](#fmc) | | | | | | | v1x3, v2x1 | v2x1 | | | | v4 | v3x1 | v3x1 | | | | | | mp1 | n6 | | | | | | | |
 | [FMPI2C](#fmpi2c) | | | | | | | v2 | | | | | | | | | | | | | | | | | | | | | |
-| [FSMC](#fsmc) | | | | v1x0, v1x3 | v1x3 | | v1x0, v1x3 | | | | | | | | | v1x0 | | | | | | | | v5x1 | | | | |
+| [FSMC](#fsmc) | | | | v1x0, v1x3 | v1x3 | v2x3 | v1x0, v1x3 | | | v4x1 | | | | | | v1x0 | v3x1 | v3x2, v4x1 | v4x1 | | | | | v5x1 | | | | |
 | [GFXMMU](#gfxmmu) | | | | | | | | | | | | | ❌ | | | | | v1 | | | n6 | | | v2 | | | | |
 | [GFXTIM](#gfxtim) | | | | | | | | | | | | ❌ | ❌ | | | | | | | | v1 | | | v1 | | | | |
 | [GPDMA](#gpdma) | | | | | | | | | | | v1 | v1, v1_h5_ef | v1 | v1 | | | | | | | v1 | | v1 | v1 | | | v1 | |
@@ -507,12 +507,12 @@ The following table shows which STM32 peripheral versions are supported across d
 
 **Versions by family:**
 
+- **mp1**: STM32MP1
 - **n6**: STM32N6
 - **v1x3**: STM32F4
 - **v2x1**: STM32F4, STM32F7
 - **v3x1**: STM32H7, STM32H7P
 - **v4**: STM32H5
-- **❌ Unsupported**: STM32F3, STM32F4, STM32G4, STM32L4, STM32L4+, STM32L5, STM32MP1
 
 ### FMPI2C
 
@@ -526,6 +526,10 @@ The following table shows which STM32 peripheral versions are supported across d
 
 - **v1x0**: STM32F1, STM32F4, STM32L1
 - **v1x3**: STM32F1, STM32F2, STM32F4
+- **v2x3**: STM32F3
+- **v3x1**: STM32L4
+- **v3x2**: STM32L4+
+- **v4x1**: STM32G4, STM32L4+, STM32L5
 - **v5x1**: STM32U5
 
 ### GFXMMU

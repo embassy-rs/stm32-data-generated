@@ -1449,7 +1449,12 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
     Peripheral {
         name: "FMC",
         address: 0x58002000,
-        registers: None,
+        registers: Some(PeripheralRegisters {
+            kind: "fmc",
+            version: "mp1",
+            block: "FMC",
+            ir: &fmc::REGISTERS,
+        }),
         rcc: None,
         pins: &[
             PeripheralPin {
@@ -8868,6 +8873,8 @@ pub mod dts;
 pub mod exti;
 #[path = "../registers/fdcanram_v1.rs"]
 pub mod fdcanram;
+#[path = "../registers/fmc_mp1.rs"]
+pub mod fmc;
 #[path = "../registers/gpio_v2.rs"]
 pub mod gpio;
 #[path = "../registers/iwdg_v2.rs"]

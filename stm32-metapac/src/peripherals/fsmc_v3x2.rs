@@ -516,6 +516,18 @@ pub mod regs {
         pub const fn set_nblset(&mut self, val: u8) {
             self.0 = (self.0 & !(0x03 << 22usize)) | (((val as u32) & 0x03) << 22usize);
         }
+        #[doc = "FMC controller enable"]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fmcen(&self) -> bool {
+            let val = (self.0 >> 31usize) & 0x01;
+            val != 0
+        }
+        #[doc = "FMC controller enable"]
+        #[inline(always)]
+        pub const fn set_fmcen(&mut self, val: bool) {
+            self.0 = (self.0 & !(0x01 << 31usize)) | (((val as u32) & 0x01) << 31usize);
+        }
     }
     impl Default for Bcr1 {
         #[inline(always)]
@@ -544,6 +556,7 @@ pub mod regs {
                 .field("cclken", &self.cclken())
                 .field("wfdis", &self.wfdis())
                 .field("nblset", &self.nblset())
+                .field("fmcen", &self.fmcen())
                 .finish()
         }
     }
@@ -552,7 +565,7 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Bcr1 {{ mbken: {=bool:?}, muxen: {=bool:?}, mtyp: {:?}, mwid: {:?}, faccen: {=bool:?}, bursten: {=bool:?}, waitpol: {:?}, waitcfg: {:?}, wren: {=bool:?}, waiten: {=bool:?}, extmod: {=bool:?}, asyncwait: {=bool:?}, cpsize: {:?}, cburstrw: {=bool:?}, cclken: {=bool:?}, wfdis: {=bool:?}, nblset: {=u8:?} }}",
+                "Bcr1 {{ mbken: {=bool:?}, muxen: {=bool:?}, mtyp: {:?}, mwid: {:?}, faccen: {=bool:?}, bursten: {=bool:?}, waitpol: {:?}, waitcfg: {:?}, wren: {=bool:?}, waiten: {=bool:?}, extmod: {=bool:?}, asyncwait: {=bool:?}, cpsize: {:?}, cburstrw: {=bool:?}, cclken: {=bool:?}, wfdis: {=bool:?}, nblset: {=u8:?}, fmcen: {=bool:?} }}",
                 self.mbken(),
                 self.muxen(),
                 self.mtyp(),
@@ -569,7 +582,8 @@ pub mod regs {
                 self.cburstrw(),
                 self.cclken(),
                 self.wfdis(),
-                self.nblset()
+                self.nblset(),
+                self.fmcen()
             )
         }
     }

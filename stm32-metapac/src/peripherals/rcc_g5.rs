@@ -7722,7 +7722,8 @@ pub mod vals {
     #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Hpre {
-        _RESERVED_0 = 0x0,
+        #[doc = "rcc_hclk=sys_ck (default after reset)."]
+        Div1 = 0x0,
         _RESERVED_1 = 0x01,
         _RESERVED_2 = 0x02,
         _RESERVED_3 = 0x03,
@@ -8388,135 +8389,261 @@ pub mod vals {
     #[cfg_attr(feature = "debug", derive(Debug))]
     #[cfg_attr(feature = "defmt", derive(defmt::Format))]
     pub enum Plldiv {
-        _RESERVED_0 = 0x0,
-        #[doc = "pllx_p_ck=vco1_ck / 2 (default after reset)."]
+        #[doc = "division by 1."]
+        Div1 = 0x0,
+        #[doc = "division by 2 (default after reset)."]
         Div2 = 0x01,
-        _RESERVED_2 = 0x02,
-        #[doc = "pllx_p_ck=vco1_ck / 4."]
+        #[doc = "division by 3."]
+        Div3 = 0x02,
+        #[doc = "division by 4."]
         Div4 = 0x03,
+        #[doc = "division by 5."]
         Div5 = 0x04,
+        #[doc = "division by 6."]
         Div6 = 0x05,
+        #[doc = "division by 7."]
         Div7 = 0x06,
+        #[doc = "division by 8."]
         Div8 = 0x07,
+        #[doc = "division by 9."]
         Div9 = 0x08,
+        #[doc = "division by 10."]
         Div10 = 0x09,
+        #[doc = "division by 11."]
         Div11 = 0x0a,
+        #[doc = "division by 12."]
         Div12 = 0x0b,
+        #[doc = "division by 13."]
         Div13 = 0x0c,
+        #[doc = "division by 14."]
         Div14 = 0x0d,
+        #[doc = "division by 15."]
         Div15 = 0x0e,
+        #[doc = "division by 16."]
         Div16 = 0x0f,
+        #[doc = "division by 17."]
         Div17 = 0x10,
+        #[doc = "division by 18."]
         Div18 = 0x11,
+        #[doc = "division by 19."]
         Div19 = 0x12,
+        #[doc = "division by 20."]
         Div20 = 0x13,
+        #[doc = "division by 21."]
         Div21 = 0x14,
+        #[doc = "division by 22."]
         Div22 = 0x15,
+        #[doc = "division by 23."]
         Div23 = 0x16,
+        #[doc = "division by 24."]
         Div24 = 0x17,
+        #[doc = "division by 25."]
         Div25 = 0x18,
+        #[doc = "division by 26."]
         Div26 = 0x19,
+        #[doc = "division by 27."]
         Div27 = 0x1a,
+        #[doc = "division by 28."]
         Div28 = 0x1b,
+        #[doc = "division by 29."]
         Div29 = 0x1c,
+        #[doc = "division by 30."]
         Div30 = 0x1d,
+        #[doc = "division by 31."]
         Div31 = 0x1e,
+        #[doc = "division by 32."]
         Div32 = 0x1f,
+        #[doc = "division by 33."]
         Div33 = 0x20,
+        #[doc = "division by 34."]
         Div34 = 0x21,
+        #[doc = "division by 35."]
         Div35 = 0x22,
+        #[doc = "division by 36."]
         Div36 = 0x23,
+        #[doc = "division by 37."]
         Div37 = 0x24,
+        #[doc = "division by 38."]
         Div38 = 0x25,
+        #[doc = "division by 39."]
         Div39 = 0x26,
+        #[doc = "division by 40."]
         Div40 = 0x27,
+        #[doc = "division by 41."]
         Div41 = 0x28,
+        #[doc = "division by 42."]
         Div42 = 0x29,
+        #[doc = "division by 43."]
         Div43 = 0x2a,
+        #[doc = "division by 44."]
         Div44 = 0x2b,
+        #[doc = "division by 45."]
         Div45 = 0x2c,
+        #[doc = "division by 46."]
         Div46 = 0x2d,
+        #[doc = "division by 47."]
         Div47 = 0x2e,
+        #[doc = "division by 48."]
         Div48 = 0x2f,
+        #[doc = "division by 49."]
         Div49 = 0x30,
+        #[doc = "division by 50."]
         Div50 = 0x31,
+        #[doc = "division by 51."]
         Div51 = 0x32,
+        #[doc = "division by 52."]
         Div52 = 0x33,
+        #[doc = "division by 53."]
         Div53 = 0x34,
+        #[doc = "division by 54."]
         Div54 = 0x35,
+        #[doc = "division by 55."]
         Div55 = 0x36,
+        #[doc = "division by 56."]
         Div56 = 0x37,
+        #[doc = "division by 57."]
         Div57 = 0x38,
+        #[doc = "division by 58."]
         Div58 = 0x39,
+        #[doc = "division by 59."]
         Div59 = 0x3a,
+        #[doc = "division by 60."]
         Div60 = 0x3b,
+        #[doc = "division by 61."]
         Div61 = 0x3c,
+        #[doc = "division by 62."]
         Div62 = 0x3d,
+        #[doc = "division by 63."]
         Div63 = 0x3e,
+        #[doc = "division by 64."]
         Div64 = 0x3f,
+        #[doc = "division by 65."]
         Div65 = 0x40,
+        #[doc = "division by 66."]
         Div66 = 0x41,
+        #[doc = "division by 67."]
         Div67 = 0x42,
+        #[doc = "division by 68."]
         Div68 = 0x43,
+        #[doc = "division by 69."]
         Div69 = 0x44,
+        #[doc = "division by 70."]
         Div70 = 0x45,
+        #[doc = "division by 71."]
         Div71 = 0x46,
+        #[doc = "division by 72."]
         Div72 = 0x47,
+        #[doc = "division by 73."]
         Div73 = 0x48,
+        #[doc = "division by 74."]
         Div74 = 0x49,
+        #[doc = "division by 75."]
         Div75 = 0x4a,
+        #[doc = "division by 76."]
         Div76 = 0x4b,
+        #[doc = "division by 77."]
         Div77 = 0x4c,
+        #[doc = "division by 78."]
         Div78 = 0x4d,
+        #[doc = "division by 79."]
         Div79 = 0x4e,
+        #[doc = "division by 80."]
         Div80 = 0x4f,
+        #[doc = "division by 81."]
         Div81 = 0x50,
+        #[doc = "division by 82."]
         Div82 = 0x51,
+        #[doc = "division by 83."]
         Div83 = 0x52,
+        #[doc = "division by 84."]
         Div84 = 0x53,
+        #[doc = "division by 85."]
         Div85 = 0x54,
+        #[doc = "division by 86."]
         Div86 = 0x55,
+        #[doc = "division by 87."]
         Div87 = 0x56,
+        #[doc = "division by 88."]
         Div88 = 0x57,
+        #[doc = "division by 89."]
         Div89 = 0x58,
+        #[doc = "division by 90."]
         Div90 = 0x59,
+        #[doc = "division by 91."]
         Div91 = 0x5a,
+        #[doc = "division by 92."]
         Div92 = 0x5b,
+        #[doc = "division by 93."]
         Div93 = 0x5c,
+        #[doc = "division by 94."]
         Div94 = 0x5d,
+        #[doc = "division by 95."]
         Div95 = 0x5e,
+        #[doc = "division by 96."]
         Div96 = 0x5f,
+        #[doc = "division by 97."]
         Div97 = 0x60,
+        #[doc = "division by 98."]
         Div98 = 0x61,
+        #[doc = "division by 99."]
         Div99 = 0x62,
+        #[doc = "division by 100."]
         Div100 = 0x63,
+        #[doc = "division by 101."]
         Div101 = 0x64,
+        #[doc = "division by 102."]
         Div102 = 0x65,
+        #[doc = "division by 103."]
         Div103 = 0x66,
+        #[doc = "division by 104."]
         Div104 = 0x67,
+        #[doc = "division by 105."]
         Div105 = 0x68,
+        #[doc = "division by 106."]
         Div106 = 0x69,
+        #[doc = "division by 107."]
         Div107 = 0x6a,
+        #[doc = "division by 108."]
         Div108 = 0x6b,
+        #[doc = "division by 109."]
         Div109 = 0x6c,
+        #[doc = "division by 110."]
         Div110 = 0x6d,
+        #[doc = "division by 111."]
         Div111 = 0x6e,
+        #[doc = "division by 112."]
         Div112 = 0x6f,
+        #[doc = "division by 113."]
         Div113 = 0x70,
+        #[doc = "division by 114."]
         Div114 = 0x71,
+        #[doc = "division by 115."]
         Div115 = 0x72,
+        #[doc = "division by 116."]
         Div116 = 0x73,
+        #[doc = "division by 117."]
         Div117 = 0x74,
+        #[doc = "division by 118."]
         Div118 = 0x75,
+        #[doc = "division by 119."]
         Div119 = 0x76,
+        #[doc = "division by 120."]
         Div120 = 0x77,
+        #[doc = "division by 121."]
         Div121 = 0x78,
+        #[doc = "division by 122."]
         Div122 = 0x79,
+        #[doc = "division by 123."]
         Div123 = 0x7a,
+        #[doc = "division by 124."]
         Div124 = 0x7b,
+        #[doc = "division by 125."]
         Div125 = 0x7c,
+        #[doc = "division by 126."]
         Div126 = 0x7d,
+        #[doc = "division by 127."]
         Div127 = 0x7e,
+        #[doc = "division by 128."]
         Div128 = 0x7f,
     }
     impl Plldiv {
@@ -8554,66 +8681,124 @@ pub mod vals {
         Div2 = 0x02,
         #[doc = "division by 3."]
         Div3 = 0x03,
-        _RESERVED_4 = 0x04,
-        _RESERVED_5 = 0x05,
-        _RESERVED_6 = 0x06,
-        _RESERVED_7 = 0x07,
-        _RESERVED_8 = 0x08,
-        _RESERVED_9 = 0x09,
-        _RESERVED_a = 0x0a,
-        _RESERVED_b = 0x0b,
-        _RESERVED_c = 0x0c,
-        _RESERVED_d = 0x0d,
-        _RESERVED_e = 0x0e,
-        _RESERVED_f = 0x0f,
-        _RESERVED_10 = 0x10,
-        _RESERVED_11 = 0x11,
-        _RESERVED_12 = 0x12,
-        _RESERVED_13 = 0x13,
-        _RESERVED_14 = 0x14,
-        _RESERVED_15 = 0x15,
-        _RESERVED_16 = 0x16,
-        _RESERVED_17 = 0x17,
-        _RESERVED_18 = 0x18,
-        _RESERVED_19 = 0x19,
-        _RESERVED_1a = 0x1a,
-        _RESERVED_1b = 0x1b,
-        _RESERVED_1c = 0x1c,
-        _RESERVED_1d = 0x1d,
-        _RESERVED_1e = 0x1e,
-        _RESERVED_1f = 0x1f,
+        #[doc = "division by 4."]
+        Div4 = 0x04,
+        #[doc = "division by 5."]
+        Div5 = 0x05,
+        #[doc = "division by 6."]
+        Div6 = 0x06,
+        #[doc = "division by 7."]
+        Div7 = 0x07,
+        #[doc = "division by 8."]
+        Div8 = 0x08,
+        #[doc = "division by 9."]
+        Div9 = 0x09,
+        #[doc = "division by 10."]
+        Div10 = 0x0a,
+        #[doc = "division by 11."]
+        Div11 = 0x0b,
+        #[doc = "division by 12."]
+        Div12 = 0x0c,
+        #[doc = "division by 13."]
+        Div13 = 0x0d,
+        #[doc = "division by 14."]
+        Div14 = 0x0e,
+        #[doc = "division by 15."]
+        Div15 = 0x0f,
+        #[doc = "division by 16."]
+        Div16 = 0x10,
+        #[doc = "division by 17."]
+        Div17 = 0x11,
+        #[doc = "division by 18."]
+        Div18 = 0x12,
+        #[doc = "division by 19."]
+        Div19 = 0x13,
+        #[doc = "division by 20."]
+        Div20 = 0x14,
+        #[doc = "division by 21."]
+        Div21 = 0x15,
+        #[doc = "division by 22."]
+        Div22 = 0x16,
+        #[doc = "division by 23."]
+        Div23 = 0x17,
+        #[doc = "division by 24."]
+        Div24 = 0x18,
+        #[doc = "division by 25."]
+        Div25 = 0x19,
+        #[doc = "division by 26."]
+        Div26 = 0x1a,
+        #[doc = "division by 27."]
+        Div27 = 0x1b,
+        #[doc = "division by 28."]
+        Div28 = 0x1c,
+        #[doc = "division by 29."]
+        Div29 = 0x1d,
+        #[doc = "division by 30."]
+        Div30 = 0x1e,
+        #[doc = "division by 31."]
+        Div31 = 0x1f,
         #[doc = "division by 32."]
         Div32 = 0x20,
-        _RESERVED_21 = 0x21,
-        _RESERVED_22 = 0x22,
-        _RESERVED_23 = 0x23,
-        _RESERVED_24 = 0x24,
-        _RESERVED_25 = 0x25,
-        _RESERVED_26 = 0x26,
-        _RESERVED_27 = 0x27,
-        _RESERVED_28 = 0x28,
-        _RESERVED_29 = 0x29,
-        _RESERVED_2a = 0x2a,
-        _RESERVED_2b = 0x2b,
-        _RESERVED_2c = 0x2c,
-        _RESERVED_2d = 0x2d,
-        _RESERVED_2e = 0x2e,
-        _RESERVED_2f = 0x2f,
-        _RESERVED_30 = 0x30,
-        _RESERVED_31 = 0x31,
-        _RESERVED_32 = 0x32,
-        _RESERVED_33 = 0x33,
-        _RESERVED_34 = 0x34,
-        _RESERVED_35 = 0x35,
-        _RESERVED_36 = 0x36,
-        _RESERVED_37 = 0x37,
-        _RESERVED_38 = 0x38,
-        _RESERVED_39 = 0x39,
-        _RESERVED_3a = 0x3a,
-        _RESERVED_3b = 0x3b,
-        _RESERVED_3c = 0x3c,
-        _RESERVED_3d = 0x3d,
-        _RESERVED_3e = 0x3e,
+        #[doc = "division by 33."]
+        Div33 = 0x21,
+        #[doc = "division by 34."]
+        Div34 = 0x22,
+        #[doc = "division by 35."]
+        Div35 = 0x23,
+        #[doc = "division by 36."]
+        Div36 = 0x24,
+        #[doc = "division by 37."]
+        Div37 = 0x25,
+        #[doc = "division by 38."]
+        Div38 = 0x26,
+        #[doc = "division by 39."]
+        Div39 = 0x27,
+        #[doc = "division by 40."]
+        Div40 = 0x28,
+        #[doc = "division by 41."]
+        Div41 = 0x29,
+        #[doc = "division by 42."]
+        Div42 = 0x2a,
+        #[doc = "division by 43."]
+        Div43 = 0x2b,
+        #[doc = "division by 44."]
+        Div44 = 0x2c,
+        #[doc = "division by 45."]
+        Div45 = 0x2d,
+        #[doc = "division by 46."]
+        Div46 = 0x2e,
+        #[doc = "division by 47."]
+        Div47 = 0x2f,
+        #[doc = "division by 48."]
+        Div48 = 0x30,
+        #[doc = "division by 49."]
+        Div49 = 0x31,
+        #[doc = "division by 50."]
+        Div50 = 0x32,
+        #[doc = "division by 51."]
+        Div51 = 0x33,
+        #[doc = "division by 52."]
+        Div52 = 0x34,
+        #[doc = "division by 53."]
+        Div53 = 0x35,
+        #[doc = "division by 54."]
+        Div54 = 0x36,
+        #[doc = "division by 55."]
+        Div55 = 0x37,
+        #[doc = "division by 56."]
+        Div56 = 0x38,
+        #[doc = "division by 57."]
+        Div57 = 0x39,
+        #[doc = "division by 58."]
+        Div58 = 0x3a,
+        #[doc = "division by 59."]
+        Div59 = 0x3b,
+        #[doc = "division by 60."]
+        Div60 = 0x3c,
+        #[doc = "division by 61."]
+        Div61 = 0x3d,
+        #[doc = "division by 62."]
+        Div62 = 0x3e,
         #[doc = "division by 63."]
         Div63 = 0x3f,
     }
@@ -8639,53 +8824,1041 @@ pub mod vals {
             Pllm::to_bits(val)
         }
     }
-    #[repr(transparent)]
+    #[repr(u16)]
     #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd)]
-    pub struct Plln(u16);
-    impl Plln {
-        #[doc = "PLL1N=4."]
-        pub const Mul4: Self = Self(0x03);
-        #[doc = "PLL1N=5."]
-        pub const Mul5: Self = Self(0x04);
-        #[doc = "PLL1N=6."]
-        pub const Mul6: Self = Self(0x05);
-        #[doc = "PLL1N=129 (default after reset)."]
-        pub const Mul129: Self = Self(0x80);
-        #[doc = "PLL1N=512."]
-        pub const Mul512: Self = Self(0x01ff);
+    #[cfg_attr(feature = "debug", derive(Debug))]
+    #[cfg_attr(feature = "defmt", derive(defmt::Format))]
+    pub enum Plln {
+        _RESERVED_0 = 0x0,
+        _RESERVED_1 = 0x01,
+        _RESERVED_2 = 0x02,
+        #[doc = "PLLN=4."]
+        Mul4 = 0x03,
+        #[doc = "PLLN=5."]
+        Mul5 = 0x04,
+        #[doc = "PLLN=6."]
+        Mul6 = 0x05,
+        #[doc = "PLLN=7."]
+        Mul7 = 0x06,
+        #[doc = "PLLN=8."]
+        Mul8 = 0x07,
+        #[doc = "PLLN=9."]
+        Mul9 = 0x08,
+        #[doc = "PLLN=10."]
+        Mul10 = 0x09,
+        #[doc = "PLLN=11."]
+        Mul11 = 0x0a,
+        #[doc = "PLLN=12."]
+        Mul12 = 0x0b,
+        #[doc = "PLLN=13."]
+        Mul13 = 0x0c,
+        #[doc = "PLLN=14."]
+        Mul14 = 0x0d,
+        #[doc = "PLLN=15."]
+        Mul15 = 0x0e,
+        #[doc = "PLLN=16."]
+        Mul16 = 0x0f,
+        #[doc = "PLLN=17."]
+        Mul17 = 0x10,
+        #[doc = "PLLN=18."]
+        Mul18 = 0x11,
+        #[doc = "PLLN=19."]
+        Mul19 = 0x12,
+        #[doc = "PLLN=20."]
+        Mul20 = 0x13,
+        #[doc = "PLLN=21."]
+        Mul21 = 0x14,
+        #[doc = "PLLN=22."]
+        Mul22 = 0x15,
+        #[doc = "PLLN=23."]
+        Mul23 = 0x16,
+        #[doc = "PLLN=24."]
+        Mul24 = 0x17,
+        #[doc = "PLLN=25."]
+        Mul25 = 0x18,
+        #[doc = "PLLN=26."]
+        Mul26 = 0x19,
+        #[doc = "PLLN=27."]
+        Mul27 = 0x1a,
+        #[doc = "PLLN=28."]
+        Mul28 = 0x1b,
+        #[doc = "PLLN=29."]
+        Mul29 = 0x1c,
+        #[doc = "PLLN=30."]
+        Mul30 = 0x1d,
+        #[doc = "PLLN=31."]
+        Mul31 = 0x1e,
+        #[doc = "PLLN=32."]
+        Mul32 = 0x1f,
+        #[doc = "PLLN=33."]
+        Mul33 = 0x20,
+        #[doc = "PLLN=34."]
+        Mul34 = 0x21,
+        #[doc = "PLLN=35."]
+        Mul35 = 0x22,
+        #[doc = "PLLN=36."]
+        Mul36 = 0x23,
+        #[doc = "PLLN=37."]
+        Mul37 = 0x24,
+        #[doc = "PLLN=38."]
+        Mul38 = 0x25,
+        #[doc = "PLLN=39."]
+        Mul39 = 0x26,
+        #[doc = "PLLN=40."]
+        Mul40 = 0x27,
+        #[doc = "PLLN=41."]
+        Mul41 = 0x28,
+        #[doc = "PLLN=42."]
+        Mul42 = 0x29,
+        #[doc = "PLLN=43."]
+        Mul43 = 0x2a,
+        #[doc = "PLLN=44."]
+        Mul44 = 0x2b,
+        #[doc = "PLLN=45."]
+        Mul45 = 0x2c,
+        #[doc = "PLLN=46."]
+        Mul46 = 0x2d,
+        #[doc = "PLLN=47."]
+        Mul47 = 0x2e,
+        #[doc = "PLLN=48."]
+        Mul48 = 0x2f,
+        #[doc = "PLLN=49."]
+        Mul49 = 0x30,
+        #[doc = "PLLN=50."]
+        Mul50 = 0x31,
+        #[doc = "PLLN=51."]
+        Mul51 = 0x32,
+        #[doc = "PLLN=52."]
+        Mul52 = 0x33,
+        #[doc = "PLLN=53."]
+        Mul53 = 0x34,
+        #[doc = "PLLN=54."]
+        Mul54 = 0x35,
+        #[doc = "PLLN=55."]
+        Mul55 = 0x36,
+        #[doc = "PLLN=56."]
+        Mul56 = 0x37,
+        #[doc = "PLLN=57."]
+        Mul57 = 0x38,
+        #[doc = "PLLN=58."]
+        Mul58 = 0x39,
+        #[doc = "PLLN=59."]
+        Mul59 = 0x3a,
+        #[doc = "PLLN=60."]
+        Mul60 = 0x3b,
+        #[doc = "PLLN=61."]
+        Mul61 = 0x3c,
+        #[doc = "PLLN=62."]
+        Mul62 = 0x3d,
+        #[doc = "PLLN=63."]
+        Mul63 = 0x3e,
+        #[doc = "PLLN=64."]
+        Mul64 = 0x3f,
+        #[doc = "PLLN=65."]
+        Mul65 = 0x40,
+        #[doc = "PLLN=66."]
+        Mul66 = 0x41,
+        #[doc = "PLLN=67."]
+        Mul67 = 0x42,
+        #[doc = "PLLN=68."]
+        Mul68 = 0x43,
+        #[doc = "PLLN=69."]
+        Mul69 = 0x44,
+        #[doc = "PLLN=70."]
+        Mul70 = 0x45,
+        #[doc = "PLLN=71."]
+        Mul71 = 0x46,
+        #[doc = "PLLN=72."]
+        Mul72 = 0x47,
+        #[doc = "PLLN=73."]
+        Mul73 = 0x48,
+        #[doc = "PLLN=74."]
+        Mul74 = 0x49,
+        #[doc = "PLLN=75."]
+        Mul75 = 0x4a,
+        #[doc = "PLLN=76."]
+        Mul76 = 0x4b,
+        #[doc = "PLLN=77."]
+        Mul77 = 0x4c,
+        #[doc = "PLLN=78."]
+        Mul78 = 0x4d,
+        #[doc = "PLLN=79."]
+        Mul79 = 0x4e,
+        #[doc = "PLLN=80."]
+        Mul80 = 0x4f,
+        #[doc = "PLLN=81."]
+        Mul81 = 0x50,
+        #[doc = "PLLN=82."]
+        Mul82 = 0x51,
+        #[doc = "PLLN=83."]
+        Mul83 = 0x52,
+        #[doc = "PLLN=84."]
+        Mul84 = 0x53,
+        #[doc = "PLLN=85."]
+        Mul85 = 0x54,
+        #[doc = "PLLN=86."]
+        Mul86 = 0x55,
+        #[doc = "PLLN=87."]
+        Mul87 = 0x56,
+        #[doc = "PLLN=88."]
+        Mul88 = 0x57,
+        #[doc = "PLLN=89."]
+        Mul89 = 0x58,
+        #[doc = "PLLN=90."]
+        Mul90 = 0x59,
+        #[doc = "PLLN=91."]
+        Mul91 = 0x5a,
+        #[doc = "PLLN=92."]
+        Mul92 = 0x5b,
+        #[doc = "PLLN=93."]
+        Mul93 = 0x5c,
+        #[doc = "PLLN=94."]
+        Mul94 = 0x5d,
+        #[doc = "PLLN=95."]
+        Mul95 = 0x5e,
+        #[doc = "PLLN=96."]
+        Mul96 = 0x5f,
+        #[doc = "PLLN=97."]
+        Mul97 = 0x60,
+        #[doc = "PLLN=98."]
+        Mul98 = 0x61,
+        #[doc = "PLLN=99."]
+        Mul99 = 0x62,
+        #[doc = "PLLN=100."]
+        Mul100 = 0x63,
+        #[doc = "PLLN=101."]
+        Mul101 = 0x64,
+        #[doc = "PLLN=102."]
+        Mul102 = 0x65,
+        #[doc = "PLLN=103."]
+        Mul103 = 0x66,
+        #[doc = "PLLN=104."]
+        Mul104 = 0x67,
+        #[doc = "PLLN=105."]
+        Mul105 = 0x68,
+        #[doc = "PLLN=106."]
+        Mul106 = 0x69,
+        #[doc = "PLLN=107."]
+        Mul107 = 0x6a,
+        #[doc = "PLLN=108."]
+        Mul108 = 0x6b,
+        #[doc = "PLLN=109."]
+        Mul109 = 0x6c,
+        #[doc = "PLLN=110."]
+        Mul110 = 0x6d,
+        #[doc = "PLLN=111."]
+        Mul111 = 0x6e,
+        #[doc = "PLLN=112."]
+        Mul112 = 0x6f,
+        #[doc = "PLLN=113."]
+        Mul113 = 0x70,
+        #[doc = "PLLN=114."]
+        Mul114 = 0x71,
+        #[doc = "PLLN=115."]
+        Mul115 = 0x72,
+        #[doc = "PLLN=116."]
+        Mul116 = 0x73,
+        #[doc = "PLLN=117."]
+        Mul117 = 0x74,
+        #[doc = "PLLN=118."]
+        Mul118 = 0x75,
+        #[doc = "PLLN=119."]
+        Mul119 = 0x76,
+        #[doc = "PLLN=120."]
+        Mul120 = 0x77,
+        #[doc = "PLLN=121."]
+        Mul121 = 0x78,
+        #[doc = "PLLN=122."]
+        Mul122 = 0x79,
+        #[doc = "PLLN=123."]
+        Mul123 = 0x7a,
+        #[doc = "PLLN=124."]
+        Mul124 = 0x7b,
+        #[doc = "PLLN=125."]
+        Mul125 = 0x7c,
+        #[doc = "PLLN=126."]
+        Mul126 = 0x7d,
+        #[doc = "PLLN=127."]
+        Mul127 = 0x7e,
+        #[doc = "PLLN=128."]
+        Mul128 = 0x7f,
+        #[doc = "PLLN=129 (default after reset)."]
+        Mul129 = 0x80,
+        #[doc = "PLLN=130."]
+        Mul130 = 0x81,
+        #[doc = "PLLN=131."]
+        Mul131 = 0x82,
+        #[doc = "PLLN=132."]
+        Mul132 = 0x83,
+        #[doc = "PLLN=133."]
+        Mul133 = 0x84,
+        #[doc = "PLLN=134."]
+        Mul134 = 0x85,
+        #[doc = "PLLN=135."]
+        Mul135 = 0x86,
+        #[doc = "PLLN=136."]
+        Mul136 = 0x87,
+        #[doc = "PLLN=137."]
+        Mul137 = 0x88,
+        #[doc = "PLLN=138."]
+        Mul138 = 0x89,
+        #[doc = "PLLN=139."]
+        Mul139 = 0x8a,
+        #[doc = "PLLN=140."]
+        Mul140 = 0x8b,
+        #[doc = "PLLN=141."]
+        Mul141 = 0x8c,
+        #[doc = "PLLN=142."]
+        Mul142 = 0x8d,
+        #[doc = "PLLN=143."]
+        Mul143 = 0x8e,
+        #[doc = "PLLN=144."]
+        Mul144 = 0x8f,
+        #[doc = "PLLN=145."]
+        Mul145 = 0x90,
+        #[doc = "PLLN=146."]
+        Mul146 = 0x91,
+        #[doc = "PLLN=147."]
+        Mul147 = 0x92,
+        #[doc = "PLLN=148."]
+        Mul148 = 0x93,
+        #[doc = "PLLN=149."]
+        Mul149 = 0x94,
+        #[doc = "PLLN=150."]
+        Mul150 = 0x95,
+        #[doc = "PLLN=151."]
+        Mul151 = 0x96,
+        #[doc = "PLLN=152."]
+        Mul152 = 0x97,
+        #[doc = "PLLN=153."]
+        Mul153 = 0x98,
+        #[doc = "PLLN=154."]
+        Mul154 = 0x99,
+        #[doc = "PLLN=155."]
+        Mul155 = 0x9a,
+        #[doc = "PLLN=156."]
+        Mul156 = 0x9b,
+        #[doc = "PLLN=157."]
+        Mul157 = 0x9c,
+        #[doc = "PLLN=158."]
+        Mul158 = 0x9d,
+        #[doc = "PLLN=159."]
+        Mul159 = 0x9e,
+        #[doc = "PLLN=160."]
+        Mul160 = 0x9f,
+        #[doc = "PLLN=161."]
+        Mul161 = 0xa0,
+        #[doc = "PLLN=162."]
+        Mul162 = 0xa1,
+        #[doc = "PLLN=163."]
+        Mul163 = 0xa2,
+        #[doc = "PLLN=164."]
+        Mul164 = 0xa3,
+        #[doc = "PLLN=165."]
+        Mul165 = 0xa4,
+        #[doc = "PLLN=166."]
+        Mul166 = 0xa5,
+        #[doc = "PLLN=167."]
+        Mul167 = 0xa6,
+        #[doc = "PLLN=168."]
+        Mul168 = 0xa7,
+        #[doc = "PLLN=169."]
+        Mul169 = 0xa8,
+        #[doc = "PLLN=170."]
+        Mul170 = 0xa9,
+        #[doc = "PLLN=171."]
+        Mul171 = 0xaa,
+        #[doc = "PLLN=172."]
+        Mul172 = 0xab,
+        #[doc = "PLLN=173."]
+        Mul173 = 0xac,
+        #[doc = "PLLN=174."]
+        Mul174 = 0xad,
+        #[doc = "PLLN=175."]
+        Mul175 = 0xae,
+        #[doc = "PLLN=176."]
+        Mul176 = 0xaf,
+        #[doc = "PLLN=177."]
+        Mul177 = 0xb0,
+        #[doc = "PLLN=178."]
+        Mul178 = 0xb1,
+        #[doc = "PLLN=179."]
+        Mul179 = 0xb2,
+        #[doc = "PLLN=180."]
+        Mul180 = 0xb3,
+        #[doc = "PLLN=181."]
+        Mul181 = 0xb4,
+        #[doc = "PLLN=182."]
+        Mul182 = 0xb5,
+        #[doc = "PLLN=183."]
+        Mul183 = 0xb6,
+        #[doc = "PLLN=184."]
+        Mul184 = 0xb7,
+        #[doc = "PLLN=185."]
+        Mul185 = 0xb8,
+        #[doc = "PLLN=186."]
+        Mul186 = 0xb9,
+        #[doc = "PLLN=187."]
+        Mul187 = 0xba,
+        #[doc = "PLLN=188."]
+        Mul188 = 0xbb,
+        #[doc = "PLLN=189."]
+        Mul189 = 0xbc,
+        #[doc = "PLLN=190."]
+        Mul190 = 0xbd,
+        #[doc = "PLLN=191."]
+        Mul191 = 0xbe,
+        #[doc = "PLLN=192."]
+        Mul192 = 0xbf,
+        #[doc = "PLLN=193."]
+        Mul193 = 0xc0,
+        #[doc = "PLLN=194."]
+        Mul194 = 0xc1,
+        #[doc = "PLLN=195."]
+        Mul195 = 0xc2,
+        #[doc = "PLLN=196."]
+        Mul196 = 0xc3,
+        #[doc = "PLLN=197."]
+        Mul197 = 0xc4,
+        #[doc = "PLLN=198."]
+        Mul198 = 0xc5,
+        #[doc = "PLLN=199."]
+        Mul199 = 0xc6,
+        #[doc = "PLLN=200."]
+        Mul200 = 0xc7,
+        #[doc = "PLLN=201."]
+        Mul201 = 0xc8,
+        #[doc = "PLLN=202."]
+        Mul202 = 0xc9,
+        #[doc = "PLLN=203."]
+        Mul203 = 0xca,
+        #[doc = "PLLN=204."]
+        Mul204 = 0xcb,
+        #[doc = "PLLN=205."]
+        Mul205 = 0xcc,
+        #[doc = "PLLN=206."]
+        Mul206 = 0xcd,
+        #[doc = "PLLN=207."]
+        Mul207 = 0xce,
+        #[doc = "PLLN=208."]
+        Mul208 = 0xcf,
+        #[doc = "PLLN=209."]
+        Mul209 = 0xd0,
+        #[doc = "PLLN=210."]
+        Mul210 = 0xd1,
+        #[doc = "PLLN=211."]
+        Mul211 = 0xd2,
+        #[doc = "PLLN=212."]
+        Mul212 = 0xd3,
+        #[doc = "PLLN=213."]
+        Mul213 = 0xd4,
+        #[doc = "PLLN=214."]
+        Mul214 = 0xd5,
+        #[doc = "PLLN=215."]
+        Mul215 = 0xd6,
+        #[doc = "PLLN=216."]
+        Mul216 = 0xd7,
+        #[doc = "PLLN=217."]
+        Mul217 = 0xd8,
+        #[doc = "PLLN=218."]
+        Mul218 = 0xd9,
+        #[doc = "PLLN=219."]
+        Mul219 = 0xda,
+        #[doc = "PLLN=220."]
+        Mul220 = 0xdb,
+        #[doc = "PLLN=221."]
+        Mul221 = 0xdc,
+        #[doc = "PLLN=222."]
+        Mul222 = 0xdd,
+        #[doc = "PLLN=223."]
+        Mul223 = 0xde,
+        #[doc = "PLLN=224."]
+        Mul224 = 0xdf,
+        #[doc = "PLLN=225."]
+        Mul225 = 0xe0,
+        #[doc = "PLLN=226."]
+        Mul226 = 0xe1,
+        #[doc = "PLLN=227."]
+        Mul227 = 0xe2,
+        #[doc = "PLLN=228."]
+        Mul228 = 0xe3,
+        #[doc = "PLLN=229."]
+        Mul229 = 0xe4,
+        #[doc = "PLLN=230."]
+        Mul230 = 0xe5,
+        #[doc = "PLLN=231."]
+        Mul231 = 0xe6,
+        #[doc = "PLLN=232."]
+        Mul232 = 0xe7,
+        #[doc = "PLLN=233."]
+        Mul233 = 0xe8,
+        #[doc = "PLLN=234."]
+        Mul234 = 0xe9,
+        #[doc = "PLLN=235."]
+        Mul235 = 0xea,
+        #[doc = "PLLN=236."]
+        Mul236 = 0xeb,
+        #[doc = "PLLN=237."]
+        Mul237 = 0xec,
+        #[doc = "PLLN=238."]
+        Mul238 = 0xed,
+        #[doc = "PLLN=239."]
+        Mul239 = 0xee,
+        #[doc = "PLLN=240."]
+        Mul240 = 0xef,
+        #[doc = "PLLN=241."]
+        Mul241 = 0xf0,
+        #[doc = "PLLN=242."]
+        Mul242 = 0xf1,
+        #[doc = "PLLN=243."]
+        Mul243 = 0xf2,
+        #[doc = "PLLN=244."]
+        Mul244 = 0xf3,
+        #[doc = "PLLN=245."]
+        Mul245 = 0xf4,
+        #[doc = "PLLN=246."]
+        Mul246 = 0xf5,
+        #[doc = "PLLN=247."]
+        Mul247 = 0xf6,
+        #[doc = "PLLN=248."]
+        Mul248 = 0xf7,
+        #[doc = "PLLN=249."]
+        Mul249 = 0xf8,
+        #[doc = "PLLN=250."]
+        Mul250 = 0xf9,
+        #[doc = "PLLN=251."]
+        Mul251 = 0xfa,
+        #[doc = "PLLN=252."]
+        Mul252 = 0xfb,
+        #[doc = "PLLN=253."]
+        Mul253 = 0xfc,
+        #[doc = "PLLN=254."]
+        Mul254 = 0xfd,
+        #[doc = "PLLN=255."]
+        Mul255 = 0xfe,
+        #[doc = "PLLN=256."]
+        Mul256 = 0xff,
+        #[doc = "PLLN=257."]
+        Mul257 = 0x0100,
+        #[doc = "PLLN=258."]
+        Mul258 = 0x0101,
+        #[doc = "PLLN=259."]
+        Mul259 = 0x0102,
+        #[doc = "PLLN=260."]
+        Mul260 = 0x0103,
+        #[doc = "PLLN=261."]
+        Mul261 = 0x0104,
+        #[doc = "PLLN=262."]
+        Mul262 = 0x0105,
+        #[doc = "PLLN=263."]
+        Mul263 = 0x0106,
+        #[doc = "PLLN=264."]
+        Mul264 = 0x0107,
+        #[doc = "PLLN=265."]
+        Mul265 = 0x0108,
+        #[doc = "PLLN=266."]
+        Mul266 = 0x0109,
+        #[doc = "PLLN=267."]
+        Mul267 = 0x010a,
+        #[doc = "PLLN=268."]
+        Mul268 = 0x010b,
+        #[doc = "PLLN=269."]
+        Mul269 = 0x010c,
+        #[doc = "PLLN=270."]
+        Mul270 = 0x010d,
+        #[doc = "PLLN=271."]
+        Mul271 = 0x010e,
+        #[doc = "PLLN=272."]
+        Mul272 = 0x010f,
+        #[doc = "PLLN=273."]
+        Mul273 = 0x0110,
+        #[doc = "PLLN=274."]
+        Mul274 = 0x0111,
+        #[doc = "PLLN=275."]
+        Mul275 = 0x0112,
+        #[doc = "PLLN=276."]
+        Mul276 = 0x0113,
+        #[doc = "PLLN=277."]
+        Mul277 = 0x0114,
+        #[doc = "PLLN=278."]
+        Mul278 = 0x0115,
+        #[doc = "PLLN=279."]
+        Mul279 = 0x0116,
+        #[doc = "PLLN=280."]
+        Mul280 = 0x0117,
+        #[doc = "PLLN=281."]
+        Mul281 = 0x0118,
+        #[doc = "PLLN=282."]
+        Mul282 = 0x0119,
+        #[doc = "PLLN=283."]
+        Mul283 = 0x011a,
+        #[doc = "PLLN=284."]
+        Mul284 = 0x011b,
+        #[doc = "PLLN=285."]
+        Mul285 = 0x011c,
+        #[doc = "PLLN=286."]
+        Mul286 = 0x011d,
+        #[doc = "PLLN=287."]
+        Mul287 = 0x011e,
+        #[doc = "PLLN=288."]
+        Mul288 = 0x011f,
+        #[doc = "PLLN=289."]
+        Mul289 = 0x0120,
+        #[doc = "PLLN=290."]
+        Mul290 = 0x0121,
+        #[doc = "PLLN=291."]
+        Mul291 = 0x0122,
+        #[doc = "PLLN=292."]
+        Mul292 = 0x0123,
+        #[doc = "PLLN=293."]
+        Mul293 = 0x0124,
+        #[doc = "PLLN=294."]
+        Mul294 = 0x0125,
+        #[doc = "PLLN=295."]
+        Mul295 = 0x0126,
+        #[doc = "PLLN=296."]
+        Mul296 = 0x0127,
+        #[doc = "PLLN=297."]
+        Mul297 = 0x0128,
+        #[doc = "PLLN=298."]
+        Mul298 = 0x0129,
+        #[doc = "PLLN=299."]
+        Mul299 = 0x012a,
+        #[doc = "PLLN=300."]
+        Mul300 = 0x012b,
+        #[doc = "PLLN=301."]
+        Mul301 = 0x012c,
+        #[doc = "PLLN=302."]
+        Mul302 = 0x012d,
+        #[doc = "PLLN=303."]
+        Mul303 = 0x012e,
+        #[doc = "PLLN=304."]
+        Mul304 = 0x012f,
+        #[doc = "PLLN=305."]
+        Mul305 = 0x0130,
+        #[doc = "PLLN=306."]
+        Mul306 = 0x0131,
+        #[doc = "PLLN=307."]
+        Mul307 = 0x0132,
+        #[doc = "PLLN=308."]
+        Mul308 = 0x0133,
+        #[doc = "PLLN=309."]
+        Mul309 = 0x0134,
+        #[doc = "PLLN=310."]
+        Mul310 = 0x0135,
+        #[doc = "PLLN=311."]
+        Mul311 = 0x0136,
+        #[doc = "PLLN=312."]
+        Mul312 = 0x0137,
+        #[doc = "PLLN=313."]
+        Mul313 = 0x0138,
+        #[doc = "PLLN=314."]
+        Mul314 = 0x0139,
+        #[doc = "PLLN=315."]
+        Mul315 = 0x013a,
+        #[doc = "PLLN=316."]
+        Mul316 = 0x013b,
+        #[doc = "PLLN=317."]
+        Mul317 = 0x013c,
+        #[doc = "PLLN=318."]
+        Mul318 = 0x013d,
+        #[doc = "PLLN=319."]
+        Mul319 = 0x013e,
+        #[doc = "PLLN=320."]
+        Mul320 = 0x013f,
+        #[doc = "PLLN=321."]
+        Mul321 = 0x0140,
+        #[doc = "PLLN=322."]
+        Mul322 = 0x0141,
+        #[doc = "PLLN=323."]
+        Mul323 = 0x0142,
+        #[doc = "PLLN=324."]
+        Mul324 = 0x0143,
+        #[doc = "PLLN=325."]
+        Mul325 = 0x0144,
+        #[doc = "PLLN=326."]
+        Mul326 = 0x0145,
+        #[doc = "PLLN=327."]
+        Mul327 = 0x0146,
+        #[doc = "PLLN=328."]
+        Mul328 = 0x0147,
+        #[doc = "PLLN=329."]
+        Mul329 = 0x0148,
+        #[doc = "PLLN=330."]
+        Mul330 = 0x0149,
+        #[doc = "PLLN=331."]
+        Mul331 = 0x014a,
+        #[doc = "PLLN=332."]
+        Mul332 = 0x014b,
+        #[doc = "PLLN=333."]
+        Mul333 = 0x014c,
+        #[doc = "PLLN=334."]
+        Mul334 = 0x014d,
+        #[doc = "PLLN=335."]
+        Mul335 = 0x014e,
+        #[doc = "PLLN=336."]
+        Mul336 = 0x014f,
+        #[doc = "PLLN=337."]
+        Mul337 = 0x0150,
+        #[doc = "PLLN=338."]
+        Mul338 = 0x0151,
+        #[doc = "PLLN=339."]
+        Mul339 = 0x0152,
+        #[doc = "PLLN=340."]
+        Mul340 = 0x0153,
+        #[doc = "PLLN=341."]
+        Mul341 = 0x0154,
+        #[doc = "PLLN=342."]
+        Mul342 = 0x0155,
+        #[doc = "PLLN=343."]
+        Mul343 = 0x0156,
+        #[doc = "PLLN=344."]
+        Mul344 = 0x0157,
+        #[doc = "PLLN=345."]
+        Mul345 = 0x0158,
+        #[doc = "PLLN=346."]
+        Mul346 = 0x0159,
+        #[doc = "PLLN=347."]
+        Mul347 = 0x015a,
+        #[doc = "PLLN=348."]
+        Mul348 = 0x015b,
+        #[doc = "PLLN=349."]
+        Mul349 = 0x015c,
+        #[doc = "PLLN=350."]
+        Mul350 = 0x015d,
+        #[doc = "PLLN=351."]
+        Mul351 = 0x015e,
+        #[doc = "PLLN=352."]
+        Mul352 = 0x015f,
+        #[doc = "PLLN=353."]
+        Mul353 = 0x0160,
+        #[doc = "PLLN=354."]
+        Mul354 = 0x0161,
+        #[doc = "PLLN=355."]
+        Mul355 = 0x0162,
+        #[doc = "PLLN=356."]
+        Mul356 = 0x0163,
+        #[doc = "PLLN=357."]
+        Mul357 = 0x0164,
+        #[doc = "PLLN=358."]
+        Mul358 = 0x0165,
+        #[doc = "PLLN=359."]
+        Mul359 = 0x0166,
+        #[doc = "PLLN=360."]
+        Mul360 = 0x0167,
+        #[doc = "PLLN=361."]
+        Mul361 = 0x0168,
+        #[doc = "PLLN=362."]
+        Mul362 = 0x0169,
+        #[doc = "PLLN=363."]
+        Mul363 = 0x016a,
+        #[doc = "PLLN=364."]
+        Mul364 = 0x016b,
+        #[doc = "PLLN=365."]
+        Mul365 = 0x016c,
+        #[doc = "PLLN=366."]
+        Mul366 = 0x016d,
+        #[doc = "PLLN=367."]
+        Mul367 = 0x016e,
+        #[doc = "PLLN=368."]
+        Mul368 = 0x016f,
+        #[doc = "PLLN=369."]
+        Mul369 = 0x0170,
+        #[doc = "PLLN=370."]
+        Mul370 = 0x0171,
+        #[doc = "PLLN=371."]
+        Mul371 = 0x0172,
+        #[doc = "PLLN=372."]
+        Mul372 = 0x0173,
+        #[doc = "PLLN=373."]
+        Mul373 = 0x0174,
+        #[doc = "PLLN=374."]
+        Mul374 = 0x0175,
+        #[doc = "PLLN=375."]
+        Mul375 = 0x0176,
+        #[doc = "PLLN=376."]
+        Mul376 = 0x0177,
+        #[doc = "PLLN=377."]
+        Mul377 = 0x0178,
+        #[doc = "PLLN=378."]
+        Mul378 = 0x0179,
+        #[doc = "PLLN=379."]
+        Mul379 = 0x017a,
+        #[doc = "PLLN=380."]
+        Mul380 = 0x017b,
+        #[doc = "PLLN=381."]
+        Mul381 = 0x017c,
+        #[doc = "PLLN=382."]
+        Mul382 = 0x017d,
+        #[doc = "PLLN=383."]
+        Mul383 = 0x017e,
+        #[doc = "PLLN=384."]
+        Mul384 = 0x017f,
+        #[doc = "PLLN=385."]
+        Mul385 = 0x0180,
+        #[doc = "PLLN=386."]
+        Mul386 = 0x0181,
+        #[doc = "PLLN=387."]
+        Mul387 = 0x0182,
+        #[doc = "PLLN=388."]
+        Mul388 = 0x0183,
+        #[doc = "PLLN=389."]
+        Mul389 = 0x0184,
+        #[doc = "PLLN=390."]
+        Mul390 = 0x0185,
+        #[doc = "PLLN=391."]
+        Mul391 = 0x0186,
+        #[doc = "PLLN=392."]
+        Mul392 = 0x0187,
+        #[doc = "PLLN=393."]
+        Mul393 = 0x0188,
+        #[doc = "PLLN=394."]
+        Mul394 = 0x0189,
+        #[doc = "PLLN=395."]
+        Mul395 = 0x018a,
+        #[doc = "PLLN=396."]
+        Mul396 = 0x018b,
+        #[doc = "PLLN=397."]
+        Mul397 = 0x018c,
+        #[doc = "PLLN=398."]
+        Mul398 = 0x018d,
+        #[doc = "PLLN=399."]
+        Mul399 = 0x018e,
+        #[doc = "PLLN=400."]
+        Mul400 = 0x018f,
+        #[doc = "PLLN=401."]
+        Mul401 = 0x0190,
+        #[doc = "PLLN=402."]
+        Mul402 = 0x0191,
+        #[doc = "PLLN=403."]
+        Mul403 = 0x0192,
+        #[doc = "PLLN=404."]
+        Mul404 = 0x0193,
+        #[doc = "PLLN=405."]
+        Mul405 = 0x0194,
+        #[doc = "PLLN=406."]
+        Mul406 = 0x0195,
+        #[doc = "PLLN=407."]
+        Mul407 = 0x0196,
+        #[doc = "PLLN=408."]
+        Mul408 = 0x0197,
+        #[doc = "PLLN=409."]
+        Mul409 = 0x0198,
+        #[doc = "PLLN=410."]
+        Mul410 = 0x0199,
+        #[doc = "PLLN=411."]
+        Mul411 = 0x019a,
+        #[doc = "PLLN=412."]
+        Mul412 = 0x019b,
+        #[doc = "PLLN=413."]
+        Mul413 = 0x019c,
+        #[doc = "PLLN=414."]
+        Mul414 = 0x019d,
+        #[doc = "PLLN=415."]
+        Mul415 = 0x019e,
+        #[doc = "PLLN=416."]
+        Mul416 = 0x019f,
+        #[doc = "PLLN=417."]
+        Mul417 = 0x01a0,
+        #[doc = "PLLN=418."]
+        Mul418 = 0x01a1,
+        #[doc = "PLLN=419."]
+        Mul419 = 0x01a2,
+        #[doc = "PLLN=420."]
+        Mul420 = 0x01a3,
+        #[doc = "PLLN=421."]
+        Mul421 = 0x01a4,
+        #[doc = "PLLN=422."]
+        Mul422 = 0x01a5,
+        #[doc = "PLLN=423."]
+        Mul423 = 0x01a6,
+        #[doc = "PLLN=424."]
+        Mul424 = 0x01a7,
+        #[doc = "PLLN=425."]
+        Mul425 = 0x01a8,
+        #[doc = "PLLN=426."]
+        Mul426 = 0x01a9,
+        #[doc = "PLLN=427."]
+        Mul427 = 0x01aa,
+        #[doc = "PLLN=428."]
+        Mul428 = 0x01ab,
+        #[doc = "PLLN=429."]
+        Mul429 = 0x01ac,
+        #[doc = "PLLN=430."]
+        Mul430 = 0x01ad,
+        #[doc = "PLLN=431."]
+        Mul431 = 0x01ae,
+        #[doc = "PLLN=432."]
+        Mul432 = 0x01af,
+        #[doc = "PLLN=433."]
+        Mul433 = 0x01b0,
+        #[doc = "PLLN=434."]
+        Mul434 = 0x01b1,
+        #[doc = "PLLN=435."]
+        Mul435 = 0x01b2,
+        #[doc = "PLLN=436."]
+        Mul436 = 0x01b3,
+        #[doc = "PLLN=437."]
+        Mul437 = 0x01b4,
+        #[doc = "PLLN=438."]
+        Mul438 = 0x01b5,
+        #[doc = "PLLN=439."]
+        Mul439 = 0x01b6,
+        #[doc = "PLLN=440."]
+        Mul440 = 0x01b7,
+        #[doc = "PLLN=441."]
+        Mul441 = 0x01b8,
+        #[doc = "PLLN=442."]
+        Mul442 = 0x01b9,
+        #[doc = "PLLN=443."]
+        Mul443 = 0x01ba,
+        #[doc = "PLLN=444."]
+        Mul444 = 0x01bb,
+        #[doc = "PLLN=445."]
+        Mul445 = 0x01bc,
+        #[doc = "PLLN=446."]
+        Mul446 = 0x01bd,
+        #[doc = "PLLN=447."]
+        Mul447 = 0x01be,
+        #[doc = "PLLN=448."]
+        Mul448 = 0x01bf,
+        #[doc = "PLLN=449."]
+        Mul449 = 0x01c0,
+        #[doc = "PLLN=450."]
+        Mul450 = 0x01c1,
+        #[doc = "PLLN=451."]
+        Mul451 = 0x01c2,
+        #[doc = "PLLN=452."]
+        Mul452 = 0x01c3,
+        #[doc = "PLLN=453."]
+        Mul453 = 0x01c4,
+        #[doc = "PLLN=454."]
+        Mul454 = 0x01c5,
+        #[doc = "PLLN=455."]
+        Mul455 = 0x01c6,
+        #[doc = "PLLN=456."]
+        Mul456 = 0x01c7,
+        #[doc = "PLLN=457."]
+        Mul457 = 0x01c8,
+        #[doc = "PLLN=458."]
+        Mul458 = 0x01c9,
+        #[doc = "PLLN=459."]
+        Mul459 = 0x01ca,
+        #[doc = "PLLN=460."]
+        Mul460 = 0x01cb,
+        #[doc = "PLLN=461."]
+        Mul461 = 0x01cc,
+        #[doc = "PLLN=462."]
+        Mul462 = 0x01cd,
+        #[doc = "PLLN=463."]
+        Mul463 = 0x01ce,
+        #[doc = "PLLN=464."]
+        Mul464 = 0x01cf,
+        #[doc = "PLLN=465."]
+        Mul465 = 0x01d0,
+        #[doc = "PLLN=466."]
+        Mul466 = 0x01d1,
+        #[doc = "PLLN=467."]
+        Mul467 = 0x01d2,
+        #[doc = "PLLN=468."]
+        Mul468 = 0x01d3,
+        #[doc = "PLLN=469."]
+        Mul469 = 0x01d4,
+        #[doc = "PLLN=470."]
+        Mul470 = 0x01d5,
+        #[doc = "PLLN=471."]
+        Mul471 = 0x01d6,
+        #[doc = "PLLN=472."]
+        Mul472 = 0x01d7,
+        #[doc = "PLLN=473."]
+        Mul473 = 0x01d8,
+        #[doc = "PLLN=474."]
+        Mul474 = 0x01d9,
+        #[doc = "PLLN=475."]
+        Mul475 = 0x01da,
+        #[doc = "PLLN=476."]
+        Mul476 = 0x01db,
+        #[doc = "PLLN=477."]
+        Mul477 = 0x01dc,
+        #[doc = "PLLN=478."]
+        Mul478 = 0x01dd,
+        #[doc = "PLLN=479."]
+        Mul479 = 0x01de,
+        #[doc = "PLLN=480."]
+        Mul480 = 0x01df,
+        #[doc = "PLLN=481."]
+        Mul481 = 0x01e0,
+        #[doc = "PLLN=482."]
+        Mul482 = 0x01e1,
+        #[doc = "PLLN=483."]
+        Mul483 = 0x01e2,
+        #[doc = "PLLN=484."]
+        Mul484 = 0x01e3,
+        #[doc = "PLLN=485."]
+        Mul485 = 0x01e4,
+        #[doc = "PLLN=486."]
+        Mul486 = 0x01e5,
+        #[doc = "PLLN=487."]
+        Mul487 = 0x01e6,
+        #[doc = "PLLN=488."]
+        Mul488 = 0x01e7,
+        #[doc = "PLLN=489."]
+        Mul489 = 0x01e8,
+        #[doc = "PLLN=490."]
+        Mul490 = 0x01e9,
+        #[doc = "PLLN=491."]
+        Mul491 = 0x01ea,
+        #[doc = "PLLN=492."]
+        Mul492 = 0x01eb,
+        #[doc = "PLLN=493."]
+        Mul493 = 0x01ec,
+        #[doc = "PLLN=494."]
+        Mul494 = 0x01ed,
+        #[doc = "PLLN=495."]
+        Mul495 = 0x01ee,
+        #[doc = "PLLN=496."]
+        Mul496 = 0x01ef,
+        #[doc = "PLLN=497."]
+        Mul497 = 0x01f0,
+        #[doc = "PLLN=498."]
+        Mul498 = 0x01f1,
+        #[doc = "PLLN=499."]
+        Mul499 = 0x01f2,
+        #[doc = "PLLN=500."]
+        Mul500 = 0x01f3,
+        #[doc = "PLLN=501."]
+        Mul501 = 0x01f4,
+        #[doc = "PLLN=502."]
+        Mul502 = 0x01f5,
+        #[doc = "PLLN=503."]
+        Mul503 = 0x01f6,
+        #[doc = "PLLN=504."]
+        Mul504 = 0x01f7,
+        #[doc = "PLLN=505."]
+        Mul505 = 0x01f8,
+        #[doc = "PLLN=506."]
+        Mul506 = 0x01f9,
+        #[doc = "PLLN=507."]
+        Mul507 = 0x01fa,
+        #[doc = "PLLN=508."]
+        Mul508 = 0x01fb,
+        #[doc = "PLLN=509."]
+        Mul509 = 0x01fc,
+        #[doc = "PLLN=510."]
+        Mul510 = 0x01fd,
+        #[doc = "PLLN=511."]
+        Mul511 = 0x01fe,
+        #[doc = "PLLN=512."]
+        Mul512 = 0x01ff,
     }
     impl Plln {
+        #[inline(always)]
         pub const fn from_bits(val: u16) -> Plln {
-            Self(val & 0x01ff)
+            unsafe { core::mem::transmute(val & 0x01ff) }
         }
+        #[inline(always)]
         pub const fn to_bits(self) -> u16 {
-            self.0
-        }
-    }
-    #[cfg(feature = "debug")]
-    impl core::fmt::Debug for Plln {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            match self.0 {
-                0x03 => f.write_str("Mul4"),
-                0x04 => f.write_str("Mul5"),
-                0x05 => f.write_str("Mul6"),
-                0x80 => f.write_str("Mul129"),
-                0x01ff => f.write_str("Mul512"),
-                other => core::write!(f, "0x{:02X}", other),
-            }
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Plln {
-        fn format(&self, f: defmt::Formatter) {
-            match self.0 {
-                0x03 => defmt::write!(f, "Mul4"),
-                0x04 => defmt::write!(f, "Mul5"),
-                0x05 => defmt::write!(f, "Mul6"),
-                0x80 => defmt::write!(f, "Mul129"),
-                0x01ff => defmt::write!(f, "Mul512"),
-                other => defmt::write!(f, "0x{:02X}", other),
-            }
+            unsafe { core::mem::transmute(self) }
         }
     }
     impl From<u16> for Plln {

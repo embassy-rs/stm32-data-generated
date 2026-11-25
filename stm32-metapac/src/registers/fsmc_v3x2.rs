@@ -378,6 +378,14 @@ pub(crate) static REGISTERS: IR = IR {
                     array: None,
                     enumm: None,
                 },
+                Field {
+                    name: "fmcen",
+                    description: Some("FMC controller enable"),
+                    bit_offset: BitOffset::Regular(RegularBitOffset { offset: 31 }),
+                    bit_size: 1,
+                    array: None,
+                    enumm: None,
+                },
             ],
         },
         FieldSet {

@@ -60,6 +60,13 @@ pub static METADATA: Metadata = Metadata {
             settings: None,
         },
         MemoryRegion {
+            name: "SRAM4",
+            kind: MemoryRegionKind::Ram,
+            address: 0x28000000,
+            size: 16384,
+            settings: None,
+        },
+        MemoryRegion {
             name: "BKPSRAM",
             kind: MemoryRegionKind::Ram,
             address: 0x40036400,

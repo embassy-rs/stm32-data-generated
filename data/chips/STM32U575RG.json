@@ -829,6 +829,12 @@
         "size": 524288
       },
       {
+        "name": "SRAM4",
+        "kind": "ram",
+        "address": 671088640,
+        "size": 16384
+      },
+      {
         "name": "BKPSRAM",
         "kind": "ram",
         "address": 1073964032,
@@ -886,6 +892,12 @@
         "kind": "ram",
         "address": 537133056,
         "size": 524288
+      },
+      {
+        "name": "SRAM4",
+        "kind": "ram",
+        "address": 671088640,
+        "size": 16384
       },
       {
         "name": "BKPSRAM",

@@ -502,97 +502,97 @@ pub mod regs {
         #[doc = "EOP flag clear bit."]
         #[must_use]
         #[inline(always)]
-        pub const fn eop(&self) -> bool {
+        pub const fn clr_eop(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
             val != 0
         }
         #[doc = "EOP flag clear bit."]
         #[inline(always)]
-        pub const fn set_eop(&mut self, val: bool) {
+        pub const fn set_clr_eop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "WRPERR flag clear bit."]
         #[must_use]
         #[inline(always)]
-        pub const fn wrperr(&self) -> bool {
+        pub const fn clr_wrperr(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
             val != 0
         }
         #[doc = "WRPERR flag clear bit."]
         #[inline(always)]
-        pub const fn set_wrperr(&mut self, val: bool) {
+        pub const fn set_clr_wrperr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "PGSERR flag clear bit."]
         #[must_use]
         #[inline(always)]
-        pub const fn pgserr(&self) -> bool {
+        pub const fn clr_pgserr(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
             val != 0
         }
         #[doc = "PGSERR flag clear bit."]
         #[inline(always)]
-        pub const fn set_pgserr(&mut self, val: bool) {
+        pub const fn set_clr_pgserr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "STRBERR flag clear bit."]
         #[must_use]
         #[inline(always)]
-        pub const fn strberr(&self) -> bool {
+        pub const fn clr_strberr(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
             val != 0
         }
         #[doc = "STRBERR flag clear bit."]
         #[inline(always)]
-        pub const fn set_strberr(&mut self, val: bool) {
+        pub const fn set_clr_strberr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "INCERR flag clear bit."]
         #[must_use]
         #[inline(always)]
-        pub const fn incerr(&self) -> bool {
+        pub const fn clr_incerr(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
         #[doc = "INCERR flag clear bit."]
         #[inline(always)]
-        pub const fn set_incerr(&mut self, val: bool) {
+        pub const fn set_clr_incerr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "OBKERR flag clear bit."]
         #[must_use]
         #[inline(always)]
-        pub const fn obkerr(&self) -> bool {
+        pub const fn clr_obkerr(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
             val != 0
         }
         #[doc = "OBKERR flag clear bit."]
         #[inline(always)]
-        pub const fn set_obkerr(&mut self, val: bool) {
+        pub const fn set_clr_obkerr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "OBKWERR flag clear bit."]
         #[must_use]
         #[inline(always)]
-        pub const fn obkwerr(&self) -> bool {
+        pub const fn clr_obkwerr(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
             val != 0
         }
         #[doc = "OBKWERR flag clear bit."]
         #[inline(always)]
-        pub const fn set_obkwerr(&mut self, val: bool) {
+        pub const fn set_clr_obkwerr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
         #[doc = "OPTCHANGEERR flag clear bit."]
         #[must_use]
         #[inline(always)]
-        pub const fn optchangeerr(&self) -> bool {
+        pub const fn clr_optchangeerr(&self) -> bool {
             let val = (self.0 >> 23usize) & 0x01;
             val != 0
         }
         #[doc = "OPTCHANGEERR flag clear bit."]
         #[inline(always)]
-        pub const fn set_optchangeerr(&mut self, val: bool) {
+        pub const fn set_clr_optchangeerr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 23usize)) | (((val as u32) & 0x01) << 23usize);
         }
     }
@@ -606,14 +606,14 @@ pub mod regs {
     impl core::fmt::Debug for Ccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Ccr")
-                .field("eop", &self.eop())
-                .field("wrperr", &self.wrperr())
-                .field("pgserr", &self.pgserr())
-                .field("strberr", &self.strberr())
-                .field("incerr", &self.incerr())
-                .field("obkerr", &self.obkerr())
-                .field("obkwerr", &self.obkwerr())
-                .field("optchangeerr", &self.optchangeerr())
+                .field("clr_eop", &self.clr_eop())
+                .field("clr_wrperr", &self.clr_wrperr())
+                .field("clr_pgserr", &self.clr_pgserr())
+                .field("clr_strberr", &self.clr_strberr())
+                .field("clr_incerr", &self.clr_incerr())
+                .field("clr_obkerr", &self.clr_obkerr())
+                .field("clr_obkwerr", &self.clr_obkwerr())
+                .field("clr_optchangeerr", &self.clr_optchangeerr())
                 .finish()
         }
     }
@@ -622,15 +622,15 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Ccr {{ eop: {=bool:?}, wrperr: {=bool:?}, pgserr: {=bool:?}, strberr: {=bool:?}, incerr: {=bool:?}, obkerr: {=bool:?}, obkwerr: {=bool:?}, optchangeerr: {=bool:?} }}",
-                self.eop(),
-                self.wrperr(),
-                self.pgserr(),
-                self.strberr(),
-                self.incerr(),
-                self.obkerr(),
-                self.obkwerr(),
-                self.optchangeerr()
+                "Ccr {{ clr_eop: {=bool:?}, clr_wrperr: {=bool:?}, clr_pgserr: {=bool:?}, clr_strberr: {=bool:?}, clr_incerr: {=bool:?}, clr_obkerr: {=bool:?}, clr_obkwerr: {=bool:?}, clr_optchangeerr: {=bool:?} }}",
+                self.clr_eop(),
+                self.clr_wrperr(),
+                self.clr_pgserr(),
+                self.clr_strberr(),
+                self.clr_incerr(),
+                self.clr_obkerr(),
+                self.clr_obkwerr(),
+                self.clr_optchangeerr()
             )
         }
     }
@@ -2329,85 +2329,85 @@ pub mod regs {
         #[doc = "EOP flag clear bit."]
         #[must_use]
         #[inline(always)]
-        pub const fn eop(&self) -> bool {
+        pub const fn clr_eop(&self) -> bool {
             let val = (self.0 >> 16usize) & 0x01;
             val != 0
         }
         #[doc = "EOP flag clear bit."]
         #[inline(always)]
-        pub const fn set_eop(&mut self, val: bool) {
+        pub const fn set_clr_eop(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 16usize)) | (((val as u32) & 0x01) << 16usize);
         }
         #[doc = "WRPERR flag clear bit."]
         #[must_use]
         #[inline(always)]
-        pub const fn wrperr(&self) -> bool {
+        pub const fn clr_wrperr(&self) -> bool {
             let val = (self.0 >> 17usize) & 0x01;
             val != 0
         }
         #[doc = "WRPERR flag clear bit."]
         #[inline(always)]
-        pub const fn set_wrperr(&mut self, val: bool) {
+        pub const fn set_clr_wrperr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 17usize)) | (((val as u32) & 0x01) << 17usize);
         }
         #[doc = "PGSERR flag clear bit."]
         #[must_use]
         #[inline(always)]
-        pub const fn pgserr(&self) -> bool {
+        pub const fn clr_pgserr(&self) -> bool {
             let val = (self.0 >> 18usize) & 0x01;
             val != 0
         }
         #[doc = "PGSERR flag clear bit."]
         #[inline(always)]
-        pub const fn set_pgserr(&mut self, val: bool) {
+        pub const fn set_clr_pgserr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 18usize)) | (((val as u32) & 0x01) << 18usize);
         }
         #[doc = "STRBERR flag clear bit."]
         #[must_use]
         #[inline(always)]
-        pub const fn strberr(&self) -> bool {
+        pub const fn clr_strberr(&self) -> bool {
             let val = (self.0 >> 19usize) & 0x01;
             val != 0
         }
         #[doc = "STRBERR flag clear bit."]
         #[inline(always)]
-        pub const fn set_strberr(&mut self, val: bool) {
+        pub const fn set_clr_strberr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 19usize)) | (((val as u32) & 0x01) << 19usize);
         }
         #[doc = "INCERR flag clear bit."]
         #[must_use]
         #[inline(always)]
-        pub const fn incerr(&self) -> bool {
+        pub const fn clr_incerr(&self) -> bool {
             let val = (self.0 >> 20usize) & 0x01;
             val != 0
         }
         #[doc = "INCERR flag clear bit."]
         #[inline(always)]
-        pub const fn set_incerr(&mut self, val: bool) {
+        pub const fn set_clr_incerr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 20usize)) | (((val as u32) & 0x01) << 20usize);
         }
         #[doc = "OBKERR flag clear bit."]
         #[must_use]
         #[inline(always)]
-        pub const fn obkerr(&self) -> bool {
+        pub const fn clr_obkerr(&self) -> bool {
             let val = (self.0 >> 21usize) & 0x01;
             val != 0
         }
         #[doc = "OBKERR flag clear bit."]
         #[inline(always)]
-        pub const fn set_obkerr(&mut self, val: bool) {
+        pub const fn set_clr_obkerr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 21usize)) | (((val as u32) & 0x01) << 21usize);
         }
         #[doc = "OBKWERR flag clear bit."]
         #[must_use]
         #[inline(always)]
-        pub const fn obkwerr(&self) -> bool {
+        pub const fn clr_obkwerr(&self) -> bool {
             let val = (self.0 >> 22usize) & 0x01;
             val != 0
         }
         #[doc = "OBKWERR flag clear bit."]
         #[inline(always)]
-        pub const fn set_obkwerr(&mut self, val: bool) {
+        pub const fn set_clr_obkwerr(&mut self, val: bool) {
             self.0 = (self.0 & !(0x01 << 22usize)) | (((val as u32) & 0x01) << 22usize);
         }
     }
@@ -2421,13 +2421,13 @@ pub mod regs {
     impl core::fmt::Debug for Sccr {
         fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
             f.debug_struct("Sccr")
-                .field("eop", &self.eop())
-                .field("wrperr", &self.wrperr())
-                .field("pgserr", &self.pgserr())
-                .field("strberr", &self.strberr())
-                .field("incerr", &self.incerr())
-                .field("obkerr", &self.obkerr())
-                .field("obkwerr", &self.obkwerr())
+                .field("clr_eop", &self.clr_eop())
+                .field("clr_wrperr", &self.clr_wrperr())
+                .field("clr_pgserr", &self.clr_pgserr())
+                .field("clr_strberr", &self.clr_strberr())
+                .field("clr_incerr", &self.clr_incerr())
+                .field("clr_obkerr", &self.clr_obkerr())
+                .field("clr_obkwerr", &self.clr_obkwerr())
                 .finish()
         }
     }
@@ -2436,14 +2436,14 @@ pub mod regs {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(
                 f,
-                "Sccr {{ eop: {=bool:?}, wrperr: {=bool:?}, pgserr: {=bool:?}, strberr: {=bool:?}, incerr: {=bool:?}, obkerr: {=bool:?}, obkwerr: {=bool:?} }}",
-                self.eop(),
-                self.wrperr(),
-                self.pgserr(),
-                self.strberr(),
-                self.incerr(),
-                self.obkerr(),
-                self.obkwerr()
+                "Sccr {{ clr_eop: {=bool:?}, clr_wrperr: {=bool:?}, clr_pgserr: {=bool:?}, clr_strberr: {=bool:?}, clr_incerr: {=bool:?}, clr_obkerr: {=bool:?}, clr_obkwerr: {=bool:?} }}",
+                self.clr_eop(),
+                self.clr_wrperr(),
+                self.clr_pgserr(),
+                self.clr_strberr(),
+                self.clr_incerr(),
+                self.clr_obkerr(),
+                self.clr_obkwerr()
             )
         }
     }

@@ -743,7 +743,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "eop",
+                    name: "clr_eop",
                     description: Some("EOP flag clear bit."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
@@ -751,7 +751,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "wrperr",
+                    name: "clr_wrperr",
                     description: Some("WRPERR flag clear bit."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
@@ -759,7 +759,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "pgserr",
+                    name: "clr_pgserr",
                     description: Some("PGSERR flag clear bit."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
@@ -767,7 +767,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "strberr",
+                    name: "clr_strberr",
                     description: Some("STRBERR flag clear bit."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
@@ -775,7 +775,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "incerr",
+                    name: "clr_incerr",
                     description: Some("INCERR flag clear bit."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
@@ -783,7 +783,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "obkerr",
+                    name: "clr_obkerr",
                     description: Some("OBKERR flag clear bit."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
@@ -791,7 +791,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "obkwerr",
+                    name: "clr_obkwerr",
                     description: Some("OBKWERR flag clear bit."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,
@@ -799,7 +799,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "optchangeerr",
+                    name: "clr_optchangeerr",
                     description: Some("OPTCHANGEERR flag clear bit."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 23 }),
                     bit_size: 1,
@@ -1567,7 +1567,7 @@ pub(crate) static REGISTERS: IR = IR {
             bit_size: 32,
             fields: &[
                 Field {
-                    name: "eop",
+                    name: "clr_eop",
                     description: Some("EOP flag clear bit."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 16 }),
                     bit_size: 1,
@@ -1575,7 +1575,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "wrperr",
+                    name: "clr_wrperr",
                     description: Some("WRPERR flag clear bit."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 17 }),
                     bit_size: 1,
@@ -1583,7 +1583,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "pgserr",
+                    name: "clr_pgserr",
                     description: Some("PGSERR flag clear bit."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 18 }),
                     bit_size: 1,
@@ -1591,7 +1591,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "strberr",
+                    name: "clr_strberr",
                     description: Some("STRBERR flag clear bit."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 19 }),
                     bit_size: 1,
@@ -1599,7 +1599,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "incerr",
+                    name: "clr_incerr",
                     description: Some("INCERR flag clear bit."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 20 }),
                     bit_size: 1,
@@ -1607,7 +1607,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "obkerr",
+                    name: "clr_obkerr",
                     description: Some("OBKERR flag clear bit."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 21 }),
                     bit_size: 1,
@@ -1615,7 +1615,7 @@ pub(crate) static REGISTERS: IR = IR {
                     enumm: None,
                 },
                 Field {
-                    name: "obkwerr",
+                    name: "clr_obkwerr",
                     description: Some("OBKWERR flag clear bit."),
                     bit_offset: BitOffset::Regular(RegularBitOffset { offset: 22 }),
                     bit_size: 1,

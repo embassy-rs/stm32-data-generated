@@ -19,14 +19,9 @@ impl Tscal {
     pub const fn as_ptr(&self) -> *mut () {
         self.ptr as _
     }
-    #[doc = "Factory calibration point 1"]
+    #[doc = "Factory calibration"]
     #[inline(always)]
-    pub const fn tscal1(self) -> crate::common::Reg<u16, crate::common::R> {
+    pub const fn data(self) -> crate::common::Reg<u16, crate::common::R> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x0usize) as _) }
-    }
-    #[doc = "Factory calibration point 2"]
-    #[inline(always)]
-    pub const fn tscal2(self) -> crate::common::Reg<u16, crate::common::R> {
-        unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x22usize) as _) }
     }
 }

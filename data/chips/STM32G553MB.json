@@ -1604,6 +1604,19 @@
     ]
   ],
   "docs": [],
+  "adc_calibration": {
+    "vrefint": {
+      "vref_mv": 3300,
+      "cal_bits": 12
+    },
+    "temp": {
+      "equation": "two_point",
+      "vref_mv": 3300,
+      "cal_bits": 12,
+      "cal1_temp_c": 30,
+      "cal2_temp_c": 140
+    }
+  },
   "cores": [
     {
       "name": "cm33",
@@ -8709,6 +8722,24 @@
               "interrupt": "TIM9"
             }
           ]
+        },
+        {
+          "name": "TS_CAL1",
+          "address": 150992916,
+          "registers": {
+            "kind": "tscal",
+            "version": "v1",
+            "block": "TSCAL"
+          }
+        },
+        {
+          "name": "TS_CAL2",
+          "address": 150992920,
+          "registers": {
+            "kind": "tscal",
+            "version": "v1",
+            "block": "TSCAL"
+          }
         },
         {
           "name": "UART4",

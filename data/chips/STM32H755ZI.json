@@ -1246,6 +1246,19 @@
       "url": "http://www.st.com/resource/en/application_note/DM00733995.pdf"
     }
   ],
+  "adc_calibration": {
+    "vrefint": {
+      "vref_mv": 3300,
+      "cal_bits": 16
+    },
+    "temp": {
+      "equation": "two_point",
+      "vref_mv": 3300,
+      "cal_bits": 16,
+      "cal1_temp_c": 30,
+      "cal2_temp_c": 110
+    }
+  },
   "cores": [
     {
       "name": "cm7",

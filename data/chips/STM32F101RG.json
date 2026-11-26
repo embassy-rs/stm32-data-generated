@@ -676,6 +676,14 @@
       "url": "http://www.st.com/resource/en/application_note/DM00725181.pdf"
     }
   ],
+  "adc_calibration": {
+    "temp": {
+      "equation": "nominal",
+      "ref_temp_c": 25,
+      "v_ref_mv": 1430,
+      "avg_slope_uv_per_c": -4300
+    }
+  },
   "cores": [
     {
       "name": "cm3",

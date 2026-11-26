@@ -1628,6 +1628,19 @@
     ]
   ],
   "docs": [],
+  "adc_calibration": {
+    "vrefint": {
+      "vref_mv": 3000,
+      "cal_bits": 14
+    },
+    "temp": {
+      "equation": "two_point",
+      "vref_mv": 3000,
+      "cal_bits": 14,
+      "cal1_temp_c": 30,
+      "cal2_temp_c": 130
+    }
+  },
   "cores": [
     {
       "name": "cm33",

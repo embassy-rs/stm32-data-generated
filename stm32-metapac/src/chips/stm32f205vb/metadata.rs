@@ -58,4 +58,12 @@ pub static METADATA: Metadata = Metadata {
     interrupts: INTERRUPTS,
     dma_channels: DMA_CHANNELS,
     pins: PINS,
+    adc_calibration: Some(AdcCalibration {
+        vrefint: None,
+        temp: Some(TempCalibration::Nominal(NominalTempCal {
+            ref_temp_c: 25,
+            v_ref_mv: 760,
+            avg_slope_uv_per_c: 2500,
+        })),
+    }),
 };

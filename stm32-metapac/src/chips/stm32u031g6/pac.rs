@@ -159,7 +159,6 @@ mod _vectors {
     ];
 }
 pub const UID: uid::Uid = unsafe { uid::Uid::from_ptr(0x1fff_3e50usize as _) };
-pub const TSCAL: tscal::Tscal = unsafe { tscal::Tscal::from_ptr(0x1fff_6e68usize as _) };
 pub const TS_CAL1: tscal::Tscal = unsafe { tscal::Tscal::from_ptr(0x1fff_6e68usize as _) };
 pub const TS_CAL2: tscal::Tscal = unsafe { tscal::Tscal::from_ptr(0x1fff_6e8ausize as _) };
 pub const VREFINTCAL: vrefintcal::Vrefintcal = unsafe { vrefintcal::Vrefintcal::from_ptr(0x1fff_6ea4usize as _) };

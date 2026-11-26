@@ -156,6 +156,19 @@
     ]
   ],
   "docs": [],
+  "adc_calibration": {
+    "vrefint": {
+      "vref_mv": 3000,
+      "cal_bits": 12
+    },
+    "temp": {
+      "equation": "one_point",
+      "vref_mv": 3000,
+      "cal_bits": 12,
+      "cal1_temp_c": 30,
+      "avg_slope_uv_per_c": 2530
+    }
+  },
   "cores": [
     {
       "name": "cm0p",

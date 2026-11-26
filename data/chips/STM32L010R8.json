@@ -712,6 +712,12 @@
       "url": "http://www.st.com/resource/en/application_note/DM00725181.pdf"
     }
   ],
+  "adc_calibration": {
+    "vrefint": {
+      "vref_mv": 3000,
+      "cal_bits": 12
+    }
+  },
   "cores": [
     {
       "name": "cm0p",

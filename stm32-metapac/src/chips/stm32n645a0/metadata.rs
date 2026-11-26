@@ -74,4 +74,11 @@ pub static METADATA: Metadata = Metadata {
     interrupts: INTERRUPTS,
     dma_channels: DMA_CHANNELS,
     pins: PINS,
+    adc_calibration: Some(AdcCalibration {
+        vrefint: Some(VrefCalibration {
+            vref_mv: 3300,
+            cal_bits: 12,
+        }),
+        temp: None,
+    }),
 };

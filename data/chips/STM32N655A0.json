@@ -2101,6 +2101,12 @@
     ]
   ],
   "docs": [],
+  "adc_calibration": {
+    "vrefint": {
+      "vref_mv": 3300,
+      "cal_bits": 12
+    }
+  },
   "cores": [
     {
       "name": "cm55",

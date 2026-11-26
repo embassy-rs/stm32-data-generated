@@ -627,6 +627,19 @@
     ]
   ],
   "docs": [],
+  "adc_calibration": {
+    "vrefint": {
+      "vref_mv": 3000,
+      "cal_bits": 12
+    },
+    "temp": {
+      "equation": "two_point",
+      "vref_mv": 3000,
+      "cal_bits": 12,
+      "cal1_temp_c": 30,
+      "cal2_temp_c": 130
+    }
+  },
   "cores": [
     {
       "name": "cm0p",
@@ -3232,15 +3245,6 @@
               "interrupt": "TSC"
             }
           ]
-        },
-        {
-          "name": "TSCAL",
-          "address": 536833640,
-          "registers": {
-            "kind": "tscal",
-            "version": "v1",
-            "block": "TSCAL"
-          }
         },
         {
           "name": "TS_CAL1",

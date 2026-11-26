@@ -58,6 +58,18 @@ pub static METADATA: Metadata = Metadata {
     interrupts: INTERRUPTS,
     dma_channels: DMA_CHANNELS,
     pins: PINS,
+    power: Some(Power {
+        dialect: PowerDialect::PmcrSvos,
+        stopwuck: false,
+        modes: &[PowerMode {
+            kind: PowerModeKind::Stop0,
+            selector: 0,
+            min_svos: None,
+            surviving_clocks: &["HSI", "LSE", "LSI"],
+            min_residency_us: 50,
+            exit_latency_us: 15,
+        }],
+    }),
     adc_calibration: Some(AdcCalibration {
         vrefint: Some(VrefCalibration {
             vref_mv: 3300,

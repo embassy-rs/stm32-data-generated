@@ -2725,6 +2725,10 @@
             "reset": {
               "register": "AHB2RSTR",
               "field": "ADCRST"
+            },
+            "stop_enable": {
+              "register": "AHB2SMENR",
+              "field": "ADCFSSMEN"
             }
           },
           "pins": [
@@ -2837,6 +2841,10 @@
             "reset": {
               "register": "AHB2RSTR",
               "field": "ADCRST"
+            },
+            "stop_enable": {
+              "register": "AHB2SMENR",
+              "field": "ADCFSSMEN"
             }
           },
           "pins": [
@@ -3027,6 +3035,10 @@
             "reset": {
               "register": "AHB1RSTR",
               "field": "CRCRST"
+            },
+            "stop_enable": {
+              "register": "AHB1SMENR",
+              "field": "CRCSMEN"
             }
           }
         },
@@ -3048,6 +3060,10 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "CRSRST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "CRSSMEN"
             }
           },
           "pins": [
@@ -3081,6 +3097,10 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "DAC1RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "DAC1SMEN"
             }
           },
           "pins": [
@@ -3185,6 +3205,10 @@
             "reset": {
               "register": "APB2RSTR",
               "field": "DFSDM1RST"
+            },
+            "stop_enable": {
+              "register": "APB2SMENR",
+              "field": "DFSDM1SMEN"
             }
           },
           "pins": [
@@ -3378,6 +3402,10 @@
             "reset": {
               "register": "AHB1RSTR",
               "field": "DMA1RST"
+            },
+            "stop_enable": {
+              "register": "AHB1SMENR",
+              "field": "DMA1SMEN"
             }
           },
           "interrupts": [
@@ -3433,6 +3461,10 @@
             "reset": {
               "register": "AHB1RSTR",
               "field": "DMA2RST"
+            },
+            "stop_enable": {
+              "register": "AHB1SMENR",
+              "field": "DMA2SMEN"
             }
           },
           "interrupts": [
@@ -3488,6 +3520,10 @@
             "reset": {
               "register": "AHB1RSTR",
               "field": "DMAMUX1RST"
+            },
+            "stop_enable": {
+              "register": "AHB1SMENR",
+              "field": "DMAMUX1SMEN"
             }
           },
           "interrupts": [
@@ -3593,6 +3629,10 @@
             "reset": {
               "register": "APB1RSTR2",
               "field": "FDCAN1RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR2",
+              "field": "FDCAN1SMEN"
             }
           },
           "pins": [
@@ -3665,6 +3705,10 @@
             "reset": {
               "register": "AHB1RSTR",
               "field": "FLASHRST"
+            },
+            "stop_enable": {
+              "register": "AHB1SMENR",
+              "field": "FLASHSMEN"
             }
           },
           "interrupts": [
@@ -3692,6 +3736,10 @@
             "reset": {
               "register": "AHB3RSTR",
               "field": "FMCRST"
+            },
+            "stop_enable": {
+              "register": "AHB3SMENR",
+              "field": "FMCSMEN"
             }
           },
           "pins": [
@@ -4089,6 +4137,18 @@
             "reset": {
               "register": "AHB2RSTR",
               "field": "GPIOARST"
+            },
+            "stop_enable": {
+              "register": "AHB2SMENR",
+              "field": "GPIOASMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true,
+                "stop2": true
+              },
+              "wake_capable": true
             }
           }
         },
@@ -4110,6 +4170,18 @@
             "reset": {
               "register": "AHB2RSTR",
               "field": "GPIOBRST"
+            },
+            "stop_enable": {
+              "register": "AHB2SMENR",
+              "field": "GPIOBSMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true,
+                "stop2": true
+              },
+              "wake_capable": true
             }
           }
         },
@@ -4131,6 +4203,18 @@
             "reset": {
               "register": "AHB2RSTR",
               "field": "GPIOCRST"
+            },
+            "stop_enable": {
+              "register": "AHB2SMENR",
+              "field": "GPIOCSMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true,
+                "stop2": true
+              },
+              "wake_capable": true
             }
           }
         },
@@ -4152,6 +4236,18 @@
             "reset": {
               "register": "AHB2RSTR",
               "field": "GPIODRST"
+            },
+            "stop_enable": {
+              "register": "AHB2SMENR",
+              "field": "GPIODSMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true,
+                "stop2": true
+              },
+              "wake_capable": true
             }
           }
         },
@@ -4173,6 +4269,18 @@
             "reset": {
               "register": "AHB2RSTR",
               "field": "GPIOERST"
+            },
+            "stop_enable": {
+              "register": "AHB2SMENR",
+              "field": "GPIOESMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true,
+                "stop2": true
+              },
+              "wake_capable": true
             }
           }
         },
@@ -4194,6 +4302,18 @@
             "reset": {
               "register": "AHB2RSTR",
               "field": "GPIOFRST"
+            },
+            "stop_enable": {
+              "register": "AHB2SMENR",
+              "field": "GPIOFSMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true,
+                "stop2": true
+              },
+              "wake_capable": true
             }
           }
         },
@@ -4215,6 +4335,18 @@
             "reset": {
               "register": "AHB2RSTR",
               "field": "GPIOGRST"
+            },
+            "stop_enable": {
+              "register": "AHB2SMENR",
+              "field": "GPIOGSMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true,
+                "stop2": true
+              },
+              "wake_capable": true
             }
           }
         },
@@ -4236,6 +4368,18 @@
             "reset": {
               "register": "AHB2RSTR",
               "field": "GPIOHRST"
+            },
+            "stop_enable": {
+              "register": "AHB2SMENR",
+              "field": "GPIOHSMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true,
+                "stop2": true
+              },
+              "wake_capable": true
             }
           }
         },
@@ -4257,6 +4401,10 @@
             "reset": {
               "register": "AHB1RSTR",
               "field": "GTZCRST"
+            },
+            "stop_enable": {
+              "register": "AHB1SMENR",
+              "field": "GTZCSMEN"
             }
           }
         },
@@ -4328,6 +4476,10 @@
             "reset": {
               "register": "AHB2RSTR",
               "field": "HASHRST"
+            },
+            "stop_enable": {
+              "register": "AHB2SMENR",
+              "field": "HASHSMEN"
             }
           },
           "interrupts": [
@@ -4362,6 +4514,17 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "I2C1RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "I2C1SMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true
+              },
+              "wake_capable": true
             }
           },
           "pins": [
@@ -4457,6 +4620,17 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "I2C2RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "I2C2SMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true
+              },
+              "wake_capable": true
             }
           },
           "pins": [
@@ -4542,6 +4716,18 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "I2C3RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "I2C3SMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true,
+                "stop2": true
+              },
+              "wake_capable": true
             }
           },
           "pins": [
@@ -4627,6 +4813,17 @@
             "reset": {
               "register": "APB1RSTR2",
               "field": "I2C4RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR2",
+              "field": "I2C4SMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true
+              },
+              "wake_capable": true
             }
           },
           "pins": [
@@ -4755,7 +4952,18 @@
               "register": "APB1RSTR1",
               "field": "LPTIM1RST"
             },
-            "stop_mode": "Stop2"
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "LPTIM1SMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true,
+                "stop2": true
+              },
+              "wake_capable": true
+            }
           },
           "pins": [
             {
@@ -4853,7 +5061,17 @@
               "register": "APB1RSTR2",
               "field": "LPTIM2RST"
             },
-            "stop_mode": "Stop2"
+            "stop_enable": {
+              "register": "APB1SMENR2",
+              "field": "LPTIM2SMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true
+              },
+              "wake_capable": true
+            }
           },
           "pins": [
             {
@@ -4931,7 +5149,17 @@
               "register": "APB1RSTR2",
               "field": "LPTIM3RST"
             },
-            "stop_mode": "Stop2"
+            "stop_enable": {
+              "register": "APB1SMENR2",
+              "field": "LPTIM3SMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true
+              },
+              "wake_capable": true
+            }
           },
           "pins": [
             {
@@ -5006,7 +5234,18 @@
               "register": "APB1RSTR2",
               "field": "LPUART1RST"
             },
-            "stop_mode": "Stop2"
+            "stop_enable": {
+              "register": "APB1SMENR2",
+              "field": "LPUART1SMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true,
+                "stop2": true
+              },
+              "wake_capable": true
+            }
           },
           "pins": [
             {
@@ -5132,6 +5371,10 @@
             "reset": {
               "register": "AHB3RSTR",
               "field": "OCTOSPI1RST"
+            },
+            "stop_enable": {
+              "register": "AHB3SMENR",
+              "field": "OCTOSPI1SMEN"
             }
           },
           "pins": [
@@ -5338,6 +5581,18 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "OPAMPRST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "OPAMPSMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true,
+                "stop2": true
+              },
+              "wake_capable": true
             }
           },
           "pins": [
@@ -5373,6 +5628,18 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "OPAMPRST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "OPAMPSMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true,
+                "stop2": true
+              },
+              "wake_capable": true
             }
           },
           "pins": [
@@ -5408,6 +5675,18 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "PWRRST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "PWRSMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true,
+                "stop2": true
+              },
+              "wake_capable": true
             }
           },
           "pins": [
@@ -5512,6 +5791,10 @@
             "reset": {
               "register": "AHB2RSTR",
               "field": "RNGRST"
+            },
+            "stop_enable": {
+              "register": "AHB2SMENR",
+              "field": "RNGSMEN"
             }
           },
           "interrupts": [
@@ -5539,7 +5822,19 @@
               "register": "APB1ENR1",
               "field": "RTCAPBEN"
             },
-            "stop_mode": "Standby"
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "RTCAPBSMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true,
+                "stop2": true
+              },
+              "autonomous": true,
+              "wake_capable": true
+            }
           },
           "pins": [
             {
@@ -5605,6 +5900,10 @@
             "reset": {
               "register": "APB2RSTR",
               "field": "SAI1RST"
+            },
+            "stop_enable": {
+              "register": "APB2SMENR",
+              "field": "SAI1SMEN"
             }
           },
           "pins": [
@@ -5860,6 +6159,10 @@
             "reset": {
               "register": "APB2RSTR",
               "field": "SAI2RST"
+            },
+            "stop_enable": {
+              "register": "APB2SMENR",
+              "field": "SAI2SMEN"
             }
           },
           "pins": [
@@ -6033,6 +6336,10 @@
             "reset": {
               "register": "AHB2RSTR",
               "field": "SDMMC1RST"
+            },
+            "stop_enable": {
+              "register": "AHB2SMENR",
+              "field": "SDMMC1SMEN"
             }
           },
           "pins": [
@@ -6137,6 +6444,10 @@
             "reset": {
               "register": "APB2RSTR",
               "field": "SPI1RST"
+            },
+            "stop_enable": {
+              "register": "APB2SMENR",
+              "field": "SPI1SMEN"
             }
           },
           "pins": [
@@ -6278,6 +6589,10 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "SPI2RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "SPI2SMEN"
             }
           },
           "pins": [
@@ -6394,6 +6709,10 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "SPI3RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "SP3SMEN"
             }
           },
           "pins": [
@@ -6500,6 +6819,18 @@
             "reset": {
               "register": "APB2RSTR",
               "field": "SYSCFGRST"
+            },
+            "stop_enable": {
+              "register": "APB2SMENR",
+              "field": "SYSCFGSMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true,
+                "stop2": true
+              },
+              "wake_capable": true
             }
           }
         },
@@ -6578,6 +6909,10 @@
             "reset": {
               "register": "APB2RSTR",
               "field": "TIM1RST"
+            },
+            "stop_enable": {
+              "register": "APB2SMENR",
+              "field": "TIM1SMEN"
             }
           },
           "pins": [
@@ -6790,6 +7125,10 @@
             "reset": {
               "register": "APB2RSTR",
               "field": "TIM15RST"
+            },
+            "stop_enable": {
+              "register": "APB2SMENR",
+              "field": "TIM15SMEN"
             }
           },
           "pins": [
@@ -6930,6 +7269,10 @@
             "reset": {
               "register": "APB2RSTR",
               "field": "TIM16RST"
+            },
+            "stop_enable": {
+              "register": "APB2SMENR",
+              "field": "TIM16SMEN"
             }
           },
           "pins": [
@@ -7034,6 +7377,10 @@
             "reset": {
               "register": "APB2RSTR",
               "field": "TIM17RST"
+            },
+            "stop_enable": {
+              "register": "APB2SMENR",
+              "field": "TIM17SMEN"
             }
           },
           "pins": [
@@ -7143,6 +7490,10 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "TIM2RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "TIM2SMEN"
             }
           },
           "pins": [
@@ -7287,6 +7638,10 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "TIM3RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "TIM3SMEN"
             }
           },
           "pins": [
@@ -7456,6 +7811,10 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "TIM4RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "TIM4SMEN"
             }
           },
           "pins": [
@@ -7585,6 +7944,10 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "TIM5RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "TIM5SMEN"
             }
           },
           "pins": [
@@ -7694,6 +8057,10 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "TIM6RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "TIM6SMEN"
             }
           },
           "interrupts": [
@@ -7756,6 +8123,10 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "TIM7RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "TIM7SMEN"
             }
           },
           "interrupts": [
@@ -7818,6 +8189,10 @@
             "reset": {
               "register": "APB2RSTR",
               "field": "TIM8RST"
+            },
+            "stop_enable": {
+              "register": "APB2SMENR",
+              "field": "TIM8SMEN"
             }
           },
           "pins": [
@@ -7985,6 +8360,10 @@
             "reset": {
               "register": "AHB1RSTR",
               "field": "TSCRST"
+            },
+            "stop_enable": {
+              "register": "AHB1SMENR",
+              "field": "TSCSMEN"
             }
           },
           "pins": [
@@ -8192,6 +8571,17 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "UART4RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "UART4SMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true
+              },
+              "wake_capable": true
             }
           },
           "pins": [
@@ -8268,6 +8658,17 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "UART5RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "UART5SMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true
+              },
+              "wake_capable": true
             }
           },
           "pins": [
@@ -8334,6 +8735,10 @@
             "reset": {
               "register": "APB1RSTR2",
               "field": "UCPD1RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR2",
+              "field": "UCPD1SMEN"
             }
           },
           "pins": [
@@ -8430,6 +8835,17 @@
             "reset": {
               "register": "APB2RSTR",
               "field": "USART1RST"
+            },
+            "stop_enable": {
+              "register": "APB2SMENR",
+              "field": "USART1SMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true
+              },
+              "wake_capable": true
             }
           },
           "pins": [
@@ -8576,6 +8992,17 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "USART2RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "USART2SMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true
+              },
+              "wake_capable": true
             }
           },
           "pins": [
@@ -8692,6 +9119,17 @@
             "reset": {
               "register": "APB1RSTR1",
               "field": "USART3RST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "USART3SMEN"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true
+              },
+              "wake_capable": true
             }
           },
           "pins": [
@@ -8876,6 +9314,10 @@
             "reset": {
               "register": "APB1RSTR2",
               "field": "USBRST"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR2",
+              "field": "USBSMEN"
             }
           },
           "pins": [
@@ -8968,6 +9410,10 @@
             "enable": {
               "register": "APB1ENR1",
               "field": "WWDGEN"
+            },
+            "stop_enable": {
+              "register": "APB1SMENR1",
+              "field": "WWDGSMEN"
             }
           },
           "interrupts": [
@@ -9848,5 +10294,46 @@
         }
       ]
     }
-  ]
+  ],
+  "power": {
+    "dialect": "LpmsScr",
+    "stopwuck": true,
+    "modes": [
+      {
+        "kind": "Stop0",
+        "selector": 0,
+        "surviving_clocks": [
+          "HSI",
+          "MSI",
+          "LSE",
+          "LSI"
+        ],
+        "min_residency_us": 100,
+        "exit_latency_us": 20
+      },
+      {
+        "kind": "Stop1",
+        "selector": 1,
+        "surviving_clocks": [
+          "HSI",
+          "MSI",
+          "LSE",
+          "LSI"
+        ],
+        "min_residency_us": 500,
+        "exit_latency_us": 40
+      },
+      {
+        "kind": "Stop2",
+        "selector": 2,
+        "surviving_clocks": [
+          "HSI",
+          "LSE",
+          "LSI"
+        ],
+        "min_residency_us": 900,
+        "exit_latency_us": 60
+      }
+    ]
+  }
 }

@@ -756,6 +756,13 @@
             "reset": {
               "register": "AHBRSTR",
               "field": "GPIOARST"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true
+              },
+              "wake_capable": true
             }
           }
         },
@@ -777,6 +784,13 @@
             "reset": {
               "register": "AHBRSTR",
               "field": "GPIOBRST"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true
+              },
+              "wake_capable": true
             }
           }
         },
@@ -798,6 +812,13 @@
             "reset": {
               "register": "AHBRSTR",
               "field": "GPIOCRST"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true
+              },
+              "wake_capable": true
             }
           }
         },
@@ -819,6 +840,13 @@
             "reset": {
               "register": "AHBRSTR",
               "field": "GPIOFRST"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true
+              },
+              "wake_capable": true
             }
           }
         },
@@ -934,8 +962,22 @@
             "reset": {
               "register": "APB1RSTR",
               "field": "PWRRST"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true
+              },
+              "wake_capable": true
             }
-          }
+          },
+          "pins": [
+            {
+              "pin": "PA0",
+              "signal": "WKUP1",
+              "af": 0
+            }
+          ]
         },
         {
           "name": "RCC",
@@ -1116,6 +1158,13 @@
             "reset": {
               "register": "APB2RSTR",
               "field": "SYSCFGRST"
+            },
+            "low_power": {
+              "modes": {
+                "stop0": true,
+                "stop1": true
+              },
+              "wake_capable": true
             }
           }
         },
@@ -2224,5 +2273,30 @@
         }
       ]
     }
-  ]
+  ],
+  "power": {
+    "dialect": "Classic",
+    "modes": [
+      {
+        "kind": "Stop0",
+        "selector": 0,
+        "surviving_clocks": [
+          "LSE",
+          "LSI"
+        ],
+        "min_residency_us": 200,
+        "exit_latency_us": 50
+      },
+      {
+        "kind": "Stop1",
+        "selector": 1,
+        "surviving_clocks": [
+          "LSE",
+          "LSI"
+        ],
+        "min_residency_us": 600,
+        "exit_latency_us": 300
+      }
+    ]
+  }
 }

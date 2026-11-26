@@ -20,7 +20,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "AHBRSTR",
                 field: "ADC12RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -125,7 +137,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "AHBRSTR",
                 field: "ADC12RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -242,7 +266,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "AHBRSTR",
                 field: "ADC34RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -372,7 +408,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "AHBRSTR",
                 field: "ADC34RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -494,7 +542,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "CANRST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -567,7 +627,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 field: "SYSCFGEN",
             }),
             reset: None,
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: true,
+                    stop1: true,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: true,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -636,7 +708,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 field: "SYSCFGEN",
             }),
             reset: None,
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: true,
+                    stop1: true,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: true,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -700,7 +784,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 field: "SYSCFGEN",
             }),
             reset: None,
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: true,
+                    stop1: true,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: true,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -764,7 +860,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 field: "SYSCFGEN",
             }),
             reset: None,
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: true,
+                    stop1: true,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: true,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -818,7 +926,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 field: "SYSCFGEN",
             }),
             reset: None,
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: true,
+                    stop1: true,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: true,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -882,7 +1002,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 field: "SYSCFGEN",
             }),
             reset: None,
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: true,
+                    stop1: true,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: true,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -946,7 +1078,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 field: "SYSCFGEN",
             }),
             reset: None,
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: true,
+                    stop1: true,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: true,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -1000,7 +1144,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 field: "CRCEN",
             }),
             reset: None,
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[],
         dma_channels: &[],
@@ -1028,7 +1184,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "DACRST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -1152,7 +1320,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB2RSTR",
                 field: "DBGMCURST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[],
         dma_channels: &[],
@@ -1177,7 +1357,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 field: "DMA1EN",
             }),
             reset: None,
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[],
         dma_channels: &[],
@@ -1231,7 +1423,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 field: "DMA2EN",
             }),
             reset: None,
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[],
         dma_channels: &[],
@@ -1354,7 +1558,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 field: "FLASHEN",
             }),
             reset: None,
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[],
         dma_channels: &[],
@@ -1385,7 +1601,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "AHBRSTR",
                 field: "FMCRST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -1692,7 +1920,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "AHBRSTR",
                 field: "GPIOARST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: true,
+                    stop1: true,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: true,
+                wake_exti: None,
+            },
         }),
         pins: &[],
         dma_channels: &[],
@@ -1720,7 +1960,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "AHBRSTR",
                 field: "GPIOBRST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: true,
+                    stop1: true,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: true,
+                wake_exti: None,
+            },
         }),
         pins: &[],
         dma_channels: &[],
@@ -1748,7 +2000,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "AHBRSTR",
                 field: "GPIOCRST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: true,
+                    stop1: true,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: true,
+                wake_exti: None,
+            },
         }),
         pins: &[],
         dma_channels: &[],
@@ -1776,7 +2040,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "AHBRSTR",
                 field: "GPIODRST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: true,
+                    stop1: true,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: true,
+                wake_exti: None,
+            },
         }),
         pins: &[],
         dma_channels: &[],
@@ -1804,7 +2080,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "AHBRSTR",
                 field: "GPIOERST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: true,
+                    stop1: true,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: true,
+                wake_exti: None,
+            },
         }),
         pins: &[],
         dma_channels: &[],
@@ -1832,7 +2120,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "AHBRSTR",
                 field: "GPIOFRST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: true,
+                    stop1: true,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: true,
+                wake_exti: None,
+            },
         }),
         pins: &[],
         dma_channels: &[],
@@ -1860,7 +2160,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "AHBRSTR",
                 field: "GPIOGRST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: true,
+                    stop1: true,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: true,
+                wake_exti: None,
+            },
         }),
         pins: &[],
         dma_channels: &[],
@@ -1888,7 +2200,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "AHBRSTR",
                 field: "GPIOHRST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: true,
+                    stop1: true,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: true,
+                wake_exti: None,
+            },
         }),
         pins: &[],
         dma_channels: &[],
@@ -1921,7 +2245,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "I2C1RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -2024,7 +2360,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "I2C2RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -2119,7 +2467,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "I2C3RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -2643,9 +3003,37 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "PWRRST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: true,
+                    stop1: true,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: true,
+                wake_exti: None,
+            },
         }),
-        pins: &[],
+        pins: &[
+            PeripheralPin {
+                pin: "PA0",
+                signal: "WKUP1",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PC13",
+                signal: "WKUP2",
+                af: None,
+            },
+            PeripheralPin {
+                pin: "PE6",
+                signal: "WKUP3",
+                af: None,
+            },
+        ],
         dma_channels: &[],
         triggers: &[],
         interrupts: &[],
@@ -2790,7 +3178,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB2RSTR",
                 field: "SPI1RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -2887,7 +3287,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "SPI2RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -3041,7 +3453,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "SPI3RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -3180,7 +3604,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB2RSTR",
                 field: "SPI4RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -3274,7 +3710,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB2RSTR",
                 field: "SYSCFGRST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: true,
+                    stop1: true,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: true,
+                wake_exti: None,
+            },
         }),
         pins: &[],
         dma_channels: &[],
@@ -3307,7 +3755,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB2RSTR",
                 field: "TIM1RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -3604,7 +4064,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB2RSTR",
                 field: "TIM15RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -3754,7 +4226,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB2RSTR",
                 field: "TIM16RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -3910,7 +4394,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB2RSTR",
                 field: "TIM17RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -4061,7 +4557,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "TIM2RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -4264,7 +4772,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB2RSTR",
                 field: "TIM20RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -4421,7 +4941,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "TIM3RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -4614,7 +5146,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "TIM4RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -4784,7 +5328,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "TIM6RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[],
         dma_channels: &[
@@ -4870,7 +5426,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "TIM7RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[],
         dma_channels: &[
@@ -4961,7 +5529,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB2RSTR",
                 field: "TIM8RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -5208,7 +5788,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "AHBRSTR",
                 field: "TSCRST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -5447,7 +6039,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "UART4RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -5511,7 +6115,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "UART5RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -5574,7 +6190,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB2RSTR",
                 field: "USART1RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -5688,7 +6316,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "USART2RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -5827,7 +6467,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "USART3RST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[
             PeripheralPin {
@@ -5997,7 +6649,19 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
                 register: "APB1RSTR",
                 field: "WWDGRST",
             }),
-            stop_mode: StopMode::Stop1,
+            stop_enable: None,
+            autonomous_enable: None,
+            low_power: PeripheralLowPower {
+                modes: StopModes {
+                    stop0: false,
+                    stop1: false,
+                    stop2: false,
+                    stop3: false,
+                },
+                autonomous: false,
+                wake_capable: false,
+                wake_exti: None,
+            },
         }),
         pins: &[],
         dma_channels: &[],

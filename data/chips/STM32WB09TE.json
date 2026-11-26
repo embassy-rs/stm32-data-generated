@@ -457,6 +457,12 @@
             "reset": {
               "register": "AHBRSTR",
               "field": "GPIOARST"
+            },
+            "low_power": {
+              "modes": {
+                "stop1": true
+              },
+              "wake_capable": true
             }
           }
         },
@@ -478,6 +484,12 @@
             "reset": {
               "register": "AHBRSTR",
               "field": "GPIOBRST"
+            },
+            "low_power": {
+              "modes": {
+                "stop1": true
+              },
+              "wake_capable": true
             }
           }
         },
@@ -583,7 +595,12 @@
               "register": "APB1RSTR",
               "field": "LPUARTRST"
             },
-            "stop_mode": "Stop2"
+            "low_power": {
+              "modes": {
+                "stop1": true
+              },
+              "wake_capable": true
+            }
           },
           "pins": [
             {
@@ -954,7 +971,13 @@
               "register": "APB0RSTR",
               "field": "RTCRST"
             },
-            "stop_mode": "Standby"
+            "low_power": {
+              "modes": {
+                "stop1": true
+              },
+              "autonomous": true,
+              "wake_capable": true
+            }
           },
           "pins": [
             {
@@ -1096,6 +1119,12 @@
             "reset": {
               "register": "APB0RSTR",
               "field": "SYSCFGRST"
+            },
+            "low_power": {
+              "modes": {
+                "stop1": true
+              },
+              "wake_capable": true
             }
           }
         },
@@ -1784,5 +1813,20 @@
         }
       ]
     }
-  ]
+  ],
+  "power": {
+    "dialect": "Wb0Deepstop",
+    "modes": [
+      {
+        "kind": "Stop1",
+        "selector": 0,
+        "surviving_clocks": [
+          "LSE",
+          "LSI"
+        ],
+        "min_residency_us": 1500,
+        "exit_latency_us": 200
+      }
+    ]
+  }
 }

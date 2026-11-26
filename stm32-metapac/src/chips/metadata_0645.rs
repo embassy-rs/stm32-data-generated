@@ -13,7 +13,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "HCLK1",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("AHBPERCKSELR"),
+                register: Some("CCIPR1"),
                 field: Some("ADCSEL"),
                 prescaler: None,
             }),
@@ -252,7 +252,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "HCLK1",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("AHBPERCKSELR"),
+                register: Some("CCIPR1"),
                 field: Some("ADCSEL"),
                 prescaler: None,
             }),
@@ -475,7 +475,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB1PERCKSELR"),
+                register: Some("CCIPR2"),
                 field: Some("CECSEL"),
                 prescaler: None,
             }),
@@ -814,7 +814,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB1PERCKSELR"),
+                register: Some("CCIPR2"),
                 field: Some("FDCANSEL"),
                 prescaler: None,
             }),
@@ -877,7 +877,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB1PERCKSELR"),
+                register: Some("CCIPR2"),
                 field: Some("FDCANSEL"),
                 prescaler: None,
             }),
@@ -986,7 +986,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "HCLK5",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("AHBPERCKSELR"),
+                register: Some("CCIPR1"),
                 field: Some("FMCSEL"),
                 prescaler: None,
             }),
@@ -1846,7 +1846,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB1PERCKSELR"),
+                register: Some("CCIPR2"),
                 field: Some("I2C1_I3C1SEL"),
                 prescaler: None,
             }),
@@ -2061,7 +2061,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB1PERCKSELR"),
+                register: Some("CCIPR2"),
                 field: Some("I2C1_I3C1SEL"),
                 prescaler: None,
             }),
@@ -2223,7 +2223,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK4",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB45PERCKSELR"),
+                register: Some("CCIPR4"),
                 field: Some("LPTIM23SEL"),
                 prescaler: None,
             }),
@@ -2329,7 +2329,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK4",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB45PERCKSELR"),
+                register: Some("CCIPR4"),
                 field: Some("LPTIM23SEL"),
                 prescaler: None,
             }),
@@ -2416,7 +2416,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK4",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB45PERCKSELR"),
+                register: Some("CCIPR4"),
                 field: Some("LPTIM45SEL"),
                 prescaler: None,
             }),
@@ -2468,7 +2468,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK4",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB45PERCKSELR"),
+                register: Some("CCIPR4"),
                 field: Some("LPUART1SEL"),
                 prescaler: None,
             }),
@@ -2810,7 +2810,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK2",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB2PERCKSELR"),
+                register: Some("CCIPR3"),
                 field: Some("SAI2SEL"),
                 prescaler: None,
             }),
@@ -2890,7 +2890,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK2",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB2PERCKSELR"),
+                register: Some("CCIPR3"),
                 field: Some("SPI1SEL"),
                 prescaler: None,
             }),
@@ -3039,7 +3039,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB1PERCKSELR"),
+                register: Some("CCIPR2"),
                 field: Some("SPI23SEL"),
                 prescaler: None,
             }),
@@ -3183,7 +3183,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB1PERCKSELR"),
+                register: Some("CCIPR2"),
                 field: Some("SPI23SEL"),
                 prescaler: None,
             }),
@@ -3313,7 +3313,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK2",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB2PERCKSELR"),
+                register: Some("CCIPR3"),
                 field: Some("SPI45SEL"),
                 prescaler: None,
             }),
@@ -4606,7 +4606,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB1PERCKSELR"),
+                register: Some("CCIPR2"),
                 field: Some("USART234578SEL"),
                 prescaler: None,
             }),
@@ -4736,7 +4736,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB1PERCKSELR"),
+                register: Some("CCIPR2"),
                 field: Some("USART234578SEL"),
                 prescaler: None,
             }),
@@ -4821,7 +4821,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB1PERCKSELR"),
+                register: Some("CCIPR2"),
                 field: Some("USART234578SEL"),
                 prescaler: None,
             }),
@@ -4927,7 +4927,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK2",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB2PERCKSELR"),
+                register: Some("CCIPR3"),
                 field: Some("USART1SEL"),
                 prescaler: None,
             }),
@@ -5031,7 +5031,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB1PERCKSELR"),
+                register: Some("CCIPR2"),
                 field: Some("USART234578SEL"),
                 prescaler: None,
             }),
@@ -5120,7 +5120,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "PCLK1",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("APB1PERCKSELR"),
+                register: Some("CCIPR2"),
                 field: Some("USART234578SEL"),
                 prescaler: None,
             }),
@@ -5204,7 +5204,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "HCLK1",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("AHBPERCKSELR"),
+                register: Some("CCIPR1"),
                 field: Some("USB_OTG_FSSEL"),
                 prescaler: None,
             }),
@@ -5346,7 +5346,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
             bus_clock: "HCLK5",
             kernel_clock: Mux(PeripheralRccMux {
                 clock: None,
-                register: Some("AHBPERCKSELR"),
+                register: Some("CCIPR1"),
                 field: Some("XSPI1SEL"),
                 prescaler: None,
             }),

@@ -83,22 +83,22 @@ impl Rcc {
     }
     #[doc = "RCC AHB peripheral kernel clock selection register."]
     #[inline(always)]
-    pub const fn ahbperckselr(self) -> crate::common::Reg<regs::Ahbperckselr, crate::common::RW> {
+    pub const fn ccipr1(self) -> crate::common::Reg<regs::Ccipr1, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x4cusize) as _) }
     }
     #[doc = "RCC APB1 peripherals kernel clock selection register."]
     #[inline(always)]
-    pub const fn apb1perckselr(self) -> crate::common::Reg<regs::Apb1perckselr, crate::common::RW> {
+    pub const fn ccipr2(self) -> crate::common::Reg<regs::Ccipr2, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x50usize) as _) }
     }
     #[doc = "RCC APB2 peripherals kernel clock selection register."]
     #[inline(always)]
-    pub const fn apb2perckselr(self) -> crate::common::Reg<regs::Apb2perckselr, crate::common::RW> {
+    pub const fn ccipr3(self) -> crate::common::Reg<regs::Ccipr3, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x54usize) as _) }
     }
     #[doc = "RCC APB4,5 peripherals kernel clock selection register."]
     #[inline(always)]
-    pub const fn apb45perckselr(self) -> crate::common::Reg<regs::Apb45perckselr, crate::common::RW> {
+    pub const fn ccipr4(self) -> crate::common::Reg<regs::Ccipr4, crate::common::RW> {
         unsafe { crate::common::Reg::from_ptr(self.ptr.wrapping_add(0x58usize) as _) }
     }
     #[doc = "RCC clock source interrupt enable register."]
@@ -2547,216 +2547,6 @@ low-power peripheral clock enable Set and reset by software."]
             )
         }
     }
-    #[doc = "RCC AHB peripheral kernel clock selection register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Ahbperckselr(pub u32);
-    impl Ahbperckselr {
-        #[doc = "FMC kernel clock source selection Set and reset by software."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn fmcsel(&self) -> super::vals::Fmcsel {
-            let val = (self.0 >> 0usize) & 0x03;
-            super::vals::Fmcsel::from_bits(val as u8)
-        }
-        #[doc = "FMC kernel clock source selection Set and reset by software."]
-        #[inline(always)]
-        pub const fn set_fmcsel(&mut self, val: super::vals::Fmcsel) {
-            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
-        }
-        #[doc = "SDMMC1 and SDMMC2 kernel clock source selection Set and reset by software."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn sdmmcsel(&self) -> super::vals::Sdmmcsel {
-            let val = (self.0 >> 2usize) & 0x01;
-            super::vals::Sdmmcsel::from_bits(val as u8)
-        }
-        #[doc = "SDMMC1 and SDMMC2 kernel clock source selection Set and reset by software."]
-        #[inline(always)]
-        pub const fn set_sdmmcsel(&mut self, val: super::vals::Sdmmcsel) {
-            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
-        }
-        #[doc = "XSPI1 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn xspi1sel(&self) -> super::vals::Xspisel {
-            let val = (self.0 >> 4usize) & 0x03;
-            super::vals::Xspisel::from_bits(val as u8)
-        }
-        #[doc = "XSPI1 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock."]
-        #[inline(always)]
-        pub const fn set_xspi1sel(&mut self, val: super::vals::Xspisel) {
-            self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
-        }
-        #[doc = "XSPI2 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn xspi2sel(&self) -> super::vals::Xspisel {
-            let val = (self.0 >> 6usize) & 0x03;
-            super::vals::Xspisel::from_bits(val as u8)
-        }
-        #[doc = "XSPI2 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock."]
-        #[inline(always)]
-        pub const fn set_xspi2sel(&mut self, val: super::vals::Xspisel) {
-            self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
-        }
-        #[doc = "USBPHYC kernel clock frequency selection Set and reset by software. This field is used to indicate to the USBPHYC, the frequency of the reference kernel clock provided to the USBPHYC. others: reserved."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn usbrefcksel(&self) -> super::vals::Usbrefcksel {
-            let val = (self.0 >> 8usize) & 0x0f;
-            super::vals::Usbrefcksel::from_bits(val as u8)
-        }
-        #[doc = "USBPHYC kernel clock frequency selection Set and reset by software. This field is used to indicate to the USBPHYC, the frequency of the reference kernel clock provided to the USBPHYC. others: reserved."]
-        #[inline(always)]
-        pub const fn set_usbrefcksel(&mut self, val: super::vals::Usbrefcksel) {
-            self.0 = (self.0 & !(0x0f << 8usize)) | (((val.to_bits() as u32) & 0x0f) << 8usize);
-        }
-        #[doc = "USBPHYC kernel clock source selection Set and reset by software."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn usbphycsel(&self) -> super::vals::Usbphycsel {
-            let val = (self.0 >> 12usize) & 0x03;
-            super::vals::Usbphycsel::from_bits(val as u8)
-        }
-        #[doc = "USBPHYC kernel clock source selection Set and reset by software."]
-        #[inline(always)]
-        pub const fn set_usbphycsel(&mut self, val: super::vals::Usbphycsel) {
-            self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
-        }
-        #[doc = "OTGFS kernel clock source selection Set and reset by software."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn usb_otg_fssel(&self) -> super::vals::UsbOtgFssel {
-            let val = (self.0 >> 14usize) & 0x03;
-            super::vals::UsbOtgFssel::from_bits(val as u8)
-        }
-        #[doc = "OTGFS kernel clock source selection Set and reset by software."]
-        #[inline(always)]
-        pub const fn set_usb_otg_fssel(&mut self, val: super::vals::UsbOtgFssel) {
-            self.0 = (self.0 & !(0x03 << 14usize)) | (((val.to_bits() as u32) & 0x03) << 14usize);
-        }
-        #[doc = "Ethernet reference clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn eth_ref_clk_sel(&self) -> super::vals::EthRefClkSel {
-            let val = (self.0 >> 16usize) & 0x03;
-            super::vals::EthRefClkSel::from_bits(val as u8)
-        }
-        #[doc = "Ethernet reference clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[inline(always)]
-        pub const fn set_eth_ref_clk_sel(&mut self, val: super::vals::EthRefClkSel) {
-            self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
-        }
-        #[doc = "Clock source selection for external Ethernet PHY Set and reset by software."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn ethphy_clk_sel(&self) -> super::vals::EthphyClkSel {
-            let val = (self.0 >> 18usize) & 0x01;
-            super::vals::EthphyClkSel::from_bits(val as u8)
-        }
-        #[doc = "Clock source selection for external Ethernet PHY Set and reset by software."]
-        #[inline(always)]
-        pub const fn set_ethphy_clk_sel(&mut self, val: super::vals::EthphyClkSel) {
-            self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
-        }
-        #[doc = "ADF kernel clock source selection Set and reset by software. Note: I2S_CKIN is an external clock taken from a pin."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn adfsel(&self) -> super::vals::Adfsel {
-            let val = (self.0 >> 20usize) & 0x07;
-            super::vals::Adfsel::from_bits(val as u8)
-        }
-        #[doc = "ADF kernel clock source selection Set and reset by software. Note: I2S_CKIN is an external clock taken from a pin."]
-        #[inline(always)]
-        pub const fn set_adfsel(&mut self, val: super::vals::Adfsel) {
-            self.0 = (self.0 & !(0x07 << 20usize)) | (((val.to_bits() as u32) & 0x07) << 20usize);
-        }
-        #[doc = "SAR ADC kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn adcsel(&self) -> super::vals::Adcsel {
-            let val = (self.0 >> 24usize) & 0x03;
-            super::vals::Adcsel::from_bits(val as u8)
-        }
-        #[doc = "SAR ADC kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[inline(always)]
-        pub const fn set_adcsel(&mut self, val: super::vals::Adcsel) {
-            self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
-        }
-        #[doc = "PSSI kernel clock source selection Set and reset by software."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn pssisel(&self) -> super::vals::Pssisel {
-            let val = (self.0 >> 27usize) & 0x01;
-            super::vals::Pssisel::from_bits(val as u8)
-        }
-        #[doc = "PSSI kernel clock source selection Set and reset by software."]
-        #[inline(always)]
-        pub const fn set_pssisel(&mut self, val: super::vals::Pssisel) {
-            self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
-        }
-        #[doc = "per_ck clock source selection."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn persel(&self) -> super::vals::Persel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Persel::from_bits(val as u8)
-        }
-        #[doc = "per_ck clock source selection."]
-        #[inline(always)]
-        pub const fn set_persel(&mut self, val: super::vals::Persel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Ahbperckselr {
-        #[inline(always)]
-        fn default() -> Ahbperckselr {
-            Ahbperckselr(0)
-        }
-    }
-    #[cfg(feature = "debug")]
-    impl core::fmt::Debug for Ahbperckselr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Ahbperckselr")
-                .field("fmcsel", &self.fmcsel())
-                .field("sdmmcsel", &self.sdmmcsel())
-                .field("xspi1sel", &self.xspi1sel())
-                .field("xspi2sel", &self.xspi2sel())
-                .field("usbrefcksel", &self.usbrefcksel())
-                .field("usbphycsel", &self.usbphycsel())
-                .field("usb_otg_fssel", &self.usb_otg_fssel())
-                .field("eth_ref_clk_sel", &self.eth_ref_clk_sel())
-                .field("ethphy_clk_sel", &self.ethphy_clk_sel())
-                .field("adfsel", &self.adfsel())
-                .field("adcsel", &self.adcsel())
-                .field("pssisel", &self.pssisel())
-                .field("persel", &self.persel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Ahbperckselr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Ahbperckselr {{ fmcsel: {:?}, sdmmcsel: {:?}, xspi1sel: {:?}, xspi2sel: {:?}, usbrefcksel: {:?}, usbphycsel: {:?}, usb_otg_fssel: {:?}, eth_ref_clk_sel: {:?}, ethphy_clk_sel: {:?}, adfsel: {:?}, adcsel: {:?}, pssisel: {:?}, persel: {:?} }}",
-                self.fmcsel(),
-                self.sdmmcsel(),
-                self.xspi1sel(),
-                self.xspi2sel(),
-                self.usbrefcksel(),
-                self.usbphycsel(),
-                self.usb_otg_fssel(),
-                self.eth_ref_clk_sel(),
-                self.ethphy_clk_sel(),
-                self.adfsel(),
-                self.adcsel(),
-                self.pssisel(),
-                self.persel()
-            )
-        }
-    }
     #[doc = "RCC APB1 clock enable register 1."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -3653,146 +3443,6 @@ low-power peripheral clock enable Set and reset by software."]
             )
         }
     }
-    #[doc = "RCC APB1 peripherals kernel clock selection register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Apb1perckselr(pub u32);
-    impl Apb1perckselr {
-        #[doc = "USART2,3, UART4,5,7,8 (APB1) kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn usart234578sel(&self) -> super::vals::Usart234578sel {
-            let val = (self.0 >> 0usize) & 0x07;
-            super::vals::Usart234578sel::from_bits(val as u8)
-        }
-        #[doc = "USART2,3, UART4,5,7,8 (APB1) kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[inline(always)]
-        pub const fn set_usart234578sel(&mut self, val: super::vals::Usart234578sel) {
-            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
-        }
-        #[doc = "SPI/I2S2 and SPI/I2S3 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not be possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn spi23sel(&self) -> super::vals::Spi123sel {
-            let val = (self.0 >> 4usize) & 0x07;
-            super::vals::Spi123sel::from_bits(val as u8)
-        }
-        #[doc = "SPI/I2S2 and SPI/I2S3 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not be possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin."]
-        #[inline(always)]
-        pub const fn set_spi23sel(&mut self, val: super::vals::Spi123sel) {
-            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
-        }
-        #[doc = "I2C2, I2C3 kernel clock source selection Set and reset by software."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn i2c23sel(&self) -> super::vals::I2csel {
-            let val = (self.0 >> 8usize) & 0x03;
-            super::vals::I2csel::from_bits(val as u8)
-        }
-        #[doc = "I2C2, I2C3 kernel clock source selection Set and reset by software."]
-        #[inline(always)]
-        pub const fn set_i2c23sel(&mut self, val: super::vals::I2csel) {
-            self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
-        }
-        #[doc = "I2C1 or I3C1 kernel clock source selection Set and reset by software."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn i2c1_i3c1sel(&self) -> super::vals::I2c1I3c1sel {
-            let val = (self.0 >> 12usize) & 0x03;
-            super::vals::I2c1I3c1sel::from_bits(val as u8)
-        }
-        #[doc = "I2C1 or I3C1 kernel clock source selection Set and reset by software."]
-        #[inline(always)]
-        pub const fn set_i2c1_i3c1sel(&mut self, val: super::vals::I2c1I3c1sel) {
-            self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
-        }
-        #[doc = "LPTIM1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn lptim1sel(&self) -> super::vals::Lptim1sel {
-            let val = (self.0 >> 16usize) & 0x07;
-            super::vals::Lptim1sel::from_bits(val as u8)
-        }
-        #[doc = "LPTIM1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[inline(always)]
-        pub const fn set_lptim1sel(&mut self, val: super::vals::Lptim1sel) {
-            self.0 = (self.0 & !(0x07 << 16usize)) | (((val.to_bits() as u32) & 0x07) << 16usize);
-        }
-        #[doc = "FDCAN kernel clock source selection."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn fdcansel(&self) -> super::vals::Fdcansel {
-            let val = (self.0 >> 22usize) & 0x03;
-            super::vals::Fdcansel::from_bits(val as u8)
-        }
-        #[doc = "FDCAN kernel clock source selection."]
-        #[inline(always)]
-        pub const fn set_fdcansel(&mut self, val: super::vals::Fdcansel) {
-            self.0 = (self.0 & !(0x03 << 22usize)) | (((val.to_bits() as u32) & 0x03) << 22usize);
-        }
-        #[doc = "SPDIFRX kernel clock source selection."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn spdifrxsel(&self) -> super::vals::Spdifrxsel {
-            let val = (self.0 >> 24usize) & 0x03;
-            super::vals::Spdifrxsel::from_bits(val as u8)
-        }
-        #[doc = "SPDIFRX kernel clock source selection."]
-        #[inline(always)]
-        pub const fn set_spdifrxsel(&mut self, val: super::vals::Spdifrxsel) {
-            self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
-        }
-        #[doc = "HDMI-CEC kernel clock source selection Set and reset by software."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn cecsel(&self) -> super::vals::Cecsel {
-            let val = (self.0 >> 28usize) & 0x03;
-            super::vals::Cecsel::from_bits(val as u8)
-        }
-        #[doc = "HDMI-CEC kernel clock source selection Set and reset by software."]
-        #[inline(always)]
-        pub const fn set_cecsel(&mut self, val: super::vals::Cecsel) {
-            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
-        }
-    }
-    impl Default for Apb1perckselr {
-        #[inline(always)]
-        fn default() -> Apb1perckselr {
-            Apb1perckselr(0)
-        }
-    }
-    #[cfg(feature = "debug")]
-    impl core::fmt::Debug for Apb1perckselr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Apb1perckselr")
-                .field("usart234578sel", &self.usart234578sel())
-                .field("spi23sel", &self.spi23sel())
-                .field("i2c23sel", &self.i2c23sel())
-                .field("i2c1_i3c1sel", &self.i2c1_i3c1sel())
-                .field("lptim1sel", &self.lptim1sel())
-                .field("fdcansel", &self.fdcansel())
-                .field("spdifrxsel", &self.spdifrxsel())
-                .field("cecsel", &self.cecsel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Apb1perckselr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Apb1perckselr {{ usart234578sel: {:?}, spi23sel: {:?}, i2c23sel: {:?}, i2c1_i3c1sel: {:?}, lptim1sel: {:?}, fdcansel: {:?}, spdifrxsel: {:?}, cecsel: {:?} }}",
-                self.usart234578sel(),
-                self.spi23sel(),
-                self.i2c23sel(),
-                self.i2c1_i3c1sel(),
-                self.lptim1sel(),
-                self.fdcansel(),
-                self.spdifrxsel(),
-                self.cecsel()
-            )
-        }
-    }
     #[doc = "RCC APB1 peripheral reset register 1."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4591,104 +4241,6 @@ low-power peripheral clock enable Set and reset by software."]
             )
         }
     }
-    #[doc = "RCC APB2 peripherals kernel clock selection register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Apb2perckselr(pub u32);
-    impl Apb2perckselr {
-        #[doc = "USART1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn usart1sel(&self) -> super::vals::Usart1sel {
-            let val = (self.0 >> 0usize) & 0x07;
-            super::vals::Usart1sel::from_bits(val as u8)
-        }
-        #[doc = "USART1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[inline(always)]
-        pub const fn set_usart1sel(&mut self, val: super::vals::Usart1sel) {
-            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
-        }
-        #[doc = "SPI4 and 5 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn spi45sel(&self) -> super::vals::Spi45sel {
-            let val = (self.0 >> 4usize) & 0x07;
-            super::vals::Spi45sel::from_bits(val as u8)
-        }
-        #[doc = "SPI4 and 5 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[inline(always)]
-        pub const fn set_spi45sel(&mut self, val: super::vals::Spi45sel) {
-            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
-        }
-        #[doc = "SPI/I2S1 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not be possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn spi1sel(&self) -> super::vals::Spi123sel {
-            let val = (self.0 >> 8usize) & 0x07;
-            super::vals::Spi123sel::from_bits(val as u8)
-        }
-        #[doc = "SPI/I2S1 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not be possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin."]
-        #[inline(always)]
-        pub const fn set_spi1sel(&mut self, val: super::vals::Spi123sel) {
-            self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
-        }
-        #[doc = "SAI1 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn sai1sel(&self) -> super::vals::Sai1sel {
-            let val = (self.0 >> 16usize) & 0x07;
-            super::vals::Sai1sel::from_bits(val as u8)
-        }
-        #[doc = "SAI1 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin."]
-        #[inline(always)]
-        pub const fn set_sai1sel(&mut self, val: super::vals::Sai1sel) {
-            self.0 = (self.0 & !(0x07 << 16usize)) | (((val.to_bits() as u32) & 0x07) << 16usize);
-        }
-        #[doc = "SAI2 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin. spdifrx_symb_ck is the symbol clock generated by the spdifrx (see Figure 51)."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn sai2sel(&self) -> super::vals::Sai2sel {
-            let val = (self.0 >> 20usize) & 0x07;
-            super::vals::Sai2sel::from_bits(val as u8)
-        }
-        #[doc = "SAI2 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin. spdifrx_symb_ck is the symbol clock generated by the spdifrx (see Figure 51)."]
-        #[inline(always)]
-        pub const fn set_sai2sel(&mut self, val: super::vals::Sai2sel) {
-            self.0 = (self.0 & !(0x07 << 20usize)) | (((val.to_bits() as u32) & 0x07) << 20usize);
-        }
-    }
-    impl Default for Apb2perckselr {
-        #[inline(always)]
-        fn default() -> Apb2perckselr {
-            Apb2perckselr(0)
-        }
-    }
-    #[cfg(feature = "debug")]
-    impl core::fmt::Debug for Apb2perckselr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Apb2perckselr")
-                .field("usart1sel", &self.usart1sel())
-                .field("spi45sel", &self.spi45sel())
-                .field("spi1sel", &self.spi1sel())
-                .field("sai1sel", &self.sai1sel())
-                .field("sai2sel", &self.sai2sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Apb2perckselr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Apb2perckselr {{ usart1sel: {:?}, spi45sel: {:?}, spi1sel: {:?}, sai1sel: {:?}, sai2sel: {:?} }}",
-                self.usart1sel(),
-                self.spi45sel(),
-                self.spi1sel(),
-                self.sai1sel(),
-                self.sai2sel()
-            )
-        }
-    }
     #[doc = "RCC APB2 peripheral reset register."]
     #[repr(transparent)]
     #[derive(Copy, Clone, Eq, PartialEq)]
@@ -4868,90 +4420,6 @@ low-power peripheral clock enable Set and reset by software."]
                 self.spi5rst(),
                 self.sai1rst(),
                 self.sai2rst()
-            )
-        }
-    }
-    #[doc = "RCC APB4,5 peripherals kernel clock selection register."]
-    #[repr(transparent)]
-    #[derive(Copy, Clone, Eq, PartialEq)]
-    pub struct Apb45perckselr(pub u32);
-    impl Apb45perckselr {
-        #[doc = "LPUART1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn lpuart1sel(&self) -> super::vals::Lpuartsel {
-            let val = (self.0 >> 0usize) & 0x07;
-            super::vals::Lpuartsel::from_bits(val as u8)
-        }
-        #[doc = "LPUART1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[inline(always)]
-        pub const fn set_lpuart1sel(&mut self, val: super::vals::Lpuartsel) {
-            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
-        }
-        #[doc = "SPI/I2S6 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn spi6sel(&self) -> super::vals::Spi6sel {
-            let val = (self.0 >> 4usize) & 0x07;
-            super::vals::Spi6sel::from_bits(val as u8)
-        }
-        #[doc = "SPI/I2S6 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[inline(always)]
-        pub const fn set_spi6sel(&mut self, val: super::vals::Spi6sel) {
-            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
-        }
-        #[doc = "LPTIM2 and LPTIM3 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn lptim23sel(&self) -> super::vals::Lptimsel {
-            let val = (self.0 >> 8usize) & 0x07;
-            super::vals::Lptimsel::from_bits(val as u8)
-        }
-        #[doc = "LPTIM2 and LPTIM3 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[inline(always)]
-        pub const fn set_lptim23sel(&mut self, val: super::vals::Lptimsel) {
-            self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
-        }
-        #[doc = "LPTIM4, and LPTIM5 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[must_use]
-        #[inline(always)]
-        pub const fn lptim45sel(&self) -> super::vals::Lptimsel {
-            let val = (self.0 >> 12usize) & 0x07;
-            super::vals::Lptimsel::from_bits(val as u8)
-        }
-        #[doc = "LPTIM4, and LPTIM5 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
-        #[inline(always)]
-        pub const fn set_lptim45sel(&mut self, val: super::vals::Lptimsel) {
-            self.0 = (self.0 & !(0x07 << 12usize)) | (((val.to_bits() as u32) & 0x07) << 12usize);
-        }
-    }
-    impl Default for Apb45perckselr {
-        #[inline(always)]
-        fn default() -> Apb45perckselr {
-            Apb45perckselr(0)
-        }
-    }
-    #[cfg(feature = "debug")]
-    impl core::fmt::Debug for Apb45perckselr {
-        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
-            f.debug_struct("Apb45perckselr")
-                .field("lpuart1sel", &self.lpuart1sel())
-                .field("spi6sel", &self.spi6sel())
-                .field("lptim23sel", &self.lptim23sel())
-                .field("lptim45sel", &self.lptim45sel())
-                .finish()
-        }
-    }
-    #[cfg(feature = "defmt")]
-    impl defmt::Format for Apb45perckselr {
-        fn format(&self, f: defmt::Formatter) {
-            defmt::write!(
-                f,
-                "Apb45perckselr {{ lpuart1sel: {:?}, spi6sel: {:?}, lptim23sel: {:?}, lptim45sel: {:?} }}",
-                self.lpuart1sel(),
-                self.spi6sel(),
-                self.lptim23sel(),
-                self.lptim45sel()
             )
         }
     }
@@ -5959,6 +5427,538 @@ and rcc_aclk. This group of clocks is also named sys_bus_ck. Changing this divis
     impl defmt::Format for Bmcfgr {
         fn format(&self, f: defmt::Formatter) {
             defmt::write!(f, "Bmcfgr {{ bmpre: {:?} }}", self.bmpre())
+        }
+    }
+    #[doc = "RCC AHB peripheral kernel clock selection register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ccipr1(pub u32);
+    impl Ccipr1 {
+        #[doc = "FMC kernel clock source selection Set and reset by software."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fmcsel(&self) -> super::vals::Fmcsel {
+            let val = (self.0 >> 0usize) & 0x03;
+            super::vals::Fmcsel::from_bits(val as u8)
+        }
+        #[doc = "FMC kernel clock source selection Set and reset by software."]
+        #[inline(always)]
+        pub const fn set_fmcsel(&mut self, val: super::vals::Fmcsel) {
+            self.0 = (self.0 & !(0x03 << 0usize)) | (((val.to_bits() as u32) & 0x03) << 0usize);
+        }
+        #[doc = "SDMMC1 and SDMMC2 kernel clock source selection Set and reset by software."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sdmmcsel(&self) -> super::vals::Sdmmcsel {
+            let val = (self.0 >> 2usize) & 0x01;
+            super::vals::Sdmmcsel::from_bits(val as u8)
+        }
+        #[doc = "SDMMC1 and SDMMC2 kernel clock source selection Set and reset by software."]
+        #[inline(always)]
+        pub const fn set_sdmmcsel(&mut self, val: super::vals::Sdmmcsel) {
+            self.0 = (self.0 & !(0x01 << 2usize)) | (((val.to_bits() as u32) & 0x01) << 2usize);
+        }
+        #[doc = "XSPI1 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn xspi1sel(&self) -> super::vals::Xspisel {
+            let val = (self.0 >> 4usize) & 0x03;
+            super::vals::Xspisel::from_bits(val as u8)
+        }
+        #[doc = "XSPI1 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock."]
+        #[inline(always)]
+        pub const fn set_xspi1sel(&mut self, val: super::vals::Xspisel) {
+            self.0 = (self.0 & !(0x03 << 4usize)) | (((val.to_bits() as u32) & 0x03) << 4usize);
+        }
+        #[doc = "XSPI2 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn xspi2sel(&self) -> super::vals::Xspisel {
+            let val = (self.0 >> 6usize) & 0x03;
+            super::vals::Xspisel::from_bits(val as u8)
+        }
+        #[doc = "XSPI2 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock."]
+        #[inline(always)]
+        pub const fn set_xspi2sel(&mut self, val: super::vals::Xspisel) {
+            self.0 = (self.0 & !(0x03 << 6usize)) | (((val.to_bits() as u32) & 0x03) << 6usize);
+        }
+        #[doc = "USBPHYC kernel clock frequency selection Set and reset by software. This field is used to indicate to the USBPHYC, the frequency of the reference kernel clock provided to the USBPHYC. others: reserved."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn usbrefcksel(&self) -> super::vals::Usbrefcksel {
+            let val = (self.0 >> 8usize) & 0x0f;
+            super::vals::Usbrefcksel::from_bits(val as u8)
+        }
+        #[doc = "USBPHYC kernel clock frequency selection Set and reset by software. This field is used to indicate to the USBPHYC, the frequency of the reference kernel clock provided to the USBPHYC. others: reserved."]
+        #[inline(always)]
+        pub const fn set_usbrefcksel(&mut self, val: super::vals::Usbrefcksel) {
+            self.0 = (self.0 & !(0x0f << 8usize)) | (((val.to_bits() as u32) & 0x0f) << 8usize);
+        }
+        #[doc = "USBPHYC kernel clock source selection Set and reset by software."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn usbphycsel(&self) -> super::vals::Usbphycsel {
+            let val = (self.0 >> 12usize) & 0x03;
+            super::vals::Usbphycsel::from_bits(val as u8)
+        }
+        #[doc = "USBPHYC kernel clock source selection Set and reset by software."]
+        #[inline(always)]
+        pub const fn set_usbphycsel(&mut self, val: super::vals::Usbphycsel) {
+            self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
+        }
+        #[doc = "OTGFS kernel clock source selection Set and reset by software."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn usb_otg_fssel(&self) -> super::vals::UsbOtgFssel {
+            let val = (self.0 >> 14usize) & 0x03;
+            super::vals::UsbOtgFssel::from_bits(val as u8)
+        }
+        #[doc = "OTGFS kernel clock source selection Set and reset by software."]
+        #[inline(always)]
+        pub const fn set_usb_otg_fssel(&mut self, val: super::vals::UsbOtgFssel) {
+            self.0 = (self.0 & !(0x03 << 14usize)) | (((val.to_bits() as u32) & 0x03) << 14usize);
+        }
+        #[doc = "Ethernet reference clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn eth_ref_clk_sel(&self) -> super::vals::EthRefClkSel {
+            let val = (self.0 >> 16usize) & 0x03;
+            super::vals::EthRefClkSel::from_bits(val as u8)
+        }
+        #[doc = "Ethernet reference clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[inline(always)]
+        pub const fn set_eth_ref_clk_sel(&mut self, val: super::vals::EthRefClkSel) {
+            self.0 = (self.0 & !(0x03 << 16usize)) | (((val.to_bits() as u32) & 0x03) << 16usize);
+        }
+        #[doc = "Clock source selection for external Ethernet PHY Set and reset by software."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn ethphy_clk_sel(&self) -> super::vals::EthphyClkSel {
+            let val = (self.0 >> 18usize) & 0x01;
+            super::vals::EthphyClkSel::from_bits(val as u8)
+        }
+        #[doc = "Clock source selection for external Ethernet PHY Set and reset by software."]
+        #[inline(always)]
+        pub const fn set_ethphy_clk_sel(&mut self, val: super::vals::EthphyClkSel) {
+            self.0 = (self.0 & !(0x01 << 18usize)) | (((val.to_bits() as u32) & 0x01) << 18usize);
+        }
+        #[doc = "ADF kernel clock source selection Set and reset by software. Note: I2S_CKIN is an external clock taken from a pin."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn adfsel(&self) -> super::vals::Adfsel {
+            let val = (self.0 >> 20usize) & 0x07;
+            super::vals::Adfsel::from_bits(val as u8)
+        }
+        #[doc = "ADF kernel clock source selection Set and reset by software. Note: I2S_CKIN is an external clock taken from a pin."]
+        #[inline(always)]
+        pub const fn set_adfsel(&mut self, val: super::vals::Adfsel) {
+            self.0 = (self.0 & !(0x07 << 20usize)) | (((val.to_bits() as u32) & 0x07) << 20usize);
+        }
+        #[doc = "SAR ADC kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn adcsel(&self) -> super::vals::Adcsel {
+            let val = (self.0 >> 24usize) & 0x03;
+            super::vals::Adcsel::from_bits(val as u8)
+        }
+        #[doc = "SAR ADC kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[inline(always)]
+        pub const fn set_adcsel(&mut self, val: super::vals::Adcsel) {
+            self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
+        }
+        #[doc = "PSSI kernel clock source selection Set and reset by software."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn pssisel(&self) -> super::vals::Pssisel {
+            let val = (self.0 >> 27usize) & 0x01;
+            super::vals::Pssisel::from_bits(val as u8)
+        }
+        #[doc = "PSSI kernel clock source selection Set and reset by software."]
+        #[inline(always)]
+        pub const fn set_pssisel(&mut self, val: super::vals::Pssisel) {
+            self.0 = (self.0 & !(0x01 << 27usize)) | (((val.to_bits() as u32) & 0x01) << 27usize);
+        }
+        #[doc = "per_ck clock source selection."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn persel(&self) -> super::vals::Persel {
+            let val = (self.0 >> 28usize) & 0x03;
+            super::vals::Persel::from_bits(val as u8)
+        }
+        #[doc = "per_ck clock source selection."]
+        #[inline(always)]
+        pub const fn set_persel(&mut self, val: super::vals::Persel) {
+            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
+        }
+    }
+    impl Default for Ccipr1 {
+        #[inline(always)]
+        fn default() -> Ccipr1 {
+            Ccipr1(0)
+        }
+    }
+    #[cfg(feature = "debug")]
+    impl core::fmt::Debug for Ccipr1 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ccipr1")
+                .field("fmcsel", &self.fmcsel())
+                .field("sdmmcsel", &self.sdmmcsel())
+                .field("xspi1sel", &self.xspi1sel())
+                .field("xspi2sel", &self.xspi2sel())
+                .field("usbrefcksel", &self.usbrefcksel())
+                .field("usbphycsel", &self.usbphycsel())
+                .field("usb_otg_fssel", &self.usb_otg_fssel())
+                .field("eth_ref_clk_sel", &self.eth_ref_clk_sel())
+                .field("ethphy_clk_sel", &self.ethphy_clk_sel())
+                .field("adfsel", &self.adfsel())
+                .field("adcsel", &self.adcsel())
+                .field("pssisel", &self.pssisel())
+                .field("persel", &self.persel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ccipr1 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ccipr1 {{ fmcsel: {:?}, sdmmcsel: {:?}, xspi1sel: {:?}, xspi2sel: {:?}, usbrefcksel: {:?}, usbphycsel: {:?}, usb_otg_fssel: {:?}, eth_ref_clk_sel: {:?}, ethphy_clk_sel: {:?}, adfsel: {:?}, adcsel: {:?}, pssisel: {:?}, persel: {:?} }}",
+                self.fmcsel(),
+                self.sdmmcsel(),
+                self.xspi1sel(),
+                self.xspi2sel(),
+                self.usbrefcksel(),
+                self.usbphycsel(),
+                self.usb_otg_fssel(),
+                self.eth_ref_clk_sel(),
+                self.ethphy_clk_sel(),
+                self.adfsel(),
+                self.adcsel(),
+                self.pssisel(),
+                self.persel()
+            )
+        }
+    }
+    #[doc = "RCC APB1 peripherals kernel clock selection register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ccipr2(pub u32);
+    impl Ccipr2 {
+        #[doc = "USART2,3, UART4,5,7,8 (APB1) kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn usart234578sel(&self) -> super::vals::Usart234578sel {
+            let val = (self.0 >> 0usize) & 0x07;
+            super::vals::Usart234578sel::from_bits(val as u8)
+        }
+        #[doc = "USART2,3, UART4,5,7,8 (APB1) kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[inline(always)]
+        pub const fn set_usart234578sel(&mut self, val: super::vals::Usart234578sel) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
+        }
+        #[doc = "SPI/I2S2 and SPI/I2S3 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not be possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn spi23sel(&self) -> super::vals::Spi123sel {
+            let val = (self.0 >> 4usize) & 0x07;
+            super::vals::Spi123sel::from_bits(val as u8)
+        }
+        #[doc = "SPI/I2S2 and SPI/I2S3 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not be possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin."]
+        #[inline(always)]
+        pub const fn set_spi23sel(&mut self, val: super::vals::Spi123sel) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
+        }
+        #[doc = "I2C2, I2C3 kernel clock source selection Set and reset by software."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn i2c23sel(&self) -> super::vals::I2csel {
+            let val = (self.0 >> 8usize) & 0x03;
+            super::vals::I2csel::from_bits(val as u8)
+        }
+        #[doc = "I2C2, I2C3 kernel clock source selection Set and reset by software."]
+        #[inline(always)]
+        pub const fn set_i2c23sel(&mut self, val: super::vals::I2csel) {
+            self.0 = (self.0 & !(0x03 << 8usize)) | (((val.to_bits() as u32) & 0x03) << 8usize);
+        }
+        #[doc = "I2C1 or I3C1 kernel clock source selection Set and reset by software."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn i2c1_i3c1sel(&self) -> super::vals::I2c1I3c1sel {
+            let val = (self.0 >> 12usize) & 0x03;
+            super::vals::I2c1I3c1sel::from_bits(val as u8)
+        }
+        #[doc = "I2C1 or I3C1 kernel clock source selection Set and reset by software."]
+        #[inline(always)]
+        pub const fn set_i2c1_i3c1sel(&mut self, val: super::vals::I2c1I3c1sel) {
+            self.0 = (self.0 & !(0x03 << 12usize)) | (((val.to_bits() as u32) & 0x03) << 12usize);
+        }
+        #[doc = "LPTIM1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lptim1sel(&self) -> super::vals::Lptim1sel {
+            let val = (self.0 >> 16usize) & 0x07;
+            super::vals::Lptim1sel::from_bits(val as u8)
+        }
+        #[doc = "LPTIM1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[inline(always)]
+        pub const fn set_lptim1sel(&mut self, val: super::vals::Lptim1sel) {
+            self.0 = (self.0 & !(0x07 << 16usize)) | (((val.to_bits() as u32) & 0x07) << 16usize);
+        }
+        #[doc = "FDCAN kernel clock source selection."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn fdcansel(&self) -> super::vals::Fdcansel {
+            let val = (self.0 >> 22usize) & 0x03;
+            super::vals::Fdcansel::from_bits(val as u8)
+        }
+        #[doc = "FDCAN kernel clock source selection."]
+        #[inline(always)]
+        pub const fn set_fdcansel(&mut self, val: super::vals::Fdcansel) {
+            self.0 = (self.0 & !(0x03 << 22usize)) | (((val.to_bits() as u32) & 0x03) << 22usize);
+        }
+        #[doc = "SPDIFRX kernel clock source selection."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn spdifrxsel(&self) -> super::vals::Spdifrxsel {
+            let val = (self.0 >> 24usize) & 0x03;
+            super::vals::Spdifrxsel::from_bits(val as u8)
+        }
+        #[doc = "SPDIFRX kernel clock source selection."]
+        #[inline(always)]
+        pub const fn set_spdifrxsel(&mut self, val: super::vals::Spdifrxsel) {
+            self.0 = (self.0 & !(0x03 << 24usize)) | (((val.to_bits() as u32) & 0x03) << 24usize);
+        }
+        #[doc = "HDMI-CEC kernel clock source selection Set and reset by software."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn cecsel(&self) -> super::vals::Cecsel {
+            let val = (self.0 >> 28usize) & 0x03;
+            super::vals::Cecsel::from_bits(val as u8)
+        }
+        #[doc = "HDMI-CEC kernel clock source selection Set and reset by software."]
+        #[inline(always)]
+        pub const fn set_cecsel(&mut self, val: super::vals::Cecsel) {
+            self.0 = (self.0 & !(0x03 << 28usize)) | (((val.to_bits() as u32) & 0x03) << 28usize);
+        }
+    }
+    impl Default for Ccipr2 {
+        #[inline(always)]
+        fn default() -> Ccipr2 {
+            Ccipr2(0)
+        }
+    }
+    #[cfg(feature = "debug")]
+    impl core::fmt::Debug for Ccipr2 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ccipr2")
+                .field("usart234578sel", &self.usart234578sel())
+                .field("spi23sel", &self.spi23sel())
+                .field("i2c23sel", &self.i2c23sel())
+                .field("i2c1_i3c1sel", &self.i2c1_i3c1sel())
+                .field("lptim1sel", &self.lptim1sel())
+                .field("fdcansel", &self.fdcansel())
+                .field("spdifrxsel", &self.spdifrxsel())
+                .field("cecsel", &self.cecsel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ccipr2 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ccipr2 {{ usart234578sel: {:?}, spi23sel: {:?}, i2c23sel: {:?}, i2c1_i3c1sel: {:?}, lptim1sel: {:?}, fdcansel: {:?}, spdifrxsel: {:?}, cecsel: {:?} }}",
+                self.usart234578sel(),
+                self.spi23sel(),
+                self.i2c23sel(),
+                self.i2c1_i3c1sel(),
+                self.lptim1sel(),
+                self.fdcansel(),
+                self.spdifrxsel(),
+                self.cecsel()
+            )
+        }
+    }
+    #[doc = "RCC APB2 peripherals kernel clock selection register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ccipr3(pub u32);
+    impl Ccipr3 {
+        #[doc = "USART1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn usart1sel(&self) -> super::vals::Usart1sel {
+            let val = (self.0 >> 0usize) & 0x07;
+            super::vals::Usart1sel::from_bits(val as u8)
+        }
+        #[doc = "USART1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[inline(always)]
+        pub const fn set_usart1sel(&mut self, val: super::vals::Usart1sel) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
+        }
+        #[doc = "SPI4 and 5 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn spi45sel(&self) -> super::vals::Spi45sel {
+            let val = (self.0 >> 4usize) & 0x07;
+            super::vals::Spi45sel::from_bits(val as u8)
+        }
+        #[doc = "SPI4 and 5 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[inline(always)]
+        pub const fn set_spi45sel(&mut self, val: super::vals::Spi45sel) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
+        }
+        #[doc = "SPI/I2S1 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not be possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn spi1sel(&self) -> super::vals::Spi123sel {
+            let val = (self.0 >> 8usize) & 0x07;
+            super::vals::Spi123sel::from_bits(val as u8)
+        }
+        #[doc = "SPI/I2S1 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not be possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin."]
+        #[inline(always)]
+        pub const fn set_spi1sel(&mut self, val: super::vals::Spi123sel) {
+            self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
+        }
+        #[doc = "SAI1 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sai1sel(&self) -> super::vals::Sai1sel {
+            let val = (self.0 >> 16usize) & 0x07;
+            super::vals::Sai1sel::from_bits(val as u8)
+        }
+        #[doc = "SAI1 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin."]
+        #[inline(always)]
+        pub const fn set_sai1sel(&mut self, val: super::vals::Sai1sel) {
+            self.0 = (self.0 & !(0x07 << 16usize)) | (((val.to_bits() as u32) & 0x07) << 16usize);
+        }
+        #[doc = "SAI2 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin. spdifrx_symb_ck is the symbol clock generated by the spdifrx (see Figure 51)."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn sai2sel(&self) -> super::vals::Sai2sel {
+            let val = (self.0 >> 20usize) & 0x07;
+            super::vals::Sai2sel::from_bits(val as u8)
+        }
+        #[doc = "SAI2 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin. spdifrx_symb_ck is the symbol clock generated by the spdifrx (see Figure 51)."]
+        #[inline(always)]
+        pub const fn set_sai2sel(&mut self, val: super::vals::Sai2sel) {
+            self.0 = (self.0 & !(0x07 << 20usize)) | (((val.to_bits() as u32) & 0x07) << 20usize);
+        }
+    }
+    impl Default for Ccipr3 {
+        #[inline(always)]
+        fn default() -> Ccipr3 {
+            Ccipr3(0)
+        }
+    }
+    #[cfg(feature = "debug")]
+    impl core::fmt::Debug for Ccipr3 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ccipr3")
+                .field("usart1sel", &self.usart1sel())
+                .field("spi45sel", &self.spi45sel())
+                .field("spi1sel", &self.spi1sel())
+                .field("sai1sel", &self.sai1sel())
+                .field("sai2sel", &self.sai2sel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ccipr3 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ccipr3 {{ usart1sel: {:?}, spi45sel: {:?}, spi1sel: {:?}, sai1sel: {:?}, sai2sel: {:?} }}",
+                self.usart1sel(),
+                self.spi45sel(),
+                self.spi1sel(),
+                self.sai1sel(),
+                self.sai2sel()
+            )
+        }
+    }
+    #[doc = "RCC APB4,5 peripherals kernel clock selection register."]
+    #[repr(transparent)]
+    #[derive(Copy, Clone, Eq, PartialEq)]
+    pub struct Ccipr4(pub u32);
+    impl Ccipr4 {
+        #[doc = "LPUART1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lpuart1sel(&self) -> super::vals::Lpuartsel {
+            let val = (self.0 >> 0usize) & 0x07;
+            super::vals::Lpuartsel::from_bits(val as u8)
+        }
+        #[doc = "LPUART1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[inline(always)]
+        pub const fn set_lpuart1sel(&mut self, val: super::vals::Lpuartsel) {
+            self.0 = (self.0 & !(0x07 << 0usize)) | (((val.to_bits() as u32) & 0x07) << 0usize);
+        }
+        #[doc = "SPI/I2S6 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn spi6sel(&self) -> super::vals::Spi6sel {
+            let val = (self.0 >> 4usize) & 0x07;
+            super::vals::Spi6sel::from_bits(val as u8)
+        }
+        #[doc = "SPI/I2S6 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[inline(always)]
+        pub const fn set_spi6sel(&mut self, val: super::vals::Spi6sel) {
+            self.0 = (self.0 & !(0x07 << 4usize)) | (((val.to_bits() as u32) & 0x07) << 4usize);
+        }
+        #[doc = "LPTIM2 and LPTIM3 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lptim23sel(&self) -> super::vals::Lptimsel {
+            let val = (self.0 >> 8usize) & 0x07;
+            super::vals::Lptimsel::from_bits(val as u8)
+        }
+        #[doc = "LPTIM2 and LPTIM3 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[inline(always)]
+        pub const fn set_lptim23sel(&mut self, val: super::vals::Lptimsel) {
+            self.0 = (self.0 & !(0x07 << 8usize)) | (((val.to_bits() as u32) & 0x07) << 8usize);
+        }
+        #[doc = "LPTIM4, and LPTIM5 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[must_use]
+        #[inline(always)]
+        pub const fn lptim45sel(&self) -> super::vals::Lptimsel {
+            let val = (self.0 >> 12usize) & 0x07;
+            super::vals::Lptimsel::from_bits(val as u8)
+        }
+        #[doc = "LPTIM4, and LPTIM5 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled."]
+        #[inline(always)]
+        pub const fn set_lptim45sel(&mut self, val: super::vals::Lptimsel) {
+            self.0 = (self.0 & !(0x07 << 12usize)) | (((val.to_bits() as u32) & 0x07) << 12usize);
+        }
+    }
+    impl Default for Ccipr4 {
+        #[inline(always)]
+        fn default() -> Ccipr4 {
+            Ccipr4(0)
+        }
+    }
+    #[cfg(feature = "debug")]
+    impl core::fmt::Debug for Ccipr4 {
+        fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+            f.debug_struct("Ccipr4")
+                .field("lpuart1sel", &self.lpuart1sel())
+                .field("spi6sel", &self.spi6sel())
+                .field("lptim23sel", &self.lptim23sel())
+                .field("lptim45sel", &self.lptim45sel())
+                .finish()
+        }
+    }
+    #[cfg(feature = "defmt")]
+    impl defmt::Format for Ccipr4 {
+        fn format(&self, f: defmt::Formatter) {
+            defmt::write!(
+                f,
+                "Ccipr4 {{ lpuart1sel: {:?}, spi6sel: {:?}, lptim23sel: {:?}, lptim45sel: {:?} }}",
+                self.lpuart1sel(),
+                self.spi6sel(),
+                self.lptim23sel(),
+                self.lptim45sel()
+            )
         }
     }
     #[doc = "RCC CPU domain clock configuration register."]

@@ -83,28 +83,28 @@
         "fieldset": "PLLFRACR"
       },
       {
-        "name": "AHBPERCKSELR",
+        "name": "CCIPR1",
         "description": "RCC AHB peripheral kernel clock selection register.",
         "byte_offset": 76,
-        "fieldset": "AHBPERCKSELR"
+        "fieldset": "CCIPR1"
       },
       {
-        "name": "APB1PERCKSELR",
+        "name": "CCIPR2",
         "description": "RCC APB1 peripherals kernel clock selection register.",
         "byte_offset": 80,
-        "fieldset": "APB1PERCKSELR"
+        "fieldset": "CCIPR2"
       },
       {
-        "name": "APB2PERCKSELR",
+        "name": "CCIPR3",
         "description": "RCC APB2 peripherals kernel clock selection register.",
         "byte_offset": 84,
-        "fieldset": "APB2PERCKSELR"
+        "fieldset": "CCIPR3"
       },
       {
-        "name": "APB45PERCKSELR",
+        "name": "CCIPR4",
         "description": "RCC APB4,5 peripherals kernel clock selection register.",
         "byte_offset": 88,
-        "fieldset": "APB45PERCKSELR"
+        "fieldset": "CCIPR4"
       },
       {
         "name": "CIER",
@@ -1212,102 +1212,6 @@
       }
     ]
   },
-  "fieldset/AHBPERCKSELR": {
-    "description": "RCC AHB peripheral kernel clock selection register.",
-    "fields": [
-      {
-        "name": "FMCSEL",
-        "description": "FMC kernel clock source selection Set and reset by software.",
-        "bit_offset": 0,
-        "bit_size": 2,
-        "enum": "FMCSEL"
-      },
-      {
-        "name": "SDMMCSEL",
-        "description": "SDMMC1 and SDMMC2 kernel clock source selection Set and reset by software.",
-        "bit_offset": 2,
-        "bit_size": 1,
-        "enum": "SDMMCSEL"
-      },
-      {
-        "name": "XSPI1SEL",
-        "description": "XSPI1 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock.",
-        "bit_offset": 4,
-        "bit_size": 2,
-        "enum": "XSPISEL"
-      },
-      {
-        "name": "XSPI2SEL",
-        "description": "XSPI2 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock.",
-        "bit_offset": 6,
-        "bit_size": 2,
-        "enum": "XSPISEL"
-      },
-      {
-        "name": "USBREFCKSEL",
-        "description": "USBPHYC kernel clock frequency selection Set and reset by software. This field is used to indicate to the USBPHYC, the frequency of the reference kernel clock provided to the USBPHYC. others: reserved.",
-        "bit_offset": 8,
-        "bit_size": 4,
-        "enum": "USBREFCKSEL"
-      },
-      {
-        "name": "USBPHYCSEL",
-        "description": "USBPHYC kernel clock source selection Set and reset by software.",
-        "bit_offset": 12,
-        "bit_size": 2,
-        "enum": "USBPHYCSEL"
-      },
-      {
-        "name": "USB_OTG_FSSEL",
-        "description": "OTGFS kernel clock source selection Set and reset by software.",
-        "bit_offset": 14,
-        "bit_size": 2,
-        "enum": "USB_OTG_FSSEL"
-      },
-      {
-        "name": "ETH_REF_CLK_SEL",
-        "description": "Ethernet reference clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
-        "bit_offset": 16,
-        "bit_size": 2,
-        "enum": "ETH_REF_CLK_SEL"
-      },
-      {
-        "name": "ETHPHY_CLK_SEL",
-        "description": "Clock source selection for external Ethernet PHY Set and reset by software.",
-        "bit_offset": 18,
-        "bit_size": 1,
-        "enum": "ETHPHY_CLK_SEL"
-      },
-      {
-        "name": "ADFSEL",
-        "description": "ADF kernel clock source selection Set and reset by software. Note: I2S_CKIN is an external clock taken from a pin.",
-        "bit_offset": 20,
-        "bit_size": 3,
-        "enum": "ADFSEL"
-      },
-      {
-        "name": "ADCSEL",
-        "description": "SAR ADC kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
-        "bit_offset": 24,
-        "bit_size": 2,
-        "enum": "ADCSEL"
-      },
-      {
-        "name": "PSSISEL",
-        "description": "PSSI kernel clock source selection Set and reset by software.",
-        "bit_offset": 27,
-        "bit_size": 1,
-        "enum": "PSSISEL"
-      },
-      {
-        "name": "PERSEL",
-        "description": "per_ck clock source selection.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "PERSEL"
-      }
-    ]
-  },
   "fieldset/APB1ENR1": {
     "description": "RCC APB1 clock enable register 1.",
     "fields": [
@@ -1664,67 +1568,6 @@
       }
     ]
   },
-  "fieldset/APB1PERCKSELR": {
-    "description": "RCC APB1 peripherals kernel clock selection register.",
-    "fields": [
-      {
-        "name": "USART234578SEL",
-        "description": "USART2,3, UART4,5,7,8 (APB1) kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
-        "bit_offset": 0,
-        "bit_size": 3,
-        "enum": "USART234578SEL"
-      },
-      {
-        "name": "SPI23SEL",
-        "description": "SPI/I2S2 and SPI/I2S3 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not be possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin.",
-        "bit_offset": 4,
-        "bit_size": 3,
-        "enum": "SPI123SEL"
-      },
-      {
-        "name": "I2C23SEL",
-        "description": "I2C2, I2C3 kernel clock source selection Set and reset by software.",
-        "bit_offset": 8,
-        "bit_size": 2,
-        "enum": "I2CSEL"
-      },
-      {
-        "name": "I2C1_I3C1SEL",
-        "description": "I2C1 or I3C1 kernel clock source selection Set and reset by software.",
-        "bit_offset": 12,
-        "bit_size": 2,
-        "enum": "I2C1_I3C1SEL"
-      },
-      {
-        "name": "LPTIM1SEL",
-        "description": "LPTIM1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
-        "bit_offset": 16,
-        "bit_size": 3,
-        "enum": "LPTIM1SEL"
-      },
-      {
-        "name": "FDCANSEL",
-        "description": "FDCAN kernel clock source selection.",
-        "bit_offset": 22,
-        "bit_size": 2,
-        "enum": "FDCANSEL"
-      },
-      {
-        "name": "SPDIFRXSEL",
-        "description": "SPDIFRX kernel clock source selection.",
-        "bit_offset": 24,
-        "bit_size": 2,
-        "enum": "SPDIFRXSEL"
-      },
-      {
-        "name": "CECSEL",
-        "description": "HDMI-CEC kernel clock source selection Set and reset by software.",
-        "bit_offset": 28,
-        "bit_size": 2,
-        "enum": "CECSEL"
-      }
-    ]
-  },
   "fieldset/APB1RSTR1": {
     "description": "RCC APB1 peripheral reset register 1.",
     "fields": [
@@ -2039,46 +1882,6 @@
       }
     ]
   },
-  "fieldset/APB2PERCKSELR": {
-    "description": "RCC APB2 peripherals kernel clock selection register.",
-    "fields": [
-      {
-        "name": "USART1SEL",
-        "description": "USART1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
-        "bit_offset": 0,
-        "bit_size": 3,
-        "enum": "USART1SEL"
-      },
-      {
-        "name": "SPI45SEL",
-        "description": "SPI4 and 5 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
-        "bit_offset": 4,
-        "bit_size": 3,
-        "enum": "SPI45SEL"
-      },
-      {
-        "name": "SPI1SEL",
-        "description": "SPI/I2S1 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not be possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin.",
-        "bit_offset": 8,
-        "bit_size": 3,
-        "enum": "SPI123SEL"
-      },
-      {
-        "name": "SAI1SEL",
-        "description": "SAI1 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin.",
-        "bit_offset": 16,
-        "bit_size": 3,
-        "enum": "SAI1SEL"
-      },
-      {
-        "name": "SAI2SEL",
-        "description": "SAI2 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin. spdifrx_symb_ck is the symbol clock generated by the spdifrx (see Figure 51).",
-        "bit_offset": 20,
-        "bit_size": 3,
-        "enum": "SAI2SEL"
-      }
-    ]
-  },
   "fieldset/APB2RSTR": {
     "description": "RCC APB2 peripheral reset register.",
     "fields": [
@@ -2147,39 +1950,6 @@
         "description": "SAI2 block reset Set and reset by software.",
         "bit_offset": 23,
         "bit_size": 1
-      }
-    ]
-  },
-  "fieldset/APB45PERCKSELR": {
-    "description": "RCC APB4,5 peripherals kernel clock selection register.",
-    "fields": [
-      {
-        "name": "LPUART1SEL",
-        "description": "LPUART1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
-        "bit_offset": 0,
-        "bit_size": 3,
-        "enum": "LPUARTSEL"
-      },
-      {
-        "name": "SPI6SEL",
-        "description": "SPI/I2S6 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
-        "bit_offset": 4,
-        "bit_size": 3,
-        "enum": "SPI6SEL"
-      },
-      {
-        "name": "LPTIM23SEL",
-        "description": "LPTIM2 and LPTIM3 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
-        "bit_offset": 8,
-        "bit_size": 3,
-        "enum": "LPTIMSEL"
-      },
-      {
-        "name": "LPTIM45SEL",
-        "description": "LPTIM4, and LPTIM5 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
-        "bit_offset": 12,
-        "bit_size": 3,
-        "enum": "LPTIMSEL"
       }
     ]
   },
@@ -2556,6 +2326,236 @@
         "bit_offset": 0,
         "bit_size": 4,
         "enum": "HPRE"
+      }
+    ]
+  },
+  "fieldset/CCIPR1": {
+    "description": "RCC AHB peripheral kernel clock selection register.",
+    "fields": [
+      {
+        "name": "FMCSEL",
+        "description": "FMC kernel clock source selection Set and reset by software.",
+        "bit_offset": 0,
+        "bit_size": 2,
+        "enum": "FMCSEL"
+      },
+      {
+        "name": "SDMMCSEL",
+        "description": "SDMMC1 and SDMMC2 kernel clock source selection Set and reset by software.",
+        "bit_offset": 2,
+        "bit_size": 1,
+        "enum": "SDMMCSEL"
+      },
+      {
+        "name": "XSPI1SEL",
+        "description": "XSPI1 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock.",
+        "bit_offset": 4,
+        "bit_size": 2,
+        "enum": "XSPISEL"
+      },
+      {
+        "name": "XSPI2SEL",
+        "description": "XSPI2 kernel clock source selection Set and reset by software. 1x: pll2_t_ck selected as kernel peripheral clock.",
+        "bit_offset": 6,
+        "bit_size": 2,
+        "enum": "XSPISEL"
+      },
+      {
+        "name": "USBREFCKSEL",
+        "description": "USBPHYC kernel clock frequency selection Set and reset by software. This field is used to indicate to the USBPHYC, the frequency of the reference kernel clock provided to the USBPHYC. others: reserved.",
+        "bit_offset": 8,
+        "bit_size": 4,
+        "enum": "USBREFCKSEL"
+      },
+      {
+        "name": "USBPHYCSEL",
+        "description": "USBPHYC kernel clock source selection Set and reset by software.",
+        "bit_offset": 12,
+        "bit_size": 2,
+        "enum": "USBPHYCSEL"
+      },
+      {
+        "name": "USB_OTG_FSSEL",
+        "description": "OTGFS kernel clock source selection Set and reset by software.",
+        "bit_offset": 14,
+        "bit_size": 2,
+        "enum": "USB_OTG_FSSEL"
+      },
+      {
+        "name": "ETH_REF_CLK_SEL",
+        "description": "Ethernet reference clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
+        "bit_offset": 16,
+        "bit_size": 2,
+        "enum": "ETH_REF_CLK_SEL"
+      },
+      {
+        "name": "ETHPHY_CLK_SEL",
+        "description": "Clock source selection for external Ethernet PHY Set and reset by software.",
+        "bit_offset": 18,
+        "bit_size": 1,
+        "enum": "ETHPHY_CLK_SEL"
+      },
+      {
+        "name": "ADFSEL",
+        "description": "ADF kernel clock source selection Set and reset by software. Note: I2S_CKIN is an external clock taken from a pin.",
+        "bit_offset": 20,
+        "bit_size": 3,
+        "enum": "ADFSEL"
+      },
+      {
+        "name": "ADCSEL",
+        "description": "SAR ADC kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
+        "bit_offset": 24,
+        "bit_size": 2,
+        "enum": "ADCSEL"
+      },
+      {
+        "name": "PSSISEL",
+        "description": "PSSI kernel clock source selection Set and reset by software.",
+        "bit_offset": 27,
+        "bit_size": 1,
+        "enum": "PSSISEL"
+      },
+      {
+        "name": "PERSEL",
+        "description": "per_ck clock source selection.",
+        "bit_offset": 28,
+        "bit_size": 2,
+        "enum": "PERSEL"
+      }
+    ]
+  },
+  "fieldset/CCIPR2": {
+    "description": "RCC APB1 peripherals kernel clock selection register.",
+    "fields": [
+      {
+        "name": "USART234578SEL",
+        "description": "USART2,3, UART4,5,7,8 (APB1) kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
+        "bit_offset": 0,
+        "bit_size": 3,
+        "enum": "USART234578SEL"
+      },
+      {
+        "name": "SPI23SEL",
+        "description": "SPI/I2S2 and SPI/I2S3 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not be possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin.",
+        "bit_offset": 4,
+        "bit_size": 3,
+        "enum": "SPI123SEL"
+      },
+      {
+        "name": "I2C23SEL",
+        "description": "I2C2, I2C3 kernel clock source selection Set and reset by software.",
+        "bit_offset": 8,
+        "bit_size": 2,
+        "enum": "I2CSEL"
+      },
+      {
+        "name": "I2C1_I3C1SEL",
+        "description": "I2C1 or I3C1 kernel clock source selection Set and reset by software.",
+        "bit_offset": 12,
+        "bit_size": 2,
+        "enum": "I2C1_I3C1SEL"
+      },
+      {
+        "name": "LPTIM1SEL",
+        "description": "LPTIM1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
+        "bit_offset": 16,
+        "bit_size": 3,
+        "enum": "LPTIM1SEL"
+      },
+      {
+        "name": "FDCANSEL",
+        "description": "FDCAN kernel clock source selection.",
+        "bit_offset": 22,
+        "bit_size": 2,
+        "enum": "FDCANSEL"
+      },
+      {
+        "name": "SPDIFRXSEL",
+        "description": "SPDIFRX kernel clock source selection.",
+        "bit_offset": 24,
+        "bit_size": 2,
+        "enum": "SPDIFRXSEL"
+      },
+      {
+        "name": "CECSEL",
+        "description": "HDMI-CEC kernel clock source selection Set and reset by software.",
+        "bit_offset": 28,
+        "bit_size": 2,
+        "enum": "CECSEL"
+      }
+    ]
+  },
+  "fieldset/CCIPR3": {
+    "description": "RCC APB2 peripherals kernel clock selection register.",
+    "fields": [
+      {
+        "name": "USART1SEL",
+        "description": "USART1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
+        "bit_offset": 0,
+        "bit_size": 3,
+        "enum": "USART1SEL"
+      },
+      {
+        "name": "SPI45SEL",
+        "description": "SPI4 and 5 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
+        "bit_offset": 4,
+        "bit_size": 3,
+        "enum": "SPI45SEL"
+      },
+      {
+        "name": "SPI1SEL",
+        "description": "SPI/I2S1 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not be possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin.",
+        "bit_offset": 8,
+        "bit_size": 3,
+        "enum": "SPI123SEL"
+      },
+      {
+        "name": "SAI1SEL",
+        "description": "SAI1 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin.",
+        "bit_offset": 16,
+        "bit_size": 3,
+        "enum": "SAI1SEL"
+      },
+      {
+        "name": "SAI2SEL",
+        "description": "SAI2 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not possible to switch to another clock. Refer to Clock switches and gating on page 437 for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin. spdifrx_symb_ck is the symbol clock generated by the spdifrx (see Figure 51).",
+        "bit_offset": 20,
+        "bit_size": 3,
+        "enum": "SAI2SEL"
+      }
+    ]
+  },
+  "fieldset/CCIPR4": {
+    "description": "RCC APB4,5 peripherals kernel clock selection register.",
+    "fields": [
+      {
+        "name": "LPUART1SEL",
+        "description": "LPUART1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
+        "bit_offset": 0,
+        "bit_size": 3,
+        "enum": "LPUARTSEL"
+      },
+      {
+        "name": "SPI6SEL",
+        "description": "SPI/I2S6 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
+        "bit_offset": 4,
+        "bit_size": 3,
+        "enum": "SPI6SEL"
+      },
+      {
+        "name": "LPTIM23SEL",
+        "description": "LPTIM2 and LPTIM3 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
+        "bit_offset": 8,
+        "bit_size": 3,
+        "enum": "LPTIMSEL"
+      },
+      {
+        "name": "LPTIM45SEL",
+        "description": "LPTIM4, and LPTIM5 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled.",
+        "bit_offset": 12,
+        "bit_size": 3,
+        "enum": "LPTIMSEL"
       }
     ]
   },

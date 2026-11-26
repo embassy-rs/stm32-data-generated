@@ -949,7 +949,7 @@
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": {
-              "register": "AHBPERCKSELR",
+              "register": "CCIPR1",
               "field": "ADCSEL"
             },
             "enable": {
@@ -1224,7 +1224,7 @@
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": {
-              "register": "AHBPERCKSELR",
+              "register": "CCIPR1",
               "field": "ADCSEL"
             },
             "enable": {
@@ -1485,7 +1485,7 @@
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": {
-              "register": "AHBPERCKSELR",
+              "register": "CCIPR1",
               "field": "ADFSEL"
             },
             "enable": {
@@ -1564,7 +1564,7 @@
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
-              "register": "APB1PERCKSELR",
+              "register": "CCIPR2",
               "field": "CECSEL"
             },
             "enable": {
@@ -2216,7 +2216,7 @@
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
-              "register": "APB1PERCKSELR",
+              "register": "CCIPR2",
               "field": "FDCANSEL"
             },
             "enable": {
@@ -2277,7 +2277,7 @@
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
-              "register": "APB1PERCKSELR",
+              "register": "CCIPR2",
               "field": "FDCANSEL"
             },
             "enable": {
@@ -2371,7 +2371,7 @@
           "rcc": {
             "bus_clock": "HCLK5",
             "kernel_clock": {
-              "register": "AHBPERCKSELR",
+              "register": "CCIPR1",
               "field": "FMCSEL"
             },
             "enable": {
@@ -3440,7 +3440,7 @@
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
-              "register": "APB1PERCKSELR",
+              "register": "CCIPR2",
               "field": "I2C1_I3C1SEL"
             },
             "enable": {
@@ -3638,7 +3638,7 @@
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
-              "register": "APB1PERCKSELR",
+              "register": "CCIPR2",
               "field": "I2C1_I3C1SEL"
             },
             "enable": {
@@ -3774,7 +3774,7 @@
           "rcc": {
             "bus_clock": "PCLK4",
             "kernel_clock": {
-              "register": "APB45PERCKSELR",
+              "register": "CCIPR4",
               "field": "LPTIM23SEL"
             },
             "enable": {
@@ -3869,7 +3869,7 @@
           "rcc": {
             "bus_clock": "PCLK4",
             "kernel_clock": {
-              "register": "APB45PERCKSELR",
+              "register": "CCIPR4",
               "field": "LPTIM23SEL"
             },
             "enable": {
@@ -3944,7 +3944,7 @@
           "rcc": {
             "bus_clock": "PCLK4",
             "kernel_clock": {
-              "register": "APB45PERCKSELR",
+              "register": "CCIPR4",
               "field": "LPTIM45SEL"
             },
             "enable": {
@@ -3992,7 +3992,7 @@
           "rcc": {
             "bus_clock": "PCLK4",
             "kernel_clock": {
-              "register": "APB45PERCKSELR",
+              "register": "CCIPR4",
               "field": "LPTIM45SEL"
             },
             "enable": {
@@ -4035,7 +4035,7 @@
           "rcc": {
             "bus_clock": "PCLK4",
             "kernel_clock": {
-              "register": "APB45PERCKSELR",
+              "register": "CCIPR4",
               "field": "LPUART1SEL"
             },
             "enable": {
@@ -4356,7 +4356,7 @@
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
-              "register": "AHBPERCKSELR",
+              "register": "CCIPR1",
               "field": "PSSISEL"
             },
             "enable": {
@@ -4742,7 +4742,7 @@
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": {
-              "register": "APB2PERCKSELR",
+              "register": "CCIPR3",
               "field": "SAI1SEL"
             },
             "enable": {
@@ -4870,7 +4870,7 @@
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": {
-              "register": "APB2PERCKSELR",
+              "register": "CCIPR3",
               "field": "SAI2SEL"
             },
             "enable": {
@@ -4948,7 +4948,7 @@
           "rcc": {
             "bus_clock": "HCLK2",
             "kernel_clock": {
-              "register": "AHBPERCKSELR",
+              "register": "CCIPR1",
               "field": "SDMMCSEL"
             },
             "enable": {
@@ -5040,7 +5040,7 @@
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
-              "register": "APB1PERCKSELR",
+              "register": "CCIPR2",
               "field": "SPDIFRXSEL"
             },
             "enable": {
@@ -5099,7 +5099,7 @@
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": {
-              "register": "APB2PERCKSELR",
+              "register": "CCIPR3",
               "field": "SPI1SEL"
             },
             "enable": {
@@ -5253,7 +5253,7 @@
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
-              "register": "APB1PERCKSELR",
+              "register": "CCIPR2",
               "field": "SPI23SEL"
             },
             "enable": {
@@ -5442,7 +5442,7 @@
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
-              "register": "APB1PERCKSELR",
+              "register": "CCIPR2",
               "field": "SPI23SEL"
             },
             "enable": {
@@ -5591,7 +5591,7 @@
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": {
-              "register": "APB2PERCKSELR",
+              "register": "CCIPR3",
               "field": "SPI45SEL"
             },
             "enable": {
@@ -5670,7 +5670,7 @@
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": {
-              "register": "APB2PERCKSELR",
+              "register": "CCIPR3",
               "field": "SPI45SEL"
             },
             "enable": {
@@ -5739,7 +5739,7 @@
           "rcc": {
             "bus_clock": "PCLK4",
             "kernel_clock": {
-              "register": "APB45PERCKSELR",
+              "register": "CCIPR4",
               "field": "SPI6SEL"
             },
             "enable": {
@@ -7285,7 +7285,7 @@
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
-              "register": "APB1PERCKSELR",
+              "register": "CCIPR2",
               "field": "USART234578SEL"
             },
             "enable": {
@@ -7414,7 +7414,7 @@
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
-              "register": "APB1PERCKSELR",
+              "register": "CCIPR2",
               "field": "USART234578SEL"
             },
             "enable": {
@@ -7513,7 +7513,7 @@
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
-              "register": "APB1PERCKSELR",
+              "register": "CCIPR2",
               "field": "USART234578SEL"
             },
             "enable": {
@@ -7596,7 +7596,7 @@
           "rcc": {
             "bus_clock": "PCLK2",
             "kernel_clock": {
-              "register": "APB2PERCKSELR",
+              "register": "CCIPR3",
               "field": "USART1SEL"
             },
             "enable": {
@@ -7695,7 +7695,7 @@
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
-              "register": "APB1PERCKSELR",
+              "register": "CCIPR2",
               "field": "USART234578SEL"
             },
             "enable": {
@@ -7809,7 +7809,7 @@
           "rcc": {
             "bus_clock": "PCLK1",
             "kernel_clock": {
-              "register": "APB1PERCKSELR",
+              "register": "CCIPR2",
               "field": "USART234578SEL"
             },
             "enable": {
@@ -7903,7 +7903,7 @@
           "rcc": {
             "bus_clock": "HCLK1",
             "kernel_clock": {
-              "register": "AHBPERCKSELR",
+              "register": "CCIPR1",
               "field": "USB_OTG_FSSEL"
             },
             "enable": {
@@ -8017,7 +8017,7 @@
           "rcc": {
             "bus_clock": "HCLK5",
             "kernel_clock": {
-              "register": "AHBPERCKSELR",
+              "register": "CCIPR1",
               "field": "XSPI1SEL"
             },
             "enable": {
@@ -8054,7 +8054,7 @@
           "rcc": {
             "bus_clock": "HCLK5",
             "kernel_clock": {
-              "register": "AHBPERCKSELR",
+              "register": "CCIPR1",
               "field": "XSPI2SEL"
             },
             "enable": {

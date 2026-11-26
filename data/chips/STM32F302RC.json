@@ -1863,6 +1863,66 @@
           ]
         },
         {
+          "name": "I2S2",
+          "address": 1073755136,
+          "registers": {
+            "kind": "spi",
+            "version": "v3_i2s",
+            "block": "SPI"
+          },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CFGR",
+              "field": "I2SSRC"
+            },
+            "enable": {
+              "register": "APB1ENR",
+              "field": "SPI2EN"
+            },
+            "reset": {
+              "register": "APB1RST",
+              "field": "SPI2RST"
+            }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "SPI2"
+            }
+          ]
+        },
+        {
+          "name": "I2S3",
+          "address": 1073758208,
+          "registers": {
+            "kind": "spi",
+            "version": "v3_i2s",
+            "block": "SPI"
+          },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": {
+              "register": "CFGR",
+              "field": "I2SSRC"
+            },
+            "enable": {
+              "register": "APB1ENR",
+              "field": "SPI3EN"
+            },
+            "reset": {
+              "register": "APB1RST",
+              "field": "SPI3RST"
+            }
+          },
+          "interrupts": [
+            {
+              "signal": "GLOBAL",
+              "interrupt": "SPI3"
+            }
+          ]
+        },
+        {
           "name": "IWDG",
           "address": 1073754112,
           "registers": {

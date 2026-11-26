@@ -2160,7 +2160,7 @@
           "address": 200857509,
           "registers": {
             "kind": "vrefintcal",
-            "version": "v2",
+            "version": "v1",
             "block": "VREFINTCAL"
           }
         },

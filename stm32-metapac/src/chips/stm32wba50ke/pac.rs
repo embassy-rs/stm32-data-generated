@@ -376,7 +376,7 @@ pub mod tscal;
 pub mod uid;
 #[path = "../../peripherals/usart_v4.rs"]
 pub mod usart;
-#[path = "../../peripherals/vrefintcal_v2.rs"]
+#[path = "../../peripherals/vrefintcal_v1.rs"]
 pub mod vrefintcal;
 #[path = "../../peripherals/wwdg_v2.rs"]
 pub mod wwdg;

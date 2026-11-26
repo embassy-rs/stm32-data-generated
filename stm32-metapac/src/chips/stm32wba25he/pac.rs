@@ -404,5 +404,5 @@ pub mod usart;
 pub mod usb;
 #[path = "../../peripherals/usbram_16x2_1024.rs"]
 pub mod usbram;
-#[path = "../../peripherals/vrefintcal_v2.rs"]
+#[path = "../../peripherals/vrefintcal_v1.rs"]
 pub mod vrefintcal;

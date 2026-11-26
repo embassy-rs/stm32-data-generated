@@ -514,7 +514,7 @@ pub mod uid;
 pub mod usart;
 #[path = "../../peripherals/vrefbuf_v2a1.rs"]
 pub mod vrefbuf;
-#[path = "../../peripherals/vrefintcal_v2.rs"]
+#[path = "../../peripherals/vrefintcal_v1.rs"]
 pub mod vrefintcal;
 #[path = "../../peripherals/wwdg_v2.rs"]
 pub mod wwdg;

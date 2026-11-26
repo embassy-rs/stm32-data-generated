@@ -2098,7 +2098,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0xbf8d7a5,
         registers: Some(PeripheralRegisters {
             kind: "vrefintcal",
-            version: "v2",
+            version: "v1",
             block: "VREFINTCAL",
             ir: &vrefintcal::REGISTERS,
         }),
@@ -2513,5 +2513,5 @@ pub mod usart;
 pub mod usb;
 #[path = "../registers/usbram_16x2_1024.rs"]
 pub mod usbram;
-#[path = "../registers/vrefintcal_v2.rs"]
+#[path = "../registers/vrefintcal_v1.rs"]
 pub mod vrefintcal;

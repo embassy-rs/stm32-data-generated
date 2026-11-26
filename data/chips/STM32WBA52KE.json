@@ -2545,7 +2545,7 @@
           "address": 200869797,
           "registers": {
             "kind": "vrefintcal",
-            "version": "v2",
+            "version": "v1",
             "block": "VREFINTCAL"
           }
         },

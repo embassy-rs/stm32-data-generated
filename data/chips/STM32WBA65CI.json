@@ -3821,7 +3821,7 @@
           "address": 200935333,
           "registers": {
             "kind": "vrefintcal",
-            "version": "v2",
+            "version": "v1",
             "block": "VREFINTCAL"
           }
         },

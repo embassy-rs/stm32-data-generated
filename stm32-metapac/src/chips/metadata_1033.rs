@@ -1893,7 +1893,7 @@ pub(crate) static PERIPHERALS: &[Peripheral] = &[
         address: 0xbf8d7a5,
         registers: Some(PeripheralRegisters {
             kind: "vrefintcal",
-            version: "v2",
+            version: "v1",
             block: "VREFINTCAL",
             ir: &vrefintcal::REGISTERS,
         }),
@@ -2211,5 +2211,5 @@ pub mod timer;
 pub mod uid;
 #[path = "../registers/usart_v4.rs"]
 pub mod usart;
-#[path = "../registers/vrefintcal_v2.rs"]
+#[path = "../registers/vrefintcal_v1.rs"]
 pub mod vrefintcal;

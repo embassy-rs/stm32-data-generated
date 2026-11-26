@@ -213,7 +213,7 @@ pub static ALL_PERIPHERAL_VERSIONS: &[(&str, &[&str])] = &[
     ("usbram", &["16x1_512", "16x2_1024", "32_1024", "32_2048"]),
     ("venc", &["v1"]),
     ("vrefbuf", &["v1", "v2a1", "v2a2", "v2b"]),
-    ("vrefintcal", &["v1", "v2"]),
+    ("vrefintcal", &["v1"]),
     ("wwdg", &["v1", "v2"]),
     ("xspi", &["v1"]),
     ("xspim", &["v1"]),

@@ -297,6 +297,8 @@ mod _vectors {
         Vector { _handler: OTG_FS },
     ];
 }
+pub const I2S2: *mut () = 0x0usize as _;
+pub const I2S3: *mut () = 0x0usize as _;
 pub const UID: uid::Uid = unsafe { uid::Uid::from_ptr(0x1fff_f7e8usize as _) };
 pub const TIM2: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_0000usize as _) };
 pub const TIM3: timer::TimGp16 = unsafe { timer::TimGp16::from_ptr(0x4000_0400usize as _) };

@@ -64,6 +64,7 @@ The following table shows which STM32 peripheral versions are supported across d
 | [HSEM](#hsem) | | | | | | | | | | | | | v1, v2, ❌ | | | | | | | ❌ | | | | | v1 | | wba | v3, v4 |
 | [HSP](#hsp) | | | | | | | | | | | | | | ❌ | | | | | | | | | v1 | | | | | |
 | [HSPI](#hspi) | | | | | | | | | | | | | | | | | | | | | | | | v1 | | | | |
+| [I](#i) | | | | ❌ | ❌ | | | ❌ | | | | | | | | | | | | | | | | | | | | |
 | [I2C](#i2c) | v2 | v3 | v2 | v1 | v1 | v2 | v1 | v2 | v2 | v2 | v3 | v2 | v2, v3 | v3 | v2 | v1 | v2 | v2 | v2 | ❌ | v3 | v2 | v2 | v2 | v2 | v1 | v2 | v2 |
 | [I3C](#i3c) | | v1 | | | | | | | | | v1 | v1 | v1 | ❌ | | | | | | | v1 | | v1 | | | | | |
 | [ICACHE](#icache) | | v1_4crr, v1_4crr_nomstsel | | | | | | | | | v1_4crr | v1_0crr, v1_4crr, ❌ | | | | | | | v1_4crr | | v1_0crr | | v1_3crr | v1_3crr | | | v1_4crr | |
@@ -637,6 +638,12 @@ The following table shows which STM32 peripheral versions are supported across d
 **Versions by family:**
 
 - **v1**: STM32U5
+
+### I
+
+**Versions by family:**
+
+- **❌ Unsupported**: STM32F1, STM32F2, STM32F7
 
 ### I2C
 

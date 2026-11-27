@@ -2858,6 +2858,18 @@
             "version": "v2_i2s",
             "block": "SPI"
           },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": "PLli2s1_R",
+            "enable": {
+              "register": "APB1ENR",
+              "field": "SPI2EN"
+            },
+            "reset": {
+              "register": "APB1RSTR",
+              "field": "SPI2RST"
+            }
+          },
           "interrupts": [
             {
               "signal": "GLOBAL",
@@ -2884,6 +2896,18 @@
             "kind": "spi",
             "version": "v2_i2s",
             "block": "SPI"
+          },
+          "rcc": {
+            "bus_clock": "PCLK1",
+            "kernel_clock": "PLli2s1_R",
+            "enable": {
+              "register": "APB1ENR",
+              "field": "SPI3EN"
+            },
+            "reset": {
+              "register": "APB1RSTR",
+              "field": "SPI3RST"
+            }
           },
           "interrupts": [
             {

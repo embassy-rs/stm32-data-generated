@@ -400,6 +400,8 @@ mod _vectors {
         Vector { _handler: SDMMC2 },
     ];
 }
+pub const I2S2: *mut () = 0x0usize as _;
+pub const I2S3: *mut () = 0x0usize as _;
 pub const UID: uid::Uid = unsafe { uid::Uid::from_ptr(0x1ff0_7a10usize as _) };
 pub const VREFINTCAL: vrefintcal::Vrefintcal = unsafe { vrefintcal::Vrefintcal::from_ptr(0x1ff0_7a2ausize as _) };
 pub const TS_CAL1: tscal::Tscal = unsafe { tscal::Tscal::from_ptr(0x1ff0_7a2cusize as _) };
